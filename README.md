@@ -10,8 +10,8 @@
 
 ## 🌐 Выберите язык / Choose Your Language
 
-- 🇷🇺 [Документация на русском](./docs/RU/README.md)
-- 🇺🇸 [Documentation in English](./docs/EN/README.md)
+- 🇷🇺 [Документация на русском](./docs/ru/README.md)
+- 🇺🇸 [Documentation in English](./docs/en/README.md)
 
 ---
 
