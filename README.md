@@ -15,7 +15,7 @@
 
 ---
 
-## 🔧 Как использовать / How to use
+## 🔧 How to use
 
 ```bash
 git clone https://github.com/Hackitect7/devops-cheat-sheet.git
