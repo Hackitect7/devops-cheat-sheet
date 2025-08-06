@@ -1,4 +1,4 @@
-# 🇺🇸 DevOps Commands and Scenarios Cheat Sheet
+# DevOps Commands and Scenarios Cheat Sheet
 
 > 📚 300+ commands and scripts from Linux to Terraform  
 > 🚀 Useful for juniors, seniors, SREs, and architects  
