@@ -534,14 +534,14 @@
 
 ## Additional resources
 
-📘 man pages — detailed manuals for commands:
+📘 **man pages** — detailed manuals for commands:
 
 ```bash
 man ls
 man rm
 ```
 
-📙 TLDR — concise usage examples of popular commands:
+📙 **TLDR** — concise usage examples of popular commands:
 
 🧠 **Tip:** Install `tldr` for cheat-sheet-style help:
 
@@ -552,6 +552,8 @@ tldr tar                # example of a short summary for the tar command
 
 🌐 Useful links:
 
-[Linux man pages online](https://man7.org/linux/man-pages/)
+**Linux man pages online** — official manual pages, searchable by command name:  
+[https://man7.org/linux/man-pages/](https://man7.org/linux/man-pages/)
 
-[Simplified and community-driven man pages](https://tldr.sh/)
+**Simplified and community-driven man pages** — community-driven help pages with practical examples:  
+[https://tldr.sh/](https://tldr.sh/)
