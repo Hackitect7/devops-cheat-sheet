@@ -15,6 +15,15 @@
 
 ---
 
+## 👥 Contributors & Acknowledgements
+
+This DevOps Cheat Sheet was originally created by **EBANGHA EBANE**, whose foundational work inspired this repository.  
+It is currently expanded and maintained by **Aleksei Polovinkin**, who adds examples and new sections to keep it up to date.
+
+Feel free to share, use, and contribute to this open resource — it’s a collective effort for the DevOps community.
+
+---
+
 ## 🔧 How to use
 
 ```bash
