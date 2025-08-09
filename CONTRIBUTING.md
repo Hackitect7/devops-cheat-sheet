@@ -1,6 +1,17 @@
 
 # Contributing to DevOps Cheat Sheet
 
+## Contributors & Acknowledgements
+
+We deeply appreciate the contributions of everyone involved in this project.
+
+- **Ebangha Ebane** — Original creator of the DevOps cheat sheet that inspired this repository.
+- **Aleksei Polovinkin** — Expanding and maintaining the cheat sheet, adding examples and new sections.
+
+Feel free to share and use this resource — it’s a collective effort for the DevOps community.
+
+---
+
 🎉 Thanks for your interest in contributing to this project!  
 This guide will help you make your first contribution smoothly.
 
