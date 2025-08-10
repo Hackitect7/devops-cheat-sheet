@@ -170,21 +170,16 @@
 | [**`docker network connect`**](https://docs.docker.com/reference/cli/docker/network/connect/) | | **Подключить контейнер к сети** |
 |         | `docker network connect my_net container` | Подключить контейнер с именем `container` к сети `my_net` |
 |         | `docker network connect --alias db_net my_net container` | Подключить с алиасом `db_net` |
-|         | | |
 | [**`docker network disconnect`**](https://docs.docker.com/reference/cli/docker/network/disconnect/) | | **Отключить контейнер от сети** |
 |         | `docker network disconnect my_net container` | Отключить контейнер `container` от сети `my_net` |
-|         | | |
 | [**`docker volume ls`**](https://docs.docker.com/reference/cli/docker/volume/ls/) | | **Показать список всех Docker томов** |
 |         | `docker volume ls` | Показать все тома, созданные в Docker |
 |         | `docker volume ls --filter dangling=true` | Показать неиспользуемые тома |
-|         | | |
 | [**`docker volume create`**](https://docs.docker.com/reference/cli/docker/volume/create/) | | **Создать новый Docker том** |
 |         | `docker volume create my_vol` | Создать том с именем `my_vol` |
 |         | `docker volume create --driver local --opt type=tmpfs my_tmp_vol` | Создать временный том с использованием tmpfs |
-|         | | |
 | [**`docker volume inspect`**](https://docs.docker.com/reference/cli/docker/volume/inspect/) | | **Показать подробную информацию о томе** |
 |         | `docker volume inspect my_vol` | Вывести детали тома `my_vol` в формате JSON |
-|         | | |
 | [**`docker volume rm`**](https://docs.docker.com/reference/cli/docker/volume/rm/) | | **Удалить один или несколько томов** |
 |         | `docker volume rm my_vol` | Удалить том с именем `my_vol` |
 |         | `docker volume rm $(docker volume ls -qf dangling=true)` | Удалить все неиспользуемые тома |
@@ -383,7 +378,7 @@
   docker buildx build --secret id=mysecret,src=./secret.txt .
   ```
 
-  В Dockerfile секрет доступен в /run/secrets/mysecret:
+  В Dockerfile секрет доступен в `/run/secrets/mysecret`:
 
   ```dockerfile
   RUN --mount=type=secret,id=mysecret cat /run/secrets/mysecret
