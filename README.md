@@ -29,6 +29,6 @@ Feel free to share, use, and contribute to this open resource — it’s a colle
 ```bash
 git clone https://github.com/Hackitect7/devops-cheat-sheet.git
 cd devops-cheat-sheet
-cat docs/ru/docker.md       # Русская документация
-cat docs/en/docker.md       # English documentation
+cat ru/docker.md       # Русская документация
+cat en/docker.md       # English documentation
 ```
