@@ -1,9 +1,7 @@
-::: {.content-visible when-format="html"}
 <style>
-table { table-layout: fixed; width: 100%; }
-td:nth-child(2) code { white-space: pre-wrap; overflow-wrap: anywhere; word-break: break-word; }
+  table { table-layout: fixed; width: 100%; }
+  td:nth-child(2) code { white-space: pre-wrap; overflow-wrap: anywhere; word-break: break-word; }
 </style>
-:::
 
 # ☸️ Kubernetes и kubectl
 
