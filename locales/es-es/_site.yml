@@ -1,0 +1,11 @@
+common:
+  site:
+    title: "Hoja de referencia de comandos y escenarios de DevOps"
+    sections: "Secciones"
+  table:
+    columns:
+      command: "Dominio"
+      example: "Ejemplo"
+      description: "Descripción"
+  callouts:
+    sudo-warn: "Tenga cuidado con `sudo`: verifique siempre el comando antes de ejecutarlo."

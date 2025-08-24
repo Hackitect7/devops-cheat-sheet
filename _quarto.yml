@@ -1,0 +1,42 @@
+# filename: _quarto.yml
+
+project:
+  type: website
+  output-dir: _site
+  render:
+    - index.qmd
+  resources:
+    - assets/**
+
+date: last-modified
+highlight-style: a11y
+
+website:
+  favicon: assets/brand/favicon.svg
+  navbar:
+    search: true
+    collapse-below: xl
+    background: light
+    title: false
+    tools:
+      - icon: github
+        href: https://github.com/Hackitect7/devops-cheat-sheet
+        text: Hackitect7 GitHub
+
+format:
+  html:
+    respect-user-color-scheme: true
+    toc: true
+    smooth-scroll: true
+    theme:
+      light: [cosmo, theme.scss]
+      dark: [cosmo, theme-dark.scss]
+    code-copy: true
+    code-overflow: wrap
+    css:
+      - assets/css/styles.css
+      - https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/7.5.0/css/flag-icons.min.css
+    include-after-body:
+      - assets/js/tweaks.js
+    anchor-sections: true
+    lib-dir: site_libs

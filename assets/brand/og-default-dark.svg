@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0b1220"/>
+  <g transform="translate(240,315)">
+    <g transform="translate(-160,-160) scale(2)">
+      <polygon fill="none" stroke="#ffffff" stroke-width="6" points="32,4 56,16 56,48 32,60 8,48 8,16"/>
+      <path d="M10,32 C18,22 26,42 34,32 S50,22 54,32" fill="none" stroke="#0ea5e9" stroke-width="6" stroke-linecap="round"/>
+    </g>
+  </g>
+  <text x="420" y="300" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="80" font-weight="700" fill="#ffffff">Hackitect7</text>
+  <text x="420" y="360" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="38" fill="#94a3b8">Музыка систем · The Music of Systems</text>
+</svg>

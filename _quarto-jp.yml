@@ -1,0 +1,51 @@
+# filename: _quarto-jp.yml
+
+project:
+  pre-render:
+    - python scripts/select_snippets.py
+  render:
+    - jp/index.qmd
+    - jp/linux.qmd
+    - jp/docker.qmd
+    - jp/git.qmd
+    - jp/kubernetes.qmd
+    - jp/helm.qmd
+    - jp/terraform.qmd
+
+lang: ja-JP
+
+metadata-files:
+  - locales/ja-jp/_site.yml
+  - locales/ja-jp/linux.yml
+  - locales/ja-jp/docker.yml
+  - locales/ja-jp/git.yml
+  - locales/ja-jp/kubernetes.yml
+  - locales/ja-jp/helm.yml
+  - locales/ja-jp/terraform.yml
+
+website:
+  title: "DevOps チートシート"
+  sidebar:
+    search: true
+    contents:
+      - jp/index.qmd
+      - jp/linux.qmd
+      - jp/docker.qmd
+      - jp/git.qmd
+      - jp/kubernetes.qmd
+      - jp/helm.qmd
+      - jp/terraform.qmd
+  navbar:
+    logo: assets/brand/jp/hackitect7-logo-light-jp.png
+    logo-alt: "Hackitect7 ロゴ (ja-JP)"
+    left:
+      - text: "ホーム"
+        href: /
+      - text: "ヘルプ"
+        menu:
+          - text: "バグを報告"
+            icon: "bug"
+            href: "https://github.com/Hackitect7/devops-cheat-sheet/issues"
+          - text: "質問する"
+            icon: "chat-right-text"
+            href: "https://github.com/Hackitect7/devops-cheat-sheet/discussions"

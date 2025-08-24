@@ -1,0 +1,11 @@
+common:
+  site:
+    title: "Hoja de Trucos de Comandos y Escenarios de DevOps"
+    sections: "Secciones"
+  table:
+    columns:
+      command: "Comando"
+      example: "Ejemplo"
+      description: "Descripción"
+  callouts:
+    sudo-warn: "Ten cuidado con `sudo`: siempre revisa el comando antes de ejecutarlo."

@@ -1,0 +1,29 @@
+---
+title: '{{< meta common.site.title >}}'
+---
+
+## {{< meta common.site.sections >}}
+
+### [{{< meta linux.meta._root.title >}}](linux.qmd)
+
+{{< meta linux.meta._root.desc >}}
+
+### [{{< meta docker.meta._root.title >}}](docker.qmd)
+
+{{< meta docker.meta._root.desc >}}
+
+### [{{< meta git.meta._root.title >}}](git.qmd)
+
+{{< meta git.meta._root.desc >}}
+
+### [{{< meta kubernetes.meta._root.title >}}](kubernetes.qmd)
+
+{{< meta kubernetes.meta._root.desc >}}
+
+### [{{< meta helm.meta._root.title >}}](helm.qmd)
+
+{{< meta helm.meta._root.desc >}}
+
+### [{{< meta terraform.meta._root.title >}}](terraform.qmd)
+
+{{< meta terraform.meta._root.desc >}}

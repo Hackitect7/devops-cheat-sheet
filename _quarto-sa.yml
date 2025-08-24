@@ -1,0 +1,52 @@
+# filename: _quarto-us.yml
+
+project:
+  pre-render:
+    - python scripts/select_snippets.py
+  render:
+    - sa/index.qmd
+    - sa/linux.qmd
+    - sa/docker.qmd
+    - sa/git.qmd
+    - sa/kubernetes.qmd
+    - sa/helm.qmd
+    - sa/terraform.qmd
+
+lang: ar-SA
+dir: rtl
+
+metadata-files:
+  - locales/ar-sa/_site.yml
+  - locales/ar-sa/linux.yml
+  - locales/ar-sa/docker.yml
+  - locales/ar-sa/git.yml
+  - locales/ar-sa/kubernetes.yml
+  - locales/ar-sa/helm.yml
+  - locales/ar-sa/terraform.yml
+
+website:
+  title: "ورقة الغش لـ DevOps"
+  sidebar:
+    search: true
+    contents:
+      - sa/index.qmd
+      - sa/linux.qmd
+      - sa/docker.qmd
+      - sa/git.qmd
+      - sa/kubernetes.qmd
+      - sa/helm.qmd
+      - sa/terraform.qmd
+  navbar:
+    logo: assets/brand/sa/hackitect7-logo-light-sa.png
+    logo-alt: "شعار Hackitect7 (sa)"
+    right:
+      - text: "الرئيسية"
+        href: /
+      - text: "مساعدة"
+        menu:
+          - text: "الإبلاغ عن خطأ"
+            icon: "bug"
+            href: "https://github.com/Hackitect7/devops-cheat-sheet/issues"
+          - text: "طرح سؤال"
+            icon: "chat-right-text"
+            href: "https://github.com/Hackitect7/devops-cheat-sheet/discussions"

@@ -1,0 +1,51 @@
+# filename: _quarto-pl.yml
+
+project:
+  pre-render:
+    - python scripts/select_snippets.py
+  render:
+    - pl/index.qmd
+    - pl/linux.qmd
+    - pl/docker.qmd
+    - pl/git.qmd
+    - pl/kubernetes.qmd
+    - pl/helm.qmd
+    - pl/terraform.qmd
+
+lang: pl-PL
+
+metadata-files:
+  - locales/pl-pl/_site.yml
+  - locales/pl-pl/linux.yml
+  - locales/pl-pl/docker.yml
+  - locales/pl-pl/git.yml
+  - locales/pl-pl/kubernetes.yml
+  - locales/pl-pl/helm.yml
+  - locales/pl-pl/terraform.yml
+
+website:
+  title: "DevOps ściągawka"
+  sidebar:
+    search: true
+    contents:
+      - pl/index.qmd
+      - pl/linux.qmd
+      - pl/docker.qmd
+      - pl/git.qmd
+      - pl/kubernetes.qmd
+      - pl/helm.qmd
+      - pl/terraform.qmd
+  navbar:
+    logo: assets/brand/pl/hackitect7-logo-light-pl.png
+    logo-alt: "Logo Hackitect7 (pl)"
+    left:
+      - text: "Strona główna"
+        href: /
+      - text: "Pomoc"
+        menu:
+          - text: "Zgłoś błąd"
+            icon: "bug"
+            href: "https://github.com/Hackitect7/devops-cheat-sheet/issues"
+          - text: "Zadaj pytanie"
+            icon: "chat-right-text"
+            href: "https://github.com/Hackitect7/devops-cheat-sheet/discussions"

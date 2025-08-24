@@ -1,0 +1,51 @@
+# filename: _quarto-tr.yml
+
+project:
+  pre-render:
+    - python scripts/select_snippets.py
+  render:
+    - tr/index.qmd
+    - tr/linux.qmd
+    - tr/docker.qmd
+    - tr/git.qmd
+    - tr/kubernetes.qmd
+    - tr/helm.qmd
+    - tr/terraform.qmd
+
+lang: tr-TR
+
+metadata-files:
+  - locales/tr-tr/_site.yml
+  - locales/tr-tr/linux.yml
+  - locales/tr-tr/docker.yml
+  - locales/tr-tr/git.yml
+  - locales/tr-tr/kubernetes.yml
+  - locales/tr-tr/helm.yml
+  - locales/tr-tr/terraform.yml
+
+website:
+  title: "DevOps Hızlı Başvuru Kılavuzu"
+  sidebar:
+    search: true
+    contents:
+      - tr/index.qmd
+      - tr/linux.qmd
+      - tr/docker.qmd
+      - tr/git.qmd
+      - tr/kubernetes.qmd
+      - tr/helm.qmd
+      - tr/terraform.qmd
+  navbar:
+    logo: assets/brand/tr/hackitect7-logo-light-tr.png
+    logo-alt: "Hackitect7 logosu (tr-TR)"
+    left:
+      - text: "Ana Sayfa"
+        href: /
+      - text: "Yardım"
+        menu:
+          - text: "Hata Bildir"
+            icon: "bug"
+            href: "https://github.com/Hackitect7/devops-cheat-sheet/issues"
+          - text: "Soru Sor"
+            icon: "chat-right-text"
+            href: "https://github.com/Hackitect7/devops-cheat-sheet/discussions"

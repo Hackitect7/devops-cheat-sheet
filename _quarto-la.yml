@@ -1,0 +1,51 @@
+# filename: _quarto-la.yml
+
+project:
+  pre-render:
+    - python scripts/select_snippets.py
+  render:
+    - la/index.qmd
+    - la/linux.qmd
+    - la/docker.qmd
+    - la/git.qmd
+    - la/kubernetes.qmd
+    - la/helm.qmd
+    - la/terraform.qmd
+
+lang: es-la
+
+metadata-files:
+  - locales/es-la/_site.yml
+  - locales/es-la/linux.yml
+  - locales/es-la/docker.yml
+  - locales/es-la/git.yml
+  - locales/es-la/kubernetes.yml
+  - locales/es-la/helm.yml
+  - locales/es-la/terraform.yml
+
+website:
+  title: "Hoja de referencia de DevOps"
+  sidebar:
+    search: true
+    contents:
+      - la/index.qmd
+      - la/linux.qmd
+      - la/docker.qmd
+      - la/git.qmd
+      - la/kubernetes.qmd
+      - la/helm.qmd
+      - la/terraform.qmd
+  navbar:
+    logo: assets/brand/la/hackitect7-logo-light-la.png
+    logo-alt: "Logotipo de Hackitect7 (es-la)"
+    left:
+      - text: "Inicio"
+        href: /
+      - text: "Ayuda"
+        menu:
+          - text: "Reportar un error"
+            icon: "bug"
+            href: "https://github.com/Hackitect7/devops-cheat-sheet/issues"
+          - text: "Hacer una pregunta"
+            icon: "chat-right-text"
+            href: "https://github.com/Hackitect7/devops-cheat-sheet/disc419sions"

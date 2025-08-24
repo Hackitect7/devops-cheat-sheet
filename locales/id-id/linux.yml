@@ -1,0 +1,620 @@
+linux:
+  meta:
+    _root:
+      title: "🐧 Baris Perintah Linux"
+      desc: "Perintah dasar dan lanjutan untuk navigasi, file, proses, jaringan, pemantauan, paket, dan otomatisasi. Cocok untuk alur kerja DevOps."
+
+  basic:
+    _root:
+      title: "🔹 Perintah Dasar"
+      cat:
+        desc: "Tampilkan isi file atau gabungkan beberapa file"
+        ex1: "Lihat isi file"
+        ex2: "Gabungkan dan keluarkan dua file"
+        ex3: "Gabungkan file dan simpan ke file baru"
+      cd:
+        desc: "Ubah direktori kerja saat ini"
+        ex1: "Pergi ke path absolut `/etc`"
+        ex2: "Pergi ke direktori home"
+        ex3: "Naik satu level"
+        ex4: "Kembali ke direktori sebelumnya"
+      clear:
+        desc: "Bersihkan layar terminal"
+      cp:
+        desc: "Salin file dan direktori"
+        ex1: "Salin file dengan nama baru"
+        ex2: "Salin direktori secara rekursif"
+        ex3: "Salin dengan konfirmasi sebelum menimpa"
+      echo:
+        desc: "Cetak string atau variabel lingkungan"
+        ex1: "Cetak string sederhana"
+        ex2: "Tampilkan path direktori home"
+        ex3: "Tafsirkan urutan escape (\\t, \\n)"
+      history:
+        desc: "Tampilkan riwayat perintah"
+      id:
+        desc: "Tampilkan UID, GID, dan grup pengguna saat ini"
+      ls:
+        desc: "Daftar file dan direktori"
+        ex1: "Daftar panjang dengan izin dan pemilik"
+        ex2: "Tampilkan file tersembunyi"
+        ex3: "Ukuran mudah dibaca manusia"
+      mkdir:
+        desc: "Buat direktori"
+        ex1: "Buat satu direktori"
+        ex2: "Buat direktori bertingkat"
+        ex3: "Buat beberapa direktori sekaligus"
+      mv:
+        desc: "Pindahkan atau ganti nama file/direktori"
+        ex1: "Ganti nama file"
+        ex2: "Pindahkan file ke direktori lain"
+        ex3: "Pindahkan semua file `.txt` ke folder `archive`"
+      pwd:
+        desc: "Tampilkan direktori kerja saat ini"
+        ex1: "Tampilkan path fisik (tanpa symlink)"
+        ex2: "Tampilkan path setelah berpindah ke `/tmp`"
+      rm:
+        desc: "Hapus file atau direktori"
+        ex1: "Hapus file"
+        ex2: "Hapus file dengan konfirmasi"
+        ex3: "Hapus direktori secara rekursif"
+        ex4: "Hapus paksa tanpa konfirmasi"
+      rmdir:
+        desc: "Hapus direktori kosong"
+        ex1: "Hapus direktori `emptydir`"
+      touch:
+        desc: "Buat file kosong atau perbarui waktu modifikasi"
+        ex1: "Buat file kosong baru jika belum ada"
+        ex2: "Buat beberapa file sekaligus"
+        ex3: "Perbarui waktu tanpa membuat file jika tidak ada"
+      whereis:
+        desc: "Cari binary, source, dan halaman manual dari sebuah perintah"
+        ex1: "Cari lokasi `ls`"
+        ex2: "Tampilkan path untuk binary dan dokumentasi Bash"
+        ex3: "Cari hanya binary"
+      which:
+        desc: "Tampilkan path dari executable perintah"
+        ex1: "Path ke `python3`"
+        ex2: "Path ke `grep`"
+        ex3: "Lewati alias saat mencari"
+      whoami:
+        desc: "Tampilkan nama pengguna aktif"
+
+  intermediate:
+    _root:
+      title: "🔸 Tingkat Menengah"
+      chmod:
+        desc: "Ubah izin file atau direktori"
+        ex1: "Atur izin dengan notasi oktal (misalnya 755)"
+        ex2: "Tambahkan izin eksekusi ke sebuah skrip"
+        ex3: "Atur izin direktori secara rekursif"
+      chown:
+        desc: "Ubah pemilik dan grup file"
+        ex1: "Ubah pemilik file"
+        ex2: "Ubah pemilik dan grup"
+        ex3: "Ubah pemilik dan grup secara rekursif"
+      curl:
+        desc: "Transfer data dari/ke server (HTTP, HTTPS, dll.)"
+        ex1: "Kirim permintaan HEAD (hanya header)"
+        ex2: "Unduh file dan simpan dengan namanya"
+        ex3: "Kirim permintaan POST dengan data form"
+      df:
+        desc: "Laporkan penggunaan ruang disk sistem file"
+        ex1: "Ukuran mudah dibaca manusia"
+        ex2: "Penggunaan dari titik mount tertentu"
+        ex3: "Tampilkan tipe sistem file"
+      diff:
+        desc: "Bandingkan file atau direktori"
+        ex1: "Bandingkan dua file"
+        ex2: "Diff gaya patch (unified diff)"
+        ex3: "Bandingkan direktori secara rekursif"
+      du:
+        desc: "Perkirakan penggunaan ruang file dan direktori"
+        ex1: "Tampilkan ukuran item dalam direktori saat ini"
+        ex2: "Tampilkan ukuran satu file"
+        ex3: "Ringkas ukuran subdirektori tingkat atas"
+      find:
+        desc: "Cari file/direktori berdasarkan nama, ukuran, waktu, dll."
+        ex1: "Cari semua file `.log` di direktori saat ini"
+        ex2: "Cari file lebih besar dari 100 MB"
+        ex3: "File yang dimodifikasi dalam 1 hari terakhir"
+      free:
+        desc: "Tampilkan jumlah memori bebas dan terpakai"
+        ex1: "Unit memori mudah dibaca manusia"
+        ex2: "Tampilkan nilai dalam MB"
+        ex3: "Perbarui output setiap 2 detik"
+      grep:
+        desc: "Cari teks menggunakan pola (ekspresi reguler)"
+        ex1: "Cari baris yang mengandung `error`"
+        ex2: "Pencarian rekursif di direktori"
+        ex3: "Pencarian tanpa membedakan huruf besar/kecil"
+      head:
+        desc: "Keluarkan baris awal dari file"
+        ex1: "10 baris pertama"
+        ex2: "20 baris pertama"
+        ex3: "100 byte pertama"
+      hostname:
+        desc: "Tampilkan atau atur nama host sistem"
+        ex1: "Atur nama host sementara hingga reboot"
+        ex2: "Tampilkan alamat IP"
+      kill:
+        desc: "Kirim sinyal ke proses"
+        ex1: "Paksa hentikan proses dengan PID"
+        ex2: "Hentikan dengan SIGTERM secara normal"
+        ex3: "Hentikan proses yang cocok dengan pola"
+      ping:
+        desc: "Periksa konektivitas jaringan menggunakan ICMP"
+        ex1: "Ping sebuah alamat"
+        ex2: "Kirim 4 paket"
+        ex3: "Setel interval 2 detik"
+      ps:
+        desc: "Laporan status proses"
+        ex1: "Daftar semua proses"
+        ex2: "Filter berdasarkan nama dengan `grep`"
+        ex3: "Proses dari pengguna saat ini"
+      rsync:
+        desc: "Transfer file inkremental yang cepat"
+        ex1: "Sinkronisasi direktori lokal"
+        ex2: "Sinkronisasi dengan host remote melalui SSH"
+        ex3: "Hapus file di tujuan yang hilang di sumber"
+      scp:
+        desc: "Salin file aman (program salin file jarak jauh)"
+        ex1: "Salin file ke host remote"
+        ex2: "Salin file dari host remote"
+        ex3: "Salin direktori secara rekursif"
+      sort:
+        desc: "Urutkan baris teks"
+        ex1: "Urutan alfabetis"
+        ex2: "Urutan terbalik"
+        ex3: "Urutan numerik"
+      tail:
+        desc: "Keluarkan bagian akhir file; ikuti perubahan"
+        ex1: "Ikuti log secara real-time"
+        ex2: "Tampilkan 20 baris terakhir"
+        ex3: "Tampilkan 100 byte terakhir"
+      tar:
+        desc: "Buat, daftar, atau ekstrak arsip tar"
+        ex1: "Buat arsip `.tgz` terkompresi"
+        ex2: "Ekstrak arsip `.tgz`"
+        ex3: "Daftar isi arsip"
+      tee:
+        desc: "Baca dari stdin dan tulis ke stdout dan file"
+        ex1: "Tulis output ke `out.txt` dan tampilkan"
+        ex2: "Simpan output `ls` ke file dan tampilkan"
+        ex3: "Tambahkan output ke akhir `log.txt`"
+      top:
+        desc: "Tampilkan tugas Linux (penampil proses interaktif)"
+        ex1: "Mulai top"
+        ex2: "Penampil interaktif alternatif (htop)"
+        ex3: "Urutkan berdasarkan penggunaan memori"
+      uptime:
+        desc: "Tampilkan sudah berapa lama sistem berjalan"
+        ex1: "Uptime dalam format ringkas"
+        ex2: "Waktu boot sistem"
+      wget:
+        desc: "Pengunduh jaringan non-interaktif"
+        ex1: "Unduh file berdasarkan URL"
+        ex2: "Lanjutkan unduhan yang terputus"
+        ex3: "Simpan dengan nama file berbeda"
+      wc:
+        desc: "Tampilkan jumlah baris, kata, dan byte file"
+        ex1: "Hitung baris"
+        ex2: "Hitung kata"
+        ex3: "Hitung karakter"
+      uniq:
+        desc: "Laporkan atau hilangkan baris duplikat berurutan"
+        ex1: "Hapus duplikat berurutan"
+        ex2: "Hapus duplikat setelah diurutkan"
+        ex3: "Hitung kemunculan tiap baris"
+      yes:
+        desc: "Keluarkan string berulang kali hingga dihentikan; berguna untuk skrip"
+        ex1: "Selalu jawab \"y\" untuk prompt"
+        ex2: "Konfirmasi otomatis penghapusan interaktif"
+        ex3: "Jawab \"no\" untuk prompt"
+
+  advanced:
+    _root:
+      title: "🔧 Perintah Tingkat Lanjut"
+      at:
+        desc: "Jadwalkan perintah sekali jalan untuk dijalankan pada waktu tertentu"
+        ex1: "Jalankan perintah satu menit dari sekarang"
+        ex2: "Daftar pekerjaan yang tertunda"
+        ex3: "Hapus pekerjaan yang tertunda"
+      awk:
+        desc: "Bahasa pemindaian pola dan pemrosesan"
+        ex1: "Cetak kolom pertama"
+        ex2: "Filter proses berdasarkan penggunaan CPU"
+        ex3: "Cetak kolom kedua dari setiap baris"
+        ex4: "Cetak baris yang cocok dengan pola"
+      crontab:
+        desc: "Pasang, daftar, atau hapus cron job per pengguna"
+        ex1: "Edit crontab pengguna saat ini"
+        ex2: "Daftar cron job"
+        ex3: "Hapus crontab pengguna saat ini"
+      cut:
+        desc: "Hapus atau pilih bagian dari setiap baris file"
+        ex1: "Cetak nama pengguna dari `/etc/passwd`"
+        ex2: "Potong kolom kedua menggunakan ':' sebagai pemisah"
+        ex3: "Pilih karakter berdasarkan posisi"
+      df:
+        desc: "Laporkan penggunaan ruang disk sistem file"
+        ex1: "Ukuran mudah dibaca manusia"
+        ex2: "Tampilkan tipe sistem file"
+        ex3: "Penggunaan untuk direktori home"
+      env:
+        desc: "Jalankan perintah di lingkungan yang dimodifikasi atau cetak env"
+        ex1: "Tampilkan entri PATH"
+        ex2: "Mulai shell bersih dengan lingkungan kosong"
+      export:
+        desc: "Atur variabel lingkungan untuk shell/sesi saat ini"
+        ex1: "Atur variabel untuk shell ini"
+        ex2: "Tambahkan direktori ke PATH"
+        ex3: "Daftar variabel yang diekspor"
+      free:
+        desc: "Tampilkan penggunaan memori"
+        ex1: "Tampilkan dalam MB"
+        ex2: "Unit mudah dibaca manusia"
+        ex3: "Sampel setiap 5 detik"
+      hostnamectl:
+        desc: "Kueri dan ubah nama host sistem serta pengaturan terkait"
+        ex1: "Tampilkan status nama host"
+        ex2: "Atur nama host statis baru"
+      ip-tools:
+        desc: "Alat IP untuk melihat/mengelola antarmuka dan alamat"
+        ex1: "Tampilkan antarmuka jaringan (legacy)"
+        ex2: "Tampilkan alamat dengan `ip`"
+        ex3: "Aktifkan sebuah antarmuka"
+      iostat:
+        desc: "Laporkan statistik CPU dan I/O"
+        ex1: "Statistik tambahan setiap 2 detik"
+        ex2: "Statistik perangkat (interval 5s, 3 laporan)"
+      iptables:
+        desc: "Alat administrasi untuk filter paket IPv4 dan NAT"
+        ex1: "Daftar aturan saat ini"
+        ex2: "Izinkan SSH masuk di port 22"
+        ex3: "Hapus semua aturan"
+      journalctl:
+        desc: "Kueri jurnal systemd"
+        ex1: "Tampilkan error terbaru dengan konteks"
+        ex2: "Tampilkan log untuk sebuah layanan"
+        ex3: "Tampilkan log sejak waktu relatif"
+      ln:
+        desc: "Buat tautan antar file"
+        ex1: "Buat tautan simbolis"
+        ex2: "Buat tautan keras"
+        ex3: "Paksa buat ulang tautan simbolis"
+      sed:
+        desc: "Editor aliran untuk memfilter dan mengubah teks"
+        ex1: "Ganti string secara global"
+        ex2: "Cetak hanya rentang baris"
+        ex3: "Hapus baris yang cocok"
+      systemctl:
+        desc: "Kontrol sistem dan manajer layanan systemd"
+        ex1: "Tampilkan status layanan"
+        ex2: "Mulai sebuah layanan"
+        ex3: "Aktifkan layanan saat boot"
+      tr:
+        desc: "Terjemahkan atau hapus karakter"
+        ex1: "Ubah huruf kecil menjadi huruf besar"
+        ex2: "Ganti sebuah karakter"
+        ex3: "Hapus digit"
+      type:
+        desc: "Jelaskan bagaimana nama akan ditafsirkan di shell"
+        ex1: "Tampilkan bagaimana `ls` diresolusikan"
+        ex2: "Tampilkan bagaimana `cd` diresolusikan"
+        ex3: "Tampilkan bagaimana `python3` diresolusikan"
+      ulimit:
+        desc: "Dapatkan atau atur batas sumber daya proses pengguna"
+        ex1: "Tampilkan jumlah maksimum file terbuka"
+        ex2: "Aktifkan core dump"
+        ex3: "Batasi jumlah proses pengguna"
+      uptime:
+        desc: "Tampilkan uptime sistem dan rata-rata beban"
+        ex1: "Uptime dalam format ringkas"
+        ex2: "Tampilkan waktu boot"
+      xargs:
+        desc: "Bangun dan jalankan perintah dari input standar"
+        ex1: "Echo setiap argumen di baris terpisah"
+        ex2: "Pisahkan kata menjadi argumen terpisah"
+        ex3: "Cari file dan hapus dengan xargs"
+
+  network:
+    _root:
+      title: "🌐 Perintah Jaringan"
+      curl:
+        desc: "Transfer data ke/dari server"
+        ex1: "Permintaan POST dengan data form"
+        ex2: "Ambil hanya header"
+        ex3: "Unduh dan simpan ke file"
+      dig:
+        desc: "Utilitas pencarian DNS"
+        ex1: "Kueri catatan A"
+        ex2: "Jawaban singkat"
+        ex3: "Gunakan server DNS tertentu"
+      ftp:
+        desc: "Klien Protokol Transfer File"
+        ex1: "Hubungkan ke server FTP"
+        ex2: "Hubungkan tanpa login otomatis"
+        ex3: "Unduh file dalam sesi FTP"
+      ip-address:
+        desc: "Tampilkan/kelola alamat IP"
+        ex1: "Tampilkan info alamat untuk `eth0`"
+        ex2: "Daftar semua alamat"
+      ip-link:
+        desc: "Tampilkan/kelola perangkat jaringan"
+        ex1: "Tampilkan link jaringan"
+        ex2: "Aktifkan sebuah antarmuka"
+      ip-route:
+        desc: "Tampilkan/kelola tabel routing IP"
+        ex1: "Daftar tabel routing"
+        ex2: "Tambahkan rute default"
+      nc:
+        desc: "Koneksi dan pendengar TCP/UDP sewenang-wenang"
+        ex1: "Pindai port sebuah host"
+        ex2: "Dengarkan pada port TCP"
+        ex3: "Kirim file ke port remote"
+      nmap:
+        desc: "Alat eksplorasi jaringan dan pemindai keamanan/port"
+        ex1: "Pindai ping sebuah subnet"
+        ex2: "Deteksi layanan/versi"
+        ex3: "Deteksi OS"
+      nslookup:
+        desc: "Kueri server nama domain Internet"
+        ex1: "Kueri nama domain"
+        ex2: "Pencarian balik untuk sebuah IP"
+      ssh:
+        desc: "Klien login jarak jauh OpenSSH"
+        ex1: "Hubungkan ke host"
+        ex2: "Hubungkan menggunakan port non-standar"
+        ex3: "Login dengan kunci privat tertentu"
+      ss:
+        desc: "Utilitas untuk menyelidiki soket"
+        ex1: "Daftar port TCP/UDP yang mendengarkan"
+        ex2: "Statistik ringkas"
+        ex3: "Daftar soket yang mendengarkan"
+      telnet:
+        desc: "Antarmuka pengguna untuk protokol TELNET"
+        ex1: "Hubungkan ke host pada port 80"
+        ex2: "Hubungkan ke 443"
+        ex3: "Hubungkan ke SMTP lokal"
+      traceroute:
+        desc: "Lacak rute ke host jaringan"
+        ex1: "Lacak jalur ke sebuah IP"
+        ex2: "Batasi jumlah hop maksimum"
+      wget:
+        desc: "Ambil file dari web"
+        ex1: "Simpan output ke file"
+        ex2: "Unduh ke direktori saat ini"
+        ex3: "Lanjutkan unduhan parsial"
+
+  files:
+    _root:
+      title: "🔍 Mencari dan Mengelola File"
+      basename:
+        desc: "Hapus direktori dan akhiran dari nama file"
+        ex1: "Cetak nama file dari sebuah path"
+        ex2: "Hapus akhiran dari nama"
+      dirname:
+        desc: "Hapus komponen terakhir dari sebuah path"
+        ex1: "Tampilkan bagian direktori dari path"
+        ex2: "Tampilkan induk dari `/etc/passwd`"
+      du:
+        desc: "Perkirakan penggunaan ruang file"
+        ex1: "Tampilkan ukuran direktori"
+        ex2: "Tampilkan ukuran item di direktori saat ini"
+        ex3: "Ukuran kumulatif beberapa direktori"
+      file:
+        desc: "Tentukan tipe file"
+        ex1: "Deteksi tipe file"
+        ex2: "Deteksi tipe semua file di direktori"
+        ex3: "Tampilkan tipe MIME"
+      find:
+        desc: "Cari file"
+        ex1: "Cari skrip shell berdasarkan nama"
+        ex2: "Cari file lebih besar dari 10 MB"
+        ex3: "Cari file yang dimodifikasi dalam 1 hari terakhir"
+      locate:
+        desc: "Cari file berdasarkan nama menggunakan database"
+        ex1: "Cari nama file"
+        ex2: "Pencarian wildcard"
+        ex3: "Pencarian tanpa membedakan huruf besar/kecil"
+      realpath:
+        desc: "Tampilkan path absolut yang telah diresolusikan"
+        ex1: "Resolusi path file"
+        ex2: "Resolusi path relatif"
+      stat:
+        desc: "Tampilkan status file atau sistem file"
+        ex1: "Tampilkan status file terperinci"
+        ex2: "Cetak hanya ukuran file"
+        ex3: "Tampilkan status sistem file"
+      tree:
+        desc: "Daftar isi direktori dalam format pohon"
+        ex1: "Cetak pohon direktori"
+        ex2: "Batasi kedalaman tampilan"
+        ex3: "Sertakan file tersembunyi"
+
+  monitoring:
+    _root:
+      title: "📊 Pemantauan Sistem"
+      dmesg:
+        desc: "Cetak atau kontrol buffer ring kernel"
+        ex1: "Tampilkan pesan kernel terakhir"
+        ex2: "Filter untuk pesan USB"
+      free:
+        desc: "Tampilkan penggunaan memori"
+        ex1: "Unit mudah dibaca manusia"
+        ex2: "Tampilkan dalam MB"
+      htop:
+        desc: "Penampil proses interaktif"
+        ex1: "Jalankan `htop`"
+      iotop:
+        desc: "Tampilkan penggunaan I/O oleh proses"
+        ex1: "Jalankan `iotop`"
+        ex2: "Tampilkan hanya proses yang melakukan I/O"
+      lsof:
+        desc: "Daftar file yang terbuka"
+        ex1: "Tampilkan proses yang menggunakan port 80"
+        ex2: "Tampilkan file yang dibuka oleh pengguna"
+      uptime:
+        desc: "Tampilkan uptime sistem dan rata-rata beban"
+      vmstat:
+        desc: "Laporkan statistik memori virtual"
+        ex1: "Segarkan setiap 1 detik"
+        ex2: "Interval 5 detik, 3 laporan"
+      watch:
+        desc: "Jalankan program secara berkala, tampilkan output"
+        ex1: "Pantau penggunaan disk"
+        ex2: "Sorot perbedaan dan pantau memori"
+
+  packages:
+    _root:
+      title: "📦 Manajemen Paket"
+      apt:
+        desc: "Manajer paket APT (Debian/Ubuntu)"
+        ex1: "Instal sebuah paket"
+        ex2: "Hapus sebuah paket"
+        ex3: "Perbarui daftar paket dan upgrade"
+      dnf:
+        desc: "Dandified YUM (keluarga Fedora/RHEL)"
+        ex1: "Instal sebuah paket"
+        ex2: "Upgrade paket"
+      rpm:
+        desc: "Manajer paket RPM"
+        ex1: "Instal paket RPM"
+        ex2: "Hapus (uninstall) paket"
+      snap:
+        desc: "Manajer paket Snappy"
+        ex1: "Instal sebuah snap"
+        ex2: "Hapus sebuah snap"
+      yum:
+        desc: "Yellowdog Updater Modified (RHEL/CentOS)"
+        ex1: "Instal sebuah paket"
+        ex2: "Hapus sebuah paket"
+
+  "file-systems":
+    _root:
+      title: "💽 Sistem Berkas"
+      blkid:
+        desc: "Temukan/cetak atribut perangkat blok"
+        ex1: "Daftar perangkat blok dan atribut"
+      df:
+        desc: "Laporkan penggunaan ruang disk sistem file"
+        ex1: "Ukuran mudah dibaca manusia berdasarkan tipe"
+      fsck:
+        desc: "Periksa dan perbaiki sistem file Linux"
+        ex1: "Periksa sebuah perangkat"
+      lsblk:
+        desc: "Daftar informasi tentang perangkat blok"
+        ex1: "Daftar perangkat dalam format pohon"
+      mkfs:
+        desc: "Bangun sistem file Linux"
+        ex1: "Buat sistem file ext4"
+      mount:
+        desc: "Mount sistem file"
+        ex1: "Mount perangkat ke `/mnt`"
+        ex2: "Tampilkan sistem file yang di-mount difilter berdasarkan path"
+      parted:
+        desc: "Program manipulasi partisi"
+        ex1: "Buka sebuah disk untuk partisi"
+      umount:
+        desc: "Unmount sistem file"
+        ex1: "Unmount sebuah mount point"
+
+  scripts:
+    _root:
+      title: "🤖 Skrip dan Otomatisasi"
+      alias:
+        desc: "Definisikan atau tampilkan alias shell"
+        ex1: "Buat alias praktis"
+        ex2: "Daftar alias yang didefinisikan"
+      shell:
+        desc: "Jalankan skrip shell"
+        ex1: "Jalankan skrip dengan Bash"
+        ex2: "Jalankan skrip dengan `sh`"
+      crontab:
+        desc: "Tabel cron per pengguna"
+        ex1: "Edit crontab pengguna saat ini"
+      read:
+        desc: "Minta input pengguna dalam skrip shell"
+        ex1: "Baca ke dalam variabel"
+      set:
+        desc: "Atur opsi shell/parameter posisi"
+        ex1: "Keluar pada error pertama"
+      source:
+        desc: "Baca dan jalankan perintah dari file di shell saat ini"
+        ex1: "Muat ulang konfigurasi shell"
+      trap:
+        desc: "Tangkap sinyal dan jalankan perintah"
+        ex1: "Jalankan perintah saat shell keluar"
+
+  "dev-debug":
+    _root:
+      title: "🛠 Pengembangan dan Debugging"
+      gcc:
+        desc: "Kompiler GNU C"
+        ex1: "Kompilasi file sumber C"
+      gdb:
+        desc: "Debugger GNU"
+        ex1: "Debug biner yang dikompilasi"
+      git:
+        desc: "Sistem kontrol versi terdistribusi"
+        ex1: "Tampilkan status pohon kerja"
+        ex2: "Commit dengan pesan"
+      ltrace:
+        desc: "Pelacak panggilan pustaka"
+        ex1: "Lacak panggilan pustaka dari biner"
+      make:
+        desc: "Utilitas untuk memelihara grup program"
+        ex1: "Bangun sesuai Makefile"
+      shellcheck:
+        desc: "Analisis statis untuk skrip shell"
+        ex1: "Lint skrip shell"
+      strace:
+        desc: "Lacak panggilan sistem dan sinyal"
+        ex1: "Lacak syscall sebuah program"
+      valgrind:
+        desc: "Kerangka instrumentasi untuk alat analisis dinamis"
+        ex1: "Jalankan program di bawah Valgrind"
+      editors:
+        desc: "Editor teks baris perintah"
+        ex1: "Edit dengan Vim"
+        ex2: "Edit dengan Nano"
+
+  misc:
+    _root:
+      title: "📌 Lain-lain"
+      cal:
+        desc: "Tampilkan kalender"
+        ex1: "Tampilkan kalender tahunan"
+        ex2: "Tampilkan bulan tertentu"
+      date:
+        desc: "Tampilkan atau atur tanggal dan waktu sistem"
+        ex1: "Cetak waktu saat ini (HH:MM:SS)"
+        ex2: "Cetak tanggal untuk hari relatif"
+      factor:
+        desc: "Faktorisasi bilangan bulat"
+        ex1: "Faktorisasi sebuah angka"
+      man:
+        desc: "Format dan tampilkan halaman manual online"
+        ex1: "Buka halaman manual"
+        ex2: "Cari manual berdasarkan kata kunci"
+        ex3: "Buka bagian manual tertentu"
+      seq:
+        desc: "Cetak urutan angka"
+        ex1: "Hitung dari 1 sampai 5"
+        ex2: "Hitung dengan langkah"
+        ex3: "Gabungkan angka dengan pemisah khusus"
+      yes:
+        desc: "Cetak string berulang kali hingga dihentikan"
+        ex1: "Konfirmasi otomatis untuk penghapusan rekursif"
+
+  resources:
+    _root:
+      title: "📚 Sumber Daya Tambahan"
+      str:
+        man_pages_desc: "📘 **halaman man** - manual terperinci untuk perintah"
+        tldr_desc: "📙 **TLDR** - contoh penggunaan singkat dari perintah populer"
+        tip_desc: "🧠 **Tips:** Instal `tldr` untuk bantuan bergaya cheat sheet:"
+        useful_links: "🌐 Tautan berguna"
+        linux_man_pages_online_desc: "**Halaman man Linux online** — halaman manual resmi, dapat dicari berdasarkan nama perintah:"
+        simplified_man_pages_desc: "**Halaman man yang disederhanakan dan berbasis komunitas** — halaman bantuan berbasis komunitas dengan contoh praktis:"

@@ -1,0 +1,51 @@
+# filename: _quarto-in.yml
+
+project:
+  pre-render:
+    - python scripts/select_snippets.py
+  render:
+    - in/index.qmd
+    - in/linux.qmd
+    - in/docker.qmd
+    - in/git.qmd
+    - in/kubernetes.qmd
+    - in/helm.qmd
+    - in/terraform.qmd
+
+lang: hi-IN
+
+metadata-files:
+  - locales/hi-in/_site.yml
+  - locales/hi-in/linux.yml
+  - locales/hi-in/docker.yml
+  - locales/hi-in/git.yml
+  - locales/hi-in/kubernetes.yml
+  - locales/hi-in/helm.yml
+  - locales/hi-in/terraform.yml
+
+website:
+  title: "DevOps चीट शीट"
+  sidebar:
+    search: true
+    contents:
+      - in/index.qmd
+      - in/linux.qmd
+      - in/docker.qmd
+      - in/git.qmd
+      - in/kubernetes.qmd
+      - in/helm.qmd
+      - in/terraform.qmd
+  navbar:
+    logo: assets/brand/in/hackitect7-logo-light-in.png
+    logo-alt: "Hackitect7 लोगो (in)"
+    left:
+      - text: "मुखपृष्ठ"
+        href: /
+      - text: "सहायता"
+        menu:
+          - text: "त्रुटि की रिपोर्ट करें"
+            icon: "bug"
+            href: "https://github.com/Hackitect7/devops-cheat-sheet/issues"
+          - text: "प्रश्न पूछें"
+            icon: "chat-right-text"
+            href: "https://github.com/Hackitect7/devops-cheat-sheet/discussions"

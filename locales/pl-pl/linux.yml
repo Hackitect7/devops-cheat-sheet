@@ -1,0 +1,620 @@
+linux:
+  meta:
+    _root:
+      title: "🐧 Wiersz poleceń Linux"
+      desc: "Podstawowe i zaawansowane polecenia do nawigacji, plików, procesów, sieci, monitorowania, pakietów i automatyzacji. Odpowiednie dla przepływów pracy DevOps."
+
+  basic:
+    _root:
+      title: "🔹 Podstawowe polecenia"
+      cat:
+        desc: "Wyświetl zawartość pliku lub połącz wiele plików"
+        ex1: "Zobacz zawartość pliku"
+        ex2: "Połącz i wyświetl dwa pliki"
+        ex3: "Połącz pliki i zapisz do nowego pliku"
+      cd:
+        desc: "Zmień bieżący katalog roboczy"
+        ex1: "Przejdź do ścieżki absolutnej `/etc`"
+        ex2: "Przejdź do katalogu domowego"
+        ex3: "Przejdź o jeden poziom wyżej"
+        ex4: "Powrót do poprzedniego katalogu"
+      clear:
+        desc: "Wyczyść ekran terminala"
+      cp:
+        desc: "Kopiuj pliki i katalogi"
+        ex1: "Skopiuj plik pod nową nazwą"
+        ex2: "Rekursywnie skopiuj katalog"
+        ex3: "Kopiuj z potwierdzeniem przed nadpisaniem"
+      echo:
+        desc: "Wyświetl ciąg znaków lub zmienną środowiskową"
+        ex1: "Wyświetl prosty ciąg znaków"
+        ex2: "Pokaż ścieżkę katalogu domowego"
+        ex3: "Interpretuj sekwencje specjalne (\\t, \\n)"
+      history:
+        desc: "Wyświetl historię poleceń"
+      id:
+        desc: "Pokaż UID, GID i grupy bieżącego użytkownika"
+      ls:
+        desc: "Wyświetl pliki i katalogi"
+        ex1: "Długi listing z uprawnieniami i właścicielami"
+        ex2: "Pokaż ukryte pliki"
+        ex3: "Rozmiary w czytelnej formie"
+      mkdir:
+        desc: "Utwórz katalogi"
+        ex1: "Utwórz pojedynczy katalog"
+        ex2: "Utwórz zagnieżdżone katalogi"
+        ex3: "Utwórz wiele katalogów naraz"
+      mv:
+        desc: "Przenieś lub zmień nazwę plików/katalogów"
+        ex1: "Zmień nazwę pliku"
+        ex2: "Przenieś plik do innego katalogu"
+        ex3: "Przenieś wszystkie pliki `.txt` do folderu `archive`"
+      pwd:
+        desc: "Pokaż bieżący katalog roboczy"
+        ex1: "Pokaż fizyczną ścieżkę (bez symlinków)"
+        ex2: "Pokaż ścieżkę po przejściu do `/tmp`"
+      rm:
+        desc: "Usuń pliki lub katalogi"
+        ex1: "Usuń plik"
+        ex2: "Usuń plik z potwierdzeniem"
+        ex3: "Rekursywnie usuń katalog"
+        ex4: "Wymuś usunięcie bez potwierdzenia"
+      rmdir:
+        desc: "Usuń pusty katalog"
+        ex1: "Usuń katalog `emptydir`"
+      touch:
+        desc: "Utwórz puste pliki lub zaktualizuj czas modyfikacji"
+        ex1: "Utwórz nowy pusty plik, jeśli nie istnieje"
+        ex2: "Utwórz wiele plików naraz"
+        ex3: "Zaktualizuj czas bez tworzenia pliku, jeśli brak"
+      whereis:
+        desc: "Zlokalizuj binarkę, źródła i strony man polecenia"
+        ex1: "Znajdź lokalizacje dla `ls`"
+        ex2: "Pokaż ścieżki do binarki i dokumentacji Bash"
+        ex3: "Szukaj tylko binarki"
+      which:
+        desc: "Pokaż ścieżkę do wykonywalnego polecenia"
+        ex1: "Ścieżka do `python3`"
+        ex2: "Ścieżka do `grep`"
+        ex3: "Pomiń aliasy podczas wyszukiwania"
+      whoami:
+        desc: "Wyświetl bieżącą nazwę użytkownika"
+
+  intermediate:
+    _root:
+      title: "🔸 Średnio zaawansowane"
+      chmod:
+        desc: "Zmień uprawnienia pliku lub katalogu"
+        ex1: "Ustaw uprawnienia w notacji ósemkowej (np. 755)"
+        ex2: "Dodaj bit wykonywania do skryptu"
+        ex3: "Rekursywnie ustaw uprawnienia katalogu"
+      chown:
+        desc: "Zmień właściciela i grupę pliku"
+        ex1: "Zmień właściciela pliku"
+        ex2: "Zmień właściciela i grupę"
+        ex3: "Rekursywnie zmień właściciela i grupę"
+      curl:
+        desc: "Przesyłaj dane z/do serwera (HTTP, HTTPS itp.)"
+        ex1: "Wyślij żądanie HEAD (tylko nagłówki)"
+        ex2: "Pobierz plik i zachowaj jego nazwę"
+        ex3: "Wyślij żądanie POST z danymi formularza"
+      df:
+        desc: "Raportuj użycie przestrzeni dyskowej systemu plików"
+        ex1: "Rozmiary w czytelnej formie"
+        ex2: "Użycie konkretnego punktu montowania"
+        ex3: "Pokaż typy systemów plików"
+      diff:
+        desc: "Porównaj pliki lub katalogi"
+        ex1: "Porównaj dwa pliki"
+        ex2: "Różnice w stylu łatki (unified diff)"
+        ex3: "Rekursywne porównanie katalogów"
+      du:
+        desc: "Oszacuj użycie przestrzeni przez pliki i katalogi"
+        ex1: "Pokaż rozmiar elementów w bieżącym katalogu"
+        ex2: "Pokaż rozmiar pojedynczego pliku"
+        ex3: "Podsumuj rozmiary katalogów najwyższego poziomu"
+      find:
+        desc: "Szukaj plików/katalogów wg nazwy, rozmiaru, czasu itp."
+        ex1: "Znajdź wszystkie pliki `.log` w bieżącym katalogu"
+        ex2: "Znajdź pliki większe niż 100 MB"
+        ex3: "Pliki zmodyfikowane w ciągu ostatniego dnia"
+      free:
+        desc: "Wyświetl ilość wolnej i używanej pamięci"
+        ex1: "Jednostki pamięci w czytelnej formie"
+        ex2: "Pokaż wartości w MB"
+        ex3: "Odświeżaj wynik co 2 sekundy"
+      grep:
+        desc: "Przeszukuj tekst przy użyciu wzorców (wyrażeń regularnych)"
+        ex1: "Znajdź linie zawierające `error`"
+        ex2: "Rekursywne wyszukiwanie w katalogu"
+        ex3: "Wyszukiwanie bez rozróżniania wielkości liter"
+      head:
+        desc: "Wyświetl początkowe linie pliku"
+        ex1: "Pierwsze 10 linii"
+        ex2: "Pierwsze 20 linii"
+        ex3: "Pierwsze 100 bajtów"
+      hostname:
+        desc: "Pokaż lub ustaw nazwę hosta systemu"
+        ex1: "Tymczasowo ustaw nazwę hosta do restartu"
+        ex2: "Pokaż adresy IP"
+      kill:
+        desc: "Wyślij sygnały do procesów"
+        ex1: "Wymuś zakończenie procesu PID"
+        ex2: "Zakończ łagodnie przy pomocy SIGTERM"
+        ex3: "Zabij procesy pasujące do wzorca"
+      ping:
+        desc: "Sprawdź łączność sieciową używając ICMP"
+        ex1: "Pinguj adres"
+        ex2: "Wyślij 4 pakiety"
+        ex3: "Ustaw interwał 2 sekundy"
+      ps:
+        desc: "Raportuj status procesów"
+        ex1: "Wyświetl wszystkie procesy"
+        ex2: "Filtruj po nazwie przy użyciu `grep`"
+        ex3: "Procesy bieżącego użytkownika"
+      rsync:
+        desc: "Szybki przyrostowy transfer plików"
+        ex1: "Synchronizuj katalogi lokalnie"
+        ex2: "Synchronizuj z hostem zdalnym przez SSH"
+        ex3: "Usuń pliki w dest nieobecne w src"
+      scp:
+        desc: "Bezpieczna kopia (program kopiowania plików zdalnych)"
+        ex1: "Skopiuj plik na zdalny host"
+        ex2: "Skopiuj plik ze zdalnego hosta"
+        ex3: "Rekursywnie skopiuj katalog"
+      sort:
+        desc: "Sortuj linie tekstu"
+        ex1: "Sortowanie alfabetyczne"
+        ex2: "Kolejność odwrotna"
+        ex3: "Sortowanie numeryczne"
+      tail:
+        desc: "Wyświetl końcowe linie plików; śledź zmiany"
+        ex1: "Śledź log w czasie rzeczywistym"
+        ex2: "Pokaż ostatnie 20 linii"
+        ex3: "Pokaż ostatnie 100 bajtów"
+      tar:
+        desc: "Twórz, listuj lub rozpakowuj archiwa tar"
+        ex1: "Utwórz skompresowane archiwum `.tgz`"
+        ex2: "Rozpakuj archiwum `.tgz`"
+        ex3: "Wyświetl zawartość archiwum"
+      tee:
+        desc: "Czytaj ze stdin i zapisuj do stdout oraz plików"
+        ex1: "Zapisz wynik do `out.txt` i wyświetl go"
+        ex2: "Zapisz wynik `ls` do pliku i wyświetl"
+        ex3: "Dopisuj wynik na końcu `log.txt`"
+      top:
+        desc: "Wyświetl zadania Linux (interaktywny podgląd procesów)"
+        ex1: "Uruchom top"
+        ex2: "Alternatywny podgląd (htop)"
+        ex3: "Sortuj wg użycia pamięci"
+      uptime:
+        desc: "Pokaż czas działania systemu"
+        ex1: "Ładny format uptime"
+        ex2: "Czas uruchomienia systemu"
+      wget:
+        desc: "Nieinteraktywny pobieracz plików z sieci"
+        ex1: "Pobierz plik przez URL"
+        ex2: "Wznów przerwane pobieranie"
+        ex3: "Zapisz pod inną nazwą pliku"
+      wc:
+        desc: "Policz linie, słowa i bajty w plikach"
+        ex1: "Policz linie"
+        ex2: "Policz słowa"
+        ex3: "Policz znaki"
+      uniq:
+        desc: "Raportuj lub filtruj powtarzające się linie (sąsiadujące duplikaty)"
+        ex1: "Usuń sąsiadujące duplikaty"
+        ex2: "Usuń duplikaty po sortowaniu"
+        ex3: "Policz wystąpienia każdej linii"
+      yes:
+        desc: "Wyświetlaj ciąg wielokrotnie aż do przerwania; przydatne w skryptach"
+        ex1: "Zawsze odpowiadaj \"y\" na pytania"
+        ex2: "Automatycznie potwierdzaj usuwanie"
+        ex3: "Odpowiadaj \"no\" na pytania"
+
+  advanced:
+    _root:
+      title: "🔧 Zaawansowane polecenia"
+      at:
+        desc: "Zaplanuj jednorazowe polecenie do uruchomienia o określonym czasie"
+        ex1: "Uruchom polecenie za minutę"
+        ex2: "Wyświetl oczekujące zadania"
+        ex3: "Usuń oczekujące zadanie"
+      awk:
+        desc: "Język do skanowania wzorców i przetwarzania tekstu"
+        ex1: "Wypisz pierwszą kolumnę"
+        ex2: "Filtruj procesy według użycia CPU"
+        ex3: "Wypisz drugie pole z każdej linii"
+        ex4: "Wypisz linie pasujące do wzorca"
+      crontab:
+        desc: "Instaluj, wyświetlaj lub usuwaj zadania cron dla użytkownika"
+        ex1: "Edytuj crontab bieżącego użytkownika"
+        ex2: "Wyświetl zadania cron"
+        ex3: "Usuń crontab bieżącego użytkownika"
+      cut:
+        desc: "Usuń lub wybierz fragmenty z każdej linii plików"
+        ex1: "Wypisz nazwy użytkowników z `/etc/passwd`"
+        ex2: "Wytnij drugie pole używając `:` jako separatora"
+        ex3: "Wybierz znaki według pozycji"
+      df:
+        desc: "Raportuj użycie przestrzeni dyskowej systemu plików"
+        ex1: "Rozmiary w czytelnej formie"
+        ex2: "Pokaż typy systemów plików"
+        ex3: "Użycie dla katalogu domowego"
+      env:
+        desc: "Uruchom polecenie w zmodyfikowanym środowisku lub wyświetl env"
+        ex1: "Pokaż wpisy PATH"
+        ex2: "Uruchom czystą powłokę z pustym środowiskiem"
+      export:
+        desc: "Ustaw zmienne środowiskowe dla bieżącej powłoki/sesji"
+        ex1: "Ustaw zmienną dla tej powłoki"
+        ex2: "Dodaj katalog do PATH"
+        ex3: "Wyświetl eksportowane zmienne"
+      free:
+        desc: "Wyświetl użycie pamięci"
+        ex1: "Pokaż w MB"
+        ex2: "Jednostki w czytelnej formie"
+        ex3: "Próbkuj co 5 sekund"
+      hostnamectl:
+        desc: "Pobierz i zmień nazwę hosta systemu oraz powiązane ustawienia"
+        ex1: "Pokaż status nazwy hosta"
+        ex2: "Ustaw nową statyczną nazwę hosta"
+      ip-tools:
+        desc: "Narzędzia IP do podglądu/zarządzania interfejsami i adresami"
+        ex1: "Pokaż interfejsy sieciowe (stare)"
+        ex2: "Pokaż adresy przy użyciu `ip`"
+        ex3: "Podnieś interfejs"
+      iostat:
+        desc: "Raportuj statystyki CPU i I/O"
+        ex1: "Rozszerzone statystyki co 2 sekundy"
+        ex2: "Statystyki urządzeń (interwał 5s, 3 raporty)"
+      iptables:
+        desc: "Narzędzie administracyjne dla filtrowania pakietów IPv4 i NAT"
+        ex1: "Wyświetl aktualne reguły"
+        ex2: "Zezwól na przychodzące SSH na porcie 22"
+        ex3: "Wyczyść wszystkie reguły"
+      journalctl:
+        desc: "Przeglądaj dziennik systemd"
+        ex1: "Pokaż ostatnie błędy z kontekstem"
+        ex2: "Pokaż logi dla usługi"
+        ex3: "Pokaż logi od określonego czasu względnego"
+      ln:
+        desc: "Twórz dowiązania między plikami"
+        ex1: "Utwórz dowiązanie symboliczne"
+        ex2: "Utwórz dowiązanie twarde"
+        ex3: "Wymuś ponowne utworzenie dowiązania symbolicznego"
+      sed:
+        desc: "Edytor strumieniowy do filtrowania i przekształcania tekstu"
+        ex1: "Zastąp ciąg globalnie"
+        ex2: "Wypisz tylko zakres linii"
+        ex3: "Usuń pasujące linie"
+      systemctl:
+        desc: "Zarządzaj systemd i usługami systemowymi"
+        ex1: "Pokaż status usługi"
+        ex2: "Uruchom usługę"
+        ex3: "Włącz usługę przy starcie systemu"
+      tr:
+        desc: "Zamień lub usuń znaki"
+        ex1: "Zamień małe litery na wielkie"
+        ex2: "Zamień znak"
+        ex3: "Usuń cyfry"
+      type:
+        desc: "Pokaż jak nazwa zostanie zinterpretowana w powłoce"
+        ex1: "Pokaż jak `ls` jest rozpoznawane"
+        ex2: "Pokaż jak `cd` jest rozpoznawane"
+        ex3: "Pokaż jak `python3` jest rozpoznawane"
+      ulimit:
+        desc: "Pobierz lub ustaw limity zasobów procesów użytkownika"
+        ex1: "Pokaż maksymalną liczbę otwartych plików"
+        ex2: "Włącz core dumpy"
+        ex3: "Ogranicz liczbę procesów użytkownika"
+      uptime:
+        desc: "Pokaż czas działania systemu i średnie obciążenie"
+        ex1: "Ładny uptime"
+        ex2: "Pokaż czas uruchomienia systemu"
+      xargs:
+        desc: "Buduj i wykonuj polecenia z wejścia standardowego"
+        ex1: "Echo każdy argument w osobnej linii"
+        ex2: "Podziel słowa na oddzielne argumenty"
+        ex3: "Znajdź pliki i usuń je za pomocą xargs"
+
+  network:
+    _root:
+      title: "🌐 Polecenia sieciowe"
+      curl:
+        desc: "Przesyłaj dane do/z serwerów"
+        ex1: "Żądanie POST z danymi formularza"
+        ex2: "Pobierz tylko nagłówki"
+        ex3: "Pobierz i zapisz do pliku"
+      dig:
+        desc: "Narzędzie do zapytań DNS"
+        ex1: "Zapytaj o rekordy A"
+        ex2: "Krótka odpowiedź"
+        ex3: "Użyj konkretnego serwera DNS"
+      ftp:
+        desc: "Klient protokołu FTP"
+        ex1: "Połącz się z serwerem FTP"
+        ex2: "Połącz bez automatycznego logowania"
+        ex3: "Pobierz plik w sesji FTP"
+      ip-address:
+        desc: "Pokaż/zarządzaj adresami IP"
+        ex1: "Pokaż informacje o adresie dla `eth0`"
+        ex2: "Wyświetl wszystkie adresy"
+      ip-link:
+        desc: "Pokaż/zarządzaj urządzeniami sieciowymi"
+        ex1: "Pokaż linki sieciowe"
+        ex2: "Podnieś interfejs"
+      ip-route:
+        desc: "Pokaż/zarządzaj tablicą routingu IP"
+        ex1: "Wyświetl tablicę routingu"
+        ex2: "Dodaj trasę domyślną"
+      nc:
+        desc: "Dowolne połączenia TCP/UDP i nasłuch"
+        ex1: "Skanuj porty hosta"
+        ex2: "Nasłuchuj na porcie TCP"
+        ex3: "Wyślij plik na zdalny port"
+      nmap:
+        desc: "Narzędzie do eksploracji sieci i skaner bezpieczeństwa/portów"
+        ex1: "Pinguj podsieć"
+        ex2: "Wykrywanie usług/wersji"
+        ex3: "Wykrywanie systemu operacyjnego"
+      nslookup:
+        desc: "Zapytaj serwery nazw domenowych"
+        ex1: "Zapytaj o nazwę domeny"
+        ex2: "Odwrotne wyszukiwanie dla adresu IP"
+      ssh:
+        desc: "Klient logowania zdalnego OpenSSH"
+        ex1: "Połącz się z hostem"
+        ex2: "Połącz używając niestandardowego portu"
+        ex3: "Zaloguj się przy użyciu określonego klucza prywatnego"
+      ss:
+        desc: "Narzędzie do badania gniazd"
+        ex1: "Lista portów TCP/UDP w nasłuchu"
+        ex2: "Statystyki podsumowujące"
+        ex3: "Lista gniazd w nasłuchu"
+      telnet:
+        desc: "Interfejs użytkownika do protokołu TELNET"
+        ex1: "Połącz z hostem na porcie 80"
+        ex2: "Połącz na 443"
+        ex3: "Połącz z lokalnym SMTP"
+      traceroute:
+        desc: "Śledź trasę do hosta sieciowego"
+        ex1: "Śledź trasę do adresu IP"
+        ex2: "Ogranicz maksymalną liczbę skoków"
+      wget:
+        desc: "Pobierz pliki z internetu"
+        ex1: "Zapisz wynik do pliku"
+        ex2: "Pobierz do bieżącego katalogu"
+        ex3: "Kontynuuj przerwane pobieranie"
+
+  files:
+    _root:
+      title: "🔍 Wyszukiwanie i zarządzanie plikami"
+      basename:
+        desc: "Usuń katalog i sufiks z nazw plików"
+        ex1: "Wypisz nazwę pliku ze ścieżki"
+        ex2: "Usuń sufiks z nazwy"
+      dirname:
+        desc: "Usuń ostatni komponent ze ścieżki"
+        ex1: "Pokaż część katalogową ścieżki"
+        ex2: "Pokaż rodzica `/etc/passwd`"
+      du:
+        desc: "Oszacuj użycie przestrzeni przez pliki"
+        ex1: "Pokaż rozmiar katalogu"
+        ex2: "Pokaż rozmiar elementów w bieżącym katalogu"
+        ex3: "Łączny rozmiar wielu katalogów"
+      file:
+        desc: "Określ typ pliku"
+        ex1: "Wykryj typ pliku"
+        ex2: "Wykryj typy wszystkich plików w katalogu"
+        ex3: "Pokaż typ MIME"
+      find:
+        desc: "Wyszukaj pliki"
+        ex1: "Znajdź skrypty shell po nazwie"
+        ex2: "Znajdź pliki większe niż 10 MB"
+        ex3: "Znajdź pliki zmodyfikowane w ostatnim dniu"
+      locate:
+        desc: "Znajdź pliki po nazwie używając bazy danych"
+        ex1: "Zlokalizuj nazwę pliku"
+        ex2: "Wyszukiwanie z użyciem symboli wieloznacznych"
+        ex3: "Wyszukiwanie bez rozróżniania wielkości liter"
+      realpath:
+        desc: "Pokaż pełną, rozwiązaną ścieżkę absolutną"
+        ex1: "Rozwiąż ścieżkę do pliku"
+        ex2: "Rozwiąż ścieżkę względną"
+      stat:
+        desc: "Wyświetl status pliku lub systemu plików"
+        ex1: "Pokaż szczegółowy status pliku"
+        ex2: "Wypisz tylko rozmiar pliku"
+        ex3: "Pokaż status systemu plików"
+      tree:
+        desc: "Wyświetl zawartość katalogów w formie drzewa"
+        ex1: "Wypisz drzewo katalogów"
+        ex2: "Ogranicz głębokość wyświetlania"
+        ex3: "Uwzględnij ukryte pliki"
+
+  monitoring:
+    _root:
+      title: "📊 Monitorowanie systemu"
+      dmesg:
+        desc: "Wyświetl lub kontroluj bufor pierścieniowy jądra"
+        ex1: "Pokaż ostatnie komunikaty jądra"
+        ex2: "Filtruj komunikaty USB"
+      free:
+        desc: "Wyświetl użycie pamięci"
+        ex1: "Jednostki w czytelnej formie"
+        ex2: "Pokaż w MB"
+      htop:
+        desc: "Interaktywny podgląd procesów"
+        ex1: "Uruchom `htop`"
+      iotop:
+        desc: "Wyświetl użycie I/O przez procesy"
+        ex1: "Uruchom `iotop`"
+        ex2: "Pokaż tylko procesy wykonujące I/O"
+      lsof:
+        desc: "Lista otwartych plików"
+        ex1: "Pokaż procesy używające portu 80"
+        ex2: "Pokaż pliki otwarte przez użytkownika"
+      uptime:
+        desc: "Pokaż czas działania systemu i średnie obciążenie"
+      vmstat:
+        desc: "Raportuj statystyki pamięci wirtualnej"
+        ex1: "Odświeżaj co 1 sekundę"
+        ex2: "Interwał 5s, 3 raporty"
+      watch:
+        desc: "Okresowo wykonuj program i pokazuj wynik"
+        ex1: "Obserwuj użycie dysku"
+        ex2: "Podświetl różnice i obserwuj pamięć"
+
+  packages:
+    _root:
+      title: "📦 Zarządzanie pakietami"
+      apt:
+        desc: "Menedżer pakietów APT (Debian/Ubuntu)"
+        ex1: "Zainstaluj pakiet"
+        ex2: "Usuń pakiet"
+        ex3: "Zaktualizuj listy pakietów i wykonaj upgrade"
+      dnf:
+        desc: "Dandified YUM (rodzina Fedora/RHEL)"
+        ex1: "Zainstaluj pakiet"
+        ex2: "Zaktualizuj pakiety"
+      rpm:
+        desc: "Menedżer pakietów RPM"
+        ex1: "Zainstaluj pakiet RPM"
+        ex2: "Usuń (odinstaluj) pakiet"
+      snap:
+        desc: "Menedżer pakietów Snappy"
+        ex1: "Zainstaluj snap"
+        ex2: "Usuń snap"
+      yum:
+        desc: "Yellowdog Updater Modified (RHEL/CentOS)"
+        ex1: "Zainstaluj pakiet"
+        ex2: "Usuń pakiet"
+
+  "file-systems":
+    _root:
+      title: "💽 Systemy plików"
+      blkid:
+        desc: "Znajdź/wyświetl atrybuty urządzeń blokowych"
+        ex1: "Lista urządzeń blokowych i atrybutów"
+      df:
+        desc: "Raportuj użycie przestrzeni systemu plików"
+        ex1: "Rozmiary w czytelnej formie według typu"
+      fsck:
+        desc: "Sprawdź i napraw system plików Linux"
+        ex1: "Sprawdź urządzenie"
+      lsblk:
+        desc: "Wyświetl informacje o urządzeniach blokowych"
+        ex1: "Lista urządzeń w formie drzewa"
+      mkfs:
+        desc: "Utwórz system plików Linux"
+        ex1: "Utwórz system plików ext4"
+      mount:
+        desc: "Zamontuj system plików"
+        ex1: "Zamontuj urządzenie do `/mnt`"
+        ex2: "Pokaż zamontowane systemy plików filtrowane według ścieżki"
+      parted:
+        desc: "Program do zarządzania partycjami"
+        ex1: "Otwórz dysk do partycjonowania"
+      umount:
+        desc: "Odmontuj systemy plików"
+        ex1: "Odmontuj punkt montowania"
+
+  scripts:
+    _root:
+      title: "🤖 Skrypty i automatyzacja"
+      alias:
+        desc: "Definiuj lub wyświetl aliasy powłoki"
+        ex1: "Utwórz przydatny alias"
+        ex2: "Wyświetl zdefiniowane aliasy"
+      shell:
+        desc: "Uruchamiaj skrypty powłoki"
+        ex1: "Uruchom skrypt w Bash"
+        ex2: "Uruchom skrypt w `sh`"
+      crontab:
+        desc: "Tablice cron dla użytkownika"
+        ex1: "Edytuj crontab bieżącego użytkownika"
+      read:
+        desc: "Pobierz dane wejściowe od użytkownika w skryptach"
+        ex1: "Odczytaj do zmiennej"
+      set:
+        desc: "Ustaw opcje powłoki/parametry pozycyjne"
+        ex1: "Zakończ przy pierwszym błędzie"
+      source:
+        desc: "Wczytaj i wykonaj polecenia z pliku w bieżącej powłoce"
+        ex1: "Przeładuj konfigurację powłoki"
+      trap:
+        desc: "Przechwytuj sygnały i wykonuj polecenia"
+        ex1: "Uruchom polecenie przy wyjściu z powłoki"
+
+  "dev-debug":
+    _root:
+      title: "🛠 Programowanie i debugowanie"
+      gcc:
+        desc: "Kompilator GNU C"
+        ex1: "Skompiluj plik źródłowy C"
+      gdb:
+        desc: "Debugger GNU"
+        ex1: "Debuguj skompilowany plik binarny"
+      git:
+        desc: "Rozproszony system kontroli wersji"
+        ex1: "Pokaż status drzewa roboczego"
+        ex2: "Wykonaj commit z komunikatem"
+      ltrace:
+        desc: "Śledzenie wywołań bibliotek"
+        ex1: "Śledź wywołania bibliotek programu binarnego"
+      make:
+        desc: "Narzędzie do budowania grup programów"
+        ex1: "Buduj zgodnie z Makefile"
+      shellcheck:
+        desc: "Analiza statyczna dla skryptów powłoki"
+        ex1: "Sprawdź skrypt powłoki"
+      strace:
+        desc: "Śledź wywołania systemowe i sygnały"
+        ex1: "Śledź wywołania systemowe programu"
+      valgrind:
+        desc: "Framework do analizy dynamicznej programów"
+        ex1: "Uruchom program pod Valgrind"
+      editors:
+        desc: "Edytory tekstowe w terminalu"
+        ex1: "Edytuj w Vim"
+        ex2: "Edytuj w Nano"
+
+  misc:
+    _root:
+      title: "📌 Różne"
+      cal:
+        desc: "Wyświetl kalendarz"
+        ex1: "Pokaż kalendarz roczny"
+        ex2: "Pokaż określony miesiąc"
+      date:
+        desc: "Wyświetl lub ustaw datę i czas systemu"
+        ex1: "Pokaż bieżący czas (HH:MM:SS)"
+        ex2: "Pokaż datę dla dnia względnego"
+      factor:
+        desc: "Rozkład liczb całkowitych na czynniki"
+        ex1: "Rozłóż liczbę na czynniki"
+      man:
+        desc: "Formatuj i wyświetl strony podręcznika systemowego"
+        ex1: "Otwórz stronę man"
+        ex2: "Przeszukaj podręczniki według słowa kluczowego"
+        ex3: "Otwórz konkretną sekcję podręcznika"
+      seq:
+        desc: "Wyświetl sekwencje liczb"
+        ex1: "Liczenie od 1 do 5"
+        ex2: "Liczenie ze skokiem"
+        ex3: "Połącz liczby własnym separatorem"
+      yes:
+        desc: "Powtarzaj ciąg znaków aż do przerwania"
+        ex1: "Automatycznie potwierdzaj rekursywne usuwanie"
+
+  resources:
+    _root:
+      title: "📚 Dodatkowe zasoby"
+      str:
+        man_pages_desc: "📘 **man pages** – szczegółowe podręczniki dla poleceń"
+        tldr_desc: "📙 **TLDR** – zwięzłe przykłady użycia popularnych poleceń"
+        tip_desc: "🧠 **Wskazówka:** Zainstaluj `tldr` dla pomocy w stylu ściągawki:"
+        useful_links: "🌐 Przydatne linki"
+        linux_man_pages_online_desc: "**Linux man pages online** — oficjalne strony podręcznika, wyszukiwalne według nazwy polecenia:"
+        simplified_man_pages_desc: "**Uproszczone strony man oparte na społeczności** — pomoc społecznościowa z praktycznymi przykładami:"

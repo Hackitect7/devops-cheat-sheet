@@ -1,0 +1,51 @@
+# filename: _quarto-pt.yml
+
+project:
+  pre-render:
+    - python scripts/select_snippets.py
+  render:
+    - pt/index.qmd
+    - pt/linux.qmd
+    - pt/docker.qmd
+    - pt/git.qmd
+    - pt/kubernetes.qmd
+    - pt/helm.qmd
+    - pt/terraform.qmd
+
+lang: pt-PT
+
+metadata-files:
+  - locales/pt-pt/_site.yml
+  - locales/pt-pt/linux.yml
+  - locales/pt-pt/docker.yml
+  - locales/pt-pt/git.yml
+  - locales/pt-pt/kubernetes.yml
+  - locales/pt-pt/helm.yml
+  - locales/pt-pt/terraform.yml
+
+website:
+  title: "DevOps Guia Rápido"
+  sidebar:
+    search: true
+    contents:
+      - pt/index.qmd
+      - pt/linux.qmd
+      - pt/docker.qmd
+      - pt/git.qmd
+      - pt/kubernetes.qmd
+      - pt/helm.qmd
+      - pt/terraform.qmd
+  navbar:
+    logo: assets/brand/pt/hackitect7-logo-light-pt.png
+    logo-alt: "Logótipo Hackitect7 (pt-PT)"
+    left:
+      - text: "Início"
+        href: /
+      - text: "Ajuda"
+        menu:
+          - text: "Comunicar um Erro"
+            icon: "bug"
+            href: "https://github.com/Hackitect7/devops-cheat-sheet/issues"
+          - text: "Colocar uma Questão"
+            icon: "chat-right-text"
+            href: "https://github.com/Hackitect7/devops-cheat-sheet/discussions"

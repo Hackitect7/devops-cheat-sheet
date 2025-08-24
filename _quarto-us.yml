@@ -1,0 +1,51 @@
+# filename: _quarto-us.yml
+
+project:
+  pre-render:
+    - python scripts/select_snippets.py
+  render:
+    - us/index.qmd
+    - us/linux.qmd
+    - us/docker.qmd
+    - us/git.qmd
+    - us/kubernetes.qmd
+    - us/helm.qmd
+    - us/terraform.qmd
+
+lang: en-US
+
+metadata-files:
+  - locales/en-us/_site.yml
+  - locales/en-us/linux.yml
+  - locales/en-us/docker.yml
+  - locales/en-us/git.yml
+  - locales/en-us/kubernetes.yml
+  - locales/en-us/helm.yml
+  - locales/en-us/terraform.yml
+
+website:
+  title: "DevOps Cheat Sheet"
+  sidebar:
+    search: true
+    contents:
+      - us/index.qmd
+      - us/linux.qmd
+      - us/docker.qmd
+      - us/git.qmd
+      - us/kubernetes.qmd
+      - us/helm.qmd
+      - us/terraform.qmd
+  navbar:
+    logo: assets/brand/us/hackitect7-logo-light-us.png
+    logo-alt: "Hackitect7 logo (us)"
+    left:
+      - text: "Home"
+        href: /
+      - text: "Help"
+        menu:
+          - text: "Report a Bug"
+            icon: "bug"
+            href: "https://github.com/Hackitect7/devops-cheat-sheet/issues"
+          - text: "Ask a Question"
+            icon: "chat-right-text"
+            href: "https://github.com/Hackitect7/devops-cheat-sheet/discussions"

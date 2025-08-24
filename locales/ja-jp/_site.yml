@@ -1,0 +1,11 @@
+common:
+  site:
+    title: "DevOps コマンドとシナリオ チートシート"
+    sections: "セクション"
+  table:
+    columns:
+      command: "コマンド"
+      example: "例"
+      description: "説明"
+  callouts:
+    sudo-warn: "`sudo` の使用には注意してください: 実行前に必ずコマンドを確認しましょう。"

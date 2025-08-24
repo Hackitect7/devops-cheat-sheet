@@ -1,0 +1,11 @@
+common:
+  site:
+    title: "DevOps 命令与场景速查表"
+    sections: "部分"
+  table:
+    columns:
+      command: "命令"
+      example: "示例"
+      description: "描述"
+  callouts:
+    sudo-warn: "使用 `sudo` 时要小心：在运行前务必检查命令。"

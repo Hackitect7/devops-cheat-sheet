@@ -1,0 +1,147 @@
+common:
+  site:
+    title: "DevOps Шпаргалка команд і сценаріїв"
+    sections: "Розділи"
+  table:
+    columns:
+      command: "Команда"
+      example: "Приклад"
+      description: "Опис"
+  callouts:
+    sudo-warn: "Будьте обережні з `sudo`: завжди перевіряйте команду перед виконанням."
+
+language:
+  # --- TOC / Sidebar ---
+  toc-title-document: "Зміст"
+  toc-title-website: "На цій сторінці"
+  related-formats-title: "Інші формати"
+  related-notebooks-title: "Нотатники"
+  source-notebooks-prefix: "Джерело"
+  other-links-title: "Інші посилання"
+  code-links-title: "Посилання на код"
+  launch-dev-container-title: "Запустити контейнер розробки"
+  launch-binder-title: "Запустити Binder"
+
+  # --- Notebooks ---
+  article-notebook-label: "Нотатник статті"
+  notebook-preview-download: "Завантажити нотатник"
+  notebook-preview-download-src: "Завантажити джерело"
+  notebook-preview-back: "Повернутися до статті"
+  manuscript-meca-bundle: "Пакет MECA"
+
+  # --- Sections ---
+  section-title-abstract: "Анотація"
+  section-title-appendices: "Додатки"
+  section-title-footnotes: "Примітки"
+  section-title-references: "Посилання"
+  section-title-reuse: "Повторне використання"
+  section-title-copyright: "Авторське право"
+  section-title-citation: "Цитування"
+  appendix-attribution-cite-as: "Для посилань, будь ласка, цитуйте цю роботу так:"
+  appendix-attribution-bibtex: "Цитата BibTeX:"
+  appendix-view-license: "Переглянути ліцензію"
+
+  # --- Title block ---
+  title-block-author-single: "Автор"
+  title-block-author-plural: "Автори"
+  title-block-affiliation-single: "Установа"
+  title-block-affiliation-plural: "Установи"
+  title-block-published: "Опубліковано"
+  title-block-modified: "Змінено"
+  title-block-keywords: "Ключові слова"
+
+  # --- Callouts ---
+  callout-tip-title: "Порада"
+  callout-note-title: "Нотатка"
+  callout-warning-title: "Попередження"
+  callout-important-title: "Важливо"
+  callout-caution-title: "Обережно"
+
+  # --- Code blocks ---
+  code-summary: "Код"
+  code-tools-menu-caption: "Код"
+  code-tools-show-all-code: "Показати весь код"
+  code-tools-hide-all-code: "Приховати весь код"
+  code-tools-view-source: "Переглянути джерело"
+  code-tools-source-code: "Вихідний код"
+  tools-share: "Поділитися"
+  tools-download: "Завантажити"
+  code-line: "Рядок"
+  code-lines: "Рядки"
+  copy-button-tooltip: "Скопіювати в буфер"
+  copy-button-tooltip-success: "Скопійовано!"
+  repo-action-links-edit: "Редагувати цю сторінку"
+  repo-action-links-source: "Переглянути джерело"
+  repo-action-links-issue: "Повідомити про проблему"
+  back-to-top: "Назад нагору"
+
+  # --- Search ---
+  search-no-results-text: "Нічого не знайдено"
+  search-matching-documents-text: "документи, що збігаються"
+  search-copy-link-title: "Скопіювати посилання на пошук"
+  search-hide-matches-text: "Приховати додаткові збіги"
+  search-more-match-text: "ще один збіг у цьому документі"
+  search-more-matches-text: "додаткові збіги у цьому документі"
+  search-clear-button-title: "Очистити"
+  search-text-placeholder: "Пошук..."
+  search-detached-cancel-button-title: "Скасувати"
+  search-submit-button-title: "Знайти"
+  search-label: "Пошук"
+
+  # --- UI toggles ---
+  toggle-section: "Перемкнути розділ"
+  toggle-sidebar: "Перемкнути бічну панель"
+  toggle-dark-mode: "Перемкнути темний режим"
+  toggle-reader-mode: "Перемкнути режим читача"
+  toggle-navigation: "Перемкнути навігацію"
+
+  # --- Crossrefs ---
+  crossref-fig-title: "Рисунок"
+  crossref-tbl-title: "Таблиця"
+  crossref-lst-title: "Список"
+  crossref-thm-title: "Теорема"
+  crossref-lem-title: "Лема"
+  crossref-cor-title: "Наслідок"
+  crossref-prp-title: "Твердження"
+  crossref-cnj-title: "Гіпотеза"
+  crossref-def-title: "Визначення"
+  crossref-exm-title: "Приклад"
+  crossref-exr-title: "Вправа"
+  crossref-ch-prefix: "Розділ"
+  crossref-apx-prefix: "Додаток"
+  crossref-sec-prefix: "Секція"
+  crossref-eq-prefix: "Рівняння"
+  crossref-lof-title: "Список рисунків"
+  crossref-lot-title: "Список таблиць"
+  crossref-lol-title: "Список списків"
+
+  # --- Environments ---
+  environment-proof-title: "Доведення"
+  environment-remark-title: "Зауваження"
+  environment-solution-title: "Розв'язок"
+
+  # --- Listings / Blog ---
+  listing-page-order-by: "Сортувати за"
+  listing-page-order-by-default: "За замовчуванням"
+  listing-page-order-by-date-asc: "Найстаріші"
+  listing-page-order-by-date-desc: "Найновіші"
+  listing-page-order-by-number-desc: "Від більшого до меншого"
+  listing-page-order-by-number-asc: "Від меншого до більшого"
+  listing-page-field-date: "Дата"
+  listing-page-field-title: "Назва"
+  listing-page-field-description: "Опис"
+  listing-page-field-author: "Автор"
+  listing-page-field-filename: "Ім'я файлу"
+  listing-page-field-filemodified: "Змінено"
+  listing-page-field-subtitle: "Підзаголовок"
+  listing-page-field-readingtime: "Час читання"
+  listing-page-field-wordcount: "Кількість слів"
+  listing-page-field-categories: "Категорії"
+  listing-page-minutes-compact: "{0} хв"
+  listing-page-category-all: "Усі"
+  listing-page-no-matches: "Не знайдено відповідних елементів"
+  listing-page-words: "{0} слів"
+  listing-page-filter: "Фільтр"
+
+  # --- Misc ---
+  draft: "Чернетка"

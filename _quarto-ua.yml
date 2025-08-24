@@ -1,0 +1,51 @@
+# filename: _quarto-ua.yml
+
+project:
+  pre-render:
+    - python scripts/select_snippets.py
+  render:
+    - ua/index.qmd
+    - ua/linux.qmd
+    - ua/docker.qmd
+    - ua/git.qmd
+    - ua/kubernetes.qmd
+    - ua/helm.qmd
+    - ua/terraform.qmd
+
+lang: uk-UA
+
+metadata-files:
+  - locales/uk-ua/_site.yml
+  - locales/uk-ua/linux.yml
+  - locales/uk-ua/docker.yml
+  - locales/uk-ua/git.yml
+  - locales/uk-ua/kubernetes.yml
+  - locales/uk-ua/helm.yml
+  - locales/uk-ua/terraform.yml
+
+website:
+  title: "DevOps Шпаргалка"
+  sidebar:
+    search: true
+    contents:
+      - ua/index.qmd
+      - ua/linux.qmd
+      - ua/docker.qmd
+      - ua/git.qmd
+      - ua/kubernetes.qmd
+      - ua/helm.qmd
+      - ua/terraform.qmd
+  navbar:
+    logo: assets/brand/ua/hackitect7-logo-light-ua.png
+    logo-alt: "Логотип Hackitect7 (uk-UA)"
+    left:
+      - text: "Головна"
+        href: /
+      - text: "Допомога"
+        menu:
+          - text: "Повідомити про помилку"
+            icon: "bug"
+            href: "https://github.com/Hackitect7/devops-cheat-sheet/issues"
+          - text: "Поставити запитання"
+            icon: "chat-right-text"
+            href: "https://github.com/Hackitect7/devops-cheat-sheet/discussions"

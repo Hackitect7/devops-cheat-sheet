@@ -1,0 +1,51 @@
+# filename: _quarto-mx.yml
+
+project:
+  pre-render:
+    - python scripts/select_snippets.py
+  render:
+    - mx/index.qmd
+    - mx/linux.qmd
+    - mx/docker.qmd
+    - mx/git.qmd
+    - mx/kubernetes.qmd
+    - mx/helm.qmd
+    - mx/terraform.qmd
+
+lang: es-MX
+
+metadata-files:
+  - locales/es-mx/_site.yml
+  - locales/es-mx/linux.yml
+  - locales/es-mx/docker.yml
+  - locales/es-mx/git.yml
+  - locales/es-mx/kubernetes.yml
+  - locales/es-mx/helm.yml
+  - locales/es-mx/terraform.yml
+
+website:
+  title: "Hoja de Trucos de DevOps"
+  sidebar:
+    search: true
+    contents:
+      - mx/index.qmd
+      - mx/linux.qmd
+      - mx/docker.qmd
+      - mx/git.qmd
+      - mx/kubernetes.qmd
+      - mx/helm.qmd
+      - mx/terraform.qmd
+  navbar:
+    logo: assets/brand/mx/hackitect7-logo-light-mx.png
+    logo-alt: "Logo de Hackitect7 (mx)"
+    left:
+      - text: "Inicio"
+        href: /
+      - text: "Ayuda"
+        menu:
+          - text: "Reportar un error"
+            icon: "bug"
+            href: "https://github.com/Hackitect7/devops-cheat-sheet/issues"
+          - text: "Hacer una pregunta"
+            icon: "chat-right-text"
+            href: "https://github.com/Hackitect7/devops-cheat-sheet/discmxsions"

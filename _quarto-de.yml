@@ -1,0 +1,51 @@
+# filename: _quarto-de.yml
+
+project:
+  pre-render:
+    - python scripts/select_snippets.py
+  render:
+    - de/index.qmd
+    - de/linux.qmd
+    - de/docker.qmd
+    - de/git.qmd
+    - de/kubernetes.qmd
+    - de/helm.qmd
+    - de/terraform.qmd
+
+lang: de-DE
+
+metadata-files:
+  - locales/de-de/_site.yml
+  - locales/de-de/linux.yml
+  - locales/de-de/docker.yml
+  - locales/de-de/git.yml
+  - locales/de-de/kubernetes.yml
+  - locales/de-de/helm.yml
+  - locales/de-de/terraform.yml
+
+website:
+  title: "DevOps Spickzettel"
+  sidebar:
+    search: true
+    contents:
+      - de/index.qmd
+      - de/linux.qmd
+      - de/docker.qmd
+      - de/git.qmd
+      - de/kubernetes.qmd
+      - de/helm.qmd
+      - de/terraform.qmd
+  navbar:
+    logo: assets/brand/de/hackitect7-logo-light-de.png
+    logo-alt: "Hackitect7 Logo (de)"
+    left:
+      - text: "Startseite"
+        href: /
+      - text: "Hilfe"
+        menu:
+          - text: "Fehler melden"
+            icon: "bug"
+            href: "https://github.com/Hackitect7/devops-cheat-sheet/issues"
+          - text: "Frage stellen"
+            icon: "chat-right-text"
+            href: "https://github.com/Hackitect7/devops-cheat-sheet/discussions"

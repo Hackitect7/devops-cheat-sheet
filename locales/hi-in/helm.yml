@@ -1,0 +1,5 @@
+helm:
+  meta:
+    _root:
+      title: "🐧 Helm"
+      desc: "Basic and advanced commands for navigation, files, processes, networking, and automation."

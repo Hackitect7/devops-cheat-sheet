@@ -1,0 +1,51 @@
+# filename: _quarto-cn.yml
+
+project:
+  pre-render:
+    - python scripts/select_snippets.py
+  render:
+    - cn/index.qmd
+    - cn/linux.qmd
+    - cn/docker.qmd
+    - cn/git.qmd
+    - cn/kubernetes.qmd
+    - cn/helm.qmd
+    - cn/terraform.qmd
+
+lang: zh
+
+metadata-files:
+  - locales/zh-cn/_site.yml
+  - locales/zh-cn/linux.yml
+  - locales/zh-cn/docker.yml
+  - locales/zh-cn/git.yml
+  - locales/zh-cn/kubernetes.yml
+  - locales/zh-cn/helm.yml
+  - locales/zh-cn/terraform.yml
+
+website:
+  title: "DevOps 速查表"
+  sidebar:
+    search: true
+    contents:
+      - cn/index.qmd
+      - cn/linux.qmd
+      - cn/docker.qmd
+      - cn/git.qmd
+      - cn/kubernetes.qmd
+      - cn/helm.qmd
+      - cn/terraform.qmd
+  navbar:
+    logo: assets/brand/cn/hackitect7-logo-light-cn.png
+    logo-alt: "Hackitect7 标志 (简体中文)"
+    left:
+      - text: "首页"
+        href: /
+      - text: "帮助"
+        menu:
+          - text: "报告错误"
+            icon: "bug"
+            href: "https://github.com/Hackitect7/devops-cheat-sheet/issues"
+          - text: "提问"
+            icon: "chat-right-text"
+            href: "https://github.com/Hackitect7/devops-cheat-sheet/discussions"

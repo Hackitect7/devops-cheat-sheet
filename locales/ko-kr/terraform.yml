@@ -1,0 +1,5 @@
+terraform:
+  meta:
+    _root:
+      title: "🐧 Terraform"
+      desc: "Basic and advanced commands for navigation, files, processes, networking, and automation."

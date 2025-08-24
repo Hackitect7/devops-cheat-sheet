@@ -1,0 +1,155 @@
+common:
+  site:
+    title: "Mwongozo wa Haraka wa Amri na Mifano ya DevOps"
+    sections: "Sehemu"
+  table:
+    columns:
+      command: "Amri"
+      example: "Mfano"
+      description: "Maelezo"
+  callouts:
+    sudo-warn: "Kuwa mwangalifu na `sudo`: daima hakikisha amri kabla ya kuendesha."
+
+language:
+  # --- TOC / Sidebar ---
+  toc-title-document: "Orodha ya Yaliyomo"
+  toc-title-website: "Katika ukurasa huu"
+
+  related-formats-title: "Miundo Mingine"
+  related-notebooks-title: "Daftari"
+  source-notebooks-prefix: "Chanzo"
+  other-links-title: "Viungo Vingine"
+  code-links-title: "Viungo vya Msimbo"
+  launch-dev-container-title: "Zindua Kontena la Maendeleo"
+  launch-binder-title: "Zindua Binder"
+
+  # --- Notebooks ---
+  article-notebook-label: "Daftari la Makala"
+  notebook-preview-download: "Pakua Daftari"
+  notebook-preview-download-src: "Pakua Chanzo"
+  notebook-preview-back: "Rudi kwenye Makala"
+  manuscript-meca-bundle: "Pakiti ya MECA"
+
+  # --- Sections ---
+  section-title-abstract: "Muhtasari"
+  section-title-appendices: "Viambatisho"
+  section-title-footnotes: "Tanbihi"
+  section-title-references: "Marejeo"
+  section-title-reuse: "Tumia Tena"
+  section-title-copyright: "Haki ya Kunakili"
+  section-title-citation: "Nukuu"
+
+  appendix-attribution-cite-as: "Kwa marejeo, tafadhali nukuu kazi hii kama:"
+  appendix-attribution-bibtex: "Nukuu ya BibTeX:"
+  appendix-view-license: "Tazama Leseni"
+
+  # --- Title block ---
+  title-block-author-single: "Mwandishi"
+  title-block-author-plural: "Waandishi"
+  title-block-affiliation-single: "Shirika"
+  title-block-affiliation-plural: "Mashirika"
+  title-block-published: "Imechapishwa"
+  title-block-modified: "Imerekebishwa"
+  title-block-keywords: "Maneno Muhimu"
+
+  # --- Callouts ---
+  callout-tip-title: "Ushauri"
+  callout-note-title: "Kumbuka"
+  callout-warning-title: "Onyo"
+  callout-important-title: "Muhimu"
+  callout-caution-title: "Tahadhari"
+
+  # --- Code blocks ---
+  code-summary: "Msimbo"
+
+  code-tools-menu-caption: "Msimbo"
+  code-tools-show-all-code: "Onyesha Msimbo Wote"
+  code-tools-hide-all-code: "Ficha Msimbo Wote"
+  code-tools-view-source: "Tazama Chanzo"
+  code-tools-source-code: "Msimbo Chanzo"
+
+  tools-share: "Shiriki"
+  tools-download: "Pakua"
+
+  code-line: "Mstari"
+  code-lines: "Mistari"
+
+  copy-button-tooltip: "Nakili kwenye Ubao wa Kuweka"
+  copy-button-tooltip-success: "Imenakiliwa!"
+
+  repo-action-links-edit: "Hariri ukurasa huu"
+  repo-action-links-source: "Tazama chanzo"
+  repo-action-links-issue: "Ripoti tatizo"
+
+  back-to-top: "Rudi Juu"
+
+  # --- Search ---
+  search-no-results-text: "Hakuna matokeo"
+  search-matching-documents-text: "nyaraka zinazolingana"
+  search-copy-link-title: "Nakili kiungo cha utafutaji"
+  search-hide-matches-text: "Ficha mechi zaidi"
+  search-more-match-text: "mechi nyingine katika hati hii"
+  search-more-matches-text: "mechi zaidi katika hati hii"
+  search-clear-button-title: "Futa"
+  search-text-placeholder: ""
+  search-detached-cancel-button-title: "Ghairi"
+  search-submit-button-title: "Tafuta"
+  search-label: "Tafuta"
+
+  # --- UI toggles ---
+  toggle-section: "Geuza Sehemu"
+  toggle-sidebar: "Geuza Upau wa Kando"
+  toggle-dark-mode: "Geuza Hali ya Giza"
+  toggle-reader-mode: "Geuza Hali ya Kusoma"
+  toggle-navigation: "Geuza Urambazaji"
+
+  # --- Crossrefs ---
+  crossref-fig-title: "Kielelezo"
+  crossref-tbl-title: "Jedwali"
+  crossref-lst-title: "Orodha"
+  crossref-thm-title: "Theoremu"
+  crossref-lem-title: "Lemma"
+  crossref-cor-title: "Hitimisho"
+  crossref-prp-title: "Pendekezo"
+  crossref-cnj-title: "Dhana"
+  crossref-def-title: "Ufafanuzi"
+  crossref-exm-title: "Mfano"
+  crossref-exr-title: "Zoezi"
+  crossref-ch-prefix: "Sura"
+  crossref-apx-prefix: "Kiambatisho"
+  crossref-sec-prefix: "Sehemu"
+  crossref-eq-prefix: "Mlinganyo"
+  crossref-lof-title: "Orodha ya Vielelezo"
+  crossref-lot-title: "Orodha ya Jedwali"
+  crossref-lol-title: "Orodha ya Orodha"
+
+  # --- Environments ---
+  environment-proof-title: "Uthibitisho"
+  environment-remark-title: "Maelezo"
+  environment-solution-title: "Suluhisho"
+
+  # --- Listings / Blog ---
+  listing-page-order-by: "Panga Kwa"
+  listing-page-order-by-default: "Chaguo-msingi"
+  listing-page-order-by-date-asc: "Ya Kale Zaidi"
+  listing-page-order-by-date-desc: "Mpya Zaidi"
+  listing-page-order-by-number-desc: "Kubwa hadi Ndogo"
+  listing-page-order-by-number-asc: "Ndogo hadi Kubwa"
+  listing-page-field-date: "Tarehe"
+  listing-page-field-title: "Kichwa"
+  listing-page-field-description: "Maelezo"
+  listing-page-field-author: "Mwandishi"
+  listing-page-field-filename: "Jina la Faili"
+  listing-page-field-filemodified: "Imerekebishwa"
+  listing-page-field-subtitle: "Kichwa kidogo"
+  listing-page-field-readingtime: "Muda wa Kusoma"
+  listing-page-field-wordcount: "Idadi ya Maneno"
+  listing-page-field-categories: "Jamii"
+  listing-page-minutes-compact: "{0} dk"
+  listing-page-category-all: "Zote"
+  listing-page-no-matches: "Hakuna vitu vinavyolingana"
+  listing-page-words: "{0} maneno"
+  listing-page-filter: "Chuja"
+
+  # --- Misc ---
+  draft: "Rasimu"

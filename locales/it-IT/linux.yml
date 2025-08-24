@@ -1,0 +1,620 @@
+linux:
+  meta:
+    _root:
+      title: "🐧 Riga di comando Linux"
+      desc: "Comandi di base e avanzati per navigazione, file, processi, rete, monitoraggio, pacchetti e automazione. Adatto ai flussi di lavoro DevOps."
+
+  basic:
+    _root:
+      title: "🔹 Comandi di base"
+      cat:
+        desc: "Mostra il contenuto di un file o concatena più file"
+        ex1: "Visualizza il contenuto di un file"
+        ex2: "Concatena e mostra due file"
+        ex3: "Concatena file e salva in un nuovo file"
+      cd:
+        desc: "Cambia la directory di lavoro corrente"
+        ex1: "Vai al percorso assoluto `/etc`"
+        ex2: "Vai alla home directory"
+        ex3: "Sali di un livello"
+        ex4: "Torna alla directory precedente"
+      clear:
+        desc: "Pulisci lo schermo del terminale"
+      cp:
+        desc: "Copia file e directory"
+        ex1: "Copia un file con un nuovo nome"
+        ex2: "Copia ricorsivamente una directory"
+        ex3: "Copia con conferma prima di sovrascrivere"
+      echo:
+        desc: "Stampa una stringa o una variabile d’ambiente"
+        ex1: "Stampa una semplice stringa"
+        ex2: "Mostra il percorso della home directory"
+        ex3: "Interpreta le sequenze di escape (\\t, \\n)"
+      history:
+        desc: "Mostra la cronologia dei comandi"
+      id:
+        desc: "Mostra UID, GID e gruppi dell’utente corrente"
+      ls:
+        desc: "Elenca file e directory"
+        ex1: "Elenco dettagliato con permessi e proprietari"
+        ex2: "Mostra i file nascosti"
+        ex3: "Dimensioni leggibili per l’uomo"
+      mkdir:
+        desc: "Crea directory"
+        ex1: "Crea una singola directory"
+        ex2: "Crea directory annidate"
+        ex3: "Crea più directory contemporaneamente"
+      mv:
+        desc: "Sposta o rinomina file/directory"
+        ex1: "Rinomina un file"
+        ex2: "Sposta un file in un’altra directory"
+        ex3: "Sposta tutti i file `.txt` nella cartella `archive`"
+      pwd:
+        desc: "Mostra la directory di lavoro corrente"
+        ex1: "Mostra il percorso fisico (senza symlink)"
+        ex2: "Mostra il percorso dopo essere entrato in `/tmp`"
+      rm:
+        desc: "Rimuove file o directory"
+        ex1: "Elimina un file"
+        ex2: "Elimina un file con conferma"
+        ex3: "Elimina ricorsivamente una directory"
+        ex4: "Forza l’eliminazione senza conferma"
+      rmdir:
+        desc: "Rimuove una directory vuota"
+        ex1: "Rimuovi la directory `emptydir`"
+      touch:
+        desc: "Crea file vuoti o aggiorna l’ora di modifica"
+        ex1: "Crea un nuovo file vuoto se non esiste"
+        ex2: "Crea più file contemporaneamente"
+        ex3: "Aggiorna l’orario senza creare un file se assente"
+      whereis:
+        desc: "Trova il binario, il sorgente e le pagine man di un comando"
+        ex1: "Trova le posizioni per `ls`"
+        ex2: "Mostra i percorsi per il binario e la documentazione di Bash"
+        ex3: "Cerca solo il binario"
+      which:
+        desc: "Mostra il percorso dell’eseguibile del comando"
+        ex1: "Percorso di `python3`"
+        ex2: "Percorso di `grep`"
+        ex3: "Ignora gli alias durante la ricerca"
+      whoami:
+        desc: "Stampa il nome utente effettivo"
+
+  intermediate:
+    _root:
+      title: "🔸 Livello intermedio"
+      chmod:
+        desc: "Cambia i permessi di file o directory"
+        ex1: "Imposta i permessi con notazione ottale (es. 755)"
+        ex2: "Aggiungi il bit di esecuzione a uno script"
+        ex3: "Imposta ricorsivamente i permessi su una directory"
+      chown:
+        desc: "Cambia proprietario e gruppo di un file"
+        ex1: "Cambia il proprietario di un file"
+        ex2: "Cambia proprietario e gruppo"
+        ex3: "Cambia ricorsivamente proprietario e gruppo"
+      curl:
+        desc: "Trasferisce dati da/a un server (HTTP, HTTPS, ecc.)"
+        ex1: "Invia una richiesta HEAD (solo intestazioni)"
+        ex2: "Scarica un file mantenendo il suo nome"
+        ex3: "Invia una richiesta POST con dati di un form"
+      df:
+        desc: "Mostra l’utilizzo dello spazio su disco del file system"
+        ex1: "Dimensioni leggibili per l’uomo"
+        ex2: "Utilizzo di un punto di mount specifico"
+        ex3: "Mostra i tipi di file system"
+      diff:
+        desc: "Confronta file o directory"
+        ex1: "Confronta due file"
+        ex2: "Diff unificato (stile patch)"
+        ex3: "Confronto ricorsivo tra directory"
+      du:
+        desc: "Stima l’utilizzo dello spazio da parte di file e directory"
+        ex1: "Mostra la dimensione degli elementi nella directory corrente"
+        ex2: "Mostra la dimensione di un singolo file"
+        ex3: "Riassume le dimensioni delle sottodirectory principali"
+      find:
+        desc: "Cerca file/directory per nome, dimensione, tempo, ecc."
+        ex1: "Trova tutti i file `.log` nella directory corrente"
+        ex2: "Trova file più grandi di 100 MB"
+        ex3: "File modificati nell’ultimo giorno"
+      free:
+        desc: "Mostra la quantità di memoria libera e usata"
+        ex1: "Unità di memoria leggibili per l’uomo"
+        ex2: "Mostra valori in MB"
+        ex3: "Aggiorna l’output ogni 2 secondi"
+      grep:
+        desc: "Cerca testo usando pattern (espressioni regolari)"
+        ex1: "Trova righe contenenti `error`"
+        ex2: "Ricerca ricorsiva in una directory"
+        ex3: "Ricerca senza distinzione tra maiuscole e minuscole"
+      head:
+        desc: "Mostra le prime righe di un file"
+        ex1: "Prime 10 righe"
+        ex2: "Prime 20 righe"
+        ex3: "Primi 100 byte"
+      hostname:
+        desc: "Mostra o imposta il nome host del sistema"
+        ex1: "Imposta temporaneamente il nome host fino al riavvio"
+        ex2: "Mostra gli indirizzi IP"
+      kill:
+        desc: "Invia segnali ai processi"
+        ex1: "Forza la chiusura di un processo tramite PID"
+        ex2: "Termina in modo pulito con SIGTERM"
+        ex3: "Uccidi processi corrispondenti a un pattern"
+      ping:
+        desc: "Verifica la connettività di rete usando richieste ICMP echo"
+        ex1: "Ping a un indirizzo"
+        ex2: "Invia 4 pacchetti"
+        ex3: "Imposta un intervallo di 2 secondi"
+      ps:
+        desc: "Mostra lo stato dei processi"
+        ex1: "Elenca tutti i processi"
+        ex2: "Filtra per nome usando `grep`"
+        ex3: "Processi dell’utente corrente"
+      rsync:
+        desc: "Trasferimento veloce e incrementale di file"
+        ex1: "Sincronizza directory localmente"
+        ex2: "Sincronizza con un host remoto via SSH"
+        ex3: "Elimina file nella destinazione mancanti nella sorgente"
+      scp:
+        desc: "Copia sicura (programma per copia remota)"
+        ex1: "Copia un file su un host remoto"
+        ex2: "Copia un file da un host remoto"
+        ex3: "Copia ricorsivamente una directory"
+      sort:
+        desc: "Ordina righe di testo"
+        ex1: "Ordine alfabetico"
+        ex2: "Ordine inverso"
+        ex3: "Ordine numerico"
+      tail:
+        desc: "Mostra la parte finale dei file; segue i cambiamenti"
+        ex1: "Segui un log in tempo reale"
+        ex2: "Mostra le ultime 20 righe"
+        ex3: "Mostra gli ultimi 100 byte"
+      tar:
+        desc: "Crea, elenca o estrai archivi tar"
+        ex1: "Crea un archivio compresso `.tgz`"
+        ex2: "Estrai un archivio `.tgz`"
+        ex3: "Elenca il contenuto di un archivio"
+      tee:
+        desc: "Legge da stdin e scrive su stdout e file"
+        ex1: "Scrivi l’output in `out.txt` e visualizzalo"
+        ex2: "Salva l’output di `ls` in un file e visualizzalo"
+        ex3: "Aggiungi l’output alla fine di `log.txt`"
+      top:
+        desc: "Mostra i task di Linux (visualizzatore interattivo dei processi)"
+        ex1: "Avvia top"
+        ex2: "Visualizzatore interattivo alternativo (htop)"
+        ex3: "Ordina per utilizzo della memoria"
+      uptime:
+        desc: "Mostra da quanto tempo il sistema è in esecuzione"
+        ex1: "Uptime in forma leggibile"
+        ex2: "Ora di avvio del sistema"
+      wget:
+        desc: "Downloader di rete non interattivo"
+        ex1: "Scarica un file tramite URL"
+        ex2: "Riprendi un download interrotto"
+        ex3: "Salva con un nome file diverso"
+      wc:
+        desc: "Stampa conteggio di righe, parole e byte dei file"
+        ex1: "Conta le righe"
+        ex2: "Conta le parole"
+        ex3: "Conta i caratteri"
+      uniq:
+        desc: "Segnala o filtra le righe duplicate (adiacenti)"
+        ex1: "Rimuovi duplicati adiacenti"
+        ex2: "Rimuovi duplicati dopo sort"
+        ex3: "Conta le occorrenze di ogni riga"
+      yes:
+        desc: "Ripete una stringa finché interrotto; utile negli script"
+        ex1: "Rispondi sempre \"y\" ai prompt"
+        ex2: "Conferma automaticamente le eliminazioni interattive"
+        ex3: "Rispondi \"no\" ai prompt"
+
+  advanced:
+    _root:
+      title: "🔧 Comandi avanzati"
+      at:
+        desc: "Pianifica un comando una tantum da eseguire a un’ora specifica"
+        ex1: "Esegui un comando tra un minuto"
+        ex2: "Elenca i job in sospeso"
+        ex3: "Rimuovi un job in sospeso"
+      awk:
+        desc: "Linguaggio per la scansione e l’elaborazione di pattern"
+        ex1: "Stampa la prima colonna"
+        ex2: "Filtra i processi per utilizzo CPU"
+        ex3: "Stampa il secondo campo di ogni riga"
+        ex4: "Stampa le righe corrispondenti a un pattern"
+      crontab:
+        desc: "Installa, elenca o rimuove i job cron per utente"
+        ex1: "Modifica il crontab dell’utente corrente"
+        ex2: "Elenca i job cron"
+        ex3: "Rimuovi il crontab dell’utente corrente"
+      cut:
+        desc: "Rimuove o seleziona sezioni da ogni riga di file"
+        ex1: "Stampa i nomi utente da `/etc/passwd`"
+        ex2: "Taglia il secondo campo usando ':' come delimitatore"
+        ex3: "Seleziona caratteri per posizione"
+      df:
+        desc: "Mostra l’utilizzo dello spazio disco del file system"
+        ex1: "Dimensioni leggibili per l’uomo"
+        ex2: "Mostra i tipi di file system"
+        ex3: "Utilizzo della home directory"
+      env:
+        desc: "Esegui un comando in un ambiente modificato o stampa l’ambiente"
+        ex1: "Mostra le voci di PATH"
+        ex2: "Avvia una shell pulita con ambiente vuoto"
+      export:
+        desc: "Imposta variabili d’ambiente per la shell/sessione corrente"
+        ex1: "Imposta una variabile per questa shell"
+        ex2: "Aggiungi una directory a PATH"
+        ex3: "Elenca le variabili esportate"
+      free:
+        desc: "Mostra l’utilizzo della memoria"
+        ex1: "Mostra in MB"
+        ex2: "Unità leggibili per l’uomo"
+        ex3: "Campiona ogni 5 secondi"
+      hostnamectl:
+        desc: "Interroga e modifica l’hostname del sistema e le impostazioni correlate"
+        ex1: "Mostra lo stato dell’hostname"
+        ex2: "Imposta un nuovo hostname statico"
+      ip-tools:
+        desc: "Strumenti IP per visualizzare/gestire interfacce e indirizzi"
+        ex1: "Mostra interfacce di rete (legacy)"
+        ex2: "Mostra indirizzi con `ip`"
+        ex3: "Attiva un’interfaccia"
+      iostat:
+        desc: "Mostra statistiche CPU e I/O"
+        ex1: "Statistiche estese ogni 2 secondi"
+        ex2: "Statistiche dispositivi (intervallo 5s, 3 report)"
+      iptables:
+        desc: "Strumento di amministrazione per filtraggio pacchetti IPv4 e NAT"
+        ex1: "Elenca le regole correnti"
+        ex2: "Consenti connessioni SSH in ingresso sulla porta 22"
+        ex3: "Svuota tutte le regole"
+      journalctl:
+        desc: "Interroga il journal di systemd"
+        ex1: "Mostra errori recenti con contesto"
+        ex2: "Mostra i log di un servizio"
+        ex3: "Mostra log da un tempo relativo"
+      ln:
+        desc: "Crea collegamenti tra file"
+        ex1: "Crea un link simbolico"
+        ex2: "Crea un hard link"
+        ex3: "Ricrea forzatamente un link simbolico"
+      sed:
+        desc: "Editor di flussi per filtrare e trasformare testo"
+        ex1: "Sostituisci una stringa globalmente"
+        ex2: "Stampa solo un intervallo di righe"
+        ex3: "Elimina righe corrispondenti a un pattern"
+      systemctl:
+        desc: "Controlla il sistema e i servizi gestiti da systemd"
+        ex1: "Mostra lo stato di un servizio"
+        ex2: "Avvia un servizio"
+        ex3: "Abilita un servizio all’avvio"
+      tr:
+        desc: "Traduce o elimina caratteri"
+        ex1: "Converti minuscole in maiuscole"
+        ex2: "Sostituisci un carattere"
+        ex3: "Elimina cifre"
+      type:
+        desc: "Descrive come un nome viene interpretato nella shell"
+        ex1: "Mostra come viene risolto `ls`"
+        ex2: "Mostra come viene risolto `cd`"
+        ex3: "Mostra come viene risolto `python3`"
+      ulimit:
+        desc: "Ottieni o imposta limiti di risorse dei processi utente"
+        ex1: "Mostra il numero massimo di file aperti"
+        ex2: "Abilita core dump"
+        ex3: "Limita il numero di processi utente"
+      uptime:
+        desc: "Mostra uptime del sistema e carico medio"
+        ex1: "Uptime leggibile"
+        ex2: "Mostra ora di avvio"
+      xargs:
+        desc: "Costruisce ed esegue comandi da input standard"
+        ex1: "Stampa ogni argomento su una riga separata"
+        ex2: "Dividi parole in argomenti separati"
+        ex3: "Trova file e rimuovili con xargs"
+
+  network:
+    _root:
+      title: "🌐 Comandi di rete"
+      curl:
+        desc: "Trasferisce dati da/a server"
+        ex1: "Richiesta POST con dati di un form"
+        ex2: "Recupera solo le intestazioni"
+        ex3: "Scarica e salva su file"
+      dig:
+        desc: "Utility per interrogazioni DNS"
+        ex1: "Richiedi record A"
+        ex2: "Risposta breve"
+        ex3: "Usa un server DNS specifico"
+      ftp:
+        desc: "Client FTP (File Transfer Protocol)"
+        ex1: "Connetti a un server FTP"
+        ex2: "Connetti senza login automatico"
+        ex3: "Scarica un file in una sessione FTP"
+      ip-address:
+        desc: "Mostra/gestisce indirizzi IP"
+        ex1: "Mostra info indirizzo per `eth0`"
+        ex2: "Elenca tutti gli indirizzi"
+      ip-link:
+        desc: "Mostra/gestisce dispositivi di rete"
+        ex1: "Mostra collegamenti di rete"
+        ex2: "Attiva un’interfaccia"
+      ip-route:
+        desc: "Mostra/gestisce la tabella di routing IP"
+        ex1: "Elenca la tabella di routing"
+        ex2: "Aggiungi una route predefinita"
+      nc:
+        desc: "Connessioni e listener TCP/UDP arbitrari"
+        ex1: "Scansiona le porte di un host"
+        ex2: "Ascolta su una porta TCP"
+        ex3: "Invia un file a una porta remota"
+      nmap:
+        desc: "Strumento di esplorazione rete e scanner di porte/sicurezza"
+        ex1: "Ping scan di una subnet"
+        ex2: "Rilevamento servizi/versioni"
+        ex3: "Rilevamento sistema operativo"
+      nslookup:
+        desc: "Interroga i server DNS"
+        ex1: "Interroga un nome di dominio"
+        ex2: "Reverse lookup per un IP"
+      ssh:
+        desc: "Client OpenSSH per login remoto"
+        ex1: "Connetti a un host"
+        ex2: "Connetti usando una porta non predefinita"
+        ex3: "Accedi con una chiave privata specifica"
+      ss:
+        desc: "Utility per analizzare i socket"
+        ex1: "Elenca le porte TCP/UDP in ascolto"
+        ex2: "Statistiche di riepilogo"
+        ex3: "Elenca i socket in ascolto"
+      telnet:
+        desc: "Interfaccia utente al protocollo TELNET"
+        ex1: "Connetti a un host sulla porta 80"
+        ex2: "Connetti alla porta 443"
+        ex3: "Connetti al servizio SMTP locale"
+      traceroute:
+        desc: "Traccia il percorso verso un host di rete"
+        ex1: "Traccia percorso verso un IP"
+        ex2: "Limita il numero massimo di hop"
+      wget:
+        desc: "Recupera file dal web"
+        ex1: "Salva output su file"
+        ex2: "Scarica nella directory corrente"
+        ex3: "Continua un download parziale"
+
+  files:
+    _root:
+      title: "🔍 Ricerca e gestione file"
+      basename:
+        desc: "Rimuove directory e suffisso dai nomi file"
+        ex1: "Stampa il nome file da un percorso"
+        ex2: "Rimuovi un suffisso dal nome"
+      dirname:
+        desc: "Rimuove l’ultimo componente da un percorso"
+        ex1: "Mostra la parte directory del percorso"
+        ex2: "Mostra il genitore di `/etc/passwd`"
+      du:
+        desc: "Stima l’utilizzo dello spazio dei file"
+        ex1: "Mostra la dimensione di una directory"
+        ex2: "Mostra la dimensione degli elementi nella directory corrente"
+        ex3: "Dimensione cumulativa di più directory"
+      file:
+        desc: "Determina il tipo di file"
+        ex1: "Rileva il tipo di file"
+        ex2: "Rileva i tipi per tutti i file in una directory"
+        ex3: "Mostra il tipo MIME"
+      find:
+        desc: "Cerca file"
+        ex1: "Trova script shell per nome"
+        ex2: "Trova file più grandi di 10 MB"
+        ex3: "Trova file modificati nell’ultimo giorno"
+      locate:
+        desc: "Trova file per nome usando un database"
+        ex1: "Trova un nome file"
+        ex2: "Ricerca con caratteri jolly"
+        ex3: "Ricerca senza distinzione maiuscole/minuscole"
+      realpath:
+        desc: "Mostra il percorso assoluto risolto"
+        ex1: "Risolvi il percorso di un file"
+        ex2: "Risolvi un percorso relativo"
+      stat:
+        desc: "Mostra stato di file o file system"
+        ex1: "Mostra stato dettagliato di un file"
+        ex2: "Stampa solo la dimensione del file"
+        ex3: "Mostra stato del file system"
+      tree:
+        desc: "Elenca contenuti delle directory in formato ad albero"
+        ex1: "Stampa l’albero delle directory"
+        ex2: "Limita la profondità di visualizzazione"
+        ex3: "Includi file nascosti"
+
+  monitoring:
+    _root:
+      title: "📊 Monitoraggio del sistema"
+      dmesg:
+        desc: "Stampa o controlla il buffer ad anello del kernel"
+        ex1: "Mostra gli ultimi messaggi del kernel"
+        ex2: "Filtra i messaggi USB"
+      free:
+        desc: "Mostra l’utilizzo della memoria"
+        ex1: "Unità leggibili per l’uomo"
+        ex2: "Mostra in MB"
+      htop:
+        desc: "Visualizzatore interattivo dei processi"
+        ex1: "Esegui `htop`"
+      iotop:
+        desc: "Mostra l’utilizzo I/O per processo"
+        ex1: "Esegui `iotop`"
+        ex2: "Mostra solo i processi che fanno I/O"
+      lsof:
+        desc: "Elenca i file aperti"
+        ex1: "Mostra i processi che usano la porta 80"
+        ex2: "Mostra i file aperti da un utente"
+      uptime:
+        desc: "Mostra uptime del sistema e carichi medi"
+      vmstat:
+        desc: "Mostra statistiche di memoria virtuale"
+        ex1: "Aggiorna ogni 1 secondo"
+        ex2: "Intervallo di 5 secondi, 3 report"
+      watch:
+        desc: "Esegue periodicamente un programma mostrando l’output"
+        ex1: "Monitora l’utilizzo del disco"
+        ex2: "Evidenzia le differenze e monitora la memoria"
+
+  packages:
+    _root:
+      title: "📦 Gestione pacchetti"
+      apt:
+        desc: "Gestore pacchetti APT (Debian/Ubuntu)"
+        ex1: "Installa un pacchetto"
+        ex2: "Rimuovi un pacchetto"
+        ex3: "Aggiorna lista pacchetti e fai upgrade"
+      dnf:
+        desc: "Dandified YUM (famiglia Fedora/RHEL)"
+        ex1: "Installa un pacchetto"
+        ex2: "Aggiorna pacchetti"
+      rpm:
+        desc: "Gestore pacchetti RPM"
+        ex1: "Installa un pacchetto RPM"
+        ex2: "Elimina (disinstalla) un pacchetto"
+      snap:
+        desc: "Gestore pacchetti Snappy"
+        ex1: "Installa uno snap"
+        ex2: "Rimuovi uno snap"
+      yum:
+        desc: "Yellowdog Updater Modified (RHEL/CentOS)"
+        ex1: "Installa un pacchetto"
+        ex2: "Rimuovi un pacchetto"
+
+  "file-systems":
+    _root:
+      title: "💽 File system"
+      blkid:
+        desc: "Trova/stampa attributi dei dispositivi a blocchi"
+        ex1: "Elenca dispositivi a blocchi e attributi"
+      df:
+        desc: "Mostra utilizzo dello spazio disco del file system"
+        ex1: "Dimensioni leggibili per tipo"
+      fsck:
+        desc: "Controlla e ripara un file system Linux"
+        ex1: "Controlla un dispositivo"
+      lsblk:
+        desc: "Elenca informazioni sui dispositivi a blocchi"
+        ex1: "Elenca dispositivi in formato ad albero"
+      mkfs:
+        desc: "Crea un file system Linux"
+        ex1: "Crea un file system ext4"
+      mount:
+        desc: "Monta un file system"
+        ex1: "Monta un dispositivo su `/mnt`"
+        ex2: "Mostra i file system montati filtrati per percorso"
+      parted:
+        desc: "Programma di gestione delle partizioni"
+        ex1: "Apri un disco per il partizionamento"
+      umount:
+        desc: "Smonta file system"
+        ex1: "Smonta un punto di mount"
+
+  scripts:
+    _root:
+      title: "🤖 Script e automazione"
+      alias:
+        desc: "Definisci o mostra alias della shell"
+        ex1: "Crea un alias utile"
+        ex2: "Elenca alias definiti"
+      shell:
+        desc: "Esegui script shell"
+        ex1: "Esegui uno script con Bash"
+        ex2: "Esegui uno script con `sh`"
+      crontab:
+        desc: "Tabelle cron per utente"
+        ex1: "Modifica il crontab dell’utente corrente"
+      read:
+        desc: "Richiedi input all’utente negli script shell"
+        ex1: "Leggi in una variabile"
+      set:
+        desc: "Imposta opzioni/parametri posizionali della shell"
+        ex1: "Esci al primo errore"
+      source:
+        desc: "Leggi ed esegui comandi da un file nella shell corrente"
+        ex1: "Ricarica la configurazione della shell"
+      trap:
+        desc: "Intercetta segnali ed esegui comandi"
+        ex1: "Esegui un comando all’uscita dalla shell"
+
+  "dev-debug":
+    _root:
+      title: "🛠 Sviluppo e debugging"
+      gcc:
+        desc: "Compilatore GNU C"
+        ex1: "Compila un file sorgente C"
+      gdb:
+        desc: "Debugger GNU"
+        ex1: "Debug di un binario compilato"
+      git:
+        desc: "Sistema di controllo versione distribuito"
+        ex1: "Mostra lo stato dell’albero di lavoro"
+        ex2: "Effettua commit con messaggio"
+      ltrace:
+        desc: "Tracer di chiamate a libreria"
+        ex1: "Traccia chiamate a libreria di un binario"
+      make:
+        desc: "Utility per mantenere gruppi di programmi"
+        ex1: "Compila secondo Makefile"
+      shellcheck:
+        desc: "Analisi statica per script shell"
+        ex1: "Lint di uno script shell"
+      strace:
+        desc: "Traccia chiamate di sistema e segnali"
+        ex1: "Traccia le syscall di un programma"
+      valgrind:
+        desc: "Framework di strumentazione per analisi dinamiche"
+        ex1: "Esegui un programma con Valgrind"
+      editors:
+        desc: "Editor di testo da riga di comando"
+        ex1: "Modifica con Vim"
+        ex2: "Modifica con Nano"
+
+  misc:
+    _root:
+      title: "📌 Varie"
+      cal:
+        desc: "Mostra un calendario"
+        ex1: "Mostra calendario annuale"
+        ex2: "Mostra un mese specifico"
+      date:
+        desc: "Mostra o imposta data e ora del sistema"
+        ex1: "Stampa ora corrente (HH:MM:SS)"
+        ex2: "Stampa la data per un giorno relativo"
+      factor:
+        desc: "Fattorizza interi"
+        ex1: "Fattorizza un numero"
+      man:
+        desc: "Formatta e mostra le pagine manuali online"
+        ex1: "Apri una pagina man"
+        ex2: "Cerca manuali per parola chiave"
+        ex3: "Apri una sezione specifica del manuale"
+      seq:
+        desc: "Stampa sequenze di numeri"
+        ex1: "Conta da 1 a 5"
+        ex2: "Conta con passo"
+        ex3: "Unisci numeri con un separatore personalizzato"
+      yes:
+        desc: "Stampa ripetutamente una stringa finché interrotto"
+        ex1: "Conferma automaticamente una rimozione ricorsiva"
+
+  resources:
+    _root:
+      title: "📚 Risorse aggiuntive"
+      str:
+        man_pages_desc: "📘 **pagine man** - manuali dettagliati dei comandi"
+        tldr_desc: "📙 **TLDR** - esempi concisi di utilizzo dei comandi più popolari"
+        tip_desc: "🧠 **Suggerimento:** Installa `tldr` per un aiuto in stile cheat sheet:"
+        useful_links: "🌐 Link utili"
+        linux_man_pages_online_desc: "**Pagine man Linux online** — manuali ufficiali, ricercabili per nome comando:"
+        simplified_man_pages_desc: "**Pagine man semplificate e della community** — pagine di aiuto guidate dalla community con esempi pratici:"

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="30 24 420 102">
+  <defs>
+    <style>
+      .hex { fill: none; stroke: #0b1220; stroke-width: 4; }
+      .wave { fill: none; stroke: #0ea5e9; stroke-width: 4; stroke-linecap: round; }
+      .brand { font: 700 64px 'Segoe UI', 'Inter', Arial, sans-serif; fill: #0b1220; }
+      .tag { font: 400 32px 'Segoe UI', 'Inter', Arial, sans-serif; fill: #334155; }
+    </style>
+  </defs>
+  <!-- Mark -->
+  <g transform="translate(24,24) scale(1.6)">
+    <polygon class="hex" points="32,4 56,16 56,48 32,60 8,48 8,16"/>
+    <path class="wave" d="M10,32 C18,22 26,42 34,32 S50,22 54,32"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text class="brand" x="130" y="76">Hackitect7</text>
+  <text class="tag" x="130" y="116">系统交响</text>
+</svg>

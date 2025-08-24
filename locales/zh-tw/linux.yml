@@ -1,0 +1,620 @@
+linux:
+  meta:
+    _root:
+      title: "🐧 Linux 命令列"
+      desc: "用於導航、檔案、程序、網路、監控、套件與自動化的基礎與進階指令。適合 DevOps 工作流程。"
+
+  basic:
+    _root:
+      title: "🔹 基本指令"
+      cat:
+        desc: "顯示檔案內容或串接多個檔案"
+        ex1: "查看檔案內容"
+        ex2: "串接並輸出兩個檔案"
+        ex3: "串接檔案並存到新檔案"
+      cd:
+        desc: "切換目前的工作目錄"
+        ex1: "前往絕對路徑 `/etc`"
+        ex2: "前往家目錄"
+        ex3: "上移一層目錄"
+        ex4: "回到上一個目錄"
+      clear:
+        desc: "清除終端螢幕"
+      cp:
+        desc: "複製檔案與目錄"
+        ex1: "以新名稱複製檔案"
+        ex2: "遞迴複製目錄"
+        ex3: "覆蓋前先詢問確認"
+      echo:
+        desc: "輸出字串或環境變數"
+        ex1: "輸出簡單字串"
+        ex2: "顯示家目錄路徑"
+        ex3: "解析跳脫字元 (\\t, \\n)"
+      history:
+        desc: "顯示指令歷史"
+      id:
+        desc: "顯示目前使用者的 UID、GID 與群組"
+      ls:
+        desc: "列出檔案與目錄"
+        ex1: "長格式清單，含權限與擁有者"
+        ex2: "顯示隱藏檔"
+        ex3: "人類可讀的大小"
+      mkdir:
+        desc: "建立目錄"
+        ex1: "建立單一目錄"
+        ex2: "建立巢狀目錄"
+        ex3: "一次建立多個目錄"
+      mv:
+        desc: "移動或重新命名檔案/目錄"
+        ex1: "重新命名檔案"
+        ex2: "將檔案移至另一目錄"
+        ex3: "將所有 `.txt` 檔案移到 `archive` 資料夾"
+      pwd:
+        desc: "顯示目前工作目錄"
+        ex1: "顯示實體路徑（不含符號連結）"
+        ex2: "切換到 `/tmp` 後顯示路徑"
+      rm:
+        desc: "刪除檔案或目錄"
+        ex1: "刪除檔案"
+        ex2: "刪除檔案並確認"
+        ex3: "遞迴刪除目錄"
+        ex4: "強制刪除，不需確認"
+      rmdir:
+        desc: "刪除空目錄"
+        ex1: "刪除 `emptydir` 目錄"
+      touch:
+        desc: "建立空檔案或更新修改時間"
+        ex1: "不存在時建立新空檔"
+        ex2: "一次建立多個檔案"
+        ex3: "僅更新時間，不會建立不存在的檔案"
+      whereis:
+        desc: "尋找指令的二進位、原始碼與說明文件"
+        ex1: "尋找 `ls` 的位置"
+        ex2: "顯示 Bash 執行檔與文件的路徑"
+        ex3: "僅搜尋二進位檔"
+      which:
+        desc: "顯示指令的可執行檔路徑"
+        ex1: "`python3` 的路徑"
+        ex2: "`grep` 的路徑"
+        ex3: "搜尋時略過別名"
+      whoami:
+        desc: "輸出有效使用者名稱"
+
+  intermediate:
+    _root:
+      title: "🔸 中階指令"
+      chmod:
+        desc: "變更檔案或目錄的權限"
+        ex1: "以八進位表示法設定權限（如 755）"
+        ex2: "為腳本新增執行權限"
+        ex3: "遞迴設定目錄權限"
+      chown:
+        desc: "變更檔案擁有者與群組"
+        ex1: "變更檔案擁有者"
+        ex2: "同時變更擁有者與群組"
+        ex3: "遞迴變更擁有者與群組"
+      curl:
+        desc: "從伺服器傳輸資料（HTTP、HTTPS 等）"
+        ex1: "發送 HEAD 請求（僅標頭）"
+        ex2: "下載檔案並保留檔名"
+        ex3: "以表單資料發送 POST 請求"
+      df:
+        desc: "顯示檔案系統磁碟使用量"
+        ex1: "人類可讀的大小"
+        ex2: "特定掛載點的使用量"
+        ex3: "顯示檔案系統類型"
+      diff:
+        desc: "比較檔案或目錄"
+        ex1: "比較兩個檔案"
+        ex2: "統一差異格式（修補檔風格）"
+        ex3: "遞迴目錄比較"
+      du:
+        desc: "估算檔案與目錄的磁碟使用量"
+        ex1: "顯示目前目錄下各項大小"
+        ex2: "顯示單一檔案大小"
+        ex3: "彙總頂層子目錄大小"
+      find:
+        desc: "依名稱、大小、時間等搜尋檔案/目錄"
+        ex1: "尋找目前目錄下所有 `.log` 檔案"
+        ex2: "尋找大於 100 MB 的檔案"
+        ex3: "尋找一天內修改的檔案"
+      free:
+        desc: "顯示可用與已用記憶體"
+        ex1: "人類可讀的單位"
+        ex2: "以 MB 顯示"
+        ex3: "每 2 秒更新一次輸出"
+      grep:
+        desc: "使用模式（正則表達式）搜尋文字"
+        ex1: "尋找包含 `error` 的行"
+        ex2: "在目錄中遞迴搜尋"
+        ex3: "忽略大小寫搜尋"
+      head:
+        desc: "輸出檔案開頭內容"
+        ex1: "前 10 行"
+        ex2: "前 20 行"
+        ex3: "前 100 位元組"
+      hostname:
+        desc: "顯示或設定系統主機名稱"
+        ex1: "暫時設定主機名稱，重啟後失效"
+        ex2: "顯示 IP 位址"
+      kill:
+        desc: "向程序發送訊號"
+        ex1: "依 PID 強制終止程序"
+        ex2: "以 SIGTERM 優雅地終止"
+        ex3: "依模式終止程序"
+      ping:
+        desc: "用 ICMP 封包檢查網路連線"
+        ex1: "Ping 一個位址"
+        ex2: "傳送 4 個封包"
+        ex3: "設定 2 秒間隔"
+      ps:
+        desc: "顯示程序狀態"
+        ex1: "列出所有程序"
+        ex2: "用 `grep` 過濾名稱"
+        ex3: "顯示目前使用者的程序"
+      rsync:
+        desc: "快速的增量檔案傳輸"
+        ex1: "本地目錄同步"
+        ex2: "透過 SSH 與遠端主機同步"
+        ex3: "刪除目標中不存在的檔案"
+      scp:
+        desc: "安全複製（遠端檔案複製程式）"
+        ex1: "將檔案複製到遠端主機"
+        ex2: "從遠端主機複製檔案"
+        ex3: "遞迴複製目錄"
+      sort:
+        desc: "排序文字行"
+        ex1: "字母排序"
+        ex2: "反向排序"
+        ex3: "數字排序"
+      tail:
+        desc: "輸出檔案尾端並可持續追蹤"
+        ex1: "即時追蹤日誌"
+        ex2: "顯示最後 20 行"
+        ex3: "顯示最後 100 位元組"
+      tar:
+        desc: "建立、列出或解壓縮 tar 封存檔"
+        ex1: "建立壓縮的 `.tgz` 封存檔"
+        ex2: "解壓縮 `.tgz` 封存檔"
+        ex3: "列出封存內容"
+      tee:
+        desc: "從 stdin 讀取並同時輸出到 stdout 與檔案"
+        ex1: "將輸出寫入 `out.txt` 並顯示"
+        ex2: "將 `ls` 輸出存到檔案並顯示"
+        ex3: "將輸出附加到 `log.txt`"
+      top:
+        desc: "顯示 Linux 工作（互動式程序檢視器）"
+        ex1: "啟動 top"
+        ex2: "替代互動檢視器 (htop)"
+        ex3: "依記憶體使用量排序"
+      uptime:
+        desc: "顯示系統運行時間"
+        ex1: "漂亮的 uptime 格式"
+        ex2: "顯示開機時間"
+      wget:
+        desc: "非互動式網路下載器"
+        ex1: "透過 URL 下載檔案"
+        ex2: "續傳中斷的下載"
+        ex3: "另存為不同檔名"
+      wc:
+        desc: "輸出檔案的行數、字數與位元組數"
+        ex1: "計算行數"
+        ex2: "計算字數"
+        ex3: "計算字元數"
+      uniq:
+        desc: "過濾重複行（相鄰的重複項）"
+        ex1: "移除相鄰重複"
+        ex2: "排序後移除重複"
+        ex3: "計算各行出現次數"
+      yes:
+        desc: "重複輸出字串直到被中斷；常用於腳本"
+        ex1: "對提示永遠回答 \"y\""
+        ex2: "自動確認互動式刪除"
+        ex3: "對提示回答 \"no\""
+
+  advanced:
+    _root:
+      title: "🔧 高階指令"
+      at:
+        desc: "排程一次性指令在指定時間執行"
+        ex1: "在 1 分鐘後執行指令"
+        ex2: "列出待執行工作"
+        ex3: "刪除待執行工作"
+      awk:
+        desc: "模式掃描與處理語言"
+        ex1: "輸出第一欄"
+        ex2: "依 CPU 使用率篩選程序"
+        ex3: "輸出每行的第二欄"
+        ex4: "輸出符合模式的行"
+      crontab:
+        desc: "安裝、列出或移除使用者的 cron 工作"
+        ex1: "編輯當前使用者的 crontab"
+        ex2: "列出 cron 工作"
+        ex3: "移除當前使用者的 crontab"
+      cut:
+        desc: "移除或選取檔案每行的部分內容"
+        ex1: "從 `/etc/passwd` 輸出使用者名稱"
+        ex2: "以 ':' 為分隔符切出第二欄"
+        ex3: "依位置選取字元"
+      df:
+        desc: "顯示檔案系統磁碟使用量"
+        ex1: "人類可讀的大小"
+        ex2: "顯示檔案系統類型"
+        ex3: "顯示家目錄的使用量"
+      env:
+        desc: "在修改後的環境中執行指令或顯示環境變數"
+        ex1: "顯示 PATH 條目"
+        ex2: "啟動一個乾淨的空環境 shell"
+      export:
+        desc: "設定目前 shell/工作階段的環境變數"
+        ex1: "在此 shell 中設定變數"
+        ex2: "將目錄附加到 PATH"
+        ex3: "列出已匯出的變數"
+      free:
+        desc: "顯示記憶體使用情況"
+        ex1: "以 MB 顯示"
+        ex2: "人類可讀單位"
+        ex3: "每 5 秒取樣一次"
+      hostnamectl:
+        desc: "查詢與變更系統主機名稱與相關設定"
+        ex1: "顯示主機名稱狀態"
+        ex2: "設定新的靜態主機名稱"
+      ip-tools:
+        desc: "用於檢視/管理介面與位址的 IP 工具"
+        ex1: "顯示網路介面（舊版）"
+        ex2: "用 `ip` 顯示位址"
+        ex3: "啟用網路介面"
+      iostat:
+        desc: "顯示 CPU 與 I/O 統計"
+        ex1: "每 2 秒顯示詳細統計"
+        ex2: "裝置統計（5 秒間隔，共 3 次）"
+      iptables:
+        desc: "IPv4 封包過濾與 NAT 管理工具"
+        ex1: "列出當前規則"
+        ex2: "允許 22 埠的 SSH 連入"
+        ex3: "清除所有規則"
+      journalctl:
+        desc: "查詢 systemd 日誌"
+        ex1: "顯示近期錯誤與上下文"
+        ex2: "顯示指定服務的日誌"
+        ex3: "顯示自相對時間以來的日誌"
+      ln:
+        desc: "建立檔案連結"
+        ex1: "建立符號連結"
+        ex2: "建立硬連結"
+        ex3: "強制重建符號連結"
+      sed:
+        desc: "文字串流編輯器，用於過濾與轉換"
+        ex1: "全域取代字串"
+        ex2: "僅輸出指定範圍行"
+        ex3: "刪除符合模式的行"
+      systemctl:
+        desc: "控制 systemd 系統與服務管理器"
+        ex1: "顯示服務狀態"
+        ex2: "啟動服務"
+        ex3: "開機時自動啟用服務"
+      tr:
+        desc: "轉換或刪除字元"
+        ex1: "將小寫轉換為大寫"
+        ex2: "取代字元"
+        ex3: "刪除數字"
+      type:
+        desc: "描述 shell 如何解析名稱"
+        ex1: "顯示 `ls` 如何解析"
+        ex2: "顯示 `cd` 如何解析"
+        ex3: "顯示 `python3` 如何解析"
+      ulimit:
+        desc: "取得或設定使用者程序資源限制"
+        ex1: "顯示最大開啟檔案數"
+        ex2: "啟用 core dumps"
+        ex3: "限制使用者程序數"
+      uptime:
+        desc: "顯示系統運行時間與平均負載"
+        ex1: "漂亮的 uptime 格式"
+        ex2: "顯示開機時間"
+      xargs:
+        desc: "從標準輸入構建並執行指令列"
+        ex1: "將每個參數分行輸出"
+        ex2: "將單詞拆成個別參數"
+        ex3: "尋找檔案並用 xargs 刪除"
+
+  network:
+    _root:
+      title: "🌐 網路指令"
+      curl:
+        desc: "向伺服器傳輸或接收資料"
+        ex1: "以表單資料發送 POST 請求"
+        ex2: "僅擷取標頭"
+        ex3: "下載並儲存到檔案"
+      dig:
+        desc: "DNS 查詢工具"
+        ex1: "查詢 A 紀錄"
+        ex2: "簡短回答"
+        ex3: "使用指定的 DNS 伺服器"
+      ftp:
+        desc: "檔案傳輸協定 (FTP) 用戶端"
+        ex1: "連線到 FTP 伺服器"
+        ex2: "不自動登入連線"
+        ex3: "在 FTP 工作階段下載檔案"
+      ip-address:
+        desc: "顯示/操作 IP 位址"
+        ex1: "顯示 `eth0` 的位址資訊"
+        ex2: "列出所有位址"
+      ip-link:
+        desc: "顯示/操作網路裝置"
+        ex1: "顯示網路連結"
+        ex2: "啟用一個網路介面"
+      ip-route:
+        desc: "顯示/操作 IP 路由表"
+        ex1: "列出路由表"
+        ex2: "新增預設路由"
+      nc:
+        desc: "建立或監聽任意 TCP/UDP 連線"
+        ex1: "對主機進行埠掃描"
+        ex2: "在 TCP 埠上監聽"
+        ex3: "將檔案傳送到遠端埠"
+      nmap:
+        desc: "網路探索與安全/埠掃描工具"
+        ex1: "Ping 掃描子網路"
+        ex2: "服務/版本偵測"
+        ex3: "作業系統偵測"
+      nslookup:
+        desc: "查詢網際網路網域名稱伺服器"
+        ex1: "查詢網域名稱"
+        ex2: "IP 反向查詢"
+      ssh:
+        desc: "OpenSSH 遠端登入用戶端"
+        ex1: "連線到主機"
+        ex2: "使用非預設埠連線"
+        ex3: "使用指定的私鑰登入"
+      ss:
+        desc: "用於檢查 socket 的工具"
+        ex1: "列出 TCP/UDP 監聽埠"
+        ex2: "摘要統計"
+        ex3: "列出監聽中的 socket"
+      telnet:
+        desc: "TELNET 協定使用者介面"
+        ex1: "連線到主機的 80 埠"
+        ex2: "連線到 443"
+        ex3: "連線到本地 SMTP"
+      traceroute:
+        desc: "追蹤到網路主機的路由"
+        ex1: "追蹤到 IP 的路徑"
+        ex2: "限制最大跳數"
+      wget:
+        desc: "從網路下載檔案"
+        ex1: "將輸出儲存到檔案"
+        ex2: "下載到目前目錄"
+        ex3: "繼續部分下載"
+
+  files:
+    _root:
+      title: "🔍 搜尋與管理檔案"
+      basename:
+        desc: "去除路徑與副檔名"
+        ex1: "從路徑中輸出檔名"
+        ex2: "去除檔名的副檔名"
+      dirname:
+        desc: "去除路徑的最後部分"
+        ex1: "顯示路徑中的目錄部分"
+        ex2: "顯示 `/etc/passwd` 的父目錄"
+      du:
+        desc: "估算檔案空間使用量"
+        ex1: "顯示目錄大小"
+        ex2: "顯示目前目錄中項目的大小"
+        ex3: "多個目錄的累計大小"
+      file:
+        desc: "判斷檔案類型"
+        ex1: "偵測檔案類型"
+        ex2: "偵測目錄中所有檔案類型"
+        ex3: "顯示 MIME 類型"
+      find:
+        desc: "搜尋檔案"
+        ex1: "依名稱尋找 shell 腳本"
+        ex2: "尋找大於 10 MB 的檔案"
+        ex3: "尋找一天內修改的檔案"
+      locate:
+        desc: "使用資料庫依名稱尋找檔案"
+        ex1: "尋找檔名"
+        ex2: "萬用字元搜尋"
+        ex3: "忽略大小寫搜尋"
+      realpath:
+        desc: "輸出解析後的絕對路徑"
+        ex1: "解析檔案路徑"
+        ex2: "解析相對路徑"
+      stat:
+        desc: "顯示檔案或檔案系統狀態"
+        ex1: "顯示檔案詳細狀態"
+        ex2: "僅輸出檔案大小"
+        ex3: "顯示檔案系統狀態"
+      tree:
+        desc: "以樹狀格式列出目錄內容"
+        ex1: "輸出目錄樹"
+        ex2: "限制顯示深度"
+        ex3: "包含隱藏檔"
+
+  monitoring:
+    _root:
+      title: "📊 系統監控"
+      dmesg:
+        desc: "輸出或控制核心環形緩衝區"
+        ex1: "顯示最後的核心訊息"
+        ex2: "僅篩選 USB 訊息"
+      free:
+        desc: "顯示記憶體使用量"
+        ex1: "人類可讀的單位"
+        ex2: "以 MB 顯示"
+      htop:
+        desc: "互動式程序檢視器"
+        ex1: "執行 `htop`"
+      iotop:
+        desc: "顯示程序的 I/O 使用量"
+        ex1: "執行 `iotop`"
+        ex2: "僅顯示正在進行 I/O 的程序"
+      lsof:
+        desc: "列出開啟的檔案"
+        ex1: "顯示使用 80 埠的程序"
+        ex2: "顯示使用者開啟的檔案"
+      uptime:
+        desc: "顯示系統運行時間與平均負載"
+      vmstat:
+        desc: "報告虛擬記憶體統計"
+        ex1: "每秒更新一次"
+        ex2: "每五秒顯示，共 3 次"
+      watch:
+        desc: "週期性執行程式並顯示輸出"
+        ex1: "監看磁碟使用量"
+        ex2: "高亮差異並監看記憶體"
+
+  packages:
+    _root:
+      title: "📦 套件管理"
+      apt:
+        desc: "APT 套件管理器 (Debian/Ubuntu)"
+        ex1: "安裝套件"
+        ex2: "移除套件"
+        ex3: "更新套件清單並升級"
+      dnf:
+        desc: "Dandified YUM (Fedora/RHEL 系列)"
+        ex1: "安裝套件"
+        ex2: "升級套件"
+      rpm:
+        desc: "RPM 套件管理器"
+        ex1: "安裝 RPM 套件"
+        ex2: "刪除套件"
+      snap:
+        desc: "Snappy 套件管理器"
+        ex1: "安裝 snap"
+        ex2: "移除 snap"
+      yum:
+        desc: "Yellowdog Updater Modified (RHEL/CentOS)"
+        ex1: "安裝套件"
+        ex2: "移除套件"
+
+  "file-systems":
+    _root:
+      title: "💽 檔案系統"
+      blkid:
+        desc: "定位/輸出區塊裝置屬性"
+        ex1: "列出區塊裝置與屬性"
+      df:
+        desc: "報告檔案系統磁碟使用量"
+        ex1: "依類型顯示人類可讀的大小"
+      fsck:
+        desc: "檢查並修復 Linux 檔案系統"
+        ex1: "檢查裝置"
+      lsblk:
+        desc: "列出區塊裝置的資訊"
+        ex1: "以樹狀顯示裝置"
+      mkfs:
+        desc: "建立 Linux 檔案系統"
+        ex1: "建立 ext4 檔案系統"
+      mount:
+        desc: "掛載檔案系統"
+        ex1: "將裝置掛載到 `/mnt`"
+        ex2: "依路徑篩選已掛載的檔案系統"
+      parted:
+        desc: "分割區管理程式"
+        ex1: "打開磁碟進行分割"
+      umount:
+        desc: "卸載檔案系統"
+        ex1: "卸載掛載點"
+
+  scripts:
+    _root:
+      title: "🤖 腳本與自動化"
+      alias:
+        desc: "定義或顯示 shell 別名"
+        ex1: "建立方便的別名"
+        ex2: "列出已定義的別名"
+      shell:
+        desc: "執行 shell 腳本"
+        ex1: "用 Bash 執行腳本"
+        ex2: "用 `sh` 執行腳本"
+      crontab:
+        desc: "使用者專屬的 cron 排程表"
+        ex1: "編輯當前使用者的 crontab"
+      read:
+        desc: "在 shell 腳本中提示使用者輸入"
+        ex1: "讀取到變數"
+      set:
+        desc: "設定 shell 選項/位置參數"
+        ex1: "遇到第一個錯誤時退出"
+      source:
+        desc: "在當前 shell 中讀取並執行檔案內容"
+        ex1: "重新載入 shell 設定"
+      trap:
+        desc: "捕捉訊號並執行指令"
+        ex1: "在 shell 結束時執行指令"
+
+  "dev-debug":
+    _root:
+      title: "🛠 開發與除錯"
+      gcc:
+        desc: "GNU C 編譯器"
+        ex1: "編譯 C 原始檔"
+      gdb:
+        desc: "GNU 除錯器"
+        ex1: "除錯已編譯的二進位檔"
+      git:
+        desc: "分散式版本控制系統"
+        ex1: "顯示工作樹狀態"
+        ex2: "提交並附加訊息"
+      ltrace:
+        desc: "函式庫呼叫追蹤器"
+        ex1: "追蹤二進位檔的函式庫呼叫"
+      make:
+        desc: "程式建置工具"
+        ex1: "依 Makefile 進行建置"
+      shellcheck:
+        desc: "Shell 腳本靜態分析工具"
+        ex1: "檢查 shell 腳本"
+      strace:
+        desc: "追蹤系統呼叫與訊號"
+        ex1: "追蹤程式的系統呼叫"
+      valgrind:
+        desc: "動態分析工具框架"
+        ex1: "在 Valgrind 下執行程式"
+      editors:
+        desc: "命令列文字編輯器"
+        ex1: "用 Vim 編輯"
+        ex2: "用 Nano 編輯"
+
+  misc:
+    _root:
+      title: "📌 其他"
+      cal:
+        desc: "顯示日曆"
+        ex1: "顯示全年日曆"
+        ex2: "顯示特定月份"
+      date:
+        desc: "顯示或設定系統日期與時間"
+        ex1: "輸出目前時間 (HH:MM:SS)"
+        ex2: "輸出相對日期"
+      factor:
+        desc: "整數質因數分解"
+        ex1: "分解數字"
+      man:
+        desc: "格式化並顯示線上手冊頁"
+        ex1: "開啟手冊頁"
+        ex2: "依關鍵字搜尋手冊"
+        ex3: "開啟特定章節的手冊"
+      seq:
+        desc: "輸出數字序列"
+        ex1: "從 1 數到 5"
+        ex2: "自訂步長計數"
+        ex3: "以自訂分隔符號連接數字"
+      yes:
+        desc: "重複輸出字串直到中斷"
+        ex1: "自動確認遞迴刪除"
+
+  resources:
+    _root:
+      title: "📚 額外資源"
+      str:
+        man_pages_desc: "📘 **man 手冊** - 指令的詳細說明文件"
+        tldr_desc: "📙 **TLDR** - 常用指令的簡明使用範例"
+        tip_desc: "🧠 **提示：** 安裝 `tldr` 以獲得小抄式幫助："
+        useful_links: "🌐 實用連結"
+        linux_man_pages_online_desc: "**Linux 線上手冊頁** — 官方手冊，可依指令名稱搜尋："
+        simplified_man_pages_desc: "**簡化與社群驅動的手冊** — 提供實用範例的社群文件："

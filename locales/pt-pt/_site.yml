@@ -1,0 +1,11 @@
+common:
+  site:
+    title: "DevOps Guia Rápido de Comandos e Cenários"
+    sections: "Secções"
+  table:
+    columns:
+      command: "Comando"
+      example: "Exemplo"
+      description: "Descrição"
+  callouts:
+    sudo-warn: "Tenha cuidado com `sudo`: verifique sempre o comando antes de o executar."

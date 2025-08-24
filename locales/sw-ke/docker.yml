@@ -1,0 +1,629 @@
+docker:
+  meta:
+    _root:
+      title: "🐳 Docker"
+      desc: "📘 Docker ni jukwaa la kuendesha programu kwenye kontena yaliyotengwa. Mwongozo huu wa haraka unajumuisha amri za kufanya kazi na picha (images), kontena (containers), mitandao, volumes, pamoja na Docker Compose na Swarm."
+
+  basic:
+    _root:
+      title: "📦 Amri za Msingi"
+    docker:
+      desc: "Amri kuu ya Docker CLI inayotumika kuendesha amri ndogo na kusimamia kontena, picha, mitandao, na volumes"
+    docker_version:
+      desc: "Onyesha toleo lililosakinishwa la Docker (mteja na seva). Inafaa kuthibitisha usakinishaji"
+      ex1: "Onyesha toleo la API ya Docker client pekee"
+      ex2: "Onyesha toleo la seva (Engine) ya Docker pekee"
+      ex3: "Toa taarifa kamili ya toleo kwa umbizo la JSON"
+    docker_system_info:
+      desc: "Onyesha taarifa za jumla za mfumo wa Docker: idadi ya kontena, picha, na rasilimali"
+      ex1: "Onyesha data ya Docker: matoleo, mitandao, idadi ya kontena na picha"
+      ex2: "Toa taarifa kwa umbizo la JSON — muhimu kwa otomatiki"
+      ex3: "Onyesha idadi ya CPU na jumla ya kumbukumbu"
+      ex4: "Onyesha dereva wa hifadhi unaotumika na Docker"
+    docker_image_pull:
+      desc: "Pakua picha kutoka Docker Hub au sajili nyingine. Kontena haziwezi kuendeshwa bila picha"
+      ex1: "Pakua picha ya Ubuntu ya hivi karibuni"
+      ex2: "Pakua picha nyepesi ya Nginx iliyo msingi wa Alpine Linux"
+      ex3: "Pakua picha ya Redis toleo 7"
+    docker_container_run:
+      desc: "Unda na endesha kontena jipya kutoka kwa picha"
+      ex1: "Endesha Ubuntu na terminal ya Bash ya mwingiliano"
+      ex2: "Endesha Nginx katika hali ya nyuma (detached)"
+      ex3: "Endesha Nginx na uunganishe bandari 80 ya kontena na bandari 8080 ya host"
+    docker_container_ls:
+      desc: "Orodhesha kontena zinazoendeshwa"
+      ex1: "Onyesha kontena zinazoendeshwa pekee"
+      ex2: "Onyesha kontena zote, ikiwemo zilizozimwa"
+      ex3: "Toa majina ya kontena pekee"
+    docker_container_start:
+      desc: "Washa kontena moja au zaidi zilizozimwa"
+      ex1: "Washa kontena kwa jina"
+      ex2: "Washa kontena zote"
+      ex3: "Washa kontena na uunganishe terminal ya mwingiliano"
+    docker_container_stop:
+      desc: "Zima kontena inayoendeshwa"
+      ex1: "Zima kontena kwa jina"
+      ex2: "Zima kontena zote zinazoendeshwa"
+      ex3: "Zima kontena kwa kuipa sekunde 5 kumaliza michakato"
+    docker_container_restart:
+      desc: "Anzisha tena kontena"
+      ex1: "Anzisha tena kontena maalum"
+      ex2: "Anzisha tena kontena zote zinazoendeshwa"
+      ex3: "Anzisha tena kontena kwa kuchelewa sekunde 10"
+    docker_container_rm:
+      desc: "Ondoa kontena"
+      ex1: "Ondoa kontena maalum iliyozimwa"
+      ex2: "Ondoa kontena zote zilizozimwa"
+      ex3: "Lazimisha kuondoa kontena inayoendeshwa"
+    docker_image_ls:
+      desc: "Orodhesha picha zilizopakuliwa"
+      ex1: "Onyesha picha zote kwenye host"
+      ex2: "Onyesha picha zote, ikiwemo tabaka za kati"
+      ex3: "Toa majina na vitambulisho (tags) vya picha pekee"
+    docker_image_rm:
+      desc: "Ondoa picha moja au zaidi kutoka hifadhi ya ndani"
+      ex1: "Ondoa picha yenye tagi `latest` kutoka hazina `test1`"
+      ex2: "Ondoa picha kwa kutumia ID yake"
+      ex3: "Ondoa picha zote (tumia kwa tahadhari!)"
+
+  container:
+    _root:
+      title: "🔁 Usimamizi wa Kontena"
+    docker_container_exec:
+      desc: "Endesha amri ndani ya kontena inayoendeshwa"
+      ex1: "Fungua shell ya bash ya mwingiliano ndani ya kontena `container`"
+      ex2: "Tekeleza amri `ls` kwenye saraka `/app` ndani ya kontena"
+      ex3: "Endesha amri ndani ya kontena katika hali ya nyuma (bila kungojea)"
+    docker_container_logs:
+      desc: "Tazama logi za kontena"
+      ex1: "Onyesha logi zote za kontena `container`"
+      ex2: "Fuatilia logi za kontena kwa wakati halisi"
+      ex3: "Onyesha mistari 50 ya mwisho ya logi"
+    docker_inspect:
+      desc: "Pata taarifa za kina za JSON kuhusu kontena au picha"
+      ex1: "Onyesha maelezo ya kontena `container`"
+      ex2: "Onyesha anwani ya IP ya kontena"
+    docker_container_stats:
+      desc: "Onyesha takwimu za matumizi ya rasilimali kwa wakati halisi za kontena"
+      ex1: "Onyesha CPU, kumbukumbu, mtandao na matumizi ya diski kwa kontena zote"
+      ex2: "Onyesha takwimu kwa kontena maalum pekee"
+      ex3: "Onyesha picha ya takwimu mara moja na utoke"
+    docker_container_rename:
+      desc: "Badilisha jina la kontena"
+      ex1: "Badilisha jina la kontena kutoka `old_name` hadi `new_name`"
+    docker_container_cp:
+      desc: "Nakili faili kati ya kontena na host"
+      ex1: "Nakili faili kutoka kontena hadi saraka ya host ya sasa"
+      ex2: "Nakili faili kutoka host hadi kontena"
+      ex3: "Tiririsha faili la logi kutoka kontena na uchuje mistari yenye \"ERROR\" bila kuhifadhi kwenye diski"
+    docker_container_top:
+      desc: "Onyesha michakato inayoendeshwa ndani ya kontena"
+      ex1: "Onyesha michakato ya kontena `container`"
+    docker_container_pause:
+      desc: "Sitisha michakato yote ndani ya kontena"
+      ex1: "Sitisha kontena `container`"
+    docker_container_unpause:
+      desc: "Rejesha kontena iliyositishwa"
+      ex1: "Rejesha kontena `container`"
+    docker_container_update:
+      desc: "Sasisha mipangilio ya kontena bila kuanzisha tena"
+      ex1: "Punguza matumizi ya kumbukumbu ya kontena hadi 500 MB"
+
+  images:
+    _root:
+      title: "🧱 Picha na Dockerfile"
+    docker_buildx_build:
+      desc: "Jenga picha ya Docker kutoka Dockerfile"
+      ex1: "Jenga picha yenye tagi `my_image` kutoka saraka ya sasa"
+      ex2: "Jenga picha yenye tagi la toleo `1.0`"
+      ex3: "Jenga picha bila kutumia cache kwa ujenzi safi"
+    docker_container_commit:
+      desc: "Unda picha kutoka hali ya sasa ya kontena"
+      ex1: "Unda picha `my_img` yenye tagi `v1` kutoka kontena `container`"
+      ex2: "Unda picha na ujumbe wa commit"
+      ex3: "Unda picha ukibainisha mwandishi"
+    docker_image_tag:
+      desc: "Ongeza au badilisha tagi ya picha"
+      ex1: "Ongeza tagi kwa kusukuma (push) kwenye sajili `myrepo`"
+      ex2: "Unda tagi `stable` kwa picha yenye tagi `1.0`"
+      ex3: "Ongeza tagi `backup` kwenye picha ya ndani"
+    docker_image_push:
+      desc: "Sukuma picha kwenda Docker Hub au sajili nyingine"
+      ex1: "Sukuma picha yenye tagi `latest` kwenye hazina `myrepo`"
+      ex2: "Sukuma picha yenye tagi `1.0`"
+      ex3: "Sukuma picha yenye tagi chaguo-msingi `latest`"
+    docker_login:
+      desc: "Thibitisha kwenye Docker Hub au sajili nyingine"
+      ex1: "Weka jina la mtumiaji na nenosiri kwa mwingiliano kwa Docker Hub"
+      ex2: "Ingia kwenye sajili binafsi"
+      ex3: "Ingia na jina la mtumiaji na nenosiri (haipendekezwi)"
+    docker_logout:
+      desc: "Toka kwenye Docker Hub au sajili nyingine"
+      ex1: "Toka kutoka Docker Hub"
+      ex2: "Toka kutoka sajili binafsi"
+    healthcheck:
+      desc: "Maelekezo ya Dockerfile ya kuangalia hali ya afya ya kontena kiotomatiki"
+      ex1: "Ongeza ukaguzi wa afya kuthibitisha upatikanaji wa huduma kila sekunde 30"
+      ex2: "Angalia hali ya healthcheck ya kontena inayoendeshwa"
+
+  networks:
+    _root:
+      title: "🔌 Mitandao na Volumes"
+    docker_network_ls:
+      desc: "Orodhesha mitandao yote ya Docker"
+      ex1: "Onyesha mitandao yote iliyoundwa"
+      ex2: "Onyesha mitandao yenye dereva `bridge` pekee"
+      ex3: "Onyesha majina ya mitandao pekee"
+    docker_network_create:
+      desc: "Unda mtandao mpya wa Docker"
+      ex1: "Unda mtandao `my_net` ukiwa na mipangilio chaguo-msingi"
+      ex2: "Unda mtandao na dereva `bridge`"
+      ex3: "Unda mtandao ukiwa na subnet maalum"
+    docker_network_connect:
+      desc: "Unganisha kontena kwenye mtandao"
+      ex1: "Unganisha kontena `container` kwenye mtandao `my_net`"
+      ex2: "Unganisha na jina bandia `db_net`"
+    docker_network_disconnect:
+      desc: "Tenganisha kontena kutoka mtandao"
+      ex1: "Tenganisha kontena `container` kutoka mtandao `my_net`"
+    docker_volume_ls:
+      desc: "Orodhesha volumes zote za Docker"
+      ex1: "Onyesha volumes zote"
+      ex2: "Onyesha volumes ambazo hazitumiki"
+    docker_volume_create:
+      desc: "Unda volume mpya ya Docker"
+      ex1: "Unda volume `my_vol`"
+      ex2: "Unda volume ya muda kwa kutumia tmpfs"
+    docker_volume_inspect:
+      desc: "Onyesha taarifa za kina kuhusu volume"
+      ex1: "Onyesha maelezo ya volume `my_vol` kwa umbizo la JSON"
+    docker_volume_rm:
+      desc: "Ondoa volume moja au zaidi"
+      ex1: "Ondoa volume `my_vol`"
+      ex2: "Ondoa volumes zote ambazo hazitumiki"
+
+  plugins:
+    _root:
+      title: "🧩 Viongezeo vya Docker"
+    docker_plugin_ls:
+      desc: "Orodhesha viongezeo vya Docker vilivyosakinishwa"
+      ex1: "Onyesha viongezeo vyote na hali zao"
+    docker_plugin_install:
+      desc: "Sakinisha kiongezeo cha Docker kutoka sajili"
+      ex1: "Sakinisha kiongezeo cha SSHFS volume"
+      ex2: "Sakinisha kiongezeo cha mtandao cha Weave"
+    docker_plugin_disable:
+      desc: "Lemaza kiongezeo kilichosakinishwa"
+      ex1: "Lemaza kiongezeo cha SSHFS"
+    docker_plugin_enable:
+      desc: "Wezesha kiongezeo kilicholemazwa awali"
+      ex1: "Wezesha kiongezeo cha SSHFS"
+    docker_plugin_rm:
+      desc: "Ondoa kiongezeo cha Docker"
+      ex1: "Ondoa kiongezeo cha SSHFS"
+
+  compose:
+    _root:
+      title: "📋 Docker Compose"
+    docker_compose_up:
+      desc: "Washa kontena zilizofafanuliwa kwenye `docker-compose.yml`"
+      ex1: "Washa huduma zote katika saraka ya sasa kwa hali ya mwingiliano"
+      ex2: "Washa huduma katika hali ya nyuma (detached)"
+      ex3: "Jenga picha kabla ya kuanzisha huduma"
+    docker_compose_down:
+      desc: "Zima na ondoa kontena, mitandao, na volumes vilivyoundwa na `up`"
+      ex1: "Zima huduma zote na ondoa rasilimali zinazohusiana"
+      ex2: "Ondoa pia volumes zilizoundwa na Compose"
+      ex3: "Ondoa pia picha zilizoundwa na Compose"
+    docker_compose_logs:
+      desc: "Tazama logi za huduma zote au maalum"
+      ex1: "Onyesha logi za huduma zote"
+      ex2: "Fuatilia logi kwa wakati halisi"
+      ex3: "Onyesha logi za huduma `web` pekee"
+    docker_compose_exec:
+      desc: "Endesha amri ndani ya kontena la huduma inayoendeshwa"
+      ex1: "Ingia kwenye shell ya bash ya mwingiliano ndani ya kontena la huduma `web`"
+      ex2: "Endesha amri `ls` ndani ya kontena la hifadhidata"
+      ex3: "Endesha amri ndani ya kontena `worker` kwa hali ya nyuma"
+    docker_compose_build:
+      desc: "Jenga au jenga upya picha za huduma"
+      ex1: "Jenga picha zote zilizofafanuliwa kwenye `docker-compose.yml`"
+      ex2: "Jenga picha ya huduma `web` pekee"
+      ex3: "Jenga picha bila kutumia cache"
+    docker_compose_ps:
+      desc: "Onyesha hali ya huduma na kontena zote"
+      ex1: "Onyesha kontena zote, ikiwemo zilizozimwa"
+      ex2: "Onyesha majina ya huduma pekee"
+    docker_compose_pull:
+      desc: "Pakua/sasisha picha za huduma kutoka sajili"
+      ex1: "Pakua picha kwa huduma `web` pekee"
+      ex2: "Endelea kupakua hata kama picha zingine zinashindwa"
+    docker_compose_restart:
+      desc: "Anzisha tena huduma zote au maalum"
+      ex1: "Anzisha tena huduma `db` pekee"
+      ex2: "Anzisha tena huduma na muda wa sekunde 10"
+    docker_compose_config:
+      desc: "Onyesha usanidi wa mwisho wa Compose kwa umbizo la YAML"
+      ex1: "Orodhesha huduma zote kwenye usanidi"
+      ex2: "Orodhesha volumes zote zilizofafanuliwa"
+    docker_compose_start:
+      desc: "Washa huduma zilizozimwa bila kuunda upya kontena"
+      ex1: "Washa huduma `web`"
+      ex2: "Washa huduma nyingi mara moja"
+    docker_compose_stop:
+      desc: "Zima huduma bila kuondoa kontena"
+      ex1: "Zima huduma `web`"
+      ex2: "Zima huduma na muda wa sekunde 5"
+
+  export_import:
+    _root:
+      title: "📤 Uhamisho na Uagizaji"
+    docker_image_save:
+      desc: "Hifadhi picha moja au zaidi za Docker kwenye faili la tar kwa ajili ya kuagiza au kuhamisha baadaye"
+      ex1: "Hifadhi picha ya Docker kwenye faili la tar"
+      ex2: "Njia mbadala ya kuhifadhi picha kwenye faili"
+      ex3: "Hifadhi picha maalum ya Redis kwenye faili"
+    docker_image_load:
+      desc: "Pakia picha za Docker kutoka faili la tar lililohifadhiwa awali"
+      ex1: "Pakia picha ya Docker kutoka faili la tar"
+      ex2: "Pakia picha ukitaja faili kwa parameta"
+      ex3: "Pakia picha bila matokeo ya maendeleo"
+    docker_container_export:
+      desc: "Hamisha mfumo wa faili wa kontena kama faili la tar bila historia au metadata ya picha"
+      ex1: "Hamisha mfumo wa faili wa kontena kwenye faili"
+      ex2: "Hamisha kontena kwa jina"
+      ex3: "Hamisha kwa ID ya kontena kwa kutumia bendera `-o`"
+    docker_image_import:
+      desc: "Unda picha mpya kutoka faili la tar la mfumo wa faili"
+      ex1: "Agiza faili la archive kama picha mpya ya Docker"
+      ex2: "Agiza picha moja kwa moja kutoka URL"
+      ex3: "Agiza kutoka pembejeo ya kawaida"
+
+  cleanup:
+    _root:
+      title: "🧹 Usafishaji na Utambuzi"
+    docker_system_df:
+      desc: "Onyesha matumizi ya diski ya Docker: volumes, picha, kontena, na cache ya ujenzi"
+      ex1: "Matokeo ya kina yenye taarifa juu ya kila picha, kontena, na volume"
+      ex2: "Toa taarifa kwa umbizo la JSON"
+    docker_system_prune:
+      desc: "Ondoa data zote za Docker zisizotumika: kontena zilizozimwa, mitandao isiyotumika, picha zisizo na marejeo, na cache ya ujenzi"
+      ex1: "Ondoa picha zisizotumika ikiwemo za kati"
+      ex2: "Ondoa volumes zisizotumika pamoja na rasilimali nyingine"
+    docker_image_prune:
+      desc: "Ondoa picha za Docker zisizotumika ikiwemo tabaka zisizo na marejeo"
+      ex1: "Ondoa picha zote zisizotumika ikiwemo zisizo na marejeo"
+      ex2: "Ondoa picha zilizokuwa zaidi ya masaa 24"
+    docker_container_prune:
+      desc: "Ondoa kontena zilizozimwa zikilingana na vichujio au zote ikiwa hakuna maalum"
+      ex1: "Ondoa kontena zilizozimwa zaidi ya masaa 24"
+      ex2: "Ondoa bila uthibitisho"
+
+  swarm:
+    _root:
+      title: "🐝 Docker Swarm"
+    docker_swarm_init:
+      desc: "Anzisha klasta mpya ya Docker Swarm kwenye nodi ya sasa"
+      ex1: "Anzisha klasta kwa kubainisha anwani ya IP"
+      ex2: "Anzisha kwa kubainisha bandari ya kusikiliza"
+    docker_service_create:
+      desc: "Unda huduma mpya kwenye klasta ya Swarm"
+      ex1: "Unda huduma ya Nginx kwenye Swarm"
+      ex2: "Unda huduma yenye nakala 3"
+      ex3: "Unda huduma yenye ramani ya bandari"
+    docker_stack_deploy:
+      desc: "Weka kundi la huduma kwenye klasta ya Swarm kulingana na faili la Compose"
+      ex1: "Weka stack kutoka faili la compose"
+      ex2: "Weka stack na kusambaza uthibitishaji wa sajili"
+      ex3: "Tumia faili mbadala la compose kwa stack"
+    docker_stack_rm:
+      desc: "Ondoa stack moja au zaidi kutoka klasta ya Swarm"
+      ex1: "Ondoa stack `mystack`"
+      ex2: "Ondoa stack zote (haipendekezwi)"
+      ex3: "Ondoa stack na uondoke kwenye Swarm"
+
+  advanced_docker:
+    _root:
+      title: "💼 Matumizi ya Kina ya Docker"
+
+    prof:
+      title: "🚀 Amri za Kitaalamu za Docker"
+      docker_buildx:
+        desc: "Zana ya juu ya kujenga picha ikibadilisha `docker build`. Inasaidia majukwaa mengi, cache, ujenzi sambamba, na usafirishaji kwa umbizo mbalimbali. Inafaa kwa CI/CD na maendeleo ya cross-platform"
+        ex1: "Jenga picha ya majukwaa mengi (ARM na x86 kwa wakati mmoja)"
+        ex2: "Jenga picha na upakie kwenye cache ya Docker Engine ya ndani"
+        ex3: "Jenga na sukuma picha ya majukwaa mengi kwenye sajili"
+      docker_context:
+        desc: "Simamia muktadha wa Docker kwa kazi na mazingira ya mbali au mengi. Inawezesha kubadili haraka kati ya Docker Engines za ndani na mbali"
+        ex1: "Unda muktadha wa kuunganisha kwenye host ya Docker ya mbali"
+        ex2: "Badili hadi muktadha wa mbali"
+        ex3: "Orodhesha mikataba inayopatikana na ile inayotumika"
+      docker_system_events:
+        desc: "Sikiliza matukio ya Docker kwa wakati halisi, na uchujaji kulingana na aina ya tukio (mf. kuanza kwa kontena). Inafaa kwa ufuatiliaji na otomatiki"
+        ex1: "Onyesha matukio ya kuanza kwa kontena pekee"
+        ex2: "Onyesha matukio ya saa iliyopita hadi dakika 10 zilizopita"
+        ex3: "Onyesha matukio yanayohusiana na mtandao pekee"
+        ex4: "Onyesha matukio yanayohusiana na picha `nginx`"
+      docker_container_update:
+        desc: "Badilisha kikomo cha rasilimali na mipangilio ya kontena inayoendeshwa bila kuanzisha upya"
+        ex1: "Weka kikomo cha CPU 2 na RAM ya 1 GB"
+        ex2: "Weka sera ya kuanzisha upya kiotomatiki kuwa `unless-stopped`"
+        ex3: "Punguza idadi ya michakato hadi 200"
+      docker_container_diff:
+        desc: "Onyesha mabadiliko ya mfumo wa faili kwenye kontena ukilinganisha na picha yake ya awali. Inafaa kwa debugging na ukaguzi"
+        ex1: "Onyesha mabadiliko yote ya mfumo wa faili kwenye kontena"
+        ex2: "Onyesha faili zilizoongezwa pekee (`A` — Added)"
+      docker_image_history:
+        desc: "Onyesha historia ya tabaka za picha: amri za ujenzi, ukubwa wa kila tabaka, na muda wa kuundwa. Inafaa kwa uboreshaji na ukaguzi"
+        ex1: "Onyesha historia ya tabaka za picha"
+        ex2: "Onyesha amri za ujenzi kamili bila kukatwa"
+        ex3: "Toa amri za ujenzi na ukubwa wa tabaka pekee"
+
+    practices:
+      title: "🛠 Mbinu na Otomatiki za Docker"
+      minimize_image_size:
+        title: "Punguza ukubwa wa picha"
+        p1: "Tumia picha za msingi kama `alpine` au `scratch` kwa ukubwa mdogo zaidi."
+        p2: "Ili kuunganisha tabaka, unaweza kutumia `--squash` wakati wa kujenga (inahitaji vipengele vya majaribio kuwezeshwa)."
+        p3: "Pia, ondoa faili za muda na cache ndani ya tabaka moja:"
+      minimize_layers:
+        title: "Punguza idadi ya tabaka"
+        p1: "Unganisha amri katika `RUN` moja ili kupunguza idadi ya tabaka na ukubwa wa picha ya mwisho:"
+      optimize_build:
+        title: "Boresha ujenzi wa Dockerfile"
+        p1: "Tumia ujenzi wa hatua nyingi (multi-stage) ili faili muhimu pekee zibaki kwenye picha ya mwisho."
+        p2: "Nakili na sakinisha utegemezi kwanza, kisha nakili msimbo — hii huboresha cache ya tabaka na kuharakisha ujenzi upya."
+      secrets_and_configs:
+        title: "Tenganisha siri na configs"
+        p1: "Usihifadhi faili `.env`, funguo za API, au vyeti binafsi ndani ya picha."
+        intro: "Tumia kwa usanidi:"
+        items:
+          secret: "`docker secret` (katika Swarm)"
+          env: "vigezo vya mazingira (`-e VAR=value` au `.env`)"
+          volumes: "volumes za nje kwa configs"
+      buildkit_secrets:
+        title: "Siri za wakati wa ujenzi (BuildKit)"
+        p1: "Kwa upitishaji salama wa siri wakati wa ujenzi, tumia bendera `--secret`:"
+        p2: "Ndani ya Dockerfile, siri inapatikana kwenye `/run/secrets/mysecret`:"
+        note: "🛡 Hii huzuia siri kuhifadhiwa kwenye tabaka za picha."
+      rootless:
+        title: "Docker bila Root"
+        p1: "Kuendesha Docker bila haki za root huboresha usalama na hupunguza hatari ya kushambuliwa kwa host."
+        steps_intro: "Ili kuwezesha:"
+        check_intro: "Kagua:"
+        warning: "⚠ Baadhi ya vipengele (mfano, forwarding ya bandari <1024) havitapatikana."
+      scan:
+        title: "Changanua picha kwa udhaifu"
+        p1: "Tumia zana zilizojengewa ndani:"
+        p2: "Au CLI mpya:"
+        p3: "Hii husaidia kugundua udhaifu kwenye picha za msingi na utegemezi."
+      resource_limits:
+        title: "Fuatilia matumizi ya rasilimali"
+        p1: "Punguza kontena kwa kumbukumbu, CPU, na idadi ya michakato:"
+        p2: "Hii huzuia matumizi ya rasilimali kupita kiasi."
+        p3: "Unaweza pia kupunguza I/O:"
+        p4: "Inafaa kwa kontena ambazo hazipaswi kuzidisha mfumo wa diski."
+      cleanup:
+        title: "Usafishaji wa kiotomatiki"
+        p1: "Ondoa mara kwa mara picha, kontena, volumes, na mitandao zisizotumika:"
+        warning: "⚠ Kuwa mwangalifu: amri hii hufuta rasilimali zote zisizotumika."
+        p2: "Kwa usafishaji maalum tumia:"
+      cicd:
+        title: "Ujumuishaji wa CI/CD"
+        p1: "Unganisha ujenzi, majaribio, na uwekaji kwenye GitHub Actions, GitLab CI, Jenkins."
+        example_intro: "Mfano wa hatua ya GitHub Actions:"
+      logging:
+        title: "Ufuatiliaji na ukaguzi"
+        p1: "Ambatanisha dereva wa logi (`--log-driver`) kwa mifumo ya kati: ELK, Loki, Splunk."
+        p2: "Tumia Prometheus + cAdvisor kwa metrics za kontena."
+      production:
+        title: "Uwekaji kwenye uzalishaji"
+        p1: "Tenganisha configs za maendeleo na uzalishaji kwa kutumia `docker-compose.override.yml`."
+        ha_intro: "Kwa upatikanaji wa juu na upanuzi tumia:"
+        items:
+          swarm: "Docker Swarm"
+          k8s: "Kubernetes"
+
+    debugging:
+      title: "🐞 Urekebishaji na Uchambuzi wa Kontena za Docker"
+      exec:
+        group_desc: "Inaendesha amri ndani ya kontena inayoendeshwa, ikitoa ufikiaji wa mwingiliano au uwezo wa kuendesha michakato ndani ya mazingira yaliyotengwa"
+        r1: "Anza terminal ya mwingiliano (bash) ndani ya kontena inayoendeshwa"
+        r2: "Anza shell ndogo ndani ya kontena (ikiwa bash haipatikani)"
+        r3: "Endesha amri ndani ya kontena bila hali ya mwingiliano"
+      logs:
+        group_desc: "Inaonyesha logi za kontena maalum, ikiruhusu kuona matokeo na matukio yanayohusiana na uendeshaji wake kwa uchunguzi na ufuatiliaji"
+        r1: "Tazama mistari 100 ya mwisho ya logi kwa wakati halisi"
+        r2: "Onyesha logi zote zinazopatikana za kontena"
+        r3: "Onyesha logi za saa moja iliyopita"
+      inspect:
+        group_desc: "Inatoa taarifa za kina kuhusu kitu cha Docker (kontena, picha, mtandao, n.k.) kwa umbizo la JSON, ikiwemo usanidi na hali"
+        r1: "Pata taarifa kamili za JSON kuhusu kontena"
+        r2: "Pata PID ya mchakato mkuu wa kontena kwenye host"
+        r3: "Onyesha anwani ya IP ya kontena"
+      nsenter:
+        group_desc: "Zana ya Linux ya kuingia namespaces za mchakato mwingine (hapa, kontena). Inatumiwa na `strace` kufuatilia simu za mfumo ndani ya kontena kwa urekebishaji"
+        r1: "Ingia namespaces za kontena na fuatilia simu za mfumo za mchakato 1"
+        r2: "Fungua shell ya bash ndani ya namespaces za kontena"
+        r3: "Tazama bandari zilizo wazi ndani ya kontena"
+      tcpdump:
+        group_desc: "Zana ya console kwa kunasa na kuchanganua trafiki ya mtandao. Inatumika kwenye kontena kugundua matatizo ya mtandao, kuchambua pakiti, na kufuatilia miunganisho"
+        r1: "Nasa na uchanganue trafiki ya mtandao ndani ya kontena"
+        r2: "Nasa trafiki kwenye bandari 80 pekee"
+        r3: "Hifadhi trafiki kwenye faili kwa uchambuzi baadaye"
+      stats:
+        group_desc: "Inaonyesha metrics za sasa za matumizi ya rasilimali (CPU, kumbukumbu, mtandao, diski) kwa kontena moja au nyingi kwa wakati halisi"
+        r1: "Onyesha matumizi ya CPU, kumbukumbu, mtandao, na diski kwa wakati halisi ya kontena"
+        r2: "Onyesha takwimu kwa kontena zote"
+        r3: "Toa takwimu mara moja na utoke"
+      top:
+        group_desc: "Inaonyesha orodha ya michakato inayoendeshwa ndani ya kontena, sawa na `ps` kwenye Linux, kuchambua shughuli za kontena"
+        r1: "Onyesha michakato inayoendeshwa ndani ya kontena"
+        r2: "Tumia umbizo mbadala la matokeo kama `ps aux`"
+        r3: "Onyesha PID na amri za michakato pekee"
+      diff:
+        group_desc: "Inaonyesha mabadiliko kwenye mfumo wa faili wa kontena ukilinganisha na picha ya msingi, ikionyesha faili zilizoongezwa, kubadilishwa, au kufutwa"
+        r1: "Onyesha mabadiliko ya mfumo wa faili kwenye kontena ukilinganisha na picha ya msingi"
+        r2: "Onyesha faili zilizoongezwa pekee (`A` — Added)"
+        r3: "Onyesha faili zilizobadilishwa pekee (`C` — Changed)"
+      cp:
+        group_desc: "Hunanakili faili na saraka kati ya kontena na host, kuwezesha kubadilishana data na kuhifadhi nakala"
+        r1: "Nakili faili kutoka kontena hadi host"
+        r2: "Nakili faili kutoka host hadi kontena"
+        r3: "Nakili faili la logi na uchuje mistari ya makosa bila kuhifadhi kwenye diski"
+      advanced_note: "💡 Kwa urekebishaji wa hali ya juu unaweza kutumia `nsenter`, `strace`, `tcpdump`, `gdb`, na zana nyingine za kiwango cha chini."
+
+  compose_adv:
+    _root:
+      title: "💼 Matumizi ya Kina ya Docker Compose"
+    prof:
+      title: "🚀 Amri za Kitaalamu za Docker Compose"
+      up:
+        group_desc: "Washa na simamia maisha ya huduma maalum kutoka faili la docker-compose.yml ukiwa na uwezo wa kuendesha kwa nyuma"
+        r1: "Endesha huduma `web` na `db` pekee katika hali ya nyuma (detached)"
+        r2: "Jenga upya picha kabla ya kuanza huduma"
+        r3: "Ondoa kontena ambazo hazijafafanuliwa kwenye faili la compose la sasa"
+      build:
+        group_desc: "Jenga picha kwa huduma kama zilivyoelezwa kwenye faili la compose kwa kudhibiti cache na ujenzi sambamba"
+        r1: "Jenga upya picha zote bila kutumia cache"
+        r2: "Jenga huduma zote kwa wakati mmoja ili kuharakisha mchakato"
+        r3: "Jenga picha kwa huduma `web` pekee"
+      pull:
+        group_desc: "Pakua matoleo ya hivi karibuni ya picha kutoka sajili kwa huduma zote au maalum"
+        r1: "Pakua picha kwa huduma zote"
+        r2: "Pakua picha kwa huduma `db` pekee"
+        r3: "Endelea kutekeleza ukipuuza makosa wakati wa kupakua picha"
+      restart:
+        group_desc: "Anzisha tena huduma zote au maalum bila kuunda upya kontena"
+        r1: "Anzisha tena huduma zote kwenye mradi wa sasa"
+        r2: "Anzisha tena huduma `worker` pekee"
+        r3: "Anzisha tena huduma nyingi kwa wakati mmoja"
+      exec:
+        group_desc: "Tekeleza amri ndani ya kontena la huduma inayoendeshwa ukiwa na chaguo la mwingiliano"
+        r1: "Endesha psql ndani ya kontena la huduma `db`"
+        r2: "Fungua shell ndani ya kontena `web`"
+        r3: "Tekeleza ombi la curl kutoka kontena la huduma `api`"
+      config:
+        group_desc: "Toa usanidi wa mwisho wa Compose ukizingatia faili zote na vigezo vya mazingira"
+        r1: "Onyesha usanidi uliounganishwa kwa umbizo la YAML"
+        r2: "Orodhesha huduma zote"
+        r3: "Onyesha vigezo vyote vya mazingira vinavyotumika na huduma"
+      watch:
+        group_desc: "Anzisha upya huduma kiotomatiki kwenye mabadiliko ya faili za chanzo, muhimu kwa maendeleo"
+        r1: "Anza kufuatilia faili na anzisha upya huduma kwenye mabadiliko"
+      events:
+        group_desc: "Tiririsha matukio ya Compose: kuanza kwa huduma, kusimama, kusasisha"
+        r1: "Pokea matukio kwa umbizo la JSON"
+      rm:
+        group_desc: "Ondoa kontena za huduma zilizozimwa"
+        r1: "Ondoa kontena za huduma `web` na `db`"
+      pause:
+        group_desc: "Sitisha uendeshaji wa huduma"
+        r1: "Sitisha huduma `api`"
+      unpause:
+        group_desc: "Rejesha huduma zilizositishwa"
+        r1: "Rejesha huduma `api`"
+      create:
+        group_desc: "Unda kontena bila kuziwasha"
+        r1: "Unda kontena za `web` na `db` lakini usiziwasha"
+      images:
+        group_desc: "Onyesha orodha ya picha zinazotumika na huduma"
+        r1: "Onyesha picha za huduma zote"
+      top:
+        group_desc: "Onyesha michakato inayoendeshwa ndani ya kontena za huduma"
+        r1: "Onyesha michakato ndani ya kontena za huduma `web`"
+
+    practices:
+      title: "🛠 Mbinu Muhimu na Otomatiki na Docker Compose"
+      env_separation:
+        title: "Kutenganisha Mazingira"
+        p1: "Tumia faili tofauti za `docker-compose.override.yml` kwa mazingira tofauti — `development`, `staging`, `production`. Hii husaidia kutenga usanidi na kuepuka migongano."
+        p2: "Pia unaweza kuchanganya faili nyingi za usanidi ukitumia bendera `-f`:"
+        p3: "Tumia faili tofauti za `.env` (`.env.dev`, `.env.prod`, n.k.) kusimamia vigezo vya mazingira."
+      secrets:
+        title: "Uhifadhi Salama wa Siri"
+        p1: "Usiweke data nyeti (nywila, tokeni) moja kwa moja kwenye faili za Compose. Badala yake, tumia:"
+        items:
+          env: "Faili `.env` kwa vigezo vya mazingira (kumbuka kuwa faili `.env` hazijasimbwa na hazipaswi kupakiwa kwenye repo za umma)"
+          swarm_secret: "`docker secret` na `docker config` kwa usimamizi salama wa siri na usanidi katika Docker Swarm"
+          volumes: "volumes za nje kwa faili za usanidi zilizo na siri"
+          external_mgr: "mifumo ya nje ya usimamizi wa siri (mf. HashiCorp Vault, AWS Secrets Manager)"
+      startup_order:
+        title: "Mpangilio wa Kuanza na `depends_on` na `healthcheck`"
+        p1: "Ili huduma zisubiri utegemezi kuwa tayari:"
+      min_downtime:
+        title: "Punguza Muda wa Kukatika Wakati wa Kusasisha"
+        p1: "Kabla ya kusasisha huduma, endesha:"
+        p2: "Chaguo `-d` huendesha kontena kwa nyuma, na `--remove-orphans` huondoa kontena ambazo hazijafafanuliwa kwenye configs za sasa."
+        p3: "Ili kuzima kabisa na kuondoa kontena za zamani ikiwa ni lazima:"
+        p4: "Hii huhakikisha picha mpya zinapakiwa na kontena zisizotumika zinaondolewa bila kukatika."
+      hot_reload_volumes:
+        title: "Hot Code Reloading kwa Maendeleo"
+        p1: "Tumia `volumes` kupachika saraka za ndani kwenye kontena. Hii huruhusu mabadiliko ya msimbo kutumika mara moja bila kujenga upya picha."
+        p2: "Kuwa mwangalifu na masuala ya ruhusa za faili na tabia za cache za filesystem, hasa kwenye Windows na macOS, ili kuepuka matatizo ya utendaji."
+      hot_reload_watch:
+        title: "Hot Code Reloading Bila Volume (Compose 2.22+)"
+      central_logging:
+        title: "Ufuatiliaji wa Kati wa Huduma"
+        p1: "Elekeza logi za kontena kwenye mifumo ya ufuatiliaji na ukusanyaji logi kama ELK Stack, Loki, Prometheus, na Fluentd kwa uchambuzi rahisi na arifa."
+        p2: "Tumia dereva za logi za Docker (`--log-driver`) kuwezesha ukusanyaji na uchakataji wa kati wa logi."
+        p3: "Sanidi dereva za logi kwa kontena kwenye Compose:"
+      auto_restart:
+        title: "Uanzishaji Upya wa Kiotomatiki wa Huduma"
+        p1: "Sanidi sera ya kuanzisha upya kwenye `docker-compose.yml`:"
+        p2: "Sera zingine za kuanzisha upya ni pamoja na:"
+        policies:
+          no: "`no` — hakuna uanzishaji upya wa kiotomatiki (chaguo-msingi)"
+          always: "`always` — anzisha upya kontena kila mara"
+          on_failure: "`on-failure` — anzisha upya tu kwenye hitilafu (kwa hiari na idadi ya majaribio)"
+        p3: "Kwenye uzalishaji, `unless-stopped` ndilo chaguo bora kuhakikisha uimara wa huduma."
+        p4: "Hii huwezesha urejeshaji wa kiotomatiki wa huduma baada ya hitilafu au kuanzishwa upya kwa host."
+      profiles:
+        title: "Profaili za Huduma"
+        p1: "Ruhusu kuendesha vikundi maalum vya huduma pekee:"
+        p2: "Ili kuendesha profaili ya frontend pekee:"
+
+    debugging:
+      title: "🐞 Urekebishaji na Uchambuzi wa Huduma kwenye Docker Compose"
+      exec:
+        group_desc: "Tekeleza amri ndani ya kontena la huduma inayoendeshwa, ukitoa ufikiaji wa kontena au kuendesha michakato binafsi"
+        r1: "Fungua shell ndani ya kontena la huduma `web`"
+        r2: "Endesha amri ya psql ndani ya kontena la huduma `db`"
+      logs:
+        group_desc: "Tazama logi za huduma kwa uchunguzi na ufuatiliaji"
+        r1: "Tazama logi za huduma `db` kwa wakati halisi"
+        r2: "Onyesha mistari 50 ya mwisho ya logi kutoka huduma `api`"
+        r3: "Onyesha logi za saa moja iliyopita kwa huduma `web`"
+      inspect:
+        group_desc: "Tazama taarifa za kina kuhusu kontena linaloendesha huduma"
+        r1: "Pata JSON yenye taarifa za kina kuhusu kontena la huduma `web`"
+      stats:
+        group_desc: "Fuatilia matumizi ya rasilimali ya kontena zinazendesha huduma"
+        r1: "Fuatilia CPU, kumbukumbu, na matumizi mengine ya rasilimali kwa kontena la huduma `worker`"
+      run:
+        group_desc: "Endesha kontena la muda kwa usanidi wa huduma, muhimu kwa debugging"
+        r1: "Anzisha kontena la muda kwa huduma `web` ukiwa na shell ya mwingiliano"
+      cp:
+        group_desc: "Nakili faili kati ya host na kontena"
+        r1: "Nakili faili kutoka kontena la huduma `db` kwenda host"
+      tip:
+        one_off: "💡 Kwa urahisi wa debugging ya usanidi mgumu wa huduma nyingi, tumia `docker compose run --rm` kuanzisha kontena za mtu mmoja mmoja zikiwa na mitandao na volumes muhimu bila kuathiri huduma kuu."
+
+  resources:
+    title: "📚 Rasilimali za Ziada"
+    ignore:
+      title: "🚫 Kupuuza Faili kwa `.dockerignore`"
+      p1: "Ongeza faili na folda kwenye faili `.dockerignore` ambazo hazipaswi kujumuishwa kwenye picha ili kupunguza ukubwa na kuharakisha ujenzi:"
+    aliases:
+      title: "⚡ Kurahisisha Amri kwa Aliases"
+      p1: "Unaweza kuunda aliases kwa amri zinazotumika mara kwa mara ili kuziendesha haraka zaidi:"
+    advice:
+      title: "🧠 Kidokezo: Ushauri wa Matumizi ya Docker"
+      b1: "Usijaribu kukumbuka kila kitu — tumia `docker --help` au `docker <command> --help` kuchunguza amri."
+      b2: "Fanya mazoezi mara kwa mara na ujaribu miradi midogo."
+      b3: "Fuatilia ukubwa wa picha na ondoa faili zisizohitajika kupitia `.dockerignore`."
+    links:
+      title: "🌐 Viungo vya Muhimu"
+      docs_intro: "📘 **Nyaraka Rasmi za Docker** — miongozo na marejeo ya kina kwa mada zote za Docker:"
+      sheet_intro: "📙 **Docker Cheat Sheet** — karatasi ya rasimi ya Docker:"
+      hub_intro: "📗 **Docker Hub** — picha na sajili:"

@@ -1,0 +1,496 @@
+## {{< meta linux.basic._root.title >}}
+| {{< meta common.table.columns.command >}} | {{< meta common.table.columns.example >}} | {{< meta common.table.columns.description >}} |
+|---|---|---|
+| [**`cat`**](https://tldr.inbrowser.app/pages/linux/cat) |  | **{{< meta linux.basic._root.cat.desc >}}** |
+|  | `cat file.txt` | {{< meta linux.basic._root.cat.ex1 >}} |
+|  | `cat file1 file2` | {{< meta linux.basic._root.cat.ex2 >}} |
+|  | `cat file1 file2 > merged.txt` | {{< meta linux.basic._root.cat.ex3 >}} |
+| [**`cd`**](https://tldr.inbrowser.app/pages/common/cd) |  | **{{< meta linux.basic._root.cd.desc >}}** |
+|  | `cd /etc` | {{< meta linux.basic._root.cd.ex1 >}} |
+|  | `cd ~` | {{< meta linux.basic._root.cd.ex2 >}} |
+|  | `cd ..` | {{< meta linux.basic._root.cd.ex3 >}} |
+|  | `cd -` | {{< meta linux.basic._root.cd.ex4 >}} |
+| [**`clear`**](https://tldr.inbrowser.app/pages/common/clear) |  | **{{< meta linux.basic._root.clear.desc >}}** |
+| [**`cp`**](https://tldr.inbrowser.app/pages/common/cp) |  | **{{< meta linux.basic._root.cp.desc >}}** |
+|  | `cp file1.txt file2.txt` | {{< meta linux.basic._root.cp.ex1 >}} |
+|  | `cp -r dir1 dir2` | {{< meta linux.basic._root.cp.ex2 >}} |
+|  | `cp -i file.txt /tmp/` | {{< meta linux.basic._root.cp.ex3 >}} |
+| [**`echo`**](https://tldr.inbrowser.app/pages/common/echo) |  | **{{< meta linux.basic._root.echo.desc >}}** |
+|  | `echo "Hello, World!"` | {{< meta linux.basic._root.echo.ex1 >}} |
+|  | `echo $HOME` | {{< meta linux.basic._root.echo.ex2 >}} |
+|  | `echo -e "1\t2\n3"` | {{< meta linux.basic._root.echo.ex3 >}} |
+| [**`history`**](https://tldr.inbrowser.app/pages/common/history) |  | **{{< meta linux.basic._root.history.desc >}}** |
+| [**`id`**](https://tldr.inbrowser.app/pages/common/id) |  | **{{< meta linux.basic._root.id.desc >}}** |
+| [**`ls`**](https://tldr.inbrowser.app/pages/common/ls) |  | **{{< meta linux.basic._root.ls.desc >}}** |
+|  | `ls -l` | {{< meta linux.basic._root.ls.ex1 >}} |
+|  | `ls -a` | {{< meta linux.basic._root.ls.ex2 >}} |
+|  | `ls -lh` | {{< meta linux.basic._root.ls.ex3 >}} |
+| [**`mkdir`**](https://tldr.inbrowser.app/pages/common/mkdir) |  | **{{< meta linux.basic._root.mkdir.desc >}}** |
+|  | `mkdir folder` | {{< meta linux.basic._root.mkdir.ex1 >}} |
+|  | `mkdir -p a/b/c` | {{< meta linux.basic._root.mkdir.ex2 >}} |
+|  | `mkdir dir{1,2,3}` | {{< meta linux.basic._root.mkdir.ex3 >}} |
+| [**`mv`**](https://tldr.inbrowser.app/pages/common/mv) |  | **{{< meta linux.basic._root.mv.desc >}}** |
+|  | `mv oldname.txt newname.txt` | {{< meta linux.basic._root.mv.ex1 >}} |
+|  | `mv file.txt /path/to/dir/` | {{< meta linux.basic._root.mv.ex2 >}} |
+|  | `mv *.txt archive/` | {{< meta linux.basic._root.mv.ex3 >}} |
+| [**`pwd`**](https://tldr.inbrowser.app/pages/common/pwd) |  | **{{< meta linux.basic._root.pwd.desc >}}** |
+|  | `pwd -P` | {{< meta linux.basic._root.pwd.ex1 >}} |
+|  | `cd /tmp && pwd` | {{< meta linux.basic._root.pwd.ex2 >}} |
+| [**`rm`**](https://tldr.inbrowser.app/pages/common/rm) |  | **{{< meta linux.basic._root.rm.desc >}}** |
+|  | `rm file.txt` | {{< meta linux.basic._root.rm.ex1 >}} |
+|  | `rm -i file.txt` | {{< meta linux.basic._root.rm.ex2 >}} |
+|  | `rm -r folder/` | {{< meta linux.basic._root.rm.ex3 >}} |
+|  | `rm -rf folder/` | {{< meta linux.basic._root.rm.ex4 >}} |
+| [**`rmdir`**](https://tldr.inbrowser.app/pages/common/rmdir) |  | **{{< meta linux.basic._root.rmdir.desc >}}** |
+|  | `rmdir emptydir` | {{< meta linux.basic._root.rmdir.ex1 >}} |
+| [**`touch`**](https://tldr.inbrowser.app/pages/common/touch) |  | **{{< meta linux.basic._root.touch.desc >}}** |
+|  | `touch newfile.txt` | {{< meta linux.basic._root.touch.ex1 >}} |
+|  | `touch a b c` | {{< meta linux.basic._root.touch.ex2 >}} |
+|  | `touch -c file.txt` | {{< meta linux.basic._root.touch.ex3 >}} |
+| [**`whereis`**](https://tldr.inbrowser.app/pages/linux/whereis) |  | **{{< meta linux.basic._root.whereis.desc >}}** |
+|  | `whereis ls` | {{< meta linux.basic._root.whereis.ex1 >}} |
+|  | `whereis bash` | {{< meta linux.basic._root.whereis.ex2 >}} |
+|  | `whereis -b bash` | {{< meta linux.basic._root.whereis.ex3 >}} |
+| [**`which`**](https://tldr.inbrowser.app/pages/common/which) |  | **{{< meta linux.basic._root.which.desc >}}** |
+|  | `which python3` | {{< meta linux.basic._root.which.ex1 >}} |
+|  | `which grep` | {{< meta linux.basic._root.which.ex2 >}} |
+|  | `which --skip-alias ls` | {{< meta linux.basic._root.which.ex3 >}} |
+| [**`whoami`**](https://tldr.inbrowser.app/pages/common/whoami) |  | **{{< meta linux.basic._root.whoami.desc >}}** |
+
+## {{< meta linux.intermediate._root.title >}}
+| {{< meta common.table.columns.command >}} | {{< meta common.table.columns.example >}} | {{< meta common.table.columns.description >}} |
+|---|---|---|
+| [**`chmod`**](https://tldr.inbrowser.app/pages/common/chmod) |  | **{{< meta linux.intermediate._root.chmod.desc >}}** |
+|  | `chmod 755 file` | {{< meta linux.intermediate._root.chmod.ex1 >}} |
+|  | `chmod +x script.sh` | {{< meta linux.intermediate._root.chmod.ex2 >}} |
+|  | `chmod -R 644 dir/` | {{< meta linux.intermediate._root.chmod.ex3 >}} |
+| [**`chown`**](https://tldr.inbrowser.app/pages/common/chown) |  | **{{< meta linux.intermediate._root.chown.desc >}}** |
+|  | `chown user file` | {{< meta linux.intermediate._root.chown.ex1 >}} |
+|  | `chown user:group file` | {{< meta linux.intermediate._root.chown.ex2 >}} |
+|  | `chown -R user:group dir/` | {{< meta linux.intermediate._root.chown.ex3 >}} |
+| [**`curl`**](https://tldr.inbrowser.app/pages/common/curl) |  | **{{< meta linux.intermediate._root.curl.desc >}}** |
+|  | `curl -I https://example.com` | {{< meta linux.intermediate._root.curl.ex1 >}} |
+|  | `curl -O https://example.com/file.txt` | {{< meta linux.intermediate._root.curl.ex2 >}} |
+|  | `curl -d "a=1&b=2" -X POST URL` | {{< meta linux.intermediate._root.curl.ex3 >}} |
+| [**`df`**](https://tldr.inbrowser.app/pages/linux/df) |  | **{{< meta linux.intermediate._root.df.desc >}}** |
+|  | `df -h` | {{< meta linux.intermediate._root.df.ex1 >}} |
+|  | `df /home` | {{< meta linux.intermediate._root.df.ex2 >}} |
+|  | `df -T` | {{< meta linux.intermediate._root.df.ex3 >}} |
+| [**`diff`**](https://tldr.inbrowser.app/pages/common/diff) |  | **{{< meta linux.intermediate._root.diff.desc >}}** |
+|  | `diff file1 file2` | {{< meta linux.intermediate._root.diff.ex1 >}} |
+|  | `diff -u old.c new.c` | {{< meta linux.intermediate._root.diff.ex2 >}} |
+|  | `diff -r dir1 dir2` | {{< meta linux.intermediate._root.diff.ex3 >}} |
+| [**`du`**](https://tldr.inbrowser.app/pages/common/du) |  | **{{< meta linux.intermediate._root.du.desc >}}** |
+|  | `du -sh *` | {{< meta linux.intermediate._root.du.ex1 >}} |
+|  | `du -h file.txt` | {{< meta linux.intermediate._root.du.ex2 >}} |
+|  | `du -sh --max-depth=1 /var` | {{< meta linux.intermediate._root.du.ex3 >}} |
+| [**`find`**](https://tldr.inbrowser.app/pages/common/find) |  | **{{< meta linux.intermediate._root.find.desc >}}** |
+|  | `find . -name "*.log"` | {{< meta linux.intermediate._root.find.ex1 >}} |
+|  | `find / -type f -size +100M` | {{< meta linux.intermediate._root.find.ex2 >}} |
+|  | `find . -mtime -1` | {{< meta linux.intermediate._root.find.ex3 >}} |
+| [**`free`**](https://tldr.inbrowser.app/pages/linux/free) |  | **{{< meta linux.intermediate._root.free.desc >}}** |
+|  | `free -h` | {{< meta linux.intermediate._root.free.ex1 >}} |
+|  | `free -m` | {{< meta linux.intermediate._root.free.ex2 >}} |
+|  | `watch -n 2 free -h` | {{< meta linux.intermediate._root.free.ex3 >}} |
+| [**`grep`**](https://tldr.inbrowser.app/pages/common/grep) |  | **{{< meta linux.intermediate._root.grep.desc >}}** |
+|  | `grep "error" logfile` | {{< meta linux.intermediate._root.grep.ex1 >}} |
+|  | `grep -r "error" /var/log` | {{< meta linux.intermediate._root.grep.ex2 >}} |
+|  | `grep -i "fail" file` | {{< meta linux.intermediate._root.grep.ex3 >}} |
+| [**`head`**](https://tldr.inbrowser.app/pages/linux/head) |  | **{{< meta linux.intermediate._root.head.desc >}}** |
+|  | `head -n 10 file` | {{< meta linux.intermediate._root.head.ex1 >}} |
+|  | `head -n 20 file.txt` | {{< meta linux.intermediate._root.head.ex2 >}} |
+|  | `head -c 100 file` | {{< meta linux.intermediate._root.head.ex3 >}} |
+| [**`hostname`**](https://tldr.inbrowser.app/pages/common/hostname) |  | **{{< meta linux.intermediate._root.hostname.desc >}}** |
+|  | `hostname newname` | {{< meta linux.intermediate._root.hostname.ex1 >}} |
+|  | `hostname -I` | {{< meta linux.intermediate._root.hostname.ex2 >}} |
+| [**`kill`**](https://tldr.inbrowser.app/pages/linux/kill) |  | **{{< meta linux.intermediate._root.kill.desc >}}** |
+|  | `kill -9 1234` | {{< meta linux.intermediate._root.kill.ex1 >}} |
+|  | `kill -TERM 1234` | {{< meta linux.intermediate._root.kill.ex2 >}} |
+|  | `pkill -f python` | {{< meta linux.intermediate._root.kill.ex3 >}} |
+| [**`ping`**](https://tldr.inbrowser.app/pages/common/ping) |  | **{{< meta linux.intermediate._root.ping.desc >}}** |
+|  | `ping 8.8.8.8` | {{< meta linux.intermediate._root.ping.ex1 >}} |
+|  | `ping -c 4 ya.ru` | {{< meta linux.intermediate._root.ping.ex2 >}} |
+|  | `ping -i 2 1.1.1.1` | {{< meta linux.intermediate._root.ping.ex3 >}} |
+| [**`ps`**](https://tldr.inbrowser.app/pages/common/ps) |  | **{{< meta linux.intermediate._root.ps.desc >}}** |
+|  | `ps aux` | {{< meta linux.intermediate._root.ps.ex1 >}} |
+|  | `ps -ef | grep nginx` | {{< meta linux.intermediate._root.ps.ex2 >}} |
+|  | `ps -u $USER` | {{< meta linux.intermediate._root.ps.ex3 >}} |
+| [**`rsync`**](https://tldr.inbrowser.app/pages/common/rsync) |  | **{{< meta linux.intermediate._root.rsync.desc >}}** |
+|  | `rsync -av src/ dst/` | {{< meta linux.intermediate._root.rsync.ex1 >}} |
+|  | `rsync -avz user@host:/src /dst` | {{< meta linux.intermediate._root.rsync.ex2 >}} |
+|  | `rsync --delete src/ dst/` | {{< meta linux.intermediate._root.rsync.ex3 >}} |
+| [**`scp`**](https://tldr.inbrowser.app/pages/common/scp) |  | **{{< meta linux.intermediate._root.scp.desc >}}** |
+|  | `scp file user@host:/path` | {{< meta linux.intermediate._root.scp.ex1 >}} |
+|  | `scp user@host:/file.txt .` | {{< meta linux.intermediate._root.scp.ex2 >}} |
+|  | `scp -r dir user@host:/path` | {{< meta linux.intermediate._root.scp.ex3 >}} |
+| [**`sort`**](https://tldr.inbrowser.app/pages/common/sort) |  | **{{< meta linux.intermediate._root.sort.desc >}}** |
+|  | `sort file.txt` | {{< meta linux.intermediate._root.sort.ex1 >}} |
+|  | `sort -r file.txt` | {{< meta linux.intermediate._root.sort.ex2 >}} |
+|  | `sort -n numbers.txt` | {{< meta linux.intermediate._root.sort.ex3 >}} |
+| [**`tail`**](https://tldr.inbrowser.app/pages/common/tail) |  | **{{< meta linux.intermediate._root.tail.desc >}}** |
+|  | `tail -f logfile.log` | {{< meta linux.intermediate._root.tail.ex1 >}} |
+|  | `tail -n 20 file.txt` | {{< meta linux.intermediate._root.tail.ex2 >}} |
+|  | `tail -c 100 file.txt` | {{< meta linux.intermediate._root.tail.ex3 >}} |
+| [**`tar`**](https://tldr.inbrowser.app/pages/common/tar) |  | **{{< meta linux.intermediate._root.tar.desc >}}** |
+|  | `tar -czf archive.tgz dir/` | {{< meta linux.intermediate._root.tar.ex1 >}} |
+|  | `tar -xzf archive.tgz` | {{< meta linux.intermediate._root.tar.ex2 >}} |
+|  | `tar -tf archive.tgz` | {{< meta linux.intermediate._root.tar.ex3 >}} |
+| [**`tee`**](https://tldr.inbrowser.app/pages/common/tee) |  | **{{< meta linux.intermediate._root.tee.desc >}}** |
+|  | `echo "test" | tee out.txt` | {{< meta linux.intermediate._root.tee.ex1 >}} |
+|  | `ls | tee list.txt` | {{< meta linux.intermediate._root.tee.ex2 >}} |
+|  | `command | tee -a log.txt` | {{< meta linux.intermediate._root.tee.ex3 >}} |
+| [**`top`**](https://tldr.inbrowser.app/pages/linux/top) |  | **{{< meta linux.intermediate._root.top.desc >}}** |
+|  | `top` | {{< meta linux.intermediate._root.top.ex1 >}} |
+|  | `htop` | {{< meta linux.intermediate._root.top.ex2 >}} |
+|  | `top -o %MEM` | {{< meta linux.intermediate._root.top.ex3 >}} |
+| [**`uptime`**](https://tldr.inbrowser.app/pages/common/uptime) |  | **{{< meta linux.intermediate._root.uptime.desc >}}** |
+|  | `uptime -p` | {{< meta linux.intermediate._root.uptime.ex1 >}} |
+|  | `uptime -s` | {{< meta linux.intermediate._root.uptime.ex2 >}} |
+| [**`wget`**](https://tldr.inbrowser.app/pages/common/wget) |  | **{{< meta linux.intermediate._root.wget.desc >}}** |
+|  | `wget https://site.com/file.zip` | {{< meta linux.intermediate._root.wget.ex1 >}} |
+|  | `wget -c file.zip` | {{< meta linux.intermediate._root.wget.ex2 >}} |
+|  | `wget -O saved.txt URL` | {{< meta linux.intermediate._root.wget.ex3 >}} |
+| [**`wc`**](https://tldr.inbrowser.app/pages/common/wc) |  | **{{< meta linux.intermediate._root.wc.desc >}}** |
+|  | `wc -l file` | {{< meta linux.intermediate._root.wc.ex1 >}} |
+|  | `wc -w file` | {{< meta linux.intermediate._root.wc.ex2 >}} |
+|  | `wc -m file` | {{< meta linux.intermediate._root.wc.ex3 >}} |
+| [**`uniq`**](https://tldr.inbrowser.app/pages/common/uniq) |  | **{{< meta linux.intermediate._root.uniq.desc >}}** |
+|  | `uniq file.txt` | {{< meta linux.intermediate._root.uniq.ex1 >}} |
+|  | `sort file | uniq` | {{< meta linux.intermediate._root.uniq.ex2 >}} |
+|  | `sort file | uniq -c` | {{< meta linux.intermediate._root.uniq.ex3 >}} |
+| [**`yes`**](https://tldr.inbrowser.app/pages/common/yes) |  | **{{< meta linux.intermediate._root.yes.desc >}}** |
+|  | `yes "y" | command` | {{< meta linux.intermediate._root.yes.ex1 >}} |
+|  | `yes | rm -i *` | {{< meta linux.intermediate._root.yes.ex2 >}} |
+|  | `yes no | command` | {{< meta linux.intermediate._root.yes.ex3 >}} |
+
+## {{< meta linux.advanced._root.title >}}
+| {{< meta common.table.columns.command >}} | {{< meta common.table.columns.example >}} | {{< meta common.table.columns.description >}} |
+|---|---|---|
+| [**`at`**](https://tldr.inbrowser.app/pages/common/at) |  | **{{< meta linux.advanced._root.at.desc >}}** |
+|  | `at now + 1 minute` | {{< meta linux.advanced._root.at.ex1 >}} |
+|  | `atq` | {{< meta linux.advanced._root.at.ex2 >}} |
+|  | `atrm` | {{< meta linux.advanced._root.at.ex3 >}} |
+| [**`awk`**](https://tldr.inbrowser.app/pages/common/awk) |  | **{{< meta linux.advanced._root.awk.desc >}}** |
+|  | `awk '{print $1}' file` | {{< meta linux.advanced._root.awk.ex1 >}} |
+|  | `ps aux | awk '$3 > 50'` | {{< meta linux.advanced._root.awk.ex2 >}} |
+|  | `cat file.txt | awk '{print $2}'` | {{< meta linux.advanced._root.awk.ex3 >}} |
+|  | `awk '/error/ {print $0}' logfile` | {{< meta linux.advanced._root.awk.ex4 >}} |
+| [**`crontab`**](https://tldr.inbrowser.app/pages/common/crontab) |  | **{{< meta linux.advanced._root.crontab.desc >}}** |
+|  | `crontab -e` | {{< meta linux.advanced._root.crontab.ex1 >}} |
+|  | `crontab -l` | {{< meta linux.advanced._root.crontab.ex2 >}} |
+|  | `crontab -r` | {{< meta linux.advanced._root.crontab.ex3 >}} |
+| [**`cut`**](https://tldr.inbrowser.app/pages/common/cut) |  | **{{< meta linux.advanced._root.cut.desc >}}** |
+|  | `cut -d':' -f1 /etc/passwd` | {{< meta linux.advanced._root.cut.ex1 >}} |
+|  | `echo "a:b:c" | cut -d':' -f2` | {{< meta linux.advanced._root.cut.ex2 >}} |
+|  | `cut -c1-5 filename` | {{< meta linux.advanced._root.cut.ex3 >}} |
+| [**`df`**](https://tldr.inbrowser.app/pages/linux/df) |  | **{{< meta linux.advanced._root.df.desc >}}** |
+|  | `df -h` | {{< meta linux.advanced._root.df.ex1 >}} |
+|  | `df -T` | {{< meta linux.advanced._root.df.ex2 >}} |
+|  | `df /home` | {{< meta linux.advanced._root.df.ex3 >}} |
+| [**`env`**](https://tldr.inbrowser.app/pages/common/env) |  | **{{< meta linux.advanced._root.env.desc >}}** |
+|  | `env | grep PATH` | {{< meta linux.advanced._root.env.ex1 >}} |
+|  | `env -i bash` | {{< meta linux.advanced._root.env.ex2 >}} |
+| [**`export`**](https://tldr.inbrowser.app/pages/linux/export) |  | **{{< meta linux.advanced._root.export.desc >}}** |
+|  | `export VAR=value` | {{< meta linux.advanced._root.export.ex1 >}} |
+|  | `export PATH=$PATH:/new/path` | {{< meta linux.advanced._root.export.ex2 >}} |
+|  | `export -p` | {{< meta linux.advanced._root.export.ex3 >}} |
+| [**`free`**](https://tldr.inbrowser.app/pages/linux/free) |  | **{{< meta linux.advanced._root.free.desc >}}** |
+|  | `free -m` | {{< meta linux.advanced._root.free.ex1 >}} |
+|  | `free -h` | {{< meta linux.advanced._root.free.ex2 >}} |
+|  | `free -s 5` | {{< meta linux.advanced._root.free.ex3 >}} |
+| [**`hostnamectl`**](https://tldr.inbrowser.app/pages/linux/hostnamectl) |  | **{{< meta linux.advanced._root.hostnamectl.desc >}}** |
+|  | `hostnamectl status` | {{< meta linux.advanced._root.hostnamectl.ex1 >}} |
+|  | `hostnamectl set-hostname newname` | {{< meta linux.advanced._root.hostnamectl.ex2 >}} |
+| [**`ifconfig`**](https://tldr.inbrowser.app/pages/common/ifconfig) / [**`ip`**](https://tldr.inbrowser.app/pages/linux/ip) |  | **{{< meta linux.advanced._root.ip-tools.desc >}}** |
+|  | `ifconfig` | {{< meta linux.advanced._root.ip-tools.ex1 >}} |
+|  | `ip a` | {{< meta linux.advanced._root.ip-tools.ex2 >}} |
+|  | `ip link set eth0 up` | {{< meta linux.advanced._root.ip-tools.ex3 >}} |
+| [**`iostat`**](https://tldr.inbrowser.app/pages/linux/iostat) |  | **{{< meta linux.advanced._root.iostat.desc >}}** |
+|  | `iostat -x 2` | {{< meta linux.advanced._root.iostat.ex1 >}} |
+|  | `iostat -d 5 3` | {{< meta linux.advanced._root.iostat.ex2 >}} |
+| [**`iptables`**](https://tldr.inbrowser.app/pages/linux/iptables) |  | **{{< meta linux.advanced._root.iptables.desc >}}** |
+|  | `iptables -L` | {{< meta linux.advanced._root.iptables.ex1 >}} |
+|  | `iptables -A INPUT -p tcp --dport 22 -j ACCEPT` | {{< meta linux.advanced._root.iptables.ex2 >}} |
+|  | `iptables -F` | {{< meta linux.advanced._root.iptables.ex3 >}} |
+| [**`journalctl`**](https://tldr.inbrowser.app/pages/linux/journalctl) |  | **{{< meta linux.advanced._root.journalctl.desc >}}** |
+|  | `journalctl -xe` | {{< meta linux.advanced._root.journalctl.ex1 >}} |
+|  | `journalctl -u nginx.service` | {{< meta linux.advanced._root.journalctl.ex2 >}} |
+|  | `journalctl --since "2 hours ago"` | {{< meta linux.advanced._root.journalctl.ex3 >}} |
+| [**`ln`**](https://tldr.inbrowser.app/pages/common/ln) |  | **{{< meta linux.advanced._root.ln.desc >}}** |
+|  | `ln -s target link` | {{< meta linux.advanced._root.ln.ex1 >}} |
+|  | `ln file.txt backup.txt` | {{< meta linux.advanced._root.ln.ex2 >}} |
+|  | `ln -sf target link` | {{< meta linux.advanced._root.ln.ex3 >}} |
+| [**`sed`**](https://tldr.inbrowser.app/pages/linux/sed) |  | **{{< meta linux.advanced._root.sed.desc >}}** |
+|  | `sed 's/old/new/g' file` | {{< meta linux.advanced._root.sed.ex1 >}} |
+|  | `sed -n '1,5p' file` | {{< meta linux.advanced._root.sed.ex2 >}} |
+|  | `sed '/pattern/d' file` | {{< meta linux.advanced._root.sed.ex3 >}} |
+| [**`systemctl`**](https://tldr.inbrowser.app/pages/linux/systemctl) |  | **{{< meta linux.advanced._root.systemctl.desc >}}** |
+|  | `systemctl status nginx` | {{< meta linux.advanced._root.systemctl.ex1 >}} |
+|  | `systemctl start nginx` | {{< meta linux.advanced._root.systemctl.ex2 >}} |
+|  | `systemctl enable nginx` | {{< meta linux.advanced._root.systemctl.ex3 >}} |
+| [**`tr`**](https://tldr.inbrowser.app/pages/common/tr) |  | **{{< meta linux.advanced._root.tr.desc >}}** |
+|  | `tr a-z A-Z` | {{< meta linux.advanced._root.tr.ex1 >}} |
+|  | `echo "hello" | tr 'h' 'H'` | {{< meta linux.advanced._root.tr.ex2 >}} |
+|  | `echo "abc123" | tr -d '0-9'` | {{< meta linux.advanced._root.tr.ex3 >}} |
+| [**`type`**](https://tldr.inbrowser.app/pages/common/type) |  | **{{< meta linux.advanced._root.type.desc >}}** |
+|  | `type ls` | {{< meta linux.advanced._root.type.ex1 >}} |
+|  | `type cd` | {{< meta linux.advanced._root.type.ex2 >}} |
+|  | `type python3` | {{< meta linux.advanced._root.type.ex3 >}} |
+| [**`ulimit`**](https://tldr.inbrowser.app/pages/common/ulimit) |  | **{{< meta linux.advanced._root.ulimit.desc >}}** |
+|  | `ulimit -n` | {{< meta linux.advanced._root.ulimit.ex1 >}} |
+|  | `ulimit -c unlimited` | {{< meta linux.advanced._root.ulimit.ex2 >}} |
+|  | `ulimit -u 4096` | {{< meta linux.advanced._root.ulimit.ex3 >}} |
+| [**`uptime`**](https://tldr.inbrowser.app/pages/common/uptime) |  | **{{< meta linux.advanced._root.uptime.desc >}}** |
+|  | `uptime -p` | {{< meta linux.advanced._root.uptime.ex1 >}} |
+|  | `uptime -s` | {{< meta linux.advanced._root.uptime.ex2 >}} |
+| [**`xargs`**](https://tldr.inbrowser.app/pages/common/xargs) |  | **{{< meta linux.advanced._root.xargs.desc >}}** |
+|  | `xargs -n 1 echo` | {{< meta linux.advanced._root.xargs.ex1 >}} |
+|  | `echo "a b c" | xargs -n 1` | {{< meta linux.advanced._root.xargs.ex2 >}} |
+|  | `find . -name '*.txt' | xargs rm` | {{< meta linux.advanced._root.xargs.ex3 >}} |
+
+## {{< meta linux.network._root.title >}}
+| {{< meta common.table.columns.command >}} | {{< meta common.table.columns.example >}} | {{< meta common.table.columns.description >}} |
+|---|---|---|
+| [**`curl`**](https://tldr.inbrowser.app/pages/common/curl) |  | **{{< meta linux.network._root.curl.desc >}}** |
+|  | `curl -X POST -d "a=1" URL` | {{< meta linux.network._root.curl.ex1 >}} |
+|  | `curl -I URL` | {{< meta linux.network._root.curl.ex2 >}} |
+|  | `curl -o file.html URL` | {{< meta linux.network._root.curl.ex3 >}} |
+| [**`dig`**](https://tldr.inbrowser.app/pages/common/dig) |  | **{{< meta linux.network._root.dig.desc >}}** |
+|  | `dig openai.com` | {{< meta linux.network._root.dig.ex1 >}} |
+|  | `dig +short openai.com` | {{< meta linux.network._root.dig.ex2 >}} |
+|  | `dig @8.8.8.8 openai.com` | {{< meta linux.network._root.dig.ex3 >}} |
+| [**`ftp`**](https://tldr.inbrowser.app/pages/common/ftp) |  | **{{< meta linux.network._root.ftp.desc >}}** |
+|  | `ftp host` | {{< meta linux.network._root.ftp.ex1 >}} |
+|  | `ftp -n host` | {{< meta linux.network._root.ftp.ex2 >}} |
+|  | `ftp> get file.txt` | {{< meta linux.network._root.ftp.ex3 >}} |
+| [**`ip address`**](https://tldr.inbrowser.app/pages/linux/ip-address) |  | **{{< meta linux.network._root.ip-address.desc >}}** |
+|  | `ip addr show eth0` | {{< meta linux.network._root.ip-address.ex1 >}} |
+|  | `ip addr` | {{< meta linux.network._root.ip-address.ex2 >}} |
+| [**`ip link`**](https://tldr.inbrowser.app/pages/linux/ip-link) |  | **{{< meta linux.network._root.ip-link.desc >}}** |
+|  | `ip link show` | {{< meta linux.network._root.ip-link.ex1 >}} |
+|  | `ip link set eth0 up` | {{< meta linux.network._root.ip-link.ex2 >}} |
+| [**`ip route`**](https://tldr.inbrowser.app/pages/linux/ip-route) |  | **{{< meta linux.network._root.ip-route.desc >}}** |
+|  | `ip route list` | {{< meta linux.network._root.ip-route.ex1 >}} |
+|  | `ip route add default via 192.168.1.1` | {{< meta linux.network._root.ip-route.ex2 >}} |
+| [**`nc`**](https://tldr.inbrowser.app/pages/common/nc) |  | **{{< meta linux.network._root.nc.desc >}}** |
+|  | `nc -zv host 22` | {{< meta linux.network._root.nc.ex1 >}} |
+|  | `nc -l 1234` | {{< meta linux.network._root.nc.ex2 >}} |
+|  | `nc host 1234 < file` | {{< meta linux.network._root.nc.ex3 >}} |
+| [**`nmap`**](https://tldr.inbrowser.app/pages/common/nmap) |  | **{{< meta linux.network._root.nmap.desc >}}** |
+|  | `nmap -sP 192.168.1.0/24` | {{< meta linux.network._root.nmap.ex1 >}} |
+|  | `nmap -sV 192.168.1.1` | {{< meta linux.network._root.nmap.ex2 >}} |
+|  | `nmap -O 192.168.1.1` | {{< meta linux.network._root.nmap.ex3 >}} |
+| [**`nslookup`**](https://tldr.inbrowser.app/pages/common/nslookup) |  | **{{< meta linux.network._root.nslookup.desc >}}** |
+|  | `nslookup google.com` | {{< meta linux.network._root.nslookup.ex1 >}} |
+|  | `nslookup 8.8.8.8` | {{< meta linux.network._root.nslookup.ex2 >}} |
+| [**`ssh`**](https://tldr.inbrowser.app/pages/common/ssh) |  | **{{< meta linux.network._root.ssh.desc >}}** |
+|  | `ssh user@host` | {{< meta linux.network._root.ssh.ex1 >}} |
+|  | `ssh -p 2222 user@host` | {{< meta linux.network._root.ssh.ex2 >}} |
+|  | `ssh -i ~/.ssh/id_rsa user@host` | {{< meta linux.network._root.ssh.ex3 >}} |
+| [**`ss`**](https://tldr.inbrowser.app/pages/linux/ss) |  | **{{< meta linux.network._root.ss.desc >}}** |
+|  | `ss -tuln` | {{< meta linux.network._root.ss.ex1 >}} |
+|  | `ss -s` | {{< meta linux.network._root.ss.ex2 >}} |
+|  | `ss -l` | {{< meta linux.network._root.ss.ex3 >}} |
+| [**`telnet`**](https://tldr.inbrowser.app/pages/common/telnet) |  | **{{< meta linux.network._root.telnet.desc >}}** |
+|  | `telnet host 80` | {{< meta linux.network._root.telnet.ex1 >}} |
+|  | `telnet example.com 443` | {{< meta linux.network._root.telnet.ex2 >}} |
+|  | `telnet localhost 25` | {{< meta linux.network._root.telnet.ex3 >}} |
+| [**`traceroute`**](https://tldr.inbrowser.app/pages/common/traceroute) |  | **{{< meta linux.network._root.traceroute.desc >}}** |
+|  | `traceroute 8.8.8.8` | {{< meta linux.network._root.traceroute.ex1 >}} |
+|  | `traceroute -m 15 8.8.8.8` | {{< meta linux.network._root.traceroute.ex2 >}} |
+| [**`wget`**](https://tldr.inbrowser.app/pages/common/wget) |  | **{{< meta linux.network._root.wget.desc >}}** |
+|  | `wget -O file.txt URL` | {{< meta linux.network._root.wget.ex1 >}} |
+|  | `wget URL` | {{< meta linux.network._root.wget.ex2 >}} |
+|  | `wget -c URL` | {{< meta linux.network._root.wget.ex3 >}} |
+
+## {{< meta linux.files._root.title >}}
+| {{< meta common.table.columns.command >}} | {{< meta common.table.columns.example >}} | {{< meta common.table.columns.description >}} |
+|---|---|---|
+| [**`basename`**](https://tldr.inbrowser.app/pages/common/basename) |  | **{{< meta linux.files._root.basename.desc >}}** |
+|  | `basename /path/to/file` | {{< meta linux.files._root.basename.ex1 >}} |
+|  | `basename /path/to/file .txt` | {{< meta linux.files._root.basename.ex2 >}} |
+| [**`dirname`**](https://tldr.inbrowser.app/pages/common/dirname) |  | **{{< meta linux.files._root.dirname.desc >}}** |
+|  | `dirname /path/to/file` | {{< meta linux.files._root.dirname.ex1 >}} |
+|  | `dirname /etc/passwd` | {{< meta linux.files._root.dirname.ex2 >}} |
+| [**`du`**](https://tldr.inbrowser.app/pages/common/du) |  | **{{< meta linux.files._root.du.desc >}}** |
+|  | `du -sh folder/` | {{< meta linux.files._root.du.ex1 >}} |
+|  | `du -h *` | {{< meta linux.files._root.du.ex2 >}} |
+|  | `du -c folder1 folder2` | {{< meta linux.files._root.du.ex3 >}} |
+| [**`file`**](https://tldr.inbrowser.app/pages/common/file) |  | **{{< meta linux.files._root.file.desc >}}** |
+|  | `file some.bin` | {{< meta linux.files._root.file.ex1 >}} |
+|  | `file *` | {{< meta linux.files._root.file.ex2 >}} |
+|  | `file -i file.txt` | {{< meta linux.files._root.file.ex3 >}} |
+| [**`find`**](https://tldr.inbrowser.app/pages/common/find) |  | **{{< meta linux.files._root.find.desc >}}** |
+|  | `find /path -type f -name "*.sh"` | {{< meta linux.files._root.find.ex1 >}} |
+|  | `find . -size +10M` | {{< meta linux.files._root.find.ex2 >}} |
+|  | `find /tmp -mtime -1` | {{< meta linux.files._root.find.ex3 >}} |
+| [**`locate`**](https://tldr.inbrowser.app/pages/linux/locate) |  | **{{< meta linux.files._root.locate.desc >}}** |
+|  | `locate filename` | {{< meta linux.files._root.locate.ex1 >}} |
+|  | `locate *.conf` | {{< meta linux.files._root.locate.ex2 >}} |
+|  | `locate -i README` | {{< meta linux.files._root.locate.ex3 >}} |
+| [**`realpath`**](https://tldr.inbrowser.app/pages/common/realpath) |  | **{{< meta linux.files._root.realpath.desc >}}** |
+|  | `realpath file` | {{< meta linux.files._root.realpath.ex1 >}} |
+|  | `realpath ../relative/path` | {{< meta linux.files._root.realpath.ex2 >}} |
+| [**`stat`**](https://tldr.inbrowser.app/pages/common/stat) |  | **{{< meta linux.files._root.stat.desc >}}** |
+|  | `stat file` | {{< meta linux.files._root.stat.ex1 >}} |
+|  | `stat -c %s file` | {{< meta linux.files._root.stat.ex2 >}} |
+|  | `stat -f file` | {{< meta linux.files._root.stat.ex3 >}} |
+| [**`tree`**](https://tldr.inbrowser.app/pages/common/tree) |  | **{{< meta linux.files._root.tree.desc >}}** |
+|  | `tree` | {{< meta linux.files._root.tree.ex1 >}} |
+|  | `tree -L 2` | {{< meta linux.files._root.tree.ex2 >}} |
+|  | `tree -a` | {{< meta linux.files._root.tree.ex3 >}} |
+
+## {{< meta linux.monitoring._root.title >}}
+| {{< meta common.table.columns.command >}} | {{< meta common.table.columns.example >}} | {{< meta common.table.columns.description >}} |
+|---|---|---|
+| [**`dmesg`**](https://tldr.inbrowser.app/pages/linux/dmesg) |  | **{{< meta linux.monitoring._root.dmesg.desc >}}** |
+|  | `dmesg | tail` | {{< meta linux.monitoring._root.dmesg.ex1 >}} |
+|  | `dmesg | grep usb` | {{< meta linux.monitoring._root.dmesg.ex2 >}} |
+| [**`free`**](https://tldr.inbrowser.app/pages/linux/free) |  | **{{< meta linux.monitoring._root.free.desc >}}** |
+|  | `free -h` | {{< meta linux.monitoring._root.free.ex1 >}} |
+|  | `free -m` | {{< meta linux.monitoring._root.free.ex2 >}} |
+| [**`htop`**](https://tldr.inbrowser.app/pages/common/htop) |  | **{{< meta linux.monitoring._root.htop.desc >}}** |
+|  | `htop` | {{< meta linux.monitoring._root.htop.ex1 >}} |
+| [**`iotop`**](https://tldr.inbrowser.app/pages/common/iotop) |  | **{{< meta linux.monitoring._root.iotop.desc >}}** |
+|  | `iotop` | {{< meta linux.monitoring._root.iotop.ex1 >}} |
+|  | `iotop -o` | {{< meta linux.monitoring._root.iotop.ex2 >}} |
+| [**`lsof`**](https://tldr.inbrowser.app/pages/common/lsof) |  | **{{< meta linux.monitoring._root.lsof.desc >}}** |
+|  | `lsof -i :80` | {{< meta linux.monitoring._root.lsof.ex1 >}} |
+|  | `lsof -u username` | {{< meta linux.monitoring._root.lsof.ex2 >}} |
+| [**`uptime`**](https://tldr.inbrowser.app/pages/common/uptime) |  | **{{< meta linux.monitoring._root.uptime.desc >}}** |
+| [**`vmstat`**](https://tldr.inbrowser.app/pages/linux/vmstat) |  | **{{< meta linux.monitoring._root.vmstat.desc >}}** |
+|  | `vmstat 1` | {{< meta linux.monitoring._root.vmstat.ex1 >}} |
+|  | `vmstat 5 3` | {{< meta linux.monitoring._root.vmstat.ex2 >}} |
+| [**`watch`**](https://tldr.inbrowser.app/pages/common/watch) |  | **{{< meta linux.monitoring._root.watch.desc >}}** |
+|  | `watch -n 1 df -h` | {{< meta linux.monitoring._root.watch.ex1 >}} |
+|  | `watch -d free -h` | {{< meta linux.monitoring._root.watch.ex2 >}} |
+
+## {{< meta linux.packages._root.title >}}
+| {{< meta common.table.columns.command >}} | {{< meta common.table.columns.example >}} | {{< meta common.table.columns.description >}} |
+|---|---|---|
+| [**`apt`**](https://tldr.inbrowser.app/pages/linux/apt) |  | **{{< meta linux.packages._root.apt.desc >}}** |
+|  | `apt install curl` | {{< meta linux.packages._root.apt.ex1 >}} |
+|  | `apt remove curl` | {{< meta linux.packages._root.apt.ex2 >}} |
+|  | `apt update && apt upgrade` | {{< meta linux.packages._root.apt.ex3 >}} |
+| [**`dnf`**](https://tldr.inbrowser.app/pages/linux/dnf) |  | **{{< meta linux.packages._root.dnf.desc >}}** |
+|  | `dnf install curl` | {{< meta linux.packages._root.dnf.ex1 >}} |
+|  | `dnf upgrade` | {{< meta linux.packages._root.dnf.ex2 >}} |
+| [**`rpm`**](https://tldr.inbrowser.app/pages/linux/rpm) |  | **{{< meta linux.packages._root.rpm.desc >}}** |
+|  | `rpm -ivh package.rpm` | {{< meta linux.packages._root.rpm.ex1 >}} |
+|  | `rpm -e package` | {{< meta linux.packages._root.rpm.ex2 >}} |
+| [**`snap`**](https://tldr.inbrowser.app/pages/linux/snap) |  | **{{< meta linux.packages._root.snap.desc >}}** |
+|  | `snap install app` | {{< meta linux.packages._root.snap.ex1 >}} |
+|  | `snap remove app` | {{< meta linux.packages._root.snap.ex2 >}} |
+| [**`yum`**](https://tldr.inbrowser.app/pages/linux/yum) |  | **{{< meta linux.packages._root.yum.desc >}}** |
+|  | `yum install curl` | {{< meta linux.packages._root.yum.ex1 >}} |
+|  | `yum remove curl` | {{< meta linux.packages._root.yum.ex2 >}} |
+
+## {{< meta linux.file-systems._root.title >}}
+| {{< meta common.table.columns.command >}} | {{< meta common.table.columns.example >}} | {{< meta common.table.columns.description >}} |
+|---|---|---|
+| [**`blkid`**](https://tldr.inbrowser.app/pages/linux/blkid) |  | **{{< meta linux.file-systems._root.blkid.desc >}}** |
+|  | `blkid` | {{< meta linux.file-systems._root.blkid.ex1 >}} |
+| [**`df`**](https://tldr.inbrowser.app/pages/linux/df) |  | **{{< meta linux.file-systems._root.df.desc >}}** |
+|  | `df -Th` | {{< meta linux.file-systems._root.df.ex1 >}} |
+| [**`fsck`**](https://tldr.inbrowser.app/pages/linux/fsck) |  | **{{< meta linux.file-systems._root.fsck.desc >}}** |
+|  | `fsck /dev/sda1` | {{< meta linux.file-systems._root.fsck.ex1 >}} |
+| [**`lsblk`**](https://tldr.inbrowser.app/pages/linux/lsblk) |  | **{{< meta linux.file-systems._root.lsblk.desc >}}** |
+|  | `lsblk` | {{< meta linux.file-systems._root.lsblk.ex1 >}} |
+| [**`mkfs`**](https://tldr.inbrowser.app/pages/linux/mkfs) |  | **{{< meta linux.file-systems._root.mkfs.desc >}}** |
+|  | `mkfs.ext4 /dev/sdb1` | {{< meta linux.file-systems._root.mkfs.ex1 >}} |
+| [**`mount`**](https://tldr.inbrowser.app/pages/linux/mount) |  | **{{< meta linux.file-systems._root.mount.desc >}}** |
+|  | `mount /dev/sdb1 /mnt` | {{< meta linux.file-systems._root.mount.ex1 >}} |
+|  | `mount | grep /mnt` | {{< meta linux.file-systems._root.mount.ex2 >}} |
+| [**`parted`**](https://tldr.inbrowser.app/pages/linux/parted) |  | **{{< meta linux.file-systems._root.parted.desc >}}** |
+|  | `parted /dev/sdb` | {{< meta linux.file-systems._root.parted.ex1 >}} |
+| [**`umount`**](https://tldr.inbrowser.app/pages/linux/umount) |  | **{{< meta linux.file-systems._root.umount.desc >}}** |
+|  | `umount /mnt` | {{< meta linux.file-systems._root.umount.ex1 >}} |
+
+## {{< meta linux.scripts._root.title >}}
+| {{< meta common.table.columns.command >}} | {{< meta common.table.columns.example >}} | {{< meta common.table.columns.description >}} |
+|---|---|---|
+| [**`alias`**](https://tldr.inbrowser.app/pages/common/alias) |  | **{{< meta linux.scripts._root.alias.desc >}}** |
+|  | `alias ll='ls -la'` | {{< meta linux.scripts._root.alias.ex1 >}} |
+|  | `alias` | {{< meta linux.scripts._root.alias.ex2 >}} |
+| [**`bash` / `sh`**](https://tldr.inbrowser.app/pages/common/bash) |  | **{{< meta linux.scripts._root.shell.desc >}}** |
+|  | `bash script.sh` | {{< meta linux.scripts._root.shell.ex1 >}} |
+|  | `sh script.sh` | {{< meta linux.scripts._root.shell.ex2 >}} |
+| [**`crontab`**](https://tldr.inbrowser.app/pages/common/crontab) |  | **{{< meta linux.scripts._root.crontab.desc >}}** |
+|  | `crontab -e` | {{< meta linux.scripts._root.crontab.ex1 >}} |
+| [**`read`**](https://tldr.inbrowser.app/pages/common/read) |  | **{{< meta linux.scripts._root.read.desc >}}** |
+|  | `read name` | {{< meta linux.scripts._root.read.ex1 >}} |
+| [**`set`**](https://tldr.inbrowser.app/pages/common/set) |  | **{{< meta linux.scripts._root.set.desc >}}** |
+|  | `set -e` | {{< meta linux.scripts._root.set.ex1 >}} |
+| [**`source`**](https://tldr.inbrowser.app/pages/common/source) |  | **{{< meta linux.scripts._root.source.desc >}}** |
+|  | `source ~/.bashrc` | {{< meta linux.scripts._root.source.ex1 >}} |
+| [**`trap`**](https://tldr.inbrowser.app/pages/linux/trap) |  | **{{< meta linux.scripts._root.trap.desc >}}** |
+|  | `trap "echo 'exit'" EXIT` | {{< meta linux.scripts._root.trap.ex1 >}} |
+
+## {{< meta linux.dev-debug._root.title >}}
+| {{< meta common.table.columns.command >}} | {{< meta common.table.columns.example >}} | {{< meta common.table.columns.description >}} |
+|---|---|---|
+| [**`gcc`**](https://tldr.inbrowser.app/pages/common/gcc) |  | **{{< meta linux.dev-debug._root.gcc.desc >}}** |
+|  | `gcc main.c -o app` | {{< meta linux.dev-debug._root.gcc.ex1 >}} |
+| [**`gdb`**](https://tldr.inbrowser.app/pages/common/gdb) |  | **{{< meta linux.dev-debug._root.gdb.desc >}}** |
+|  | `gdb ./app` | {{< meta linux.dev-debug._root.gdb.ex1 >}} |
+| [**`git`**](https://tldr.inbrowser.app/pages/common/git) |  | **{{< meta linux.dev-debug._root.git.desc >}}** |
+|  | `git status` | {{< meta linux.dev-debug._root.git.ex1 >}} |
+|  | `git commit -m "msg"` | {{< meta linux.dev-debug._root.git.ex2 >}} |
+| [**`ltrace`**](https://tldr.inbrowser.app/pages/linux/ltrace) |  | **{{< meta linux.dev-debug._root.ltrace.desc >}}** |
+|  | `ltrace ./app` | {{< meta linux.dev-debug._root.ltrace.ex1 >}} |
+| [**`make`**](https://tldr.inbrowser.app/pages/common/make) |  | **{{< meta linux.dev-debug._root.make.desc >}}** |
+|  | `make` | {{< meta linux.dev-debug._root.make.ex1 >}} |
+| [**`shellcheck`**](https://tldr.inbrowser.app/pages/common/shellcheck) |  | **{{< meta linux.dev-debug._root.shellcheck.desc >}}** |
+|  | `shellcheck script.sh` | {{< meta linux.dev-debug._root.shellcheck.ex1 >}} |
+| [**`strace`**](https://tldr.inbrowser.app/pages/linux/strace) |  | **{{< meta linux.dev-debug._root.strace.desc >}}** |
+|  | `strace ./app` | {{< meta linux.dev-debug._root.strace.ex1 >}} |
+| [**`valgrind`**](https://tldr.inbrowser.app/pages/linux/valgrind) |  | **{{< meta linux.dev-debug._root.valgrind.desc >}}** |
+|  | `valgrind ./app` | {{< meta linux.dev-debug._root.valgrind.ex1 >}} |
+| [**`vim` / `nano`**](https://tldr.inbrowser.app/pages/common/vim) |  | **{{< meta linux.dev-debug._root.editors.desc >}}** |
+|  | `vim file.sh` | {{< meta linux.dev-debug._root.editors.ex1 >}} |
+|  | `nano file.sh` | {{< meta linux.dev-debug._root.editors.ex2 >}} |
+
+## {{< meta linux.misc._root.title >}}
+| {{< meta common.table.columns.command >}} | {{< meta common.table.columns.example >}} | {{< meta common.table.columns.description >}} |
+|---|---|---|
+| [**`cal`**](https://tldr.inbrowser.app/pages/linux/cal) |  | **{{< meta linux.misc._root.cal.desc >}}** |
+|  | `cal 2025` | {{< meta linux.misc._root.cal.ex1 >}} |
+|  | `cal 08 2025` | {{< meta linux.misc._root.cal.ex2 >}} |
+| [**`date`**](https://tldr.inbrowser.app/pages/common/date) |  | **{{< meta linux.misc._root.date.desc >}}** |
+|  | `date +%T` | {{< meta linux.misc._root.date.ex1 >}} |
+|  | `date -d "next friday"` | {{< meta linux.misc._root.date.ex2 >}} |
+| [**`factor`**](https://tldr.inbrowser.app/pages/linux/factor) |  | **{{< meta linux.misc._root.factor.desc >}}** |
+|  | `factor 100` | {{< meta linux.misc._root.factor.ex1 >}} |
+| [**`man`**](https://tldr.inbrowser.app/pages/common/man) |  | **{{< meta linux.misc._root.man.desc >}}** |
+|  | `man tar` | {{< meta linux.misc._root.man.ex1 >}} |
+|  | `man -k copy` | {{< meta linux.misc._root.man.ex2 >}} |
+|  | `man 5 passwd` | {{< meta linux.misc._root.man.ex3 >}} |
+| [**`seq`**](https://tldr.inbrowser.app/pages/linux/seq) |  | **{{< meta linux.misc._root.seq.desc >}}** |
+|  | `seq 1 5` | {{< meta linux.misc._root.seq.ex1 >}} |
+|  | `seq 1 2 9` | {{< meta linux.misc._root.seq.ex2 >}} |
+|  | `seq -s ',' 1 5` | {{< meta linux.misc._root.seq.ex3 >}} |
+| [**`yes`**](https://tldr.inbrowser.app/pages/common/yes) |  | **{{< meta linux.misc._root.yes.desc >}}** |
+|  | `yes | rm -r dir` | {{< meta linux.misc._root.yes.ex1 >}} |
+
+## {{< meta linux.resources._root.title >}}
+
+{{< meta linux.resources._root.str.man_pages_desc >}}:
+
+```bash
+man ls
+man rm
+```
+
+{{< meta linux.resources._root.str.tldr_desc >}}:
+
+{{< meta linux.resources._root.str.tip_desc >}}
+
+{{< include "../assets/snippets/linux/tldr-install.sh" >}}
+
+### {{< meta linux.resources._root.str.useful_links >}}
+
+{{< meta linux.resources._root.str.linux_man_pages_online_desc >}}  
+[https://man7.org/linux/man-pages/](https://man7.org/linux/man-pages/)
+
+{{< meta linux.resources._root.str.simplified_man_pages_desc >}}  
+[https://tldr.sh/](https://tldr.sh/)

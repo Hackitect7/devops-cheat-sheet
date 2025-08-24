@@ -1,0 +1,629 @@
+docker:
+  meta:
+    _root:
+      title: "🐳 Docker"
+      desc: "📘 Docker là một nền tảng để chạy ứng dụng trong các container cách ly. Bảng tóm tắt này chứa các lệnh làm việc với image, container, network, volume, cũng như Docker Compose và Swarm."
+
+  basic:
+    _root:
+      title: "📦 Lệnh cơ bản"
+    docker:
+      desc: "Lệnh CLI chính của Docker dùng để chạy các lệnh con và quản lý container, image, network và volume"
+    docker_version:
+      desc: "Hiển thị phiên bản Docker đã cài (client và server). Hữu ích để xác minh cài đặt"
+      ex1: "Chỉ hiển thị phiên bản API của Docker client"
+      ex2: "Chỉ hiển thị phiên bản Docker server (Engine)"
+      ex3: "Xuất thông tin phiên bản đầy đủ ở định dạng JSON"
+    docker_system_info:
+      desc: "Hiển thị thông tin chung về hệ thống Docker: số lượng container, image, tài nguyên"
+      ex1: "Hiển thị dữ liệu Docker: phiên bản, mạng, số lượng container và image"
+      ex2: "Xuất thông tin ở định dạng JSON — hữu ích cho tự động hóa"
+      ex3: "Hiển thị số CPU và tổng bộ nhớ"
+      ex4: "Hiển thị trình điều khiển lưu trữ mà Docker đang sử dụng"
+    docker_image_pull:
+      desc: "Tải image từ Docker Hub hoặc registry khác. Container không thể chạy nếu không có image"
+      ex1: "Tải image Ubuntu mới nhất"
+      ex2: "Tải image Nginx nhẹ dựa trên Alpine Linux"
+      ex3: "Tải image Redis phiên bản 7"
+    docker_container_run:
+      desc: "Tạo và chạy container mới từ image"
+      ex1: "Chạy Ubuntu với terminal Bash tương tác"
+      ex2: "Chạy Nginx ở chế độ nền (detached)"
+      ex3: "Chạy Nginx và ánh xạ cổng 80 của container sang cổng 8080 của host"
+    docker_container_ls:
+      desc: "Liệt kê container đang chạy"
+      ex1: "Hiển thị chỉ các container đang chạy"
+      ex2: "Hiển thị tất cả container, bao gồm cả đã dừng"
+      ex3: "Chỉ xuất tên container"
+    docker_container_start:
+      desc: "Khởi động một hoặc nhiều container đã dừng"
+      ex1: "Khởi động container theo tên"
+      ex2: "Khởi động tất cả container"
+      ex3: "Khởi động container và gắn terminal tương tác"
+    docker_container_stop:
+      desc: "Dừng một container đang chạy"
+      ex1: "Dừng container theo tên"
+      ex2: "Dừng tất cả container đang chạy"
+      ex3: "Dừng container và cho 5 giây để kết thúc tiến trình"
+    docker_container_restart:
+      desc: "Khởi động lại container"
+      ex1: "Khởi động lại container cụ thể"
+      ex2: "Khởi động lại tất cả container đang chạy"
+      ex3: "Khởi động lại container với độ trễ 10 giây"
+    docker_container_rm:
+      desc: "Xóa container"
+      ex1: "Xóa container đã dừng cụ thể"
+      ex2: "Xóa tất cả container đã dừng"
+      ex3: "Buộc xóa container đang chạy"
+    docker_image_ls:
+      desc: "Liệt kê các image đã tải về"
+      ex1: "Hiển thị tất cả image trên host"
+      ex2: "Hiển thị tất cả image, bao gồm cả lớp trung gian"
+      ex3: "Chỉ xuất tên và tag của image"
+    docker_image_rm:
+      desc: "Xóa một hoặc nhiều image khỏi bộ nhớ cục bộ"
+      ex1: "Xóa image với tag `latest` từ repository `test1`"
+      ex2: "Xóa image theo ID"
+      ex3: "Xóa tất cả image (sử dụng cẩn thận!)"
+
+  container:
+    _root:
+      title: "🔁 Quản lý Container"
+    docker_container_exec:
+      desc: "Chạy lệnh bên trong container đang chạy"
+      ex1: "Mở shell bash tương tác bên trong container tên `container`"
+      ex2: "Thực thi lệnh `ls` trong thư mục `/app` bên trong container"
+      ex3: "Chạy lệnh trong container ở chế độ nền (không chờ)"
+    docker_container_logs:
+      desc: "Xem log của container"
+      ex1: "Hiển thị tất cả log từ container `container`"
+      ex2: "Theo dõi log container theo thời gian thực"
+      ex3: "Hiển thị 50 dòng log cuối"
+    docker_inspect:
+      desc: "Lấy thông tin chi tiết JSON về container hoặc image"
+      ex1: "Hiển thị chi tiết container `container`"
+      ex2: "Hiển thị địa chỉ IP của container"
+    docker_container_stats:
+      desc: "Hiển thị thống kê sử dụng tài nguyên của container theo thời gian thực"
+      ex1: "Hiển thị CPU, bộ nhớ, mạng và đĩa của tất cả container"
+      ex2: "Chỉ hiển thị thống kê cho container cụ thể"
+      ex3: "Hiển thị một lần snapshot thống kê rồi thoát"
+    docker_container_rename:
+      desc: "Đổi tên container"
+      ex1: "Đổi tên container từ `old_name` thành `new_name`"
+    docker_container_cp:
+      desc: "Sao chép tệp giữa container và host"
+      ex1: "Sao chép tệp từ container sang thư mục hiện tại trên host"
+      ex2: "Sao chép tệp từ host sang container"
+      ex3: "Truyền file log từ container và lọc dòng \"ERROR\" mà không lưu vào đĩa"
+    docker_container_top:
+      desc: "Hiển thị tiến trình đang chạy bên trong container"
+      ex1: "Hiển thị tiến trình của container tên `container`"
+    docker_container_pause:
+      desc: "Tạm dừng tất cả tiến trình trong container"
+      ex1: "Tạm dừng container `container`"
+    docker_container_unpause:
+      desc: "Tiếp tục container đã bị tạm dừng"
+      ex1: "Tiếp tục container `container`"
+    docker_container_update:
+      desc: "Cập nhật thiết lập container mà không cần khởi động lại"
+      ex1: "Giới hạn bộ nhớ container ở 500 MB"
+
+  images:
+    _root:
+      title: "🧱 Image và Dockerfile"
+    docker_buildx_build:
+      desc: "Build image Docker từ Dockerfile"
+      ex1: "Build image gắn tag `my_image` từ thư mục hiện tại"
+      ex2: "Build image gắn tag phiên bản `1.0`"
+      ex3: "Build image không sử dụng cache để clean build"
+    docker_container_commit:
+      desc: "Tạo image từ trạng thái hiện tại của container"
+      ex1: "Tạo image `my_img` với tag `v1` từ container `container`"
+      ex2: "Tạo image với thông điệp commit"
+      ex3: "Tạo image với thông tin tác giả"
+    docker_image_tag:
+      desc: "Thêm hoặc thay đổi tag của image"
+      ex1: "Thêm tag để push lên registry `myrepo`"
+      ex2: "Tạo tag `stable` cho image tag `1.0`"
+      ex3: "Thêm tag `backup` cho image cục bộ"
+    docker_image_push:
+      desc: "Push image lên Docker Hub hoặc registry khác"
+      ex1: "Push image với tag `latest` lên repository `myrepo`"
+      ex2: "Push image với tag `1.0`"
+      ex3: "Push image với tag mặc định `latest`"
+    docker_login:
+      desc: "Xác thực vào Docker Hub hoặc registry khác"
+      ex1: "Nhập tên và mật khẩu thủ công cho Docker Hub"
+      ex2: "Đăng nhập vào registry riêng"
+      ex3: "Đăng nhập bằng tên và mật khẩu (không khuyến nghị)"
+    docker_logout:
+      desc: "Đăng xuất khỏi Docker Hub hoặc registry khác"
+      ex1: "Đăng xuất khỏi Docker Hub"
+      ex2: "Đăng xuất khỏi registry riêng"
+    healthcheck:
+      desc: "Chỉ thị Dockerfile để kiểm tra tình trạng container tự động"
+      ex1: "Thêm health check để kiểm tra dịch vụ mỗi 30 giây"
+      ex2: "Kiểm tra trạng thái healthcheck của container đang chạy"
+
+  networks:
+    _root:
+      title: "🔌 Mạng và Volume"
+    docker_network_ls:
+      desc: "Liệt kê tất cả mạng Docker"
+      ex1: "Hiển thị tất cả mạng đã tạo"
+      ex2: "Hiển thị chỉ các mạng dùng driver `bridge`"
+      ex3: "Chỉ hiển thị tên mạng"
+    docker_network_create:
+      desc: "Tạo mạng Docker mới"
+      ex1: "Tạo mạng tên `my_net` với thiết lập mặc định"
+      ex2: "Tạo mạng với driver `bridge`"
+      ex3: "Tạo mạng với subnet chỉ định"
+    docker_network_connect:
+      desc: "Kết nối container vào mạng"
+      ex1: "Kết nối container tên `container` vào mạng `my_net`"
+      ex2: "Kết nối với alias `db_net`"
+    docker_network_disconnect:
+      desc: "Ngắt kết nối container khỏi mạng"
+      ex1: "Ngắt container `container` khỏi mạng `my_net`"
+    docker_volume_ls:
+      desc: "Liệt kê tất cả volume Docker"
+      ex1: "Hiển thị tất cả volume"
+      ex2: "Hiển thị volume chưa dùng"
+    docker_volume_create:
+      desc: "Tạo volume mới"
+      ex1: "Tạo volume tên `my_vol`"
+      ex2: "Tạo volume tạm bằng tmpfs"
+    docker_volume_inspect:
+      desc: "Hiển thị thông tin chi tiết về volume"
+      ex1: "Hiển thị chi tiết volume `my_vol` ở định dạng JSON"
+    docker_volume_rm:
+      desc: "Xóa một hoặc nhiều volume"
+      ex1: "Xóa volume tên `my_vol`"
+      ex2: "Xóa tất cả volume chưa dùng"
+
+  plugins:
+    _root:
+      title: "🧩 Plugin Docker"
+    docker_plugin_ls:
+      desc: "Liệt kê plugin Docker đã cài"
+      ex1: "Hiển thị tất cả plugin và trạng thái"
+    docker_plugin_install:
+      desc: "Cài plugin Docker từ registry"
+      ex1: "Cài plugin volume SSHFS"
+      ex2: "Cài plugin mạng Weave"
+    docker_plugin_disable:
+      desc: "Vô hiệu hóa plugin đã cài"
+      ex1: "Vô hiệu hóa plugin SSHFS"
+    docker_plugin_enable:
+      desc: "Kích hoạt plugin đã vô hiệu hóa"
+      ex1: "Kích hoạt plugin SSHFS"
+    docker_plugin_rm:
+      desc: "Xóa plugin Docker"
+      ex1: "Xóa plugin SSHFS"
+
+  compose:
+    _root:
+      title: "📋 Docker Compose"
+    docker_compose_up:
+      desc: "Khởi động container định nghĩa trong `docker-compose.yml`"
+      ex1: "Khởi động tất cả service trong thư mục hiện tại ở chế độ tương tác"
+      ex2: "Khởi động service ở chế độ nền (detached)"
+      ex3: "Build image trước khi khởi động service"
+    docker_compose_down:
+      desc: "Dừng và xóa container, network và volume được tạo bởi `up`"
+      ex1: "Dừng tất cả service đang chạy và xóa tài nguyên liên quan"
+      ex2: "Xóa cả volume được Compose tạo"
+      ex3: "Xóa cả image được Compose tạo"
+    docker_compose_logs:
+      desc: "Xem log của tất cả hoặc service cụ thể"
+      ex1: "Hiển thị log của tất cả service"
+      ex2: "Theo dõi log theo thời gian thực"
+      ex3: "Hiển thị log của service `web`"
+    docker_compose_exec:
+      desc: "Chạy lệnh bên trong container của service đang chạy"
+      ex1: "Mở bash shell tương tác bên trong container service `web`"
+      ex2: "Chạy lệnh `ls` trong container database"
+      ex3: "Chạy lệnh trong container `worker` ở chế độ nền"
+    docker_compose_build:
+      desc: "Build hoặc rebuild image service"
+      ex1: "Build tất cả image trong `docker-compose.yml`"
+      ex2: "Build chỉ image của service `web`"
+      ex3: "Build image không dùng cache"
+    docker_compose_ps:
+      desc: "Hiển thị trạng thái của tất cả service và container"
+      ex1: "Hiển thị tất cả container, kể cả đã dừng"
+      ex2: "Chỉ hiển thị tên service"
+    docker_compose_pull:
+      desc: "Tải/cập nhật image service từ registry"
+      ex1: "Tải image chỉ cho service `web`"
+      ex2: "Tiếp tục tải ngay cả khi một số image bị lỗi"
+    docker_compose_restart:
+      desc: "Khởi động lại tất cả hoặc service cụ thể"
+      ex1: "Khởi động lại chỉ service `db`"
+      ex2: "Khởi động lại service với timeout 10 giây"
+    docker_compose_config:
+      desc: "Hiển thị cấu hình Compose cuối cùng ở định dạng YAML"
+      ex1: "Liệt kê tất cả service trong cấu hình"
+      ex2: "Liệt kê tất cả volume trong cấu hình"
+    docker_compose_start:
+      desc: "Khởi động service đã dừng mà không tạo lại container"
+      ex1: "Khởi động service `web`"
+      ex2: "Khởi động nhiều service cùng lúc"
+    docker_compose_stop:
+      desc: "Dừng service mà không xóa container"
+      ex1: "Dừng service `web`"
+      ex2: "Dừng service với timeout 5 giây"
+
+  export_import:
+    _root:
+      title: 📤 Xuất và Nhập
+    docker_image_save:
+      desc: "Lưu một hoặc nhiều Docker image thành tar archive để nhập hoặc truyền sau này"
+      ex1: "Lưu Docker image vào tệp tar archive"
+      ex2: "Cách khác để lưu image vào tệp"
+      ex3: "Lưu image Redis cụ thể vào tệp"
+    docker_image_load:
+      desc: "Tải Docker image từ tar archive đã lưu trước đó"
+      ex1: "Tải Docker image từ tệp tar archive"
+      ex2: "Tải image bằng cách chỉ định tệp qua tham số"
+      ex3: "Tải image không hiển thị tiến trình"
+    docker_container_export:
+      desc: "Xuất filesystem của container thành tar archive mà không có lịch sử hoặc metadata của image"
+      ex1: "Xuất filesystem container thành archive"
+      ex2: "Xuất container theo tên"
+      ex3: "Xuất bằng ID container với cờ `-o`"
+    docker_image_import:
+      desc: "Tạo image mới từ tar archive của filesystem"
+      ex1: "Nhập tệp archive thành Docker image mới"
+      ex2: "Nhập image trực tiếp từ URL"
+      ex3: "Nhập từ standard input"
+
+  cleanup:
+    _root:
+      title: 🧹 Dọn dẹp và Chẩn đoán
+    docker_system_df:
+      desc: "Hiển thị mức sử dụng đĩa Docker: volume, image, container và build cache"
+      ex1: "Output chi tiết với thông tin về từng image, container và volume"
+      ex2: "Xuất thông tin ở định dạng JSON"
+    docker_system_prune:
+      desc: "Xóa tất cả dữ liệu Docker không dùng: container đã dừng, network không dùng, image treo và build cache"
+      ex1: "Xóa image không dùng bao gồm cả lớp trung gian"
+      ex2: "Xóa volume không dùng cùng với các tài nguyên khác"
+    docker_image_prune:
+      desc: "Xóa image Docker không dùng bao gồm cả lớp treo"
+      ex1: "Xóa tất cả image không dùng bao gồm cả lớp treo"
+      ex2: "Xóa image cũ hơn 24 giờ"
+    docker_container_prune:
+      desc: "Xóa container đã dừng theo bộ lọc hoặc tất cả nếu không chỉ định"
+      ex1: "Xóa container đã dừng lâu hơn 24 giờ"
+      ex2: "Xóa mà không cần xác nhận"
+
+  swarm:
+    _root:
+      title: 🐝 Docker Swarm
+    docker_swarm_init:
+      desc: "Khởi tạo cụm Docker Swarm mới trên node hiện tại"
+      ex1: "Khởi tạo cụm với địa chỉ IP chỉ định"
+      ex2: "Khởi tạo với cổng listen chỉ định"
+    docker_service_create:
+      desc: "Tạo service mới trong cụm Swarm"
+      ex1: "Tạo service Nginx trong Swarm"
+      ex2: "Tạo service với 3 replica"
+      ex3: "Tạo service với ánh xạ cổng"
+    docker_stack_deploy:
+      desc: "Triển khai stack service vào cụm Swarm dựa trên tệp Compose"
+      ex1: "Triển khai stack từ tệp compose"
+      ex2: "Triển khai với chuyển tiếp xác thực registry"
+      ex3: "Dùng tệp compose thay thế cho stack"
+    docker_stack_rm:
+      desc: "Xóa một hoặc nhiều stack khỏi cụm Swarm"
+      ex1: "Xóa stack `mystack`"
+      ex2: "Xóa tất cả stack (không khuyến nghị)"
+      ex3: "Xóa stack và rời khỏi Swarm"
+
+  advanced_docker:
+    _root:
+      title: "💼 Sử dụng Docker nâng cao"
+
+    prof:
+      title: "🚀 Lệnh Docker chuyên nghiệp"
+      docker_buildx:
+        desc: "Công cụ build image nâng cao thay thế `docker build`. Hỗ trợ đa nền tảng, cache, build song song và xuất sang nhiều định dạng. Hữu ích cho CI/CD và phát triển đa nền tảng"
+        ex1: "Build image đa nền tảng (ARM và x86 đồng thời)"
+        ex2: "Build image và nạp vào cache Docker Engine cục bộ"
+        ex3: "Build và push image đa nền tảng lên registry"
+      docker_context:
+        desc: "Quản lý context Docker để làm việc với môi trường từ xa hoặc nhiều môi trường. Cho phép chuyển đổi nhanh giữa Docker Engine cục bộ và từ xa"
+        ex1: "Tạo context để kết nối tới Docker host từ xa"
+        ex2: "Chuyển sang context từ xa"
+        ex3: "Liệt kê context khả dụng và context đang dùng"
+      docker_system_events:
+        desc: "Nghe sự kiện Docker theo thời gian thực, có thể lọc theo loại sự kiện (vd: container start). Hữu ích cho giám sát và tự động hóa"
+        ex1: "Chỉ hiển thị sự kiện container start"
+        ex2: "Hiển thị sự kiện từ 1 giờ trước đến 10 phút trước"
+        ex3: "Chỉ hiển thị sự kiện liên quan tới mạng"
+        ex4: "Hiển thị sự kiện liên quan đến image `nginx`"
+      docker_container_update:
+        desc: "Thay đổi giới hạn tài nguyên và cài đặt của container đang chạy mà không cần khởi động lại"
+        ex1: "Đặt giới hạn 2 CPU và 1 GB RAM"
+        ex2: "Đặt chính sách tự động khởi động lại thành `unless-stopped`"
+        ex3: "Giới hạn số tiến trình ở mức 200"
+      docker_container_diff:
+        desc: "Hiển thị thay đổi filesystem trong container so với image gốc. Hữu ích để debug và audit"
+        ex1: "Hiển thị tất cả thay đổi filesystem trong container"
+        ex2: "Chỉ hiển thị tệp được thêm (`A` — Added)"
+      docker_image_history:
+        desc: "Hiển thị lịch sử layer của image: lệnh build, kích thước từng layer và thời gian tạo. Hữu ích cho tối ưu hóa và audit"
+        ex1: "Hiển thị lịch sử layer của image"
+        ex2: "Hiển thị lệnh build đầy đủ không bị cắt"
+        ex3: "Chỉ xuất lệnh build và kích thước layer"
+
+    practices:
+      title: "🛠 Thực tiễn và Tự động hóa Docker"
+      minimize_image_size:
+        title: "Giảm kích thước image"
+        p1: "Dùng base image như `alpine` hoặc `scratch` để giảm kích thước."
+        p2: "Để gộp layer, có thể dùng `--squash` khi build (cần bật tính năng thử nghiệm)."
+        p3: "Ngoài ra, xóa tệp tạm và cache trong một layer duy nhất:"
+      minimize_layers:
+        title: "Giảm số lượng layer"
+        p1: "Kết hợp các lệnh trong một `RUN` để giảm số lượng layer và kích thước image cuối cùng:"
+      optimize_build:
+        title: "Tối ưu build Dockerfile"
+        p1: "Dùng multi-stage build để chỉ giữ lại tệp cần thiết trong image cuối."
+        p2: "Copy và cài dependency trước, sau đó copy code — giúp cải thiện cache layer và tăng tốc rebuild."
+      secrets_and_configs:
+        title: "Tách bí mật và cấu hình"
+        p1: "Không bao giờ lưu `.env`, API key hoặc chứng chỉ riêng trong image."
+        intro: "Dùng để cấu hình:"
+        items:
+          secret: "`docker secret` (trong Swarm)"
+          env: "biến môi trường (`-e VAR=value` hoặc `.env`)"
+          volumes: "volume ngoài cho config"
+      buildkit_secrets:
+        title: "Secret khi build (BuildKit)"
+        p1: "Để truyền secret an toàn khi build, dùng cờ `--secret`:"
+        p2: "Trong Dockerfile, secret khả dụng tại `/run/secrets/mysecret`:"
+        note: "🛡 Điều này ngăn secret bị lưu trong layer image."
+      rootless:
+        title: "Rootless Docker"
+        p1: "Chạy Docker không cần quyền root cải thiện bảo mật và giảm rủi ro compromise host."
+        steps_intro: "Để bật:"
+        check_intro: "Kiểm tra:"
+        warning: "⚠ Một số tính năng (vd: chuyển tiếp cổng <1024) sẽ không khả dụng."
+      scan:
+        title: "Quét image tìm lỗ hổng"
+        p1: "Dùng công cụ tích hợp sẵn:"
+        p2: "Hoặc CLI mới:"
+        p3: "Điều này giúp phát hiện lỗ hổng trong base image và dependency."
+      resource_limits:
+        title: "Giám sát tài nguyên"
+        p1: "Giới hạn container theo bộ nhớ, CPU và số tiến trình:"
+        p2: "Điều này ngăn tiêu thụ tài nguyên quá mức."
+        p3: "Có thể giới hạn cả I/O:"
+        p4: "Hữu ích cho container không nên quá tải hệ thống đĩa."
+      cleanup:
+        title: "Tự động dọn dẹp"
+        p1: "Thường xuyên xóa image, container, volume và network không dùng:"
+        warning: "⚠ Cẩn thận: lệnh này sẽ xóa tất cả tài nguyên không dùng."
+        p2: "Để dọn selective, dùng:"
+      cicd:
+        title: "Tích hợp CI/CD"
+        p1: "Nhúng build, test và deploy vào GitHub Actions, GitLab CI, Jenkins pipeline."
+        example_intro: "Ví dụ bước GitHub Actions:"
+      logging:
+        title: "Logging và giám sát"
+        p1: "Gắn logging driver (`--log-driver`) tới hệ thống tập trung: ELK, Loki, Splunk."
+        p2: "Dùng Prometheus + cAdvisor cho metrics container."
+      production:
+        title: "Triển khai Production"
+        p1: "Tách cấu hình cho development và production bằng `docker-compose.override.yml`."
+        ha_intro: "Để high availability và scaling dùng:"
+        items:
+          swarm: "Docker Swarm"
+          k8s: "Kubernetes"
+
+    debugging:
+      title: "🐞 Debug và Profiling Docker Container"
+      exec:
+        group_desc: "Chạy lệnh bên trong container đang chạy, cung cấp truy cập tương tác hoặc khả năng chạy tiến trình trong môi trường cách ly"
+        r1: "Mở terminal tương tác (bash) bên trong container đang chạy"
+        r2: "Mở shell tối giản bên trong container (nếu bash không có)"
+        r3: "Chạy lệnh trong container không ở chế độ tương tác"
+      logs:
+        group_desc: "Hiển thị log của container cụ thể, cho phép xem output và sự kiện liên quan để chẩn đoán và giám sát"
+        r1: "Xem 100 dòng log cuối với stream theo thời gian thực"
+        r2: "Hiển thị tất cả log của container"
+        r3: "Hiển thị log của 1 giờ qua"
+      inspect:
+        group_desc: "Xuất thông tin chi tiết về đối tượng Docker (container, image, network, v.v.) ở định dạng JSON, bao gồm cấu hình và trạng thái"
+        r1: "Lấy toàn bộ JSON info của container"
+        r2: "Lấy PID của tiến trình chính trong host"
+        r3: "Hiển thị địa chỉ IP của container"
+      nsenter:
+        group_desc: "Tiện ích Linux để vào namespace của tiến trình khác (ở đây là container). Dùng với `strace` để theo dõi syscall bên trong container khi debug"
+        r1: "Vào namespace container và trace syscall của process 1"
+        r2: "Mở bash shell trong namespace container"
+        r3: "Xem cổng mở trong container"
+      tcpdump:
+        group_desc: "Công cụ console để bắt và phân tích traffic mạng. Dùng trong container để chẩn đoán sự cố mạng, phân tích gói tin và giám sát kết nối"
+        r1: "Bắt và phân tích traffic mạng bên trong container"
+        r2: "Bắt traffic chỉ trên cổng 80"
+        r3: "Lưu traffic vào file để phân tích sau"
+      stats:
+        group_desc: "Hiển thị số liệu sử dụng tài nguyên (CPU, bộ nhớ, mạng, đĩa) của 1 hoặc nhiều container theo thời gian thực"
+        r1: "Hiển thị CPU, bộ nhớ, mạng và đĩa theo thời gian thực của container"
+        r2: "Hiển thị thống kê cho tất cả container"
+        r3: "Xuất thống kê một lần rồi thoát"
+      top:
+        group_desc: "Hiển thị danh sách tiến trình chạy bên trong container, tương tự `ps` trong Linux, để phân tích hoạt động container"
+        r1: "Hiển thị tiến trình chạy trong container"
+        r2: "Dùng định dạng output khác như `ps aux`"
+        r3: "Chỉ hiển thị PID và lệnh của tiến trình"
+      diff:
+        group_desc: "Hiển thị thay đổi trong filesystem của container so với image gốc, chỉ ra tệp thêm, thay đổi hoặc xóa"
+        r1: "Hiển thị thay đổi filesystem của container so với image gốc"
+        r2: "Chỉ hiển thị tệp thêm (`A` — Added)"
+        r3: "Chỉ hiển thị tệp thay đổi (`C` — Changed)"
+      cp:
+        group_desc: "Sao chép tệp và thư mục giữa container và host, cho phép trao đổi dữ liệu và backup"
+        r1: "Sao chép tệp từ container sang host"
+        r2: "Sao chép tệp từ host vào container"
+        r3: "Sao chép file log và lọc dòng lỗi mà không lưu vào đĩa"
+      advanced_note: "💡 Để debug nâng cao, bạn có thể dùng `nsenter`, `strace`, `tcpdump`, `gdb` và các công cụ low-level khác."
+
+  compose_adv:
+    _root:
+      title: "💼 Sử dụng Docker Compose nâng cao"
+    prof:
+      title: "🚀 Lệnh Docker Compose chuyên nghiệp"
+      up:
+        group_desc: "Khởi động và quản lý vòng đời của các service từ tệp docker-compose.yml với khả năng chạy ở chế độ nền"
+        r1: "Chạy chỉ các service `web` và `db` ở chế độ nền"
+        r2: "Build lại image trước khi khởi động service"
+        r3: "Xóa container không được định nghĩa trong tệp compose hiện tại"
+      build:
+        group_desc: "Build image cho các service như được mô tả trong tệp compose với kiểm soát cache và song song"
+        r1: "Build lại hoàn toàn image mà không sử dụng cache"
+        r2: "Build tất cả service đồng thời để tăng tốc"
+        r3: "Build image chỉ cho service `web`"
+      pull:
+        group_desc: "Tải phiên bản mới nhất của image từ registry cho tất cả hoặc service chỉ định"
+        r1: "Pull image cho tất cả service"
+        r2: "Pull image chỉ cho service `db`"
+        r3: "Tiếp tục thực thi và bỏ qua lỗi khi pull image"
+      restart:
+        group_desc: "Khởi động lại tất cả hoặc service chỉ định mà không tạo lại container"
+        r1: "Khởi động lại tất cả service trong project hiện tại"
+        r2: "Khởi động lại chỉ service `worker`"
+        r3: "Khởi động lại nhiều service cùng lúc"
+      exec:
+        group_desc: "Thực thi lệnh bên trong container của service đang chạy với tùy chọn chế độ tương tác"
+        r1: "Chạy psql bên trong container service `db`"
+        r2: "Mở shell trong container `web`"
+        r3: "Thực thi yêu cầu curl từ container service `api`"
+      config:
+        group_desc: "Xuất cấu hình Compose cuối cùng xét tất cả tệp và biến môi trường"
+        r1: "Hiển thị cấu hình hợp nhất ở định dạng YAML"
+        r2: "Liệt kê tất cả service"
+        r3: "Hiển thị tất cả biến môi trường được sử dụng bởi service"
+      watch:
+        group_desc: "Tự động khởi động lại service khi tệp nguồn thay đổi, hữu ích cho phát triển"
+        r1: "Bắt đầu theo dõi tệp và khởi động lại service khi thay đổi"
+      events:
+        group_desc: "Stream sự kiện Compose: service start, stop, update"
+        r1: "Nhận sự kiện ở định dạng JSON"
+      rm:
+        group_desc: "Xóa container service đã dừng"
+        r1: "Xóa container của service `web` và `db`"
+      pause:
+        group_desc: "Tạm dừng hoạt động service"
+        r1: "Tạm dừng service `api`"
+      unpause:
+        group_desc: "Tiếp tục service đã tạm dừng"
+        r1: "Tiếp tục service `api`"
+      create:
+        group_desc: "Tạo container nhưng không khởi động"
+        r1: "Tạo container cho `web` và `db` nhưng không khởi động"
+      images:
+        group_desc: "Hiển thị danh sách image được sử dụng bởi service"
+        r1: "Hiển thị image của tất cả service"
+      top:
+        group_desc: "Hiển thị tiến trình đang chạy bên trong container của service"
+        r1: "Hiển thị tiến trình trong container của service `web`"
+
+    practices:
+      title: "🛠 Thực tiễn và Tự động hóa hữu ích với Docker Compose"
+      env_separation:
+        title: "Tách môi trường"
+        p1: "Dùng các tệp `docker-compose.override.yml` riêng cho từng môi trường — `development`, `staging`, `production`. Điều này giúp cô lập cấu hình và tránh xung đột."
+        p2: "Bạn cũng có thể kết hợp nhiều tệp config bằng cờ `-f`:"
+        p3: "Sử dụng các tệp `.env` khác nhau (`.env.dev`, `.env.prod`, v.v.) để quản lý biến môi trường."
+      secrets:
+        title: "Lưu trữ bí mật an toàn"
+        p1: "Không đưa dữ liệu nhạy cảm (mật khẩu, token) trực tiếp vào tệp Compose. Thay vào đó, sử dụng:"
+        items:
+          env: "Tệp `.env` cho biến môi trường (lưu ý rằng `.env` không được mã hóa và không nên commit vào repo công khai)"
+          swarm_secret: "`docker secret` và `docker config` để quản lý bí mật và cấu hình an toàn trong Docker Swarm"
+          volumes: "volume ngoài cho tệp cấu hình chứa bí mật"
+          external_mgr: "hệ thống quản lý bí mật bên ngoài (ví dụ: HashiCorp Vault, AWS Secrets Manager)"
+      startup_order:
+        title: "Thứ tự khởi động với `depends_on` và `healthcheck`"
+        p1: "Để service đợi khi phụ thuộc sẵn sàng:"
+      min_downtime:
+        title: "Giảm thiểu downtime khi cập nhật"
+        p1: "Trước khi cập nhật service, chạy:"
+        p2: "Tùy chọn `-d` chạy container ở chế độ nền, và `--remove-orphans` xóa container không được định nghĩa trong config hiện tại."
+        p3: "Để dừng hoàn toàn và xóa container cũ khi cần:"
+        p4: "Điều này đảm bảo image mới được nạp và container không dùng bị xóa mà không downtime."
+      hot_reload_volumes:
+        title: "Hot Reload code cho phát triển"
+        p1: "Dùng `volumes` để mount thư mục local vào container. Điều này cho phép áp dụng thay đổi code ngay lập tức mà không cần build lại image."
+        p2: "Cẩn thận với vấn đề quyền file và cache filesystem, đặc biệt trên Windows và macOS, để tránh sự cố hiệu suất."
+      hot_reload_watch:
+        title: "Hot Reload code không cần volume (Compose 2.22+)"
+      central_logging:
+        title: "Ghi log tập trung cho service"
+        p1: "Chuyển hướng log container đến hệ thống giám sát và tập hợp log như ELK Stack, Loki, Prometheus và Fluentd để dễ phân tích và cảnh báo."
+        p2: "Dùng logging driver của Docker (`--log-driver`) để kích hoạt tập trung log."
+        p3: "Cấu hình logging driver cho container trong Compose:"
+      auto_restart:
+        title: "Tự động khởi động lại service"
+        p1: "Cấu hình chính sách restart trong `docker-compose.yml`:"
+        p2: "Các chính sách restart khác gồm:"
+        policies:
+          no: "`no` — không tự động khởi động lại (mặc định)"
+          always: "`always` — luôn khởi động lại container"
+          on_failure: "`on-failure` — khởi động lại chỉ khi lỗi (có thể kèm số lần thử)"
+        p3: "Trong production, `unless-stopped` là lựa chọn tối ưu để đảm bảo khả năng phục hồi."
+        p4: "Điều này giúp dịch vụ tự động khôi phục sau sự cố hoặc khi host khởi động lại."
+      profiles:
+        title: "Profile của service"
+        p1: "Cho phép chạy chỉ nhóm service cụ thể:"
+        p2: "Để chạy chỉ profile frontend:"
+
+    debugging:
+      title: "🐞 Debug và Profiling service trong Docker Compose"
+      exec:
+        group_desc: "Thực thi lệnh trong service đang chạy, cung cấp truy cập container hoặc chạy tiến trình riêng lẻ"
+        r1: "Mở shell bên trong container của service `web`"
+        r2: "Chạy lệnh psql trong container service `db`"
+      logs:
+        group_desc: "Xem log service để chẩn đoán và giám sát"
+        r1: "Xem log service `db` theo thời gian thực"
+        r2: "Hiển thị 50 dòng log cuối từ service `api`"
+        r3: "Hiển thị log 1 giờ qua của service `web`"
+      inspect:
+        group_desc: "Xem thông tin chi tiết về container chạy service"
+        r1: "Lấy JSON với thông tin chi tiết về container service `web`"
+      stats:
+        group_desc: "Giám sát việc sử dụng tài nguyên của container chạy service"
+        r1: "Theo dõi CPU, bộ nhớ và tài nguyên khác cho container service `worker`"
+      run:
+        group_desc: "Chạy container tạm thời với cấu hình service, hữu ích để debug"
+        r1: "Khởi động container một lần cho service `web` với shell tương tác"
+      cp:
+        group_desc: "Sao chép tệp giữa host và container"
+        r1: "Sao chép tệp từ container service `db` sang host"
+      tip:
+        one_off: "💡 Để debug tiện lợi cho hệ thống nhiều service phức tạp, dùng `docker compose run --rm` để khởi chạy container riêng với network và volume cần thiết mà không ảnh hưởng đến service chính."
+
+  resources:
+    title: "📚 Tài nguyên bổ sung"
+    ignore:
+      title: "🚫 Bỏ qua tệp với `.dockerignore`"
+      p1: "Thêm tệp và thư mục vào `.dockerignore` để không đưa vào image nhằm giảm kích thước và tăng tốc build:"
+    aliases:
+      title: "⚡ Đơn giản hóa lệnh với alias"
+      p1: "Bạn có thể tạo alias cho lệnh dùng thường xuyên để chạy nhanh hơn:"
+    advice:
+      title: "🧠 Mẹo: Lời khuyên khi dùng Docker"
+      b1: "Đừng cố ghi nhớ tất cả — hãy dùng `docker --help` hoặc `docker <command> --help` để khám phá lệnh."
+      b2: "Thực hành thường xuyên và thử nghiệm với project đơn giản."
+      b3: "Theo dõi kích thước image và loại bỏ tệp không cần qua `.dockerignore`."
+    links:
+      title: "🌐 Liên kết hữu ích"
+      docs_intro: "📘 **Tài liệu Docker chính thức** — hướng dẫn và tham khảo toàn diện về tất cả chủ đề Docker:"
+      sheet_intro: "📙 **Docker Cheat Sheet** — bảng tóm tắt chính thức đầy đủ về Docker:"
+      hub_intro: "📗 **Docker Hub** — image và registry:"

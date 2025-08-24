@@ -1,0 +1,155 @@
+common:
+  site:
+    title: "Hoja de referencia de comandos y escenarios de DevOps"
+    sections: "Secciones"
+  table:
+    columns:
+      command: "Comando"
+      example: "Ejemplo"
+      description: "Descripción"
+  callouts:
+    sudo-warn: "Ten cuidado con `sudo`: siempre revisa el comando antes de ejecutarlo."
+
+language:
+  # --- TOC / Sidebar ---
+  toc-title-document: "Tabla de contenidos"
+  toc-title-website: "En esta página"
+
+  related-formats-title: "Otros formatos"
+  related-notebooks-title: "Cuadernos"
+  source-notebooks-prefix: "Fuente"
+  other-links-title: "Otros enlaces"
+  code-links-title: "Enlaces de código"
+  launch-dev-container-title: "Iniciar contenedor de desarrollo"
+  launch-binder-title: "Iniciar Binder"
+
+  # --- Notebooks ---
+  article-notebook-label: "Cuaderno del artículo"
+  notebook-preview-download: "Descargar cuaderno"
+  notebook-preview-download-src: "Descargar fuente"
+  notebook-preview-back: "Volver al artículo"
+  manuscript-meca-bundle: "Paquete MECA"
+
+  # --- Sections ---
+  section-title-abstract: "Resumen"
+  section-title-appendices: "Apéndices"
+  section-title-footnotes: "Notas al pie"
+  section-title-references: "Referencias"
+  section-title-reuse: "Reutilizar"
+  section-title-copyright: "Derechos de autor"
+  section-title-citation: "Citación"
+
+  appendix-attribution-cite-as: "Para atribución, cite este trabajo como:"
+  appendix-attribution-bibtex: "Cita BibTeX:"
+  appendix-view-license: "Ver licencia"
+
+  # --- Title block ---
+  title-block-author-single: "Autor"
+  title-block-author-plural: "Autores"
+  title-block-affiliation-single: "Afiliación"
+  title-block-affiliation-plural: "Afiliaciones"
+  title-block-published: "Publicado"
+  title-block-modified: "Modificado"
+  title-block-keywords: "Palabras clave"
+
+  # --- Callouts ---
+  callout-tip-title: "Consejo"
+  callout-note-title: "Nota"
+  callout-warning-title: "Advertencia"
+  callout-important-title: "Importante"
+  callout-caution-title: "Precaución"
+
+  # --- Code blocks ---
+  code-summary: "Código"
+
+  code-tools-menu-caption: "Código"
+  code-tools-show-all-code: "Mostrar todo el código"
+  code-tools-hide-all-code: "Ocultar todo el código"
+  code-tools-view-source: "Ver fuente"
+  code-tools-source-code: "Código fuente"
+
+  tools-share: "Compartir"
+  tools-download: "Descargar"
+
+  code-line: "Línea"
+  code-lines: "Líneas"
+
+  copy-button-tooltip: "Copiar al portapapeles"
+  copy-button-tooltip-success: "¡Copiado!"
+
+  repo-action-links-edit: "Editar esta página"
+  repo-action-links-source: "Ver fuente"
+  repo-action-links-issue: "Reportar un problema"
+
+  back-to-top: "Volver arriba"
+
+  # --- Search ---
+  search-no-results-text: "Sin resultados"
+  search-matching-documents-text: "documentos coincidentes"
+  search-copy-link-title: "Copiar enlace de búsqueda"
+  search-hide-matches-text: "Ocultar coincidencias adicionales"
+  search-more-match-text: "más coincidencia en este documento"
+  search-more-matches-text: "más coincidencias en este documento"
+  search-clear-button-title: "Limpiar"
+  search-text-placeholder: ""
+  search-detached-cancel-button-title: "Cancelar"
+  search-submit-button-title: "Buscar"
+  search-label: "Buscar"
+
+  # --- UI toggles ---
+  toggle-section: "Alternar sección"
+  toggle-sidebar: "Alternar barra lateral"
+  toggle-dark-mode: "Alternar modo oscuro"
+  toggle-reader-mode: "Alternar modo lectura"
+  toggle-navigation: "Alternar navegación"
+
+  # --- Crossrefs ---
+  crossref-fig-title: "Figura"
+  crossref-tbl-title: "Tabla"
+  crossref-lst-title: "Listado"
+  crossref-thm-title: "Teorema"
+  crossref-lem-title: "Lema"
+  crossref-cor-title: "Corolario"
+  crossref-prp-title: "Proposición"
+  crossref-cnj-title: "Conjetura"
+  crossref-def-title: "Definición"
+  crossref-exm-title: "Ejemplo"
+  crossref-exr-title: "Ejercicio"
+  crossref-ch-prefix: "Capítulo"
+  crossref-apx-prefix: "Apéndice"
+  crossref-sec-prefix: "Sección"
+  crossref-eq-prefix: "Ecuación"
+  crossref-lof-title: "Lista de figuras"
+  crossref-lot-title: "Lista de tablas"
+  crossref-lol-title: "Lista de listados"
+
+  # --- Environments ---
+  environment-proof-title: "Demostración"
+  environment-remark-title: "Comentario"
+  environment-solution-title: "Solución"
+
+  # --- Listings / Blog ---
+  listing-page-order-by: "Ordenar por"
+  listing-page-order-by-default: "Predeterminado"
+  listing-page-order-by-date-asc: "Más antiguo"
+  listing-page-order-by-date-desc: "Más reciente"
+  listing-page-order-by-number-desc: "De mayor a menor"
+  listing-page-order-by-number-asc: "De menor a mayor"
+  listing-page-field-date: "Fecha"
+  listing-page-field-title: "Título"
+  listing-page-field-description: "Descripción"
+  listing-page-field-author: "Autor"
+  listing-page-field-filename: "Nombre de archivo"
+  listing-page-field-filemodified: "Modificado"
+  listing-page-field-subtitle: "Subtítulo"
+  listing-page-field-readingtime: "Tiempo de lectura"
+  listing-page-field-wordcount: "Número de palabras"
+  listing-page-field-categories: "Categorías"
+  listing-page-minutes-compact: "{0} min"
+  listing-page-category-all: "Todo"
+  listing-page-no-matches: "No se encontraron elementos"
+  listing-page-words: "{0} palabras"
+  listing-page-filter: "Filtrar"
+
+  # --- Misc ---
+  draft: "Borrador"

@@ -1,0 +1,52 @@
+# filename: _quarto-ir.yml
+
+project:
+  pre-render:
+    - python scripts/select_snippets.py
+  render:
+    - ir/index.qmd
+    - ir/linux.qmd
+    - ir/docker.qmd
+    - ir/git.qmd
+    - ir/kubernetes.qmd
+    - ir/helm.qmd
+    - ir/terraform.qmd
+
+lang: en-IR
+dir: rtl
+
+metadata-files:
+  - locales/fa-ir/_site.yml
+  - locales/fa-ir/linux.yml
+  - locales/fa-ir/docker.yml
+  - locales/fa-ir/git.yml
+  - locales/fa-ir/kubernetes.yml
+  - locales/fa-ir/helm.yml
+  - locales/fa-ir/terraform.yml
+
+website:
+  title: "برگه تقلب DevOps"
+  sidebar:
+    search: true
+    contents:
+      - ir/index.qmd
+      - ir/linux.qmd
+      - ir/docker.qmd
+      - ir/git.qmd
+      - ir/kubernetes.qmd
+      - ir/helm.qmd
+      - ir/terraform.qmd
+  navbar:
+    logo: assets/brand/ir/hackitect7-logo-light-ir.png
+    logo-alt: "لوگوی Hackitect7 (fa-IR)"
+    right:
+      - text: "خانه"
+        href: /
+      - text: "راهنما"
+        menu:
+          - text: "گزارش خطا"
+            icon: "bug"
+            href: "https://github.com/Hackitect7/devops-cheat-sheet/issues"
+          - text: "پرسیدن سوال"
+            icon: "chat-right-text"
+            href: "https://github.com/Hackitect7/devops-cheat-sheet/discussions"

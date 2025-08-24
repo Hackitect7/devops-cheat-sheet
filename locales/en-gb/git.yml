@@ -1,0 +1,5 @@
+git:
+  meta:
+    _root:
+      title: "🌿 Git"
+      desc: "Everyday workflows, branching, history, stashing, and collaboration basics."

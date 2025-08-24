@@ -1,0 +1,11 @@
+common:
+  site:
+    title: "Шпаргалка по командам и сценариям DevOps"
+    sections: "Разделы"
+  table:
+    columns:
+      command: "Команда"
+      example: "Пример"
+      description: "Описание"
+  callouts:
+    sudo-warn: "Осторожно с `sudo`: всегда проверяйте команду перед выполнением."

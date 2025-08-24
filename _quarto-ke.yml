@@ -1,0 +1,51 @@
+# filename: _quarto-ke.yml
+
+project:
+  pre-render:
+    - python scripts/select_snippets.py
+  render:
+    - ke/index.qmd
+    - ke/linux.qmd
+    - ke/docker.qmd
+    - ke/git.qmd
+    - ke/kubernetes.qmd
+    - ke/helm.qmd
+    - ke/terraform.qmd
+
+lang: sw-KE
+
+metadata-files:
+  - locales/sw-ke/_site.yml
+  - locales/sw-ke/linux.yml
+  - locales/sw-ke/docker.yml
+  - locales/sw-ke/git.yml
+  - locales/sw-ke/kubernetes.yml
+  - locales/sw-ke/helm.yml
+  - locales/sw-ke/terraform.yml
+
+website:
+  title: "Mwongozo wa Haraka wa DevOps"
+  sidebar:
+    search: true
+    contents:
+      - ke/index.qmd
+      - ke/linux.qmd
+      - ke/docker.qmd
+      - ke/git.qmd
+      - ke/kubernetes.qmd
+      - ke/helm.qmd
+      - ke/terraform.qmd
+  navbar:
+    logo: assets/brand/ke/hackitect7-logo-light-ke.png
+    logo-alt: "Nembo ya Hackitect7 (sw-KE)"
+    left:
+      - text: "Nyumbani"
+        href: /
+      - text: "Msaada"
+        menu:
+          - text: "Ripoti Tatizo"
+            icon: "bug"
+            href: "https://github.com/Hackitect7/devops-cheat-sheet/issues"
+          - text: "Uliza Swali"
+            icon: "chat-right-text"
+            href: "https://github.com/Hackitect7/devops-cheat-sheet/discussions"

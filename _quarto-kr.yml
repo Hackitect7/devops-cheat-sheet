@@ -1,0 +1,51 @@
+# filename: _quarto-kr.yml
+
+project:
+  pre-render:
+    - python scripts/select_snippets.py
+  render:
+    - kr/index.qmd
+    - kr/linux.qmd
+    - kr/docker.qmd
+    - kr/git.qmd
+    - kr/kubernetes.qmd
+    - kr/helm.qmd
+    - kr/terraform.qmd
+
+lang: ko-KR
+
+metadata-files:
+  - locales/ko-kr/_site.yml
+  - locales/ko-kr/linux.yml
+  - locales/ko-kr/docker.yml
+  - locales/ko-kr/git.yml
+  - locales/ko-kr/kubernetes.yml
+  - locales/ko-kr/helm.yml
+  - locales/ko-kr/terraform.yml
+
+website:
+  title: "DevOps 치트 시트"
+  sidebar:
+    search: true
+    contents:
+      - kr/index.qmd
+      - kr/linux.qmd
+      - kr/docker.qmd
+      - kr/git.qmd
+      - kr/kubernetes.qmd
+      - kr/helm.qmd
+      - kr/terraform.qmd
+  navbar:
+    logo: assets/brand/kr/hackitect7-logo-light-kr.png
+    logo-alt: "Hackitect7 로고 (한국)"
+    left:
+      - text: "홈"
+        href: /
+      - text: "도움말"
+        menu:
+          - text: "버그 신고"
+            icon: "bug"
+            href: "https://github.com/Hackitect7/devops-cheat-sheet/issues"
+          - text: "질문하기"
+            icon: "chat-right-text"
+            href: "https://github.com/Hackitect7/devops-cheat-sheet/discussions"

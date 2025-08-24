@@ -1,0 +1,5 @@
+terraform:
+  meta:
+    _root:
+      title: "☸️ Terraform"
+      desc: "Основы kubectl, манифесты, Helm и устранение неполадок."

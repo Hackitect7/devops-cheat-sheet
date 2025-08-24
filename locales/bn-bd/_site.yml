@@ -1,0 +1,157 @@
+# filename: _site.yml
+
+common:
+  site:
+    title: "ডেভঅপস কমান্ড ও পরিস্থিতি চিট শীট"
+    sections: "বিভাগসমূহ"
+  table:
+    columns:
+      command: "কমান্ড"
+      example: "উদাহরণ"
+      description: "বর্ণনা"
+  callouts:
+    sudo-warn: "`sudo` ব্যবহারে সতর্ক থাকুন: চালানোর আগে সর্বদা কমান্ড পরীক্ষা করুন।"
+
+language:
+  # --- TOC / Sidebar ---
+  toc-title-document: "সূচিপত্র"
+  toc-title-website: "এই পাতায়"
+
+  related-formats-title: "অন্যান্য ফরম্যাট"
+  related-notebooks-title: "নোটবুক"
+  source-notebooks-prefix: "সোর্স"
+  other-links-title: "অন্যান্য লিঙ্ক"
+  code-links-title: "কোড লিঙ্ক"
+  launch-dev-container-title: "ডেভ কন্টেইনার চালু করুন"
+  launch-binder-title: "বাইন্ডার চালু করুন"
+
+  # --- Notebooks ---
+  article-notebook-label: "আর্টিকেল নোটবুক"
+  notebook-preview-download: "নোটবুক ডাউনলোড"
+  notebook-preview-download-src: "সোর্স ডাউনলোড"
+  notebook-preview-back: "প্রবন্ধে ফিরে যান"
+  manuscript-meca-bundle: "MECA বান্ডল"
+
+  # --- Sections ---
+  section-title-abstract: "সারসংক্ষেপ"
+  section-title-appendices: "পরিশিষ্ট"
+  section-title-footnotes: "টীকা"
+  section-title-references: "তথ্যসূত্র"
+  section-title-reuse: "পুনঃব্যবহার"
+  section-title-copyright: "কপিরাইট"
+  section-title-citation: "উদ্ধৃতি"
+
+  appendix-attribution-cite-as: "উৎসউল্লেখের জন্য, দয়া করে এভাবে উদ্ধৃত করুন:"
+  appendix-attribution-bibtex: "BibTeX উদ্ধৃতি:"
+  appendix-view-license: "লাইসেন্স দেখুন"
+
+  # --- Title block ---
+  title-block-author-single: "লেখক"
+  title-block-author-plural: "লেখকবৃন্দ"
+  title-block-affiliation-single: "প্রতিষ্ঠান"
+  title-block-affiliation-plural: "প্রতিষ্ঠানসমূহ"
+  title-block-published: "প্রকাশিত"
+  title-block-modified: "সংশোধিত"
+  title-block-keywords: "মূল শব্দ"
+
+  # --- Callouts ---
+  callout-tip-title: "টিপস"
+  callout-note-title: "নোট"
+  callout-warning-title: "সতর্কবার্তা"
+  callout-important-title: "গুরুত্বপূর্ণ"
+  callout-caution-title: "সতর্কতা"
+
+  # --- Code blocks ---
+  code-summary: "কোড"
+
+  code-tools-menu-caption: "কোড"
+  code-tools-show-all-code: "সব কোড দেখান"
+  code-tools-hide-all-code: "সব কোড লুকান"
+  code-tools-view-source: "সোর্স দেখুন"
+  code-tools-source-code: "সোর্স কোড"
+
+  tools-share: "শেয়ার"
+  tools-download: "ডাউনলোড"
+
+  code-line: "লাইন"
+  code-lines: "লাইনসমূহ"
+
+  copy-button-tooltip: "কপি করুন"
+  copy-button-tooltip-success: "কপি হয়েছে!"
+
+  repo-action-links-edit: "এই পৃষ্ঠা সম্পাদনা করুন"
+  repo-action-links-source: "সোর্স দেখুন"
+  repo-action-links-issue: "সমস্যা জানান"
+
+  back-to-top: "উপরে ফিরে যান"
+
+  # --- Search ---
+  search-no-results-text: "কোন ফলাফল নেই"
+  search-matching-documents-text: "মিল পাওয়া নথি"
+  search-copy-link-title: "অনুসন্ধানের লিঙ্ক কপি করুন"
+  search-hide-matches-text: "অতিরিক্ত মিল লুকান"
+  search-more-match-text: "এই নথিতে আরও ১টি মিল"
+  search-more-matches-text: "এই নথিতে আরও মিল"
+  search-clear-button-title: "মুছে দিন"
+  search-text-placeholder: ""
+  search-detached-cancel-button-title: "বাতিল"
+  search-submit-button-title: "জমা দিন"
+  search-label: "খুঁজুন"
+
+  # --- UI toggles ---
+  toggle-section: "বিভাগ টগল করুন"
+  toggle-sidebar: "সাইডবার নেভিগেশন টগল করুন"
+  toggle-dark-mode: "ডার্ক মোড টগল করুন"
+  toggle-reader-mode: "রিডার মোড টগল করুন"
+  toggle-navigation: "নেভিগেশন টগল করুন"
+
+  # --- Crossrefs ---
+  crossref-fig-title: "চিত্র"
+  crossref-tbl-title: "সারণি"
+  crossref-lst-title: "তালিকা"
+  crossref-thm-title: "থিওরেম"
+  crossref-lem-title: "লেমা"
+  crossref-cor-title: "ফলিত"
+  crossref-prp-title: "প্রস্তাবনা"
+  crossref-cnj-title: "অনুমান"
+  crossref-def-title: "সংজ্ঞা"
+  crossref-exm-title: "উদাহরণ"
+  crossref-exr-title: "অনুশীলনী"
+  crossref-ch-prefix: "অধ্যায়"
+  crossref-apx-prefix: "পরিশিষ্ট"
+  crossref-sec-prefix: "বিভাগ"
+  crossref-eq-prefix: "সমীকরণ"
+  crossref-lof-title: "চিত্রের তালিকা"
+  crossref-lot-title: "সারণির তালিকা"
+  crossref-lol-title: "লিস্টিং-এর তালিকা"
+
+  # --- Environments ---
+  environment-proof-title: "প্রমাণ"
+  environment-remark-title: "মন্তব্য"
+  environment-solution-title: "সমাধান"
+
+  # --- Listings / Blog ---
+  listing-page-order-by: "ক্রম"
+  listing-page-order-by-default: "ডিফল্ট"
+  listing-page-order-by-date-asc: "সবচেয়ে পুরোনো"
+  listing-page-order-by-date-desc: "সবচেয়ে নতুন"
+  listing-page-order-by-number-desc: "বেশি থেকে কম"
+  listing-page-order-by-number-asc: "কম থেকে বেশি"
+  listing-page-field-date: "তারিখ"
+  listing-page-field-title: "শিরোনাম"
+  listing-page-field-description: "বর্ণনা"
+  listing-page-field-author: "লেখক"
+  listing-page-field-filename: "ফাইলের নাম"
+  listing-page-field-filemodified: "সংশোধিত"
+  listing-page-field-subtitle: "উপশিরোনাম"
+  listing-page-field-readingtime: "পড়ার সময়"
+  listing-page-field-wordcount: "শব্দসংখ্যা"
+  listing-page-field-categories: "বিভাগসমূহ"
+  listing-page-minutes-compact: "{0} মিনিট"
+  listing-page-category-all: "সব"
+  listing-page-no-matches: "কোনও মেলানো আইটেম নেই"
+  listing-page-words: "{0} শব্দ"
+  listing-page-filter: "ফিল্টার"
+
+  # --- Misc ---
+  draft: "খসড়া"

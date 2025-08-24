@@ -1,0 +1,620 @@
+linux:
+  meta:
+    _root:
+      title: "🐧 Mstari wa Amri wa Linux"
+      desc: "Amri za msingi na za juu kwa urambazaji, faili, michakato, mitandao, ufuatiliaji, vifurushi na otomatiki. Inafaa kwa taratibu za DevOps."
+
+  basic:
+    _root:
+      title: "🔹 Amri za Msingi"
+      cat:
+        desc: "Onyesha maudhui ya faili au unganisha faili nyingi"
+        ex1: "Tazama maudhui ya faili"
+        ex2: "Unganisha na uonyeshe faili mbili"
+        ex3: "Unganisha faili na uhifadhi kwenye faili mpya"
+      cd:
+        desc: "Badilisha saraka ya kazi ya sasa"
+        ex1: "Nenda kwenye njia kamili `/etc`"
+        ex2: "Nenda kwenye saraka ya nyumbani"
+        ex3: "Rudi kiwango kimoja juu"
+        ex4: "Rudi kwenye saraka ya awali"
+      clear:
+        desc: "Futa skrini ya terminali"
+      cp:
+        desc: "Nakili faili na saraka"
+        ex1: "Nakili faili na jina jipya"
+        ex2: "Nakili saraka nzima kwa kurudia"
+        ex3: "Nakili kwa uthibitisho kabla ya kuandika juu"
+      echo:
+        desc: "Chapisha kamba au kigezo cha mazingira"
+        ex1: "Chapisha kamba rahisi"
+        ex2: "Onyesha njia ya saraka ya nyumbani"
+        ex3: "Tafsiri mlolongo wa kutoroka (\\t, \\n)"
+      history:
+        desc: "Onyesha historia ya amri"
+      id:
+        desc: "Onyesha UID, GID na vikundi vya mtumiaji wa sasa"
+      ls:
+        desc: "Orodhesha faili na saraka"
+        ex1: "Orodha ndefu yenye ruhusa na wamiliki"
+        ex2: "Onyesha faili fiche"
+        ex3: "Saizi rahisi kusomeka"
+      mkdir:
+        desc: "Unda saraka"
+        ex1: "Unda saraka moja"
+        ex2: "Unda saraka zilizo ndani ya nyingine"
+        ex3: "Unda saraka nyingi mara moja"
+      mv:
+        desc: "Hamisha au badilisha jina la faili/saraka"
+        ex1: "Badilisha jina la faili"
+        ex2: "Hamisha faili hadi saraka nyingine"
+        ex3: "Hamisha faili zote `.txt` hadi folda ya `archive`"
+      pwd:
+        desc: "Chapisha saraka ya kazi ya sasa"
+        ex1: "Onyesha njia halisi (bila symlinks)"
+        ex2: "Onyesha njia baada ya kubadilisha hadi `/tmp`"
+      rm:
+        desc: "Futa faili au saraka"
+        ex1: "Futa faili"
+        ex2: "Futa faili kwa uthibitisho"
+        ex3: "Futa saraka nzima kwa kurudia"
+        ex4: "Lazimisha kufuta bila uthibitisho"
+      rmdir:
+        desc: "Futa saraka tupu"
+        ex1: "Futa saraka ya `emptydir`"
+      touch:
+        desc: "Unda faili tupu au sasisha muda wa marekebisho"
+        ex1: "Unda faili mpya tupu ikiwa haipo"
+        ex2: "Unda faili nyingi mara moja"
+        ex3: "Sasisha muda bila kuunda faili ikiwa haipo"
+      whereis:
+        desc: "Tafuta binary, msimbo na kurasa za msaada za amri"
+        ex1: "Pata maeneo ya `ls`"
+        ex2: "Onyesha njia za binary ya Bash na nyaraka"
+        ex3: "Tafuta binary pekee"
+      which:
+        desc: "Onyesha njia ya kutekeleza amri"
+        ex1: "Njia ya `python3`"
+        ex2: "Njia ya `grep`"
+        ex3: "Ruka vionjo wakati wa kutafuta"
+      whoami:
+        desc: "Chapisha jina la mtumiaji halisi"
+
+  intermediate:
+    _root:
+      title: "🔸 Kiwango cha Kati"
+      chmod:
+        desc: "Badilisha ruhusa za faili au saraka"
+        ex1: "Weka ruhusa kwa kutumia nambari (mf. 755)"
+        ex2: "Ongeza ruhusa ya utekelezaji kwa script"
+        ex3: "Weka ruhusa kwa saraka nzima kwa kurudia"
+      chown:
+        desc: "Badilisha mmiliki na kundi la faili"
+        ex1: "Badilisha mmiliki wa faili"
+        ex2: "Badilisha mmiliki na kundi"
+        ex3: "Badilisha kwa kurudia mmiliki na kundi"
+      curl:
+        desc: "Hamisha data kutoka/kwa seva (HTTP, HTTPS, nk.)"
+        ex1: "Tuma ombi la HEAD (headers pekee)"
+        ex2: "Pakua faili na uhifadhi jina lake"
+        ex3: "Tuma ombi la POST na data ya fomu"
+      df:
+        desc: "Ripoti matumizi ya nafasi ya diski ya mfumo wa faili"
+        ex1: "Saizi rahisi kusomeka"
+        ex2: "Matumizi ya sehemu fulani ya mount"
+        ex3: "Onyesha aina za mfumo wa faili"
+      diff:
+        desc: "Linganisha faili au saraka"
+        ex1: "Linganisha faili mbili"
+        ex2: "Tofauti ya muungano (mtindo wa patch)"
+        ex3: "Linganisha saraka kwa kurudia"
+      du:
+        desc: "Kadiria matumizi ya nafasi ya faili na saraka"
+        ex1: "Onyesha saizi za vipengee kwenye saraka ya sasa"
+        ex2: "Onyesha saizi ya faili moja"
+        ex3: "Jumlisha saizi za saraka za ngazi ya juu"
+      find:
+        desc: "Tafuta faili/saraka kwa jina, saizi, muda, nk."
+        ex1: "Tafuta faili zote `.log` kwenye saraka ya sasa"
+        ex2: "Tafuta faili kubwa kuliko 100 MB"
+        ex3: "Faili zilizobadilishwa ndani ya siku moja iliyopita"
+      free:
+        desc: "Onyesha kiasi cha kumbukumbu huru na iliyotumika"
+        ex1: "Vipimo vya kumbukumbu rahisi kusomeka"
+        ex2: "Onyesha thamani kwa MB"
+        ex3: "Sasisha matokeo kila sekunde 2"
+      grep:
+        desc: "Tafuta maandishi kwa kutumia mifumo (regular expressions)"
+        ex1: "Tafuta mistari yenye `error`"
+        ex2: "Tafuta kwa kurudia kwenye saraka"
+        ex3: "Tafuta bila kujali herufi kubwa/ndogo"
+      head:
+        desc: "Toa mistari ya mwanzo ya faili"
+        ex1: "Mistari 10 ya mwanzo"
+        ex2: "Mistari 20 ya mwanzo"
+        ex3: "Bytes 100 za mwanzo"
+      hostname:
+        desc: "Onyesha au weka jina la hosti la mfumo"
+        ex1: "Weka jina la hosti kwa muda hadi reboot"
+        ex2: "Onyesha anwani za IP"
+      kill:
+        desc: "Tuma ishara kwa michakato"
+        ex1: "Lazimisha kuua mchakato kwa PID"
+        ex2: "Maliza kwa utaratibu kwa SIGTERM"
+        ex3: "Kuua michakato kwa kufanana na muundo"
+      ping:
+        desc: "Kagua unganisho la mtandao kwa kutumia ICMP echo"
+        ex1: "Ping anwani"
+        ex2: "Tuma pakiti 4"
+        ex3: "Weka muda wa sekunde 2 kati ya pakiti"
+      ps:
+        desc: "Ripoti hali ya michakato"
+        ex1: "Orodhesha michakato yote"
+        ex2: "Chuja kwa jina ukitumia `grep`"
+        ex3: "Michakato ya mtumiaji wa sasa"
+      rsync:
+        desc: "Uhamisho wa haraka wa faili kwa ongezeko"
+        ex1: "Linganishanisha saraka ndani ya mfumo"
+        ex2: "Linganishanisha na hosti ya mbali kupitia SSH"
+        ex3: "Futa faili zisizopo kwenye chanzo"
+      scp:
+        desc: "Nakili salama (programu ya nakili faili kwa mbali)"
+        ex1: "Nakili faili kwenye hosti ya mbali"
+        ex2: "Nakili faili kutoka hosti ya mbali"
+        ex3: "Nakili saraka kwa kurudia"
+      sort:
+        desc: "Panga mistari ya maandishi"
+        ex1: "Panga kwa alfabeti"
+        ex2: "Mpangilio wa kurudi nyuma"
+        ex3: "Panga kwa nambari"
+      tail:
+        desc: "Toa sehemu ya mwisho ya faili; fuatilia mabadiliko"
+        ex1: "Fuatilia logi kwa wakati halisi"
+        ex2: "Onyesha mistari 20 ya mwisho"
+        ex3: "Onyesha bytes 100 za mwisho"
+      tar:
+        desc: "Unda, orodhesha au toa mafaili ya tar"
+        ex1: "Unda archive iliyobanwa `.tgz`"
+        ex2: "Toa archive ya `.tgz`"
+        ex3: "Orodhesha yaliyomo kwenye archive"
+      tee:
+        desc: "Soma kutoka stdin na uandike kwa stdout na faili"
+        ex1: "Andika matokeo kwenye `out.txt` na uonyeshe"
+        ex2: "Hifadhi matokeo ya `ls` kwenye faili na uonyeshe"
+        ex3: "Ongeza matokeo mwishoni mwa `log.txt`"
+      top:
+        desc: "Onyesha kazi za Linux (muangalizi wa michakato)"
+        ex1: "Anza top"
+        ex2: "Mbona mbadala wa kuangalia (htop)"
+        ex3: "Panga kwa matumizi ya kumbukumbu"
+      uptime:
+        desc: "Onyesha muda ambao mfumo umeendeshwa"
+        ex1: "Uptime nzuri"
+        ex2: "Muda wa kuwashwa kwa mfumo"
+      wget:
+        desc: "Kipakua cha mtandao kisichoingiliana"
+        ex1: "Pakua faili kwa URL"
+        ex2: "Endelea kupakua baada ya kukatizwa"
+        ex3: "Hifadhi kwa jina tofauti"
+      wc:
+        desc: "Chapisha idadi ya mistari, maneno na bytes kwa faili"
+        ex1: "Hesabu mistari"
+        ex2: "Hesabu maneno"
+        ex3: "Hesabu herufi"
+      uniq:
+        desc: "Ripoti au ondoa mistari iliyojirudia (inayofuatana)"
+        ex1: "Ondoa marudio ya karibu"
+        ex2: "Ondoa marudio baada ya kupanga"
+        ex3: "Hesabu idadi ya kila mstari"
+      yes:
+        desc: "Toa kamba mara kwa mara hadi iachishwe; muhimu kwa scripting"
+        ex1: "Jibu kila mara \"y\" kwa maombi"
+        ex2: "Thibitisha kiotomatiki kufutwa kwa mwingiliano"
+        ex3: "Jibu \"no\" kwa maombi"
+
+  advanced:
+    _root:
+      title: "🔧 Amri za Juu"
+      at:
+        desc: "Panga amri moja iendeshwe kwa muda fulani"
+        ex1: "Endesha amri dakika moja kuanzia sasa"
+        ex2: "Orodhesha kazi zinazongoja"
+        ex3: "Ondoa kazi inayongoja"
+      awk:
+        desc: "Lugha ya kuchanganua mifumo na kusindika"
+        ex1: "Chapisha safu ya kwanza"
+        ex2: "Chuja michakato kwa matumizi ya CPU"
+        ex3: "Chapisha sehemu ya pili kutoka kila mstari"
+        ex4: "Chapisha mistari inayolingana na muundo"
+      crontab:
+        desc: "Sanidi, orodhesha, au ondoa kazi za cron za mtumiaji"
+        ex1: "Hariri crontab ya mtumiaji wa sasa"
+        ex2: "Orodhesha kazi za cron"
+        ex3: "Ondoa crontab ya mtumiaji wa sasa"
+      cut:
+        desc: "Ondoa au chagua sehemu kutoka kila mstari wa faili"
+        ex1: "Chapisha majina ya watumiaji kutoka `/etc/passwd`"
+        ex2: "Kata sehemu ya pili ukitumia ':' kama mgawanyiko"
+        ex3: "Chagua herufi kwa nafasi"
+      df:
+        desc: "Ripoti matumizi ya nafasi ya diski ya mfumo wa faili"
+        ex1: "Saizi rahisi kusomeka"
+        ex2: "Onyesha aina za mfumo wa faili"
+        ex3: "Matumizi ya saraka ya nyumbani"
+      env:
+        desc: "Endesha amri katika mazingira yaliyobadilishwa au onyesha env"
+        ex1: "Onyesha ingizo za PATH"
+        ex2: "Anza shell safi bila mazingira"
+      export:
+        desc: "Weka vigezo vya mazingira kwa shell/mkutano wa sasa"
+        ex1: "Weka kigezo kwa shell hii"
+        ex2: "Ongeza saraka kwa PATH"
+        ex3: "Orodhesha vigezo vilivyosafirishwa"
+      free:
+        desc: "Onyesha matumizi ya kumbukumbu"
+        ex1: "Onyesha kwa MB"
+        ex2: "Vipimo rahisi kusomeka"
+        ex3: "Sampuli kila sekunde 5"
+      hostnamectl:
+        desc: "Uliza na badilisha jina la hosti na mipangilio husika"
+        ex1: "Onyesha hali ya jina la hosti"
+        ex2: "Weka jina jipya la hosti"
+      ip-tools:
+        desc: "Zana za IP kuona/kusimamia interface na anwani"
+        ex1: "Onyesha interface za mtandao (zamani)"
+        ex2: "Onyesha anwani kwa `ip`"
+        ex3: "Washa interface"
+      iostat:
+        desc: "Ripoti takwimu za CPU na I/O"
+        ex1: "Takwimu zilizopanuliwa kila sekunde 2"
+        ex2: "Takwimu za kifaa (kipindi 5s, ripoti 3)"
+      iptables:
+        desc: "Chombo cha kusimamia kuchuja pakiti za IPv4 na NAT"
+        ex1: "Orodhesha sheria za sasa"
+        ex2: "Ruhusu SSH inayoingia kwenye bandari 22"
+        ex3: "Safisha sheria zote"
+      journalctl:
+        desc: "Uliza jarida la systemd"
+        ex1: "Onyesha makosa ya hivi karibuni na muktadha"
+        ex2: "Onyesha logi za huduma"
+        ex3: "Onyesha logi tangu muda fulani"
+      ln:
+        desc: "Unda viungo kati ya faili"
+        ex1: "Unda kiungo cha symbolic"
+        ex2: "Unda kiungo kigumu"
+        ex3: "Lazimisha kuunda upya kiungo cha symbolic"
+      sed:
+        desc: "Mhariri wa mfululizo kwa kuchuja na kubadilisha maandishi"
+        ex1: "Badilisha kamba kila mahali"
+        ex2: "Chapisha mistari tu kati ya safu"
+        ex3: "Futa mistari inayolingana"
+      systemctl:
+        desc: "Dhibiti mfumo wa systemd na meneja huduma"
+        ex1: "Onyesha hali ya huduma"
+        ex2: "Anza huduma"
+        ex3: "Wezesha huduma ianze kwenye boot"
+      tr:
+        desc: "Tafsiri au futa herufi"
+        ex1: "Geuza herufi ndogo kuwa kubwa"
+        ex2: "Badilisha herufi"
+        ex3: "Futa nambari"
+      type:
+        desc: "Eleza jinsi jina lingetafsiriwa kwenye shell"
+        ex1: "Onyesha jinsi `ls` inavyopatikana"
+        ex2: "Onyesha jinsi `cd` inavyopatikana"
+        ex3: "Onyesha jinsi `python3` inavyopatikana"
+      ulimit:
+        desc: "Pata au weka mipaka ya rasilimali za michakato ya mtumiaji"
+        ex1: "Onyesha faili za juu zinazoweza kufunguliwa"
+        ex2: "Washa core dumps"
+        ex3: "Punguza idadi ya michakato ya mtumiaji"
+      uptime:
+        desc: "Onyesha muda wa mfumo na mzigo wa wastani"
+        ex1: "Uptime nzuri"
+        ex2: "Onyesha muda wa kuwashwa"
+      xargs:
+        desc: "Unda na utekeleze amri kutoka pembejeo ya kawaida"
+        ex1: "Echo kila hoja kwenye mstari tofauti"
+        ex2: "Gawanya maneno kuwa hoja tofauti"
+        ex3: "Tafuta faili na uzifute kwa kutumia xargs"
+
+  network:
+    _root:
+      title: "🌐 Amri za Mtandao"
+      curl:
+        desc: "Hamisha data kwa/kwenye seva"
+        ex1: "Ombi la POST na data ya fomu"
+        ex2: "Pata vichwa pekee"
+        ex3: "Pakua na uhifadhi kwenye faili"
+      dig:
+        desc: "Zana ya kutafuta DNS"
+        ex1: "Uulize rekodi za A"
+        ex2: "Jibu fupi"
+        ex3: "Tumia seva maalum ya DNS"
+      ftp:
+        desc: "Mteja wa Itifaki ya Uhamisho wa Faili (FTP)"
+        ex1: "Unganisha kwenye seva ya FTP"
+        ex2: "Unganisha bila kuingia kiotomatiki"
+        ex3: "Pakua faili ndani ya kikao cha FTP"
+      ip-address:
+        desc: "Onyesha/simamia anwani za IP"
+        ex1: "Onyesha maelezo ya anwani kwa `eth0`"
+        ex2: "Orodhesha anwani zote"
+      ip-link:
+        desc: "Onyesha/simamia vifaa vya mtandao"
+        ex1: "Onyesha viungo vya mtandao"
+        ex2: "Washa interface"
+      ip-route:
+        desc: "Onyesha/simamia jedwali la njia za IP"
+        ex1: "Orodhesha jedwali la njia"
+        ex2: "Ongeza njia chaguo-msingi"
+      nc:
+        desc: "Muunganisho wa kiholela wa TCP/UDP na usikilizaji"
+        ex1: "Changanua bandari za hosti"
+        ex2: "Sikiliza kwenye bandari ya TCP"
+        ex3: "Tuma faili kwenye bandari ya mbali"
+      nmap:
+        desc: "Chombo cha kuchunguza mtandao na kuchanganua usalama/bandari"
+        ex1: "Ping scan kwenye subnet"
+        ex2: "Ugunduzi wa huduma/toleo"
+        ex3: "Ugunduzi wa OS"
+      nslookup:
+        desc: "Uliza seva za majina ya kikoa cha mtandao"
+        ex1: "Uliza jina la kikoa"
+        ex2: "Utafutaji wa nyuma kwa IP"
+      ssh:
+        desc: "Mteja wa kuingia kwa mbali wa OpenSSH"
+        ex1: "Unganisha kwenye hosti"
+        ex2: "Unganisha ukitumia bandari isiyo ya chaguo-msingi"
+        ex3: "Ingia na ufunguo binafsi maalum"
+      ss:
+        desc: "Zana ya kuchunguza soketi"
+        ex1: "Orodhesha bandari za TCP/UDP zinazoskia"
+        ex2: "Takwimu za muhtasari"
+        ex3: "Orodhesha soketi zinazoskia"
+      telnet:
+        desc: "Kiolesura cha mtumiaji kwa itifaki ya TELNET"
+        ex1: "Unganisha kwenye hosti kwenye bandari 80"
+        ex2: "Unganisha kwenye 443"
+        ex3: "Unganisha kwenye SMTP ya ndani"
+      traceroute:
+        desc: "Fuata njia hadi hosti ya mtandao"
+        ex1: "Fuata njia hadi IP"
+        ex2: "Weka kikomo cha hop"
+      wget:
+        desc: "Pakua faili kutoka wavuti"
+        ex1: "Hifadhi matokeo kwenye faili"
+        ex2: "Pakua kwenye saraka ya sasa"
+        ex3: "Endelea kupakua sehemu iliyokatika"
+
+  files:
+    _root:
+      title: "🔍 Kutafuta na kusimamia faili"
+      basename:
+        desc: "Ondoa saraka na kiambishi tamati kutoka majina ya faili"
+        ex1: "Chapisha jina la faili kutoka njia"
+        ex2: "Ondoa kiambishi kutoka jina"
+      dirname:
+        desc: "Ondoa kipengele cha mwisho kutoka njia"
+        ex1: "Onyesha sehemu ya saraka ya njia"
+        ex2: "Onyesha mzazi wa `/etc/passwd`"
+      du:
+        desc: "Kadiria matumizi ya nafasi ya faili"
+        ex1: "Onyesha saizi ya saraka"
+        ex2: "Onyesha saizi ya vipengee katika saraka ya sasa"
+        ex3: "Saizi ya jumla ya saraka nyingi"
+      file:
+        desc: "Tambua aina ya faili"
+        ex1: "Tambua aina ya faili"
+        ex2: "Tambua aina za faili zote kwenye saraka"
+        ex3: "Onyesha aina ya MIME"
+      find:
+        desc: "Tafuta faili"
+        ex1: "Tafuta script za shell kwa jina"
+        ex2: "Tafuta faili kubwa kuliko 10 MB"
+        ex3: "Tafuta faili zilizobadilishwa siku iliyopita"
+      locate:
+        desc: "Tafuta faili kwa jina ukitumia hifadhidata"
+        ex1: "Tafuta jina la faili"
+        ex2: "Tafuta kwa kutumia wildcard"
+        ex3: "Utafutaji bila kujali herufi kubwa/ndogo"
+      realpath:
+        desc: "Chapisha njia halisi ya faili"
+        ex1: "Tambua njia ya faili"
+        ex2: "Tambua njia ya jamaa"
+      stat:
+        desc: "Onyesha hali ya faili au mfumo wa faili"
+        ex1: "Onyesha hali ya kina ya faili"
+        ex2: "Chapisha saizi ya faili pekee"
+        ex3: "Onyesha hali ya mfumo wa faili"
+      tree:
+        desc: "Orodhesha maudhui ya saraka kwa mtindo wa mti"
+        ex1: "Chapisha muundo wa saraka"
+        ex2: "Weka kikomo cha kina cha kuonyesha"
+        ex3: "Jumuisha faili fiche"
+
+  monitoring:
+    _root:
+      title: "📊 Ufuatiliaji wa Mfumo"
+      dmesg:
+        desc: "Chapisha au dhibiti buffer ya kernel"
+        ex1: "Onyesha ujumbe wa mwisho wa kernel"
+        ex2: "Chuja ujumbe wa USB"
+      free:
+        desc: "Onyesha matumizi ya kumbukumbu"
+        ex1: "Vipimo rahisi kusomeka"
+        ex2: "Onyesha kwa MB"
+      htop:
+        desc: "Muangalizi wa michakato wa kiingilizi"
+        ex1: "Endesha `htop`"
+      iotop:
+        desc: "Onyesha matumizi ya I/O na michakato"
+        ex1: "Endesha `iotop`"
+        ex2: "Onyesha michakato inayofanya I/O pekee"
+      lsof:
+        desc: "Orodhesha faili wazi"
+        ex1: "Onyesha michakato inayotumia bandari 80"
+        ex2: "Onyesha faili zilizo wazi na mtumiaji"
+      uptime:
+        desc: "Onyesha muda wa mfumo na mzigo wa wastani"
+      vmstat:
+        desc: "Ripoti takwimu za kumbukumbu pepe"
+        ex1: "Sasisha kila sekunde 1"
+        ex2: "Kipindi cha sekunde 5, ripoti 3"
+      watch:
+        desc: "Tekeleza programu mara kwa mara, ukionyesha matokeo"
+        ex1: "Fuatilia matumizi ya diski"
+        ex2: "Angazia tofauti na fuatilia kumbukumbu"
+
+  packages:
+    _root:
+      title: "📦 Usimamizi wa Vifurushi"
+      apt:
+        desc: "Meneja wa vifurushi APT (Debian/Ubuntu)"
+        ex1: "Sakinisha kifurushi"
+        ex2: "Ondoa kifurushi"
+        ex3: "Sasisha orodha ya vifurushi na boresha"
+      dnf:
+        desc: "Dandified YUM (familia ya Fedora/RHEL)"
+        ex1: "Sakinisha kifurushi"
+        ex2: "Boresha vifurushi"
+      rpm:
+        desc: "Meneja wa vifurushi RPM"
+        ex1: "Sakinisha kifurushi cha RPM"
+        ex2: "Futa (ondoa) kifurushi"
+      snap:
+        desc: "Meneja wa vifurushi vya Snappy"
+        ex1: "Sakinisha snap"
+        ex2: "Ondoa snap"
+      yum:
+        desc: "Yellowdog Updater Modified (RHEL/CentOS)"
+        ex1: "Sakinisha kifurushi"
+        ex2: "Ondoa kifurushi"
+
+  "file-systems":
+    _root:
+      title: "💽 Mifumo ya Faili"
+      blkid:
+        desc: "Tafuta/chapisha sifa za kifaa cha block"
+        ex1: "Orodhesha vifaa vya block na sifa"
+      df:
+        desc: "Ripoti matumizi ya nafasi ya diski ya mfumo wa faili"
+        ex1: "Saizi rahisi kusomeka kwa aina"
+      fsck:
+        desc: "Kagua na rekebisha mfumo wa faili wa Linux"
+        ex1: "Kagua kifaa"
+      lsblk:
+        desc: "Orodhesha taarifa kuhusu vifaa vya block"
+        ex1: "Orodhesha vifaa kwa mtindo wa mti"
+      mkfs:
+        desc: "Unda mfumo wa faili wa Linux"
+        ex1: "Unda mfumo wa faili wa ext4"
+      mount:
+        desc: "Unganisha mfumo wa faili"
+        ex1: "Unganisha kifaa kwa `/mnt`"
+        ex2: "Onyesha mifumo ya faili iliyounganishwa kwa kuchuja njia"
+      parted:
+        desc: "Programu ya kudhibiti mgawanyiko"
+        ex1: "Fungua diski kwa mgawanyiko"
+      umount:
+        desc: "Tenganisha mifumo ya faili"
+        ex1: "Tenganisha sehemu iliyounganishwa"
+
+  scripts:
+    _root:
+      title: "🤖 Scripti na otomatiki"
+      alias:
+        desc: "Tafsiri au onyesha majina ya kifupi ya shell"
+        ex1: "Unda jina la kifupi rahisi"
+        ex2: "Orodhesha majina ya kifupi yaliyofafanuliwa"
+      shell:
+        desc: "Endesha scripti za shell"
+        ex1: "Endesha scripti na Bash"
+        ex2: "Endesha scripti na `sh`"
+      crontab:
+        desc: "Jedwali za cron kwa kila mtumiaji"
+        ex1: "Hariri crontab ya mtumiaji wa sasa"
+      read:
+        desc: "Omba ingizo la mtumiaji kwenye scripti za shell"
+        ex1: "Soma kwenye kigezo"
+      set:
+        desc: "Weka chaguo za shell/vigezo vya nafasi"
+        ex1: "Toka kwenye kosa la kwanza"
+      source:
+        desc: "Soma na tekeleza amri kutoka faili katika shell ya sasa"
+        ex1: "Pakia upya usanidi wa shell"
+      trap:
+        desc: "Shika ishara na tekeleza amri"
+        ex1: "Endesha amri wakati shell inafungwa"
+
+  "dev-debug":
+    _root:
+      title: "🛠 Uendelezaji na Urekebishaji"
+      gcc:
+        desc: "Kikompaili cha GNU C"
+        ex1: "Kompaili faili la chanzo la C"
+      gdb:
+        desc: "Kirekebishi cha GNU"
+        ex1: "Rekebisha faili lililokompailiwa"
+      git:
+        desc: "Mfumo wa kudhibiti toleo uliosambazwa"
+        ex1: "Onyesha hali ya mti wa kazi"
+        ex2: "Fanya commit na ujumbe"
+      ltrace:
+        desc: "Mfuatiliaji wa simu za maktaba"
+        ex1: "Fuatilia simu za maktaba za binary"
+      make:
+        desc: "Zana ya kudumisha makundi ya programu"
+        ex1: "Jenga kulingana na Makefile"
+      shellcheck:
+        desc: "Uchambuzi tuli wa scripti za shell"
+        ex1: "Kagua scripti ya shell"
+      strace:
+        desc: "Fuatilia simu za mfumo na ishara"
+        ex1: "Fuatilia syscalls za programu"
+      valgrind:
+        desc: "Mfumo wa kuchanganua kwa ufuatiliaji wa nguvu"
+        ex1: "Endesha programu chini ya Valgrind"
+      editors:
+        desc: "Wahariri wa maandishi wa mstari wa amri"
+        ex1: "Hariri na Vim"
+        ex2: "Hariri na Nano"
+
+  misc:
+    _root:
+      title: "📌 Mengineyo"
+      cal:
+        desc: "Onyesha kalenda"
+        ex1: "Onyesha kalenda ya mwaka"
+        ex2: "Onyesha mwezi maalum"
+      date:
+        desc: "Onyesha au weka tarehe na muda wa mfumo"
+        ex1: "Chapisha muda wa sasa (HH:MM:SS)"
+        ex2: "Chapisha tarehe ya siku fulani"
+      factor:
+        desc: "Fanya uboreshaji wa nambari"
+        ex1: "Tofautisha nambari"
+      man:
+        desc: "Panga na onyesha kurasa za mwongozo mtandaoni"
+        ex1: "Fungua ukurasa wa man"
+        ex2: "Tafuta mwongozo kwa neno kuu"
+        ex3: "Fungua sehemu maalum ya mwongozo"
+      seq:
+        desc: "Chapisha mlolongo wa nambari"
+        ex1: "Hesabu kutoka 1 hadi 5"
+        ex2: "Hesabu na hatua"
+        ex3: "Unganisha nambari na kitenganishi maalum"
+      yes:
+        desc: "Toa kamba mara kwa mara hadi iachishwe"
+        ex1: "Thibitisha kiotomatiki kufutwa kwa kurudia"
+
+  resources:
+    _root:
+      title: "📚 Rasilimali za Ziada"
+      str:
+        man_pages_desc: "📘 **kurasa za man** - miongozo ya kina kwa amri"
+        tldr_desc: "📙 **TLDR** - mifano mafupi ya matumizi ya amri maarufu"
+        tip_desc: "🧠 **Kidokezo:** Sakinisha `tldr` kwa msaada wa haraka:"
+        useful_links: "🌐 Viungo vya muhimu"
+        linux_man_pages_online_desc: "**Kurasa za man za Linux mtandaoni** — kurasa rasmi za mwongozo, zinaweza kutafutwa kwa jina la amri:"
+        simplified_man_pages_desc: "**Kurasa za man zilizo rahisishwa na za jamii** — kurasa za msaada zilizoendeshwa na jamii zenye mifano ya vitendo:"

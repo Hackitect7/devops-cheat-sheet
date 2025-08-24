@@ -1,0 +1,155 @@
+common:
+  site:
+    title: "برگه تقلب دستورات و سناریوهای DevOps"
+    sections: "بخش‌ها"
+  table:
+    columns:
+      command: "دستور"
+      example: "مثال"
+      description: "توضیح"
+  callouts:
+    sudo-warn: "با `sudo` احتیاط کنید: همیشه قبل از اجرا، دستور را بررسی کنید."
+
+language:
+  # --- TOC / Sidebar ---
+  toc-title-document: "فهرست مطالب"
+  toc-title-website: "در این صفحه"
+
+  related-formats-title: "قالب‌های دیگر"
+  related-notebooks-title: "نوت‌بوک‌ها"
+  source-notebooks-prefix: "منبع"
+  other-links-title: "پیوندهای دیگر"
+  code-links-title: "پیوندهای کد"
+  launch-dev-container-title: "اجرای کانتینر توسعه"
+  launch-binder-title: "اجرای Binder"
+
+  # --- Notebooks ---
+  article-notebook-label: "نوت‌بوک مقاله"
+  notebook-preview-download: "دانلود نوت‌بوک"
+  notebook-preview-download-src: "دانلود منبع"
+  notebook-preview-back: "بازگشت به مقاله"
+  manuscript-meca-bundle: "بسته MECA"
+
+  # --- Sections ---
+  section-title-abstract: "چکیده"
+  section-title-appendices: "پیوست‌ها"
+  section-title-footnotes: "پانوشت‌ها"
+  section-title-references: "منابع"
+  section-title-reuse: "استفادهٔ مجدد"
+  section-title-copyright: "حق نشر"
+  section-title-citation: "استناد"
+
+  appendix-attribution-cite-as: "برای ذکر منبع، لطفاً این اثر را به شکل زیر ارجاع دهید:"
+  appendix-attribution-bibtex: "ارجاع BibTeX:"
+  appendix-view-license: "مشاهدهٔ مجوز"
+
+  # --- Title block ---
+  title-block-author-single: "نویسنده"
+  title-block-author-plural: "نویسندگان"
+  title-block-affiliation-single: "وابستگی"
+  title-block-affiliation-plural: "وابستگی‌ها"
+  title-block-published: "منتشرشده"
+  title-block-modified: "ویرایش‌شده"
+  title-block-keywords: "کلیدواژه‌ها"
+
+  # --- Callouts ---
+  callout-tip-title: "نکته"
+  callout-note-title: "یادداشت"
+  callout-warning-title: "هشدار"
+  callout-important-title: "مهم"
+  callout-caution-title: "احتیاط"
+
+  # --- Code blocks ---
+  code-summary: "کد"
+
+  code-tools-menu-caption: "کد"
+  code-tools-show-all-code: "نمایش همهٔ کدها"
+  code-tools-hide-all-code: "پنهان کردن همهٔ کدها"
+  code-tools-view-source: "مشاهدهٔ منبع"
+  code-tools-source-code: "کد منبع"
+
+  tools-share: "اشتراک‌گذاری"
+  tools-download: "دانلود"
+
+  code-line: "خط"
+  code-lines: "خطوط"
+
+  copy-button-tooltip: "کپی در کلیپ‌بورد"
+  copy-button-tooltip-success: "کپی شد!"
+
+  repo-action-links-edit: "ویرایش این صفحه"
+  repo-action-links-source: "مشاهدهٔ منبع"
+  repo-action-links-issue: "گزارش مشکل"
+
+  back-to-top: "بازگشت به بالا"
+
+  # --- Search ---
+  search-no-results-text: "نتیجه‌ای یافت نشد"
+  search-matching-documents-text: "اسناد مطابق"
+  search-copy-link-title: "کپی پیوند جستجو"
+  search-hide-matches-text: "پنهان کردن تطابق‌های بیشتر"
+  search-more-match-text: "تطابقِ بیشتر در این سند"
+  search-more-matches-text: "تطابق‌های بیشتر در این سند"
+  search-clear-button-title: "پاک کردن"
+  search-text-placeholder: ""
+  search-detached-cancel-button-title: "لغو"
+  search-submit-button-title: "جستجو"
+  search-label: "جستجو"
+
+  # --- UI toggles ---
+  toggle-section: "باز/بستن بخش"
+  toggle-sidebar: "باز/بستن نوار کناری"
+  toggle-dark-mode: "تغییر حالت تیره"
+  toggle-reader-mode: "تغییر حالت مطالعه"
+  toggle-navigation: "تغییر ناوبری"
+
+  # --- Crossrefs ---
+  crossref-fig-title: "شکل"
+  crossref-tbl-title: "جدول"
+  crossref-lst-title: "فهرست"
+  crossref-thm-title: "قضیه"
+  crossref-lem-title: "لِم"
+  crossref-cor-title: "نتیجهٔ فرعی"
+  crossref-prp-title: "گزاره"
+  crossref-cnj-title: "حدس"
+  crossref-def-title: "تعریف"
+  crossref-exm-title: "مثال"
+  crossref-exr-title: "تمرین"
+  crossref-ch-prefix: "فصل"
+  crossref-apx-prefix: "پیوست"
+  crossref-sec-prefix: "بخش"
+  crossref-eq-prefix: "معادله"
+  crossref-lof-title: "فهرست اشکال"
+  crossref-lot-title: "فهرست جداول"
+  crossref-lol-title: "فهرست لیست‌ها"
+
+  # --- Environments ---
+  environment-proof-title: "برهان"
+  environment-remark-title: "تذکر"
+  environment-solution-title: "پاسخ"
+
+  # --- Listings / Blog ---
+  listing-page-order-by: "مرتب‌سازی بر اساس"
+  listing-page-order-by-default: "پیش‌فرض"
+  listing-page-order-by-date-asc: "قدیمی‌ترین"
+  listing-page-order-by-date-desc: "جدیدترین"
+  listing-page-order-by-number-desc: "زیاد به کم"
+  listing-page-order-by-number-asc: "کم به زیاد"
+  listing-page-field-date: "تاریخ"
+  listing-page-field-title: "عنوان"
+  listing-page-field-description: "توضیح"
+  listing-page-field-author: "نویسنده"
+  listing-page-field-filename: "نام فایل"
+  listing-page-field-filemodified: "ویرایش‌شده"
+  listing-page-field-subtitle: "زیرعنوان"
+  listing-page-field-readingtime: "زمان مطالعه"
+  listing-page-field-wordcount: "تعداد واژه‌ها"
+  listing-page-field-categories: "دسته‌ها"
+  listing-page-minutes-compact: "{0} دقیقه"
+  listing-page-category-all: "همه"
+  listing-page-no-matches: "موردِ مطابقی یافت نشد"
+  listing-page-words: "{0} واژه"
+  listing-page-filter: "فیلتر"
+
+  # --- Misc ---
+  draft: "پیش‌نویس"

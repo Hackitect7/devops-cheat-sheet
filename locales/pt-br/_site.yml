@@ -1,0 +1,11 @@
+common:
+  site:
+    title: "DevOps: Comandos e Cenários – Folha de Referência"
+    sections: "Seções"
+  table:
+    columns:
+      command: "Comando"
+      example: "Exemplo"
+      description: "Descrição"
+  callouts:
+    sudo-warn: "Tenha cuidado com `sudo`: sempre verifique o comando antes de executá-lo."

@@ -1,0 +1,11 @@
+common:
+  site:
+    title: "DevOps Polecenia i Scenariusze – Ściągawka"
+    sections: "Sekcje"
+  table:
+    columns:
+      command: "Polecenie"
+      example: "Przykład"
+      description: "Opis"
+  callouts:
+    sudo-warn: "Uważaj na `sudo`: zawsze sprawdź polecenie przed uruchomieniem."

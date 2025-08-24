@@ -1,0 +1,5 @@
+helm:
+  meta:
+    _root:
+      title: "☸️ Helm"
+      desc: "Основы kubectl, манифесты, Helm и устранение неполадок."

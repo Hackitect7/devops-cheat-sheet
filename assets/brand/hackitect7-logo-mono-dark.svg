@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 160">
+  <defs>
+    <style>
+      .stroke { fill: none; stroke: #0b1220; stroke-width: 4; }
+      .brand { font: 700 32px 'Segoe UI', 'Inter', Arial, sans-serif; fill: #0b1220; }
+      .tag { font: 400 16px 'Segoe UI', 'Inter', Arial, sans-serif; fill: #0b1220; opacity: .7; }
+    </style>
+  </defs>
+  <g transform="translate(24,24) scale(1.6)">
+    <polygon class="stroke" points="32,4 56,16 56,48 32,60 8,48 8,16"/>
+    <path class="stroke" d="M10,32 C18,22 26,42 34,32 S50,22 54,32" stroke-linecap="round"/>
+  </g>
+  <text class="brand" x="150" y="68">Hackitect7</text>
+  <text class="tag" x="150" y="104">Музыка систем · The Music of Systems</text>
+</svg>

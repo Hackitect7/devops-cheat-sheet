@@ -1,0 +1,51 @@
+# filename: _quarto-bd.yml
+
+project:
+  pre-render:
+    - python scripts/select_snippets.py
+  render:
+    - bd/index.qmd
+    - bd/linux.qmd
+    - bd/docker.qmd
+    - bd/git.qmd
+    - bd/kubernetes.qmd
+    - bd/helm.qmd
+    - bd/terraform.qmd
+
+lang: bn-BD
+
+metadata-files:
+  - locales/bn-bd/_site.yml
+  - locales/bn-bd/linux.yml
+  - locales/bn-bd/docker.yml
+  - locales/bn-bd/git.yml
+  - locales/bn-bd/kubernetes.yml
+  - locales/bn-bd/helm.yml
+  - locales/bn-bd/terraform.yml
+
+website:
+  title: "ডেভঅপস চিট শীট"
+  sidebar:
+    search: true
+    contents:
+      - bd/index.qmd
+      - bd/linux.qmd
+      - bd/docker.qmd
+      - bd/git.qmd
+      - bd/kubernetes.qmd
+      - bd/helm.qmd
+      - bd/terraform.qmd
+  navbar:
+    logo: assets/brand/bd/hackitect7-logo-light-bd.png
+    logo-alt: "Hackitect7 লোগো (bd)"
+    left:
+      - text: "হোম"
+        href: /
+      - text: "সাহায্য"
+        menu:
+          - text: "বাগ রিপোর্ট করুন"
+            icon: "bug"
+            href: "https://github.com/Hackitect7/devops-cheat-sheet/issues"
+          - text: "একটি প্রশ্ন করুন"
+            icon: "chat-right-text"
+            href: "https://github.com/Hackitect7/devops-cheat-sheet/discussions"

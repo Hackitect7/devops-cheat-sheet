@@ -1,0 +1,620 @@
+linux:
+  meta:
+    _root:
+      title: "🐧 Dòng lệnh Linux"
+      desc: "Các lệnh cơ bản và nâng cao cho điều hướng, tệp, tiến trình, mạng, giám sát, gói và tự động hóa. Phù hợp cho quy trình DevOps."
+
+  basic:
+    _root:
+      title: "🔹 Lệnh cơ bản"
+      cat:
+        desc: "Hiển thị nội dung tệp hoặc nối nhiều tệp"
+        ex1: "Xem nội dung tệp"
+        ex2: "Nối và xuất hai tệp"
+        ex3: "Nối các tệp và lưu vào tệp mới"
+      cd:
+        desc: "Thay đổi thư mục làm việc hiện tại"
+        ex1: "Chuyển đến đường dẫn tuyệt đối `/etc`"
+        ex2: "Chuyển đến thư mục home"
+        ex3: "Lùi lên một cấp"
+        ex4: "Quay lại thư mục trước đó"
+      clear:
+        desc: "Xóa màn hình terminal"
+      cp:
+        desc: "Sao chép tệp và thư mục"
+        ex1: "Sao chép tệp với tên mới"
+        ex2: "Sao chép đệ quy một thư mục"
+        ex3: "Sao chép có xác nhận trước khi ghi đè"
+      echo:
+        desc: "In chuỗi hoặc biến môi trường"
+        ex1: "In một chuỗi đơn giản"
+        ex2: "Hiển thị đường dẫn thư mục home"
+        ex3: "Diễn giải chuỗi thoát (\\t, \\n)"
+      history:
+        desc: "Hiển thị lịch sử lệnh"
+      id:
+        desc: "Hiển thị UID, GID và nhóm của người dùng hiện tại"
+      ls:
+        desc: "Liệt kê tệp và thư mục"
+        ex1: "Danh sách chi tiết với quyền và chủ sở hữu"
+        ex2: "Hiển thị tệp ẩn"
+        ex3: "Kích thước dễ đọc"
+      mkdir:
+        desc: "Tạo thư mục"
+        ex1: "Tạo một thư mục"
+        ex2: "Tạo thư mục lồng nhau"
+        ex3: "Tạo nhiều thư mục cùng lúc"
+      mv:
+        desc: "Di chuyển hoặc đổi tên tệp/thư mục"
+        ex1: "Đổi tên một tệp"
+        ex2: "Di chuyển tệp sang thư mục khác"
+        ex3: "Di chuyển tất cả tệp `.txt` vào thư mục `archive`"
+      pwd:
+        desc: "In thư mục làm việc hiện tại"
+        ex1: "Hiển thị đường dẫn thực (không symlink)"
+        ex2: "Hiển thị đường dẫn sau khi vào `/tmp`"
+      rm:
+        desc: "Xóa tệp hoặc thư mục"
+        ex1: "Xóa một tệp"
+        ex2: "Xóa một tệp có xác nhận"
+        ex3: "Xóa đệ quy một thư mục"
+        ex4: "Xóa cưỡng bức không cần xác nhận"
+      rmdir:
+        desc: "Xóa thư mục trống"
+        ex1: "Xóa thư mục `emptydir`"
+      touch:
+        desc: "Tạo tệp rỗng hoặc cập nhật thời gian chỉnh sửa"
+        ex1: "Tạo tệp mới nếu chưa tồn tại"
+        ex2: "Tạo nhiều tệp cùng lúc"
+        ex3: "Cập nhật thời gian mà không tạo tệp mới nếu không tồn tại"
+      whereis:
+        desc: "Tìm vị trí binary, mã nguồn và trang man của lệnh"
+        ex1: "Tìm vị trí của `ls`"
+        ex2: "Hiển thị đường dẫn cho binary và tài liệu của Bash"
+        ex3: "Chỉ tìm binary"
+      which:
+        desc: "Hiển thị đường dẫn của lệnh thực thi"
+        ex1: "Đường dẫn tới `python3`"
+        ex2: "Đường dẫn tới `grep`"
+        ex3: "Bỏ qua alias khi tìm kiếm"
+      whoami:
+        desc: "In tên người dùng hiện tại"
+
+  intermediate:
+    _root:
+      title: "🔸 Mức trung cấp"
+      chmod:
+        desc: "Thay đổi quyền tệp hoặc thư mục"
+        ex1: "Đặt quyền bằng số bát phân (vd: 755)"
+        ex2: "Thêm quyền thực thi cho script"
+        ex3: "Đặt quyền đệ quy cho một thư mục"
+      chown:
+        desc: "Thay đổi chủ sở hữu và nhóm của tệp"
+        ex1: "Thay đổi chủ sở hữu của tệp"
+        ex2: "Thay đổi cả chủ sở hữu và nhóm"
+        ex3: "Đệ quy thay đổi chủ và nhóm"
+      curl:
+        desc: "Truyền dữ liệu từ/đến máy chủ (HTTP, HTTPS, v.v.)"
+        ex1: "Gửi yêu cầu HEAD (chỉ tiêu đề)"
+        ex2: "Tải tệp và giữ nguyên tên"
+        ex3: "Gửi yêu cầu POST với dữ liệu biểu mẫu"
+      df:
+        desc: "Báo cáo dung lượng đĩa hệ thống tệp"
+        ex1: "Đơn vị dễ đọc"
+        ex2: "Dung lượng của điểm mount cụ thể"
+        ex3: "Hiển thị loại hệ thống tệp"
+      diff:
+        desc: "So sánh tệp hoặc thư mục"
+        ex1: "So sánh hai tệp"
+        ex2: "Diff dạng unified (kiểu patch)"
+        ex3: "So sánh thư mục đệ quy"
+      du:
+        desc: "Ước tính dung lượng tệp và thư mục"
+        ex1: "Hiển thị kích thước trong thư mục hiện tại"
+        ex2: "Hiển thị kích thước của một tệp"
+        ex3: "Tóm tắt kích thước của thư mục cấp cao"
+      find:
+        desc: "Tìm tệp/thư mục theo tên, kích thước, thời gian, v.v."
+        ex1: "Tìm tất cả tệp `.log` trong thư mục hiện tại"
+        ex2: "Tìm tệp lớn hơn 100 MB"
+        ex3: "Các tệp chỉnh sửa trong ngày qua"
+      free:
+        desc: "Hiển thị bộ nhớ đã dùng và còn trống"
+        ex1: "Đơn vị dễ đọc"
+        ex2: "Hiển thị bằng MB"
+        ex3: "Làm mới mỗi 2 giây"
+      grep:
+        desc: "Tìm văn bản bằng mẫu (regex)"
+        ex1: "Tìm dòng chứa `error`"
+        ex2: "Tìm kiếm đệ quy trong thư mục"
+        ex3: "Không phân biệt hoa/thường"
+      head:
+        desc: "Xuất dòng đầu tiên của tệp"
+        ex1: "10 dòng đầu"
+        ex2: "20 dòng đầu"
+        ex3: "100 byte đầu"
+      hostname:
+        desc: "Hiển thị hoặc đặt tên host của hệ thống"
+        ex1: "Đặt tên host tạm thời đến khi khởi động lại"
+        ex2: "Hiển thị địa chỉ IP"
+      kill:
+        desc: "Gửi tín hiệu tới tiến trình"
+        ex1: "Buộc dừng tiến trình bằng PID"
+        ex2: "Dừng nhẹ nhàng với SIGTERM"
+        ex3: "Dừng tiến trình theo mẫu"
+      ping:
+        desc: "Kiểm tra kết nối mạng bằng ICMP"
+        ex1: "Ping một địa chỉ"
+        ex2: "Gửi 4 gói tin"
+        ex3: "Đặt khoảng cách 2 giây"
+      ps:
+        desc: "Hiển thị trạng thái tiến trình"
+        ex1: "Liệt kê tất cả tiến trình"
+        ex2: "Lọc theo tên với `grep`"
+        ex3: "Tiến trình của người dùng hiện tại"
+      rsync:
+        desc: "Truyền tệp gia tăng nhanh"
+        ex1: "Đồng bộ thư mục cục bộ"
+        ex2: "Đồng bộ với host từ xa qua SSH"
+        ex3: "Xóa tệp đích không có trong nguồn"
+      scp:
+        desc: "Sao chép an toàn (tệp từ xa)"
+        ex1: "Sao chép tệp tới host từ xa"
+        ex2: "Sao chép tệp từ host từ xa"
+        ex3: "Sao chép thư mục đệ quy"
+      sort:
+        desc: "Sắp xếp các dòng văn bản"
+        ex1: "Sắp xếp theo chữ cái"
+        ex2: "Thứ tự ngược"
+        ex3: "Sắp xếp số"
+      tail:
+        desc: "Xuất phần cuối của tệp; theo dõi thay đổi"
+        ex1: "Theo dõi log theo thời gian thực"
+        ex2: "Hiển thị 20 dòng cuối"
+        ex3: "Hiển thị 100 byte cuối"
+      tar:
+        desc: "Tạo, liệt kê hoặc giải nén tar archive"
+        ex1: "Tạo archive `.tgz`"
+        ex2: "Giải nén archive `.tgz`"
+        ex3: "Liệt kê nội dung archive"
+      tee:
+        desc: "Đọc từ stdin và ghi ra stdout và tệp"
+        ex1: "Ghi output vào `out.txt` và hiển thị"
+        ex2: "Lưu output `ls` vào tệp và hiển thị"
+        ex3: "Ghi thêm output vào cuối `log.txt`"
+      top:
+        desc: "Hiển thị tiến trình Linux (interactive)"
+        ex1: "Khởi chạy top"
+        ex2: "Trình xem tương tác thay thế (htop)"
+        ex3: "Sắp xếp theo bộ nhớ"
+      uptime:
+        desc: "Hiển thị thời gian chạy của hệ thống"
+        ex1: "Thời gian chạy đẹp"
+        ex2: "Thời gian khởi động hệ thống"
+      wget:
+        desc: "Trình tải xuống mạng không tương tác"
+        ex1: "Tải tệp theo URL"
+        ex2: "Tiếp tục tải bị gián đoạn"
+        ex3: "Lưu với tên tệp khác"
+      wc:
+        desc: "Đếm dòng, từ và byte của tệp"
+        ex1: "Đếm dòng"
+        ex2: "Đếm từ"
+        ex3: "Đếm ký tự"
+      uniq:
+        desc: "Báo cáo hoặc lọc dòng trùng lặp liền kề"
+        ex1: "Xóa trùng lặp liền kề"
+        ex2: "Xóa trùng sau khi sort"
+        ex3: "Đếm số lần xuất hiện mỗi dòng"
+      yes:
+        desc: "In lặp một chuỗi đến khi dừng; hữu ích trong script"
+        ex1: "Luôn trả lời \"y\" cho prompt"
+        ex2: "Tự động xác nhận xóa"
+        ex3: "Trả lời \"no\" cho prompt"
+
+  advanced:
+    _root:
+      title: "🔧 Lệnh nâng cao"
+      at:
+        desc: "Lên lịch lệnh một lần tại thời điểm chỉ định"
+        ex1: "Chạy lệnh sau 1 phút"
+        ex2: "Liệt kê công việc chờ"
+        ex3: "Xóa công việc chờ"
+      awk:
+        desc: "Ngôn ngữ quét mẫu và xử lý văn bản"
+        ex1: "In cột đầu tiên"
+        ex2: "Lọc tiến trình theo CPU"
+        ex3: "In trường thứ hai của mỗi dòng"
+        ex4: "In dòng khớp mẫu"
+      crontab:
+        desc: "Cài, liệt kê hoặc xóa cron job cho người dùng"
+        ex1: "Chỉnh sửa crontab của người dùng hiện tại"
+        ex2: "Liệt kê cron job"
+        ex3: "Xóa crontab của người dùng"
+      cut:
+        desc: "Cắt hoặc chọn phần từ mỗi dòng tệp"
+        ex1: "In tên người dùng từ `/etc/passwd`"
+        ex2: "Cắt trường thứ hai bằng dấu ':'"
+        ex3: "Chọn ký tự theo vị trí"
+      df:
+        desc: "Báo cáo dung lượng hệ thống tệp"
+        ex1: "Đơn vị dễ đọc"
+        ex2: "Hiển thị loại hệ thống tệp"
+        ex3: "Dung lượng thư mục home"
+      env:
+        desc: "Chạy lệnh trong môi trường sửa đổi hoặc in env"
+        ex1: "Hiển thị PATH"
+        ex2: "Khởi chạy shell trống"
+      export:
+        desc: "Đặt biến môi trường cho shell/phiên"
+        ex1: "Đặt biến cho shell hiện tại"
+        ex2: "Thêm thư mục vào PATH"
+        ex3: "Liệt kê biến đã export"
+      free:
+        desc: "Hiển thị sử dụng bộ nhớ"
+        ex1: "Hiển thị bằng MB"
+        ex2: "Đơn vị dễ đọc"
+        ex3: "Lấy mẫu mỗi 5 giây"
+      hostnamectl:
+        desc: "Truy vấn và thay đổi tên host hệ thống"
+        ex1: "Hiển thị trạng thái host"
+        ex2: "Đặt tên host mới"
+      ip-tools:
+        desc: "Công cụ IP để xem/quản lý giao diện và địa chỉ"
+        ex1: "Hiển thị giao diện mạng (cũ)"
+        ex2: "Hiển thị địa chỉ với `ip`"
+        ex3: "Kích hoạt giao diện"
+      iostat:
+        desc: "Báo cáo CPU và I/O"
+        ex1: "Thống kê mở rộng mỗi 2 giây"
+        ex2: "Thống kê thiết bị (5s, 3 lần)"
+      iptables:
+        desc: "Công cụ quản trị lọc gói IPv4 và NAT"
+        ex1: "Liệt kê quy tắc hiện tại"
+        ex2: "Cho phép SSH vào cổng 22"
+        ex3: "Xóa tất cả quy tắc"
+      journalctl:
+        desc: "Truy vấn nhật ký systemd"
+        ex1: "Hiển thị lỗi gần đây"
+        ex2: "Hiển thị log dịch vụ"
+        ex3: "Hiển thị log từ thời điểm cụ thể"
+      ln:
+        desc: "Tạo liên kết giữa tệp"
+        ex1: "Tạo symbolic link"
+        ex2: "Tạo hard link"
+        ex3: "Tạo lại symbolic link"
+      sed:
+        desc: "Trình biên tập luồng cho lọc/chuyển đổi văn bản"
+        ex1: "Thay chuỗi toàn cục"
+        ex2: "In chỉ phạm vi dòng"
+        ex3: "Xóa dòng khớp"
+      systemctl:
+        desc: "Quản lý dịch vụ systemd"
+        ex1: "Hiển thị trạng thái dịch vụ"
+        ex2: "Khởi động dịch vụ"
+        ex3: "Bật dịch vụ khi khởi động"
+      tr:
+        desc: "Chuyển đổi hoặc xóa ký tự"
+        ex1: "Chuyển chữ thường thành hoa"
+        ex2: "Thay thế ký tự"
+        ex3: "Xóa chữ số"
+      type:
+        desc: "Mô tả cách shell hiểu tên"
+        ex1: "Xem `ls` được ánh xạ thế nào"
+        ex2: "Xem `cd` được ánh xạ thế nào"
+        ex3: "Xem `python3` được ánh xạ thế nào"
+      ulimit:
+        desc: "Xem hoặc đặt giới hạn tài nguyên tiến trình"
+        ex1: "Hiển thị số tệp mở tối đa"
+        ex2: "Bật core dump"
+        ex3: "Giới hạn số tiến trình"
+      uptime:
+        desc: "Hiển thị thời gian chạy và tải trung bình"
+        ex1: "Thời gian chạy đẹp"
+        ex2: "Thời gian khởi động"
+      xargs:
+        desc: "Xây dựng và chạy lệnh từ stdin"
+        ex1: "Echo từng đối số trên dòng riêng"
+        ex2: "Tách từ thành đối số riêng"
+        ex3: "Tìm và xóa tệp với xargs"
+
+  network:
+    _root:
+      title: "🌐 Lệnh mạng"
+      curl:
+        desc: "Truyền dữ liệu tới/từ máy chủ"
+        ex1: "Yêu cầu POST với dữ liệu biểu mẫu"
+        ex2: "Chỉ lấy header"
+        ex3: "Tải xuống và lưu vào tệp"
+      dig:
+        desc: "Tiện ích tra cứu DNS"
+        ex1: "Truy vấn bản ghi A"
+        ex2: "Câu trả lời ngắn gọn"
+        ex3: "Sử dụng máy chủ DNS cụ thể"
+      ftp:
+        desc: "Máy khách giao thức truyền tệp (FTP)"
+        ex1: "Kết nối tới máy chủ FTP"
+        ex2: "Kết nối không tự động đăng nhập"
+        ex3: "Tải tệp trong phiên FTP"
+      ip-address:
+        desc: "Hiển thị/quản lý địa chỉ IP"
+        ex1: "Hiển thị thông tin địa chỉ của `eth0`"
+        ex2: "Liệt kê tất cả địa chỉ"
+      ip-link:
+        desc: "Hiển thị/quản lý thiết bị mạng"
+        ex1: "Hiển thị liên kết mạng"
+        ex2: "Kích hoạt giao diện mạng"
+      ip-route:
+        desc: "Hiển thị/quản lý bảng định tuyến IP"
+        ex1: "Liệt kê bảng định tuyến"
+        ex2: "Thêm tuyến mặc định"
+      nc:
+        desc: "Kết nối và lắng nghe TCP/UDP tùy ý"
+        ex1: "Quét cổng của host"
+        ex2: "Lắng nghe cổng TCP"
+        ex3: "Gửi tệp tới cổng từ xa"
+      nmap:
+        desc: "Công cụ thăm dò mạng và quét cổng/bảo mật"
+        ex1: "Ping quét một subnet"
+        ex2: "Phát hiện dịch vụ/phiên bản"
+        ex3: "Phát hiện hệ điều hành"
+      nslookup:
+        desc: "Truy vấn máy chủ tên miền Internet"
+        ex1: "Truy vấn tên miền"
+        ex2: "Tra ngược IP"
+      ssh:
+        desc: "Máy khách đăng nhập từ xa OpenSSH"
+        ex1: "Kết nối tới host"
+        ex2: "Kết nối bằng cổng không mặc định"
+        ex3: "Đăng nhập bằng khóa riêng cụ thể"
+      ss:
+        desc: "Tiện ích điều tra socket"
+        ex1: "Liệt kê cổng TCP/UDP đang lắng nghe"
+        ex2: "Thống kê tóm tắt"
+        ex3: "Liệt kê socket đang lắng nghe"
+      telnet:
+        desc: "Giao diện người dùng cho giao thức TELNET"
+        ex1: "Kết nối tới host tại cổng 80"
+        ex2: "Kết nối tới 443"
+        ex3: "Kết nối tới SMTP cục bộ"
+      traceroute:
+        desc: "Truy vết đường đi đến host mạng"
+        ex1: "Truy vết đường đi tới IP"
+        ex2: "Giới hạn số bước nhảy tối đa"
+      wget:
+        desc: "Tải tệp từ web"
+        ex1: "Lưu output vào tệp"
+        ex2: "Tải về thư mục hiện tại"
+        ex3: "Tiếp tục tải còn dở"
+
+  files:
+    _root:
+      title: "🔍 Tìm kiếm và quản lý tệp"
+      basename:
+        desc: "Loại bỏ thư mục và hậu tố khỏi tên tệp"
+        ex1: "In tên tệp từ đường dẫn"
+        ex2: "Loại bỏ hậu tố khỏi tên"
+      dirname:
+        desc: "Loại bỏ thành phần cuối khỏi đường dẫn"
+        ex1: "Hiển thị phần thư mục của đường dẫn"
+        ex2: "Hiển thị thư mục cha của `/etc/passwd`"
+      du:
+        desc: "Ước tính dung lượng tệp"
+        ex1: "Hiển thị kích thước thư mục"
+        ex2: "Hiển thị kích thước các mục trong thư mục hiện tại"
+        ex3: "Tổng kích thước của nhiều thư mục"
+      file:
+        desc: "Xác định loại tệp"
+        ex1: "Phát hiện loại tệp"
+        ex2: "Phát hiện loại tất cả tệp trong thư mục"
+        ex3: "Hiển thị loại MIME"
+      find:
+        desc: "Tìm tệp"
+        ex1: "Tìm script shell theo tên"
+        ex2: "Tìm tệp lớn hơn 10 MB"
+        ex3: "Tìm tệp được chỉnh sửa trong ngày qua"
+      locate:
+        desc: "Tìm tệp theo tên bằng cơ sở dữ liệu"
+        ex1: "Định vị tệp theo tên"
+        ex2: "Tìm với ký tự đại diện"
+        ex3: "Tìm không phân biệt hoa/thường"
+      realpath:
+        desc: "In đường dẫn tuyệt đối đã phân giải"
+        ex1: "Phân giải đường dẫn tệp"
+        ex2: "Phân giải đường dẫn tương đối"
+      stat:
+        desc: "Hiển thị trạng thái tệp hoặc hệ thống tệp"
+        ex1: "Chi tiết trạng thái tệp"
+        ex2: "Chỉ in kích thước tệp"
+        ex3: "Hiển thị trạng thái hệ thống tệp"
+      tree:
+        desc: "Liệt kê nội dung thư mục dạng cây"
+        ex1: "In cây thư mục"
+        ex2: "Giới hạn độ sâu hiển thị"
+        ex3: "Bao gồm cả tệp ẩn"
+
+  monitoring:
+    _root:
+      title: "📊 Giám sát hệ thống"
+      dmesg:
+        desc: "In hoặc điều khiển bộ đệm vòng kernel"
+        ex1: "Hiển thị thông báo kernel cuối cùng"
+        ex2: "Lọc thông báo USB"
+      free:
+        desc: "Hiển thị mức sử dụng bộ nhớ"
+        ex1: "Đơn vị dễ đọc"
+        ex2: "Hiển thị bằng MB"
+      htop:
+        desc: "Trình xem tiến trình tương tác"
+        ex1: "Chạy `htop`"
+      iotop:
+        desc: "Hiển thị mức sử dụng I/O theo tiến trình"
+        ex1: "Chạy `iotop`"
+        ex2: "Chỉ hiển thị tiến trình đang dùng I/O"
+      lsof:
+        desc: "Liệt kê tệp đang mở"
+        ex1: "Hiển thị tiến trình dùng cổng 80"
+        ex2: "Hiển thị tệp mở bởi người dùng"
+      uptime:
+        desc: "Hiển thị thời gian hoạt động và tải trung bình"
+      vmstat:
+        desc: "Báo cáo thống kê bộ nhớ ảo"
+        ex1: "Làm mới mỗi 1 giây"
+        ex2: "Khoảng 5 giây, 3 báo cáo"
+      watch:
+        desc: "Thực thi chương trình định kỳ, hiển thị output"
+        ex1: "Theo dõi mức sử dụng đĩa"
+        ex2: "Làm nổi bật thay đổi và theo dõi bộ nhớ"
+
+  packages:
+    _root:
+      title: "📦 Quản lý gói"
+      apt:
+        desc: "Trình quản lý gói APT (Debian/Ubuntu)"
+        ex1: "Cài gói"
+        ex2: "Gỡ gói"
+        ex3: "Cập nhật danh sách và nâng cấp"
+      dnf:
+        desc: "Dandified YUM (dòng Fedora/RHEL)"
+        ex1: "Cài gói"
+        ex2: "Nâng cấp gói"
+      rpm:
+        desc: "Trình quản lý gói RPM"
+        ex1: "Cài gói RPM"
+        ex2: "Xóa (gỡ cài đặt) gói"
+      snap:
+        desc: "Trình quản lý gói Snappy"
+        ex1: "Cài snap"
+        ex2: "Gỡ snap"
+      yum:
+        desc: "Yellowdog Updater Modified (RHEL/CentOS)"
+        ex1: "Cài gói"
+        ex2: "Gỡ gói"
+
+  file-systems:
+    _root:
+      title: "💽 Hệ thống tệp"
+      blkid:
+        desc: "Định vị/in thuộc tính thiết bị khối"
+        ex1: "Liệt kê thiết bị khối và thuộc tính"
+      df:
+        desc: "Báo cáo dung lượng hệ thống tệp"
+        ex1: "Đơn vị dễ đọc theo loại"
+      fsck:
+        desc: "Kiểm tra và sửa hệ thống tệp Linux"
+        ex1: "Kiểm tra thiết bị"
+      lsblk:
+        desc: "Liệt kê thông tin thiết bị khối"
+        ex1: "Liệt kê thiết bị dạng cây"
+      mkfs:
+        desc: "Tạo hệ thống tệp Linux"
+        ex1: "Tạo hệ thống tệp ext4"
+      mount:
+        desc: "Gắn hệ thống tệp"
+        ex1: "Gắn thiết bị vào `/mnt`"
+        ex2: "Hiển thị hệ thống tệp được gắn lọc theo đường dẫn"
+      parted:
+        desc: "Chương trình thao tác phân vùng"
+        ex1: "Mở đĩa để phân vùng"
+      umount:
+        desc: "Tháo gắn hệ thống tệp"
+        ex1: "Tháo gắn điểm mount"
+
+  scripts:
+    _root:
+      title: "🤖 Script và tự động hóa"
+      alias:
+        desc: "Định nghĩa hoặc hiển thị alias shell"
+        ex1: "Tạo alias tiện dụng"
+        ex2: "Liệt kê alias đã định nghĩa"
+      shell:
+        desc: "Chạy script shell"
+        ex1: "Chạy script với Bash"
+        ex2: "Chạy script với `sh`"
+      crontab:
+        desc: "Bảng cron theo người dùng"
+        ex1: "Chỉnh sửa crontab người dùng hiện tại"
+      read:
+        desc: "Nhập dữ liệu từ người dùng trong script"
+        ex1: "Đọc vào biến"
+      set:
+        desc: "Đặt tùy chọn shell/tham số vị trí"
+        ex1: "Thoát khi gặp lỗi đầu tiên"
+      source:
+        desc: "Đọc và thực thi lệnh từ tệp trong shell hiện tại"
+        ex1: "Nạp lại cấu hình shell"
+      trap:
+        desc: "Bẫy tín hiệu và thực thi lệnh"
+        ex1: "Chạy lệnh khi shell thoát"
+
+  dev-debug:
+    _root:
+      title: "🛠 Phát triển và gỡ lỗi"
+      gcc:
+        desc: "Trình biên dịch C GNU"
+        ex1: "Biên dịch tệp nguồn C"
+      gdb:
+        desc: "Trình gỡ lỗi GNU"
+        ex1: "Gỡ lỗi binary đã biên dịch"
+      git:
+        desc: "Hệ thống quản lý phiên bản phân tán"
+        ex1: "Hiển thị trạng thái cây làm việc"
+        ex2: "Commit với thông điệp"
+      ltrace:
+        desc: "Theo dõi lời gọi thư viện"
+        ex1: "Theo dõi lời gọi thư viện của binary"
+      make:
+        desc: "Tiện ích duy trì nhóm chương trình"
+        ex1: "Build theo Makefile"
+      shellcheck:
+        desc: "Phân tích tĩnh cho script shell"
+        ex1: "Kiểm tra lỗi script shell"
+      strace:
+        desc: "Theo dõi syscall và tín hiệu"
+        ex1: "Theo dõi syscall của chương trình"
+      valgrind:
+        desc: "Khung công cụ phân tích động"
+        ex1: "Chạy chương trình dưới Valgrind"
+      editors:
+        desc: "Trình soạn thảo văn bản dòng lệnh"
+        ex1: "Soạn thảo với Vim"
+        ex2: "Soạn thảo với Nano"
+
+  misc:
+    _root:
+      title: "📌 Khác"
+      cal:
+        desc: "Hiển thị lịch"
+        ex1: "Hiển thị lịch năm"
+        ex2: "Hiển thị tháng cụ thể"
+      date:
+        desc: "Hiển thị hoặc đặt ngày/giờ hệ thống"
+        ex1: "In giờ hiện tại (HH:MM:SS)"
+        ex2: "In ngày theo ngày tương đối"
+      factor:
+        desc: "Phân tích thừa số nguyên"
+        ex1: "Phân tích một số"
+      man:
+        desc: "Định dạng và hiển thị trang hướng dẫn trực tuyến"
+        ex1: "Mở trang man"
+        ex2: "Tìm trong man bằng từ khóa"
+        ex3: "Mở phần man cụ thể"
+      seq:
+        desc: "In dãy số"
+        ex1: "Đếm từ 1 đến 5"
+        ex2: "Đếm với bước"
+        ex3: "Nối số với dấu phân cách tùy chỉnh"
+      yes:
+        desc: "In chuỗi lặp lại cho đến khi dừng"
+        ex1: "Tự động xác nhận xóa đệ quy"
+
+  resources:
+    _root:
+      title: "📚 Tài nguyên bổ sung"
+      str:
+        man_pages_desc: "📘 **Trang man** - tài liệu chi tiết cho lệnh"
+        tldr_desc: "📙 **TLDR** - ví dụ sử dụng ngắn gọn cho các lệnh phổ biến"
+        tip_desc: "🧠 **Mẹo:** Cài `tldr` để nhận trợ giúp dạng cheat-sheet:"
+        useful_links: "🌐 Liên kết hữu ích"
+        linux_man_pages_online_desc: "**Trang man Linux trực tuyến** — tài liệu chính thức, tìm kiếm theo tên lệnh:"
+        simplified_man_pages_desc: "**Trang man đơn giản và do cộng đồng đóng góp** — trợ giúp với ví dụ thực tế:"

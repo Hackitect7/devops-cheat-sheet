@@ -1,0 +1,5 @@
+kubernetes:
+  meta:
+    _root:
+      title: "☸️ Kubernetes"
+      desc: "kubectl essentials, manifests, Helm, and troubleshooting."

@@ -1,0 +1,11 @@
+common:
+  site:
+    title: "Lembar Pintasan Perintah & Skenario DevOps"
+    sections: "Bagian"
+  table:
+    columns:
+      command: "Perintah"
+      example: "Contoh"
+      description: "Deskripsi"
+  callouts:
+    sudo-warn: "Hati-hati dengan `sudo`: selalu periksa perintah sebelum menjalankannya."

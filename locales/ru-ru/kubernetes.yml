@@ -1,0 +1,5 @@
+kubernetes:
+  meta:
+    _root:
+      title: "☸️ Kubernetes"
+      desc: "Основы kubectl, манифесты, Helm и устранение неполадок."

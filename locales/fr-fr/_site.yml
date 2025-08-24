@@ -1,0 +1,11 @@
+common:
+  site:
+    title: "DevOps : aide-mémoire des commandes et scénarios"
+    sections: "Sections"
+  table:
+    columns:
+      command: "Commande"
+      example: "Exemple"
+      description: "Description"
+  callouts:
+    sudo-warn: "Attention avec `sudo` : vérifiez toujours la commande avant de l’exécuter."

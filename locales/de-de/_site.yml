@@ -1,0 +1,11 @@
+common:
+  site:
+    title: "DevOps Befehle & Szenarien Spickzettel"
+    sections: "Abschnitte"
+  table:
+    columns:
+      command: "Befehl"
+      example: "Beispiel"
+      description: "Beschreibung"
+  callouts:
+    sudo-warn: "Seien Sie vorsichtig mit `sudo`: Überprüfen Sie den Befehl immer, bevor Sie ihn ausführen."

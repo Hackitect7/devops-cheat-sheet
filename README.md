@@ -4,14 +4,14 @@
 > 🚀 Useful for juniors, seniors, SREs, and architects  
 > 🌍 Documentation available in both 🇷🇺 Russian and 🇺🇸 English
 
-![Stars](https://img.shields.io/github/stars/Hackitect7/devops-cheat-sheet) ![Last Commit](https://img.shields.io/github/last-commit/Hackitect7/devops-cheat-sheet) ![License](https://img.shields.io/github/license/Hackitect7/devops-cheat-sheet) ![Issues](https://img.shields.io/github/issues/Hackitect7/devops-cheat-sheet)
+![Stars](https://img.shields.io/github/stars/Hackitect7/devops-cheat-sheet) ![Last Commit](https://img.shields.io/github/last-commit/Hackitect7/devops-cheat-sheet) ![License](https://img.shields.io/github/license/Hackitect7/devops-cheat-sheet) ![Issues](https://img.shields.io/github/issues/Hackitect7/devops-cheat-sheet) ![Deploy](https://github.com/Hackitect7/devops-cheat-sheet/actions/workflows/publish.yml/badge.svg)
 
 ---
 
 ## 🌐 Language Selection
 
-- 🇷🇺 [Читать на русском](./docs/ru/README.md)
-- 🇺🇸 [Read in English](./docs/en/README.md)
+- 🇷🇺 [Читать на русском](./ru/README.md)
+- 🇺🇸 [Read in English](./en/README.md)
 
 ---
 

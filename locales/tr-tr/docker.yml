@@ -1,0 +1,629 @@
+docker:
+  meta:
+    _root:
+      title: "🐳 Docker"
+      desc: "📘 Docker, uygulamaları izole edilmiş konteynerlerde çalıştırmak için bir platformdur. Bu hızlı başvuru kılavuzu; imajlar, konteynerler, ağlar, volumeler, ayrıca Docker Compose ve Swarm ile çalışma komutlarını içerir."
+
+  basic:
+    _root:
+      title: "📦 Temel Komutlar"
+    docker:
+      desc: "Alt komutları çalıştırmak ve konteynerleri, imajları, ağları ve volumeleri yönetmek için kullanılan ana Docker CLI komutu"
+    docker_version:
+      desc: "Kurulu Docker sürümünü (istemci ve sunucu) göster. Kurulum doğrulaması için faydalıdır"
+      ex1: "Yalnızca Docker istemci API sürümünü göster"
+      ex2: "Yalnızca Docker sunucu (Engine) sürümünü göster"
+      ex3: "Tam sürüm bilgisini JSON formatında çıktıla"
+    docker_system_info:
+      desc: "Genel Docker sistem bilgilerini göster: konteyner sayısı, imajlar, kaynaklar"
+      ex1: "Docker verilerini göster: sürümler, ağlar, konteyner ve imaj sayıları"
+      ex2: "Bilgiyi JSON formatında çıktıla — otomasyon için faydalı"
+      ex3: "CPU sayısını ve toplam belleği göster"
+      ex4: "Docker tarafından kullanılan depolama sürücüsünü göster"
+    docker_image_pull:
+      desc: "Docker Hub veya başka bir kayıt defterinden imaj indir. Konteynerler imajsız çalışamaz"
+      ex1: "En son mevcut Ubuntu imajını indir"
+      ex2: "Alpine Linux tabanlı hafif Nginx imajını indir"
+      ex3: "Redis imajının 7. sürümünü indir"
+    docker_container_run:
+      desc: "Bir imajdan yeni bir konteyner oluştur ve çalıştır"
+      ex1: "Ubuntu’yu etkileşimli Bash terminali ile çalıştır"
+      ex2: "Nginx’i detached (arka plan) modunda çalıştır"
+      ex3: "Nginx çalıştır ve konteyner 80. portunu host 8080’e bağla"
+    docker_container_ls:
+      desc: "Çalışan konteynerleri listele"
+      ex1: "Yalnızca çalışan konteynerleri göster"
+      ex2: "Durdurulmuş olanlar dahil tüm konteynerleri göster"
+      ex3: "Yalnızca konteyner adlarını çıktıla"
+    docker_container_start:
+      desc: "Bir veya daha fazla durdurulmuş konteyneri başlat"
+      ex1: "Konteyneri adına göre başlat"
+      ex2: "Tüm konteynerleri başlat"
+      ex3: "Konteyneri başlat ve etkileşimli terminale bağlan"
+    docker_container_stop:
+      desc: "Çalışan bir konteyneri durdur"
+      ex1: "Bir konteyneri adına göre durdur"
+      ex2: "Tüm çalışan konteynerleri durdur"
+      ex3: "Konteyneri durdurmadan önce işlemleri bitirmesi için 5 saniye tanı"
+    docker_container_restart:
+      desc: "Bir konteyneri yeniden başlat"
+      ex1: "Belirli bir konteyneri yeniden başlat"
+      ex2: "Tüm çalışan konteynerleri yeniden başlat"
+      ex3: "Konteyneri 10 saniyelik gecikmeyle yeniden başlat"
+    docker_container_rm:
+      desc: "Bir konteyneri sil"
+      ex1: "Belirli bir durdurulmuş konteyneri sil"
+      ex2: "Tüm durdurulmuş konteynerleri sil"
+      ex3: "Çalışan bir konteyneri zorla sil"
+    docker_image_ls:
+      desc: "İndirilen imajları listele"
+      ex1: "Host üzerindeki tüm imajları göster"
+      ex2: "Ara katmanlar dahil tüm imajları göster"
+      ex3: "Yalnızca imaj adlarını ve etiketlerini çıktıla"
+    docker_image_rm:
+      desc: "Yerel depodan bir veya daha fazla imajı sil"
+      ex1: "`test1` deposundan `latest` etiketli imajı sil"
+      ex2: "İmajı kimliğine göre sil"
+      ex3: "Tüm imajları sil (dikkatli kullan!)"
+
+  container:
+    _root:
+      title: "🔁 Konteyner Yönetimi"
+    docker_container_exec:
+      desc: "Çalışan bir konteyner içinde komut çalıştır"
+      ex1: "`container` adlı konteyner içinde etkileşimli bash shell aç"
+      ex2: "Konteyner içinde `/app` dizininde `ls` komutunu çalıştır"
+      ex3: "Konteynerde detached modda (beklemeden) komut çalıştır"
+    docker_container_logs:
+      desc: "Konteyner loglarını görüntüle"
+      ex1: "`container` adlı konteynerin tüm loglarını göster"
+      ex2: "Konteyner loglarını gerçek zamanlı takip et"
+      ex3: "Son 50 satır logu göster"
+    docker_inspect:
+      desc: "Bir konteyner veya imaj hakkında ayrıntılı JSON bilgisi al"
+      ex1: "`container` konteynerinin detaylarını göster"
+      ex2: "Konteynerin IP adresini göster"
+    docker_container_stats:
+      desc: "Konteynerlerin gerçek zamanlı kaynak kullanım istatistiklerini göster"
+      ex1: "Tüm konteynerler için CPU, bellek, ağ ve disk kullanımını görüntüle"
+      ex2: "Yalnızca belirli bir konteynerin istatistiklerini göster"
+      ex3: "Tek seferlik istatistik anlık görüntüsü al ve çık"
+    docker_container_rename:
+      desc: "Bir konteynerin adını değiştir"
+      ex1: "`old_name` olan konteyneri `new_name` olarak yeniden adlandır"
+    docker_container_cp:
+      desc: "Konteyner ile host arasında dosya kopyala"
+      ex1: "Konteynerden host dizinine dosya kopyala"
+      ex2: "Hosttan konteynere dosya kopyala"
+      ex3: "Konteynerden log dosyasını akışla al ve \"ERROR\" satırlarını diske kaydetmeden filtrele"
+    docker_container_top:
+      desc: "Bir konteyner içindeki çalışan işlemleri görüntüle"
+      ex1: "`container` adlı konteynerin işlemlerini göster"
+    docker_container_pause:
+      desc: "Bir konteynerdeki tüm işlemleri duraklat"
+      ex1: "`container` konteynerini duraklat"
+    docker_container_unpause:
+      desc: "Duraklatılmış bir konteyneri devam ettir"
+      ex1: "`container` konteynerini devam ettir"
+    docker_container_update:
+      desc: "Konteyner ayarlarını yeniden başlatmadan güncelle"
+      ex1: "Konteyner bellek kullanımını 500 MB ile sınırla"
+
+  images:
+    _root:
+      title: "🧱 İmajlar ve Dockerfile"
+    docker_buildx_build:
+      desc: "Bir Dockerfile’dan Docker imajı oluştur"
+      ex1: "Geçerli dizinden `my_image` etiketli imaj oluştur"
+      ex2: "`1.0` etiketli imaj oluştur"
+      ex3: "Önbellek kullanmadan temiz bir imaj oluştur"
+    docker_container_commit:
+      desc: "Bir konteynerin mevcut durumundan imaj oluştur"
+      ex1: "`container` konteynerinden `v1` etiketli `my_img` imajını oluştur"
+      ex2: "Commit mesajı ile imaj oluştur"
+      ex3: "Yazarı belirterek imaj oluştur"
+    docker_image_tag:
+      desc: "Bir imaja etiket ekle veya değiştir"
+      ex1: "`myrepo` kayıt defterine göndermek için etiket ekle"
+      ex2: "`1.0` etiketli imaj için `stable` etiketi oluştur"
+      ex3: "Yerel imaja `backup` etiketi ekle"
+    docker_image_push:
+      desc: "Bir imajı Docker Hub veya başka bir kayıt defterine gönder"
+      ex1: "`latest` etiketli imajı `myrepo` deposuna gönder"
+      ex2: "`1.0` etiketli imajı gönder"
+      ex3: "Varsayılan `latest` etiketi ile imaj gönder"
+    docker_login:
+      desc: "Docker Hub veya başka bir kayıt defterine kimlik doğrula"
+      ex1: "Docker Hub için kullanıcı adı ve şifreyi etkileşimli gir"
+      ex2: "Özel kayıt defterine giriş yap"
+      ex3: "Kullanıcı adı ve şifre ile giriş yap (önerilmez)"
+    docker_logout:
+      desc: "Docker Hub veya başka bir kayıt defterinden çıkış yap"
+      ex1: "Docker Hub’tan çıkış yap"
+      ex2: "Özel kayıt defterinden çıkış yap"
+    healthcheck:
+      desc: "Dockerfile yönergesi ile konteyner sağlık durumunu otomatik kontrol et"
+      ex1: "Her 30 saniyede hizmet erişilebilirliğini kontrol eden healthcheck ekle"
+      ex2: "Çalışan konteynerin healthcheck durumunu kontrol et"
+
+  networks:
+    _root:
+      title: "🔌 Ağlar ve Volumeler"
+    docker_network_ls:
+      desc: "Tüm Docker ağlarını listele"
+      ex1: "Oluşturulmuş tüm Docker ağlarını göster"
+      ex2: "`bridge` sürücüsüne sahip ağları göster"
+      ex3: "Yalnızca ağ adlarını göster"
+    docker_network_create:
+      desc: "Yeni bir Docker ağı oluştur"
+      ex1: "Varsayılan ayarlarla `my_net` adlı ağ oluştur"
+      ex2: "`bridge` sürücüsüyle ağ oluştur"
+      ex3: "Belirtilen alt ağ ile ağ oluştur"
+    docker_network_connect:
+      desc: "Bir konteyneri ağa bağla"
+      ex1: "`container` adlı konteyneri `my_net` ağına bağla"
+      ex2: "`db_net` takma adıyla bağla"
+    docker_network_disconnect:
+      desc: "Bir konteyneri ağdan ayır"
+      ex1: "`container` konteynerini `my_net` ağından ayır"
+    docker_volume_ls:
+      desc: "Tüm Docker volumelerini listele"
+      ex1: "Tüm volumeleri göster"
+      ex2: "Kullanılmayan volumeleri göster"
+    docker_volume_create:
+      desc: "Yeni bir Docker volume oluştur"
+      ex1: "`my_vol` adlı volume oluştur"
+      ex2: "tmpfs kullanarak geçici volume oluştur"
+    docker_volume_inspect:
+      desc: "Bir volume hakkında ayrıntılı bilgi göster"
+      ex1: "`my_vol` volume detaylarını JSON formatında görüntüle"
+    docker_volume_rm:
+      desc: "Bir veya daha fazla volume sil"
+      ex1: "`my_vol` adlı volume sil"
+      ex2: "Tüm kullanılmayan volumeleri sil"
+
+  plugins:
+    _root:
+      title: "🧩 Docker Eklentileri"
+    docker_plugin_ls:
+      desc: "Kurulu Docker eklentilerini listele"
+      ex1: "Tüm eklentileri ve durumlarını göster"
+    docker_plugin_install:
+      desc: "Kayıt defterinden Docker eklentisi kur"
+      ex1: "SSHFS volume eklentisini kur"
+      ex2: "Weave ağ eklentisini kur"
+    docker_plugin_disable:
+      desc: "Kurulu bir eklentiyi devre dışı bırak"
+      ex1: "SSHFS eklentisini devre dışı bırak"
+    docker_plugin_enable:
+      desc: "Önceden devre dışı bırakılmış eklentiyi etkinleştir"
+      ex1: "SSHFS eklentisini etkinleştir"
+    docker_plugin_rm:
+      desc: "Bir Docker eklentisini sil"
+      ex1: "SSHFS eklentisini sil"
+
+  compose:
+    _root:
+      title: "📋 Docker Compose"
+    docker_compose_up:
+      desc: "`docker-compose.yml` içinde tanımlı konteynerleri başlat"
+      ex1: "Geçerli dizindeki tüm servisleri etkileşimli modda başlat"
+      ex2: "Servisleri detached (arka plan) modunda başlat"
+      ex3: "Servisleri başlatmadan önce imajları oluştur"
+    docker_compose_down:
+      desc: "`up` ile oluşturulan konteyner, ağ ve volumeleri durdur ve sil"
+      ex1: "Tüm çalışan servisleri durdur ve ilgili kaynakları kaldır"
+      ex2: "Compose tarafından oluşturulan volumeleri de sil"
+      ex3: "Compose tarafından oluşturulan imajları da sil"
+    docker_compose_logs:
+      desc: "Tüm veya belirli servislerin loglarını görüntüle"
+      ex1: "Tüm servislerin loglarını göster"
+      ex2: "Logları gerçek zamanlı takip et"
+      ex3: "Yalnızca `web` servisine ait logları göster"
+    docker_compose_exec:
+      desc: "Çalışan bir servis konteynerinde komut çalıştır"
+      ex1: "`web` servisi konteynerinde etkileşimli bash shell aç"
+      ex2: "Veritabanı konteynerinde `ls` komutunu çalıştır"
+      ex3: "`worker` konteynerinde detached modda komut çalıştır"
+    docker_compose_build:
+      desc: "Servis imajlarını oluştur veya yeniden oluştur"
+      ex1: "`docker-compose.yml`’de tanımlı tüm imajları oluştur"
+      ex2: "Yalnızca `web` servisi imajını oluştur"
+      ex3: "Önbellek kullanmadan imajları oluştur"
+    docker_compose_ps:
+      desc: "Tüm servis ve konteynerlerin durumunu göster"
+      ex1: "Durdurulmuş olanlar dahil tüm konteynerleri göster"
+      ex2: "Yalnızca servis adlarını göster"
+    docker_compose_pull:
+      desc: "Kayıt defterinden servis imajlarını indir/güncelle"
+      ex1: "Yalnızca `web` servisi için imaj indir"
+      ex2: "Bazı imajlar başarısız olsa bile indirmeye devam et"
+    docker_compose_restart:
+      desc: "Tüm veya belirli servisleri yeniden başlat"
+      ex1: "Yalnızca `db` servisini yeniden başlat"
+      ex2: "Servisleri 10 saniye zaman aşımıyla yeniden başlat"
+    docker_compose_config:
+      desc: "Son Compose yapılandırmasını YAML formatında göster"
+      ex1: "Yapılandırmadaki tüm servisleri listele"
+      ex2: "Tanımlı tüm volumeleri listele"
+    docker_compose_start:
+      desc: "Konteynerleri yeniden oluşturmadan durdurulmuş servisleri başlat"
+      ex1: "`web` servisini başlat"
+      ex2: "Birden fazla servisi aynı anda başlat"
+    docker_compose_stop:
+      desc: "Servisleri konteynerleri silmeden durdur"
+      ex1: "`web` servisini durdur"
+      ex2: "Servisleri 5 saniyelik zaman aşımıyla durdur"
+
+  export_import:
+    _root:
+      title: 📤 Dışa Aktarma ve İçe Aktarma
+    docker_image_save:
+      desc: "Bir veya daha fazla Docker imajını daha sonra içe aktarma veya transfer için tar arşivine kaydet"
+      ex1: "Bir Docker imajını tar arşiv dosyasına kaydet"
+      ex2: "İmajı bir dosyaya kaydetmenin alternatif yolu"
+      ex3: "Belirli bir Redis imajını dosyaya kaydet"
+    docker_image_load:
+      desc: "Önceden kaydedilmiş tar arşivinden Docker imajlarını yükle"
+      ex1: "Docker imajını tar arşiv dosyasından yükle"
+      ex2: "Dosyayı parametre ile belirterek imaj yükle"
+      ex3: "İlerleme çıktısı olmadan imaj yükle"
+    docker_container_export:
+      desc: "Bir konteynerin dosya sistemini imaj geçmişi veya metadata olmadan tar arşivine aktar"
+      ex1: "Konteyner dosya sistemini arşive aktar"
+      ex2: "Konteyneri adına göre dışa aktar"
+      ex3: "`-o` bayrağı ile konteyner ID’sine göre dışa aktar"
+    docker_image_import:
+      desc: "Bir dosya sistemi tar arşivinden yeni bir imaj oluştur"
+      ex1: "Arşiv dosyasını yeni Docker imajı olarak içe aktar"
+      ex2: "İmajı doğrudan bir URL’den içe aktar"
+      ex3: "Standart girdiden (stdin) içe aktar"
+
+  cleanup:
+    _root:
+      title: 🧹 Temizlik ve Teşhis
+    docker_system_df:
+      desc: "Docker disk kullanımını göster: volumeler, imajlar, konteynerler ve build önbelleği"
+      ex1: "Her imaj, konteyner ve volume hakkında ayrıntılı çıktı"
+      ex2: "Bilgiyi JSON formatında çıktıla"
+    docker_system_prune:
+      desc: "Kullanılmayan tüm Docker verilerini sil: durdurulmuş konteynerler, kullanılmayan ağlar, dangling imajlar ve build önbelleği"
+      ex1: "Ara katmanlar dahil kullanılmayan imajları sil"
+      ex2: "Kullanılmayan volumeleri diğer kaynaklarla birlikte sil"
+    docker_image_prune:
+      desc: "Kullanılmayan Docker imajlarını sil (dangling katmanlar dahil)"
+      ex1: "Kullanılmayan tüm imajları, dangling olanlar dahil, sil"
+      ex2: "24 saatten eski imajları sil"
+    docker_container_prune:
+      desc: "Filtrelere uyan durdurulmuş konteynerleri veya belirtilmezse tümünü sil"
+      ex1: "24 saatten eski durdurulmuş konteynerleri sil"
+      ex2: "Onay istemeden sil"
+
+  swarm:
+    _root:
+      title: 🐝 Docker Swarm
+    docker_swarm_init:
+      desc: "Mevcut düğümde yeni bir Docker Swarm kümesi başlat"
+      ex1: "IP adresi belirterek kümeyi başlat"
+      ex2: "Belirli bir dinleme portu ile başlat"
+    docker_service_create:
+      desc: "Swarm kümesinde yeni bir servis oluştur"
+      ex1: "Swarm içinde bir Nginx servisi oluştur"
+      ex2: "3 replika ile servis oluştur"
+      ex3: "Port eşlemesi ile servis oluştur"
+    docker_stack_deploy:
+      desc: "Compose dosyasına dayalı olarak Swarm kümesine servis yığını dağıt"
+      ex1: "Stack’i compose dosyasından dağıt"
+      ex2: "Kayıt defteri kimlik doğrulama ile dağıt"
+      ex3: "Alternatif bir compose dosyası ile stack dağıt"
+    docker_stack_rm:
+      desc: "Swarm kümesinden bir veya daha fazla stack kaldır"
+      ex1: "`mystack` stack’ini kaldır"
+      ex2: "Tüm stack’leri kaldır (önerilmez)"
+      ex3: "Stack’i kaldır ve Swarm’dan ayrıl"
+
+  advanced_docker:
+    _root:
+      title: "💼 İleri Düzey Docker Kullanımı"
+
+    prof:
+      title: "🚀 Profesyonel Docker Komutları"
+      docker_buildx:
+        desc: "`docker build` yerine geçen gelişmiş imaj oluşturma aracı. Çoklu platform desteği, önbellekleme, paralel build ve çeşitli formatlara aktarma sağlar. CI/CD ve çapraz platform geliştirme için faydalıdır"
+        ex1: "Çoklu platform imaj oluştur (ARM ve x86 aynı anda)"
+        ex2: "İmaj oluştur ve yerel Docker Engine önbelleğine yükle"
+        ex3: "Çoklu platform imaj oluştur ve kayıt defterine gönder"
+      docker_context:
+        desc: "Uzak veya çoklu ortamlarla çalışmak için Docker contextlerini yönet. Yerel ve uzak Docker Engine arasında hızlı geçiş sağlar"
+        ex1: "Uzak Docker hostuna bağlanmak için bir context oluştur"
+        ex2: "Uzak context’e geç"
+        ex3: "Mevcut contextleri ve aktif olanı listele"
+      docker_system_events:
+        desc: "Docker olaylarını gerçek zamanlı dinle, olay türüne göre filtrele (örn. konteyner başlatma). İzleme ve otomasyon için faydalı"
+        ex1: "Yalnızca konteyner başlatma olaylarını göster"
+        ex2: "Son 1 saatten 10 dakika öncesine kadar olayları göster"
+        ex3: "Yalnızca ağ ile ilgili olayları göster"
+        ex4: "`nginx` imajıyla ilgili olayları göster"
+      docker_container_update:
+        desc: "Çalışan bir konteynerin kaynak sınırlarını ve ayarlarını yeniden başlatmadan değiştir"
+        ex1: "2 CPU ve 1 GB RAM sınırı ayarla"
+        ex2: "Otomatik yeniden başlatma politikasını `unless-stopped` yap"
+        ex3: "İşlem sayısını 200 ile sınırla"
+      docker_container_diff:
+        desc: "Bir konteynerde imajına kıyasla dosya sistemi değişikliklerini göster. Hata ayıklama ve denetim için faydalıdır"
+        ex1: "Konteynerdeki tüm dosya sistemi değişikliklerini göster"
+        ex2: "Yalnızca eklenen dosyaları göster (`A` — Added)"
+      docker_image_history:
+        desc: "İmaj katmanlarının geçmişini göster: build komutları, her katmanın boyutu ve oluşturulma zamanı. Optimizasyon ve denetim için faydalıdır"
+        ex1: "Bir imajın katman geçmişini göster"
+        ex2: "Tam build komutlarını kesilmeden göster"
+        ex3: "Yalnızca build komutlarını ve katman boyutlarını çıktıla"
+
+    practices:
+      title: "🛠 Faydalı Docker Uygulamaları ve Otomasyon"
+      minimize_image_size:
+        title: "İmaj boyutunu küçült"
+        p1: "Minimal boyut için `alpine` veya `scratch` gibi temel imajlar kullanın."
+        p2: "Katmanları birleştirmek için build sırasında `--squash` kullanabilirsiniz (deneysel özellikler etkin olmalı)."
+        p3: "Ayrıca geçici dosyaları ve önbellekleri tek katmanda silin:"
+      minimize_layers:
+        title: "Katman sayısını azalt"
+        p1: "Katman ve son imaj boyutunu azaltmak için komutları tek `RUN` içinde birleştirin:"
+      optimize_build:
+        title: "Dockerfile build sürecini optimize et"
+        p1: "Sadece gerekli dosyaların kalması için çok aşamalı (multi-stage) build kullanın."
+        p2: "Önce bağımlılıkları kopyalayın ve yükleyin, ardından kodu kopyalayın — bu, katman önbelleklemesini iyileştirir ve yeniden build hızını artırır."
+      secrets_and_configs:
+        title: "Gizli bilgileri ve yapılandırmaları ayır"
+        p1: "`.env` dosyalarını, API anahtarlarını veya özel sertifikaları asla imajın içine koymayın."
+        intro: "Yapılandırma için şunları kullanın:"
+        items:
+          secret: "`docker secret` (Swarm içinde)"
+          env: "ortam değişkenleri (`-e VAR=value` veya `.env`)"
+          volumes: "yapılandırmalar için harici volumeler"
+      buildkit_secrets:
+        title: "Build zamanı sırları (BuildKit)"
+        p1: "Güvenli secret aktarımı için `--secret` bayrağını kullanın:"
+        p2: "Dockerfile’da secret `/run/secrets/mysecret` yolunda bulunur:"
+        note: "🛡 Bu yöntem, secretların imaj katmanlarına kaydedilmesini engeller."
+      rootless:
+        title: "Rootless Docker"
+        p1: "Docker’ı root yetkileri olmadan çalıştırmak güvenliği artırır ve hostun ele geçirilme riskini azaltır."
+        steps_intro: "Etkinleştirmek için:"
+        check_intro: "Kontrol:"
+        warning: "⚠ Bazı özellikler (örn. <1024 port yönlendirme) kullanılamaz."
+      scan:
+        title: "İmajları güvenlik açıklarına tarayın"
+        p1: "Yerleşik araçları kullanın:"
+        p2: "Veya yeni CLI’yı kullanın:"
+        p3: "Bu, temel imajlarda ve bağımlılıklarda güvenlik açıklarını tespit etmeye yardımcı olur."
+      resource_limits:
+        title: "Kaynak kullanımını izleyin"
+        p1: "Konteynerleri bellek, CPU ve işlem sayısına göre sınırlayın:"
+        p2: "Bu, kaynakların aşırı kullanımını önler."
+        p3: "Ayrıca G/Ç’yi sınırlayabilirsiniz:"
+        p4: "Disk alt sistemini aşırı yüklememesi gereken konteynerler için faydalı."
+      cleanup:
+        title: "Otomatik temizlik"
+        p1: "Kullanılmayan imajları, konteynerleri, volumeleri ve ağları düzenli olarak silin:"
+        warning: "⚠ Dikkat: bu komut tüm kullanılmayan kaynakları siler."
+        p2: "Seçici temizlik için şunu kullanın:"
+      cicd:
+        title: "CI/CD entegrasyonu"
+        p1: "Build, test ve dağıtımı GitHub Actions, GitLab CI, Jenkins pipeline’larına entegre edin."
+        example_intro: "Örnek GitHub Actions adımı:"
+      logging:
+        title: "Loglama ve izleme"
+        p1: "Merkezi sistemlere (`--log-driver`) log sürücülerini ekleyin: ELK, Loki, Splunk."
+        p2: "Konteyner metrikleri için Prometheus + cAdvisor kullanın."
+      production:
+        title: "Üretim dağıtımı"
+        p1: "Geliştirme ve üretim için ayrı yapılandırmalar kullanın: `docker-compose.override.yml`."
+        ha_intro: "Yüksek erişilebilirlik ve ölçeklenebilirlik için şunları kullanın:"
+        items:
+          swarm: "Docker Swarm"
+          k8s: "Kubernetes"
+
+    debugging:
+      title: "🐞 Docker Konteynerlerinde Hata Ayıklama ve Profilleme"
+      exec:
+        group_desc: "Çalışan bir konteyner içinde komut çalıştırır, etkileşimli erişim veya izole ortamda işlem çalıştırma imkanı sağlar"
+        r1: "Çalışan konteynerde etkileşimli terminal (bash) başlat"
+        r2: "Bash yoksa minimal shell başlat"
+        r3: "Etkileşimli mod olmadan komut çalıştır"
+      logs:
+        group_desc: "Belirli bir konteynerin loglarını gösterir, tanılama ve izleme için çıktı ve olayları görüntülemeye olanak tanır"
+        r1: "Son 100 satır logu gerçek zamanlı göster"
+        r2: "Konteynerin tüm mevcut loglarını göster"
+        r3: "Son bir saatlik logları göster"
+      inspect:
+        group_desc: "Bir Docker nesnesi (konteyner, imaj, ağ vb.) hakkında JSON formatında ayrıntılı bilgi verir, yapılandırma ve durumu içerir"
+        r1: "Konteyner hakkında tam JSON bilgisi al"
+        r2: "Konteynerin ana işleminin PID’sini al"
+        r3: "Konteynerin IP adresini göster"
+      nsenter:
+        group_desc: "Başka bir işlemin namespace’lerine girmek için Linux aracı (burada konteyner). `strace` ile birlikte konteyner içindeki sistem çağrılarını izlemek için kullanılır"
+        r1: "Konteyner namespace’lerine gir ve işlem 1’in sistem çağrılarını izle"
+        r2: "Konteyner namespace’lerinde bash shell aç"
+        r3: "Konteyner içindeki açık portları görüntüle"
+      tcpdump:
+        group_desc: "Ağ trafiğini yakalama ve analiz için konsol aracı. Konteynerde ağ sorunlarını teşhis, paketleri analiz ve bağlantıları izlemek için kullanılır"
+        r1: "Konteyner içinde ağ trafiğini yakala ve analiz et"
+        r2: "Yalnızca 80. porttaki trafiği yakala"
+        r3: "Trafiği daha sonra analiz için dosyaya kaydet"
+      stats:
+        group_desc: "Bir veya birden fazla konteyner için CPU, bellek, ağ ve disk gibi mevcut kaynak kullanımını gerçek zamanlı gösterir"
+        r1: "Konteynerin gerçek zamanlı CPU, bellek, ağ ve disk kullanımını göster"
+        r2: "Tüm konteynerler için istatistikleri göster"
+        r3: "İstatistikleri bir kez çıktıla ve çık"
+      top:
+        group_desc: "Konteyner içinde çalışan işlemleri gösterir, Linux’taki `ps` benzeri, konteyner etkinliğini analiz etmek için"
+        r1: "Konteyner içinde çalışan işlemleri göster"
+        r2: "`ps aux` gibi alternatif çıktı formatı kullan"
+        r3: "Yalnızca PID ve komut bilgilerini göster"
+      diff:
+        group_desc: "Konteynerin dosya sistemindeki değişiklikleri temel imajına kıyasla gösterir; eklenen, değiştirilen veya silinen dosyaları belirtir"
+        r1: "Konteynerdeki dosya sistemi değişikliklerini göster"
+        r2: "Yalnızca eklenen dosyaları göster (`A` — Added)"
+        r3: "Yalnızca değiştirilen dosyaları göster (`C` — Changed)"
+      cp:
+        group_desc: "Konteyner ile host arasında dosya ve dizin kopyalar, veri paylaşımı ve yedekleme sağlar"
+        r1: "Dosyayı konteynerden hosta kopyala"
+        r2: "Dosyayı hosttan konteynere kopyala"
+        r3: "Log dosyasını kopyala ve hata satırlarını diske kaydetmeden filtrele"
+      advanced_note: "💡 İleri düzey hata ayıklama için `nsenter`, `strace`, `tcpdump`, `gdb` ve diğer düşük seviye araçları kullanabilirsiniz."
+
+  compose_adv:
+    _root:
+      title: "💼 İleri Düzey Docker Compose Kullanımı"
+    prof:
+      title: "🚀 Profesyonel Docker Compose Komutları"
+      up:
+        group_desc: "`docker-compose.yml` dosyasındaki belirtilen servisleri başlat ve yaşam döngüsünü yönet; arka planda çalıştırma seçeneğiyle"
+        r1: "Yalnızca `web` ve `db` servislerini detached modda çalıştır"
+        r2: "Servisleri başlatmadan önce imajları yeniden oluştur"
+        r3: "Geçerli compose dosyasında tanımlı olmayan konteynerleri kaldır"
+      build:
+        group_desc: "Compose dosyasında tanımlı servislerin imajlarını önbellek kontrolü ve paralel derleme ile oluştur"
+        r1: "Önbellek kullanmadan imajları tamamen yeniden oluştur"
+        r2: "Tüm servisleri aynı anda derle, süreci hızlandır"
+        r3: "Yalnızca `web` servisi için imaj oluştur"
+      pull:
+        group_desc: "Tüm veya belirli servisler için kayıt defterinden en son imajları indir"
+        r1: "Tüm servislerin imajlarını indir"
+        r2: "Yalnızca `db` servisi için imaj indir"
+        r3: "İmaj indirirken hataları yoksay ve devam et"
+      restart:
+        group_desc: "Konteynerleri yeniden oluşturmadan tüm veya belirli servisleri yeniden başlat"
+        r1: "Geçerli projedeki tüm servisleri yeniden başlat"
+        r2: "Yalnızca `worker` servisini yeniden başlat"
+        r3: "Birden fazla servisi aynı anda yeniden başlat"
+      exec:
+        group_desc: "Çalışan bir servis konteynerinde komut çalıştır; isteğe bağlı etkileşimli mod ile"
+        r1: "`db` servisi konteynerinde psql çalıştır"
+        r2: "`web` konteynerinde shell aç"
+        r3: "`api` servisi konteynerinden curl isteği çalıştır"
+      config:
+        group_desc: "Tüm dosya ve ortam değişkenlerini dikkate alarak nihai Compose yapılandırmasını çıktıla"
+        r1: "Birleştirilmiş yapılandırmayı YAML formatında göster"
+        r2: "Tüm servisleri listele"
+        r3: "Servisler tarafından kullanılan tüm ortam değişkenlerini göster"
+      watch:
+        group_desc: "Kaynak dosyalar değiştiğinde servisleri otomatik olarak yeniden başlat — geliştirme için faydalı"
+        r1: "Dosyaları izle ve değişikliklerde servisleri yeniden başlat"
+      events:
+        group_desc: "Compose olaylarını akışla izle: servis başlatma, durdurma, güncelleme"
+        r1: "Olayları JSON formatında al"
+      rm:
+        group_desc: "Durdurulmuş servis konteynerlerini kaldır"
+        r1: "`web` ve `db` servislerinin konteynerlerini kaldır"
+      pause:
+        group_desc: "Servis işlemini duraklat"
+        r1: "`api` servisini duraklat"
+      unpause:
+        group_desc: "Duraklatılmış servisleri devam ettir"
+        r1: "`api` servisini devam ettir"
+      create:
+        group_desc: "Konteynerleri başlatmadan oluştur"
+        r1: "`web` ve `db` için konteynerler oluştur ama başlatma"
+      images:
+        group_desc: "Servisler tarafından kullanılan imaj listesini göster"
+        r1: "Tüm servislerin imajlarını görüntüle"
+      top:
+        group_desc: "Servis konteynerlerinde çalışan işlemleri göster"
+        r1: "`web` servisi konteynerlerindeki işlemleri göster"
+
+    practices:
+      title: "🛠 Docker Compose ile Faydalı Uygulamalar ve Otomasyon"
+      env_separation:
+        title: "Ortam Ayrımı"
+        p1: "Farklı ortamlar için ayrı `docker-compose.override.yml` dosyaları kullanın — `development`, `staging`, `production`. Bu, yapılandırmaları izole eder ve ayarların çakışmasını önler."
+        p2: "Ayrıca birden fazla config dosyasını `-f` bayrağı ile birleştirebilirsiniz:"
+        p3: "Ortam değişkenlerini yönetmek için farklı `.env` dosyaları (`.env.dev`, `.env.prod` vb.) kullanın."
+      secrets:
+        title: "Gizli Bilgilerin Güvenli Saklanması"
+        p1: "Hassas verileri (parola, token) doğrudan Compose dosyalarına koymayın. Bunun yerine şunları kullanın:"
+        items:
+          env: "Ortam değişkenleri için `.env` dosyaları (not: `.env` dosyaları şifrelenmez ve herkese açık repolara yüklenmemelidir)"
+          swarm_secret: "Docker Swarm’da güvenli secret ve yapılandırma yönetimi için `docker secret` ve `docker config`"
+          volumes: "Gizli bilgileri içeren yapılandırma dosyaları için harici volumeler"
+          external_mgr: "Harici secret yönetim sistemleri (örn. HashiCorp Vault, AWS Secrets Manager)"
+      startup_order:
+        title: "`depends_on` ve `healthcheck` ile Başlatma Sırası"
+        p1: "Servislerin bağımlı oldukları servisler hazır olana kadar beklemesini sağlamak için:"
+      min_downtime:
+        title: "Güncellemeler Sırasında Minimum Kesinti"
+        p1: "Servisleri güncellemeden önce şunu çalıştırın:"
+        p2: "`-d` seçeneği konteynerleri arka planda çalıştırır, `--remove-orphans` mevcut konfiglerde tanımlı olmayan konteynerleri kaldırır."
+        p3: "Gerekirse eski konteynerleri tamamen durdurmak ve kaldırmak için:"
+        p4: "Bu, yeni imajların yüklenmesini ve kullanılmayan konteynerlerin kesinti olmadan kaldırılmasını sağlar."
+      hot_reload_volumes:
+        title: "Geliştirme için Hot Code Reloading"
+        p1: "Yerel dizinleri konteynerlere bağlamak için `volumes` kullanın. Böylece imajları yeniden oluşturmadan kod değişiklikleri anında uygulanır."
+        p2: "Özellikle Windows ve macOS’ta dosya izinleri ve dosya sistemi önbellek sorunlarına dikkat edin, aksi halde performans sorunları yaşanabilir."
+      hot_reload_watch:
+        title: "Volume’suz Hot Code Reloading (Compose 2.22+)"
+      central_logging:
+        title: "Servislerin Merkezi Loglaması"
+        p1: "Konteyner loglarını ELK Stack, Loki, Prometheus ve Fluentd gibi sistemlere yönlendirerek kolay analiz ve uyarı sağlanabilir."
+        p2: "Merkezi log toplama ve işleme için Docker log sürücülerini (`--log-driver`) kullanın."
+        p3: "Compose’da konteynerler için log sürücülerini yapılandırın:"
+      auto_restart:
+        title: "Otomatik Servis Yeniden Başlatma"
+        p1: "`docker-compose.yml` dosyasında restart politikası yapılandırın:"
+        p2: "Diğer restart politikaları şunlardır:"
+        policies:
+          no: "`no` — otomatik yeniden başlatma yok (varsayılan)"
+          always: "`always` — konteyneri her zaman yeniden başlat"
+          on_failure: "`on-failure` — yalnızca hatalarda yeniden başlat (isteğe bağlı tekrar deneme sayısı ile)"
+        p3: "Üretimde, servis dayanıklılığı için en uygun seçim `unless-stopped` değeridir."
+        p4: "Bu, servislerin hata veya host yeniden başlatmasından sonra otomatik olarak toparlanmasını sağlar."
+      profiles:
+        title: "Servis Profilleri"
+        p1: "Yalnızca belirli servis gruplarını çalıştırmaya izin verir:"
+        p2: "Yalnızca frontend profilini çalıştırmak için:"
+
+    debugging:
+      title: "🐞 Docker Compose Servislerinde Hata Ayıklama ve Profilleme"
+      exec:
+        group_desc: "Çalışan bir servisin konteynerinde komut çalıştır; konteynere erişim veya ayrı işlemler çalıştırma imkanı sağlar"
+        r1: "`web` servisi konteynerinde shell aç"
+        r2: "`db` servisi konteynerinde psql komutunu çalıştır"
+      logs:
+        group_desc: "Tanılama ve izleme için servis loglarını görüntüle"
+        r1: "`db` servisi loglarını gerçek zamanlı izle"
+        r2: "`api` servisi konteynerinden son 50 satırı göster"
+        r3: "`web` servisi için son bir saatin loglarını göster"
+      inspect:
+        group_desc: "Bir servisi çalıştıran konteyner hakkında ayrıntılı bilgi görüntüle"
+        r1: "`web` servisi konteyneri hakkında ayrıntılı JSON bilgisi al"
+      stats:
+        group_desc: "Servis konteynerlerinin kaynak kullanımını izle"
+        r1: "`worker` servisi konteynerinin CPU, bellek ve diğer kaynak kullanımını takip et"
+      run:
+        group_desc: "Hata ayıklama için servis ayarlarıyla geçici konteyner çalıştır"
+        r1: "`web` servisi için etkileşimli shell ile tek seferlik konteyner başlat"
+      cp:
+        group_desc: "Host ile konteyner arasında dosya kopyala"
+        r1: "`db` servisi konteynerinden hosta dosya kopyala"
+      tip:
+        one_off: "💡 Çok servisli karmaşık kurulumların hata ayıklamasında `docker compose run --rm` kullanarak gerekli ağlar ve volumeler ile bireysel konteynerler başlatabilirsiniz; ana servisler etkilenmez."
+
+  resources:
+    title: "📚 Ek Kaynaklar"
+    ignore:
+      title: "🚫 `.dockerignore` ile Dosyaları Hariç Tutma"
+      p1: "İmaj boyutunu küçültmek ve build süresini hızlandırmak için imaja dahil edilmemesi gereken dosya ve klasörleri `.dockerignore` dosyasına ekleyin:"
+    aliases:
+      title: "⚡ Komutları Kısayollarla Basitleştirme"
+      p1: "Sık kullanılan komutlar için alias tanımlayarak daha hızlı çalıştırabilirsiniz:"
+    advice:
+      title: "🧠 İpucu: Docker Kullanım Tavsiyeleri"
+      b1: "Her şeyi ezberlemeye çalışmayın — komutları keşfetmek için `docker --help` veya `docker <command> --help` kullanın."
+      b2: "Düzenli olarak pratik yapın ve basit projelerle deneyin."
+      b3: "İmaj boyutlarını takip edin ve `.dockerignore` ile gereksiz dosyaları kaldırın."
+    links:
+      title: "🌐 Faydalı Bağlantılar"
+      docs_intro: "📘 **Resmi Docker Dokümantasyonu** — tüm Docker konuları hakkında kapsamlı rehberler ve referanslar:"
+      sheet_intro: "📙 **Docker Cheat Sheet** — resmi tam Docker hızlı başvuru kılavuzu:"
+      hub_intro: "📗 **Docker Hub** — imajlar ve kayıt defterleri:"

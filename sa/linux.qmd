@@ -1,0 +1,7 @@
+---
+title: '{{< meta linux.meta._root.title >}}'
+---
+
+> {{< meta linux.meta._root.desc >}}
+
+{{< include ../templates/linux.qmd >}}

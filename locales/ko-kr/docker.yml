@@ -1,0 +1,629 @@
+docker:
+  meta:
+    _root:
+      title: "🐳 Docker"
+      desc: "📘 Docker는 격리된 컨테이너에서 애플리케이션을 실행하기 위한 플랫폼입니다. 이 치트시트에는 이미지, 컨테이너, 네트워크, 볼륨, 그리고 Docker Compose와 Swarm을 다루는 명령어가 포함되어 있습니다."
+
+  basic:
+    _root:
+      title: "📦 기본 명령어"
+    docker:
+      desc: "하위 명령 실행 및 컨테이너, 이미지, 네트워크, 볼륨을 관리하는 주요 Docker CLI 명령어"
+    docker_version:
+      desc: "설치된 Docker 버전(클라이언트 및 서버)을 표시합니다. 설치 확인에 유용"
+      ex1: "Docker 클라이언트 API 버전만 표시"
+      ex2: "Docker 서버(엔진) 버전만 표시"
+      ex3: "전체 버전 정보를 JSON 형식으로 출력"
+    docker_system_info:
+      desc: "일반적인 Docker 시스템 정보 표시: 컨테이너 수, 이미지, 리소스"
+      ex1: "Docker 데이터 표시: 버전, 네트워크, 컨테이너 및 이미지 수"
+      ex2: "JSON 형식으로 출력 — 자동화에 유용"
+      ex3: "CPU 수 및 총 메모리 표시"
+      ex4: "Docker가 사용하는 스토리지 드라이버 표시"
+    docker_image_pull:
+      desc: "Docker Hub 또는 다른 레지스트리에서 이미지 다운로드. 컨테이너는 이미지 없이는 실행할 수 없음"
+      ex1: "최신 Ubuntu 이미지 다운로드"
+      ex2: "Alpine Linux 기반의 경량 Nginx 이미지 다운로드"
+      ex3: "Redis 이미지 버전 7 다운로드"
+    docker_container_run:
+      desc: "이미지에서 새 컨테이너를 생성하고 실행"
+      ex1: "대화형 Bash 터미널로 Ubuntu 실행"
+      ex2: "Nginx를 분리(detached) 모드로 실행"
+      ex3: "Nginx 실행 후 컨테이너 포트 80을 호스트 포트 8080에 바인딩"
+    docker_container_ls:
+      desc: "실행 중인 컨테이너 나열"
+      ex1: "실행 중인 컨테이너만 표시"
+      ex2: "중지된 컨테이너 포함 모두 표시"
+      ex3: "컨테이너 이름만 출력"
+    docker_container_start:
+      desc: "중지된 컨테이너 시작"
+      ex1: "이름으로 컨테이너 시작"
+      ex2: "모든 컨테이너 시작"
+      ex3: "컨테이너 시작 후 대화형 터미널 연결"
+    docker_container_stop:
+      desc: "실행 중인 컨테이너 중지"
+      ex1: "이름으로 컨테이너 중지"
+      ex2: "실행 중인 모든 컨테이너 중지"
+      ex3: "컨테이너에 5초를 주고 중지"
+    docker_container_restart:
+      desc: "컨테이너 재시작"
+      ex1: "특정 컨테이너 재시작"
+      ex2: "실행 중인 모든 컨테이너 재시작"
+      ex3: "10초 지연 후 컨테이너 재시작"
+    docker_container_rm:
+      desc: "컨테이너 삭제"
+      ex1: "중지된 특정 컨테이너 삭제"
+      ex2: "모든 중지된 컨테이너 삭제"
+      ex3: "실행 중인 컨테이너 강제 삭제"
+    docker_image_ls:
+      desc: "다운로드된 이미지 나열"
+      ex1: "호스트의 모든 이미지 표시"
+      ex2: "중간 레이어 포함 모든 이미지 표시"
+      ex3: "이미지 이름과 태그만 출력"
+    docker_image_rm:
+      desc: "로컬 저장소에서 이미지 삭제"
+      ex1: "`test1` 저장소의 `latest` 태그 이미지 삭제"
+      ex2: "ID로 이미지 삭제"
+      ex3: "모든 이미지 삭제 (주의 필요!)"
+
+  container:
+    _root:
+      title: "🔁 컨테이너 관리"
+    docker_container_exec:
+      desc: "실행 중인 컨테이너 안에서 명령 실행"
+      ex1: "`container`라는 컨테이너 안에서 대화형 bash 셸 실행"
+      ex2: "컨테이너 내부 `/app` 디렉터리에서 `ls` 명령 실행"
+      ex3: "분리 모드로 컨테이너 안에서 명령 실행 (대기하지 않음)"
+    docker_container_logs:
+      desc: "컨테이너 로그 보기"
+      ex1: "`container` 컨테이너의 모든 로그 표시"
+      ex2: "실시간으로 컨테이너 로그 팔로우"
+      ex3: "마지막 50줄 로그 표시"
+    docker_inspect:
+      desc: "컨테이너 또는 이미지의 자세한 JSON 정보 가져오기"
+      ex1: "`container` 컨테이너의 세부 정보 표시"
+      ex2: "컨테이너의 IP 주소 표시"
+    docker_container_stats:
+      desc: "컨테이너의 실시간 리소스 사용량 표시"
+      ex1: "모든 컨테이너의 CPU, 메모리, 네트워크, 디스크 사용량 표시"
+      ex2: "특정 컨테이너만 표시"
+      ex3: "스냅샷 통계 한 번만 출력 후 종료"
+    docker_container_rename:
+      desc: "컨테이너 이름 변경"
+      ex1: "`old_name`에서 `new_name`으로 이름 변경"
+    docker_container_cp:
+      desc: "컨테이너와 호스트 간 파일 복사"
+      ex1: "컨테이너에서 파일을 현재 호스트 디렉터리로 복사"
+      ex2: "호스트에서 컨테이너로 파일 복사"
+      ex3: "컨테이너의 로그 파일을 스트리밍하여 \"ERROR\" 줄만 필터링 (디스크 저장 없이)"
+    docker_container_top:
+      desc: "컨테이너 내부 실행 중인 프로세스 표시"
+      ex1: "`container`라는 컨테이너의 프로세스 표시"
+    docker_container_pause:
+      desc: "컨테이너의 모든 프로세스 일시 정지"
+      ex1: "`container` 컨테이너 일시 정지"
+    docker_container_unpause:
+      desc: "일시 정지된 컨테이너 재개"
+      ex1: "`container` 컨테이너 재개"
+    docker_container_update:
+      desc: "재시작 없이 컨테이너 설정 업데이트"
+      ex1: "컨테이너 메모리 사용량을 500MB로 제한"
+
+  images:
+    _root:
+      title: "🧱 이미지와 Dockerfile"
+    docker_buildx_build:
+      desc: "Dockerfile에서 Docker 이미지 빌드"
+      ex1: "현재 디렉터리에서 `my_image` 태그로 이미지 빌드"
+      ex2: "`1.0` 버전 태그로 이미지 빌드"
+      ex3: "캐시를 사용하지 않고 이미지 클린 빌드"
+    docker_container_commit:
+      desc: "컨테이너의 현재 상태에서 이미지 생성"
+      ex1: "`container`에서 `my_img:v1` 이미지 생성"
+      ex2: "커밋 메시지를 포함해 이미지 생성"
+      ex3: "작성자를 지정하여 이미지 생성"
+    docker_image_tag:
+      desc: "이미지 태그 추가 또는 변경"
+      ex1: "`myrepo` 레지스트리에 푸시할 태그 추가"
+      ex2: "`1.0` 태그 이미지에 `stable` 태그 생성"
+      ex3: "로컬 이미지에 `backup` 태그 추가"
+    docker_image_push:
+      desc: "Docker Hub 또는 다른 레지스트리에 이미지 푸시"
+      ex1: "`myrepo` 저장소에 `latest` 태그 이미지 푸시"
+      ex2: "`1.0` 태그 이미지 푸시"
+      ex3: "기본 태그 `latest`로 이미지 푸시"
+    docker_login:
+      desc: "Docker Hub 또는 다른 레지스트리에 로그인"
+      ex1: "Docker Hub에 사용자명과 비밀번호로 로그인"
+      ex2: "개인 레지스트리에 로그인"
+      ex3: "명령어로 사용자명과 비밀번호 입력 (권장하지 않음)"
+    docker_logout:
+      desc: "Docker Hub 또는 다른 레지스트리에서 로그아웃"
+      ex1: "Docker Hub에서 로그아웃"
+      ex2: "개인 레지스트리에서 로그아웃"
+    healthcheck:
+      desc: "컨테이너 상태를 자동으로 확인하는 Dockerfile 지시어"
+      ex1: "30초마다 서비스 가용성 확인 헬스체크 추가"
+      ex2: "실행 중인 컨테이너의 헬스체크 상태 확인"
+
+  networks:
+    _root:
+      title: "🔌 네트워크와 볼륨"
+    docker_network_ls:
+      desc: "모든 Docker 네트워크 나열"
+      ex1: "생성된 모든 Docker 네트워크 표시"
+      ex2: "`bridge` 드라이버 네트워크만 표시"
+      ex3: "네트워크 이름만 표시"
+    docker_network_create:
+      desc: "새 Docker 네트워크 생성"
+      ex1: "`my_net` 이름으로 기본 설정 네트워크 생성"
+      ex2: "`bridge` 드라이버로 네트워크 생성"
+      ex3: "서브넷 지정하여 네트워크 생성"
+    docker_network_connect:
+      desc: "컨테이너를 네트워크에 연결"
+      ex1: "`container` 컨테이너를 `my_net` 네트워크에 연결"
+      ex2: "별칭 `db_net`으로 연결"
+    docker_network_disconnect:
+      desc: "컨테이너를 네트워크에서 분리"
+      ex1: "`container` 컨테이너를 `my_net`에서 분리"
+    docker_volume_ls:
+      desc: "모든 Docker 볼륨 나열"
+      ex1: "모든 Docker 볼륨 표시"
+      ex2: "사용하지 않는 볼륨 표시"
+    docker_volume_create:
+      desc: "새 Docker 볼륨 생성"
+      ex1: "`my_vol` 이름의 볼륨 생성"
+      ex2: "tmpfs를 사용해 임시 볼륨 생성"
+    docker_volume_inspect:
+      desc: "볼륨의 세부 정보 표시"
+      ex1: "`my_vol` 볼륨을 JSON 형식으로 표시"
+    docker_volume_rm:
+      desc: "볼륨 삭제"
+      ex1: "`my_vol` 볼륨 삭제"
+      ex2: "사용하지 않는 모든 볼륨 삭제"
+
+  plugins:
+    _root:
+      title: "🧩 도커 플러그인"
+    docker_plugin_ls:
+      desc: "설치된 Docker 플러그인 나열"
+      ex1: "모든 플러그인과 상태 표시"
+    docker_plugin_install:
+      desc: "레지스트리에서 Docker 플러그인 설치"
+      ex1: "SSHFS 볼륨 플러그인 설치"
+      ex2: "Weave 네트워크 플러그인 설치"
+    docker_plugin_disable:
+      desc: "설치된 플러그인 비활성화"
+      ex1: "SSHFS 플러그인 비활성화"
+    docker_plugin_enable:
+      desc: "비활성화된 플러그인 활성화"
+      ex1: "SSHFS 플러그인 활성화"
+    docker_plugin_rm:
+      desc: "Docker 플러그인 제거"
+      ex1: "SSHFS 플러그인 제거"
+
+  compose:
+    _root:
+      title: 📋 도커 컴포즈
+    docker_compose_up:
+      desc: "`docker-compose.yml`에 정의된 컨테이너 시작"
+      ex1: "현재 디렉터리의 모든 서비스를 대화형 모드로 시작"
+      ex2: "서비스를 분리(detached) 모드(백그라운드)로 시작"
+      ex3: "서비스 시작 전에 이미지 빌드"
+    docker_compose_down:
+      desc: "`up`으로 생성된 컨테이너, 네트워크, 볼륨 중지 및 제거"
+      ex1: "실행 중인 모든 서비스 중지 및 관련 리소스 제거"
+      ex2: "Compose가 생성한 볼륨도 제거"
+      ex3: "Compose가 생성한 이미지도 제거"
+    docker_compose_logs:
+      desc: "모든 서비스 또는 특정 서비스의 로그 보기"
+      ex1: "모든 서비스 로그 표시"
+      ex2: "실시간으로 로그 팔로우"
+      ex3: "`web` 서비스의 로그만 표시"
+    docker_compose_exec:
+      desc: "실행 중인 서비스 컨테이너에서 명령 실행"
+      ex1: "`web` 서비스 컨테이너 안에서 대화형 bash 셸 실행"
+      ex2: "데이터베이스 컨테이너에서 `ls` 명령 실행"
+      ex3: "`worker` 컨테이너 안에서 분리 모드로 명령 실행"
+    docker_compose_build:
+      desc: "서비스 이미지 빌드 또는 재빌드"
+      ex1: "`docker-compose.yml`에 정의된 모든 이미지 빌드"
+      ex2: "`web` 서비스 이미지 빌드"
+      ex3: "캐시 없이 이미지 빌드"
+    docker_compose_ps:
+      desc: "모든 서비스와 컨테이너 상태 표시"
+      ex1: "중지된 컨테이너 포함 모두 표시"
+      ex2: "서비스 이름만 표시"
+    docker_compose_pull:
+      desc: "레지스트리에서 서비스 이미지 다운로드/업데이트"
+      ex1: "`web` 서비스의 이미지 가져오기"
+      ex2: "일부 이미지가 실패해도 계속 가져오기"
+    docker_compose_restart:
+      desc: "모든 서비스 또는 지정한 서비스 재시작"
+      ex1: "`db` 서비스만 재시작"
+      ex2: "10초 타임아웃으로 서비스 재시작"
+    docker_compose_config:
+      desc: "최종 Compose 설정을 YAML 형식으로 표시"
+      ex1: "설정에 정의된 모든 서비스 나열"
+      ex2: "설정에 정의된 모든 볼륨 나열"
+    docker_compose_start:
+      desc: "중지된 서비스를 컨테이너 재생성 없이 시작"
+      ex1: "`web` 서비스 시작"
+      ex2: "여러 서비스 한 번에 시작"
+    docker_compose_stop:
+      desc: "컨테이너를 제거하지 않고 서비스 중지"
+      ex1: "`web` 서비스 중지"
+      ex2: "5초 타임아웃으로 서비스 중지"
+
+  export_import:
+    _root:
+      title: 📤 내보내기 및 가져오기
+    docker_image_save:
+      desc: "하나 이상의 Docker 이미지를 tar 아카이브로 저장하여 나중에 가져오거나 전송"
+      ex1: "Docker 이미지를 tar 아카이브 파일로 저장"
+      ex2: "이미지를 파일로 저장하는 대체 방법"
+      ex3: "특정 Redis 이미지를 파일로 저장"
+    docker_image_load:
+      desc: "이전에 저장된 tar 아카이브에서 Docker 이미지 불러오기"
+      ex1: "tar 아카이브 파일에서 Docker 이미지 불러오기"
+      ex2: "매개변수를 통해 파일을 지정하여 이미지 불러오기"
+      ex3: "진행 출력 없이 이미지 불러오기"
+    docker_container_export:
+      desc: "컨테이너 파일시스템을 이미지 기록이나 메타데이터 없이 tar 아카이브로 내보내기"
+      ex1: "컨테이너 파일시스템을 아카이브로 내보내기"
+      ex2: "컨테이너 이름으로 내보내기"
+      ex3: "`-o` 플래그를 사용하여 컨테이너 ID로 내보내기"
+    docker_image_import:
+      desc: "파일시스템 tar 아카이브에서 새 이미지 생성"
+      ex1: "아카이브 파일을 새 Docker 이미지로 가져오기"
+      ex2: "URL에서 직접 이미지 가져오기"
+      ex3: "표준 입력에서 이미지 가져오기"
+
+  cleanup:
+    _root:
+      title: 🧹 정리 및 진단
+    docker_system_df:
+      desc: "Docker 디스크 사용량 표시: 볼륨, 이미지, 컨테이너, 빌드 캐시"
+      ex1: "각 이미지, 컨테이너, 볼륨의 자세한 정보 출력"
+      ex2: "JSON 형식으로 정보 출력"
+    docker_system_prune:
+      desc: "모든 사용하지 않는 Docker 데이터 제거: 중지된 컨테이너, 미사용 네트워크, 중간 이미지, 빌드 캐시"
+      ex1: "중간 이미지 포함 사용하지 않는 이미지 제거"
+      ex2: "다른 리소스와 함께 미사용 볼륨 제거"
+    docker_image_prune:
+      desc: "사용하지 않는 Docker 이미지 제거 (dangling 레이어 포함)"
+      ex1: "dangling 포함 모든 미사용 이미지 제거"
+      ex2: "24시간 이상 된 이미지 제거"
+    docker_container_prune:
+      desc: "필터에 맞는 중지된 컨테이너 또는 지정하지 않으면 모두 제거"
+      ex1: "24시간 이상 된 중지된 컨테이너 제거"
+      ex2: "확인 없이 제거"
+
+  swarm:
+    _root:
+      title: 🐝 도커 스웜
+    docker_swarm_init:
+      desc: "현재 노드에서 새 Docker Swarm 클러스터 초기화"
+      ex1: "IP 주소를 지정하여 클러스터 초기화"
+      ex2: "리스닝 포트를 지정하여 초기화"
+    docker_service_create:
+      desc: "Swarm 클러스터에 새 서비스 생성"
+      ex1: "Swarm에서 Nginx 서비스 생성"
+      ex2: "3개의 복제본으로 서비스 생성"
+      ex3: "포트 매핑으로 서비스 생성"
+    docker_stack_deploy:
+      desc: "Compose 파일 기반으로 Swarm 클러스터에 스택 배포"
+      ex1: "Compose 파일에서 스택 배포"
+      ex2: "레지스트리 인증 전달과 함께 배포"
+      ex3: "대체 Compose 파일을 사용하여 스택 배포"
+    docker_stack_rm:
+      desc: "Swarm 클러스터에서 하나 이상의 스택 제거"
+      ex1: "`mystack` 스택 제거"
+      ex2: "모든 스택 제거 (권장하지 않음)"
+      ex3: "스택 제거 후 Swarm에서 탈퇴"
+
+  advanced_docker:
+    _root:
+      title: "💼 고급 Docker 사용"
+
+    prof:
+      title: "🚀 전문가용 Docker 명령어"
+      docker_buildx:
+        desc: "`docker build`를 대체하는 고급 이미지 빌드 도구. 다중 플랫폼, 캐싱, 병렬 빌드 및 다양한 형식으로 내보내기를 지원. CI/CD 및 크로스 플랫폼 개발에 유용"
+        ex1: "멀티 플랫폼 이미지 빌드 (ARM과 x86 동시에)"
+        ex2: "이미지를 빌드하고 로컬 Docker 엔진 캐시에 로드"
+        ex3: "멀티 플랫폼 이미지를 레지스트리에 빌드 및 푸시"
+      docker_context:
+        desc: "원격 또는 다중 환경 작업을 위한 Docker 컨텍스트 관리. 로컬과 원격 Docker 엔진 간 빠른 전환 가능"
+        ex1: "원격 Docker 호스트에 연결할 컨텍스트 생성"
+        ex2: "원격 컨텍스트로 전환"
+        ex3: "사용 가능한 컨텍스트와 활성 컨텍스트 나열"
+      docker_system_events:
+        desc: "실시간으로 Docker 이벤트 수신. 이벤트 유형별 필터링 지원 (예: 컨테이너 시작). 모니터링 및 자동화에 유용"
+        ex1: "컨테이너 시작 이벤트만 표시"
+        ex2: "지난 1시간부터 10분 전까지 이벤트 표시"
+        ex3: "네트워크 관련 이벤트만 표시"
+        ex4: "`nginx` 이미지와 관련된 이벤트 표시"
+      docker_container_update:
+        desc: "실행 중인 컨테이너의 리소스 제한 및 설정을 재시작 없이 변경"
+        ex1: "CPU 2개와 RAM 1GB로 제한"
+        ex2: "자동 재시작 정책을 `unless-stopped`로 설정"
+        ex3: "프로세스 수를 200으로 제한"
+      docker_container_diff:
+        desc: "컨테이너의 파일시스템 변경 사항을 원본 이미지와 비교하여 표시. 디버깅 및 감사에 유용"
+        ex1: "컨테이너의 모든 파일시스템 변경 사항 표시"
+        ex2: "추가된 파일만 표시 (`A` — Added)"
+      docker_image_history:
+        desc: "이미지 레이어의 히스토리 표시: 빌드 명령, 각 레이어 크기 및 생성 시간. 최적화 및 감사에 유용"
+        ex1: "이미지의 레이어 히스토리 표시"
+        ex2: "생략 없이 전체 빌드 명령 표시"
+        ex3: "빌드 명령과 레이어 크기만 출력"
+
+    practices:
+      title: "🛠 유용한 Docker 활용 및 자동화"
+      minimize_image_size:
+        title: "이미지 크기 최소화"
+        p1: "`alpine` 또는 `scratch` 같은 최소 베이스 이미지를 사용."
+        p2: "레이어를 합치려면 빌드 시 `--squash` 옵션 사용 (실험적 기능 필요)."
+        p3: "또한 임시 파일과 캐시는 하나의 레이어에서 제거:"
+      minimize_layers:
+        title: "레이어 수 최소화"
+        p1: "명령을 하나의 `RUN`에 결합하여 레이어 수와 최종 이미지 크기를 줄임:"
+      optimize_build:
+        title: "Dockerfile 빌드 최적화"
+        p1: "멀티 스테이지 빌드를 사용해 최종 이미지에 필요한 파일만 남기기."
+        p2: "먼저 의존성을 복사 및 설치한 후 코드를 복사 — 이는 레이어 캐싱을 개선하고 빌드 속도를 높임."
+      secrets_and_configs:
+        title: "비밀과 설정 분리"
+        p1: "`.env` 파일, API 키, 개인 인증서를 이미지 내부에 저장하지 말 것."
+        intro: "구성 방법:"
+        items:
+          secret: "`docker secret` (Swarm에서)"
+          env: "환경 변수 (`-e VAR=value` 또는 `.env`)"
+          volumes: "구성을 위한 외부 볼륨"
+      buildkit_secrets:
+        title: "빌드 시크릿 (BuildKit)"
+        p1: "빌드 중 보안을 위해 `--secret` 플래그 사용:"
+        p2: "Dockerfile에서 시크릿은 `/run/secrets/mysecret` 경로에서 사용 가능:"
+        note: "🛡 이 방식은 이미지 레이어에 시크릿이 저장되지 않도록 함."
+      rootless:
+        title: "루트리스 Docker"
+        p1: "루트 권한 없이 Docker 실행 시 보안이 향상되고 호스트 손상 위험이 줄어듦."
+        steps_intro: "활성화 방법:"
+        check_intro: "확인:"
+        warning: "⚠ 일부 기능(예: 1024 미만 포트 포워딩)은 사용할 수 없음."
+      scan:
+        title: "이미지 취약점 스캔"
+        p1: "내장 도구 사용:"
+        p2: "또는 새로운 CLI 사용:"
+        p3: "이 방법으로 베이스 이미지와 의존성의 취약점을 탐지할 수 있음."
+      resource_limits:
+        title: "리소스 사용 제한 및 모니터링"
+        p1: "컨테이너를 메모리, CPU, 프로세스 개수로 제한:"
+        p2: "이렇게 하면 리소스 과도 사용 방지."
+        p3: "또한 I/O 제한 가능:"
+        p4: "디스크 서브시스템 과부하 방지가 필요한 컨테이너에 유용."
+      cleanup:
+        title: "자동 정리"
+        p1: "정기적으로 사용하지 않는 이미지, 컨테이너, 볼륨, 네트워크 제거:"
+        warning: "⚠ 주의: 이 명령은 사용하지 않는 모든 리소스를 삭제합니다."
+        p2: "선택적으로 정리하려면:"
+      cicd:
+        title: "CI/CD 통합"
+        p1: "GitHub Actions, GitLab CI, Jenkins 파이프라인에 빌드, 테스트, 배포 통합."
+        example_intro: "예시 GitHub Actions 단계:"
+      logging:
+        title: "로그 및 모니터링"
+        p1: "로그 드라이버(`--log-driver`)를 ELK, Loki, Splunk와 같은 중앙 시스템에 연결."
+        p2: "컨테이너 메트릭은 Prometheus + cAdvisor 사용."
+      production:
+        title: "프로덕션 배포"
+        p1: "`docker-compose.override.yml`을 사용해 개발 및 프로덕션 구성을 분리."
+        ha_intro: "고가용성과 확장을 위해:"
+        items:
+          swarm: "Docker Swarm"
+          k8s: "Kubernetes"
+
+    debugging:
+      title: "🐞 Docker 컨테이너 디버깅 및 프로파일링"
+      exec:
+        group_desc: "실행 중인 컨테이너 안에서 명령을 실행하여 대화형 접근 또는 격리된 환경에서 프로세스 실행 가능"
+        r1: "실행 중인 컨테이너 안에서 대화형 터미널(bash) 시작"
+        r2: "컨테이너 안에서 최소 셸 시작 (bash가 없을 경우)"
+        r3: "대화형 모드 없이 컨테이너 안에서 명령 실행"
+      logs:
+        group_desc: "지정된 컨테이너의 로그를 표시하여 작동 관련 출력과 이벤트를 확인하고 진단 및 모니터링 가능"
+        r1: "실시간 스트리밍으로 최근 100줄 로그 보기"
+        r2: "컨테이너의 모든 로그 표시"
+        r3: "지난 1시간의 로그 보기"
+      inspect:
+        group_desc: "컨테이너, 이미지, 네트워크 등 Docker 객체의 구성 및 상태를 포함한 상세 정보를 JSON 형식으로 출력"
+        r1: "컨테이너의 전체 JSON 정보 가져오기"
+        r2: "호스트에서 컨테이너 메인 프로세스의 PID 확인"
+        r3: "컨테이너의 IP 주소 표시"
+      nsenter:
+        group_desc: "Linux 유틸리티로 다른 프로세스(여기서는 컨테이너)의 네임스페이스에 진입. `strace`와 함께 사용해 컨테이너 내 시스템 호출을 추적 가능"
+        r1: "컨테이너 네임스페이스에 진입하여 프로세스 1의 시스템 호출 추적"
+        r2: "컨테이너 네임스페이스 안에서 bash 셸 열기"
+        r3: "컨테이너 내 열린 포트 확인"
+      tcpdump:
+        group_desc: "네트워크 트래픽 캡처 및 분석용 콘솔 도구. 컨테이너 내에서 네트워크 문제 진단, 패킷 분석, 연결 모니터링에 사용"
+        r1: "컨테이너 안에서 네트워크 트래픽 캡처 및 분석"
+        r2: "포트 80의 트래픽만 캡처"
+        r3: "트래픽을 파일에 저장하여 나중에 분석"
+      stats:
+        group_desc: "하나 이상의 컨테이너에 대해 CPU, 메모리, 네트워크, 디스크 사용량을 실시간으로 표시"
+        r1: "컨테이너의 실시간 CPU, 메모리, 네트워크, 디스크 사용량 표시"
+        r2: "모든 컨테이너의 통계 표시"
+        r3: "한 번만 출력하고 종료"
+      top:
+        group_desc: "컨테이너 안에서 실행 중인 프로세스를 표시 (`ps`와 유사)하여 컨테이너 활동 분석"
+        r1: "컨테이너에서 실행 중인 프로세스 표시"
+        r2: "`ps aux`와 같은 대체 출력 형식 사용"
+        r3: "프로세스의 PID와 명령만 표시"
+      diff:
+        group_desc: "컨테이너 파일시스템이 기본 이미지와 비교해 변경된 부분 표시 (추가, 변경, 삭제된 파일)"
+        r1: "컨테이너 파일시스템 변경 사항 표시"
+        r2: "추가된 파일만 표시 (`A` — Added)"
+        r3: "변경된 파일만 표시 (`C` — Changed)"
+      cp:
+        group_desc: "컨테이너와 호스트 간 파일 및 디렉터리 복사로 데이터 교환 및 백업 가능"
+        r1: "컨테이너에서 호스트로 파일 복사"
+        r2: "호스트에서 컨테이너로 파일 복사"
+        r3: "로그 파일을 복사하지 않고 \"ERROR\" 줄만 필터링하여 표시"
+      advanced_note: "💡 고급 디버깅에는 `nsenter`, `strace`, `tcpdump`, `gdb`와 같은 저수준 도구를 사용할 수 있습니다."
+
+  compose_adv:
+    _root:
+      title: "💼 Docker Compose 고급 사용법"
+    prof:
+      title: "🚀 전문가용 Docker Compose 명령어"
+      up:
+        group_desc: "docker-compose.yml 파일에서 지정된 서비스를 시작하고 백그라운드 실행 가능"
+        r1: "`web`과 `db` 서비스만 분리 모드로 실행"
+        r2: "서비스 시작 전에 이미지 재빌드"
+        r3: "현재 compose 파일에 정의되지 않은 컨테이너 제거"
+      build:
+        group_desc: "캐시 제어와 병렬 빌드를 통해 compose 파일에 정의된 서비스 이미지 빌드"
+        r1: "캐시를 사용하지 않고 전체 이미지 재빌드"
+        r2: "모든 서비스를 동시에 빌드하여 속도 향상"
+        r3: "`web` 서비스 이미지 빌드"
+      pull:
+        group_desc: "모든 또는 특정 서비스의 최신 이미지 레지스트리에서 다운로드"
+        r1: "모든 서비스 이미지 가져오기"
+        r2: "`db` 서비스 이미지 가져오기"
+        r3: "가져오는 중 오류가 발생해도 무시하고 계속 실행"
+      restart:
+        group_desc: "컨테이너 재생성 없이 모든 또는 특정 서비스 재시작"
+        r1: "현재 프로젝트의 모든 서비스 재시작"
+        r2: "`worker` 서비스만 재시작"
+        r3: "여러 서비스를 동시에 재시작"
+      exec:
+        group_desc: "실행 중인 서비스 컨테이너 안에서 대화형 모드 선택적으로 명령 실행"
+        r1: "`db` 서비스 컨테이너 안에서 psql 실행"
+        r2: "`web` 컨테이너 안에서 셸 열기"
+        r3: "`api` 서비스 컨테이너에서 curl 요청 실행"
+      config:
+        group_desc: "모든 파일과 환경 변수를 고려하여 최종 Compose 설정 출력"
+        r1: "병합된 설정을 YAML 형식으로 표시"
+        r2: "모든 서비스 나열"
+        r3: "서비스에서 사용하는 모든 환경 변수 표시"
+      watch:
+        group_desc: "소스 파일 변경 시 서비스를 자동으로 재시작 — 개발에 유용"
+        r1: "파일 변경을 감시하고 서비스 재시작"
+      events:
+        group_desc: "서비스 시작, 중지, 업데이트와 같은 Compose 이벤트 스트리밍"
+        r1: "JSON 형식으로 이벤트 수신"
+      rm:
+        group_desc: "중지된 서비스 컨테이너 제거"
+        r1: "`web`과 `db` 서비스 컨테이너 제거"
+      pause:
+        group_desc: "서비스 일시 중지"
+        r1: "`api` 서비스 일시 중지"
+      unpause:
+        group_desc: "일시 중지된 서비스 재개"
+        r1: "`api` 서비스 재개"
+      create:
+        group_desc: "컨테이너를 생성하되 시작하지 않음"
+        r1: "`web`과 `db` 서비스 컨테이너 생성 (시작하지 않음)"
+      images:
+        group_desc: "서비스에서 사용하는 이미지 목록 표시"
+        r1: "모든 서비스 이미지 표시"
+      top:
+        group_desc: "서비스 컨테이너 안에서 실행 중인 프로세스 표시"
+        r1: "`web` 서비스 컨테이너 내 프로세스 표시"
+
+    practices:
+      title: "🛠 Docker Compose 활용 및 자동화"
+      env_separation:
+        title: "환경 분리"
+        p1: "환경별(`development`, `staging`, `production`)로 별도의 `docker-compose.override.yml` 파일을 사용하세요. 이는 구성을 분리하고 설정 충돌을 방지합니다."
+        p2: "`-f` 플래그로 여러 구성 파일을 결합할 수도 있습니다:"
+        p3: "환경 변수를 관리하기 위해 다른 `.env` 파일(`.env.dev`, `.env.prod` 등)을 사용하세요."
+      secrets:
+        title: "비밀 데이터 안전 저장"
+        p1: "비밀번호, 토큰 같은 민감 데이터를 Compose 파일에 직접 포함하지 마세요. 대신 사용하세요:"
+        items:
+          env: "환경 변수용 `.env` 파일 (단, `.env` 파일은 암호화되지 않으며 공개 저장소에 커밋하지 말아야 함)"
+          swarm_secret: "Docker Swarm의 `docker secret` 및 `docker config`"
+          volumes: "비밀이 포함된 구성 파일용 외부 볼륨"
+          external_mgr: "외부 비밀 관리 시스템 (예: HashiCorp Vault, AWS Secrets Manager)"
+      startup_order:
+        title: "`depends_on` 및 `healthcheck`으로 시작 순서 제어"
+        p1: "서비스가 종속 서비스 준비를 기다리도록 설정:"
+      min_downtime:
+        title: "업데이트 중 다운타임 최소화"
+        p1: "서비스 업데이트 전에 실행:"
+        p2: "`-d` 옵션은 백그라운드 실행, `--remove-orphans`는 현재 구성에 없는 컨테이너 제거."
+        p3: "필요하다면 오래된 컨테이너 완전히 중지 및 제거:"
+        p4: "이렇게 하면 새 이미지가 로드되고 불필요한 컨테이너가 다운타임 없이 제거됩니다."
+      hot_reload_volumes:
+        title: "개발용 코드 핫 리로드 (볼륨 사용)"
+        p1: "로컬 디렉터리를 컨테이너에 마운트하기 위해 `volumes`를 사용하세요. 이렇게 하면 이미지를 재빌드하지 않고도 코드 변경을 즉시 적용할 수 있습니다."
+        p2: "Windows와 macOS에서 파일 권한 문제 및 파일시스템 캐싱 특성에 주의하여 성능 문제를 피하세요."
+      hot_reload_watch:
+        title: "볼륨 없이 핫 리로드 (Compose 2.22+)"
+      central_logging:
+        title: "서비스 중앙 로그 관리"
+        p1: "컨테이너 로그를 ELK Stack, Loki, Prometheus, Fluentd 같은 시스템으로 리디렉션하여 분석 및 알림을 쉽게 할 수 있습니다."
+        p2: "Docker 로깅 드라이버(`--log-driver`)를 사용하여 로그를 중앙 수집 및 처리."
+        p3: "Compose에서 컨테이너의 로깅 드라이버를 설정:"
+      auto_restart:
+        title: "자동 서비스 재시작"
+        p1: "`docker-compose.yml`에서 재시작 정책 구성:"
+        p2: "다른 재시작 정책:"
+        policies:
+          no: "`no` — 자동 재시작 없음 (기본값)"
+          always: "`always` — 항상 컨테이너 재시작"
+          on_failure: "`on-failure` — 실패 시에만 재시작 (재시도 횟수 지정 가능)"
+        p3: "운영 환경에서는 `unless-stopped`가 서비스 복원성 확보에 최적."
+        p4: "이렇게 하면 장애나 호스트 재부팅 후에도 서비스가 자동 복구됩니다."
+      profiles:
+        title: "서비스 프로파일"
+        p1: "특정 서비스 그룹만 실행 가능:"
+        p2: "프론트엔드 프로파일만 실행:"
+
+    debugging:
+      title: "🐞 Docker Compose 서비스 디버깅 및 프로파일링"
+      exec:
+        group_desc: "실행 중인 서비스 안에서 명령 실행, 컨테이너 접근 또는 개별 프로세스 실행 가능"
+        r1: "`web` 서비스 컨테이너 안에서 셸 열기"
+        r2: "`db` 서비스 컨테이너 안에서 psql 명령 실행"
+      logs:
+        group_desc: "진단 및 모니터링을 위한 서비스 로그 보기"
+        r1: "`db` 서비스 로그를 실시간으로 보기"
+        r2: "`api` 서비스의 마지막 50줄 로그 표시"
+        r3: "`web` 서비스의 지난 1시간 로그 표시"
+      inspect:
+        group_desc: "서비스를 실행하는 컨테이너의 상세 정보 보기"
+        r1: "`web` 서비스 컨테이너의 상세 JSON 정보 가져오기"
+      stats:
+        group_desc: "서비스 컨테이너의 리소스 사용량 모니터링"
+        r1: "`worker` 서비스 컨테이너의 CPU, 메모리 등 리소스 사용량 추적"
+      run:
+        group_desc: "서비스 설정으로 임시 컨테이너 실행 — 디버깅에 유용"
+        r1: "`web` 서비스용 임시 컨테이너를 대화형 셸로 실행"
+      cp:
+        group_desc: "호스트와 컨테이너 간 파일 복사"
+        r1: "`db` 서비스 컨테이너에서 호스트로 파일 복사"
+      tip:
+        one_off: "💡 복잡한 다중 서비스 디버깅에는 `docker compose run --rm`을 사용해 개별 컨테이너를 필요한 네트워크와 볼륨으로 실행하면 메인 서비스에 영향을 주지 않습니다."
+
+  resources:
+    title: "📚 추가 자료"
+    ignore:
+      title: "🚫 `.dockerignore`로 파일 무시하기"
+      p1: "이미지에 포함하지 않아야 할 파일과 폴더를 `.dockerignore`에 추가하여 크기를 줄이고 빌드를 빠르게 하세요:"
+    aliases:
+      title: "⚡ 별칭으로 명령 단축"
+      p1: "자주 사용하는 명령어는 별칭을 만들어 더 빠르게 실행할 수 있습니다:"
+    advice:
+      title: "🧠 팁: Docker 사용 조언"
+      b1: "모든 걸 외우려 하지 말고 `docker --help` 또는 `docker <command> --help`로 명령 탐색하세요."
+      b2: "정기적으로 연습하고 간단한 프로젝트로 실험하세요."
+      b3: "이미지 크기를 주시하고 `.dockerignore`를 사용해 불필요한 파일 제거."
+    links:
+      title: "🌐 유용한 링크"
+      docs_intro: "📘 **공식 Docker 문서** — Docker 관련 모든 주제에 대한 포괄적 가이드와 참고 자료:"
+      sheet_intro: "📙 **Docker 치트 시트** — 공식 Docker 치트시트 전체:"
+      hub_intro: "📗 **Docker Hub** — 이미지와 레지스트리:"

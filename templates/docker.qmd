@@ -1,0 +1,677 @@
+## {{< meta docker.basic._root.title >}}
+
+| {{< meta common.table.columns.command >}} | {{< meta common.table.columns.example >}} | {{< meta common.table.columns.description >}} |
+|---|---|---|
+| [**`docker`**](https://docs.docker.com/reference/cli/docker/) |  | **{{< meta docker.basic.docker.desc >}}** |
+| [**`docker version`**](https://docs.docker.com/reference/cli/docker/version/) |  | **{{< meta docker.basic.docker_version.desc >}}** |
+|  | `docker version --format '{{.Client.APIVersion}}'` | {{< meta docker.basic.docker_version.ex1 >}} |
+|  | `docker version --format '{{.Server.Version}}'` | {{< meta docker.basic.docker_version.ex2 >}} |
+|  | `docker version --format '{{json .}}'` | {{< meta docker.basic.docker_version.ex3 >}} |
+| [**`docker system info`**](https://docs.docker.com/engine/reference/commandline/info/) |  | **{{< meta docker.basic.docker_system_info.desc >}}** |
+|  | `docker info` | {{< meta docker.basic.docker_system_info.ex1 >}} |
+|  | `docker info --format '{{json .}}'` | {{< meta docker.basic.docker_system_info.ex2 >}} |
+|  | `docker info --format '{{.NCPU}} CPUs, {{.MemTotal}} bytes RAM'` | {{< meta docker.basic.docker_system_info.ex3 >}} |
+|  | `docker info --format '{{.Driver}}'` | {{< meta docker.basic.docker_system_info.ex4 >}} |
+| [**`docker image pull`**](https://docs.docker.com/reference/cli/docker/image/pull/) |  | **{{< meta docker.basic.docker_image_pull.desc >}}** |
+|  | `docker pull ubuntu` | {{< meta docker.basic.docker_image_pull.ex1 >}} |
+|  | `docker pull nginx:alpine` | {{< meta docker.basic.docker_image_pull.ex2 >}} |
+|  | `docker pull redis:7` | {{< meta docker.basic.docker_image_pull.ex3 >}} |
+| [**`docker container run`**](https://docs.docker.com/engine/reference/commandline/run/) |  | **{{< meta docker.basic.docker_container_run.desc >}}** |
+|  | `docker run -it ubuntu bash` | {{< meta docker.basic.docker_container_run.ex1 >}} |
+|  | `docker run -d nginx` | {{< meta docker.basic.docker_container_run.ex2 >}} |
+|  | `docker run -p 8080:80 nginx` | {{< meta docker.basic.docker_container_run.ex3 >}} |
+| [**`docker container ls`**](https://docs.docker.com/reference/cli/docker/container/ls/) |  | **{{< meta docker.basic.docker_container_ls.desc >}}** |
+|  | `docker ps` | {{< meta docker.basic.docker_container_ls.ex1 >}} |
+|  | `docker ps -a` | {{< meta docker.basic.docker_container_ls.ex2 >}} |
+|  | `docker ps --format '{{.Names}}'` | {{< meta docker.basic.docker_container_ls.ex3 >}} |
+| [**`docker container start`**](https://docs.docker.com/reference/cli/docker/container/start/) |  | **{{< meta docker.basic.docker_container_start.desc >}}** |
+|  | `docker start container_name` | {{< meta docker.basic.docker_container_start.ex1 >}} |
+|  | `docker start $(docker ps -aq)` | {{< meta docker.basic.docker_container_start.ex2 >}} |
+|  | `docker start -ai container_name` | {{< meta docker.basic.docker_container_start.ex3 >}} |
+| [**`docker container stop`**](https://docs.docker.com/engine/reference/commandline/stop/) |  | **{{< meta docker.basic.docker_container_stop.desc >}}** |
+|  | `docker stop container_name` | {{< meta docker.basic.docker_container_stop.ex1 >}} |
+|  | `docker stop $(docker ps -q)` | {{< meta docker.basic.docker_container_stop.ex2 >}} |
+|  | `docker stop -t 5 container_name` | {{< meta docker.basic.docker_container_stop.ex3 >}} |
+| [**`docker container restart`**](https://docs.docker.com/reference/commandline/restart/) |  | **{{< meta docker.basic.docker_container_restart.desc >}}** |
+|  | `docker restart container_name` | {{< meta docker.basic.docker_container_restart.ex1 >}} |
+|  | `docker restart $(docker ps -q)` | {{< meta docker.basic.docker_container_restart.ex2 >}} |
+|  | `docker restart -t 10 container_name` | {{< meta docker.basic.docker_container_restart.ex3 >}} |
+| [**`docker container rm`**](https://docs.docker.com/engine/reference/commandline/rm/) |  | **{{< meta docker.basic.docker_container_rm.desc >}}** |
+|  | `docker rm container_name` | {{< meta docker.basic.docker_container_rm.ex1 >}} |
+|  | `docker rm $(docker ps -aq)` | {{< meta docker.basic.docker_container_rm.ex2 >}} |
+|  | `docker rm -f container_name` | {{< meta docker.basic.docker_container_rm.ex3 >}} |
+| [**`docker image ls`**](https://docs.docker.com/engine/reference/commandline/images/) |  | **{{< meta docker.basic.docker_image_ls.desc >}}** |
+|  | `docker images` | {{< meta docker.basic.docker_image_ls.ex1 >}} |
+|  | `docker images -a` | {{< meta docker.basic.docker_image_ls.ex2 >}} |
+|  | `docker images --format '{{.Repository}}:{{.Tag}}'` | {{< meta docker.basic.docker_image_ls.ex3 >}} |
+| [**`docker image rm`**](https://docs.docker.com/reference/cli/docker/image/rm/) |  | **{{< meta docker.basic.docker_image_rm.desc >}}** |
+|  | `docker rmi test1:latest` | {{< meta docker.basic.docker_image_rm.ex1 >}} |
+|  | `docker rmi 1a2b3c4d5e6f` | {{< meta docker.basic.docker_image_rm.ex2 >}} |
+|  | `docker rmi $(docker images -q)` | {{< meta docker.basic.docker_image_rm.ex3 >}} |
+
+## {{< meta docker.container._root.title >}}
+
+| {{< meta common.table.columns.command >}} | {{< meta common.table.columns.example >}} | {{< meta common.table.columns.description >}} |
+|---|---|---|
+| [**`docker container exec`**](https://docs.docker.com/engine/reference/commandline/exec/) |  | **{{< meta docker.container.docker_container_exec.desc >}}** |
+|  | `docker exec -it container bash` | {{< meta docker.container.docker_container_exec.ex1 >}} |
+|  | `docker exec container ls /app` | {{< meta docker.container.docker_container_exec.ex2 >}} |
+|  | `docker exec -d container touch /tmp/testfile` | {{< meta docker.container.docker_container_exec.ex3 >}} |
+| [**`docker container logs`**](https://docs.docker.com/engine/reference/commandline/logs/) |  | **{{< meta docker.container.docker_container_logs.desc >}}** |
+|  | `docker logs container` | {{< meta docker.container.docker_container_logs.ex1 >}} |
+|  | `docker logs -f container` | {{< meta docker.container.docker_container_logs.ex2 >}} |
+|  | `docker logs --tail 50 container` | {{< meta docker.container.docker_container_logs.ex3 >}} |
+| [**`docker inspect`**](https://docs.docker.com/engine/reference/commandline/inspect/) |  | **{{< meta docker.container.docker_inspect.desc >}}** |
+|  | `docker inspect container` | {{< meta docker.container.docker_inspect.ex1 >}} |
+|  | `docker inspect --format '{{.NetworkSettings.IPAddress}}' container` | {{< meta docker.container.docker_inspect.ex2 >}} |
+| [**`docker container stats`**](https://docs.docker.com/reference/cli/docker/container/stats/) |  | **{{< meta docker.container.docker_container_stats.desc >}}** |
+|  | `docker stats` | {{< meta docker.container.docker_container_stats.ex1 >}} |
+|  | `docker stats container_name` | {{< meta docker.container.docker_container_stats.ex2 >}} |
+|  | `docker stats --no-stream` | {{< meta docker.container.docker_container_stats.ex3 >}} |
+| [**`docker container rename`**](https://docs.docker.com/engine/reference/commandline/rename/) |  | **{{< meta docker.container.docker_container_rename.desc >}}** |
+|  | `docker rename old_name new_name` | {{< meta docker.container.docker_container_rename.ex1 >}} |
+| [**`docker container cp`**](https://docs.docker.com/engine/reference/commandline/cp/) |  | **{{< meta docker.container.docker_container_cp.desc >}}** |
+|  | `docker cp container:/src/file.txt ./file.txt` | {{< meta docker.container.docker_container_cp.ex1 >}} |
+|  | `docker cp ./config.yaml container:/app/config.yaml` | {{< meta docker.container.docker_container_cp.ex2 >}} |
+|  | `docker cp CONTAINER:/var/logs/app.log - | tar x -O | grep "ERROR"` | {{< meta docker.container.docker_container_cp.ex3 >}} |
+| [**`docker container top`**](https://docs.docker.com/engine/reference/commandline/top/) |  | **{{< meta docker.container.docker_container_top.desc >}}** |
+|  | `docker top container` | {{< meta docker.container.docker_container_top.ex1 >}} |
+| [**`docker container pause`**](https://docs.docker.com/engine/reference/commandline/pause/) |  | **{{< meta docker.container.docker_container_pause.desc >}}** |
+|  | `docker pause container` | {{< meta docker.container.docker_container_pause.ex1 >}} |
+| [**`docker container unpause`**](https://docs.docker.com/engine/reference/commandline/unpause/) |  | **{{< meta docker.container.docker_container_unpause.desc >}}** |
+|  | `docker unpause container` | {{< meta docker.container.docker_container_unpause.ex1 >}} |
+| [**`docker container update`**](https://docs.docker.com/engine/reference/commandline/update/) |  | **{{< meta docker.container.docker_container_update.desc >}}** |
+|  | `docker update --memory 500m container` | {{< meta docker.container.docker_container_update.ex1 >}} |
+
+## {{< meta docker.images._root.title >}}
+
+| {{< meta common.table.columns.command >}} | {{< meta common.table.columns.example >}} | {{< meta common.table.columns.description >}} |
+|---|---|---|
+| [**`docker buildx build`**](https://docs.docker.com/engine/reference/commandline/build/) |  | **{{< meta docker.images.docker_buildx_build.desc >}}** |
+|  | `docker build -t my_image .` | {{< meta docker.images.docker_buildx_build.ex1 >}} |
+|  | `docker build -t my_image:1.0 .` | {{< meta docker.images.docker_buildx_build.ex2 >}} |
+|  | `docker build --no-cache -t my_image .` | {{< meta docker.images.docker_buildx_build.ex3 >}} |
+| [**`docker container commit`**](https://docs.docker.com/engine/reference/commandline/commit/) |  | **{{< meta docker.images.docker_container_commit.desc >}}** |
+|  | `docker commit container my_img:v1` | {{< meta docker.images.docker_container_commit.ex1 >}} |
+|  | `docker commit -m "Added config" container my_img:v2` | {{< meta docker.images.docker_container_commit.ex2 >}} |
+|  | `docker commit -a "John Doe" container my_img:latest` | {{< meta docker.images.docker_container_commit.ex3 >}} |
+| [**`docker image tag`**](https://docs.docker.com/engine/reference/commandline/tag/) |  | **{{< meta docker.images.docker_image_tag.desc >}}** |
+|  | `docker tag my_image myrepo/my_image:latest` | {{< meta docker.images.docker_image_tag.ex1 >}} |
+|  | `docker tag my_image:1.0 my_image:stable` | {{< meta docker.images.docker_image_tag.ex2 >}} |
+|  | `docker tag my_image my_image:backup` | {{< meta docker.images.docker_image_tag.ex3 >}} |
+| [**`docker image push`**](https://docs.docker.com/engine/reference/commandline/push/) |  | **{{< meta docker.images.docker_image_push.desc >}}** |
+|  | `docker push myrepo/my_image:latest` | {{< meta docker.images.docker_image_push.ex1 >}} |
+|  | `docker push myrepo/my_image:1.0` | {{< meta docker.images.docker_image_push.ex2 >}} |
+|  | `docker push myrepo/my_image` | {{< meta docker.images.docker_image_push.ex3 >}} |
+| [**`docker login`**](https://docs.docker.com/engine/reference/commandline/login/) |  | **{{< meta docker.images.docker_login.desc >}}** |
+|  | `docker login` | {{< meta docker.images.docker_login.ex1 >}} |
+|  | `docker login myregistry.local:5000` | {{< meta docker.images.docker_login.ex2 >}} |
+|  | `docker login -u username -p password` | {{< meta docker.images.docker_login.ex3 >}} |
+| [**`docker logout`**](https://docs.docker.com/engine/reference/commandline/logout/) |  | **{{< meta docker.images.docker_logout.desc >}}** |
+|  | `docker logout` | {{< meta docker.images.docker_logout.ex1 >}} |
+|  | `docker logout myregistry.local:5000` | {{< meta docker.images.docker_logout.ex2 >}} |
+| [**`HEALTHCHECK`**](https://docs.docker.com/reference/dockerfile/#healthcheck) |  | **{{< meta docker.images.healthcheck.desc >}}** |
+|  | `HEALTHCHECK --interval=30s --timeout=5s --retries=3 CMD curl -f http://localhost/ || exit 1` | {{< meta docker.images.healthcheck.ex1 >}} |
+|  | `docker inspect --format='{{json .State.Health}}' container_name` | {{< meta docker.images.healthcheck.ex2 >}} |
+
+## {{< meta docker.networks._root.title >}}
+
+| {{< meta common.table.columns.command >}} | {{< meta common.table.columns.example >}} | {{< meta common.table.columns.description >}} |
+|---|---|---|
+| [**`docker network ls`**](https://docs.docker.com/reference/cli/docker/network/ls/) |  | **{{< meta docker.networks.docker_network_ls.desc >}}** |
+|  | `docker network ls` | {{< meta docker.networks.docker_network_ls.ex1 >}} |
+|  | `docker network ls --filter driver=bridge` | {{< meta docker.networks.docker_network_ls.ex2 >}} |
+|  | `docker network ls --format '{{.Name}}'` | {{< meta docker.networks.docker_network_ls.ex3 >}} |
+| [**`docker network create`**](https://docs.docker.com/reference/cli/docker/network/create/) |  | **{{< meta docker.networks.docker_network_create.desc >}}** |
+|  | `docker network create my_net` | {{< meta docker.networks.docker_network_create.ex1 >}} |
+|  | `docker network create --driver bridge my_bridge_net` | {{< meta docker.networks.docker_network_create.ex2 >}} |
+|  | `docker network create --subnet=192.168.10.0/24 my_custom_net` | {{< meta docker.networks.docker_network_create.ex3 >}} |
+| [**`docker network connect`**](https://docs.docker.com/reference/cli/docker/network/connect/) |  | **{{< meta docker.networks.docker_network_connect.desc >}}** |
+|  | `docker network connect my_net container` | {{< meta docker.networks.docker_network_connect.ex1 >}} |
+|  | `docker network connect --alias db_net my_net container` | {{< meta docker.networks.docker_network_connect.ex2 >}} |
+| [**`docker network disconnect`**](https://docs.docker.com/reference/cli/docker/network/disconnect/) |  | **{{< meta docker.networks.docker_network_disconnect.desc >}}** |
+|  | `docker network disconnect my_net container` | {{< meta docker.networks.docker_network_disconnect.ex1 >}} |
+| [**`docker volume ls`**](https://docs.docker.com/reference/cli/docker/volume/ls/) |  | **{{< meta docker.networks.docker_volume_ls.desc >}}** |
+|  | `docker volume ls` | {{< meta docker.networks.docker_volume_ls.ex1 >}} |
+|  | `docker volume ls --filter dangling=true` | {{< meta docker.networks.docker_volume_ls.ex2 >}} |
+| [**`docker volume create`**](https://docs.docker.com/reference/cli/docker/volume/create/) |  | **{{< meta docker.networks.docker_volume_create.desc >}}** |
+|  | `docker volume create my_vol` | {{< meta docker.networks.docker_volume_create.ex1 >}} |
+|  | `docker volume create --driver local --opt type=tmpfs my_tmp_vol` | {{< meta docker.networks.docker_volume_create.ex2 >}} |
+| [**`docker volume inspect`**](https://docs.docker.com/reference/cli/docker/volume/inspect/) |  | **{{< meta docker.networks.docker_volume_inspect.desc >}}** |
+|  | `docker volume inspect my_vol` | {{< meta docker.networks.docker_volume_inspect.ex1 >}} |
+| [**`docker volume rm`**](https://docs.docker.com/reference/cli/docker/volume/rm/) |  | **{{< meta docker.networks.docker_volume_rm.desc >}}** |
+|  | `docker volume rm my_vol` | {{< meta docker.networks.docker_volume_rm.ex1 >}} |
+|  | `docker volume rm $(docker volume ls -qf dangling=true)` | {{< meta docker.networks.docker_volume_rm.ex2 >}} |
+
+## {{< meta docker.plugins._root.title >}}
+
+| {{< meta common.table.columns.command >}} | {{< meta common.table.columns.example >}} | {{< meta common.table.columns.description >}} |
+|---|---|---|
+| [**`docker plugin ls`**](https://docs.docker.com/reference/cli/docker/plugin/ls/) |  | **{{< meta docker.plugins.docker_plugin_ls.desc >}}** |
+|  | `docker plugin ls` | {{< meta docker.plugins.docker_plugin_ls.ex1 >}} |
+| [**`docker plugin install`**](https://docs.docker.com/reference/cli/docker/plugin/install/) |  | **{{< meta docker.plugins.docker_plugin_install.desc >}}** |
+|  | `docker plugin install vieux/sshfs` | {{< meta docker.plugins.docker_plugin_install.ex1 >}} |
+|  | `docker plugin install store/weaveworks/net-plugin:latest_release` | {{< meta docker.plugins.docker_plugin_install.ex2 >}} |
+| [**`docker plugin disable`**](https://docs.docker.com/reference/cli/docker/plugin/disable/) |  | **{{< meta docker.plugins.docker_plugin_disable.desc >}}** |
+|  | `docker plugin disable vieux/sshfs` | {{< meta docker.plugins.docker_plugin_disable.ex1 >}} |
+| [**`docker plugin enable`**](https://docs.docker.com/reference/cli/docker/plugin/enable/) |  | **{{< meta docker.plugins.docker_plugin_enable.desc >}}** |
+|  | `docker plugin enable vieux/sshfs` | {{< meta docker.plugins.docker_plugin_enable.ex1 >}} |
+| [**`docker plugin rm`**](https://docs.docker.com/reference/cli/docker/plugin/rm/) |  | **{{< meta docker.plugins.docker_plugin_rm.desc >}}** |
+|  | `docker plugin rm vieux/sshfs` | {{< meta docker.plugins.docker_plugin_rm.ex1 >}} |
+
+## {{< meta docker.compose._root.title >}}
+
+| {{< meta common.table.columns.command >}} | {{< meta common.table.columns.example >}} | {{< meta common.table.columns.description >}} |
+|---|---|---|
+| [**`docker compose up`**](https://docs.docker.com/compose/reference/up/) |  | **{{< meta docker.compose.docker_compose_up.desc >}}** |
+|  | `docker compose up` | {{< meta docker.compose.docker_compose_up.ex1 >}} |
+|  | `docker compose up -d` | {{< meta docker.compose.docker_compose_up.ex2 >}} |
+|  | `docker compose up --build` | {{< meta docker.compose.docker_compose_up.ex3 >}} |
+| [**`docker compose down`**](https://docs.docker.com/compose/reference/down/) |  | **{{< meta docker.compose.docker_compose_down.desc >}}** |
+|  | `docker compose down` | {{< meta docker.compose.docker_compose_down.ex1 >}} |
+|  | `docker compose down --volumes` | {{< meta docker.compose.docker_compose_down.ex2 >}} |
+|  | `docker compose down --rmi all` | {{< meta docker.compose.docker_compose_down.ex3 >}} |
+| [**`docker compose logs`**](https://docs.docker.com/compose/reference/logs/) |  | **{{< meta docker.compose.docker_compose_logs.desc >}}** |
+|  | `docker compose logs` | {{< meta docker.compose.docker_compose_logs.ex1 >}} |
+|  | `docker compose logs -f` | {{< meta docker.compose.docker_compose_logs.ex2 >}} |
+|  | `docker compose logs web` | {{< meta docker.compose.docker_compose_logs.ex3 >}} |
+| [**`docker compose exec`**](https://docs.docker.com/compose/reference/exec/) |  | **{{< meta docker.compose.docker_compose_exec.desc >}}** |
+|  | `docker compose exec web bash` | {{< meta docker.compose.docker_compose_exec.ex1 >}} |
+|  | `docker compose exec db ls /var/lib/postgresql` | {{< meta docker.compose.docker_compose_exec.ex2 >}} |
+|  | `docker compose exec -d worker touch /tmp/done` | {{< meta docker.compose.docker_compose_exec.ex3 >}} |
+| [**`docker compose build`**](https://docs.docker.com/compose/reference/build/) |  | **{{< meta docker.compose.docker_compose_build.desc >}}** |
+|  | `docker compose build` | {{< meta docker.compose.docker_compose_build.ex1 >}} |
+|  | `docker compose build web` | {{< meta docker.compose.docker_compose_build.ex2 >}} |
+|  | `docker compose build --no-cache` | {{< meta docker.compose.docker_compose_build.ex3 >}} |
+| [**`docker compose ps`**](https://docs.docker.com/compose/reference/ps/) |  | **{{< meta docker.compose.docker_compose_ps.desc >}}** |
+|  | `docker compose ps -a` | {{< meta docker.compose.docker_compose_ps.ex1 >}} |
+|  | `docker compose ps --services` | {{< meta docker.compose.docker_compose_ps.ex2 >}} |
+| [**`docker compose pull`**](https://docs.docker.com/compose/reference/pull/) |  | **{{< meta docker.compose.docker_compose_pull.desc >}}** |
+|  | `docker compose pull web` | {{< meta docker.compose.docker_compose_pull.ex1 >}} |
+|  | `docker compose pull --ignore-pull-failures` | {{< meta docker.compose.docker_compose_pull.ex2 >}} |
+| [**`docker compose restart`**](https://docs.docker.com/compose/reference/restart/) |  | **{{< meta docker.compose.docker_compose_restart.desc >}}** |
+|  | `docker compose restart db` | {{< meta docker.compose.docker_compose_restart.ex1 >}} |
+|  | `docker compose restart -t 10` | {{< meta docker.compose.docker_compose_restart.ex2 >}} |
+| [**`docker compose config`**](https://docs.docker.com/compose/reference/config/) |  | **{{< meta docker.compose.docker_compose_config.desc >}}** |
+|  | `docker compose config --services` | {{< meta docker.compose.docker_compose_config.ex1 >}} |
+|  | `docker compose config --volumes` | {{< meta docker.compose.docker_compose_config.ex2 >}} |
+| [**`docker compose start`**](https://docs.docker.com/compose/reference/start/) |  | **{{< meta docker.compose.docker_compose_start.desc >}}** |
+|  | `docker compose start web` | {{< meta docker.compose.docker_compose_start.ex1 >}} |
+|  | `docker compose start db api` | {{< meta docker.compose.docker_compose_start.ex2 >}} |
+| [**`docker compose stop`**](https://docs.docker.com/compose/reference/stop/) |  | **{{< meta docker.compose.docker_compose_stop.desc >}}** |
+|  | `docker compose stop web` | {{< meta docker.compose.docker_compose_stop.ex1 >}} |
+|  | `docker compose stop -t 5` | {{< meta docker.compose.docker_compose_stop.ex2 >}} |
+
+## {{< meta docker.export_import._root.title >}}
+
+| {{< meta common.table.columns.command >}} | {{< meta common.table.columns.example >}} | {{< meta common.table.columns.description >}} |
+|---|---|---|
+| [**`docker image save`**](https://docs.docker.com/reference/cli/docker/image/save/) |  | **{{< meta docker.export_import.docker_image_save.desc >}}** |
+|  | `docker save -o image.tar my_img:tag` | {{< meta docker.export_import.docker_image_save.ex1 >}} |
+|  | `docker save my_image > my_image.tar` | {{< meta docker.export_import.docker_image_save.ex2 >}} |
+|  | `docker save -o redis_latest.tar redis:latest` | {{< meta docker.export_import.docker_image_save.ex3 >}} |
+| [**`docker image load`**](https://docs.docker.com/reference/cli/docker/image/load/) |  | **{{< meta docker.export_import.docker_image_load.desc >}}** |
+|  | `docker load < image.tar` | {{< meta docker.export_import.docker_image_load.ex1 >}} |
+|  | `docker load --input redis_latest.tar` | {{< meta docker.export_import.docker_image_load.ex2 >}} |
+|  | `docker load --quiet < my_image.tar` | {{< meta docker.export_import.docker_image_load.ex3 >}} |
+| [**`docker container export`**](https://docs.docker.com/reference/cli/docker/container/export/) |  | **{{< meta docker.export_import.docker_container_export.desc >}}** |
+|  | `docker export container > file.tar` | {{< meta docker.export_import.docker_container_export.ex1 >}} |
+|  | `docker export my_container > my_container_fs.tar` | {{< meta docker.export_import.docker_container_export.ex2 >}} |
+|  | `docker export -o container_fs.tar container_id` | {{< meta docker.export_import.docker_container_export.ex3 >}} |
+| [**`docker image import`**](https://docs.docker.com/reference/cli/docker/image/import/) |  | **{{< meta docker.export_import.docker_image_import.desc >}}** |
+|  | `docker import file.tar new_img` | {{< meta docker.export_import.docker_image_import.ex1 >}} |
+|  | `docker import https://example.com/image.tar my_new_image` | {{< meta docker.export_import.docker_image_import.ex2 >}} |
+|  | `docker import - my_image < file.tar` | {{< meta docker.export_import.docker_image_import.ex3 >}} |
+
+## {{< meta docker.cleanup._root.title >}}
+
+| {{< meta common.table.columns.command >}} | {{< meta common.table.columns.example >}} | {{< meta common.table.columns.description >}} |
+|---|---|---|
+| [**`docker system df`**](https://docs.docker.com/reference/cli/docker/system/df/) |  | **{{< meta docker.cleanup.docker_system_df.desc >}}** |
+|  | `docker system df -v` | {{< meta docker.cleanup.docker_system_df.ex1 >}} |
+|  | `docker system df --format '{{json .}}'` | {{< meta docker.cleanup.docker_system_df.ex2 >}} |
+| [**`docker system prune`**](https://docs.docker.com/reference/cli/docker/system/prune/) |  | **{{< meta docker.cleanup.docker_system_prune.desc >}}** |
+|  | `docker system prune -a` | {{< meta docker.cleanup.docker_system_prune.ex1 >}} |
+|  | `docker system prune --volumes` | {{< meta docker.cleanup.docker_system_prune.ex2 >}} |
+| [**`docker image prune`**](https://docs.docker.com/reference/cli/docker/image/prune/) |  | **{{< meta docker.cleanup.docker_image_prune.desc >}}** |
+|  | `docker image prune -a` | {{< meta docker.cleanup.docker_image_prune.ex1 >}} |
+|  | `docker image prune --filter "until=24h"` | {{< meta docker.cleanup.docker_image_prune.ex2 >}} |
+| [**`docker container prune`**](https://docs.docker.com/reference/cli/docker/container/prune/) |  | **{{< meta docker.cleanup.docker_container_prune.desc >}}** |
+|  | `docker container prune --filter "until=24h"` | {{< meta docker.cleanup.docker_container_prune.ex1 >}} |
+|  | `docker container prune --force` | {{< meta docker.cleanup.docker_container_prune.ex2 >}} |
+
+## {{< meta docker.swarm._root.title >}}
+
+| {{< meta common.table.columns.command >}} | {{< meta common.table.columns.example >}} | {{< meta common.table.columns.description >}} |
+|---|---|---|
+| [**`docker swarm init`**](https://docs.docker.com/reference/cli/docker/swarm/init/) |  | **{{< meta docker.swarm.docker_swarm_init.desc >}}** |
+|  | `docker swarm init --advertise-addr 192.168.1.100` | {{< meta docker.swarm.docker_swarm_init.ex1 >}} |
+|  | `docker swarm init --listen-addr 0.0.0.0:2377` | {{< meta docker.swarm.docker_swarm_init.ex2 >}} |
+| [**`docker service create`**](https://docs.docker.com/reference/cli/docker/service/create/) |  | **{{< meta docker.swarm.docker_service_create.desc >}}** |
+|  | `docker service create --name nginx nginx` | {{< meta docker.swarm.docker_service_create.ex1 >}} |
+|  | `docker service create --replicas 3 --name web webserver` | {{< meta docker.swarm.docker_service_create.ex2 >}} |
+|  | `docker service create --name redis --publish 6379:6379 redis` | {{< meta docker.swarm.docker_service_create.ex3 >}} |
+| [**`docker stack deploy`**](https://docs.docker.com/reference/cli/docker/stack/deploy/) |  | **{{< meta docker.swarm.docker_stack_deploy.desc >}}** |
+|  | `docker stack deploy -c docker-compose.yml mystack` | {{< meta docker.swarm.docker_stack_deploy.ex1 >}} |
+|  | `docker stack deploy --with-registry-auth -c compose.yml mystack` | {{< meta docker.swarm.docker_stack_deploy.ex2 >}} |
+|  | `docker stack deploy -c swarm-compose.yml mystack` | {{< meta docker.swarm.docker_stack_deploy.ex3 >}} |
+| [**`docker stack rm`**](https://docs.docker.com/reference/cli/docker/stack/rm/) |  | **{{< meta docker.swarm.docker_stack_rm.desc >}}** |
+|  | `docker stack rm mystack` | {{< meta docker.swarm.docker_stack_rm.ex1 >}} |
+|  | `docker stack rm` | {{< meta docker.swarm.docker_stack_rm.ex2 >}} |
+|  | `docker stack rm mystack && docker swarm leave --force` | {{< meta docker.swarm.docker_stack_rm.ex3 >}} |
+
+## {{< meta docker.advanced_docker._root.title >}}
+
+### {{< meta docker.advanced_docker.prof.title >}}
+
+| {{< meta common.table.columns.command >}} | {{< meta common.table.columns.example >}} | {{< meta common.table.columns.description >}} |
+|---|---|---|
+| [**`docker buildx`**](https://docs.docker.com/reference/cli/docker/buildx/) |  | **{{< meta docker.advanced_docker.prof.docker_buildx.desc >}}** |
+|  | `docker buildx build --platform linux/arm64,linux/amd64 -t myimg:multi .` | {{< meta docker.advanced_docker.prof.docker_buildx.ex1 >}} |
+|  | `docker buildx build --load -t localimg .` | {{< meta docker.advanced_docker.prof.docker_buildx.ex2 >}} |
+|  | `docker buildx build --push --platform linux/amd64,linux/arm64 -t repo/app:latest .` | {{< meta docker.advanced_docker.prof.docker_buildx.ex3 >}} |
+| [**`docker context`**](https://docs.docker.com/reference/cli/docker/context/) |  | **{{< meta docker.advanced_docker.prof.docker_context.desc >}}** |
+|  | `docker context create myremote --docker "host=ssh://user@host"` | {{< meta docker.advanced_docker.prof.docker_context.ex1 >}} |
+|  | `docker context use myremote` | {{< meta docker.advanced_docker.prof.docker_context.ex2 >}} |
+|  | `docker context ls` | {{< meta docker.advanced_docker.prof.docker_context.ex3 >}} |
+| [**`docker system events`**](https://docs.docker.com/reference/cli/docker/system/events/) |  | **{{< meta docker.advanced_docker.prof.docker_system_events.desc >}}** |
+|  | `docker events --filter 'event=start'` | {{< meta docker.advanced_docker.prof.docker_system_events.ex1 >}} |
+|  | `docker events --since 1h --until 10m` | {{< meta docker.advanced_docker.prof.docker_system_events.ex2 >}} |
+|  | `docker events --filter 'type=network'` | {{< meta docker.advanced_docker.prof.docker_system_events.ex3 >}} |
+|  | `docker events --filter 'image=nginx'` | {{< meta docker.advanced_docker.prof.docker_system_events.ex4 >}} |
+| [**`docker container update`**](https://docs.docker.com/reference/cli/docker/container/update/) |  | **{{< meta docker.advanced_docker.prof.docker_container_update.desc >}}** |
+|  | `docker update --cpus 2 --memory 1g my_container` | {{< meta docker.advanced_docker.prof.docker_container_update.ex1 >}} |
+|  | `docker update --restart unless-stopped my_container` | {{< meta docker.advanced_docker.prof.docker_container_update.ex2 >}} |
+|  | `docker update --pids-limit 200 my_container` | {{< meta docker.advanced_docker.prof.docker_container_update.ex3 >}} |
+| [**`docker container diff`**](https://docs.docker.com/reference/cli/docker/container/diff/) |  | **{{< meta docker.advanced_docker.prof.docker_container_diff.desc >}}** |
+|  | `docker diff my_container` | {{< meta docker.advanced_docker.prof.docker_container_diff.ex1 >}} |
+|  | `docker diff my_container | grep '^A'` | {{< meta docker.advanced_docker.prof.docker_container_diff.ex2 >}} |
+| [**`docker image history`**](https://docs.docker.com/reference/cli/docker/image/history/) |  | **{{< meta docker.advanced_docker.prof.docker_image_history.desc >}}** |
+|  | `docker history my_image` | {{< meta docker.advanced_docker.prof.docker_image_history.ex1 >}} |
+|  | `docker history --no-trunc my_image` | {{< meta docker.advanced_docker.prof.docker_image_history.ex2 >}} |
+|  | `docker history --format "{{.CreatedBy}}: {{.Size}}" my_image` | {{< meta docker.advanced_docker.prof.docker_image_history.ex3 >}} |
+
+### {{< meta docker.advanced_docker.practices.title >}}
+
+- **{{< meta docker.advanced_docker.practices.minimize_image_size.title >}}**  
+  {{< meta docker.advanced_docker.practices.minimize_image_size.p1 >}}  
+  {{< meta docker.advanced_docker.practices.minimize_image_size.p2 >}}  
+  {{< meta docker.advanced_docker.practices.minimize_image_size.p3 >}}
+
+  ```dockerfile
+  RUN apk add --no-cache curl && rm -rf /var/cache/apk/*
+  ```
+
+- **{{< meta docker.advanced_docker.practices.minimize_layers.title >}}**  
+  {{< meta docker.advanced_docker.practices.minimize_layers.p1 >}}
+
+  ```dockerfile
+  RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
+  ```
+
+- **{{< meta docker.advanced_docker.practices.optimize_build.title >}}**  
+  {{< meta docker.advanced_docker.practices.optimize_build.p1 >}}  
+  {{< meta docker.advanced_docker.practices.optimize_build.p2 >}}
+- **{{< meta docker.advanced_docker.practices.secrets_and_configs.title >}}**  
+  {{< meta docker.advanced_docker.practices.secrets_and_configs.p1 >}}  
+  {{< meta docker.advanced_docker.practices.secrets_and_configs.intro >}}
+  - {{< meta docker.advanced_docker.practices.secrets_and_configs.items.secret >}}  
+  - {{< meta docker.advanced_docker.practices.secrets_and_configs.items.env >}}  
+  - {{< meta docker.advanced_docker.practices.secrets_and_configs.items.volumes >}}
+
+- **{{< meta docker.advanced_docker.practices.buildkit_secrets.title >}}**  
+  {{< meta docker.advanced_docker.practices.buildkit_secrets.p1 >}}
+
+  ```bash
+  docker buildx build --secret id=mysecret,src=./secret.txt .
+  ```
+
+  {{< meta docker.advanced_docker.practices.buildkit_secrets.p2 >}}
+
+  ```dockerfile
+  RUN --mount=type=secret,id=mysecret cat /run/secrets/mysecret
+  ```
+  {{< meta docker.advanced_docker.practices.buildkit_secrets.note >}}
+- **{{< meta docker.advanced_docker.practices.rootless.title >}}**  
+  {{< meta docker.advanced_docker.practices.rootless.p1 >}}  
+  {{< meta docker.advanced_docker.practices.rootless.steps_intro >}}
+
+  ```bash
+  dockerd-rootless-setuptool.sh install
+  export PATH=/usr/bin:$PATH
+  ```
+
+  {{< meta docker.advanced_docker.practices.rootless.check_intro >}}
+
+  ```bash
+  docker info | grep Rootless
+  ```
+
+  > {{< meta docker.advanced_docker.practices.rootless.warning >}}
+- **{{< meta docker.advanced_docker.practices.scan.title >}}**  
+  {{< meta docker.advanced_docker.practices.scan.p1 >}}
+
+  ```bash
+  docker scan my_image
+  ```
+
+  {{< meta docker.advanced_docker.practices.scan.p2 >}}
+
+  ```bash
+  docker scout cves my_image
+  ```
+
+  {{< meta docker.advanced_docker.practices.scan.p3 >}}
+- **{{< meta docker.advanced_docker.practices.resource_limits.title >}}**  
+  {{< meta docker.advanced_docker.practices.resource_limits.p1 >}}
+
+  ```bash
+  docker run --memory=512m --cpus="1.5" --pids-limit=200 myimage
+  ```
+
+  {{< meta docker.advanced_docker.practices.resource_limits.p2 >}}  
+  {{< meta docker.advanced_docker.practices.resource_limits.p3 >}}
+
+  ```bash
+  docker run --device-read-bps /dev/sda:1mb --device-write-bps /dev/sda:1mb myimage
+  ```
+
+  {{< meta docker.advanced_docker.practices.resource_limits.p4 >}}
+- **{{< meta docker.advanced_docker.practices.cleanup.title >}}**  
+  {{< meta docker.advanced_docker.practices.cleanup.p1 >}}
+
+  ```bash
+  docker system prune -af --volumes
+  ```
+
+  > {{< meta docker.advanced_docker.practices.cleanup.warning >}}
+
+  {{< meta docker.advanced_docker.practices.cleanup.p2 >}}
+
+  ```bash
+  docker image prune --filter "until=24h"
+  ```
+
+- **{{< meta docker.advanced_docker.practices.cicd.title >}}**  
+  {{< meta docker.advanced_docker.practices.cicd.p1 >}}  
+  {{< meta docker.advanced_docker.practices.cicd.example_intro >}}
+
+  ```yaml
+  - run: docker build -t myapp:${GITHUB_SHA} .
+  - run: docker push myapp:${GITHUB_SHA}
+  ```
+
+- **{{< meta docker.advanced_docker.practices.logging.title >}}**  
+  {{< meta docker.advanced_docker.practices.logging.p1 >}}  
+  {{< meta docker.advanced_docker.practices.logging.p2 >}}
+- **{{< meta docker.advanced_docker.practices.production.title >}}**  
+  {{< meta docker.advanced_docker.practices.production.p1 >}}  
+  {{< meta docker.advanced_docker.practices.production.ha_intro >}}
+  - {{< meta docker.advanced_docker.practices.production.items.swarm >}}  
+  - {{< meta docker.advanced_docker.practices.production.items.k8s >}}
+
+### {{< meta docker.advanced_docker.debugging.title >}}
+
+| {{< meta common.table.columns.command >}} | {{< meta common.table.columns.example >}} | {{< meta common.table.columns.description >}} |
+|---|---|---|
+| [**`docker container exec`**](https://docs.docker.com/reference/cli/docker/container/exec/) |  | **{{< meta docker.advanced_docker.debugging.exec.group_desc >}}** |
+|  | `docker exec -it my_container bash` | {{< meta docker.advanced_docker.debugging.exec.r1 >}} |
+|  | `docker exec -it my_container sh` | {{< meta docker.advanced_docker.debugging.exec.r2 >}} |
+|  | `docker exec my_container ls /app` | {{< meta docker.advanced_docker.debugging.exec.r3 >}} |
+| [**`docker container logs`**](https://docs.docker.com/reference/cli/docker/container/logs/) |  | **{{< meta docker.advanced_docker.debugging.logs.group_desc >}}** |
+|  | `docker logs -f --tail 100 my_container` | {{< meta docker.advanced_docker.debugging.logs.r1 >}} |
+|  | `docker logs my_container` | {{< meta docker.advanced_docker.debugging.logs.r2 >}} |
+|  | `docker logs --since 1h my_container` | {{< meta docker.advanced_docker.debugging.logs.r3 >}} |
+| [**`docker inspect`**](https://docs.docker.com/reference/cli/docker/inspect/) |  | **{{< meta docker.advanced_docker.debugging.inspect.group_desc >}}** |
+|  | `docker inspect my_container` | {{< meta docker.advanced_docker.debugging.inspect.r1 >}} |
+|  | `docker inspect --format '{{.State.Pid}}' my_container` | {{< meta docker.advanced_docker.debugging.inspect.r2 >}} |
+|  | `docker inspect --format '{{.NetworkSettings.IPAddress}}' my_container` | {{< meta docker.advanced_docker.debugging.inspect.r3 >}} |
+| [**`nsenter`**](https://man7.org/linux/man-pages/man1/nsenter.1.html) (with `strace`) |  | **{{< meta docker.advanced_docker.debugging.nsenter.group_desc >}}** |
+|  | `nsenter --target $(docker inspect --format '{{.State.Pid}}' my_container) --mount --uts --ipc --net --pid strace -p 1` | {{< meta docker.advanced_docker.debugging.nsenter.r1 >}} |
+|  | `nsenter --target $(docker inspect --format '{{.State.Pid}}' my_container) --mount --uts --ipc --net --pid bash` | {{< meta docker.advanced_docker.debugging.nsenter.r2 >}} |
+|  | `nsenter --target $(docker inspect --format '{{.State.Pid}}' my_container) --net netstat -tulnp` | {{< meta docker.advanced_docker.debugging.nsenter.r3 >}} |
+| [**`tcpdump`**](https://www.tcpdump.org/manpages/tcpdump.1.html) (inside container) |  | **{{< meta docker.advanced_docker.debugging.tcpdump.group_desc >}}** |
+|  | `docker exec -it my_container tcpdump -i any` | {{< meta docker.advanced_docker.debugging.tcpdump.r1 >}} |
+|  | `docker exec -it my_container tcpdump -nn port 80` | {{< meta docker.advanced_docker.debugging.tcpdump.r2 >}} |
+|  | `docker exec -it my_container tcpdump -w /tmp/dump.pcap` | {{< meta docker.advanced_docker.debugging.tcpdump.r3 >}} |
+| [**`docker container stats`**](https://docs.docker.com/reference/cli/docker/container/stats/) |  | **{{< meta docker.advanced_docker.debugging.stats.group_desc >}}** |
+|  | `docker stats my_container` | {{< meta docker.advanced_docker.debugging.stats.r1 >}} |
+|  | `docker stats` | {{< meta docker.advanced_docker.debugging.stats.r2 >}} |
+|  | `docker stats --no-stream` | {{< meta docker.advanced_docker.debugging.stats.r3 >}} |
+| [**`docker container top`**](https://docs.docker.com/reference/cli/docker/container/top/) |  | **{{< meta docker.advanced_docker.debugging.top.group_desc >}}** |
+|  | `docker top my_container` | {{< meta docker.advanced_docker.debugging.top.r1 >}} |
+|  | `docker top my_container aux` | {{< meta docker.advanced_docker.debugging.top.r2 >}} |
+|  | `docker top my_container -eo pid,cmd` | {{< meta docker.advanced_docker.debugging.top.r3 >}} |
+| [**`docker diff`**](https://docs.docker.com/reference/cli/docker/container/diff/) |  | **{{< meta docker.advanced_docker.debugging.diff.group_desc >}}** |
+|  | `docker diff my_container` | {{< meta docker.advanced_docker.debugging.diff.r1 >}} |
+|  | `docker diff my_container | grep '^A'` | {{< meta docker.advanced_docker.debugging.diff.r2 >}} |
+|  | `docker diff my_container | grep '^C'` | {{< meta docker.advanced_docker.debugging.diff.r3 >}} |
+| [**`docker cp`**](https://docs.docker.com/reference/cli/docker/container/cp/) |  | **{{< meta docker.advanced_docker.debugging.cp.group_desc >}}** |
+|---|---|---|
+|  | `docker cp my_container:/path/to/file ./file` | {{< meta docker.advanced_docker.debugging.cp.r1 >}} |
+|  | `docker cp ./config.yaml my_container:/app/config.yaml` | {{< meta docker.advanced_docker.debugging.cp.r2 >}} |
+|  | `docker cp my_container:/var/log/app.log - | tar x -O | grep "ERROR"` | {{< meta docker.advanced_docker.debugging.cp.r3 >}} |
+
+> {{< meta docker.advanced_docker.debugging.advanced_note >}}
+
+## {{< meta docker.compose_adv._root.title >}}
+
+### {{< meta docker.compose_adv.prof.title >}}
+
+| {{< meta common.table.columns.command >}} | {{< meta common.table.columns.example >}} | {{< meta common.table.columns.description >}} |
+|---|---|---|
+| [**`docker compose up`**](https://docs.docker.com/reference/cli/docker/compose/up/) | | **{{< meta docker.compose_adv.prof.up.group_desc >}}** |
+| | `docker compose up -d web db` | {{< meta docker.compose_adv.prof.up.r1 >}} |
+| | `docker compose up --build` | {{< meta docker.compose_adv.prof.up.r2 >}} |
+| | `docker compose up --remove-orphans` | {{< meta docker.compose_adv.prof.up.r3 >}} |
+| [**`docker compose build`**](https://docs.docker.com/reference/cli/docker/compose/build/) | | **{{< meta docker.compose_adv.prof.build.group_desc >}}** |
+| | `docker compose build --no-cache` | {{< meta docker.compose_adv.prof.build.r1 >}} |
+| | `docker compose build --parallel` | {{< meta docker.compose_adv.prof.build.r2 >}} |
+| | `docker compose build web` | {{< meta docker.compose_adv.prof.build.r3 >}} |
+| [**`docker compose pull`**](https://docs.docker.com/reference/cli/docker/compose/pull/) | | **{{< meta docker.compose_adv.prof.pull.group_desc >}}** |
+| | `docker compose pull` | {{< meta docker.compose_adv.prof.pull.r1 >}} |
+| | `docker compose pull db` | {{< meta docker.compose_adv.prof.pull.r2 >}} |
+| | `docker compose pull --ignore-pull-failures` | {{< meta docker.compose_adv.prof.pull.r3 >}} |
+| [**`docker compose restart`**](https://docs.docker.com/reference/cli/docker/compose/restart/) | | **{{< meta docker.compose_adv.prof.restart.group_desc >}}** |
+| | `docker compose restart` | {{< meta docker.compose_adv.prof.restart.r1 >}} |
+| | `docker compose restart worker` | {{< meta docker.compose_adv.prof.restart.r2 >}} |
+| | `docker compose restart web db` | {{< meta docker.compose_adv.prof.restart.r3 >}} |
+| [**`docker compose exec`**](https://docs.docker.com/reference/cli/docker/compose/exec/) | | **{{< meta docker.compose_adv.prof.exec.group_desc >}}** |
+| | `docker compose exec db psql -U user -d database` | {{< meta docker.compose_adv.prof.exec.r1 >}} |
+| | `docker compose exec web sh` | {{< meta docker.compose_adv.prof.exec.r2 >}} |
+| | `docker compose exec api curl http://localhost:8080` | {{< meta docker.compose_adv.prof.exec.r3 >}} |
+| [**`docker compose config`**](https://docs.docker.com/reference/cli/docker/compose/config/) | | **{{< meta docker.compose_adv.prof.config.group_desc >}}** |
+| | `docker compose config` | {{< meta docker.compose_adv.prof.config.r1 >}} |
+| | `docker compose config --services` | {{< meta docker.compose_adv.prof.config.r2 >}} |
+| | `docker compose config --environment` | {{< meta docker.compose_adv.prof.config.r3 >}} |
+| [**`docker compose watch`**](https://docs.docker.com/reference/cli/docker/compose/watch/) | | **{{< meta docker.compose_adv.prof.watch.group_desc >}}** |
+| | `docker compose watch` | {{< meta docker.compose_adv.prof.watch.r1 >}} |
+| [**`docker compose events`**](https://docs.docker.com/reference/cli/docker/compose/events/) | | **{{< meta docker.compose_adv.prof.events.group_desc >}}** |
+| | `docker compose events --json` | {{< meta docker.compose_adv.prof.events.r1 >}} |
+| [**`docker compose rm`**](https://docs.docker.com/reference/cli/docker/compose/rm/) | | **{{< meta docker.compose_adv.prof.rm.group_desc >}}** |
+| | `docker compose rm web db` | {{< meta docker.compose_adv.prof.rm.r1 >}} |
+| [**`docker compose pause`**](https://docs.docker.com/reference/cli/docker/compose/pause/) | | **{{< meta docker.compose_adv.prof.pause.group_desc >}}** |
+| | `docker compose pause api` | {{< meta docker.compose_adv.prof.pause.r1 >}} |
+| [**`docker compose unpause`**](https://docs.docker.com/reference/cli/docker/compose/unpause/) | | **{{< meta docker.compose_adv.prof.unpause.group_desc >}}** |
+| | `docker compose unpause api` | {{< meta docker.compose_adv.prof.unpause.r1 >}} |
+| [**`docker compose create`**](https://docs.docker.com/reference/cli/docker/compose/create/) | | **{{< meta docker.compose_adv.prof.create.group_desc >}}** |
+| | `docker compose create web db` | {{< meta docker.compose_adv.prof.create.r1 >}} |
+| [**`docker compose images`**](https://docs.docker.com/reference/cli/docker/compose/images/) | | **{{< meta docker.compose_adv.prof.images.group_desc >}}** |
+| | `docker compose images` | {{< meta docker.compose_adv.prof.images.r1 >}} |
+| [**`docker compose top`**](https://docs.docker.com/reference/cli/docker/compose/top/) | | **{{< meta docker.compose_adv.prof.top.group_desc >}}** |
+| | `docker compose top web` | {{< meta docker.compose_adv.prof.top.r1 >}} |
+
+### {{< meta docker.compose_adv.practices.title >}}
+
+- **{{< meta docker.compose_adv.practices.env_separation.title >}}**  
+  {{< meta docker.compose_adv.practices.env_separation.p1 >}}  
+  {{< meta docker.compose_adv.practices.env_separation.p2 >}}
+
+  ```bash
+  docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d
+  ```
+
+  {{< meta docker.compose_adv.practices.env_separation.p3 >}}
+- **{{< meta docker.compose_adv.practices.secrets.title >}}**  
+  {{< meta docker.compose_adv.practices.secrets.p1 >}}  
+  - {{< meta docker.compose_adv.practices.secrets.items.env >}}  
+  - {{< meta docker.compose_adv.practices.secrets.items.swarm_secret >}}  
+  - {{< meta docker.compose_adv.practices.secrets.items.volumes >}}  
+  - {{< meta docker.compose_adv.practices.secrets.items.external_mgr >}}
+
+- **{{< meta docker.compose_adv.practices.startup_order.title >}}**  
+  {{< meta docker.compose_adv.practices.startup_order.p1 >}}
+
+  ```yaml
+  services:
+    db:
+      image: postgres
+      healthcheck:
+        test: ["CMD-SHELL", "pg_isready -U postgres"]
+        interval: 10s
+        retries: 5
+    api:
+      image: my_api
+      depends_on:
+        db:
+          condition: service_healthy
+  ```
+
+- **{{< meta docker.compose_adv.practices.min_downtime.title >}}**  
+  {{< meta docker.compose_adv.practices.min_downtime.p1 >}}
+
+  ```bash
+  docker compose pull && docker compose up -d --remove-orphans
+  ```
+
+  {{< meta docker.compose_adv.practices.min_downtime.p2 >}}  
+  {{< meta docker.compose_adv.practices.min_downtime.p3 >}}
+
+  ```bash
+  docker compose down --remove-orphans
+  ```
+  
+  {{< meta docker.compose_adv.practices.min_downtime.p4 >}}
+- **{{< meta docker.compose_adv.practices.hot_reload_volumes.title >}}**  
+  {{< meta docker.compose_adv.practices.hot_reload_volumes.p1 >}}  
+  {{< meta docker.compose_adv.practices.hot_reload_volumes.p2 >}}
+- **{{< meta docker.compose_adv.practices.hot_reload_watch.title >}}**  
+
+  ```yaml
+  develop:
+    watch:
+      - path: ./src
+        action: sync
+        target: /app
+  ```
+
+- **{{< meta docker.compose_adv.practices.central_logging.title >}}**  
+  {{< meta docker.compose_adv.practices.central_logging.p1 >}}  
+  {{< meta docker.compose_adv.practices.central_logging.p2 >}}  
+  {{< meta docker.compose_adv.practices.central_logging.p3 >}}
+
+  ```yaml
+  services:
+    api:
+      image: my_api
+      logging:
+        driver: "json-file"
+        options:
+          max-size: "10m"
+          max-file: "3"
+  ```
+
+- **{{< meta docker.compose_adv.practices.auto_restart.title >}}**  
+  {{< meta docker.compose_adv.practices.auto_restart.p1 >}}
+
+  ```yaml
+  restart: unless-stopped
+  ```
+
+  {{< meta docker.compose_adv.practices.auto_restart.p2 >}}
+  - {{< meta docker.compose_adv.practices.auto_restart.policies.no >}}  
+  - {{< meta docker.compose_adv.practices.auto_restart.policies.always >}}  
+  - {{< meta docker.compose_adv.practices.auto_restart.policies.on_failure >}}
+  
+  {{< meta docker.compose_adv.practices.auto_restart.p3 >}}  
+  {{< meta docker.compose_adv.practices.auto_restart.p4 >}}
+
+- **{{< meta docker.compose_adv.practices.profiles.title >}}**  
+  {{< meta docker.compose_adv.practices.profiles.p1 >}}
+
+  ```yaml
+  services:
+    db:
+      image: postgres
+      profiles: ["backend"]
+    web:
+      image: nginx
+      profiles: ["frontend"]
+  ```
+
+  {{< meta docker.compose_adv.practices.profiles.p2 >}}
+
+  ```bash
+  docker compose --profile frontend up
+  ```
+
+### {{< meta docker.compose_adv.debugging.title >}}
+
+| {{< meta common.table.columns.command >}} | {{< meta common.table.columns.example >}} | {{< meta common.table.columns.description >}} |
+|---|---|---|
+| [**`docker compose exec`**](https://docs.docker.com/reference/cli/docker/compose/exec/) |  | **{{< meta docker.compose_adv.debugging.exec.group_desc >}}** |
+|  | `docker compose exec web sh` | {{< meta docker.compose_adv.debugging.exec.r1 >}} |
+|  | `docker compose exec db psql -U user -d database` | {{< meta docker.compose_adv.debugging.exec.r2 >}} |
+| [**`docker compose logs`**](https://docs.docker.com/reference/cli/docker/compose/logs/) |  | **{{< meta docker.compose_adv.debugging.logs.group_desc >}}** |
+|  | `docker compose logs -f db` | {{< meta docker.compose_adv.debugging.logs.r1 >}} |
+|  | `docker compose logs --tail=50 api` | {{< meta docker.compose_adv.debugging.logs.r2 >}} |
+|  | `docker compose logs --since=1h web` | {{< meta docker.compose_adv.debugging.logs.r3 >}} |
+| [**`docker inspect`**](https://docs.docker.com/reference/cli/docker/inspect/) |  | **{{< meta docker.compose_adv.debugging.inspect.group_desc >}}** |
+|  | `docker inspect $(docker compose ps -q web)` | {{< meta docker.compose_adv.debugging.inspect.r1 >}} |
+| [**`docker container stats`**](https://docs.docker.com/reference/cli/docker/container/stats/) |  | **{{< meta docker.compose_adv.debugging.stats.group_desc >}}** |
+|  | `docker stats $(docker compose ps -q worker)` | {{< meta docker.compose_adv.debugging.stats.r1 >}} |
+| [**`docker compose run --rm`**](https://docs.docker.com/reference/cli/docker/compose/run/) |  | **{{< meta docker.compose_adv.debugging.run.group_desc >}}** |
+|  | `docker compose run --rm web sh` | {{< meta docker.compose_adv.debugging.run.r1 >}} |
+| [**`docker container cp`**](https://docs.docker.com/reference/cli/docker/container/cp/) |  | **{{< meta docker.compose_adv.debugging.cp.group_desc >}}** |
+|  | `docker cp $(docker compose ps -q db):/dump.sql ./dump.sql` | {{< meta docker.compose_adv.debugging.cp.r1 >}} |
+
+> {{< meta docker.compose_adv.debugging.tip.one_off >}}
+
+## {{< meta docker.resources.title >}}
+
+### {{< meta docker.resources.ignore.title >}}
+
+{{< meta docker.resources.ignore.p1 >}}
+
+```text
+node_modules/
+*.log
+.env
+```
+
+### {{< meta docker.resources.aliases.title >}}
+
+{{< meta docker.resources.aliases.p1 >}}
+
+```bash
+alias dcu="docker compose up -d"
+alias dcd="docker compose down"
+alias dcb="docker compose build"
+```
+
+### {{< meta docker.resources.advice.title >}}
+
+- {{< meta docker.resources.advice.b1 >}}  
+- {{< meta docker.resources.advice.b2 >}}  
+- {{< meta docker.resources.advice.b3 >}}
+
+### {{< meta docker.resources.links.title >}}
+
+{{< meta docker.resources.links.docs_intro >}}  
+[https://docs.docker.com/](https://docs.docker.com/)
+
+{{< meta docker.resources.links.sheet_intro >}}  
+[https://dockerlabs.collabnix.com/docker/cheatsheet/](https://dockerlabs.collabnix.com/docker/cheatsheet/)
+
+{{< meta docker.resources.links.hub_intro >}}  
+[https://hub.docker.com/](https://hub.docker.com/)

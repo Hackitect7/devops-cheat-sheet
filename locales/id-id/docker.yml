@@ -1,0 +1,629 @@
+docker:
+  meta:
+    _root:
+      title: "🐳 Docker"
+      desc: "📘 Docker adalah platform untuk menjalankan aplikasi dalam container terisolasi. Lembar pintasan ini berisi perintah untuk bekerja dengan image, container, jaringan, volume, serta Docker Compose dan Swarm."
+
+  basic:
+    _root:
+      title: "📦 Perintah Dasar"
+    docker:
+      desc: "Perintah utama CLI Docker yang digunakan untuk menjalankan subperintah dan mengelola container, image, jaringan, dan volume"
+    docker_version:
+      desc: "Tampilkan versi Docker yang terinstal (klien dan server). Berguna untuk verifikasi instalasi"
+      ex1: "Tampilkan hanya versi API klien Docker"
+      ex2: "Tampilkan hanya versi server (Engine) Docker"
+      ex3: "Keluarkan info versi lengkap dalam format JSON"
+    docker_system_info:
+      desc: "Tampilkan informasi umum sistem Docker: jumlah container, image, sumber daya"
+      ex1: "Tampilkan data Docker: versi, jaringan, jumlah container dan image"
+      ex2: "Keluarkan info dalam format JSON — berguna untuk otomatisasi"
+      ex3: "Tampilkan jumlah CPU dan total memori"
+      ex4: "Tampilkan driver penyimpanan yang digunakan Docker"
+    docker_image_pull:
+      desc: "Unduh image dari Docker Hub atau registry lain. Container tidak dapat berjalan tanpa image"
+      ex1: "Unduh image Ubuntu terbaru"
+      ex2: "Unduh image Nginx ringan berbasis Alpine Linux"
+      ex3: "Unduh image Redis versi 7"
+    docker_container_run:
+      desc: "Buat dan jalankan container baru dari sebuah image"
+      ex1: "Jalankan Ubuntu dengan terminal Bash interaktif"
+      ex2: "Jalankan Nginx dalam mode detached (latar belakang)"
+      ex3: "Jalankan Nginx dan ikat port 80 container ke port 8080 host"
+    docker_container_ls:
+      desc: "Daftar container yang berjalan"
+      ex1: "Tampilkan hanya container yang sedang berjalan"
+      ex2: "Tampilkan semua container, termasuk yang berhenti"
+      ex3: "Keluarkan hanya nama container"
+    docker_container_start:
+      desc: "Mulai satu atau lebih container yang berhenti"
+      ex1: "Mulai container berdasarkan nama"
+      ex2: "Mulai semua container"
+      ex3: "Mulai container dan lampirkan terminal interaktif"
+    docker_container_stop:
+      desc: "Hentikan container yang berjalan"
+      ex1: "Hentikan container berdasarkan nama"
+      ex2: "Hentikan semua container yang berjalan"
+      ex3: "Hentikan container dengan memberi waktu 5 detik untuk menyelesaikan proses"
+    docker_container_restart:
+      desc: "Restart container"
+      ex1: "Restart container tertentu"
+      ex2: "Restart semua container yang berjalan"
+      ex3: "Restart container dengan jeda 10 detik"
+    docker_container_rm:
+      desc: "Hapus container"
+      ex1: "Hapus container tertentu yang sudah berhenti"
+      ex2: "Hapus semua container yang sudah berhenti"
+      ex3: "Paksa hapus container yang sedang berjalan"
+    docker_image_ls:
+      desc: "Daftar image yang sudah diunduh"
+      ex1: "Tampilkan semua image di host"
+      ex2: "Tampilkan semua image, termasuk lapisan perantara"
+      ex3: "Keluarkan hanya nama dan tag image"
+    docker_image_rm:
+      desc: "Hapus satu atau lebih image dari penyimpanan lokal"
+      ex1: "Hapus image dengan tag `latest` dari repositori `test1`"
+      ex2: "Hapus image berdasarkan ID"
+      ex3: "Hapus semua image (gunakan dengan hati-hati!)"
+
+  container:
+    _root:
+      title: "🔁 Manajemen Container"
+    docker_container_exec:
+      desc: "Jalankan perintah di dalam container yang sedang berjalan"
+      ex1: "Luncurkan shell bash interaktif di dalam container bernama `container`"
+      ex2: "Jalankan perintah `ls` di direktori `/app` dalam container"
+      ex3: "Jalankan perintah di container dalam mode detached (tanpa menunggu)"
+    docker_container_logs:
+      desc: "Lihat log container"
+      ex1: "Tampilkan semua log dari container `container`"
+      ex2: "Ikuti log container secara real-time"
+      ex3: "Tampilkan 50 baris log terakhir"
+    docker_inspect:
+      desc: "Ambil informasi JSON terperinci tentang container atau image"
+      ex1: "Tampilkan detail container `container`"
+      ex2: "Tampilkan alamat IP container"
+    docker_container_stats:
+      desc: "Tampilkan statistik penggunaan sumber daya container secara real-time"
+      ex1: "Tampilkan CPU, memori, jaringan, dan penggunaan disk untuk semua container"
+      ex2: "Tampilkan statistik hanya untuk container tertentu"
+      ex3: "Tampilkan snapshot statistik sekali lalu keluar"
+    docker_container_rename:
+      desc: "Ganti nama container"
+      ex1: "Ganti nama container dari `old_name` menjadi `new_name`"
+    docker_container_cp:
+      desc: "Salin file antara container dan host"
+      ex1: "Salin file dari container ke direktori host saat ini"
+      ex2: "Salin file dari host ke container"
+      ex3: "Streaming file log dari container dan filter baris \"ERROR\" tanpa menyimpan ke disk"
+    docker_container_top:
+      desc: "Tampilkan proses yang berjalan di dalam container"
+      ex1: "Tampilkan proses dari container bernama `container`"
+    docker_container_pause:
+      desc: "Jeda semua proses dalam container"
+      ex1: "Jeda container `container`"
+    docker_container_unpause:
+      desc: "Lanjutkan container yang dijeda"
+      ex1: "Lanjutkan container `container`"
+    docker_container_update:
+      desc: "Perbarui pengaturan container tanpa restart"
+      ex1: "Batasi penggunaan memori container hingga 500 MB"
+
+  images:
+    _root:
+      title: "🧱 Image dan Dockerfile"
+    docker_buildx_build:
+      desc: "Bangun image Docker dari Dockerfile"
+      ex1: "Bangun image dengan tag `my_image` dari direktori saat ini"
+      ex2: "Bangun image dengan tag versi `1.0`"
+      ex3: "Bangun image tanpa menggunakan cache untuk build bersih"
+    docker_container_commit:
+      desc: "Buat image dari keadaan container saat ini"
+      ex1: "Buat image `my_img` dengan tag `v1` dari container `container`"
+      ex2: "Buat image dengan pesan commit"
+      ex3: "Buat image dengan menyertakan penulis"
+    docker_image_tag:
+      desc: "Tambahkan atau ubah tag image"
+      ex1: "Tambahkan tag untuk push ke registry `myrepo`"
+      ex2: "Buat tag `stable` untuk image bertag `1.0`"
+      ex3: "Tambahkan tag `backup` ke image lokal"
+    docker_image_push:
+      desc: "Push image ke Docker Hub atau registry lain"
+      ex1: "Push image bertag `latest` ke repositori `myrepo`"
+      ex2: "Push image bertag `1.0`"
+      ex3: "Push image dengan tag default `latest`"
+    docker_login:
+      desc: "Autentikasi ke Docker Hub atau registry lain"
+      ex1: "Masukkan username dan password secara interaktif untuk Docker Hub"
+      ex2: "Login ke registry privat"
+      ex3: "Login dengan username dan password (tidak disarankan)"
+    docker_logout:
+      desc: "Logout dari Docker Hub atau registry lain"
+      ex1: "Logout dari Docker Hub"
+      ex2: "Logout dari registry privat"
+    healthcheck:
+      desc: "Instruksi Dockerfile untuk otomatis memeriksa status kesehatan container"
+      ex1: "Tambahkan health check untuk memverifikasi ketersediaan layanan setiap 30 detik"
+      ex2: "Periksa status healthcheck dari container yang sedang berjalan"
+
+  networks:
+    _root:
+      title: "🔌 Jaringan dan Volume"
+    docker_network_ls:
+      desc: "Daftar semua jaringan Docker"
+      ex1: "Tampilkan semua jaringan Docker yang dibuat"
+      ex2: "Tampilkan hanya jaringan dengan driver `bridge`"
+      ex3: "Tampilkan hanya nama jaringan"
+    docker_network_create:
+      desc: "Buat jaringan Docker baru"
+      ex1: "Buat jaringan bernama `my_net` dengan pengaturan default"
+      ex2: "Buat jaringan dengan driver `bridge`"
+      ex3: "Buat jaringan dengan subnet tertentu"
+    docker_network_connect:
+      desc: "Hubungkan container ke jaringan"
+      ex1: "Hubungkan container bernama `container` ke jaringan `my_net`"
+      ex2: "Hubungkan dengan alias `db_net`"
+    docker_network_disconnect:
+      desc: "Putuskan container dari jaringan"
+      ex1: "Putuskan container `container` dari jaringan `my_net`"
+    docker_volume_ls:
+      desc: "Daftar semua volume Docker"
+      ex1: "Tampilkan semua volume Docker"
+      ex2: "Tampilkan volume yang tidak digunakan"
+    docker_volume_create:
+      desc: "Buat volume Docker baru"
+      ex1: "Buat volume bernama `my_vol`"
+      ex2: "Buat volume sementara menggunakan tmpfs"
+    docker_volume_inspect:
+      desc: "Tampilkan informasi terperinci tentang volume"
+      ex1: "Tampilkan detail volume `my_vol` dalam format JSON"
+    docker_volume_rm:
+      desc: "Hapus satu atau lebih volume"
+      ex1: "Hapus volume bernama `my_vol`"
+      ex2: "Hapus semua volume yang tidak digunakan"
+
+  plugins:
+    _root:
+      title: "🧩 Plugin Docker"
+    docker_plugin_ls:
+      desc: "Daftar plugin Docker yang terpasang"
+      ex1: "Tampilkan semua plugin dan statusnya"
+    docker_plugin_install:
+      desc: "Instal plugin Docker dari registry"
+      ex1: "Instal plugin volume SSHFS"
+      ex2: "Instal plugin jaringan Weave"
+    docker_plugin_disable:
+      desc: "Nonaktifkan plugin yang terpasang"
+      ex1: "Nonaktifkan plugin SSHFS"
+    docker_plugin_enable:
+      desc: "Aktifkan plugin yang sebelumnya dinonaktifkan"
+      ex1: "Aktifkan plugin SSHFS"
+    docker_plugin_rm:
+      desc: "Hapus plugin Docker"
+      ex1: "Hapus plugin SSHFS"
+
+  compose:
+    _root:
+      title: 📋 Docker Compose
+    docker_compose_up:
+      desc: "Mulai container yang didefinisikan di `docker-compose.yml`"
+      ex1: "Mulai semua service di direktori saat ini dalam mode interaktif"
+      ex2: "Mulai service dalam mode detached (latar belakang)"
+      ex3: "Bangun image sebelum memulai service"
+    docker_compose_down:
+      desc: "Hentikan dan hapus container, jaringan, dan volume yang dibuat oleh `up`"
+      ex1: "Hentikan semua service yang berjalan dan hapus resource terkait"
+      ex2: "Hapus juga volume yang dibuat oleh Compose"
+      ex3: "Hapus juga image yang dibuat oleh Compose"
+    docker_compose_logs:
+      desc: "Lihat log dari semua service atau service tertentu"
+      ex1: "Tampilkan log semua service"
+      ex2: "Ikuti log secara real-time"
+      ex3: "Tampilkan log hanya untuk service `web`"
+    docker_compose_exec:
+      desc: "Jalankan perintah di dalam container service yang sedang berjalan"
+      ex1: "Masuk ke shell bash interaktif di dalam container service `web`"
+      ex2: "Jalankan perintah `ls` di dalam container database"
+      ex3: "Jalankan perintah di dalam container `worker` dalam mode detached"
+    docker_compose_build:
+      desc: "Bangun atau bangun ulang image service"
+      ex1: "Bangun semua image yang didefinisikan di `docker-compose.yml`"
+      ex2: "Bangun hanya image service `web`"
+      ex3: "Bangun image tanpa menggunakan cache"
+    docker_compose_ps:
+      desc: "Tampilkan status semua service dan container"
+      ex1: "Tampilkan semua container, termasuk yang berhenti"
+      ex2: "Tampilkan hanya nama service"
+    docker_compose_pull:
+      desc: "Unduh/perbarui image service dari registry"
+      ex1: "Pull image hanya untuk service `web`"
+      ex2: "Lanjutkan pull meskipun beberapa image gagal"
+    docker_compose_restart:
+      desc: "Restart semua service atau service tertentu"
+      ex1: "Restart hanya service `db`"
+      ex2: "Restart service dengan timeout 10 detik"
+    docker_compose_config:
+      desc: "Tampilkan konfigurasi Compose final dalam format YAML"
+      ex1: "Daftar semua service dalam konfigurasi"
+      ex2: "Daftar semua volume yang didefinisikan dalam konfigurasi"
+    docker_compose_start:
+      desc: "Mulai service yang berhenti tanpa membuat ulang container"
+      ex1: "Mulai service `web`"
+      ex2: "Mulai beberapa service sekaligus"
+    docker_compose_stop:
+      desc: "Hentikan service tanpa menghapus container"
+      ex1: "Hentikan service `web`"
+      ex2: "Hentikan service dengan timeout 5 detik"
+
+  export_import:
+    _root:
+      title: 📤 Ekspor dan Impor
+    docker_image_save:
+      desc: "Simpan satu atau lebih image Docker ke arsip tar untuk impor atau transfer nanti"
+      ex1: "Simpan image Docker ke file arsip tar"
+      ex2: "Cara alternatif untuk menyimpan image ke file"
+      ex3: "Simpan image Redis tertentu ke file"
+    docker_image_load:
+      desc: "Muat image Docker dari arsip tar yang disimpan sebelumnya"
+      ex1: "Muat image Docker dari file arsip tar"
+      ex2: "Muat image dengan menentukan file melalui parameter"
+      ex3: "Muat image tanpa output progres"
+    docker_container_export:
+      desc: "Ekspor filesystem container sebagai arsip tar tanpa riwayat atau metadata image"
+      ex1: "Ekspor filesystem container ke arsip"
+      ex2: "Ekspor container berdasarkan nama"
+      ex3: "Ekspor berdasarkan ID container menggunakan flag `-o`"
+    docker_image_import:
+      desc: "Buat image baru dari arsip tar filesystem"
+      ex1: "Impor file arsip sebagai image Docker baru"
+      ex2: "Impor image langsung dari URL"
+      ex3: "Impor dari input standar"
+
+  cleanup:
+    _root:
+      title: 🧹 Pembersihan dan Diagnostik
+    docker_system_df:
+      desc: "Tampilkan penggunaan disk Docker: volume, image, container, dan cache build"
+      ex1: "Output terperinci dengan info pada setiap image, container, dan volume"
+      ex2: "Output informasi dalam format JSON"
+    docker_system_prune:
+      desc: "Hapus semua data Docker yang tidak digunakan: container berhenti, jaringan tidak digunakan, image menggantung, dan cache build"
+      ex1: "Hapus image tidak digunakan termasuk yang menggantung"
+      ex2: "Hapus volume tidak digunakan bersama resource lain"
+    docker_image_prune:
+      desc: "Hapus image Docker yang tidak digunakan termasuk lapisan menggantung"
+      ex1: "Hapus semua image tidak digunakan termasuk yang menggantung"
+      ex2: "Hapus image yang lebih lama dari 24 jam"
+    docker_container_prune:
+      desc: "Hapus container berhenti sesuai filter atau semua jika tidak ada filter"
+      ex1: "Hapus container berhenti yang lebih lama dari 24 jam"
+      ex2: "Hapus tanpa konfirmasi"
+
+  swarm:
+    _root:
+      title: 🐝 Docker Swarm
+    docker_swarm_init:
+      desc: "Inisialisasi cluster Docker Swarm baru pada node saat ini"
+      ex1: "Inisialisasi cluster dengan menentukan alamat IP"
+      ex2: "Inisialisasi dengan port listen tertentu"
+    docker_service_create:
+      desc: "Buat service baru di cluster Swarm"
+      ex1: "Buat service Nginx di Swarm"
+      ex2: "Buat service dengan 3 replika"
+      ex3: "Buat service dengan mapping port"
+    docker_stack_deploy:
+      desc: "Deploy stack service ke cluster Swarm berdasarkan file Compose"
+      ex1: "Deploy stack dari file compose"
+      ex2: "Deploy dengan penerusan autentikasi registry"
+      ex3: "Gunakan file compose alternatif untuk stack"
+    docker_stack_rm:
+      desc: "Hapus satu atau lebih stack dari cluster Swarm"
+      ex1: "Hapus stack `mystack`"
+      ex2: "Hapus semua stack (tidak disarankan)"
+      ex3: "Hapus stack dan tinggalkan Swarm"
+
+  advanced_docker:
+    _root:
+      title: "💼 Penggunaan Docker Tingkat Lanjut"
+
+    prof:
+      title: "🚀 Perintah Docker Profesional"
+      docker_buildx:
+        desc: "Alat build image canggih pengganti `docker build`. Mendukung multi-platform, caching, build paralel, dan ekspor ke berbagai format. Berguna untuk CI/CD dan pengembangan lintas platform"
+        ex1: "Bangun image multi-platform (ARM dan x86 sekaligus)"
+        ex2: "Bangun image dan muat ke cache Docker Engine lokal"
+        ex3: "Bangun dan push image multi-platform ke registry"
+      docker_context:
+        desc: "Kelola konteks Docker untuk bekerja dengan lingkungan remote atau multi. Memungkinkan beralih cepat antara Docker Engine lokal dan remote"
+        ex1: "Buat konteks untuk menghubungkan ke host Docker remote"
+        ex2: "Beralih ke konteks remote"
+        ex3: "Daftar konteks yang tersedia dan yang aktif"
+      docker_system_events:
+        desc: "Dengarkan event Docker secara real-time, dengan filter berdasarkan jenis event (misalnya, start container). Berguna untuk pemantauan dan otomatisasi"
+        ex1: "Tampilkan hanya event start container"
+        ex2: "Tampilkan event dari 1 jam terakhir hingga 10 menit lalu"
+        ex3: "Tampilkan hanya event terkait jaringan"
+        ex4: "Tampilkan event terkait image `nginx`"
+      docker_container_update:
+        desc: "Ubah batas sumber daya dan pengaturan container yang berjalan tanpa restart"
+        ex1: "Atur batas 2 CPU dan 1 GB RAM"
+        ex2: "Atur kebijakan auto-restart ke `unless-stopped`"
+        ex3: "Batasi jumlah proses hingga 200"
+      docker_container_diff:
+        desc: "Tampilkan perubahan filesystem dalam container dibandingkan image asli. Berguna untuk debugging dan audit"
+        ex1: "Tampilkan semua perubahan filesystem dalam container"
+        ex2: "Tampilkan hanya file yang ditambahkan (`A` — Added)"
+      docker_image_history:
+        desc: "Tampilkan riwayat lapisan image: perintah build, ukuran setiap lapisan, dan waktu pembuatan. Berguna untuk optimisasi dan audit"
+        ex1: "Tampilkan riwayat lapisan sebuah image"
+        ex2: "Tampilkan perintah build penuh tanpa pemotongan"
+        ex3: "Keluarkan hanya perintah build dan ukuran lapisan"
+
+    practices:
+      title: "🛠 Praktik dan Otomatisasi Docker"
+      minimize_image_size:
+        title: "Meminimalkan ukuran image"
+        p1: "Gunakan base image seperti `alpine` atau `scratch` untuk ukuran minimal."
+        p2: "Untuk menggabungkan lapisan, gunakan `--squash` saat build (memerlukan fitur eksperimental)."
+        p3: "Juga, hapus file sementara dan cache dalam satu lapisan:"
+      minimize_layers:
+        title: "Meminimalkan jumlah lapisan"
+        p1: "Gabungkan perintah dalam satu `RUN` untuk mengurangi jumlah lapisan dan ukuran akhir image:"
+      optimize_build:
+        title: "Optimalkan build Dockerfile"
+        p1: "Gunakan multi-stage build agar hanya file yang diperlukan tersisa dalam image final."
+        p2: "Salin dan instal dependensi terlebih dahulu, lalu salin kode — ini meningkatkan caching lapisan dan mempercepat rebuild."
+      secrets_and_configs:
+        title: "Pisahkan secret dan config"
+        p1: "Jangan pernah menyimpan file `.env`, API key, atau sertifikat privat di dalam image."
+        intro: "Gunakan untuk konfigurasi:"
+        items:
+          secret: "`docker secret` (dalam Swarm)"
+          env: "variabel lingkungan (`-e VAR=value` atau `.env`)"
+          volumes: "volume eksternal untuk config"
+      buildkit_secrets:
+        title: "Secret saat build (BuildKit)"
+        p1: "Untuk pengiriman secret yang aman saat build, gunakan flag `--secret`:"
+        p2: "Dalam Dockerfile, secret tersedia di `/run/secrets/mysecret`:"
+        note: "🛡 Ini mencegah secret disimpan dalam lapisan image."
+      rootless:
+        title: "Docker Rootless"
+        p1: "Menjalankan Docker tanpa hak root meningkatkan keamanan dan mengurangi risiko kompromi host."
+        steps_intro: "Untuk mengaktifkan:"
+        check_intro: "Periksa:"
+        warning: "⚠ Beberapa fitur (misalnya, port forwarding <1024) tidak akan tersedia."
+      scan:
+        title: "Pindai image untuk kerentanan"
+        p1: "Gunakan alat bawaan:"
+        p2: "Atau CLI baru:"
+        p3: "Ini membantu mendeteksi kerentanan pada base image dan dependensi."
+      resource_limits:
+        title: "Pantau penggunaan sumber daya"
+        p1: "Batasi container berdasarkan memori, CPU, dan jumlah proses:"
+        p2: "Ini mencegah penggunaan sumber daya berlebihan."
+        p3: "Anda juga bisa membatasi I/O:"
+        p4: "Berguna untuk container yang tidak boleh membebani subsistem disk."
+      cleanup:
+        title: "Pembersihan otomatis"
+        p1: "Secara rutin hapus image, container, volume, dan jaringan yang tidak digunakan:"
+        warning: "⚠ Hati-hati: perintah ini menghapus semua resource yang tidak digunakan."
+        p2: "Untuk pembersihan selektif gunakan:"
+      cicd:
+        title: "Integrasi CI/CD"
+        p1: "Gabungkan build, test, dan deploy ke GitHub Actions, GitLab CI, Jenkins pipeline."
+        example_intro: "Contoh langkah GitHub Actions:"
+      logging:
+        title: "Logging dan monitoring"
+        p1: "Lampirkan driver logging (`--log-driver`) ke sistem terpusat: ELK, Loki, Splunk."
+        p2: "Gunakan Prometheus + cAdvisor untuk metrik container."
+      production:
+        title: "Deploy produksi"
+        p1: "Pisahkan konfigurasi untuk development dan production menggunakan `docker-compose.override.yml`."
+        ha_intro: "Untuk high availability dan scaling gunakan:"
+        items:
+          swarm: "Docker Swarm"
+          k8s: "Kubernetes"
+
+    debugging:
+      title: "🐞 Debugging dan Profiling Container Docker"
+      exec:
+        group_desc: "Menjalankan perintah di dalam container yang sedang berjalan, memberikan akses interaktif atau kemampuan menjalankan proses di lingkungan terisolasi container"
+        r1: "Mulai terminal interaktif (bash) di dalam container yang sedang berjalan"
+        r2: "Mulai shell minimal di dalam container (jika bash tidak tersedia)"
+        r3: "Jalankan perintah di dalam container tanpa mode interaktif"
+      logs:
+        group_desc: "Menampilkan log dari container tertentu, memungkinkan melihat output dan event terkait operasinya untuk diagnosis dan pemantauan"
+        r1: "Lihat 100 baris log terakhir dengan streaming real-time"
+        r2: "Tampilkan semua log yang tersedia dari container"
+        r3: "Tampilkan log dari 1 jam terakhir"
+      inspect:
+        group_desc: "Mengeluarkan informasi terperinci tentang objek Docker (container, image, jaringan, dll.) dalam format JSON, termasuk konfigurasi dan status"
+        r1: "Dapatkan info JSON lengkap tentang container"
+        r2: "Dapatkan PID dari proses utama container di host"
+        r3: "Tampilkan alamat IP container"
+      nsenter:
+        group_desc: "Utilitas Linux untuk masuk ke namespace proses lain (di sini, container). Digunakan dengan `strace` untuk melacak system call di dalam container untuk debugging"
+        r1: "Masuk ke namespace container dan lacak system call dari proses 1"
+        r2: "Buka shell bash di dalam namespace container"
+        r3: "Lihat port terbuka di dalam container"
+      tcpdump:
+        group_desc: "Alat konsol untuk menangkap dan menganalisis lalu lintas jaringan. Digunakan di container untuk mendiagnosis masalah jaringan, menganalisis paket, dan memantau koneksi"
+        r1: "Tangkap dan analisis lalu lintas jaringan di dalam container"
+        r2: "Tangkap lalu lintas hanya pada port 80"
+        r3: "Simpan lalu lintas ke file untuk analisis nanti"
+      stats:
+        group_desc: "Menampilkan metrik penggunaan sumber daya saat ini (CPU, memori, jaringan, disk) untuk satu atau beberapa container secara real-time"
+        r1: "Tampilkan penggunaan CPU, memori, jaringan, dan disk secara real-time oleh container"
+        r2: "Tampilkan statistik untuk semua container"
+        r3: "Keluarkan statistik sekali lalu keluar"
+      top:
+        group_desc: "Menampilkan daftar proses yang berjalan di dalam container, mirip dengan `ps` di Linux, untuk menganalisis aktivitas container"
+        r1: "Tampilkan proses yang berjalan di dalam container"
+        r2: "Gunakan format output alternatif seperti `ps aux`"
+        r3: "Tampilkan hanya PID dan command proses"
+      diff:
+        group_desc: "Menampilkan perubahan pada filesystem container dibandingkan image dasarnya, menunjukkan file yang ditambahkan, diubah, atau dihapus"
+        r1: "Tampilkan perubahan filesystem dalam container dibandingkan image dasar"
+        r2: "Tampilkan hanya file yang ditambahkan (`A` — Added)"
+        r3: "Tampilkan hanya file yang diubah (`C` — Changed)"
+      cp:
+        group_desc: "Menyalin file dan direktori antara container dan host, memungkinkan pertukaran data dan backup"
+        r1: "Salin file dari container ke host"
+        r2: "Salin file dari host ke container"
+        r3: "Salin file log dan filter baris error tanpa menyimpan ke disk"
+      advanced_note: "💡 Untuk debugging tingkat lanjut Anda dapat menggunakan `nsenter`, `strace`, `tcpdump`, `gdb`, dan alat low-level lainnya."
+
+  compose_adv:
+    _root:
+      title: "💼 Penggunaan Docker Compose Tingkat Lanjut"
+    prof:
+      title: "🚀 Perintah Docker Compose Profesional"
+      up:
+        group_desc: "Memulai dan mengelola lifecycle service yang ditentukan dari file docker-compose.yml dengan kemampuan berjalan di latar belakang"
+        r1: "Jalankan hanya service `web` dan `db` dalam mode detached"
+        r2: "Bangun ulang image sebelum memulai service"
+        r3: "Hapus container yang tidak didefinisikan dalam file compose saat ini"
+      build:
+        group_desc: "Bangun image untuk service sesuai deskripsi di file compose dengan kontrol cache dan paralelisme"
+        r1: "Bangun ulang image sepenuhnya tanpa menggunakan cache"
+        r2: "Bangun semua service secara bersamaan untuk mempercepat proses"
+        r3: "Bangun image hanya untuk service `web`"
+      pull:
+        group_desc: "Unduh versi terbaru image dari registry untuk semua service atau service tertentu"
+        r1: "Pull image untuk semua service"
+        r2: "Pull image hanya untuk service `db`"
+        r3: "Lanjutkan eksekusi dengan mengabaikan error saat pull image"
+      restart:
+        group_desc: "Restart semua service atau service tertentu tanpa membuat ulang container"
+        r1: "Restart semua service di proyek saat ini"
+        r2: "Restart hanya service `worker`"
+        r3: "Restart beberapa service sekaligus"
+      exec:
+        group_desc: "Jalankan perintah di dalam container service yang sedang berjalan dengan mode interaktif opsional"
+        r1: "Jalankan psql di dalam container service `db`"
+        r2: "Buka shell di dalam container `web`"
+        r3: "Eksekusi permintaan curl dari container service `api`"
+      config:
+        group_desc: "Keluarkan konfigurasi Compose final dengan mempertimbangkan semua file dan variabel lingkungan"
+        r1: "Tampilkan konfigurasi gabungan dalam format YAML"
+        r2: "Daftar semua service"
+        r3: "Tampilkan semua variabel lingkungan yang digunakan oleh service"
+      watch:
+        group_desc: "Secara otomatis restart service saat file sumber berubah, berguna untuk pengembangan"
+        r1: "Mulai memantau file dan restart service saat ada perubahan"
+      events:
+        group_desc: "Stream event Compose: service start, stop, update"
+        r1: "Terima event dalam format JSON"
+      rm:
+        group_desc: "Hapus container service yang berhenti"
+        r1: "Hapus container dari service `web` dan `db`"
+      pause:
+        group_desc: "Jeda operasi service"
+        r1: "Jeda service `api`"
+      unpause:
+        group_desc: "Lanjutkan service yang dijeda"
+        r1: "Lanjutkan service `api`"
+      create:
+        group_desc: "Buat container tanpa menjalankannya"
+        r1: "Buat container untuk service `web` dan `db` tetapi jangan jalankan"
+      images:
+        group_desc: "Tampilkan daftar image yang digunakan oleh service"
+        r1: "Tampilkan image semua service"
+      top:
+        group_desc: "Tampilkan proses yang berjalan di dalam container service"
+        r1: "Tampilkan proses di dalam container service `web`"
+
+    practices:
+      title: "🛠 Praktik dan Otomatisasi Berguna dengan Docker Compose"
+      env_separation:
+        title: "Pemisahan Lingkungan"
+        p1: "Gunakan file `docker-compose.override.yml` terpisah untuk lingkungan berbeda — `development`, `staging`, `production`. Ini membantu mengisolasi konfigurasi dan menghindari konflik antar pengaturan."
+        p2: "Anda juga bisa menggabungkan beberapa file konfigurasi menggunakan flag `-f`:"
+        p3: "Gunakan file `.env` berbeda (`.env.dev`, `.env.prod`, dll.) untuk mengelola variabel lingkungan."
+      secrets:
+        title: "Penyimpanan Secret yang Aman"
+        p1: "Jangan masukkan data sensitif (password, token) langsung di file Compose. Sebagai gantinya gunakan:"
+        items:
+          env: "file `.env` untuk variabel lingkungan (perlu diingat file `.env` tidak terenkripsi dan tidak boleh di-commit ke repo publik)"
+          swarm_secret: "`docker secret` dan `docker config` untuk manajemen secret dan konfigurasi yang aman di Docker Swarm"
+          volumes: "volume eksternal untuk file konfigurasi yang berisi secret"
+          external_mgr: "sistem manajemen secret eksternal (misalnya HashiCorp Vault, AWS Secrets Manager)"
+      startup_order:
+        title: "Urutan Startup dengan `depends_on` dan `healthcheck`"
+        p1: "Agar service menunggu dependensi siap:"
+      min_downtime:
+        title: "Minimalkan Downtime Saat Update"
+        p1: "Sebelum memperbarui service, jalankan:"
+        p2: "Opsi `-d` menjalankan container di latar belakang, dan `--remove-orphans` menghapus container yang tidak didefinisikan di konfigurasi saat ini."
+        p3: "Untuk sepenuhnya menghentikan dan menghapus container lama jika diperlukan:"
+        p4: "Ini memastikan image baru dimuat dan container yang tidak digunakan dihapus tanpa downtime."
+      hot_reload_volumes:
+        title: "Hot Code Reloading untuk Pengembangan"
+        p1: "Gunakan `volumes` untuk me-mount direktori lokal ke dalam container. Ini memungkinkan perubahan kode langsung berlaku tanpa rebuild image."
+        p2: "Perhatikan masalah izin file dan caching filesystem, terutama di Windows dan macOS, untuk menghindari masalah performa."
+      hot_reload_watch:
+        title: "Hot Code Reloading Tanpa Volume (Compose 2.22+)"
+      central_logging:
+        title: "Logging Terpusat untuk Service"
+        p1: "Arahkan log container ke sistem monitoring dan agregasi log seperti ELK Stack, Loki, Prometheus, dan Fluentd untuk analisis dan alerting mudah."
+        p2: "Gunakan driver logging Docker (`--log-driver`) untuk mengaktifkan pengumpulan log terpusat."
+        p3: "Konfigurasikan driver logging untuk container di Compose:"
+      auto_restart:
+        title: "Restart Otomatis Service"
+        p1: "Konfigurasikan kebijakan restart di `docker-compose.yml`:"
+        p2: "Kebijakan restart lainnya termasuk:"
+        policies:
+          no: "`no` — tidak ada restart otomatis (default)"
+          always: "`always` — selalu restart container"
+          on_failure: "`on-failure` — restart hanya saat gagal (opsional dengan jumlah percobaan)"
+        p3: "Di produksi, `unless-stopped` adalah pilihan optimal untuk memastikan ketahanan service."
+        p4: "Ini memungkinkan pemulihan otomatis service setelah kegagalan atau reboot host."
+      profiles:
+        title: "Profil Service"
+        p1: "Memungkinkan menjalankan hanya grup service tertentu:"
+        p2: "Untuk menjalankan hanya profil frontend:"
+
+    debugging:
+      title: "🐞 Debugging dan Profiling Service di Docker Compose"
+      exec:
+        group_desc: "Jalankan perintah di dalam service yang sedang berjalan, memberikan akses ke container atau menjalankan proses individual"
+        r1: "Buka shell di dalam container service `web`"
+        r2: "Jalankan perintah psql di dalam container service `db`"
+      logs:
+        group_desc: "Lihat log service untuk diagnosis dan pemantauan"
+        r1: "Lihat log service `db` secara real-time"
+        r2: "Tampilkan 50 baris log terakhir dari service `api`"
+        r3: "Tampilkan log dari 1 jam terakhir untuk service `web`"
+      inspect:
+        group_desc: "Lihat informasi terperinci tentang container yang menjalankan service"
+        r1: "Dapatkan JSON dengan info detail tentang container service `web`"
+      stats:
+        group_desc: "Pantau penggunaan sumber daya container yang menjalankan service"
+        r1: "Lacak penggunaan CPU, memori, dan sumber daya lain untuk container service `worker`"
+      run:
+        group_desc: "Jalankan container sementara dengan pengaturan service, berguna untuk debugging"
+        r1: "Mulai container one-off untuk service `web` dengan shell interaktif"
+      cp:
+        group_desc: "Salin file antara host dan container"
+        r1: "Salin file dari container service `db` ke host"
+      tip:
+        one_off: "💡 Untuk debugging nyaman dari setup multi-service yang kompleks, gunakan `docker compose run --rm` untuk meluncurkan container individual dengan jaringan dan volume yang diperlukan tanpa memengaruhi service utama."
+
+  resources:
+    title: "📚 Sumber Daya Tambahan"
+    ignore:
+      title: "🚫 Mengabaikan File dengan `.dockerignore`"
+      p1: "Tambahkan file dan folder ke file `.dockerignore` yang tidak boleh disertakan dalam image untuk mengurangi ukuran dan mempercepat build:"
+    aliases:
+      title: "⚡ Menyederhanakan Perintah dengan Alias"
+      p1: "Anda dapat membuat alias untuk perintah yang sering digunakan agar lebih cepat dijalankan:"
+    advice:
+      title: "🧠 Tips: Saran Penggunaan Docker"
+      b1: "Jangan coba menghafal semuanya — gunakan `docker --help` atau `docker <command> --help` untuk menjelajahi perintah."
+      b2: "Berlatihlah secara rutin dan bereksperimen dengan proyek sederhana."
+      b3: "Perhatikan ukuran image dan hapus file yang tidak perlu melalui `.dockerignore`."
+    links:
+      title: "🌐 Tautan Berguna"
+      docs_intro: "📘 **Dokumentasi Resmi Docker** — panduan lengkap dan referensi untuk semua topik Docker:"
+      sheet_intro: "📙 **Docker Cheat Sheet** — lembar pintasan resmi lengkap Docker:"
+      hub_intro: "📗 **Docker Hub** — image dan registry:"

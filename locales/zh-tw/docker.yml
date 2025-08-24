@@ -1,0 +1,629 @@
+docker:
+  meta:
+    _root:
+      title: "🐳 Docker"
+      desc: "📘 Docker 是一個在隔離容器中執行應用程式的平台。這份小抄包含操作映像檔、容器、網路、卷，以及 Docker Compose 和 Swarm 的指令。"
+
+  basic:
+    _root:
+      title: "📦 基本指令"
+    docker:
+      desc: "主要的 Docker CLI 指令，用於執行子指令並管理容器、映像檔、網路與卷"
+    docker_version:
+      desc: "顯示已安裝的 Docker 版本（用戶端與伺服器）。常用於驗證安裝"
+      ex1: "僅顯示 Docker 用戶端 API 版本"
+      ex2: "僅顯示 Docker 伺服器（Engine）版本"
+      ex3: "以 JSON 格式輸出完整版本資訊"
+    docker_system_info:
+      desc: "顯示一般 Docker 系統資訊：容器數量、映像檔、資源"
+      ex1: "顯示 Docker 資料：版本、網路、容器與映像檔數量"
+      ex2: "以 JSON 格式輸出資訊 — 適用於自動化"
+      ex3: "顯示 CPU 數量與總記憶體"
+      ex4: "顯示 Docker 使用的儲存驅動"
+    docker_image_pull:
+      desc: "從 Docker Hub 或其他登錄伺服器下載映像檔。容器必須基於映像檔執行"
+      ex1: "下載最新可用的 Ubuntu 映像檔"
+      ex2: "下載基於 Alpine Linux 的輕量級 Nginx 映像檔"
+      ex3: "下載 Redis 版本 7 的映像檔"
+    docker_container_run:
+      desc: "從映像檔建立並執行新容器"
+      ex1: "以互動式 Bash 終端機執行 Ubuntu"
+      ex2: "以背景模式執行 Nginx"
+      ex3: "執行 Nginx 並將容器埠 80 綁定到主機埠 8080"
+    docker_container_ls:
+      desc: "列出正在執行的容器"
+      ex1: "僅顯示正在執行的容器"
+      ex2: "顯示所有容器，包括已停止的"
+      ex3: "僅輸出容器名稱"
+    docker_container_start:
+      desc: "啟動一個或多個已停止的容器"
+      ex1: "依名稱啟動容器"
+      ex2: "啟動所有容器"
+      ex3: "啟動容器並附加互動式終端機"
+    docker_container_stop:
+      desc: "停止正在執行的容器"
+      ex1: "依名稱停止容器"
+      ex2: "停止所有執行中的容器"
+      ex3: "停止容器並給予 5 秒完成程序"
+    docker_container_restart:
+      desc: "重新啟動容器"
+      ex1: "重新啟動特定容器"
+      ex2: "重新啟動所有執行中的容器"
+      ex3: "重新啟動容器並延遲 10 秒"
+    docker_container_rm:
+      desc: "刪除容器"
+      ex1: "刪除特定已停止的容器"
+      ex2: "刪除所有已停止的容器"
+      ex3: "強制刪除正在執行的容器"
+    docker_image_ls:
+      desc: "列出已下載的映像檔"
+      ex1: "顯示主機上的所有映像檔"
+      ex2: "顯示所有映像檔，包括中間層"
+      ex3: "僅輸出映像檔名稱與標籤"
+    docker_image_rm:
+      desc: "從本地儲存刪除一個或多個映像檔"
+      ex1: "刪除 `test1` 儲存庫中標籤為 `latest` 的映像檔"
+      ex2: "依 ID 刪除映像檔"
+      ex3: "刪除所有映像檔（請謹慎使用！）"
+
+  container:
+    _root:
+      title: "🔁 容器管理"
+    docker_container_exec:
+      desc: "在執行中的容器內執行指令"
+      ex1: "在名為 `container` 的容器內啟動互動式 bash shell"
+      ex2: "在容器的 `/app` 目錄內執行 `ls` 指令"
+      ex3: "在容器內以背景模式執行指令（不等待）"
+    docker_container_logs:
+      desc: "查看容器日誌"
+      ex1: "顯示容器 `container` 的所有日誌"
+      ex2: "即時追蹤容器日誌"
+      ex3: "顯示最後 50 行日誌"
+    docker_inspect:
+      desc: "取得容器或映像檔的詳細 JSON 資訊"
+      ex1: "顯示容器 `container` 的詳細資訊"
+      ex2: "顯示容器的 IP 位址"
+    docker_container_stats:
+      desc: "顯示容器的即時資源使用統計"
+      ex1: "顯示所有容器的 CPU、記憶體、網路與磁碟使用情況"
+      ex2: "僅顯示特定容器的統計"
+      ex3: "顯示一次性快照後退出"
+    docker_container_rename:
+      desc: "重新命名容器"
+      ex1: "將容器名稱從 `old_name` 改為 `new_name`"
+    docker_container_cp:
+      desc: "在容器與主機之間複製檔案"
+      ex1: "將容器中的檔案複製到主機目前目錄"
+      ex2: "將主機檔案複製到容器"
+      ex3: "從容器串流日誌檔並過濾含有 \"ERROR\" 的行而不存檔"
+    docker_container_top:
+      desc: "顯示容器內正在執行的程序"
+      ex1: "顯示名為 `container` 的容器程序"
+    docker_container_pause:
+      desc: "暫停容器中的所有程序"
+      ex1: "暫停容器 `container`"
+    docker_container_unpause:
+      desc: "恢復已暫停的容器"
+      ex1: "恢復容器 `container`"
+    docker_container_update:
+      desc: "不重啟的情況下更新容器設定"
+      ex1: "限制容器記憶體使用量為 500 MB"
+
+  images:
+    _root:
+      title: "🧱 映像檔與 Dockerfile"
+    docker_buildx_build:
+      desc: "從 Dockerfile 建立 Docker 映像檔"
+      ex1: "從目前目錄建立並標記為 `my_image` 的映像檔"
+      ex2: "建立並標記為 `1.0` 的映像檔"
+      ex3: "不使用快取建立全新映像檔"
+    docker_container_commit:
+      desc: "從容器當前狀態建立映像檔"
+      ex1: "從容器 `container` 建立標記為 `v1` 的映像檔 `my_img`"
+      ex2: "建立映像檔並附加提交訊息"
+      ex3: "建立映像檔並指定作者"
+    docker_image_tag:
+      desc: "新增或變更映像檔標籤"
+      ex1: "新增標籤以推送到 `myrepo` 登錄伺服器"
+      ex2: "為標記為 `1.0` 的映像檔建立 `stable` 標籤"
+      ex3: "為本地映像檔新增 `backup` 標籤"
+    docker_image_push:
+      desc: "將映像檔推送到 Docker Hub 或其他登錄伺服器"
+      ex1: "將標記為 `latest` 的映像檔推送到 `myrepo` 儲存庫"
+      ex2: "推送標記為 `1.0` 的映像檔"
+      ex3: "推送預設標籤 `latest` 的映像檔"
+    docker_login:
+      desc: "登入 Docker Hub 或其他登錄伺服器"
+      ex1: "互動式輸入 Docker Hub 的使用者名稱與密碼"
+      ex2: "登入私人登錄伺服器"
+      ex3: "以使用者名稱與密碼登入（不建議）"
+    docker_logout:
+      desc: "登出 Docker Hub 或其他登錄伺服器"
+      ex1: "從 Docker Hub 登出"
+      ex2: "從私人登錄伺服器登出"
+    healthcheck:
+      desc: "Dockerfile 指令，用於自動檢查容器健康狀態"
+      ex1: "新增健康檢查以每 30 秒驗證服務可用性"
+      ex2: "檢查正在執行容器的健康狀態"
+
+  networks:
+    _root:
+      title: "🔌 網路與卷"
+    docker_network_ls:
+      desc: "列出所有 Docker 網路"
+      ex1: "顯示所有已建立的 Docker 網路"
+      ex2: "僅顯示使用 `bridge` 驅動的網路"
+      ex3: "僅輸出網路名稱"
+    docker_network_create:
+      desc: "建立新的 Docker 網路"
+      ex1: "建立名為 `my_net` 的網路並使用預設設定"
+      ex2: "建立使用 `bridge` 驅動的網路"
+      ex3: "建立指定子網路的網路"
+    docker_network_connect:
+      desc: "將容器連接到網路"
+      ex1: "將容器 `container` 連接到網路 `my_net`"
+      ex2: "以別名 `db_net` 連接"
+    docker_network_disconnect:
+      desc: "將容器從網路斷開"
+      ex1: "將容器 `container` 從網路 `my_net` 斷開"
+    docker_volume_ls:
+      desc: "列出所有 Docker 卷"
+      ex1: "顯示所有 Docker 卷"
+      ex2: "顯示未使用的卷"
+    docker_volume_create:
+      desc: "建立新的 Docker 卷"
+      ex1: "建立名為 `my_vol` 的卷"
+      ex2: "使用 tmpfs 建立臨時卷"
+    docker_volume_inspect:
+      desc: "顯示卷的詳細資訊"
+      ex1: "以 JSON 格式顯示卷 `my_vol` 的詳細資訊"
+    docker_volume_rm:
+      desc: "刪除一個或多個卷"
+      ex1: "刪除名為 `my_vol` 的卷"
+      ex2: "刪除所有未使用的卷"
+
+  plugins:
+    _root:
+      title: "🧩 Docker 外掛"
+    docker_plugin_ls:
+      desc: "列出已安裝的 Docker 外掛"
+      ex1: "顯示所有外掛及其狀態"
+    docker_plugin_install:
+      desc: "從登錄伺服器安裝 Docker 外掛"
+      ex1: "安裝 SSHFS 卷外掛"
+      ex2: "安裝 Weave 網路外掛"
+    docker_plugin_disable:
+      desc: "停用已安裝的外掛"
+      ex1: "停用 SSHFS 外掛"
+    docker_plugin_enable:
+      desc: "啟用先前停用的外掛"
+      ex1: "啟用 SSHFS 外掛"
+    docker_plugin_rm:
+      desc: "移除 Docker 外掛"
+      ex1: "移除 SSHFS 外掛"
+
+  compose:
+    _root:
+      title: "📋 Docker Compose"
+    docker_compose_up:
+      desc: "啟動 `docker-compose.yml` 中定義的容器"
+      ex1: "在目前目錄中以互動模式啟動所有服務"
+      ex2: "以背景模式啟動服務"
+      ex3: "啟動服務前先建置映像檔"
+    docker_compose_down:
+      desc: "停止並移除 `up` 建立的容器、網路與卷"
+      ex1: "停止所有正在執行的服務並移除相關資源"
+      ex2: "同時移除 Compose 建立的卷"
+      ex3: "同時移除 Compose 建立的映像檔"
+    docker_compose_logs:
+      desc: "查看所有或特定服務的日誌"
+      ex1: "顯示所有服務的日誌"
+      ex2: "即時追蹤日誌"
+      ex3: "僅顯示 `web` 服務的日誌"
+    docker_compose_exec:
+      desc: "在正在執行的服務容器內執行指令"
+      ex1: "進入 `web` 服務容器內的互動式 bash shell"
+      ex2: "在資料庫容器內執行 `ls` 指令"
+      ex3: "在 `worker` 容器內以背景模式執行指令"
+    docker_compose_build:
+      desc: "建置或重新建置服務映像檔"
+      ex1: "建置 `docker-compose.yml` 中定義的所有映像檔"
+      ex2: "僅建置 `web` 服務映像檔"
+      ex3: "建置時不使用快取"
+    docker_compose_ps:
+      desc: "顯示所有服務與容器的狀態"
+      ex1: "顯示所有容器，包括已停止的"
+      ex2: "僅顯示服務名稱"
+    docker_compose_pull:
+      desc: "從登錄伺服器下載/更新服務映像檔"
+      ex1: "僅拉取 `web` 服務的映像檔"
+      ex2: "即使部分映像檔失敗也繼續"
+    docker_compose_restart:
+      desc: "重新啟動所有或指定的服務"
+      ex1: "僅重新啟動 `db` 服務"
+      ex2: "以 10 秒超時重新啟動服務"
+    docker_compose_config:
+      desc: "以 YAML 格式顯示最終 Compose 配置"
+      ex1: "列出配置中的所有服務"
+      ex2: "列出配置中定義的所有卷"
+    docker_compose_start:
+      desc: "啟動已停止的服務而不重新建立容器"
+      ex1: "啟動 `web` 服務"
+      ex2: "同時啟動多個服務"
+    docker_compose_stop:
+      desc: "停止服務但不移除容器"
+      ex1: "停止 `web` 服務"
+      ex2: "以 5 秒超時停止服務"
+
+  export_import:
+    _root:
+      title: 📤 匯出與匯入
+    docker_image_save:
+      desc: "將一個或多個 Docker 映像檔儲存為 tar 封存，以便稍後匯入或傳輸"
+      ex1: "將 Docker 映像檔儲存為 tar 封存檔"
+      ex2: "另一種方式將映像檔儲存到檔案"
+      ex3: "將特定 Redis 映像檔儲存到檔案"
+    docker_image_load:
+      desc: "從先前儲存的 tar 封存載入 Docker 映像檔"
+      ex1: "從 tar 封存檔載入 Docker 映像檔"
+      ex2: "透過參數指定檔案載入映像檔"
+      ex3: "載入映像檔但不顯示進度輸出"
+    docker_container_export:
+      desc: "將容器的檔案系統匯出為 tar 封存，不包含映像檔歷史或中繼資料"
+      ex1: "將容器檔案系統匯出到封存檔"
+      ex2: "依容器名稱匯出"
+      ex3: "使用 `-o` 旗標依容器 ID 匯出"
+    docker_image_import:
+      desc: "從檔案系統的 tar 封存建立新的映像檔"
+      ex1: "將封存檔匯入為新的 Docker 映像檔"
+      ex2: "直接從 URL 匯入映像檔"
+      ex3: "從標準輸入匯入"
+
+  cleanup:
+    _root:
+      title: 🧹 清理與診斷
+    docker_system_df:
+      desc: "顯示 Docker 磁碟使用情況：卷、映像檔、容器與建置快取"
+      ex1: "詳細輸出每個映像檔、容器與卷的資訊"
+      ex2: "以 JSON 格式輸出資訊"
+    docker_system_prune:
+      desc: "移除所有未使用的 Docker 資料：已停止容器、未使用的網路、懸掛映像檔與建置快取"
+      ex1: "移除未使用的映像檔，包括中間層"
+      ex2: "連同其他資源一起移除未使用的卷"
+    docker_image_prune:
+      desc: "移除未使用的 Docker 映像檔，包括懸掛層"
+      ex1: "移除所有未使用的映像檔，包括懸掛的"
+      ex2: "移除超過 24 小時的映像檔"
+    docker_container_prune:
+      desc: "移除符合篩選條件的已停止容器，若無則移除全部"
+      ex1: "移除已停止超過 24 小時的容器"
+      ex2: "移除時不需確認提示"
+
+  swarm:
+    _root:
+      title: 🐝 Docker Swarm
+    docker_swarm_init:
+      desc: "在目前節點初始化新的 Docker Swarm 叢集"
+      ex1: "初始化叢集並指定 IP 位址"
+      ex2: "初始化並指定監聽埠"
+    docker_service_create:
+      desc: "在 Swarm 叢集內建立新服務"
+      ex1: "在 Swarm 建立 Nginx 服務"
+      ex2: "建立具有 3 個副本的服務"
+      ex3: "建立具有埠對映的服務"
+    docker_stack_deploy:
+      desc: "根據 Compose 檔將一組服務部署到 Swarm 叢集"
+      ex1: "從 Compose 檔部署堆疊"
+      ex2: "部署時轉發登錄驗證"
+      ex3: "使用替代 Compose 檔部署堆疊"
+    docker_stack_rm:
+      desc: "從 Swarm 叢集移除一個或多個堆疊"
+      ex1: "移除 `mystack` 堆疊"
+      ex2: "移除所有堆疊（不建議）"
+      ex3: "移除堆疊並退出 Swarm"
+
+  advanced_docker:
+    _root:
+      title: "💼 進階 Docker 用法"
+
+    prof:
+      title: "🚀 專業級 Docker 指令"
+      docker_buildx:
+        desc: "進階映像檔建置工具，取代 `docker build`。支援多平台、快取、平行建置與多種格式匯出。適用於 CI/CD 與跨平台開發"
+        ex1: "同時建置多平台映像檔（ARM 與 x86）"
+        ex2: "建置映像檔並載入到本地 Docker Engine 快取"
+        ex3: "建置並推送多平台映像檔到登錄伺服器"
+      docker_context:
+        desc: "管理 Docker 上下文以操作遠端或多個環境。可快速切換本地與遠端 Docker Engine"
+        ex1: "建立連線到遠端 Docker 主機的上下文"
+        ex2: "切換到遠端上下文"
+        ex3: "列出可用上下文與目前使用的上下文"
+      docker_system_events:
+        desc: "即時監聽 Docker 事件，可依事件類型（例如：容器啟動）過濾。適合監控與自動化"
+        ex1: "僅顯示容器啟動事件"
+        ex2: "顯示過去一小時到 10 分鐘前的事件"
+        ex3: "僅顯示與網路相關的事件"
+        ex4: "顯示與 `nginx` 映像檔相關的事件"
+      docker_container_update:
+        desc: "在不重啟的情況下更改執行中容器的資源限制與設定"
+        ex1: "限制為 2 顆 CPU 與 1 GB 記憶體"
+        ex2: "設定自動重啟策略為 `unless-stopped`"
+        ex3: "限制程序數量為 200"
+      docker_container_diff:
+        desc: "顯示容器檔案系統相對於原始映像檔的變更。適用於除錯與稽核"
+        ex1: "顯示容器的所有檔案系統變更"
+        ex2: "僅顯示新增的檔案 (`A` — Added)"
+      docker_image_history:
+        desc: "顯示映像檔層的歷史：建置指令、每層大小與建立時間。適合最佳化與稽核"
+        ex1: "顯示映像檔的層歷史"
+        ex2: "顯示完整建置指令而不截斷"
+        ex3: "僅輸出建置指令與層大小"
+
+    practices:
+      title: "🛠 實用 Docker 技巧與自動化"
+      minimize_image_size:
+        title: "最小化映像檔大小"
+        p1: "使用 `alpine` 或 `scratch` 等基礎映像檔以保持最小體積。"
+        p2: "要壓縮層可在建置時使用 `--squash`（需啟用實驗功能）。"
+        p3: "另外，在單一層中刪除暫存檔案與快取："
+      minimize_layers:
+        title: "最小化層數"
+        p1: "將多個指令合併在一個 `RUN` 中，以減少層數並縮小最終映像檔大小："
+      optimize_build:
+        title: "最佳化 Dockerfile 建置"
+        p1: "使用多階段建置，確保最終映像檔只保留必要檔案。"
+        p2: "先複製與安裝依賴，再複製程式碼 — 這能改善層快取並加速重建。"
+      secrets_and_configs:
+        title: "分離密鑰與設定"
+        p1: "切勿將 `.env` 檔、API 金鑰或私密憑證存放在映像檔中。"
+        intro: "設定方式："
+        items:
+          secret: "`docker secret`（在 Swarm 中）"
+          env: "環境變數（`-e VAR=value` 或 `.env`）"
+          volumes: "外部卷存放設定"
+      buildkit_secrets:
+        title: "建置時密鑰（BuildKit）"
+        p1: "為了安全地傳遞密鑰，建置時可使用 `--secret` 旗標："
+        p2: "在 Dockerfile 中，密鑰會出現在 `/run/secrets/mysecret`："
+        note: "🛡 這可避免密鑰被儲存在映像檔層中。"
+      rootless:
+        title: "無 root 權限的 Docker"
+        p1: "在無 root 權限下執行 Docker 可提升安全性並降低主機被入侵風險。"
+        steps_intro: "啟用方式："
+        check_intro: "檢查："
+        warning: "⚠ 部分功能（如 <1024 埠的轉發）將無法使用。"
+      scan:
+        title: "掃描映像檔中的漏洞"
+        p1: "使用內建工具："
+        p2: "或使用新的 CLI："
+        p3: "這有助於檢測基礎映像檔與依賴中的漏洞。"
+      resource_limits:
+        title: "監控資源使用"
+        p1: "依記憶體、CPU 與程序數限制容器："
+        p2: "這可避免資源過度消耗。"
+        p3: "也能限制 I/O："
+        p4: "適用於避免容器過度佔用磁碟子系統。"
+      cleanup:
+        title: "自動清理"
+        p1: "定期刪除未使用的映像檔、容器、卷與網路："
+        warning: "⚠ 請小心：此指令會刪除所有未使用的資源。"
+        p2: "如需選擇性清理可使用："
+      cicd:
+        title: "CI/CD 整合"
+        p1: "將建置、測試與部署嵌入 GitHub Actions、GitLab CI、Jenkins pipeline。"
+        example_intro: "範例 GitHub Actions 步驟："
+      logging:
+        title: "日誌與監控"
+        p1: "將日誌驅動（`--log-driver`）附加到集中式系統：ELK、Loki、Splunk。"
+        p2: "使用 Prometheus + cAdvisor 監控容器指標。"
+      production:
+        title: "生產環境部署"
+        p1: "使用 `docker-compose.override.yml` 區分開發與生產的設定。"
+        ha_intro: "為了高可用性與擴展，可使用："
+        items:
+          swarm: "Docker Swarm"
+          k8s: "Kubernetes"
+
+    debugging:
+      title: "🐞 Docker 容器除錯與分析"
+      exec:
+        group_desc: "在執行中的容器內執行指令，提供互動式存取或在隔離環境中執行程序"
+        r1: "在執行中的容器內啟動互動式終端機 (bash)"
+        r2: "在容器中啟動最小化 shell（若無 bash）"
+        r3: "在容器內執行非互動模式指令"
+      logs:
+        group_desc: "顯示指定容器的日誌，可用於診斷與監控操作"
+        r1: "即時串流顯示最後 100 行日誌"
+        r2: "顯示容器的所有可用日誌"
+        r3: "顯示過去一小時的日誌"
+      inspect:
+        group_desc: "輸出 Docker 物件（容器、映像檔、網路等）的詳細 JSON 資訊，包括設定與狀態"
+        r1: "取得容器的完整 JSON 資訊"
+        r2: "取得容器主要程序的 PID"
+        r3: "顯示容器的 IP 位址"
+      nsenter:
+        group_desc: "Linux 工具，可進入其他程序（此處為容器）的命名空間。搭配 `strace` 使用可追蹤容器內的系統呼叫以進行除錯"
+        r1: "進入容器命名空間並追蹤程序 1 的系統呼叫"
+        r2: "在容器命名空間內開啟 bash shell"
+        r3: "查看容器內開啟的埠"
+      tcpdump:
+        group_desc: "主控台工具，用於擷取與分析網路流量。在容器內用於診斷網路問題、分析封包與監控連線"
+        r1: "擷取並分析容器內的網路流量"
+        r2: "僅擷取 80 埠的流量"
+        r3: "將流量存檔以便稍後分析"
+      stats:
+        group_desc: "即時顯示一個或多個容器的資源使用情況（CPU、記憶體、網路、磁碟）"
+        r1: "顯示容器的即時 CPU、記憶體、網路與磁碟使用量"
+        r2: "顯示所有容器的統計"
+        r3: "僅輸出一次統計後退出"
+      top:
+        group_desc: "顯示容器內正在執行的程序清單，類似 Linux 的 `ps`，用於分析容器活動"
+        r1: "顯示容器內正在執行的程序"
+        r2: "使用替代輸出格式，如 `ps aux`"
+        r3: "僅顯示程序 PID 與指令"
+      diff:
+        group_desc: "顯示容器檔案系統相對於基礎映像檔的變更，標示新增、修改或刪除的檔案"
+        r1: "顯示容器檔案系統相對基礎映像檔的變更"
+        r2: "僅顯示新增的檔案 (`A` — Added)"
+        r3: "僅顯示修改的檔案 (`C` — Changed)"
+      cp:
+        group_desc: "在容器與主機之間複製檔案與目錄，以便資料交換與備份"
+        r1: "將檔案從容器複製到主機"
+        r2: "將檔案從主機複製到容器"
+        r3: "複製日誌檔並過濾錯誤行而不儲存到磁碟"
+      advanced_note: "💡 進階除錯可使用 `nsenter`、`strace`、`tcpdump`、`gdb` 等低階工具。"
+
+  compose_adv:
+    _root:
+      title: "💼 進階 Docker Compose 用法"
+    prof:
+      title: "🚀 專業級 Docker Compose 指令"
+      up:
+        group_desc: "從 docker-compose.yml 啟動並管理指定服務的生命週期，可在背景模式執行"
+        r1: "僅以分離模式執行 `web` 與 `db` 服務"
+        r2: "啟動服務前重新建置映像檔"
+        r3: "移除未在當前 compose 檔中定義的容器"
+      build:
+        group_desc: "依 compose 檔建置服務映像檔，具快取控制與平行建置功能"
+        r1: "完全不使用快取重建映像檔"
+        r2: "同時建置所有服務以加快流程"
+        r3: "僅建置 `web` 服務的映像檔"
+      pull:
+        group_desc: "從登錄伺服器下載所有或指定服務的最新映像檔"
+        r1: "為所有服務下載映像檔"
+        r2: "僅下載 `db` 服務的映像檔"
+        r3: "忽略錯誤並繼續下載映像檔"
+      restart:
+        group_desc: "重新啟動所有或指定服務，而不重建容器"
+        r1: "重新啟動當前專案的所有服務"
+        r2: "僅重新啟動 `worker` 服務"
+        r3: "同時重新啟動多個服務"
+      exec:
+        group_desc: "在執行中的服務容器內執行命令，可選擇互動模式"
+        r1: "在 `db` 服務容器中執行 psql"
+        r2: "在 `web` 容器中開啟 shell"
+        r3: "在 `api` 服務容器中發送 curl 請求"
+      config:
+        group_desc: "輸出考慮所有檔案與環境變數後的最終 Compose 配置"
+        r1: "以 YAML 格式顯示合併後的配置"
+        r2: "列出所有服務"
+        r3: "顯示服務所使用的所有環境變數"
+      watch:
+        group_desc: "當原始檔案變更時自動重啟服務，適用於開發"
+        r1: "開始監控檔案並在變更時重啟服務"
+      events:
+        group_desc: "串流 Compose 事件：服務啟動、停止、更新"
+        r1: "以 JSON 格式接收事件"
+      rm:
+        group_desc: "移除已停止的服務容器"
+        r1: "移除 `web` 與 `db` 的服務容器"
+      pause:
+        group_desc: "暫停服務運行"
+        r1: "暫停 `api` 服務"
+      unpause:
+        group_desc: "恢復已暫停的服務"
+        r1: "恢復 `api` 服務"
+      create:
+        group_desc: "建立容器但不啟動"
+        r1: "為 `web` 與 `db` 建立容器但不啟動它們"
+      images:
+        group_desc: "顯示服務所使用的映像檔清單"
+        r1: "顯示所有服務的映像檔"
+      top:
+        group_desc: "顯示服務容器中執行的程序"
+        r1: "顯示 `web` 服務容器中的程序"
+
+    practices:
+      title: "🛠 Docker Compose 的實用技巧與自動化"
+      env_separation:
+        title: "環境分離"
+        p1: "為不同環境（`development`、`staging`、`production`）使用不同的 `docker-compose.override.yml`，可避免設定衝突並隔離配置。"
+        p2: "你也可以使用 `-f` 旗標組合多個配置檔："
+        p3: "使用不同的 `.env` 檔（如 `.env.dev`、`.env.prod`）來管理環境變數。"
+      secrets:
+        title: "安全儲存密鑰"
+        p1: "不要將敏感資料（密碼、token）直接放入 Compose 檔，而是使用："
+        items:
+          env: "`.env` 檔存放環境變數（注意 `.env` 檔未加密，且不應提交到公開版本庫）"
+          swarm_secret: "`docker secret` 與 `docker config` 用於 Docker Swarm 的安全密鑰與設定管理"
+          volumes: "外部卷存放包含密鑰的設定檔"
+          external_mgr: "外部密鑰管理系統（如 HashiCorp Vault、AWS Secrets Manager）"
+      startup_order:
+        title: "透過 `depends_on` 與 `healthcheck` 控制啟動順序"
+        p1: "讓服務等待依賴項就緒："
+      min_downtime:
+        title: "更新時最小化停機時間"
+        p1: "在更新服務前執行："
+        p2: "`-d` 參數在背景執行容器，`--remove-orphans` 移除未在當前配置中定義的容器。"
+        p3: "若需要，完全停止並移除舊容器："
+        p4: "這可確保載入新映像檔並移除未使用容器而不造成停機。"
+      hot_reload_volumes:
+        title: "開發中的熱重載 (Hot Reload)"
+        p1: "使用 `volumes` 將本機目錄掛載到容器中，這能讓程式碼變更立即生效而不必重建映像檔。"
+        p2: "注意檔案權限與檔案系統快取問題，特別是在 Windows 與 macOS 上，避免效能問題。"
+      hot_reload_watch:
+        title: "無需 Volume 的熱重載（Compose 2.22+）"
+      central_logging:
+        title: "服務的集中式日誌"
+        p1: "將容器日誌導向 ELK Stack、Loki、Prometheus、Fluentd 等監控與集中日誌系統以利分析與告警。"
+        p2: "使用 Docker 日誌驅動（`--log-driver`）啟用集中日誌收集與處理。"
+        p3: "在 Compose 中為容器配置日誌驅動："
+      auto_restart:
+        title: "自動重啟服務"
+        p1: "在 `docker-compose.yml` 中配置重啟策略："
+        p2: "其他重啟策略包括："
+        policies:
+          no: "`no` — 不自動重啟（預設）"
+          always: "`always` — 總是重啟容器"
+          on_failure: "`on-failure` — 僅在失敗時重啟（可選擇重試次數）"
+        p3: "在生產環境中，`unless-stopped` 是最佳選擇，以確保服務穩定。"
+        p4: "這能讓服務在故障或主機重啟後自動恢復。"
+      profiles:
+        title: "服務配置檔 (Profiles)"
+        p1: "允許僅執行特定組別的服務："
+        p2: "僅執行 frontend 配置檔："
+
+    debugging:
+      title: "🐞 Docker Compose 服務的除錯與分析"
+      exec:
+        group_desc: "在執行中的服務內執行命令，提供容器存取或執行個別程序"
+        r1: "在 `web` 服務容器內開啟 shell"
+        r2: "在 `db` 服務容器內執行 psql 指令"
+      logs:
+        group_desc: "檢視服務日誌以進行診斷與監控"
+        r1: "即時檢視 `db` 服務日誌"
+        r2: "顯示 `api` 服務的最後 50 行日誌"
+        r3: "顯示 `web` 服務過去一小時的日誌"
+      inspect:
+        group_desc: "檢視服務容器的詳細資訊"
+        r1: "取得 `web` 服務容器的詳細 JSON 資訊"
+      stats:
+        group_desc: "監控執行服務的容器資源使用情況"
+        r1: "追蹤 `worker` 服務容器的 CPU、記憶體等資源使用"
+      run:
+        group_desc: "以服務設定執行暫時性容器，適合除錯"
+        r1: "為 `web` 服務啟動一次性互動式容器"
+      cp:
+        group_desc: "在主機與容器之間複製檔案"
+        r1: "將檔案從 `db` 服務容器複製到主機"
+      tip:
+        one_off: "💡 若要方便除錯多服務架構，使用 `docker compose run --rm` 啟動單獨容器並附帶所需網路與卷，不影響主要服務。"
+
+  resources:
+    title: "📚 額外資源"
+    ignore:
+      title: "🚫 使用 `.dockerignore` 忽略檔案"
+      p1: "將不需要包含在映像檔中的檔案與資料夾加入 `.dockerignore`，以減少大小並加速建置："
+    aliases:
+      title: "⚡ 使用別名簡化指令"
+      p1: "可以為常用指令建立別名以加快執行速度："
+    advice:
+      title: "🧠 提示：Docker 使用建議"
+      b1: "不必死記所有指令 — 使用 `docker --help` 或 `docker <command> --help` 來查詢。"
+      b2: "經常練習並在簡單專案中實驗。"
+      b3: "留意映像檔大小並透過 `.dockerignore` 移除不必要檔案。"
+    links:
+      title: "🌐 實用連結"
+      docs_intro: "📘 **Docker 官方文件** — 提供完整指南與參考："
+      sheet_intro: "📙 **Docker 小抄** — 官方完整小抄："
+      hub_intro: "📗 **Docker Hub** — 映像檔與登錄伺服器："

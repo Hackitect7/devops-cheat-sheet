@@ -1,0 +1,51 @@
+# filename: _quarto-tw.yml
+
+project:
+  pre-render:
+    - python scripts/select_snippets.py
+  render:
+    - tw/index.qmd
+    - tw/linux.qmd
+    - tw/docker.qmd
+    - tw/git.qmd
+    - tw/kubernetes.qmd
+    - tw/helm.qmd
+    - tw/terraform.qmd
+
+lang: zh-TW
+
+metadata-files:
+  - locales/zh-tw/_site.yml
+  - locales/zh-tw/linux.yml
+  - locales/zh-tw/docker.yml
+  - locales/zh-tw/git.yml
+  - locales/zh-tw/kubernetes.yml
+  - locales/zh-tw/helm.yml
+  - locales/zh-tw/terraform.yml
+
+website:
+  title: "DevOps 小抄"
+  sidebar:
+    search: true
+    contents:
+      - tw/index.qmd
+      - tw/linux.qmd
+      - tw/docker.qmd
+      - tw/git.qmd
+      - tw/kubernetes.qmd
+      - tw/helm.qmd
+      - tw/terraform.qmd
+  navbar:
+    logo: assets/brand/tw/hackitect7-logo-light-tw.png
+    logo-alt: "Hackitect7 標誌 (zh-TW)"
+    left:
+      - text: "首頁"
+        href: /
+      - text: "幫助"
+        menu:
+          - text: "回報錯誤"
+            icon: "bug"
+            href: "https://github.com/Hackitect7/devops-cheat-sheet/issues"
+          - text: "提出問題"
+            icon: "chat-right-text"
+            href: "https://github.com/Hackitect7/devops-cheat-sheet/discussions"

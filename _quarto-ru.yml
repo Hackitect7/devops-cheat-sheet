@@ -1,0 +1,51 @@
+# Filename: _quarto-ru.yml
+
+project:
+  pre-render:
+    - python scripts/select_snippets.py
+  render:
+    - ru/index.qmd
+    - ru/linux.qmd
+    - ru/docker.qmd
+    - ru/git.qmd
+    - ru/kubernetes.qmd
+    - ru/helm.qmd
+    - ru/terraform.qmd
+
+lang: ru-RU
+
+metadata-files:
+  - locales/ru-ru/_site.yml
+  - locales/ru-ru/linux.yml
+  - locales/ru-ru/docker.yml
+  - locales/ru-ru/git.yml
+  - locales/ru-ru/kubernetes.yml
+  - locales/ru-ru/helm.yml
+  - locales/ru-ru/terraform.yml
+
+website:
+  title: "DevOps Шпаргалка"
+  sidebar:
+    search: true
+    contents:
+      - ru/index.qmd
+      - ru/linux.qmd
+      - ru/docker.qmd
+      - ru/git.qmd
+      - ru/kubernetes.qmd
+      - ru/helm.qmd
+      - ru/terraform.qmd
+  navbar:
+    logo: assets/brand/ru/hackitect7-logo-light-ru.png
+    logo-alt: "Hackitect7 логотип (ru)"
+    left:
+      - text: "Главная"
+        href: /
+      - text: "Помощь"
+        menu:
+          - text: "Сообщить об ошибке"
+            icon: "bug"
+            href: "https://github.com/Hackitect7/devops-cheat-sheet/issues"
+          - text: "Задать вопрос"
+            icon: "chat-right-text"
+            href: "https://github.com/Hackitect7/devops-cheat-sheet/discussions"

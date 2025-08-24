@@ -1,0 +1,51 @@
+# filename: _quarto-th.yml
+
+project:
+  pre-render:
+    - python scripts/select_snippets.py
+  render:
+    - th/index.qmd
+    - th/linux.qmd
+    - th/docker.qmd
+    - th/git.qmd
+    - th/kubernetes.qmd
+    - th/helm.qmd
+    - th/terraform.qmd
+
+lang: th-TH
+
+metadata-files:
+  - locales/th-th/_site.yml
+  - locales/th-th/linux.yml
+  - locales/th-th/docker.yml
+  - locales/th-th/git.yml
+  - locales/th-th/kubernetes.yml
+  - locales/th-th/helm.yml
+  - locales/th-th/terraform.yml
+
+website:
+  title: "ชีทโกง DevOps"
+  sidebar:
+    search: true
+    contents:
+      - th/index.qmd
+      - th/linux.qmd
+      - th/docker.qmd
+      - th/git.qmd
+      - th/kubernetes.qmd
+      - th/helm.qmd
+      - th/terraform.qmd
+  navbar:
+    logo: assets/brand/th/hackitect7-logo-light-th.png
+    logo-alt: "โลโก้ Hackitect7 (th-TH)"
+    left:
+      - text: "หน้าแรก"
+        href: /
+      - text: "ความช่วยเหลือ"
+        menu:
+          - text: "รายงานข้อบกพร่อง"
+            icon: "bug"
+            href: "https://github.com/Hackitect7/devops-cheat-sheet/issues"
+          - text: "ถามคำถาม"
+            icon: "chat-right-text"
+            href: "https://github.com/Hackitect7/devops-cheat-sheet/discussions"

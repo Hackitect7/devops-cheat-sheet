@@ -1,0 +1,620 @@
+linux:
+  meta:
+    _root:
+      title: "🐧 Linux Komut Satırı"
+      desc: "Gezinme, dosyalar, işlemler, ağ, izleme, paketler ve otomasyon için temel ve ileri düzey komutlar. DevOps iş akışları için uygundur."
+
+  basic:
+    _root:
+      title: "🔹 Temel komutlar"
+      cat:
+        desc: "Dosya içeriğini göster veya birden fazla dosyayı birleştir"
+        ex1: "Dosya içeriğini görüntüle"
+        ex2: "İki dosyayı birleştir ve çıktı al"
+        ex3: "Dosyaları birleştir ve yeni bir dosyaya kaydet"
+      cd:
+        desc: "Geçerli çalışma dizinini değiştir"
+        ex1: "Mutlak yol `/etc` dizinine git"
+        ex2: "Ana dizine git"
+        ex3: "Bir seviye yukarı çık"
+        ex4: "Önceki dizine dön"
+      clear:
+        desc: "Terminal ekranını temizle"
+      cp:
+        desc: "Dosya ve dizinleri kopyala"
+        ex1: "Dosyayı yeni bir adla kopyala"
+        ex2: "Dizini özyinelemeli olarak kopyala"
+        ex3: "Üzerine yazmadan önce onay iste"
+      echo:
+        desc: "Bir metin veya ortam değişkeni yazdır"
+        ex1: "Basit bir metin yazdır"
+        ex2: "Ana dizin yolunu göster"
+        ex3: "Kaçış dizilerini işle (\\t, \\n)"
+      history:
+        desc: "Komut geçmişini göster"
+      id:
+        desc: "Geçerli kullanıcının UID, GID ve grup üyeliklerini göster"
+      ls:
+        desc: "Dosya ve dizinleri listele"
+        ex1: "İzinler ve sahiplerle uzun listeleme"
+        ex2: "Gizli dosyaları göster"
+        ex3: "Okunabilir boyutlarla listele"
+      mkdir:
+        desc: "Dizin oluştur"
+        ex1: "Tek bir dizin oluştur"
+        ex2: "İç içe dizinler oluştur"
+        ex3: "Birden fazla dizini aynı anda oluştur"
+      mv:
+        desc: "Dosya/dizin taşı veya yeniden adlandır"
+        ex1: "Dosyanın adını değiştir"
+        ex2: "Dosyayı başka bir dizine taşı"
+        ex3: "Tüm `.txt` dosyalarını `archive` klasörüne taşı"
+      pwd:
+        desc: "Geçerli çalışma dizinini yazdır"
+        ex1: "Gerçek yolu göster (sembolik bağlantısız)"
+        ex2: "`/tmp` dizinine geçtikten sonra yolu göster"
+      rm:
+        desc: "Dosya veya dizin sil"
+        ex1: "Bir dosyayı sil"
+        ex2: "Dosyayı onay ile sil"
+        ex3: "Dizini özyinelemeli olarak sil"
+        ex4: "Onay istemeden zorla sil"
+      rmdir:
+        desc: "Boş bir dizini sil"
+        ex1: "`emptydir` dizinini sil"
+      touch:
+        desc: "Boş dosya oluştur veya değişiklik zamanını güncelle"
+        ex1: "Dosya yoksa yeni boş dosya oluştur"
+        ex2: "Birden fazla dosyayı aynı anda oluştur"
+        ex3: "Dosya yoksa oluşturmadan yalnızca zamanı güncelle"
+      whereis:
+        desc: "Bir komutun ikili dosyasını, kaynağını ve kılavuz sayfalarını bul"
+        ex1: "`ls` için konumları bul"
+        ex2: "Bash ikili ve belgelerini göster"
+        ex3: "Sadece ikiliyi ara"
+      which:
+        desc: "Komutun çalıştırılabilir yolunu göster"
+        ex1: "`python3` yolunu göster"
+        ex2: "`grep` yolunu göster"
+        ex3: "Ararken takma adları atla"
+      whoami:
+        desc: "Etkin kullanıcı adını yazdır"
+
+  intermediate:
+    _root:
+      title: "🔸 Orta seviye"
+      chmod:
+        desc: "Dosya veya dizin izinlerini değiştir"
+        ex1: "Sekizlik gösterimle izin ayarla (örn. 755)"
+        ex2: "Bir script'e çalıştırma izni ekle"
+        ex3: "Dizin için izinleri özyinelemeli ayarla"
+      chown:
+        desc: "Dosya sahibi ve grubunu değiştir"
+        ex1: "Dosyanın sahibini değiştir"
+        ex2: "Sahip ve grubu değiştir"
+        ex3: "Özyinelemeli sahip ve grup değiştir"
+      curl:
+        desc: "Bir sunucudan/ya sunucuya veri aktar (HTTP, HTTPS, vb.)"
+        ex1: "HEAD isteği gönder (yalnızca başlıklar)"
+        ex2: "Bir dosyayı indir ve adını koru"
+        ex3: "Form verisi ile POST isteği gönder"
+      df:
+        desc: "Dosya sistemi disk alanı kullanımını raporla"
+        ex1: "Okunabilir boyutlarla göster"
+        ex2: "Belirli bir bağlama noktasının kullanımını göster"
+        ex3: "Dosya sistemi türlerini göster"
+      diff:
+        desc: "Dosya veya dizinleri karşılaştır"
+        ex1: "İki dosyayı karşılaştır"
+        ex2: "Birleştirilmiş fark (yama stili)"
+        ex3: "Dizinleri özyinelemeli karşılaştır"
+      du:
+        desc: "Dosya ve dizinlerin disk alanı kullanımını tahmin et"
+        ex1: "Geçerli dizindeki öğelerin boyutlarını göster"
+        ex2: "Tek bir dosyanın boyutunu göster"
+        ex3: "Üst düzey alt dizinlerin boyutlarını özetle"
+      find:
+        desc: "Dosya/dizinleri ada, boyuta, zamana göre ara"
+        ex1: "Geçerli dizindeki tüm `.log` dosyalarını bul"
+        ex2: "100 MB'den büyük dosyaları bul"
+        ex3: "Son bir gün içinde değişen dosyalar"
+      free:
+        desc: "Kullanılan ve boş bellek miktarını göster"
+        ex1: "Okunabilir birimlerde göster"
+        ex2: "MB cinsinden göster"
+        ex3: "Her 2 saniyede bir yenile"
+      grep:
+        desc: "Düzenli ifadelerle metin ara"
+        ex1: "`error` içeren satırları bul"
+        ex2: "Bir dizinde özyinelemeli ara"
+        ex3: "Büyük/küçük harfe duyarsız ara"
+      head:
+        desc: "Bir dosyanın ilk satırlarını yazdır"
+        ex1: "İlk 10 satır"
+        ex2: "İlk 20 satır"
+        ex3: "İlk 100 bayt"
+      hostname:
+        desc: "Sistemin ana bilgisayar adını göster veya ayarla"
+        ex1: "Yeniden başlatmaya kadar geçici olarak ad ayarla"
+        ex2: "IP adreslerini göster"
+      kill:
+        desc: "İşlemlere sinyal gönder"
+        ex1: "PID ile işlemi zorla sonlandır"
+        ex2: "SIGTERM ile nazikçe sonlandır"
+        ex3: "Bir desenle eşleşen işlemleri sonlandır"
+      ping:
+        desc: "ICMP echo isteği ile ağ bağlantısını test et"
+        ex1: "Bir adresi ping'le"
+        ex2: "4 paket gönder"
+        ex3: "2 saniye aralıklarla gönder"
+      ps:
+        desc: "İşlem durumunu raporla"
+        ex1: "Tüm işlemleri listele"
+        ex2: "`grep` ile ada göre filtrele"
+        ex3: "Geçerli kullanıcının işlemleri"
+      rsync:
+        desc: "Hızlı artımlı dosya aktarımı"
+        ex1: "Dizinleri yerel olarak senkronize et"
+        ex2: "Uzak ana bilgisayarla SSH üzerinden senkronize et"
+        ex3: "Hedefte eksik olan dosyaları sil"
+      scp:
+        desc: "Güvenli kopya (uzaktan dosya kopyalama)"
+        ex1: "Dosyayı uzak ana bilgisayara kopyala"
+        ex2: "Dosyayı uzak ana bilgisayardan kopyala"
+        ex3: "Dizini özyinelemeli olarak kopyala"
+      sort:
+        desc: "Metin satırlarını sırala"
+        ex1: "Alfabetik sırala"
+        ex2: "Ters sırala"
+        ex3: "Sayısal sırala"
+      tail:
+        desc: "Dosyaların son kısmını yazdır; değişiklikleri takip et"
+        ex1: "Bir log'u gerçek zamanlı takip et"
+        ex2: "Son 20 satırı göster"
+        ex3: "Son 100 baytı göster"
+      tar:
+        desc: "Tar arşivleri oluştur, listele veya çıkar"
+        ex1: "Sıkıştırılmış `.tgz` arşivi oluştur"
+        ex2: "`.tgz` arşivini çıkar"
+        ex3: "Arşiv içeriğini listele"
+      tee:
+        desc: "stdin'den oku, stdout ve dosyalara yaz"
+        ex1: "Çıktıyı `out.txt`'ye yaz ve ekranda göster"
+        ex2: "`ls` çıktısını dosyaya kaydet ve ekranda göster"
+        ex3: "Çıktıyı `log.txt` sonuna ekle"
+      top:
+        desc: "Linux görevlerini göster (etkileşimli işlem görüntüleyici)"
+        ex1: "top'u başlat"
+        ex2: "Alternatif görüntüleyici (htop)"
+        ex3: "Bellek kullanımına göre sırala"
+      uptime:
+        desc: "Sistemin ne kadar süredir çalıştığını göster"
+        ex1: "Okunaklı çalışma süresi"
+        ex2: "Sistem açılış zamanı"
+      wget:
+        desc: "Etkileşimsiz ağ indirme aracı"
+        ex1: "URL ile dosya indir"
+        ex2: "Yarıda kalan indirmeyi devam ettir"
+        ex3: "Farklı bir adla kaydet"
+      wc:
+        desc: "Dosyaların satır, kelime ve karakter sayılarını yazdır"
+        ex1: "Satır sayısını say"
+        ex2: "Kelime sayısını say"
+        ex3: "Karakterleri say"
+      uniq:
+        desc: "Tekrarlanan satırları raporla veya filtrele (yan yana olanları)"
+        ex1: "Ardışık tekrarları kaldır"
+        ex2: "Sıralamadan sonra tekrarları kaldır"
+        ex3: "Her satırın kaç kez geçtiğini say"
+      yes:
+        desc: "Bir metni sürekli yazdır; betiklerde kullanışlıdır"
+        ex1: "Her zaman \"y\" cevabı ver"
+        ex2: "Etkileşimli silmeleri otomatik onayla"
+        ex3: "İsteme \"hayır\" cevabı ver"
+
+  advanced:
+    _root:
+      title: "🔧 İleri düzey komutlar"
+      at:
+        desc: "Belirli bir zamanda tek seferlik komut çalıştır"
+        ex1: "Bir komutu 1 dakika sonra çalıştır"
+        ex2: "Bekleyen işleri listele"
+        ex3: "Bekleyen işi sil"
+      awk:
+        desc: "Desen tarama ve işleme dili"
+        ex1: "İlk sütunu yazdır"
+        ex2: "CPU kullanımına göre işlemleri filtrele"
+        ex3: "Her satırın ikinci alanını yazdır"
+        ex4: "Bir desenle eşleşen satırları yazdır"
+      crontab:
+        desc: "Kullanıcı bazlı cron işleri yükle, listele veya kaldır"
+        ex1: "Geçerli kullanıcının crontab'ini düzenle"
+        ex2: "Cron işlerini listele"
+        ex3: "Geçerli kullanıcının crontab'ini sil"
+      cut:
+        desc: "Dosyalardan satır bölümlerini seç veya çıkar"
+        ex1: "`/etc/passwd`'den kullanıcı adlarını yazdır"
+        ex2: "İki alanı ':' ayırıcıyla kes"
+        ex3: "Karakterleri pozisyona göre seç"
+      df:
+        desc: "Disk kullanımını raporla"
+        ex1: "Okunabilir boyutlar"
+        ex2: "Dosya sistemi türlerini göster"
+        ex3: "Ev dizini kullanımını göster"
+      env:
+        desc: "Komutu değiştirilmiş ortamda çalıştır veya ortam değişkenlerini göster"
+        ex1: "PATH girdilerini göster"
+        ex2: "Boş ortam ile kabuk başlat"
+      export:
+        desc: "Geçerli oturum için ortam değişkeni ayarla"
+        ex1: "Bu oturum için değişken ayarla"
+        ex2: "PATH'e dizin ekle"
+        ex3: "Dışa aktarılan değişkenleri listele"
+      free:
+        desc: "Bellek kullanımını göster"
+        ex1: "MB cinsinden göster"
+        ex2: "Okunabilir birimler"
+        ex3: "Her 5 saniyede örnekle"
+      hostnamectl:
+        desc: "Sistem ana bilgisayar adını ve ilgili ayarları sorgula/değiştir"
+        ex1: "Ana bilgisayar adı durumunu göster"
+        ex2: "Yeni statik ana bilgisayar adı ayarla"
+      ip-tools:
+        desc: "Ağ arabirimlerini ve adreslerini görüntüle/ yönet"
+        ex1: "Ağ arabirimlerini göster (eski)"
+        ex2: "`ip` ile adresleri göster"
+        ex3: "Arabirimi etkinleştir"
+      iostat:
+        desc: "CPU ve G/Ç istatistiklerini raporla"
+        ex1: "Her 2 sn'de ayrıntılı istatistik"
+        ex2: "Aygıt istatistikleri (5 sn aralıkla, 3 rapor)"
+      iptables:
+        desc: "IPv4 paket filtreleme ve NAT yönetim aracı"
+        ex1: "Mevcut kuralları listele"
+        ex2: "22. port için gelen SSH'yi izin ver"
+        ex3: "Tüm kuralları temizle"
+      journalctl:
+        desc: "systemd günlüklerini sorgula"
+        ex1: "Son hataları bağlam ile göster"
+        ex2: "Bir servis için logları göster"
+        ex3: "Belirli bir zamandan sonraki logları göster"
+      ln:
+        desc: "Dosyalar arasında bağlantı oluştur"
+        ex1: "Sembolik bağlantı oluştur"
+        ex2: "Sabit bağlantı oluştur"
+        ex3: "Sembolik bağlantıyı zorla yeniden oluştur"
+      sed:
+        desc: "Akış düzenleyici (metin işleme)"
+        ex1: "Bir metni global olarak değiştir"
+        ex2: "Yalnızca belirli satır aralığını yazdır"
+        ex3: "Eşleşen satırları sil"
+      systemctl:
+        desc: "systemd servis yöneticisini kontrol et"
+        ex1: "Servis durumunu göster"
+        ex2: "Bir servisi başlat"
+        ex3: "Sistemde açılışta başlatılacak şekilde etkinleştir"
+      tr:
+        desc: "Karakterleri çevir veya sil"
+        ex1: "Küçük harfleri büyük harfe çevir"
+        ex2: "Bir karakteri değiştir"
+        ex3: "Rakamları sil"
+      type:
+        desc: "Bir adın kabukta nasıl yorumlanacağını göster"
+        ex1: "`ls` nasıl çözülüyor göster"
+        ex2: "`cd` nasıl çözülüyor göster"
+        ex3: "`python3` nasıl çözülüyor göster"
+      ulimit:
+        desc: "Kullanıcı işlem kaynak sınırlarını göster veya ayarla"
+        ex1: "Maksimum açık dosya sayısını göster"
+        ex2: "Çekirdek dökümlerini etkinleştir"
+        ex3: "Kullanıcı işlemlerini sınırla"
+      uptime:
+        desc: "Sistem çalışma süresini ve yük ortalamasını göster"
+        ex1: "Okunaklı uptime"
+        ex2: "Açılış zamanını göster"
+      xargs:
+        desc: "stdin'den komut satırı oluştur ve çalıştır"
+        ex1: "Her argümanı ayrı satırda yaz"
+        ex2: "Kelimeleri ayrı argümanlara ayır"
+        ex3: "Dosyaları bul ve xargs ile sil"
+
+  network:
+    _root:
+      title: "🌐 Ağ komutları"
+      curl:
+        desc: "Sunuculara/verilerden veri aktar"
+        ex1: "Form verisi ile POST isteği"
+        ex2: "Yalnızca başlıkları al"
+        ex3: "İndir ve dosyaya kaydet"
+      dig:
+        desc: "DNS sorgulama aracı"
+        ex1: "A kayıtlarını sorgula"
+        ex2: "Kısa cevap"
+        ex3: "Belirli bir DNS sunucusu kullan"
+      ftp:
+        desc: "Dosya Aktarım Protokolü (FTP) istemcisi"
+        ex1: "Bir FTP sunucusuna bağlan"
+        ex2: "Otomatik giriş olmadan bağlan"
+        ex3: "FTP oturumunda dosya indir"
+      ip-address:
+        desc: "IP adreslerini göster/yönet"
+        ex1: "`eth0` için adres bilgilerini göster"
+        ex2: "Tüm adresleri listele"
+      ip-link:
+        desc: "Ağ aygıtlarını göster/yönet"
+        ex1: "Ağ bağlantılarını göster"
+        ex2: "Bir arayüzü etkinleştir"
+      ip-route:
+        desc: "IP yönlendirme tablosunu göster/yönet"
+        ex1: "Yönlendirme tablosunu listele"
+        ex2: "Varsayılan rota ekle"
+      nc:
+        desc: "Rastgele TCP/UDP bağlantıları ve dinleme"
+        ex1: "Bir ana bilgisayarı port taraması yap"
+        ex2: "Bir TCP portunu dinle"
+        ex3: "Uzak bir porta dosya gönder"
+      nmap:
+        desc: "Ağ keşif aracı ve güvenlik/port tarayıcı"
+        ex1: "Bir alt ağı ping taraması"
+        ex2: "Servis/sürüm tespiti"
+        ex3: "İşletim sistemi tespiti"
+      nslookup:
+        desc: "İnternet alan adı sunucularını sorgula"
+        ex1: "Bir alan adını sorgula"
+        ex2: "Bir IP için ters sorgu"
+      ssh:
+        desc: "OpenSSH uzak oturum istemcisi"
+        ex1: "Bir ana bilgisayara bağlan"
+        ex2: "Varsayılan olmayan port ile bağlan"
+        ex3: "Belirli bir özel anahtar ile giriş yap"
+      ss:
+        desc: "Soketleri incelemek için yardımcı program"
+        ex1: "TCP/UDP dinleyen portları listele"
+        ex2: "Özet istatistikler"
+        ex3: "Dinleyen soketleri listele"
+      telnet:
+        desc: "TELNET protokolü için kullanıcı arayüzü"
+        ex1: "80. porta bir ana bilgisayara bağlan"
+        ex2: "443’e bağlan"
+        ex3: "Yerel SMTP’ye bağlan"
+      traceroute:
+        desc: "Bir ağ ana bilgisayarına rotayı izle"
+        ex1: "Bir IP’ye giden yolu izle"
+        ex2: "Maksimum atlama sayısını sınırla"
+      wget:
+        desc: "Web’den dosya indir"
+        ex1: "Çıktıyı dosyaya kaydet"
+        ex2: "Geçerli dizine indir"
+        ex3: "Yarıda kalan indirmeyi devam ettir"
+
+  files:
+    _root:
+      title: "🔍 Dosya arama ve yönetme"
+      basename:
+        desc: "Dizin ve uzantıyı dosya adlarından çıkar"
+        ex1: "Bir yoldan dosya adını yazdır"
+        ex2: "İsimden bir uzantıyı çıkar"
+      dirname:
+        desc: "Bir yolun son bileşenini çıkar"
+        ex1: "Yolun dizin kısmını göster"
+        ex2: "`/etc/passwd` yolunun üst dizinini göster"
+      du:
+        desc: "Dosya disk alanı kullanımını tahmin et"
+        ex1: "Bir dizinin boyutunu göster"
+        ex2: "Geçerli dizindeki öğelerin boyutunu göster"
+        ex3: "Birden çok dizinin toplam boyutu"
+      file:
+        desc: "Dosya türünü belirle"
+        ex1: "Dosya türünü algıla"
+        ex2: "Bir dizindeki tüm dosyaların türlerini algıla"
+        ex3: "MIME türünü göster"
+      find:
+        desc: "Dosya ara"
+        ex1: "İsme göre kabuk scriptlerini bul"
+        ex2: "10 MB’den büyük dosyaları bul"
+        ex3: "Son bir gün içinde değişen dosyalar"
+      locate:
+        desc: "Veritabanı kullanarak ada göre dosya bul"
+        ex1: "Bir dosya adını bul"
+        ex2: "Joker karakter araması"
+        ex3: "Büyük/küçük harf duyarsız arama"
+      realpath:
+        desc: "Çözümlenmiş mutlak yolu yazdır"
+        ex1: "Bir dosya yolunu çözümle"
+        ex2: "Göreceli yolu çözümle"
+      stat:
+        desc: "Dosya veya dosya sistemi durumunu göster"
+        ex1: "Ayrıntılı dosya durumunu göster"
+        ex2: "Yalnızca dosya boyutunu yazdır"
+        ex3: "Dosya sistemi durumunu göster"
+      tree:
+        desc: "Dizin içeriğini ağaç biçiminde listele"
+        ex1: "Dizin ağacını yazdır"
+        ex2: "Görüntüleme derinliğini sınırla"
+        ex3: "Gizli dosyaları dahil et"
+
+  monitoring:
+    _root:
+      title: "📊 Sistem izleme"
+      dmesg:
+        desc: "Çekirdek ring buffer’ı yazdır veya kontrol et"
+        ex1: "Son çekirdek mesajlarını göster"
+        ex2: "USB mesajlarını filtrele"
+      free:
+        desc: "Bellek kullanımını göster"
+        ex1: "Okunabilir birimler"
+        ex2: "MB cinsinden göster"
+      htop:
+        desc: "Etkileşimli işlem görüntüleyici"
+        ex1: "`htop` çalıştır"
+      iotop:
+        desc: "İşlemlere göre G/Ç kullanımını göster"
+        ex1: "`iotop` çalıştır"
+        ex2: "Yalnızca G/Ç yapan işlemleri göster"
+      lsof:
+        desc: "Açık dosyaları listele"
+        ex1: "80. portu kullanan işlemleri göster"
+        ex2: "Bir kullanıcının açtığı dosyaları göster"
+      uptime:
+        desc: "Sistem çalışma süresini ve yük ortalamalarını göster"
+      vmstat:
+        desc: "Sanal bellek istatistiklerini raporla"
+        ex1: "Her 1 saniyede yenile"
+        ex2: "5 saniye aralıkla, 3 rapor"
+      watch:
+        desc: "Bir programı periyodik çalıştır ve çıktısını göster"
+        ex1: "Disk kullanımını izle"
+        ex2: "Farklılıkları vurgula ve belleği izle"
+
+  packages:
+    _root:
+      title: "📦 Paket yönetimi"
+      apt:
+        desc: "APT paket yöneticisi (Debian/Ubuntu)"
+        ex1: "Bir paket yükle"
+        ex2: "Bir paketi kaldır"
+        ex3: "Paket listelerini güncelle ve yükselt"
+      dnf:
+        desc: "Dandified YUM (Fedora/RHEL ailesi)"
+        ex1: "Bir paket yükle"
+        ex2: "Paketleri yükselt"
+      rpm:
+        desc: "RPM paket yöneticisi"
+        ex1: "Bir RPM paketi yükle"
+        ex2: "Bir paketi kaldır"
+      snap:
+        desc: "Snappy paket yöneticisi"
+        ex1: "Bir snap yükle"
+        ex2: "Bir snap kaldır"
+      yum:
+        desc: "Yellowdog Updater Modified (RHEL/CentOS)"
+        ex1: "Bir paket yükle"
+        ex2: "Bir paketi kaldır"
+
+  "file-systems":
+    _root:
+      title: "💽 Dosya sistemleri"
+      blkid:
+        desc: "Blok aygıtı özniteliklerini bul/yazdır"
+        ex1: "Blok aygıtlarını ve özniteliklerini listele"
+      df:
+        desc: "Dosya sistemi disk alanı kullanımını raporla"
+        ex1: "Türlere göre okunabilir boyutlar"
+      fsck:
+        desc: "Bir Linux dosya sistemini kontrol et ve onar"
+        ex1: "Bir aygıtı kontrol et"
+      lsblk:
+        desc: "Blok aygıtları hakkında bilgi listele"
+        ex1: "Aygıtları ağaç olarak listele"
+      mkfs:
+        desc: "Bir Linux dosya sistemi oluştur"
+        ex1: "Bir ext4 dosya sistemi oluştur"
+      mount:
+        desc: "Bir dosya sistemini bağla"
+        ex1: "Bir aygıtı `/mnt`’e bağla"
+        ex2: "Yola göre bağlanan dosya sistemlerini göster"
+      parted:
+        desc: "Disk bölümleme aracı"
+        ex1: "Bir diski bölümleme için aç"
+      umount:
+        desc: "Dosya sistemlerini ayır"
+        ex1: "Bir bağlama noktasını ayır"
+
+  scripts:
+    _root:
+      title: "🤖 Scriptler ve otomasyon"
+      alias:
+        desc: "Kabuk kısayollarını tanımla veya göster"
+        ex1: "Kullanışlı bir kısayol oluştur"
+        ex2: "Tanımlı kısayolları listele"
+      shell:
+        desc: "Kabuk scriptlerini çalıştır"
+        ex1: "Bir scripti Bash ile çalıştır"
+        ex2: "Bir scripti `sh` ile çalıştır"
+      crontab:
+        desc: "Kullanıcı bazlı cron tabloları"
+        ex1: "Geçerli kullanıcının crontab'ini düzenle"
+      read:
+        desc: "Kabuk scriptlerinde kullanıcı girdisi al"
+        ex1: "Bir değişkene oku"
+      set:
+        desc: "Kabuk seçeneklerini/parametrelerini ayarla"
+        ex1: "İlk hatada çık"
+      source:
+        desc: "Geçerli kabukta dosyadan komutları oku ve çalıştır"
+        ex1: "Kabuk yapılandırmasını yeniden yükle"
+      trap:
+        desc: "Sinyalleri yakala ve komut çalıştır"
+        ex1: "Kabuk kapanışında komut çalıştır"
+
+  "dev-debug":
+    _root:
+      title: "🛠 Geliştirme ve hata ayıklama"
+      gcc:
+        desc: "GNU C derleyicisi"
+        ex1: "Bir C kaynak dosyasını derle"
+      gdb:
+        desc: "GNU hata ayıklayıcı"
+        ex1: "Derlenmiş bir ikiliyi hata ayıkla"
+      git:
+        desc: "Dağıtık sürüm kontrol sistemi"
+        ex1: "Çalışma ağacının durumunu göster"
+        ex2: "Bir mesaj ile commit yap"
+      ltrace:
+        desc: "Kütüphane çağrılarını izleyici"
+        ex1: "Bir ikilinin kütüphane çağrılarını izle"
+      make:
+        desc: "Program gruplarını yönetme aracı"
+        ex1: "Makefile’a göre derle"
+      shellcheck:
+        desc: "Kabuk scriptleri için statik analiz"
+        ex1: "Bir kabuk scriptini denetle"
+      strace:
+        desc: "Sistem çağrılarını ve sinyalleri izle"
+        ex1: "Bir programın sistem çağrılarını izle"
+      valgrind:
+        desc: "Dinamik analiz araçları için altyapı"
+        ex1: "Bir programı Valgrind altında çalıştır"
+      editors:
+        desc: "Komut satırı metin editörleri"
+        ex1: "Vim ile düzenle"
+        ex2: "Nano ile düzenle"
+
+  misc:
+    _root:
+      title: "📌 Çeşitli"
+      cal:
+        desc: "Takvim görüntüle"
+        ex1: "Bir yıl takvimini göster"
+        ex2: "Belirli bir ayı göster"
+      date:
+        desc: "Sistem tarih ve saatini görüntüle veya ayarla"
+        ex1: "Geçerli zamanı yazdır (SS:DD:SS)"
+        ex2: "Göreceli günün tarihini yazdır"
+      factor:
+        desc: "Sayıyı çarpanlarına ayır"
+        ex1: "Bir sayıyı çarpanlara ayır"
+      man:
+        desc: "Çevrimiçi kılavuz sayfalarını biçimlendir ve görüntüle"
+        ex1: "Bir man sayfası aç"
+        ex2: "Anahtara göre kılavuzlarda ara"
+        ex3: "Belirli bir bölüm aç"
+      seq:
+        desc: "Sayı dizileri yazdır"
+        ex1: "1’den 5’e kadar say"
+        ex2: "Adım ile say"
+        ex3: "Sayıları özel ayırıcı ile birleştir"
+      yes:
+        desc: "Bir metni sürekli çıktıla"
+        ex1: "Özyinelemeli silmeyi otomatik onayla"
+
+  resources:
+    _root:
+      title: "📚 Ek kaynaklar"
+      str:
+        man_pages_desc: "📘 **man sayfaları** - komutlar için ayrıntılı kılavuzlar"
+        tldr_desc: "📙 **TLDR** - popüler komutların kısa kullanım örnekleri"
+        tip_desc: "🧠 **İpucu:** Cheat sheet tarzı yardım için `tldr` kurun:"
+        useful_links: "🌐 Faydalı bağlantılar"
+        linux_man_pages_online_desc: "**Linux man sayfaları çevrimiçi** — resmi kılavuz sayfaları, komut adına göre aranabilir:"
+        simplified_man_pages_desc: "**Basitleştirilmiş ve topluluk odaklı man sayfaları** — pratik örneklerle topluluk tarafından sağlanan yardım sayfaları:"

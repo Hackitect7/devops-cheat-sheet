@@ -1,0 +1,629 @@
+docker:
+  meta:
+    _root:
+      title: "🐳 Docker"
+      desc: "📘 Docker é uma plataforma para executar aplicações em contêineres isolados. Esta folha de referência contém comandos para trabalhar com imagens, contêineres, redes, volumes, bem como Docker Compose e Swarm."
+
+  basic:
+    _root:
+      title: "📦 Comandos básicos"
+    docker:
+      desc: "O comando principal do Docker CLI usado para executar subcomandos e gerenciar contêineres, imagens, redes e volumes"
+    docker_version:
+      desc: "Exibir a versão instalada do Docker (cliente e servidor). Útil para verificação da instalação"
+      ex1: "Mostrar apenas a versão da API do cliente Docker"
+      ex2: "Mostrar apenas a versão do servidor (Engine) do Docker"
+      ex3: "Exibir informações completas da versão em formato JSON"
+    docker_system_info:
+      desc: "Exibir informações gerais do sistema Docker: número de contêineres, imagens, recursos"
+      ex1: "Mostrar dados do Docker: versões, redes, número de contêineres e imagens"
+      ex2: "Exibir informações em formato JSON — útil para automação"
+      ex3: "Exibir número de CPUs e memória total"
+      ex4: "Mostrar o driver de armazenamento usado pelo Docker"
+    docker_image_pull:
+      desc: "Baixar uma imagem do Docker Hub ou outro registro. Contêineres não podem ser executados sem imagens"
+      ex1: "Baixar a última imagem disponível do Ubuntu"
+      ex2: "Baixar a imagem leve do Nginx baseada no Alpine Linux"
+      ex3: "Baixar a imagem Redis versão 7"
+    docker_container_run:
+      desc: "Criar e executar um novo contêiner a partir de uma imagem"
+      ex1: "Executar Ubuntu com terminal Bash interativo"
+      ex2: "Executar Nginx em modo destacado (background)"
+      ex3: "Executar Nginx e vincular a porta 80 do contêiner à porta 8080 do host"
+    docker_container_ls:
+      desc: "Listar contêineres em execução"
+      ex1: "Mostrar apenas contêineres em execução"
+      ex2: "Mostrar todos os contêineres, incluindo os parados"
+      ex3: "Exibir apenas nomes de contêineres"
+    docker_container_start:
+      desc: "Iniciar um ou mais contêineres parados"
+      ex1: "Iniciar um contêiner pelo nome"
+      ex2: "Iniciar todos os contêineres"
+      ex3: "Iniciar um contêiner e anexar terminal interativo"
+    docker_container_stop:
+      desc: "Parar um contêiner em execução"
+      ex1: "Parar um contêiner pelo nome"
+      ex2: "Parar todos os contêineres em execução"
+      ex3: "Parar um contêiner dando 5 segundos para finalizar processos"
+    docker_container_restart:
+      desc: "Reiniciar um contêiner"
+      ex1: "Reiniciar um contêiner específico"
+      ex2: "Reiniciar todos os contêineres em execução"
+      ex3: "Reiniciar um contêiner com atraso de 10 segundos"
+    docker_container_rm:
+      desc: "Remover um contêiner"
+      ex1: "Remover um contêiner parado específico"
+      ex2: "Remover todos os contêineres parados"
+      ex3: "Forçar remoção de um contêiner em execução"
+    docker_image_ls:
+      desc: "Listar imagens baixadas"
+      ex1: "Mostrar todas as imagens no host"
+      ex2: "Mostrar todas as imagens, incluindo camadas intermediárias"
+      ex3: "Exibir apenas nomes e tags de imagens"
+    docker_image_rm:
+      desc: "Remover uma ou mais imagens do armazenamento local"
+      ex1: "Remover imagem com tag `latest` do repositório `test1`"
+      ex2: "Remover imagem pelo ID"
+      ex3: "Remover todas as imagens (use com cautela!)"
+
+  container:
+    _root:
+      title: "🔁 Gerenciamento de contêineres"
+    docker_container_exec:
+      desc: "Executar um comando dentro de um contêiner em execução"
+      ex1: "Abrir um shell bash interativo dentro do contêiner chamado `container`"
+      ex2: "Executar o comando `ls` no diretório `/app` dentro do contêiner"
+      ex3: "Executar um comando no contêiner em modo destacado (sem aguardar)"
+    docker_container_logs:
+      desc: "Visualizar logs de contêiner"
+      ex1: "Mostrar todos os logs do contêiner `container`"
+      ex2: "Seguir logs do contêiner em tempo real"
+      ex3: "Mostrar as últimas 50 linhas de logs"
+    docker_inspect:
+      desc: "Recuperar informações detalhadas em JSON sobre um contêiner ou imagem"
+      ex1: "Exibir detalhes do contêiner `container`"
+      ex2: "Mostrar o endereço IP do contêiner"
+    docker_container_stats:
+      desc: "Exibir estatísticas de uso de recursos em tempo real dos contêineres"
+      ex1: "Exibir CPU, memória, rede e disco de todos os contêineres"
+      ex2: "Mostrar estatísticas apenas de um contêiner específico"
+      ex3: "Exibir snapshot único de estatísticas e sair"
+    docker_container_rename:
+      desc: "Renomear um contêiner"
+      ex1: "Renomear contêiner de `old_name` para `new_name`"
+    docker_container_cp:
+      desc: "Copiar arquivos entre um contêiner e o host"
+      ex1: "Copiar um arquivo do contêiner para o diretório atual do host"
+      ex2: "Copiar um arquivo do host para o contêiner"
+      ex3: "Transmitir um arquivo de log do contêiner e filtrar linhas com \"ERROR\" sem salvar no disco"
+    docker_container_top:
+      desc: "Exibir processos em execução dentro de um contêiner"
+      ex1: "Mostrar processos do contêiner chamado `container`"
+    docker_container_pause:
+      desc: "Pausar todos os processos em um contêiner"
+      ex1: "Pausar o contêiner `container`"
+    docker_container_unpause:
+      desc: "Retomar um contêiner pausado"
+      ex1: "Retomar o contêiner `container`"
+    docker_container_update:
+      desc: "Atualizar configurações de contêiner sem reiniciar"
+      ex1: "Limitar uso de memória do contêiner a 500 MB"
+
+  images:
+    _root:
+      title: "🧱 Imagens e Dockerfile"
+    docker_buildx_build:
+      desc: "Construir uma imagem Docker a partir de um Dockerfile"
+      ex1: "Construir uma imagem marcada como `my_image` do diretório atual"
+      ex2: "Construir uma imagem marcada com a versão `1.0`"
+      ex3: "Construir uma imagem sem usar cache para build limpo"
+    docker_container_commit:
+      desc: "Criar uma imagem a partir do estado atual de um contêiner"
+      ex1: "Criar imagem `my_img` com tag `v1` do contêiner `container`"
+      ex2: "Criar uma imagem com mensagem de commit"
+      ex3: "Criar uma imagem especificando o autor"
+    docker_image_tag:
+      desc: "Adicionar ou alterar uma tag de imagem"
+      ex1: "Adicionar uma tag para enviar ao registro `myrepo`"
+      ex2: "Criar tag `stable` para imagem marcada como `1.0`"
+      ex3: "Adicionar uma tag `backup` a uma imagem local"
+    docker_image_push:
+      desc: "Enviar uma imagem para o Docker Hub ou outro registro"
+      ex1: "Enviar imagem marcada como `latest` para o repositório `myrepo`"
+      ex2: "Enviar imagem marcada como `1.0`"
+      ex3: "Enviar imagem com tag padrão `latest`"
+    docker_login:
+      desc: "Autenticar no Docker Hub ou outro registro"
+      ex1: "Inserir usuário e senha interativamente para o Docker Hub"
+      ex2: "Login em um registro privado"
+      ex3: "Login com usuário e senha (não recomendado)"
+    docker_logout:
+      desc: "Sair do Docker Hub ou outro registro"
+      ex1: "Sair do Docker Hub"
+      ex2: "Sair de um registro privado"
+    healthcheck:
+      desc: "Instrução Dockerfile para verificar automaticamente o estado de saúde do contêiner"
+      ex1: "Adicionar verificação de saúde para checar disponibilidade do serviço a cada 30 segundos"
+      ex2: "Verificar o status do healthcheck de um contêiner em execução"
+
+  networks:
+    _root:
+      title: "🔌 Redes e Volumes"
+    docker_network_ls:
+      desc: "Listar todas as redes Docker"
+      ex1: "Mostrar todas as redes criadas no Docker"
+      ex2: "Mostrar apenas redes com driver `bridge`"
+      ex3: "Mostrar apenas nomes de redes"
+    docker_network_create:
+      desc: "Criar uma nova rede Docker"
+      ex1: "Criar uma rede chamada `my_net` com configurações padrão"
+      ex2: "Criar uma rede com driver `bridge`"
+      ex3: "Criar uma rede com sub-rede especificada"
+    docker_network_connect:
+      desc: "Conectar um contêiner a uma rede"
+      ex1: "Conectar contêiner chamado `container` à rede `my_net`"
+      ex2: "Conectar com alias `db_net`"
+    docker_network_disconnect:
+      desc: "Desconectar um contêiner de uma rede"
+      ex1: "Desconectar contêiner `container` da rede `my_net`"
+    docker_volume_ls:
+      desc: "Listar todos os volumes Docker"
+      ex1: "Mostrar todos os volumes Docker"
+      ex2: "Mostrar volumes não utilizados"
+    docker_volume_create:
+      desc: "Criar um novo volume Docker"
+      ex1: "Criar um volume chamado `my_vol`"
+      ex2: "Criar um volume temporário usando tmpfs"
+    docker_volume_inspect:
+      desc: "Exibir informações detalhadas sobre um volume"
+      ex1: "Exibir detalhes do volume `my_vol` em formato JSON"
+    docker_volume_rm:
+      desc: "Remover um ou mais volumes"
+      ex1: "Remover volume chamado `my_vol`"
+      ex2: "Remover todos os volumes não utilizados"
+
+  plugins:
+    _root:
+      title: "🧩 Plugins do Docker"
+    docker_plugin_ls:
+      desc: "Listar plugins instalados no Docker"
+      ex1: "Exibir todos os plugins e seus status"
+    docker_plugin_install:
+      desc: "Instalar um plugin Docker de um registro"
+      ex1: "Instalar o plugin de volume SSHFS"
+      ex2: "Instalar o plugin de rede Weave"
+    docker_plugin_disable:
+      desc: "Desabilitar um plugin instalado"
+      ex1: "Desabilitar o plugin SSHFS"
+    docker_plugin_enable:
+      desc: "Habilitar um plugin previamente desabilitado"
+      ex1: "Habilitar o plugin SSHFS"
+    docker_plugin_rm:
+      desc: "Remover um plugin Docker"
+      ex1: "Remover o plugin SSHFS"
+
+  compose:
+    _root:
+      title: 📋 Docker Compose
+    docker_compose_up:
+      desc: "Iniciar contêineres definidos em `docker-compose.yml`"
+      ex1: "Iniciar todos os serviços no diretório atual em modo interativo"
+      ex2: "Iniciar serviços em modo destacado (background)"
+      ex3: "Construir imagens antes de iniciar os serviços"
+    docker_compose_down:
+      desc: "Parar e remover contêineres, redes e volumes criados pelo `up`"
+      ex1: "Parar todos os serviços em execução e remover recursos associados"
+      ex2: "Também remover volumes criados pelo Compose"
+      ex3: "Também remover imagens criadas pelo Compose"
+    docker_compose_logs:
+      desc: "Visualizar logs de todos ou de serviços específicos"
+      ex1: "Mostrar logs de todos os serviços"
+      ex2: "Seguir logs em tempo real"
+      ex3: "Mostrar logs apenas do serviço `web`"
+    docker_compose_exec:
+      desc: "Executar um comando dentro de um contêiner de serviço em execução"
+      ex1: "Entrar em um shell bash interativo dentro do contêiner do serviço `web`"
+      ex2: "Executar o comando `ls` dentro do contêiner do banco de dados"
+      ex3: "Executar um comando dentro do contêiner `worker` em modo destacado"
+    docker_compose_build:
+      desc: "Construir ou reconstruir imagens de serviços"
+      ex1: "Construir todas as imagens definidas em `docker-compose.yml`"
+      ex2: "Construir apenas a imagem do serviço `web`"
+      ex3: "Construir imagens sem usar cache"
+    docker_compose_ps:
+      desc: "Mostrar o status de todos os serviços e contêineres"
+      ex1: "Mostrar todos os contêineres, incluindo os parados"
+      ex2: "Mostrar apenas os nomes dos serviços"
+    docker_compose_pull:
+      desc: "Baixar/atualizar imagens de serviços do registro"
+      ex1: "Baixar imagem apenas para o serviço `web`"
+      ex2: "Continuar download mesmo se algumas imagens falharem"
+    docker_compose_restart:
+      desc: "Reiniciar todos ou serviços específicos"
+      ex1: "Reiniciar apenas o serviço `db`"
+      ex2: "Reiniciar serviços com timeout de 10 segundos"
+    docker_compose_config:
+      desc: "Exibir a configuração final do Compose em formato YAML"
+      ex1: "Listar todos os serviços na configuração"
+      ex2: "Listar todos os volumes definidos na configuração"
+    docker_compose_start:
+      desc: "Iniciar serviços parados sem recriar contêineres"
+      ex1: "Iniciar o serviço `web`"
+      ex2: "Iniciar múltiplos serviços de uma vez"
+    docker_compose_stop:
+      desc: "Parar serviços sem remover contêineres"
+      ex1: "Parar o serviço `web`"
+      ex2: "Parar serviços com timeout de 5 segundos"
+
+  export_import:
+    _root:
+      title: 📤 Exportar e Importar
+    docker_image_save:
+      desc: "Salvar uma ou mais imagens Docker em um arquivo tar para importação ou transferência posterior"
+      ex1: "Salvar uma imagem Docker em um arquivo tar"
+      ex2: "Forma alternativa de salvar uma imagem em arquivo"
+      ex3: "Salvar uma imagem Redis específica em um arquivo"
+    docker_image_load:
+      desc: "Carregar imagens Docker de um arquivo tar previamente salvo"
+      ex1: "Carregar uma imagem Docker de um arquivo tar"
+      ex2: "Carregar uma imagem especificando o arquivo via parâmetro"
+      ex3: "Carregar uma imagem sem saída de progresso"
+    docker_container_export:
+      desc: "Exportar o sistema de arquivos de um contêiner como um arquivo tar sem histórico ou metadados da imagem"
+      ex1: "Exportar sistema de arquivos de um contêiner para um arquivo"
+      ex2: "Exportar contêiner pelo nome"
+      ex3: "Exportar por ID do contêiner usando a flag `-o`"
+    docker_image_import:
+      desc: "Criar uma nova imagem a partir de um arquivo tar de sistema de arquivos"
+      ex1: "Importar arquivo tar como uma nova imagem Docker"
+      ex2: "Importar imagem diretamente de uma URL"
+      ex3: "Importar da entrada padrão"
+
+  cleanup:
+    _root:
+      title: 🧹 Limpeza e Diagnóstico
+    docker_system_df:
+      desc: "Exibir uso de disco do Docker: volumes, imagens, contêineres e cache de build"
+      ex1: "Saída detalhada com informações de cada imagem, contêiner e volume"
+      ex2: "Exibir informações em formato JSON"
+    docker_system_prune:
+      desc: "Remover todos os dados não utilizados do Docker: contêineres parados, redes não usadas, imagens órfãs e cache de build"
+      ex1: "Remover imagens não utilizadas, incluindo intermediárias"
+      ex2: "Remover volumes não utilizados junto com outros recursos"
+    docker_image_prune:
+      desc: "Remover imagens Docker não utilizadas, incluindo camadas órfãs"
+      ex1: "Remover todas as imagens não utilizadas, incluindo órfãs"
+      ex2: "Remover imagens mais antigas que 24 horas"
+    docker_container_prune:
+      desc: "Remover contêineres parados correspondentes a filtros ou todos se nenhum for especificado"
+      ex1: "Remover contêineres parados há mais de 24 horas"
+      ex2: "Remover sem confirmação"
+
+  swarm:
+    _root:
+      title: 🐝 Docker Swarm
+    docker_swarm_init:
+      desc: "Inicializar um novo cluster Docker Swarm no nó atual"
+      ex1: "Inicializar o cluster especificando o endereço IP"
+      ex2: "Inicializar com uma porta de escuta especificada"
+    docker_service_create:
+      desc: "Criar um novo serviço no cluster Swarm"
+      ex1: "Criar um serviço Nginx no Swarm"
+      ex2: "Criar um serviço com 3 réplicas"
+      ex3: "Criar um serviço com mapeamento de portas"
+    docker_stack_deploy:
+      desc: "Implantar um conjunto de serviços no cluster Swarm baseado em um arquivo Compose"
+      ex1: "Implantar stack a partir do arquivo compose"
+      ex2: "Implantar com encaminhamento de autenticação de registro"
+      ex3: "Usar um arquivo compose alternativo para o stack"
+    docker_stack_rm:
+      desc: "Remover uma ou mais stacks do cluster Swarm"
+      ex1: "Remover a stack `mystack`"
+      ex2: "Remover todas as stacks (não recomendado)"
+      ex3: "Remover stack e sair do Swarm"
+
+  advanced_docker:
+    _root:
+      title: "💼 Uso Avançado do Docker"
+
+    prof:
+      title: "🚀 Comandos Profissionais do Docker"
+      docker_buildx:
+        desc: "Ferramenta avançada de build substituindo `docker build`. Suporta multiplataforma, cache, builds paralelos e exportação para vários formatos. Útil para CI/CD e desenvolvimento multiplataforma"
+        ex1: "Construir uma imagem multiplataforma (ARM e x86 simultaneamente)"
+        ex2: "Construir uma imagem e carregá-la no cache local do Docker Engine"
+        ex3: "Construir e enviar uma imagem multiplataforma para um registro"
+      docker_context:
+        desc: "Gerenciar contextos Docker para trabalhar com ambientes remotos ou múltiplos. Permite alternar rapidamente entre Engines Docker locais e remotos"
+        ex1: "Criar um contexto para conectar a um host Docker remoto"
+        ex2: "Alternar para o contexto remoto"
+        ex3: "Listar contextos disponíveis e o ativo"
+      docker_system_events:
+        desc: "Escutar eventos do Docker em tempo real, com filtragem por tipo de evento (ex.: início de contêiner). Útil para monitoramento e automação"
+        ex1: "Mostrar apenas eventos de início de contêiner"
+        ex2: "Mostrar eventos da última hora até 10 minutos atrás"
+        ex3: "Mostrar apenas eventos relacionados a redes"
+        ex4: "Mostrar eventos relacionados à imagem `nginx`"
+      docker_container_update:
+        desc: "Alterar limites de recursos e configurações de um contêiner em execução sem reiniciá-lo"
+        ex1: "Definir limite de 2 CPUs e 1 GB de RAM"
+        ex2: "Definir política de reinício automático para `unless-stopped`"
+        ex3: "Limitar o número de processos para 200"
+      docker_container_diff:
+        desc: "Exibir alterações no sistema de arquivos de um contêiner em comparação com sua imagem original. Útil para depuração e auditoria"
+        ex1: "Exibir todas as alterações no sistema de arquivos do contêiner"
+        ex2: "Exibir apenas arquivos adicionados (`A` — Added)"
+      docker_image_history:
+        desc: "Exibir o histórico das camadas da imagem: comandos de build, tamanho de cada camada e tempo de criação. Útil para otimização e auditoria"
+        ex1: "Exibir histórico de camadas de uma imagem"
+        ex2: "Exibir todos os comandos de build sem truncamento"
+        ex3: "Exibir apenas comandos de build e tamanhos das camadas"
+
+    practices:
+      title: "🛠 Práticas Úteis de Docker e Automação"
+      minimize_image_size:
+        title: "Minimizar o tamanho da imagem"
+        p1: "Use imagens base como `alpine` ou `scratch` para tamanho mínimo."
+        p2: "Para mesclar camadas, use `--squash` durante o build (requer recursos experimentais habilitados)."
+        p3: "Além disso, remova arquivos temporários e caches em uma única camada:"
+      minimize_layers:
+        title: "Minimizar número de camadas"
+        p1: "Combine comandos em um `RUN` para reduzir o número de camadas e o tamanho final da imagem:"
+      optimize_build:
+        title: "Otimizar build de Dockerfile"
+        p1: "Use builds multi-stage para que apenas os arquivos necessários permaneçam na imagem final."
+        p2: "Copie e instale dependências primeiro, depois copie o código — isso melhora o cache de camadas e acelera rebuilds."
+      secrets_and_configs:
+        title: "Separar segredos e configs"
+        p1: "Nunca armazene arquivos `.env`, chaves de API ou certificados privados dentro da imagem."
+        intro: "Use para configuração:"
+        items:
+          secret: "`docker secret` (no Swarm)"
+          env: "variáveis de ambiente (`-e VAR=valor` ou `.env`)"
+          volumes: "volumes externos para configs"
+      buildkit_secrets:
+        title: "Segredos em tempo de build (BuildKit)"
+        p1: "Para passagem segura de segredos durante o build, use a flag `--secret`:"
+        p2: "No Dockerfile, o segredo fica disponível em `/run/secrets/mysecret`:"
+        note: "🛡 Isso evita que segredos sejam armazenados em camadas da imagem."
+      rootless:
+        title: "Docker sem root"
+        p1: "Executar Docker sem privilégios de root melhora a segurança e reduz o risco de comprometimento do host."
+        steps_intro: "Para habilitar:"
+        check_intro: "Verifique:"
+        warning: "⚠ Alguns recursos (ex.: redirecionamento de portas <1024) não estarão disponíveis."
+      scan:
+        title: "Escanear imagens por vulnerabilidades"
+        p1: "Use ferramentas integradas:"
+        p2: "Ou a nova CLI:"
+        p3: "Isso ajuda a detectar vulnerabilidades em imagens base e dependências."
+      resource_limits:
+        title: "Monitorar uso de recursos"
+        p1: "Limite contêineres por memória, CPU e número de processos:"
+        p2: "Isso previne consumo excessivo de recursos."
+        p3: "Você também pode limitar I/O:"
+        p4: "Útil para contêineres que não devem sobrecarregar o subsistema de disco."
+      cleanup:
+        title: "Limpeza automática"
+        p1: "Remova regularmente imagens, contêineres, volumes e redes não utilizados:"
+        warning: "⚠ Cuidado: este comando apaga todos os recursos não utilizados."
+        p2: "Para limpeza seletiva use:"
+      cicd:
+        title: "Integração CI/CD"
+        p1: "Incorpore build, teste e deploy em GitHub Actions, GitLab CI, pipelines Jenkins."
+        example_intro: "Exemplo de etapa no GitHub Actions:"
+      logging:
+        title: "Logs e monitoramento"
+        p1: "Conecte drivers de log (`--log-driver`) a sistemas centralizados: ELK, Loki, Splunk."
+        p2: "Use Prometheus + cAdvisor para métricas de contêiner."
+      production:
+        title: "Implantação em produção"
+        p1: "Separe configs para desenvolvimento e produção usando `docker-compose.override.yml`."
+        ha_intro: "Para alta disponibilidade e escalabilidade use:"
+        items:
+          swarm: "Docker Swarm"
+          k8s: "Kubernetes"
+
+    debugging:
+      title: "🐞 Depuração e Profiling de Contêineres Docker"
+      exec:
+        group_desc: "Executa um comando dentro de um contêiner em execução, fornecendo acesso interativo ou a capacidade de rodar processos no ambiente isolado do contêiner"
+        r1: "Iniciar um terminal interativo (bash) dentro de um contêiner em execução"
+        r2: "Iniciar um shell mínimo dentro do contêiner (se bash não estiver disponível)"
+        r3: "Executar um comando dentro do contêiner sem modo interativo"
+      logs:
+        group_desc: "Exibe logs do contêiner especificado, permitindo visualizar a saída e eventos relacionados à sua operação para diagnóstico e monitoramento"
+        r1: "Visualizar as últimas 100 linhas de logs com streaming em tempo real"
+        r2: "Mostrar todos os logs disponíveis do contêiner"
+        r3: "Mostrar logs da última hora"
+      inspect:
+        group_desc: "Exibe informações detalhadas sobre um objeto Docker (contêiner, imagem, rede, etc.) em formato JSON, incluindo configuração e estado"
+        r1: "Obter JSON completo com informações do contêiner"
+        r2: "Obter o PID do processo principal do contêiner no host"
+        r3: "Mostrar o endereço IP do contêiner"
+      nsenter:
+        group_desc: "Utilitário Linux para entrar nos namespaces de outro processo (aqui, o contêiner). Usado com `strace` para rastrear chamadas de sistema dentro do contêiner para depuração"
+        r1: "Entrar nos namespaces do contêiner e rastrear chamadas de sistema do processo 1"
+        r2: "Abrir shell bash dentro dos namespaces do contêiner"
+        r3: "Visualizar portas abertas dentro do contêiner"
+      tcpdump:
+        group_desc: "Ferramenta de console para capturar e analisar tráfego de rede. Usada em contêiner para diagnosticar problemas de rede, analisar pacotes e monitorar conexões"
+        r1: "Capturar e analisar tráfego de rede dentro do contêiner"
+        r2: "Capturar tráfego apenas na porta 80"
+        r3: "Salvar tráfego em arquivo para análise posterior"
+      stats:
+        group_desc: "Mostra métricas atuais de uso de recursos (CPU, memória, rede, disco) para um ou vários contêineres em tempo real"
+        r1: "Exibir em tempo real CPU, memória, rede e disco do contêiner"
+        r2: "Mostrar estatísticas de todos os contêineres"
+        r3: "Exibir estatísticas uma vez e sair"
+      top:
+        group_desc: "Exibe a lista de processos em execução dentro do contêiner, semelhante ao `ps` no Linux, para analisar a atividade do contêiner"
+        r1: "Mostrar processos em execução dentro do contêiner"
+        r2: "Usar formato alternativo como `ps aux`"
+        r3: "Mostrar apenas PID e comando dos processos"
+      diff:
+        group_desc: "Mostra alterações no sistema de arquivos do contêiner em comparação com sua imagem base, indicando arquivos adicionados, modificados ou deletados"
+        r1: "Mostrar alterações no sistema de arquivos do contêiner em comparação com a imagem base"
+        r2: "Mostrar apenas arquivos adicionados (`A` — Added)"
+        r3: "Mostrar apenas arquivos modificados (`C` — Changed)"
+      cp:
+        group_desc: "Copia arquivos e diretórios entre um contêiner e o host, permitindo troca de dados e backup"
+        r1: "Copiar arquivo do contêiner para o host"
+        r2: "Copiar arquivo do host para o contêiner"
+        r3: "Copiar arquivo de log e filtrar linhas de erro sem salvar em disco"
+      advanced_note: "💡 Para depuração avançada você pode usar `nsenter`, `strace`, `tcpdump`, `gdb` e outras ferramentas de baixo nível."
+
+  compose_adv:
+    _root:
+      title: "💼 Uso Avançado do Docker Compose"
+    prof:
+      title: "🚀 Comandos Profissionais do Docker Compose"
+      up:
+        group_desc: "Inicia e gerencia o ciclo de vida dos serviços especificados no arquivo docker-compose.yml com a opção de rodar em segundo plano"
+        r1: "Rodar apenas os serviços `web` e `db` em modo destacado"
+        r2: "Recompilar imagens antes de iniciar os serviços"
+        r3: "Remover contêineres não definidos no arquivo compose atual"
+      build:
+        group_desc: "Construir imagens para serviços descritos no arquivo compose com controle de cache e paralelismo"
+        r1: "Reconstruir completamente imagens sem usar cache"
+        r2: "Construir todos os serviços em paralelo para acelerar o processo"
+        r3: "Construir imagem apenas do serviço `web`"
+      pull:
+        group_desc: "Baixar as versões mais recentes das imagens do registro para todos ou serviços especificados"
+        r1: "Baixar imagens para todos os serviços"
+        r2: "Baixar imagem apenas para o serviço `db`"
+        r3: "Continuar execução ignorando erros durante o pull"
+      restart:
+        group_desc: "Reiniciar todos ou serviços especificados sem recriar contêineres"
+        r1: "Reiniciar todos os serviços do projeto atual"
+        r2: "Reiniciar apenas o serviço `worker`"
+        r3: "Reiniciar múltiplos serviços de uma vez"
+      exec:
+        group_desc: "Executar um comando dentro de um contêiner de serviço em execução com modo interativo opcional"
+        r1: "Rodar psql dentro do contêiner do serviço `db`"
+        r2: "Abrir um shell dentro do contêiner `web`"
+        r3: "Executar requisição curl a partir do contêiner do serviço `api`"
+      config:
+        group_desc: "Exibir a configuração final do Compose considerando todos os arquivos e variáveis de ambiente"
+        r1: "Mostrar configuração mesclada em formato YAML"
+        r2: "Listar todos os serviços"
+        r3: "Mostrar todas as variáveis de ambiente usadas pelos serviços"
+      watch:
+        group_desc: "Reinicia automaticamente serviços em alterações de arquivos fonte, útil para desenvolvimento"
+        r1: "Iniciar observação de arquivos e reiniciar serviços em mudanças"
+      events:
+        group_desc: "Transmitir eventos do Compose: início, parada, atualização de serviços"
+        r1: "Receber eventos em formato JSON"
+      rm:
+        group_desc: "Remover contêineres de serviços parados"
+        r1: "Remover contêineres dos serviços `web` e `db`"
+      pause:
+        group_desc: "Pausar operação de serviço"
+        r1: "Pausar o serviço `api`"
+      unpause:
+        group_desc: "Retomar serviços pausados"
+        r1: "Retomar o serviço `api`"
+      create:
+        group_desc: "Criar contêineres sem iniciá-los"
+        r1: "Criar contêineres para `web` e `db` mas não iniciá-los"
+      images:
+        group_desc: "Mostrar lista de imagens usadas pelos serviços"
+        r1: "Exibir imagens de todos os serviços"
+      top:
+        group_desc: "Mostrar processos em execução dentro dos contêineres de serviço"
+        r1: "Exibir processos dentro dos contêineres do serviço `web`"
+
+    practices:
+      title: "🛠 Práticas Úteis e Automação com Docker Compose"
+      env_separation:
+        title: "Separação de Ambientes"
+        p1: "Use arquivos `docker-compose.override.yml` separados para diferentes ambientes — `development`, `staging`, `production`. Isso ajuda a isolar configurações e evitar conflitos."
+        p2: "Você também pode combinar múltiplos arquivos de configuração usando a flag `-f`:"
+        p3: "Use diferentes arquivos `.env` (`.env.dev`, `.env.prod`, etc.) para gerenciar variáveis de ambiente."
+      secrets:
+        title: "Armazenamento Seguro de Segredos"
+        p1: "Não inclua dados sensíveis (senhas, tokens) diretamente nos arquivos Compose. Em vez disso, use:"
+        items:
+          env: "arquivos `.env` para variáveis de ambiente (note que `.env` não são criptografados e não devem ser commitados em repositórios públicos)"
+          swarm_secret: "`docker secret` e `docker config` para gerenciamento seguro de segredos e configs no Docker Swarm"
+          volumes: "volumes externos para arquivos de configuração contendo segredos"
+          external_mgr: "sistemas externos de gestão de segredos (ex.: HashiCorp Vault, AWS Secrets Manager)"
+      startup_order:
+        title: "Ordem de Inicialização com `depends_on` e `healthcheck`"
+        p1: "Para fazer serviços aguardarem por dependências estarem prontas:"
+      min_downtime:
+        title: "Minimizar Downtime Durante Atualizações"
+        p1: "Antes de atualizar serviços, execute:"
+        p2: "A opção `-d` roda contêineres em segundo plano, e `--remove-orphans` remove contêineres não definidos nas configs atuais."
+        p3: "Para parar e remover completamente contêineres antigos se necessário:"
+        p4: "Isso garante que novas imagens sejam carregadas e contêineres não usados sejam removidos sem downtime."
+      hot_reload_volumes:
+        title: "Hot Reload de Código para Desenvolvimento"
+        p1: "Use `volumes` para montar diretórios locais em contêineres. Isso permite aplicação instantânea de mudanças no código sem reconstruir imagens."
+        p2: "Fique atento a problemas de permissão e peculiaridades de cache de sistema de arquivos, especialmente em Windows e macOS, para evitar problemas de performance."
+      hot_reload_watch:
+        title: "Hot Reload sem Volume (Compose 2.22+)"
+      central_logging:
+        title: "Log Centralizado de Serviços"
+        p1: "Redirecione logs de contêineres para sistemas de monitoramento e agregação como ELK Stack, Loki, Prometheus e Fluentd."
+        p2: "Use drivers de log do Docker (`--log-driver`) para habilitar coleta centralizada de logs."
+        p3: "Configure drivers de log para contêineres no Compose:"
+      auto_restart:
+        title: "Reinício Automático de Serviços"
+        p1: "Configure política de reinício em `docker-compose.yml`:"
+        p2: "Outras políticas de reinício incluem:"
+        policies:
+          no: "`no` — sem reinício automático (padrão)"
+          always: "`always` — sempre reiniciar o contêiner"
+          on_failure: "`on-failure` — reiniciar apenas em falhas (opcional com limite de tentativas)"
+        p3: "Em produção, `unless-stopped` é a melhor escolha para garantir resiliência dos serviços."
+        p4: "Isso permite recuperação automática de serviços após falhas ou reinicializações do host."
+      profiles:
+        title: "Perfis de Serviço"
+        p1: "Permitem rodar apenas grupos específicos de serviços:"
+        p2: "Para rodar apenas o perfil frontend:"
+
+    debugging:
+      title: "🐞 Depuração e Profiling de Serviços no Docker Compose"
+      exec:
+        group_desc: "Executar um comando dentro de um serviço em execução, fornecendo acesso ao contêiner ou rodando processos individuais"
+        r1: "Abrir um shell dentro do contêiner do serviço `web`"
+        r2: "Executar o comando psql dentro do contêiner do serviço `db`"
+      logs:
+        group_desc: "Visualizar logs de serviço para diagnóstico e monitoramento"
+        r1: "Visualizar logs do serviço `db` em tempo real"
+        r2: "Mostrar as últimas 50 linhas de logs do serviço `api`"
+        r3: "Mostrar logs da última hora para o serviço `web`"
+      inspect:
+        group_desc: "Visualizar informações detalhadas sobre o contêiner de um serviço"
+        r1: "Obter JSON com detalhes do contêiner do serviço `web`"
+      stats:
+        group_desc: "Monitorar uso de recursos de contêineres rodando serviços"
+        r1: "Acompanhar CPU, memória e outros recursos do contêiner do serviço `worker`"
+      run:
+        group_desc: "Rodar um contêiner temporário com configs de serviço, útil para depuração"
+        r1: "Iniciar um contêiner one-off para o serviço `web` com shell interativo"
+      cp:
+        group_desc: "Copiar arquivos entre host e contêiner"
+        r1: "Copiar um arquivo do contêiner do serviço `db` para o host"
+      tip:
+        one_off: "💡 Para depuração conveniente de setups multi-serviço complexos, use `docker compose run --rm` para lançar contêineres individuais com redes e volumes necessários sem afetar serviços principais."
+
+  resources:
+    title: "📚 Recursos Adicionais"
+    ignore:
+      title: "🚫 Ignorando Arquivos com `.dockerignore`"
+      p1: "Adicione arquivos e pastas ao `.dockerignore` que não devem ser incluídos na imagem para reduzir tamanho e acelerar o build:"
+    aliases:
+      title: "⚡ Simplificando Comandos com Aliases"
+      p1: "Você pode criar aliases para comandos usados frequentemente e executá-los mais rápido:"
+    advice:
+      title: "🧠 Dica: Boas Práticas no Uso do Docker"
+      b1: "Não tente memorizar tudo — use `docker --help` ou `docker <command> --help` para explorar comandos."
+      b2: "Pratique regularmente e experimente com projetos simples."
+      b3: "Fique atento ao tamanho das imagens e remova arquivos desnecessários via `.dockerignore`."
+    links:
+      title: "🌐 Links Úteis"
+      docs_intro: "📘 **Documentação Oficial do Docker** — guias e referências completas sobre todos os tópicos do Docker:"
+      sheet_intro: "📙 **Docker Cheat Sheet** — folha de referência oficial completa do Docker:"
+      hub_intro: "📗 **Docker Hub** — imagens e registros:"

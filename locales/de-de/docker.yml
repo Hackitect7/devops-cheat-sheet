@@ -1,0 +1,629 @@
+docker:
+  meta:
+    _root:
+      title: "🐳 Docker"
+      desc: "📘 Docker ist eine Plattform zum Ausführen von Anwendungen in isolierten Containern. Dieses Spickzettel enthält Befehle für die Arbeit mit Images, Containern, Netzwerken, Volumes sowie Docker Compose und Swarm."
+
+  basic:
+    _root:
+      title: "📦 Grundlegende Befehle"
+    docker:
+      desc: "Der Hauptbefehl der Docker-CLI zum Ausführen von Unterbefehlen und Verwalten von Containern, Images, Netzwerken und Volumes"
+    docker_version:
+      desc: "Installierte Docker-Version (Client und Server) anzeigen. Nützlich zur Überprüfung der Installation"
+      ex1: "Nur die Docker-Client-API-Version anzeigen"
+      ex2: "Nur die Docker-Server- (Engine-)Version anzeigen"
+      ex3: "Vollständige Versionsinformationen im JSON-Format ausgeben"
+    docker_system_info:
+      desc: "Allgemeine Docker-Systeminformationen anzeigen: Anzahl der Container, Images, Ressourcen"
+      ex1: "Docker-Daten anzeigen: Versionen, Netzwerke, Anzahl der Container und Images"
+      ex2: "Informationen im JSON-Format ausgeben — nützlich für Automatisierung"
+      ex3: "Anzahl der CPUs und Gesamtspeicher anzeigen"
+      ex4: "Den von Docker verwendeten Storage-Treiber anzeigen"
+    docker_image_pull:
+      desc: "Ein Image von Docker Hub oder einer anderen Registry herunterladen. Container können ohne Images nicht ausgeführt werden"
+      ex1: "Das neueste verfügbare Ubuntu-Image herunterladen"
+      ex2: "Das schlanke Nginx-Image basierend auf Alpine Linux herunterladen"
+      ex3: "Redis-Image in Version 7 herunterladen"
+    docker_container_run:
+      desc: "Einen neuen Container aus einem Image erstellen und starten"
+      ex1: "Ubuntu mit einem interaktiven Bash-Terminal ausführen"
+      ex2: "Nginx im Detached-Modus (Hintergrund) starten"
+      ex3: "Nginx ausführen und Container-Port 80 an Host-Port 8080 binden"
+    docker_container_ls:
+      desc: "Laufende Container auflisten"
+      ex1: "Nur laufende Container anzeigen"
+      ex2: "Alle Container einschließlich gestoppter anzeigen"
+      ex3: "Nur Containernamen ausgeben"
+    docker_container_start:
+      desc: "Einen oder mehrere gestoppte Container starten"
+      ex1: "Einen Container nach Namen starten"
+      ex2: "Alle Container starten"
+      ex3: "Einen Container starten und interaktives Terminal anhängen"
+    docker_container_stop:
+      desc: "Einen laufenden Container stoppen"
+      ex1: "Einen Container nach Namen stoppen"
+      ex2: "Alle laufenden Container stoppen"
+      ex3: "Einen Container mit 5 Sekunden Zeit zum Beenden stoppen"
+    docker_container_restart:
+      desc: "Einen Container neu starten"
+      ex1: "Einen bestimmten Container neu starten"
+      ex2: "Alle laufenden Container neu starten"
+      ex3: "Einen Container mit 10 Sekunden Verzögerung neu starten"
+    docker_container_rm:
+      desc: "Einen Container entfernen"
+      ex1: "Einen bestimmten gestoppten Container entfernen"
+      ex2: "Alle gestoppten Container entfernen"
+      ex3: "Einen laufenden Container erzwingen und entfernen"
+    docker_image_ls:
+      desc: "Heruntergeladene Images auflisten"
+      ex1: "Alle Images auf dem Host anzeigen"
+      ex2: "Alle Images einschließlich Zwischenebenen anzeigen"
+      ex3: "Nur Imagenamen und Tags ausgeben"
+    docker_image_rm:
+      desc: "Ein oder mehrere Images aus dem lokalen Speicher entfernen"
+      ex1: "Image mit Tag `latest` aus Repository `test1` entfernen"
+      ex2: "Ein Image nach seiner ID entfernen"
+      ex3: "Alle Images entfernen (mit Vorsicht verwenden!)"
+
+  container:
+    _root:
+      title: "🔁 Containerverwaltung"
+    docker_container_exec:
+      desc: "Einen Befehl in einem laufenden Container ausführen"
+      ex1: "Eine interaktive Bash-Shell im Container `container` starten"
+      ex2: "`ls`-Befehl im Verzeichnis `/app` innerhalb des Containers ausführen"
+      ex3: "Einen Befehl im Container im Detached-Modus ausführen (ohne Warten)"
+    docker_container_logs:
+      desc: "Container-Logs anzeigen"
+      ex1: "Alle Logs des Containers `container` anzeigen"
+      ex2: "Container-Logs in Echtzeit verfolgen"
+      ex3: "Die letzten 50 Zeilen der Logs anzeigen"
+    docker_inspect:
+      desc: "Detaillierte JSON-Informationen zu einem Container oder Image abrufen"
+      ex1: "Details des Containers `container` anzeigen"
+      ex2: "Die IP-Adresse des Containers anzeigen"
+    docker_container_stats:
+      desc: "Echtzeit-Statistiken zur Ressourcennutzung von Containern anzeigen"
+      ex1: "CPU-, Speicher-, Netzwerk- und Festplattennutzung für alle Container anzeigen"
+      ex2: "Nur Statistiken für einen bestimmten Container anzeigen"
+      ex3: "Einmalige Momentaufnahme der Statistiken anzeigen und beenden"
+    docker_container_rename:
+      desc: "Einen Container umbenennen"
+      ex1: "Container von `old_name` in `new_name` umbenennen"
+    docker_container_cp:
+      desc: "Dateien zwischen einem Container und dem Host kopieren"
+      ex1: "Eine Datei vom Container in das aktuelle Host-Verzeichnis kopieren"
+      ex2: "Eine Datei vom Host in den Container kopieren"
+      ex3: "Eine Logdatei aus dem Container streamen und Zeilen mit \"ERROR\" filtern, ohne auf Platte zu speichern"
+    docker_container_top:
+      desc: "Laufende Prozesse in einem Container anzeigen"
+      ex1: "Prozesse des Containers `container` anzeigen"
+    docker_container_pause:
+      desc: "Alle Prozesse in einem Container anhalten"
+      ex1: "Den Container `container` anhalten"
+    docker_container_unpause:
+      desc: "Einen angehaltenen Container fortsetzen"
+      ex1: "Den Container `container` fortsetzen"
+    docker_container_update:
+      desc: "Container-Einstellungen ohne Neustart aktualisieren"
+      ex1: "Den Speicherverbrauch des Containers auf 500 MB begrenzen"
+
+  images:
+    _root:
+      title: "🧱 Images und Dockerfile"
+    docker_buildx_build:
+      desc: "Ein Docker-Image aus einem Dockerfile erstellen"
+      ex1: "Ein Image mit Tag `my_image` aus dem aktuellen Verzeichnis erstellen"
+      ex2: "Ein Image mit Tag `1.0` erstellen"
+      ex3: "Ein Image ohne Cache für einen sauberen Build erstellen"
+    docker_container_commit:
+      desc: "Ein Image aus dem aktuellen Zustand eines Containers erstellen"
+      ex1: "Image `my_img` mit Tag `v1` aus Container `container` erstellen"
+      ex2: "Ein Image mit Commit-Nachricht erstellen"
+      ex3: "Ein Image mit Angabe des Autors erstellen"
+    docker_image_tag:
+      desc: "Einen Image-Tag hinzufügen oder ändern"
+      ex1: "Einen Tag zum Push in die Registry `myrepo` hinzufügen"
+      ex2: "Tag `stable` für Image mit Tag `1.0` erstellen"
+      ex3: "Einen `backup`-Tag zu einem lokalen Image hinzufügen"
+    docker_image_push:
+      desc: "Ein Image zu Docker Hub oder einer anderen Registry hochladen"
+      ex1: "Image mit Tag `latest` ins Repository `myrepo` hochladen"
+      ex2: "Image mit Tag `1.0` hochladen"
+      ex3: "Image mit Standard-Tag `latest` hochladen"
+    docker_login:
+      desc: "Bei Docker Hub oder einer anderen Registry authentifizieren"
+      ex1: "Benutzername und Passwort interaktiv für Docker Hub eingeben"
+      ex2: "Bei einer privaten Registry anmelden"
+      ex3: "Login mit Benutzername und Passwort (nicht empfohlen)"
+    docker_logout:
+      desc: "Von Docker Hub oder einer anderen Registry abmelden"
+      ex1: "Von Docker Hub abmelden"
+      ex2: "Von privater Registry abmelden"
+    healthcheck:
+      desc: "Dockerfile-Anweisung zur automatischen Überprüfung des Container-Gesundheitsstatus"
+      ex1: "Healthcheck hinzufügen, um die Dienstverfügbarkeit alle 30 Sekunden zu prüfen"
+      ex2: "Den Healthcheck-Status eines laufenden Containers prüfen"
+
+  networks:
+    _root:
+      title: "🔌 Netzwerke und Volumes"
+    docker_network_ls:
+      desc: "Alle Docker-Netzwerke auflisten"
+      ex1: "Alle erstellten Docker-Netzwerke anzeigen"
+      ex2: "Nur Netzwerke mit dem Treiber `bridge` anzeigen"
+      ex3: "Nur Netzwerknamen anzeigen"
+    docker_network_create:
+      desc: "Ein neues Docker-Netzwerk erstellen"
+      ex1: "Ein Netzwerk `my_net` mit Standardeinstellungen erstellen"
+      ex2: "Ein Netzwerk mit dem Treiber `bridge` erstellen"
+      ex3: "Ein Netzwerk mit einem angegebenen Subnetz erstellen"
+    docker_network_connect:
+      desc: "Einen Container mit einem Netzwerk verbinden"
+      ex1: "Container `container` mit Netzwerk `my_net` verbinden"
+      ex2: "Mit Alias `db_net` verbinden"
+    docker_network_disconnect:
+      desc: "Einen Container von einem Netzwerk trennen"
+      ex1: "Container `container` vom Netzwerk `my_net` trennen"
+    docker_volume_ls:
+      desc: "Alle Docker-Volumes auflisten"
+      ex1: "Alle Docker-Volumes anzeigen"
+      ex2: "Nicht verwendete Volumes anzeigen"
+    docker_volume_create:
+      desc: "Ein neues Docker-Volume erstellen"
+      ex1: "Ein Volume mit Namen `my_vol` erstellen"
+      ex2: "Ein temporäres Volume mit tmpfs erstellen"
+    docker_volume_inspect:
+      desc: "Detaillierte Informationen über ein Volume anzeigen"
+      ex1: "Details des Volumes `my_vol` im JSON-Format anzeigen"
+    docker_volume_rm:
+      desc: "Ein oder mehrere Volumes entfernen"
+      ex1: "Volume `my_vol` entfernen"
+      ex2: "Alle ungenutzten Volumes entfernen"
+
+  plugins:
+    _root:
+      title: "🧩 Docker-Plugins"
+    docker_plugin_ls:
+      desc: "Installierte Docker-Plugins auflisten"
+      ex1: "Alle Plugins und deren Status anzeigen"
+    docker_plugin_install:
+      desc: "Ein Docker-Plugin aus einer Registry installieren"
+      ex1: "Das SSHFS-Volume-Plugin installieren"
+      ex2: "Das Weave-Netzwerk-Plugin installieren"
+    docker_plugin_disable:
+      desc: "Ein installiertes Plugin deaktivieren"
+      ex1: "Das SSHFS-Plugin deaktivieren"
+    docker_plugin_enable:
+      desc: "Ein zuvor deaktiviertes Plugin aktivieren"
+      ex1: "Das SSHFS-Plugin aktivieren"
+    docker_plugin_rm:
+      desc: "Ein Docker-Plugin entfernen"
+      ex1: "Das SSHFS-Plugin entfernen"
+
+  compose:
+    _root:
+      title: 📋 Docker Compose
+    docker_compose_up:
+      desc: Container starten, die in `docker-compose.yml` definiert sind
+      ex1: "Alle Dienste im aktuellen Verzeichnis im interaktiven Modus starten"
+      ex2: "Dienste im Detached-Modus (Hintergrund) starten"
+      ex3: "Images vor dem Start der Dienste bauen"
+    docker_compose_down:
+      desc: Container, Netzwerke und Volumes stoppen und entfernen, die durch `up` erstellt wurden
+      ex1: "Alle laufenden Dienste stoppen und zugehörige Ressourcen entfernen"
+      ex2: "Zusätzlich Volumes entfernen, die von Compose erstellt wurden"
+      ex3: "Zusätzlich Images entfernen, die von Compose erstellt wurden"
+    docker_compose_logs:
+      desc: Logs aller oder bestimmter Dienste anzeigen
+      ex1: "Logs aller Dienste anzeigen"
+      ex2: "Logs in Echtzeit verfolgen"
+      ex3: "Nur Logs des Dienstes `web` anzeigen"
+    docker_compose_exec:
+      desc: Einen Befehl in einem laufenden Service-Container ausführen
+      ex1: "Eine interaktive Bash-Shell im `web`-Service-Container öffnen"
+      ex2: "`ls`-Befehl im Datenbank-Container ausführen"
+      ex3: "Einen Befehl im `worker`-Container im Detached-Modus ausführen"
+    docker_compose_build:
+      desc: Service-Images bauen oder neu bauen
+      ex1: "Alle Images aus `docker-compose.yml` bauen"
+      ex2: "Nur das `web`-Service-Image bauen"
+      ex3: "Images ohne Cache bauen"
+    docker_compose_ps:
+      desc: Status aller Dienste und Container anzeigen
+      ex1: "Alle Container einschließlich gestoppter anzeigen"
+      ex2: "Nur die Servicenamen anzeigen"
+    docker_compose_pull:
+      desc: Service-Images aus Registry herunterladen/aktualisieren
+      ex1: "Nur Image für den Dienst `web` herunterladen"
+      ex2: "Trotz Fehlern bei einigen Images fortsetzen"
+    docker_compose_restart:
+      desc: Alle oder bestimmte Dienste neu starten
+      ex1: "Nur den Dienst `db` neu starten"
+      ex2: "Dienste mit 10-Sekunden-Timeout neu starten"
+    docker_compose_config:
+      desc: "Die endgültige Compose-Konfiguration im YAML-Format anzeigen"
+      ex1: "Alle Dienste in der Konfiguration auflisten"
+      ex2: "Alle Volumes in der Konfiguration auflisten"
+    docker_compose_start:
+      desc: "Gestoppte Dienste starten, ohne Container neu zu erstellen"
+      ex1: "Den Dienst `web` starten"
+      ex2: "Mehrere Dienste auf einmal starten"
+    docker_compose_stop:
+      desc: "Dienste stoppen, ohne Container zu entfernen"
+      ex1: "Den Dienst `web` stoppen"
+      ex2: "Dienste mit 5-Sekunden-Timeout stoppen"
+
+  export_import:
+    _root:
+      title: 📤 Export und Import
+    docker_image_save:
+      desc: "Ein oder mehrere Docker-Images in ein TAR-Archiv speichern für späteren Import oder Transfer"
+      ex1: "Ein Docker-Image in eine TAR-Datei speichern"
+      ex2: "Alternative Methode, ein Image in eine Datei zu speichern"
+      ex3: "Ein bestimmtes Redis-Image in eine Datei speichern"
+    docker_image_load:
+      desc: Docker-Images aus einem zuvor gespeicherten TAR-Archiv laden
+      ex1: "Ein Docker-Image aus einer TAR-Datei laden"
+      ex2: "Ein Image mit Parameter zur Datei laden"
+      ex3: "Ein Image ohne Fortschrittsanzeige laden"
+    docker_container_export:
+      desc: "Dateisystem eines Containers als TAR-Archiv exportieren, ohne Image-Historie oder Metadaten"
+      ex1: "Container-Dateisystem in ein Archiv exportieren"
+      ex2: "Container nach Name exportieren"
+      ex3: "Container nach ID mit dem Flag `-o` exportieren"
+    docker_image_import:
+      desc: "Ein neues Image aus einem TAR-Archiv eines Dateisystems erstellen"
+      ex1: "Archivdatei als neues Docker-Image importieren"
+      ex2: "Image direkt von einer URL importieren"
+      ex3: "Von Standardeingabe importieren"
+
+  cleanup:
+    _root:
+      title: 🧹 Aufräumen und Diagnose
+    docker_system_df:
+      desc: "Docker-Speichernutzung anzeigen: Volumes, Images, Container und Build-Cache"
+      ex1: "Detaillierte Ausgabe mit Infos zu jedem Image, Container und Volume"
+      ex2: "Informationen im JSON-Format ausgeben"
+    docker_system_prune:
+      desc: "Alle ungenutzten Docker-Daten entfernen: gestoppte Container, ungenutzte Netzwerke, hängende Images und Build-Cache"
+      ex1: "Unbenutzte Images einschließlich Zwischenschichten entfernen"
+      ex2: "Unbenutzte Volumes zusammen mit anderen Ressourcen entfernen"
+    docker_image_prune:
+      desc: "Unbenutzte Docker-Images einschließlich hängender Schichten entfernen"
+      ex1: "Alle unbenutzten Images einschließlich hängender entfernen"
+      ex2: "Images entfernen, die älter als 24 Stunden sind"
+    docker_container_prune:
+      desc: "Gestoppte Container entfernen, die Filtern entsprechen, oder alle, falls keine angegeben"
+      ex1: "Gestoppte Container entfernen, die älter als 24 Stunden sind"
+      ex2: "Ohne Bestätigung entfernen"
+
+  swarm:
+    _root:
+      title: 🐝 Docker Swarm
+    docker_swarm_init:
+      desc: "Einen neuen Docker-Swarm-Cluster auf dem aktuellen Knoten initialisieren"
+      ex1: "Cluster initialisieren und IP-Adresse angeben"
+      ex2: "Mit angegebenem Listen-Port initialisieren"
+    docker_service_create:
+      desc: "Einen neuen Dienst im Swarm-Cluster erstellen"
+      ex1: "Einen Nginx-Dienst im Swarm erstellen"
+      ex2: "Einen Dienst mit 3 Replikaten erstellen"
+      ex3: "Einen Dienst mit Port-Mapping erstellen"
+    docker_stack_deploy:
+      desc: "Einen Stack von Diensten im Swarm-Cluster anhand einer Compose-Datei bereitstellen"
+      ex1: "Stack aus Compose-Datei bereitstellen"
+      ex2: "Mit Weitergabe der Registry-Authentifizierung bereitstellen"
+      ex3: "Eine alternative Compose-Datei für den Stack verwenden"
+    docker_stack_rm:
+      desc: "Einen oder mehrere Stacks aus dem Swarm-Cluster entfernen"
+      ex1: "Den Stack `mystack` entfernen"
+      ex2: "Alle Stacks entfernen (nicht empfohlen)"
+      ex3: "Stack entfernen und Swarm verlassen"
+
+  advanced_docker:
+    _root:
+      title: "💼 Erweiterte Docker-Nutzung"
+
+    prof:
+      title: "🚀 Professionelle Docker-Befehle"
+      docker_buildx:
+        desc: "Erweitertes Image-Build-Tool als Ersatz für `docker build`. Unterstützt Multi-Plattform, Caching, parallele Builds und Export in verschiedene Formate. Nützlich für CI/CD und plattformübergreifende Entwicklung"
+        ex1: "Ein Multi-Plattform-Image bauen (ARM und x86 gleichzeitig)"
+        ex2: "Ein Image bauen und in den lokalen Docker-Engine-Cache laden"
+        ex3: "Ein Multi-Plattform-Image bauen und in eine Registry pushen"
+      docker_context:
+        desc: "Docker-Kontexte für Remote- oder Multi-Umgebungen verwalten. Ermöglicht schnelles Umschalten zwischen lokaler und entfernter Docker-Engine"
+        ex1: "Einen Kontext zum Verbinden mit einem Remote-Docker-Host erstellen"
+        ex2: "Zum Remote-Kontext wechseln"
+        ex3: "Verfügbare Kontexte und den aktiven auflisten"
+      docker_system_events:
+        desc: "Docker-Ereignisse in Echtzeit überwachen, gefiltert nach Ereignistyp (z. B. Container-Start). Nützlich für Monitoring und Automatisierung"
+        ex1: "Nur Container-Start-Ereignisse anzeigen"
+        ex2: "Ereignisse der letzten Stunde bis vor 10 Minuten anzeigen"
+        ex3: "Nur netzwerkbezogene Ereignisse anzeigen"
+        ex4: "Ereignisse zum Image `nginx` anzeigen"
+      docker_container_update:
+        desc: "Ressourcenlimits und Einstellungen eines laufenden Containers ändern, ohne ihn neu zu starten"
+        ex1: "Limit auf 2 CPUs und 1 GB RAM setzen"
+        ex2: "Auto-Restart-Policy auf `unless-stopped` setzen"
+        ex3: "Die Anzahl der Prozesse auf 200 begrenzen"
+      docker_container_diff:
+        desc: "Dateisystemänderungen in einem Container im Vergleich zu seinem ursprünglichen Image anzeigen. Nützlich für Debugging und Audits"
+        ex1: "Alle Dateisystemänderungen im Container anzeigen"
+        ex2: "Nur hinzugefügte Dateien anzeigen (`A` — Added)"
+      docker_image_history:
+        desc: "Verlauf der Image-Layer anzeigen: Build-Befehle, Größe jeder Schicht und Erstellungszeit. Nützlich für Optimierung und Audits"
+        ex1: "Layer-Historie eines Images anzeigen"
+        ex2: "Vollständige Build-Befehle ohne Kürzung anzeigen"
+        ex3: "Nur Build-Befehle und Layer-Größen ausgeben"
+
+    practices:
+      title: "🛠 Nützliche Docker-Praktiken und Automatisierung"
+      minimize_image_size:
+        title: "Image-Größe minimieren"
+        p1: "Basis-Images wie `alpine` oder `scratch` für minimale Größe verwenden."
+        p2: "Um Layer zusammenzuführen, kann `--squash` beim Build genutzt werden (erfordert aktivierte experimentelle Features)."
+        p3: "Auch temporäre Dateien und Caches in einer einzigen Schicht entfernen:"
+      minimize_layers:
+        title: "Anzahl der Layer minimieren"
+        p1: "Befehle in einem `RUN` kombinieren, um die Anzahl der Layer und die finale Image-Größe zu reduzieren:"
+      optimize_build:
+        title: "Dockerfile-Build optimieren"
+        p1: "Multi-Stage-Builds verwenden, sodass nur notwendige Dateien im finalen Image verbleiben."
+        p2: "Zuerst Abhängigkeiten kopieren und installieren, dann Code — verbessert Layer-Caching und beschleunigt Rebuilds."
+      secrets_and_configs:
+        title: "Secrets und Konfigurationen trennen"
+        p1: "Keine `.env`-Dateien, API-Keys oder privaten Zertifikate im Image speichern."
+        intro: "Für Konfiguration verwenden:"
+        items:
+          secret: "`docker secret` (in Swarm)"
+          env: "Umgebungsvariablen (`-e VAR=Wert` oder `.env`)"
+          volumes: "Externe Volumes für Konfigurationen"
+      buildkit_secrets:
+        title: "Build-Zeit-Secrets (BuildKit)"
+        p1: "Für sicheres Übergeben von Secrets während des Builds das Flag `--secret` verwenden:"
+        p2: "Im Dockerfile ist das Secret unter `/run/secrets/mysecret` verfügbar:"
+        note: "🛡 Dadurch werden Secrets nicht in Image-Layern gespeichert."
+      rootless:
+        title: "Rootless Docker"
+        p1: "Docker ohne Root-Rechte auszuführen verbessert die Sicherheit und reduziert das Risiko für den Host."
+        steps_intro: "Zum Aktivieren:"
+        check_intro: "Überprüfen:"
+        warning: "⚠ Einige Features (z. B. Portweiterleitung <1024) sind nicht verfügbar."
+      scan:
+        title: "Images auf Schwachstellen scannen"
+        p1: "Eingebaute Tools verwenden:"
+        p2: "Oder das neue CLI:"
+        p3: "Hilft, Schwachstellen in Basis-Images und Abhängigkeiten zu erkennen."
+      resource_limits:
+        title: "Ressourcennutzung überwachen"
+        p1: "Container nach Speicher, CPU und Prozessanzahl begrenzen:"
+        p2: "Dies verhindert übermäßigen Ressourcenverbrauch."
+        p3: "Man kann auch I/O begrenzen:"
+        p4: "Nützlich für Container, die das Subsystem nicht überlasten sollen."
+      cleanup:
+        title: "Automatisches Aufräumen"
+        p1: "Regelmäßig unbenutzte Images, Container, Volumes und Netzwerke entfernen:"
+        warning: "⚠ Vorsicht: Dieser Befehl löscht alle unbenutzten Ressourcen."
+        p2: "Für selektives Aufräumen verwenden:"
+      cicd:
+        title: "CI/CD-Integration"
+        p1: "Build, Tests und Deployment in GitHub Actions, GitLab CI, Jenkins-Pipelines einbetten."
+        example_intro: "Beispiel GitHub Actions Schritt:"
+      logging:
+        title: "Logging und Monitoring"
+        p1: "Logging-Driver (`--log-driver`) an zentrale Systeme wie ELK, Loki, Splunk anhängen."
+        p2: "Prometheus + cAdvisor für Container-Metriken verwenden."
+      production:
+        title: "Produktivbereitstellung"
+        p1: "Getrennte Konfigurationen für Entwicklung und Produktion mit `docker-compose.override.yml`."
+        ha_intro: "Für Hochverfügbarkeit und Skalierung verwenden:"
+        items:
+          swarm: "Docker Swarm"
+          k8s: "Kubernetes"
+
+    debugging:
+      title: "🐞 Debugging und Profiling von Docker-Containern"
+      exec:
+        group_desc: "Führt einen Befehl in einem laufenden Container aus und ermöglicht interaktiven Zugriff oder das Ausführen von Prozessen in der isolierten Umgebung des Containers"
+        r1: "Ein interaktives Terminal (bash) in einem laufenden Container starten"
+        r2: "Eine minimale Shell im Container starten (falls bash nicht verfügbar ist)"
+        r3: "Einen Befehl im Container ohne interaktiven Modus ausführen"
+      logs:
+        group_desc: "Zeigt Logs des angegebenen Containers an, um Ausgaben und Ereignisse zur Diagnose und Überwachung einzusehen"
+        r1: "Die letzten 100 Zeilen der Logs mit Live-Streaming anzeigen"
+        r2: "Alle verfügbaren Logs des Containers anzeigen"
+        r3: "Logs der letzten Stunde anzeigen"
+      inspect:
+        group_desc: "Gibt detaillierte Informationen zu einem Docker-Objekt (Container, Image, Netzwerk usw.) im JSON-Format aus, einschließlich Konfiguration und Status"
+        r1: "Vollständige JSON-Infos zum Container abrufen"
+        r2: "Die PID des Hauptprozesses des Containers auf dem Host abrufen"
+        r3: "Die IP-Adresse des Containers anzeigen"
+      nsenter:
+        group_desc: "Linux-Tool zum Betreten der Namespaces eines anderen Prozesses (hier des Containers). Wird mit `strace` verwendet, um Systemaufrufe im Container zum Debugging nachzuverfolgen"
+        r1: "Container-Namespaces betreten und Systemaufrufe des Prozesses 1 nachverfolgen"
+        r2: "Eine Bash-Shell innerhalb der Container-Namespaces öffnen"
+        r3: "Offene Ports im Container anzeigen"
+      tcpdump:
+        group_desc: "Konsolentool zum Erfassen und Analysieren von Netzwerkverkehr. Wird im Container verwendet, um Netzwerkprobleme zu diagnostizieren, Pakete zu analysieren und Verbindungen zu überwachen"
+        r1: "Netzwerkverkehr im Container erfassen und analysieren"
+        r2: "Nur Verkehr auf Port 80 erfassen"
+        r3: "Verkehr in Datei speichern zur späteren Analyse"
+      stats:
+        group_desc: "Zeigt aktuelle Ressourcennutzungsmetriken (CPU, Speicher, Netzwerk, Festplatte) für einen oder mehrere Container in Echtzeit"
+        r1: "Echtzeit-Auslastung von CPU, Speicher, Netzwerk und Festplatte des Containers anzeigen"
+        r2: "Statistiken für alle Container anzeigen"
+        r3: "Statistiken einmalig ausgeben und beenden"
+      top:
+        group_desc: "Zeigt die Liste der im Container laufenden Prozesse, ähnlich wie `ps` in Linux, um Container-Aktivität zu analysieren"
+        r1: "Prozesse im Container anzeigen"
+        r2: "Alternatives Ausgabeformat wie `ps aux` verwenden"
+        r3: "Nur PID und Befehl der Prozesse anzeigen"
+      diff:
+        group_desc: "Zeigt Änderungen im Dateisystem des Containers im Vergleich zum Basis-Image, einschließlich hinzugefügter, geänderter oder gelöschter Dateien"
+        r1: "Dateisystemänderungen im Container im Vergleich zum Basis-Image anzeigen"
+        r2: "Nur hinzugefügte Dateien anzeigen (`A` — Added)"
+        r3: "Nur geänderte Dateien anzeigen (`C` — Changed)"
+      cp:
+        group_desc: "Kopiert Dateien und Verzeichnisse zwischen Container und Host, ermöglicht Datenaustausch und Backups"
+        r1: "Datei vom Container zum Host kopieren"
+        r2: "Datei vom Host in den Container kopieren"
+        r3: "Logdatei kopieren und Fehlerzeilen filtern, ohne sie auf Platte zu speichern"
+      advanced_note: "💡 Für erweitertes Debugging können `nsenter`, `strace`, `tcpdump`, `gdb` und andere Low-Level-Tools verwendet werden."
+
+  compose_adv:
+    _root:
+      title: "💼 Erweiterte Nutzung von Docker Compose"
+    prof:
+      title: "🚀 Professionelle Docker-Compose-Befehle"
+      up:
+        group_desc: "Startet und verwaltet den Lebenszyklus bestimmter Dienste aus der docker-compose.yml-Datei mit der Möglichkeit, im Hintergrund zu laufen"
+        r1: "Nur die Dienste `web` und `db` im Detached-Modus starten"
+        r2: "Images vor dem Start der Dienste neu bauen"
+        r3: "Container entfernen, die nicht in der aktuellen Compose-Datei definiert sind"
+      build:
+        group_desc: "Images für Dienste gemäß Compose-Datei bauen mit Cache-Kontrolle und Parallelität"
+        r1: "Images vollständig neu bauen, ohne Cache zu verwenden"
+        r2: "Alle Dienste gleichzeitig bauen, um den Prozess zu beschleunigen"
+        r3: "Nur das Image des Dienstes `web` bauen"
+      pull:
+        group_desc: "Neueste Versionen von Images aus der Registry für alle oder bestimmte Dienste herunterladen"
+        r1: "Images für alle Dienste herunterladen"
+        r2: "Nur das Image für den Dienst `db` herunterladen"
+        r3: "Fortsetzen, auch wenn Fehler beim Herunterladen auftreten"
+      restart:
+        group_desc: "Alle oder bestimmte Dienste neu starten, ohne Container neu zu erstellen"
+        r1: "Alle Dienste im aktuellen Projekt neu starten"
+        r2: "Nur den Dienst `worker` neu starten"
+        r3: "Mehrere Dienste gleichzeitig neu starten"
+      exec:
+        group_desc: "Einen Befehl in einem laufenden Service-Container ausführen, mit optionalem interaktivem Modus"
+        r1: "psql im `db`-Service-Container ausführen"
+        r2: "Eine Shell im `web`-Container öffnen"
+        r3: "curl-Anfrage aus dem `api`-Service-Container ausführen"
+      config:
+        group_desc: "Die endgültige Compose-Konfiguration ausgeben unter Berücksichtigung aller Dateien und Umgebungsvariablen"
+        r1: "Zusammengeführte Konfiguration im YAML-Format anzeigen"
+        r2: "Alle Dienste auflisten"
+        r3: "Alle von Diensten verwendeten Umgebungsvariablen anzeigen"
+      watch:
+        group_desc: "Dienste bei Quellcode-Änderungen automatisch neu starten, nützlich für Entwicklung"
+        r1: "Dateien überwachen und Dienste bei Änderungen neu starten"
+      events:
+        group_desc: "Compose-Ereignisse streamen: Dienststart, -stopp, -aktualisierung"
+        r1: "Ereignisse im JSON-Format empfangen"
+      rm:
+        group_desc: "Gestoppte Service-Container entfernen"
+        r1: "Container der Dienste `web` und `db` entfernen"
+      pause:
+        group_desc: "Dienstbetrieb pausieren"
+        r1: "Den Dienst `api` pausieren"
+      unpause:
+        group_desc: "Pausierte Dienste fortsetzen"
+        r1: "Den Dienst `api` fortsetzen"
+      create:
+        group_desc: "Container erstellen, ohne sie zu starten"
+        r1: "Container für `web` und `db` erstellen, aber nicht starten"
+      images:
+        group_desc: "Liste der von Diensten verwendeten Images anzeigen"
+        r1: "Images aller Dienste anzeigen"
+      top:
+        group_desc: "Prozesse innerhalb von Service-Containern anzeigen"
+        r1: "Prozesse in Containern des Dienstes `web` anzeigen"
+
+    practices:
+      title: "🛠 Nützliche Praktiken und Automatisierung mit Docker Compose"
+      env_separation:
+        title: "Trennung von Umgebungen"
+        p1: "Separate `docker-compose.override.yml`-Dateien für verschiedene Umgebungen verwenden — `development`, `staging`, `production`. Dies hilft, Konfigurationen zu isolieren und Konflikte zu vermeiden."
+        p2: "Mehrere Konfigurationsdateien mit dem Flag `-f` kombinieren:"
+        p3: "Unterschiedliche `.env`-Dateien (`.env.dev`, `.env.prod` usw.) für die Verwaltung von Umgebungsvariablen verwenden."
+      secrets:
+        title: "Sichere Speicherung von Secrets"
+        p1: "Keine sensiblen Daten (Passwörter, Tokens) direkt in Compose-Dateien einfügen. Stattdessen verwenden:"
+        items:
+          env: "`.env`-Dateien für Umgebungsvariablen (nicht verschlüsselt, nicht in öffentliche Repos commiten)"
+          swarm_secret: "`docker secret` und `docker config` für sichere Verwaltung von Secrets und Konfigurationen in Docker Swarm"
+          volumes: "Externe Volumes für Konfigurationsdateien mit Secrets"
+          external_mgr: "Externe Secret-Management-Systeme (z. B. HashiCorp Vault, AWS Secrets Manager)"
+      startup_order:
+        title: "Startreihenfolge mit `depends_on` und `healthcheck`"
+        p1: "Dienste warten lassen, bis Abhängigkeiten bereit sind:"
+      min_downtime:
+        title: "Downtime während Updates minimieren"
+        p1: "Vor dem Aktualisieren der Dienste ausführen:"
+        p2: "Die Option `-d` startet Container im Hintergrund, und `--remove-orphans` entfernt Container, die nicht in aktuellen Konfigurationen definiert sind."
+        p3: "Zum vollständigen Stoppen und Entfernen alter Container falls nötig:"
+        p4: "Stellt sicher, dass frische Images geladen und ungenutzte Container ohne Ausfallzeit entfernt werden."
+      hot_reload_volumes:
+        title: "Hot Code Reloading für Entwicklung"
+        p1: "`volumes` verwenden, um lokale Verzeichnisse in Container einzubinden. Änderungen am Code wirken sofort, ohne Images neu zu bauen."
+        p2: "Dateiberechtigungen und Filesystem-Caching (besonders unter Windows und macOS) beachten, um Performance-Probleme zu vermeiden."
+      hot_reload_watch:
+        title: "Hot Code Reloading ohne Volumes (Compose 2.22+)"
+      central_logging:
+        title: "Zentralisiertes Logging von Diensten"
+        p1: "Container-Logs an Monitoring- und Logsysteme wie ELK Stack, Loki, Prometheus, Fluentd weiterleiten."
+        p2: "Docker-Logging-Treiber (`--log-driver`) aktivieren, um zentrale Log-Sammlung zu ermöglichen."
+        p3: "Logging-Treiber in Compose-Dateien für Container konfigurieren:"
+      auto_restart:
+        title: "Automatischer Neustart von Diensten"
+        p1: "Restart-Policy in `docker-compose.yml` konfigurieren:"
+        p2: "Andere Restart-Policies sind:"
+        policies:
+          no: "`no` — kein automatischer Neustart (Standard)"
+          always: "`always` — Container immer neu starten"
+          on_failure: "`on-failure` — nur bei Fehlern neu starten (optional mit Wiederholungsanzahl)"
+        p3: "In Produktion ist `unless-stopped` die beste Wahl, um Dienststabilität sicherzustellen."
+        p4: "Ermöglicht automatische Wiederherstellung nach Fehlern oder Host-Neustarts."
+      profiles:
+        title: "Service-Profile"
+        p1: "Nur bestimmte Gruppen von Diensten starten:"
+        p2: "Nur das Frontend-Profil starten:"
+
+    debugging:
+      title: "🐞 Debugging und Profiling von Diensten in Docker Compose"
+      exec:
+        group_desc: "Einen Befehl in einem laufenden Dienst ausführen, mit Zugriff auf Container oder einzelnen Prozessen"
+        r1: "Eine Shell im `web`-Service-Container öffnen"
+        r2: "Den psql-Befehl im `db`-Service-Container ausführen"
+      logs:
+        group_desc: "Service-Logs zur Diagnose und Überwachung anzeigen"
+        r1: "Logs des Dienstes `db` in Echtzeit ansehen"
+        r2: "Die letzten 50 Zeilen der Logs des Dienstes `api` anzeigen"
+        r3: "Logs der letzten Stunde des Dienstes `web` anzeigen"
+      inspect:
+        group_desc: "Detaillierte Informationen über den Container eines Dienstes anzeigen"
+        r1: "JSON mit detaillierten Infos über den `web`-Service-Container abrufen"
+      stats:
+        group_desc: "Ressourcennutzung von Containern eines Dienstes überwachen"
+        r1: "CPU, Speicher und andere Ressourcennutzung des `worker`-Service-Containers verfolgen"
+      run:
+        group_desc: "Einen temporären Container mit den Einstellungen eines Dienstes starten, nützlich für Debugging"
+        r1: "Einen einmaligen Container für den Dienst `web` mit interaktiver Shell starten"
+      cp:
+        group_desc: "Dateien zwischen Host und Container kopieren"
+        r1: "Eine Datei aus dem `db`-Service-Container auf den Host kopieren"
+      tip:
+        one_off: "💡 Für komfortables Debugging komplexer Multi-Service-Setups `docker compose run --rm` verwenden, um einzelne Container mit notwendigen Netzwerken und Volumes zu starten, ohne Hauptdienste zu beeinflussen."
+
+  resources:
+    title: "📚 Zusätzliche Ressourcen"
+    ignore:
+      title: "🚫 Dateien mit `.dockerignore` ignorieren"
+      p1: "Dateien und Ordner in `.dockerignore` eintragen, die nicht im Image enthalten sein sollen, um die Größe zu reduzieren und den Build zu beschleunigen:"
+    aliases:
+      title: "⚡ Befehle mit Aliassen vereinfachen"
+      p1: "Aliasse für häufig genutzte Befehle erstellen, um sie schneller auszuführen:"
+    advice:
+      title: "🧠 Tipp: Docker-Nutzung"
+      b1: "Nicht alles auswendig lernen — `docker --help` oder `docker <Befehl> --help` nutzen, um Befehle zu erkunden."
+      b2: "Regelmäßig üben und mit kleinen Projekten experimentieren."
+      b3: "Auf Image-Größen achten und unnötige Dateien mit `.dockerignore` ausschließen."
+    links:
+      title: "🌐 Nützliche Links"
+      docs_intro: "📘 **Offizielle Docker-Dokumentation** — umfassende Anleitungen und Referenzen zu allen Docker-Themen:"
+      sheet_intro: "📙 **Docker Cheat Sheet** — vollständiges offizielles Docker-Spickzettel:"
+      hub_intro: "📗 **Docker Hub** — Images und Registries:"

@@ -1,0 +1,11 @@
+common:
+  site:
+    title: "DevOps 명령어 및 시나리오 치트 시트"
+    sections: "섹션"
+  table:
+    columns:
+      command: "명령어"
+      example: "예시"
+      description: "설명"
+  callouts:
+    sudo-warn: "`sudo` 사용 시 주의하세요: 실행 전에 항상 명령어를 확인하세요."

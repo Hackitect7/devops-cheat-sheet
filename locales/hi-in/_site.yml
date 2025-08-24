@@ -1,0 +1,155 @@
+common:
+  site:
+    title: "DevOps कमांड और परिदृश्य चीट शीट"
+    sections: "खंड"
+  table:
+    columns:
+      command: "कमांड"
+      example: "उदाहरण"
+      description: "विवरण"
+  callouts:
+    sudo-warn: "`sudo` का उपयोग करते समय सावधान रहें: कमांड चलाने से पहले हमेशा उसे जाँचें।"
+
+language:
+  # --- TOC / Sidebar ---
+  toc-title-document: "सामग्री की सूची"
+  toc-title-website: "इस पृष्ठ पर"
+
+  related-formats-title: "अन्य प्रारूप"
+  related-notebooks-title: "नोटबुक"
+  source-notebooks-prefix: "स्रोत"
+  other-links-title: "अन्य लिंक"
+  code-links-title: "कोड लिंक"
+  launch-dev-container-title: "डेव कंटेनर प्रारंभ करें"
+  launch-binder-title: "Binder प्रारंभ करें"
+
+  # --- Notebooks ---
+  article-notebook-label: "लेख नोटबुक"
+  notebook-preview-download: "नोटबुक डाउनलोड करें"
+  notebook-preview-download-src: "स्रोत डाउनलोड करें"
+  notebook-preview-back: "लेख पर वापस जाएँ"
+  manuscript-meca-bundle: "MECA बंडल"
+
+  # --- Sections ---
+  section-title-abstract: "सारांश"
+  section-title-appendices: "परिशिष्ट"
+  section-title-footnotes: "टिप्पणियाँ"
+  section-title-references: "संदर्भ"
+  section-title-reuse: "पुनः उपयोग"
+  section-title-copyright: "कॉपीराइट"
+  section-title-citation: "उद्धरण"
+
+  appendix-attribution-cite-as: "संदर्भ हेतु, कृपया इस कार्य को इस प्रकार उद्धृत करें:"
+  appendix-attribution-bibtex: "BibTeX उद्धरण:"
+  appendix-view-license: "लाइसेंस देखें"
+
+  # --- Title block ---
+  title-block-author-single: "लेखक"
+  title-block-author-plural: "लेखकगण"
+  title-block-affiliation-single: "संस्था"
+  title-block-affiliation-plural: "संस्थाएँ"
+  title-block-published: "प्रकाशित"
+  title-block-modified: "संशोधित"
+  title-block-keywords: "मुख्य शब्द"
+
+  # --- Callouts ---
+  callout-tip-title: "सुझाव"
+  callout-note-title: "नोट"
+  callout-warning-title: "चेतावनी"
+  callout-important-title: "महत्वपूर्ण"
+  callout-caution-title: "सावधानी"
+
+  # --- Code blocks ---
+  code-summary: "कोड"
+
+  code-tools-menu-caption: "कोड"
+  code-tools-show-all-code: "सभी कोड दिखाएँ"
+  code-tools-hide-all-code: "सभी कोड छिपाएँ"
+  code-tools-view-source: "स्रोत देखें"
+  code-tools-source-code: "स्रोत कोड"
+
+  tools-share: "साझा करें"
+  tools-download: "डाउनलोड करें"
+
+  code-line: "पंक्ति"
+  code-lines: "पंक्तियाँ"
+
+  copy-button-tooltip: "क्लिपबोर्ड पर कॉपी करें"
+  copy-button-tooltip-success: "कॉपी हो गया!"
+
+  repo-action-links-edit: "इस पृष्ठ को संपादित करें"
+  repo-action-links-source: "स्रोत देखें"
+  repo-action-links-issue: "समस्या रिपोर्ट करें"
+
+  back-to-top: "ऊपर जाएँ"
+
+  # --- Search ---
+  search-no-results-text: "कोई परिणाम नहीं"
+  search-matching-documents-text: "मिलते-जुलते दस्तावेज़"
+  search-copy-link-title: "खोज लिंक कॉपी करें"
+  search-hide-matches-text: "अतिरिक्त मेल छिपाएँ"
+  search-more-match-text: "इस दस्तावेज़ में एक और मेल"
+  search-more-matches-text: "इस दस्तावेज़ में और मेल"
+  search-clear-button-title: "साफ़ करें"
+  search-text-placeholder: ""
+  search-detached-cancel-button-title: "रद्द करें"
+  search-submit-button-title: "खोजें"
+  search-label: "खोजें"
+
+  # --- UI toggles ---
+  toggle-section: "खंड टॉगल करें"
+  toggle-sidebar: "साइडबार नेविगेशन टॉगल करें"
+  toggle-dark-mode: "डार्क मोड टॉगल करें"
+  toggle-reader-mode: "रीडर मोड टॉगल करें"
+  toggle-navigation: "नेविगेशन टॉगल करें"
+
+  # --- Crossrefs ---
+  crossref-fig-title: "चित्र"
+  crossref-tbl-title: "तालिका"
+  crossref-lst-title: "सूची"
+  crossref-thm-title: "सिद्धांत"
+  crossref-lem-title: "लेम्मा"
+  crossref-cor-title: "परिणाम"
+  crossref-prp-title: "प्रस्ताव"
+  crossref-cnj-title: "अनुमान"
+  crossref-def-title: "परिभाषा"
+  crossref-exm-title: "उदाहरण"
+  crossref-exr-title: "अभ्यास"
+  crossref-ch-prefix: "अध्याय"
+  crossref-apx-prefix: "परिशिष्ट"
+  crossref-sec-prefix: "खंड"
+  crossref-eq-prefix: "समीकरण"
+  crossref-lof-title: "चित्र सूची"
+  crossref-lot-title: "तालिका सूची"
+  crossref-lol-title: "सूची की सूची"
+
+  # --- Environments ---
+  environment-proof-title: "प्रमाण"
+  environment-remark-title: "टिप्पणी"
+  environment-solution-title: "समाधान"
+
+  # --- Listings / Blog ---
+  listing-page-order-by: "क्रमबद्ध करें"
+  listing-page-order-by-default: "डिफ़ॉल्ट"
+  listing-page-order-by-date-asc: "सबसे पुराना"
+  listing-page-order-by-date-desc: "सबसे नया"
+  listing-page-order-by-number-desc: "अधिक से कम"
+  listing-page-order-by-number-asc: "कम से अधिक"
+  listing-page-field-date: "तारीख"
+  listing-page-field-title: "शीर्षक"
+  listing-page-field-description: "विवरण"
+  listing-page-field-author: "लेखक"
+  listing-page-field-filename: "फ़ाइल नाम"
+  listing-page-field-filemodified: "संशोधित"
+  listing-page-field-subtitle: "उपशीर्षक"
+  listing-page-field-readingtime: "पढ़ने का समय"
+  listing-page-field-wordcount: "शब्द संख्या"
+  listing-page-field-categories: "श्रेणियाँ"
+  listing-page-minutes-compact: "{0} मिनट"
+  listing-page-category-all: "सभी"
+  listing-page-no-matches: "कोई मेल नहीं मिला"
+  listing-page-words: "{0} शब्द"
+  listing-page-filter: "फ़िल्टर"
+
+  # --- Misc ---
+  draft: "मसौदा"

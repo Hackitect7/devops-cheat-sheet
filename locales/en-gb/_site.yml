@@ -1,0 +1,11 @@
+common:
+  site:
+    title: "DevOps Commands & Scenarios Cheat Sheet"
+    sections: "Sections"
+  table:
+    columns:
+      command: "Command"
+      example: "Example"
+      description: "Description"
+  callouts:
+    sudo-warn: "Be careful with `sudo`: always check the command before running."

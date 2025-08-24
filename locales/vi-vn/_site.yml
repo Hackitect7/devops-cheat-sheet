@@ -1,0 +1,148 @@
+common:
+  site:
+    title: "Bảng tóm tắt Lệnh & Kịch bản DevOps"
+    sections: "Phần"
+  table:
+    columns:
+      command: "Lệnh"
+      example: "Ví dụ"
+      description: "Mô tả"
+  callouts:
+    sudo-warn: "Hãy cẩn thận với `sudo`: luôn kiểm tra lệnh trước khi chạy."
+
+language:
+  # --- TOC / Sidebar ---
+  toc-title-document: "Mục lục"
+  toc-title-website: "Trên trang này"
+  related-formats-title: "Định dạng khác"
+  related-notebooks-title: "Sổ tay"
+  source-notebooks-prefix: "Nguồn"
+  other-links-title: "Liên kết khác"
+  code-links-title: "Liên kết mã"
+  launch-dev-container-title: "Khởi chạy Container phát triển"
+  launch-binder-title: "Khởi chạy Binder"
+
+  # --- Notebooks ---
+  article-notebook-label: "Sổ tay bài viết"
+  notebook-preview-download: "Tải xuống sổ tay"
+  notebook-preview-download-src: "Tải xuống nguồn"
+  notebook-preview-back: "Quay lại bài viết"
+  manuscript-meca-bundle: "Gói MECA"
+
+  # --- Sections ---
+  section-title-abstract: "Tóm tắt"
+  section-title-appendices: "Phụ lục"
+  section-title-footnotes: "Chú thích"
+  section-title-references: "Tài liệu tham khảo"
+  section-title-reuse: "Tái sử dụng"
+  section-title-copyright: "Bản quyền"
+  section-title-citation: "Trích dẫn"
+  appendix-attribution-cite-as: "Để ghi nguồn, vui lòng trích dẫn như sau:"
+  appendix-attribution-bibtex: "Trích dẫn BibTeX:"
+  appendix-view-license: "Xem giấy phép"
+
+  # --- Title block ---
+  title-block-author-single: "Tác giả"
+  title-block-author-plural: "Các tác giả"
+  title-block-affiliation-single: "Đơn vị"
+  title-block-affiliation-plural: "Các đơn vị"
+  title-block-published: "Được xuất bản"
+  title-block-modified: "Chỉnh sửa"
+  title-block-keywords: "Từ khóa"
+
+  # --- Callouts ---
+  callout-tip-title: "Mẹo"
+  callout-note-title: "Ghi chú"
+  callout-warning-title: "Cảnh báo"
+  callout-important-title: "Quan trọng"
+  callout-caution-title: "Thận trọng"
+
+  # --- Code blocks ---
+  code-summary: "Mã"
+  code-tools-menu-caption: "Mã"
+  code-tools-show-all-code: "Hiển thị toàn bộ mã"
+  code-tools-hide-all-code: "Ẩn toàn bộ mã"
+  code-tools-view-source: "Xem nguồn"
+  code-tools-source-code: "Mã nguồn"
+  tools-share: "Chia sẻ"
+  tools-download: "Tải xuống"
+  code-line: "Dòng"
+  code-lines: "Các dòng"
+  copy-button-tooltip: "Sao chép vào clipboard"
+  copy-button-tooltip-success: "Đã sao chép!"
+  repo-action-links-edit: "Chỉnh sửa trang này"
+  repo-action-links-source: "Xem nguồn"
+  repo-action-links-issue: "Báo cáo sự cố"
+
+  back-to-top: "Quay lại đầu trang"
+
+  # --- Search ---
+  search-no-results-text: "Không có kết quả"
+  search-matching-documents-text: "tài liệu khớp"
+  search-copy-link-title: "Sao chép liên kết tìm kiếm"
+  search-hide-matches-text: "Ẩn các kết quả khác"
+  search-more-match-text: "kết quả khác trong tài liệu này"
+  search-more-matches-text: "các kết quả khác trong tài liệu này"
+  search-clear-button-title: "Xóa"
+  search-text-placeholder: "Tìm kiếm..."
+  search-detached-cancel-button-title: "Hủy"
+  search-submit-button-title: "Tìm"
+  search-label: "Tìm kiếm"
+
+  # --- UI toggles ---
+  toggle-section: "Chuyển đổi phần"
+  toggle-sidebar: "Chuyển đổi thanh bên"
+  toggle-dark-mode: "Chuyển đổi chế độ tối"
+  toggle-reader-mode: "Chuyển đổi chế độ đọc"
+  toggle-navigation: "Chuyển đổi điều hướng"
+
+  # --- Crossrefs ---
+  crossref-fig-title: "Hình"
+  crossref-tbl-title: "Bảng"
+  crossref-lst-title: "Danh sách"
+  crossref-thm-title: "Định lý"
+  crossref-lem-title: "Bổ đề"
+  crossref-cor-title: "Hệ quả"
+  crossref-prp-title: "Mệnh đề"
+  crossref-cnj-title: "Phỏng đoán"
+  crossref-def-title: "Định nghĩa"
+  crossref-exm-title: "Ví dụ"
+  crossref-exr-title: "Bài tập"
+  crossref-ch-prefix: "Chương"
+  crossref-apx-prefix: "Phụ lục"
+  crossref-sec-prefix: "Mục"
+  crossref-eq-prefix: "Phương trình"
+  crossref-lof-title: "Danh sách hình"
+  crossref-lot-title: "Danh sách bảng"
+  crossref-lol-title: "Danh sách danh sách"
+
+  # --- Environments ---
+  environment-proof-title: "Chứng minh"
+  environment-remark-title: "Ghi chú"
+  environment-solution-title: "Lời giải"
+
+  # --- Listings / Blog ---
+  listing-page-order-by: "Sắp xếp theo"
+  listing-page-order-by-default: "Mặc định"
+  listing-page-order-by-date-asc: "Cũ nhất"
+  listing-page-order-by-date-desc: "Mới nhất"
+  listing-page-order-by-number-desc: "Nhiều đến ít"
+  listing-page-order-by-number-asc: "Ít đến nhiều"
+  listing-page-field-date: "Ngày"
+  listing-page-field-title: "Tiêu đề"
+  listing-page-field-description: "Mô tả"
+  listing-page-field-author: "Tác giả"
+  listing-page-field-filename: "Tên tệp"
+  listing-page-field-filemodified: "Đã chỉnh sửa"
+  listing-page-field-subtitle: "Phụ đề"
+  listing-page-field-readingtime: "Thời gian đọc"
+  listing-page-field-wordcount: "Số từ"
+  listing-page-field-categories: "Danh mục"
+  listing-page-minutes-compact: "{0} phút"
+  listing-page-category-all: "Tất cả"
+  listing-page-no-matches: "Không tìm thấy mục nào"
+  listing-page-words: "{0} từ"
+  listing-page-filter: "Bộ lọc"
+
+  # --- Misc ---
+  draft: "Bản nháp"

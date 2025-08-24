@@ -1,0 +1,7 @@
+---
+title: '{{< meta docker.meta._root.title >}}'
+---
+
+> {{< meta docker.meta._root.desc >}}
+
+{{< include ../templates/docker.qmd >}}

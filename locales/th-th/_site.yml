@@ -1,0 +1,147 @@
+common:
+  site:
+    title: "ชีทโกงคำสั่งและสถานการณ์ DevOps"
+    sections: "หมวดหมู่"
+  table:
+    columns:
+      command: "คำสั่ง"
+      example: "ตัวอย่าง"
+      description: "คำอธิบาย"
+  callouts:
+    sudo-warn: "โปรดระวังการใช้ `sudo`: ควรตรวจสอบคำสั่งทุกครั้งก่อนรัน"
+
+language:
+  # --- TOC / Sidebar ---
+  toc-title-document: "สารบัญ"
+  toc-title-website: "ในหน้านี้"
+  related-formats-title: "รูปแบบอื่น"
+  related-notebooks-title: "สมุดบันทึก"
+  source-notebooks-prefix: "ซอร์ส"
+  other-links-title: "ลิงก์อื่นๆ"
+  code-links-title: "ลิงก์โค้ด"
+  launch-dev-container-title: "เปิดคอนเทนเนอร์สำหรับพัฒนา"
+  launch-binder-title: "เปิด Binder"
+
+  # --- Notebooks ---
+  article-notebook-label: "สมุดบันทึกของบทความ"
+  notebook-preview-download: "ดาวน์โหลดสมุดบันทึก"
+  notebook-preview-download-src: "ดาวน์โหลดซอร์ส"
+  notebook-preview-back: "กลับไปยังบทความ"
+  manuscript-meca-bundle: "ชุดไฟล์ MECA"
+
+  # --- Sections ---
+  section-title-abstract: "บทคัดย่อ"
+  section-title-appendices: "ภาคผนวก"
+  section-title-footnotes: "เชิงอรรถ"
+  section-title-references: "เอกสารอ้างอิง"
+  section-title-reuse: "นำกลับมาใช้"
+  section-title-copyright: "ลิขสิทธิ์"
+  section-title-citation: "การอ้างอิง"
+  appendix-attribution-cite-as: "โปรดอ้างอิงงานนี้ดังนี้:"
+  appendix-attribution-bibtex: "การอ้างอิง BibTeX:"
+  appendix-view-license: "ดูสัญญาอนุญาต"
+
+  # --- Title block ---
+  title-block-author-single: "ผู้เขียน"
+  title-block-author-plural: "ผู้เขียนร่วม"
+  title-block-affiliation-single: "สังกัด"
+  title-block-affiliation-plural: "สังกัด"
+  title-block-published: "เผยแพร่"
+  title-block-modified: "แก้ไข"
+  title-block-keywords: "คำสำคัญ"
+
+  # --- Callouts ---
+  callout-tip-title: "เคล็ดลับ"
+  callout-note-title: "หมายเหตุ"
+  callout-warning-title: "คำเตือน"
+  callout-important-title: "สำคัญ"
+  callout-caution-title: "ข้อควรระวัง"
+
+  # --- Code blocks ---
+  code-summary: "โค้ด"
+  code-tools-menu-caption: "โค้ด"
+  code-tools-show-all-code: "แสดงโค้ดทั้งหมด"
+  code-tools-hide-all-code: "ซ่อนโค้ดทั้งหมด"
+  code-tools-view-source: "ดูซอร์ส"
+  code-tools-source-code: "ซอร์สโค้ด"
+  tools-share: "แชร์"
+  tools-download: "ดาวน์โหลด"
+  code-line: "บรรทัด"
+  code-lines: "บรรทัด"
+  copy-button-tooltip: "คัดลอกไปยังคลิปบอร์ด"
+  copy-button-tooltip-success: "คัดลอกแล้ว!"
+  repo-action-links-edit: "แก้ไขหน้านี้"
+  repo-action-links-source: "ดูซอร์ส"
+  repo-action-links-issue: "รายงานปัญหา"
+  back-to-top: "กลับไปด้านบน"
+
+  # --- Search ---
+  search-no-results-text: "ไม่พบผลลัพธ์"
+  search-matching-documents-text: "เอกสารที่ตรงกัน"
+  search-copy-link-title: "คัดลอกลิงก์การค้นหา"
+  search-hide-matches-text: "ซ่อนผลที่ตรงเพิ่มเติม"
+  search-more-match-text: "มีผลที่ตรงเพิ่มเติมในเอกสารนี้"
+  search-more-matches-text: "มีผลที่ตรงเพิ่มเติมในเอกสารนี้"
+  search-clear-button-title: "ล้าง"
+  search-text-placeholder: ""
+  search-detached-cancel-button-title: "ยกเลิก"
+  search-submit-button-title: "ค้นหา"
+  search-label: "ค้นหา"
+
+  # --- UI toggles ---
+  toggle-section: "สลับส่วน"
+  toggle-sidebar: "สลับแถบด้านข้าง"
+  toggle-dark-mode: "สลับโหมดมืด"
+  toggle-reader-mode: "สลับโหมดผู้อ่าน"
+  toggle-navigation: "สลับการนำทาง"
+
+  # --- Crossrefs ---
+  crossref-fig-title: "รูป"
+  crossref-tbl-title: "ตาราง"
+  crossref-lst-title: "รายการ"
+  crossref-thm-title: "ทฤษฎีบท"
+  crossref-lem-title: "เลมมา"
+  crossref-cor-title: "ผลตาม"
+  crossref-prp-title: "ข้อความเสนอ"
+  crossref-cnj-title: "ข้อสันนิษฐาน"
+  crossref-def-title: "นิยาม"
+  crossref-exm-title: "ตัวอย่าง"
+  crossref-exr-title: "แบบฝึกหัด"
+  crossref-ch-prefix: "บท"
+  crossref-apx-prefix: "ภาคผนวก"
+  crossref-sec-prefix: "ส่วน"
+  crossref-eq-prefix: "สมการ"
+  crossref-lof-title: "สารบัญรูป"
+  crossref-lot-title: "สารบัญตาราง"
+  crossref-lol-title: "สารบัญรายการ"
+
+  # --- Environments ---
+  environment-proof-title: "พิสูจน์"
+  environment-remark-title: "ข้อสังเกต"
+  environment-solution-title: "คำตอบ"
+
+  # --- Listings / Blog ---
+  listing-page-order-by: "จัดเรียงตาม"
+  listing-page-order-by-default: "ค่าเริ่มต้น"
+  listing-page-order-by-date-asc: "เก่าที่สุด"
+  listing-page-order-by-date-desc: "ใหม่ที่สุด"
+  listing-page-order-by-number-desc: "มากไปน้อย"
+  listing-page-order-by-number-asc: "น้อยไปมาก"
+  listing-page-field-date: "วันที่"
+  listing-page-field-title: "ชื่อเรื่อง"
+  listing-page-field-description: "คำอธิบาย"
+  listing-page-field-author: "ผู้เขียน"
+  listing-page-field-filename: "ชื่อไฟล์"
+  listing-page-field-filemodified: "แก้ไขแล้ว"
+  listing-page-field-subtitle: "หัวเรื่องย่อย"
+  listing-page-field-readingtime: "เวลาในการอ่าน"
+  listing-page-field-wordcount: "จำนวนคำ"
+  listing-page-field-categories: "หมวดหมู่"
+  listing-page-minutes-compact: "{0} นาที"
+  listing-page-category-all: "ทั้งหมด"
+  listing-page-no-matches: "ไม่พบรายการที่ตรงกัน"
+  listing-page-words: "{0} คำ"
+  listing-page-filter: "ตัวกรอง"
+
+  # --- Misc ---
+  draft: "ร่าง"

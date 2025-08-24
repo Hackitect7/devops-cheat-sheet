@@ -1,0 +1,620 @@
+linux:
+  meta:
+    _root:
+      title: "🐧 Linux-Befehlszeile"
+      desc: "Grundlegende und fortgeschrittene Befehle für Navigation, Dateien, Prozesse, Netzwerke, Überwachung, Pakete und Automatisierung. Geeignet für DevOps-Workflows."
+
+  basic:
+    _root:
+      title: "🔹 Grundlegende Befehle"
+      cat:
+        desc: "Dateiinhalt anzeigen oder mehrere Dateien verketten"
+        ex1: "Dateiinhalt anzeigen"
+        ex2: "Zwei Dateien verketten und ausgeben"
+        ex3: "Dateien verketten und in eine neue Datei speichern"
+      cd:
+        desc: "Das aktuelle Arbeitsverzeichnis ändern"
+        ex1: "Zum absoluten Pfad `/etc` wechseln"
+        ex2: "Zum Home-Verzeichnis wechseln"
+        ex3: "Eine Ebene nach oben wechseln"
+        ex4: "Zum vorherigen Verzeichnis zurückkehren"
+      clear:
+        desc: "Den Terminalbildschirm löschen"
+      cp:
+        desc: "Dateien und Verzeichnisse kopieren"
+        ex1: "Eine Datei mit neuem Namen kopieren"
+        ex2: "Ein Verzeichnis rekursiv kopieren"
+        ex3: "Mit Bestätigung vor dem Überschreiben kopieren"
+      echo:
+        desc: "Einen String oder eine Umgebungsvariable ausgeben"
+        ex1: "Einen einfachen String ausgeben"
+        ex2: "Den Pfad des Home-Verzeichnisses anzeigen"
+        ex3: "Escape-Sequenzen interpretieren (\\t, \\n)"
+      history:
+        desc: "Befehlshistorie anzeigen"
+      id:
+        desc: "UID, GID und Gruppenmitgliedschaften des aktuellen Benutzers anzeigen"
+      ls:
+        desc: "Dateien und Verzeichnisse auflisten"
+        ex1: "Detaillierte Liste mit Rechten und Besitzern"
+        ex2: "Versteckte Dateien anzeigen"
+        ex3: "Menschenlesbare Größen anzeigen"
+      mkdir:
+        desc: "Verzeichnisse erstellen"
+        ex1: "Ein einzelnes Verzeichnis erstellen"
+        ex2: "Verschachtelte Verzeichnisse erstellen"
+        ex3: "Mehrere Verzeichnisse auf einmal erstellen"
+      mv:
+        desc: "Dateien/Verzeichnisse verschieben oder umbenennen"
+        ex1: "Eine Datei umbenennen"
+        ex2: "Eine Datei in ein anderes Verzeichnis verschieben"
+        ex3: "Alle `.txt`-Dateien in den Ordner `archive` verschieben"
+      pwd:
+        desc: "Das aktuelle Arbeitsverzeichnis anzeigen"
+        ex1: "Den physischen Pfad anzeigen (keine Symlinks)"
+        ex2: "Pfad nach Wechsel zu `/tmp` anzeigen"
+      rm:
+        desc: "Dateien oder Verzeichnisse löschen"
+        ex1: "Eine Datei löschen"
+        ex2: "Eine Datei mit Bestätigung löschen"
+        ex3: "Ein Verzeichnis rekursiv löschen"
+        ex4: "Löschen ohne Bestätigung erzwingen"
+      rmdir:
+        desc: "Ein leeres Verzeichnis löschen"
+        ex1: "Das Verzeichnis `emptydir` löschen"
+      touch:
+        desc: "Leere Dateien erstellen oder Zeitstempel ändern"
+        ex1: "Eine neue leere Datei erstellen, falls nicht vorhanden"
+        ex2: "Mehrere Dateien auf einmal erstellen"
+        ex3: "Zeitstempel aktualisieren, ohne Datei zu erstellen"
+      whereis:
+        desc: "Binärdatei, Quellcode und Handbuchseiten eines Befehls finden"
+        ex1: "Speicherorte für `ls` finden"
+        ex2: "Pfade für Bash-Binärdatei und Dokumentation anzeigen"
+        ex3: "Nur nach der Binärdatei suchen"
+      which:
+        desc: "Den Pfad der ausführbaren Datei eines Befehls anzeigen"
+        ex1: "Pfad zu `python3`"
+        ex2: "Pfad zu `grep`"
+        ex3: "Aliase bei der Suche überspringen"
+      whoami:
+        desc: "Den effektiven Benutzernamen anzeigen"
+
+  intermediate:
+    _root:
+      title: "🔸 Befehle mittlerer Stufe"
+      chmod:
+        desc: "Datei- oder Verzeichnisrechte ändern"
+        ex1: "Rechte mit oktaler Notation setzen (z. B. 755)"
+        ex2: "Das Ausführungsbit zu einem Skript hinzufügen"
+        ex3: "Rechte in einem Verzeichnis rekursiv setzen"
+      chown:
+        desc: "Dateibesitzer und Gruppe ändern"
+        ex1: "Den Besitzer einer Datei ändern"
+        ex2: "Besitzer und Gruppe ändern"
+        ex3: "Besitzer und Gruppe rekursiv ändern"
+      curl:
+        desc: "Daten von/zu einem Server übertragen (HTTP, HTTPS usw.)"
+        ex1: "Eine HEAD-Anfrage senden (nur Header)"
+        ex2: "Eine Datei herunterladen und ihren Namen beibehalten"
+        ex3: "Eine POST-Anfrage mit Formulardaten senden"
+      df:
+        desc: "Speichernutzung des Dateisystems anzeigen"
+        ex1: "Menschenlesbare Größen anzeigen"
+        ex2: "Nutzung eines bestimmten Mountpoints anzeigen"
+        ex3: "Dateisystemtypen anzeigen"
+      diff:
+        desc: "Dateien oder Verzeichnisse vergleichen"
+        ex1: "Zwei Dateien vergleichen"
+        ex2: "Einheitlicher Diff (Patch-Stil)"
+        ex3: "Verzeichnisse rekursiv vergleichen"
+      du:
+        desc: "Speichernutzung von Dateien und Verzeichnissen schätzen"
+        ex1: "Größe der Elemente im aktuellen Verzeichnis anzeigen"
+        ex2: "Größe einer einzelnen Datei anzeigen"
+        ex3: "Größen von Unterverzeichnissen zusammenfassen"
+      find:
+        desc: "Dateien/Verzeichnisse nach Name, Größe, Zeit usw. suchen"
+        ex1: "Alle `.log`-Dateien im aktuellen Verzeichnis finden"
+        ex2: "Dateien größer als 100 MB finden"
+        ex3: "Dateien, die innerhalb des letzten Tages geändert wurden"
+      free:
+        desc: "Freien und belegten Speicher anzeigen"
+        ex1: "Speicher in menschenlesbaren Einheiten"
+        ex2: "Werte in MB anzeigen"
+        ex3: "Ausgabe alle 2 Sekunden aktualisieren"
+      grep:
+        desc: "Text mit Mustern (Regulären Ausdrücken) durchsuchen"
+        ex1: "Zeilen mit `error` finden"
+        ex2: "Rekursiv in einem Verzeichnis suchen"
+        ex3: "Groß-/Kleinschreibung ignorieren"
+      head:
+        desc: "Die ersten Zeilen einer Datei ausgeben"
+        ex1: "Erste 10 Zeilen"
+        ex2: "Erste 20 Zeilen"
+        ex3: "Erste 100 Bytes"
+      hostname:
+        desc: "Den Hostnamen des Systems anzeigen oder setzen"
+        ex1: "Den Hostnamen temporär bis zum Neustart setzen"
+        ex2: "IP-Adressen anzeigen"
+      kill:
+        desc: "Signale an Prozesse senden"
+        ex1: "Einen Prozess per PID beenden (erzwingen)"
+        ex2: "Sanft mit SIGTERM beenden"
+        ex3: "Prozesse nach Muster beenden"
+      ping:
+        desc: "Netzwerkkonnektivität mit ICMP-Echo prüfen"
+        ex1: "Eine Adresse anpingen"
+        ex2: "4 Pakete senden"
+        ex3: "2-Sekunden-Intervall einstellen"
+      ps:
+        desc: "Prozessstatus anzeigen"
+        ex1: "Alle Prozesse auflisten"
+        ex2: "Nach Namen mit `grep` filtern"
+        ex3: "Prozesse des aktuellen Benutzers"
+      rsync:
+        desc: "Schneller inkrementeller Dateitransfer"
+        ex1: "Verzeichnisse lokal synchronisieren"
+        ex2: "Über SSH mit einem Remote-Host synchronisieren"
+        ex3: "Dateien im Ziel löschen, die im Quellordner fehlen"
+      scp:
+        desc: "Sichere Kopie (Dateien zu/von Remote-Hosts kopieren)"
+        ex1: "Eine Datei auf einen Remote-Host kopieren"
+        ex2: "Eine Datei von einem Remote-Host kopieren"
+        ex3: "Ein Verzeichnis rekursiv kopieren"
+      sort:
+        desc: "Textzeilen sortieren"
+        ex1: "Alphabetisch sortieren"
+        ex2: "In umgekehrter Reihenfolge sortieren"
+        ex3: "Numerisch sortieren"
+      tail:
+        desc: "Letzten Teil von Dateien ausgeben; Änderungen verfolgen"
+        ex1: "Ein Log in Echtzeit verfolgen"
+        ex2: "Die letzten 20 Zeilen anzeigen"
+        ex3: "Die letzten 100 Bytes anzeigen"
+      tar:
+        desc: "Tar-Archive erstellen, auflisten oder entpacken"
+        ex1: "Ein komprimiertes `.tgz`-Archiv erstellen"
+        ex2: "Ein `.tgz`-Archiv entpacken"
+        ex3: "Archivinhalt auflisten"
+      tee:
+        desc: "Von stdin lesen und in stdout und Dateien schreiben"
+        ex1: "Ausgabe in `out.txt` schreiben und gleichzeitig anzeigen"
+        ex2: "Ausgabe von `ls` in Datei speichern und anzeigen"
+        ex3: "Ausgabe an das Ende von `log.txt` anhängen"
+      top:
+        desc: "Linux-Prozesse anzeigen (interaktiver Prozessmonitor)"
+        ex1: "`top` starten"
+        ex2: "Alternative interaktive Ansicht (`htop`)"
+        ex3: "Nach Speicherverbrauch sortieren"
+      uptime:
+        desc: "Systemlaufzeit anzeigen"
+        ex1: "Schöne Laufzeit-Anzeige"
+        ex2: "Systemstartzeit anzeigen"
+      wget:
+        desc: "Nicht-interaktiver Netzwerk-Downloader"
+        ex1: "Eine Datei per URL herunterladen"
+        ex2: "Abgebrochenen Download fortsetzen"
+        ex3: "Mit anderem Dateinamen speichern"
+      wc:
+        desc: "Zeilen-, Wort- und Byteanzahl von Dateien ausgeben"
+        ex1: "Zeilen zählen"
+        ex2: "Wörter zählen"
+        ex3: "Zeichen zählen"
+      uniq:
+        desc: "Doppelte Zeilen (aufeinanderfolgende Duplikate) melden oder entfernen"
+        ex1: "Direkte Duplikate entfernen"
+        ex2: "Duplikate nach Sortierung entfernen"
+        ex3: "Vorkommen jeder Zeile zählen"
+      yes:
+        desc: "Eine Zeichenkette endlos wiederholen; nützlich für Skripte"
+        ex1: "Immer \"y\" auf Eingabeaufforderungen antworten"
+        ex2: "Interaktive Löschungen automatisch bestätigen"
+        ex3: "Mit \"no\" auf Eingabeaufforderungen antworten"
+
+  advanced:
+    _root:
+      title: "🔧 Erweiterte Befehle"
+      at:
+        desc: "Einen einmaligen Befehl zu einer bestimmten Zeit planen"
+        ex1: "Einen Befehl eine Minute ab jetzt ausführen"
+        ex2: "Ausstehende Jobs auflisten"
+        ex3: "Einen ausstehenden Job entfernen"
+      awk:
+        desc: "Sprache zum Muster-Scannen und Verarbeiten"
+        ex1: "Die erste Spalte ausgeben"
+        ex2: "Prozesse nach CPU-Auslastung filtern"
+        ex3: "Das zweite Feld jeder Zeile ausgeben"
+        ex4: "Zeilen ausgeben, die einem Muster entsprechen"
+      crontab:
+        desc: "Cron-Jobs pro Benutzer installieren, auflisten oder entfernen"
+        ex1: "Crontab des aktuellen Benutzers bearbeiten"
+        ex2: "Cron-Jobs auflisten"
+        ex3: "Crontab des aktuellen Benutzers entfernen"
+      cut:
+        desc: "Abschnitte aus jeder Zeile von Dateien entfernen oder auswählen"
+        ex1: "Benutzernamen aus `/etc/passwd` ausgeben"
+        ex2: "Das zweite Feld mit `:` als Trennzeichen ausschneiden"
+        ex3: "Zeichen nach Position auswählen"
+      df:
+        desc: "Speichernutzung des Dateisystems anzeigen"
+        ex1: "Menschenlesbare Größen"
+        ex2: "Dateisystemtypen anzeigen"
+        ex3: "Nutzung des Home-Verzeichnisses"
+      env:
+        desc: "Einen Befehl in einer modifizierten Umgebung ausführen oder Variablen anzeigen"
+        ex1: "PATH-Einträge anzeigen"
+        ex2: "Eine saubere Shell mit leerer Umgebung starten"
+      export:
+        desc: "Umgebungsvariablen für die aktuelle Shell/Sitzung setzen"
+        ex1: "Eine Variable für diese Shell setzen"
+        ex2: "Ein Verzeichnis zu PATH hinzufügen"
+        ex3: "Exportierte Variablen auflisten"
+      free:
+        desc: "Speichernutzung anzeigen"
+        ex1: "In MB anzeigen"
+        ex2: "Menschenlesbare Einheiten"
+        ex3: "Alle 5 Sekunden aktualisieren"
+      hostnamectl:
+        desc: "System-Hostname und verwandte Einstellungen abfragen/ändern"
+        ex1: "Hostname-Status anzeigen"
+        ex2: "Einen neuen statischen Hostnamen setzen"
+      ip-tools:
+        desc: "IP-Werkzeuge zur Anzeige/Verwaltung von Schnittstellen und Adressen"
+        ex1: "Netzwerkschnittstellen anzeigen (Legacy)"
+        ex2: "Adressen mit `ip` anzeigen"
+        ex3: "Eine Schnittstelle aktivieren"
+      iostat:
+        desc: "CPU- und I/O-Statistiken anzeigen"
+        ex1: "Erweiterte Statistiken alle 2 Sekunden"
+        ex2: "Gerätestatistiken (5s-Intervall, 3 Berichte)"
+      iptables:
+        desc: "Verwaltung von IPv4-Paketfilterung und NAT"
+        ex1: "Aktuelle Regeln auflisten"
+        ex2: "Eingehendes SSH auf Port 22 erlauben"
+        ex3: "Alle Regeln löschen"
+      journalctl:
+        desc: "Das systemd-Journal abfragen"
+        ex1: "Neueste Fehler mit Kontext anzeigen"
+        ex2: "Logs für einen Dienst anzeigen"
+        ex3: "Logs seit einer relativen Zeit anzeigen"
+      ln:
+        desc: "Links zwischen Dateien erstellen"
+        ex1: "Einen symbolischen Link erstellen"
+        ex2: "Einen Hardlink erstellen"
+        ex3: "Einen symbolischen Link erzwingen/neu erstellen"
+      sed:
+        desc: "Stream-Editor zum Filtern und Transformieren von Text"
+        ex1: "Einen String global ersetzen"
+        ex2: "Nur einen bestimmten Zeilenbereich ausgeben"
+        ex3: "Zeilen löschen, die einem Muster entsprechen"
+      systemctl:
+        desc: "Den systemd-System- und Dienstemanager steuern"
+        ex1: "Dienststatus anzeigen"
+        ex2: "Einen Dienst starten"
+        ex3: "Einen Dienst beim Booten aktivieren"
+      tr:
+        desc: "Zeichen übersetzen oder löschen"
+        ex1: "Kleinbuchstaben in Großbuchstaben umwandeln"
+        ex2: "Ein Zeichen ersetzen"
+        ex3: "Ziffern löschen"
+      type:
+        desc: "Anzeigen, wie ein Name in der Shell interpretiert würde"
+        ex1: "Anzeigen, wie `ls` aufgelöst wird"
+        ex2: "Anzeigen, wie `cd` aufgelöst wird"
+        ex3: "Anzeigen, wie `python3` aufgelöst wird"
+      ulimit:
+        desc: "Ressourcenlimits für Benutzerprozesse anzeigen oder setzen"
+        ex1: "Maximale offene Dateien anzeigen"
+        ex2: "Core-Dumps aktivieren"
+        ex3: "Die Anzahl der Benutzerprozesse begrenzen"
+      uptime:
+        desc: "Systemlaufzeit und durchschnittliche Last anzeigen"
+        ex1: "Schöne Laufzeitanzeige"
+        ex2: "Systemstartzeit anzeigen"
+      xargs:
+        desc: "Befehlszeilen aus Standardeingabe aufbauen und ausführen"
+        ex1: "Jedes Argument in einer eigenen Zeile ausgeben"
+        ex2: "Wörter in separate Argumente aufteilen"
+        ex3: "Dateien finden und mit xargs löschen"
+
+  network:
+    _root:
+      title: "🌐 Netzwerkbefehle"
+      curl:
+        desc: "Daten von/zu Servern übertragen"
+        ex1: "POST-Anfrage mit Formulardaten"
+        ex2: "Nur Header abrufen"
+        ex3: "Herunterladen und in eine Datei speichern"
+      dig:
+        desc: "DNS-Abfragewerkzeug"
+        ex1: "A-Records abfragen"
+        ex2: "Kurze Antwort"
+        ex3: "Einen bestimmten DNS-Server verwenden"
+      ftp:
+        desc: "FTP-Client (File Transfer Protocol)"
+        ex1: "Mit einem FTP-Server verbinden"
+        ex2: "Ohne Auto-Login verbinden"
+        ex3: "Eine Datei in einer FTP-Sitzung herunterladen"
+      ip-address:
+        desc: "IP-Adressen anzeigen/manipulieren"
+        ex1: "Adressinformationen für `eth0` anzeigen"
+        ex2: "Alle Adressen auflisten"
+      ip-link:
+        desc: "Netzwerkgeräte anzeigen/manipulieren"
+        ex1: "Netzwerk-Links anzeigen"
+        ex2: "Eine Schnittstelle aktivieren"
+      ip-route:
+        desc: "IP-Routing-Tabelle anzeigen/manipulieren"
+        ex1: "Routing-Tabelle auflisten"
+        ex2: "Eine Standardroute hinzufügen"
+      nc:
+        desc: "Beliebige TCP/UDP-Verbindungen und Listener"
+        ex1: "Einen Host auf Ports scannen"
+        ex2: "Auf einem TCP-Port lauschen"
+        ex3: "Eine Datei an einen Remote-Port senden"
+      nmap:
+        desc: "Netzwerkerkundungstool und Sicherheits-/Portscanner"
+        ex1: "Ping-Scan eines Subnetzes"
+        ex2: "Dienst-/Versions-Erkennung"
+        ex3: "Betriebssystemerkennung"
+      nslookup:
+        desc: "Internet-Domain-Name-Server abfragen"
+        ex1: "Einen Domainnamen abfragen"
+        ex2: "Reverse Lookup für eine IP"
+      ssh:
+        desc: "OpenSSH-Remote-Login-Client"
+        ex1: "Mit einem Host verbinden"
+        ex2: "Mit einem nicht standardmäßigen Port verbinden"
+        ex3: "Mit einem bestimmten privaten Schlüssel einloggen"
+      ss:
+        desc: "Werkzeug zur Untersuchung von Sockets"
+        ex1: "TCP/UDP-Listening-Ports auflisten"
+        ex2: "Zusammenfassende Statistiken anzeigen"
+        ex3: "Listening-Sockets auflisten"
+      telnet:
+        desc: "Benutzerschnittstelle für das TELNET-Protokoll"
+        ex1: "Mit einem Host auf Port 80 verbinden"
+        ex2: "Mit Port 443 verbinden"
+        ex3: "Mit lokalem SMTP verbinden"
+      traceroute:
+        desc: "Den Pfad zu einem Netzwerkhost nachverfolgen"
+        ex1: "Pfad zu einer IP-Adresse verfolgen"
+        ex2: "Maximale Hops begrenzen"
+      wget:
+        desc: "Dateien aus dem Web herunterladen"
+        ex1: "Ausgabe in eine Datei speichern"
+        ex2: "In das aktuelle Verzeichnis herunterladen"
+        ex3: "Einen unterbrochenen Download fortsetzen"
+
+  files:
+    _root:
+      title: "🔍 Dateien suchen und verwalten"
+      basename:
+        desc: "Verzeichnis und Suffix von Dateinamen entfernen"
+        ex1: "Den Dateinamen aus einem Pfad ausgeben"
+        ex2: "Ein Suffix aus dem Namen entfernen"
+      dirname:
+        desc: "Letzte Komponente aus einem Pfad entfernen"
+        ex1: "Verzeichnisteil des Pfades anzeigen"
+        ex2: "Elternverzeichnis von `/etc/passpasswd` anzeigen"
+      du:
+        desc: "Speicherplatznutzung von Dateien schätzen"
+        ex1: "Größe eines Verzeichnisses anzeigen"
+        ex2: "Größe der Elemente im aktuellen Verzeichnis anzeigen"
+        ex3: "Kumulative Größe mehrerer Verzeichnisse"
+      file:
+        desc: "Dateityp bestimmen"
+        ex1: "Dateityp erkennen"
+        ex2: "Typen aller Dateien im Verzeichnis erkennen"
+        ex3: "MIME-Typ anzeigen"
+      find:
+        desc: "Nach Dateien suchen"
+        ex1: "Shell-Skripte nach Name finden"
+        ex2: "Dateien größer als 10 MB finden"
+        ex3: "Dateien finden, die am letzten Tag geändert wurden"
+      locate:
+        desc: "Dateien nach Namen mithilfe einer Datenbank suchen"
+        ex1: "Einen Dateinamen finden"
+        ex2: "Suche mit Wildcards"
+        ex3: "Groß-/Kleinschreibung ignorieren"
+      realpath:
+        desc: "Den aufgelösten absoluten Pfad ausgeben"
+        ex1: "Einen Dateipfad auflösen"
+        ex2: "Einen relativen Pfad auflösen"
+      stat:
+        desc: "Datei- oder Dateisystemstatus anzeigen"
+        ex1: "Detaillierten Dateistatus anzeigen"
+        ex2: "Nur Dateigröße ausgeben"
+        ex3: "Dateisystemstatus anzeigen"
+      tree:
+        desc: "Verzeichnisinhalte in Baumstruktur anzeigen"
+        ex1: "Verzeichnisbaum ausgeben"
+        ex2: "Anzeige auf bestimmte Tiefe begrenzen"
+        ex3: "Versteckte Dateien einbeziehen"
+
+  monitoring:
+    _root:
+      title: "📊 Systemüberwachung"
+      dmesg:
+        desc: "Kernel-Ringpuffer ausgeben oder steuern"
+        ex1: "Die letzten Kernel-Meldungen anzeigen"
+        ex2: "Nach USB-Meldungen filtern"
+      free:
+        desc: "Speichernutzung anzeigen"
+        ex1: "Menschenlesbare Einheiten"
+        ex2: "In MB anzeigen"
+      htop:
+        desc: "Interaktiver Prozess-Viewer"
+        ex1: "`htop` starten"
+      iotop:
+        desc: "I/O-Nutzung nach Prozessen anzeigen"
+        ex1: "`iotop` starten"
+        ex2: "Nur Prozesse mit I/O anzeigen"
+      lsof:
+        desc: "Geöffnete Dateien auflisten"
+        ex1: "Prozesse anzeigen, die Port 80 verwenden"
+        ex2: "Von einem Benutzer geöffnete Dateien anzeigen"
+      uptime:
+        desc: "Systemlaufzeit und Lastdurchschnitte anzeigen"
+      vmstat:
+        desc: "Virtuelle Speicherstatistiken ausgeben"
+        ex1: "Alle 1 Sekunde aktualisieren"
+        ex2: "5-Sekunden-Intervall, 3 Berichte"
+      watch:
+        desc: "Ein Programm periodisch ausführen und Ausgabe anzeigen"
+        ex1: "Speichernutzung beobachten"
+        ex2: "Unterschiede hervorheben und Speicher überwachen"
+
+  packages:
+    _root:
+      title: "📦 Paketverwaltung"
+      apt:
+        desc: "APT-Paketmanager (Debian/Ubuntu)"
+        ex1: "Ein Paket installieren"
+        ex2: "Ein Paket entfernen"
+        ex3: "Paketlisten aktualisieren und Pakete upgraden"
+      dnf:
+        desc: "Dandified YUM (Fedora/RHEL-Familie)"
+        ex1: "Ein Paket installieren"
+        ex2: "Pakete aktualisieren"
+      rpm:
+        desc: "RPM-Paketmanager"
+        ex1: "Ein RPM-Paket installieren"
+        ex2: "Ein Paket deinstallieren"
+      snap:
+        desc: "Snappy-Paketmanager"
+        ex1: "Ein Snap installieren"
+        ex2: "Ein Snap entfernen"
+      yum:
+        desc: "Yellowdog Updater Modified (RHEL/CentOS)"
+        ex1: "Ein Paket installieren"
+        ex2: "Ein Paket entfernen"
+
+  "file-systems":
+    _root:
+      title: "💽 Dateisysteme"
+      blkid:
+        desc: "Blockgeräte-Attribute lokalisieren/ausgeben"
+        ex1: "Blockgeräte und Attribute auflisten"
+      df:
+        desc: "Speichernutzung des Dateisystems anzeigen"
+        ex1: "Menschenlesbare Größen nach Typ"
+      fsck:
+        desc: "Ein Linux-Dateisystem prüfen und reparieren"
+        ex1: "Ein Gerät prüfen"
+      lsblk:
+        desc: "Informationen über Blockgeräte auflisten"
+        ex1: "Geräte in Baumstruktur auflisten"
+      mkfs:
+        desc: "Ein Linux-Dateisystem erstellen"
+        ex1: "Ein ext4-Dateisystem erstellen"
+      mount:
+        desc: "Ein Dateisystem einhängen"
+        ex1: "Ein Gerät nach `/mnt` einhängen"
+        ex2: "Eingehängte Dateisysteme nach Pfad gefiltert anzeigen"
+      parted:
+        desc: "Partitionsverwaltungsprogramm"
+        ex1: "Eine Festplatte zur Partitionierung öffnen"
+      umount:
+        desc: "Dateisysteme aushängen"
+        ex1: "Einen Mountpunkt aushängen"
+
+  scripts:
+    _root:
+      title: "🤖 Skripte und Automatisierung"
+      alias:
+        desc: "Shell-Aliasse definieren oder anzeigen"
+        ex1: "Einen nützlichen Alias erstellen"
+        ex2: "Definierte Aliasse auflisten"
+      shell:
+        desc: "Shell-Skripte ausführen"
+        ex1: "Ein Skript mit Bash ausführen"
+        ex2: "Ein Skript mit `sh` ausführen"
+      crontab:
+        desc: "Benutzer-Crontab-Tabellen"
+        ex1: "Crontab des aktuellen Benutzers bearbeiten"
+      read:
+        desc: "Benutzereingabe in Shell-Skripten abfragen"
+        ex1: "In eine Variable einlesen"
+      set:
+        desc: "Shell-Optionen/Positionsparameter setzen"
+        ex1: "Beim ersten Fehler beenden"
+      source:
+        desc: "Befehle aus einer Datei in der aktuellen Shell ausführen"
+        ex1: "Shell-Konfiguration neu laden"
+      trap:
+        desc: "Signale abfangen und Befehle ausführen"
+        ex1: "Einen Befehl beim Shell-Exit ausführen"
+
+  "dev-debug":
+    _root:
+      title: "🛠 Entwicklung und Debugging"
+      gcc:
+        desc: "GNU-C-Compiler"
+        ex1: "Eine C-Quelldatei kompilieren"
+      gdb:
+        desc: "GNU-Debugger"
+        ex1: "Ein kompiliertes Binary debuggen"
+      git:
+        desc: "Verteiltes Versionskontrollsystem"
+        ex1: "Status des Arbeitsbaums anzeigen"
+        ex2: "Mit Nachricht committen"
+      ltrace:
+        desc: "Bibliotheksaufrufe eines Programms nachverfolgen"
+        ex1: "Bibliotheksaufrufe eines Binaries nachverfolgen"
+      make:
+        desc: "Hilfsprogramm zum Verwalten von Programmsammlungen"
+        ex1: "Nach Makefile bauen"
+      shellcheck:
+        desc: "Statische Analyse für Shell-Skripte"
+        ex1: "Ein Shell-Skript prüfen"
+      strace:
+        desc: "Systemaufrufe und Signale nachverfolgen"
+        ex1: "Systemaufrufe eines Programms nachverfolgen"
+      valgrind:
+        desc: "Instrumentierungs-Framework für dynamische Analysetools"
+        ex1: "Ein Programm unter Valgrind ausführen"
+      editors:
+        desc: "Kommandozeilen-Editoren"
+        ex1: "Mit Vim bearbeiten"
+        ex2: "Mit Nano bearbeiten"
+
+  misc:
+    _root:
+      title: "📌 Verschiedenes"
+      cal:
+        desc: "Einen Kalender anzeigen"
+        ex1: "Jahreskalender anzeigen"
+        ex2: "Einen bestimmten Monat anzeigen"
+      date:
+        desc: "Systemdatum und -zeit anzeigen oder setzen"
+        ex1: "Aktuelle Uhrzeit ausgeben (HH:MM:SS)"
+        ex2: "Datum für einen relativen Tag anzeigen"
+      factor:
+        desc: "Ganzzahlen faktorisieren"
+        ex1: "Eine Zahl faktorisieren"
+      man:
+        desc: "Online-Handbuchseiten formatieren und anzeigen"
+        ex1: "Eine Man-Page öffnen"
+        ex2: "Handbuchseiten nach Schlüsselwort durchsuchen"
+        ex3: "Einen bestimmten Abschnitt öffnen"
+      seq:
+        desc: "Zahlenfolgen ausgeben"
+        ex1: "Von 1 bis 5 zählen"
+        ex2: "Mit Schrittweite zählen"
+        ex3: "Zahlen mit benutzerdefiniertem Trenner verbinden"
+      yes:
+        desc: "Eine Zeichenkette endlos ausgeben"
+        ex1: "Eine rekursive Löschung automatisch bestätigen"
+
+  resources:
+    _root:
+      title: "📚 Zusätzliche Ressourcen"
+      str:
+        man_pages_desc: "📘 **man pages** – detaillierte Handbücher für Befehle"
+        tldr_desc: "📙 **TLDR** – kurze Beispiele für die Nutzung gängiger Befehle"
+        tip_desc: "🧠 **Tipp:** `tldr` installieren für Cheat-Sheet-Hilfe:"
+        useful_links: "🌐 Nützliche Links"
+        linux_man_pages_online_desc: "**Linux man pages online** — offizielle Handbuchseiten, durchsuchbar nach Befehlsnamen:"
+        simplified_man_pages_desc: "**Vereinfachte und Community-getriebene Man-Pages** — Hilfeseiten mit praktischen Beispielen:"

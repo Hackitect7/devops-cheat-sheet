@@ -1,0 +1,11 @@
+common:
+  site:
+    title: "DevOps Komutları ve Senaryoları Hızlı Başvuru Kılavuzu"
+    sections: "Bölümler"
+  table:
+    columns:
+      command: "Komut"
+      example: "Örnek"
+      description: "Açıklama"
+  callouts:
+    sudo-warn: "`sudo` ile dikkatli olun: komutu çalıştırmadan önce her zaman kontrol edin."

@@ -1,0 +1,153 @@
+---
+title: "Hackitect7 — DevOps Cheat Sheet"
+page-layout: full
+toc: false
+sidebar: false
+page-navigation: false
+date: ""
+
+website:
+  navbar:
+    logo: assets/brand/us/hackitect7-logo-light-us.png
+    logo-alt: "Hackitect7 logo (en-US)"
+    left:
+      - text: "Home"
+        href: /
+      - text: "Help"
+        menu:
+          - text: "Report a Bug"
+            icon: "bug"
+            href: "https://github.com/Hackitect7/devops-cheat-sheet/issues"
+          - text: "Ask a Question"
+            icon: "chat-right-text"
+            href: "https://github.com/Hackitect7/devops-cheat-sheet/discussions"
+
+format:
+  html:
+    title-block-style: none
+    include-in-header:
+      - text: |
+          <style>
+            /* Прячем title block только на этой странице */
+            header#title-block-header {
+              display: none !important;
+            }
+          </style>
+---
+::: {.page-container}
+::: {.hero}
+::: {.hero-inner}
+![](assets/brand/us/hackitect7-logo-light-us.png){.hero-logo .only-light alt="Hackitect7 logo light (us)"}
+
+# DevOps Cheat Sheet
+
+A multilingual DevOps cheat sheet — Linux, Docker, Kubernetes, Terraform, and beyond — practical tips and scenarios created by a hands-on engineer for engineers like you.
+
+::: {.hero-bullets}
+<span class="bullet-dot"></span> Only verified commands and scenarios provided as is.  
+<span class="bullet-dot"></span> Unified templates + localization in 27 languages.  
+<span class="bullet-dot"></span> Fast search, clean examples, minimal fluff.
+:::
+
+::: {.hero-cta}
+[Select language](#languages){.btn .btn-primary}
+[GitHub repository](https://github.com/Hackitect7/devops-cheat-sheet){.btn .btn-ghost target="_blank" rel="noopener"}
+:::
+:::
+:::
+
+## Choose language {#languages .section-title}
+
+::: {.languages-grid}
+<!-- арабский, Саудовская Аравия — ar-SA -->
+[<span class="fi fi-sa"></span> <span class="lang-meta"><span class="lang-name">العربية</span><span class="lang-variant">السعودية</span></span>](/sa/){.lang-card}
+
+<!-- бенгальский, Бангладеш — bn-BD -->
+[<span class="fi fi-bd"></span> <span class="lang-meta"><span class="lang-name">বাংলা</span><span class="lang-variant">বাংলাদেশ</span></span>](/bd/){.lang-card}
+
+<!-- немецкий, Германия — de-DE -->
+[<span class="fi fi-de"></span> <span class="lang-meta"><span class="lang-name">Deutsch</span><span class="lang-variant">German</span></span>](/de/){.lang-card}
+
+<!-- английский, Великобритания — en-GB -->
+[<span class="fi fi-gb"></span> <span class="lang-meta"><span class="lang-name">English</span><span class="lang-variant">United Kingdom</span></span>](/gb/){.lang-card}
+
+<!-- английский, США — en-US -->
+[<span class="fi fi-us"></span> <span class="lang-meta"><span class="lang-name">English</span><span class="lang-variant">United States</span></span>](/us/){.lang-card}
+
+<!-- испанский, Латинская Америка (надрегион) — es-419 ; флаг берём мексиканский как «якорь» -->
+[<span class="fi fi-mx"></span> <span class="lang-meta"><span class="lang-name">Español</span><span class="lang-variant">Latinoamérica</span></span>](/la/){.lang-card}
+
+<!-- испанский, Испания — es-ES -->
+[<span class="fi fi-es"></span> <span class="lang-meta"><span class="lang-name">Español</span><span class="lang-variant">España</span></span>](/es/){.lang-card}
+
+<!-- испанский, Мексика — es-MX -->
+[<span class="fi fi-mx"></span> <span class="lang-meta"><span class="lang-name">Español</span><span class="lang-variant">México</span></span>](/mx/){.lang-card}
+
+<!-- персидский (фарси), Иран — fa-IR -->
+[<span class="fi fi-ir"></span> <span class="lang-meta"><span class="lang-name">فارسی</span><span class="lang-variant">ایران</span></span>](/ir/){.lang-card}
+
+<!-- французский, Франция — fr-FR -->
+[<span class="fi fi-fr"></span> <span class="lang-meta"><span class="lang-name">Français</span><span class="lang-variant">France</span></span>](/fr/){.lang-card}
+
+<!-- хинди, Индия — hi-IN -->
+[<span class="fi fi-in"></span> <span class="lang-meta"><span class="lang-name">हिंदी</span><span class="lang-variant">भारत</span></span>](/in/){.lang-card}
+
+<!-- индонезийский, Индонезия — id-ID -->
+[<span class="fi fi-id"></span> <span class="lang-meta"><span class="lang-name">Bahasa Indonesia</span><span class="lang-variant">Indonesia</span></span>](/id/){.lang-card}
+
+<!-- итальянский, Италия — it-IT -->
+[<span class="fi fi-it"></span> <span class="lang-meta"><span class="lang-name">Italiano</span><span class="lang-variant">Italia</span></span>](/it/){.lang-card}
+
+<!-- японский, Япония — ja-JP -->
+[<span class="fi fi-jp"></span> <span class="lang-meta"><span class="lang-name">日本語</span><span class="lang-variant">日本</span></span>](/jp/){.lang-card}
+
+<!-- корейский, Республика Корея — ko-KR -->
+[<span class="fi fi-kr"></span> <span class="lang-meta"><span class="lang-name">한국어</span><span class="lang-variant">대한민국</span></span>](/kr/){.lang-card}
+
+<!-- польский, Польша — pl-PL -->
+[<span class="fi fi-pl"></span> <span class="lang-meta"><span class="lang-name">Polski</span><span class="lang-variant">Polska</span></span>](/pl/){.lang-card}
+
+<!-- португальский, Бразилия — pt-BR -->
+[<span class="fi fi-br"></span> <span class="lang-meta"><span class="lang-name">Português</span><span class="lang-variant">Brasil</span></span>](/br/){.lang-card}
+
+<!-- португальский, Португалия — pt-PT -->
+[<span class="fi fi-pt"></span> <span class="lang-meta"><span class="lang-name">Português</span><span class="lang-variant">Portugal</span></span>](/pt/){.lang-card}
+
+<!-- русский, Россия — ru-RU -->
+[<span class="fi fi-ru"></span> <span class="lang-meta"><span class="lang-name">Русский</span><span class="lang-variant">Россия</span></span>](/ru/){.lang-card}
+
+<!-- суахили, Восточная Африка (Кения, Танзания и др.) — sw-KE -->
+[<span class="fi fi-ke"></span> <span class="lang-meta"><span class="lang-name">Kiswahili</span><span class="lang-variant">Kenya</span></span>](/ke/){.lang-card}
+
+<!-- тайский, Таиланд — th-TH -->
+[<span class="fi fi-th"></span> <span class="lang-meta"><span class="lang-name">ไทย</span><span class="lang-variant">ประเทศไทย</span></span>](/th/){.lang-card}
+
+<!-- турецкий, Турция — tr-TR -->
+[<span class="fi fi-tr"></span> <span class="lang-meta"><span class="lang-name">Türkçe</span><span class="lang-variant">Türkiye</span></span>](/tr/){.lang-card}
+
+<!-- украинский, Украина — uk-UA -->
+[<span class="fi fi-ua"></span> <span class="lang-meta"><span class="lang-name">Українська</span><span class="lang-variant">Україна</span></span>](/ua/){.lang-card}
+
+<!-- вьетнамский, Вьетнам — vi-VN -->
+[<span class="fi fi-vn"></span> <span class="lang-meta"><span class="lang-name">Tiếng Việt</span><span class="lang-variant">Việt Nam</span></span>](/vn/){.lang-card}
+
+<!-- китайский упрощённый, Китай — zh-CN -->
+[<span class="fi fi-cn"></span> <span class="lang-meta"><span class="lang-name">中文</span><span class="lang-variant">简体</span></span>](/cn/){.lang-card}
+
+<!-- китайский традиционный, Гонконг — zh-HK -->
+[<span class="fi fi-hk"></span> <span class="lang-meta"><span class="lang-name">中文</span><span class="lang-variant">繁體・香港</span></span>](/hk/){.lang-card}
+
+<!-- китайский традиционный, Тайвань — zh-TW -->
+[<span class="fi fi-tw"></span> <span class="lang-meta"><span class="lang-name">中文</span><span class="lang-variant">繁體・台灣</span></span>](/tw/){.lang-card}
+:::
+
+## About **Hackitect7** {.section-title}
+
+::: {.about}
+::: {.about-text}
+**Hackitect7** is my engineering alias and a practical mindset: **diagnose fast**, **design like an architect**, and **ship to production** *without unnecessary complexity*.
+
+This cheat sheet is focused on **hands‑on practice**: *commands*, *scenarios*, *ready‑to‑use config snippets*, and concise “**why this works**” explanations.
+:::
+:::
+:::
