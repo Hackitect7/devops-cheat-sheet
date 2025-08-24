@@ -16,7 +16,7 @@ jobs:
         uses: quarto-dev/quarto-actions/setup@v2
 
       # Рендерим профили в точном порядке: первым es (чисто), последним us (--no-clean)
-      - name: Render profiles (last = US)
+      - name: Render profiles
         shell: bash
         run: |
           set -euo pipefail
