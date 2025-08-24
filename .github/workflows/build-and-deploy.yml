@@ -4,11 +4,6 @@ on:
   push:
     branches: [ main ]
 
-# 27 профилей из твоего локального списка (порядок сохранён)
-env:
-  PROFILES: >
-    es ru gb sa in fr br de cn bd la mx ir id it jp kr pl pt ke th tr ua vn hk tw us
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -17,41 +12,41 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.x'
-
-      - name: Install Python deps
-        run: pip install -U pyyaml
-
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
-      # Проверка локализаций для каждого профиля
-      - name: L10N check (all profiles)
+      # Рендерим профили в точном порядке: первым es (чисто), последним us (--no-clean)
+      - name: Render profiles (last = US)
         shell: bash
         run: |
           set -euo pipefail
-          for p in $PROFILES; do
-            echo ">>> L10N check: $p"
-            python scripts/l10n_check.py "$p"
-          done
-
-      # Рендерим root-версию в корень _site/
-      - name: Render HOME (root)
-        run: |
-          quarto render --output-dir _site
-
-      # Рендерим все профили в _site/<profile>/
-      - name: Render all profiles into _site/<profile>
-        shell: bash
-        run: |
-          set -euo pipefail
-          for p in $PROFILES; do
-            echo ">>> Rendering profile: $p"
-            quarto render --profile "$p" --output-dir "_site/${p}"
-          done
+          quarto render --profile es
+          quarto render --profile ru --no-clean
+          quarto render --profile gb --no-clean
+          quarto render --profile sa --no-clean
+          quarto render --profile in --no-clean
+          quarto render --profile fr --no-clean
+          quarto render --profile br --no-clean
+          quarto render --profile de --no-clean
+          quarto render --profile cn --no-clean
+          quarto render --profile bd --no-clean
+          quarto render --profile la --no-clean
+          quarto render --profile mx --no-clean
+          quarto render --profile ir --no-clean
+          quarto render --profile id --no-clean
+          quarto render --profile it --no-clean
+          quarto render --profile jp --no-clean
+          quarto render --profile kr --no-clean
+          quarto render --profile pl --no-clean
+          quarto render --profile pt --no-clean
+          quarto render --profile ke --no-clean
+          quarto render --profile th --no-clean
+          quarto render --profile tr --no-clean
+          quarto render --profile ua --no-clean
+          quarto render --profile vn --no-clean
+          quarto render --profile hk --no-clean
+          quarto render --profile tw --no-clean
+          quarto render --profile us --no-clean
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
