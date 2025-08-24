@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="350" height="200" viewBox="0 0 350 200">
+  <rect width="100%" height="100%" fill="#ffffff" stroke="#0b1220" stroke-width="2"/>
+
+  <!-- Логотип Hackitect7 -->
+  <g transform="translate(20,20) scale(0.5)">
+    <polygon fill="none" stroke="#0b1220" stroke-width="4" points="32,4 56,16 56,48 32,60 8,48 8,16"/>
+    <path fill="none" stroke="#0ea5e9" stroke-width="4" stroke-linecap="round" d="M10,32 C18,22 26,42 34,32 S50,22 54,32"/>
+    <text x="130" y="76" font="700 64px 'Segoe UI', 'Inter', Arial, sans-serif" fill="#0b1220">Hackitect7</text>
+    <text x="130" y="116" font="400 32px 'Segoe UI', 'Inter', Arial, sans-serif" fill="#334155">Музыка систем</text>
+  </g>
+
+  <!-- Имя -->
+  <text x="20" y="140" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600" fill="#0b1220">
+    Алексей
+  </text>
+
+  <!-- Описание возможностей -->
+  <text x="20" y="160" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#374151">
+    • Надёжные компьютерные системы
+  </text>
+  <text x="20" y="175" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#374151">
+    • Сети и безопасность
+  </text>
+  <text x="20" y="190" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#374151">
+    • Автоматизация и DevOps
+  </text>
+
+  <!-- Контакты -->
+  <text x="200" y="160" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0ea5e9">
+    ✉ alexey@example.com
+  </text>
+  <text x="200" y="175" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0ea5e9">
+    ☎ +996 700 000 000
+  </text>
+  <text x="200" y="190" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0ea5e9">
+    🌐 hackitect7.com
+  </text>
+</svg>
