@@ -11,6 +11,7 @@ project:
     - sa/kubernetes.qmd
     - sa/helm.qmd
     - sa/terraform.qmd
+    - sa/about.qmd
 
 lang: ar-SA
 dir: rtl
@@ -23,6 +24,7 @@ metadata-files:
   - locales/ar-sa/kubernetes.yml
   - locales/ar-sa/helm.yml
   - locales/ar-sa/terraform.yml
+  - locales/ar-sa/about.yml
 
 website:
   title: "ورقة الغش لـ DevOps"
@@ -50,3 +52,5 @@ website:
           - text: "طرح سؤال"
             icon: "chat-right-text"
             href: "https://github.com/Hackitect7/devops-cheat-sheet/discussions"
+      - text: "حول"
+        href: sa/about.qmd

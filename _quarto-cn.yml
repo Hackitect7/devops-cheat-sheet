@@ -11,6 +11,7 @@ project:
     - cn/kubernetes.qmd
     - cn/helm.qmd
     - cn/terraform.qmd
+    - cn/about.qmd
 
 lang: zh
 
@@ -22,6 +23,7 @@ metadata-files:
   - locales/zh-cn/kubernetes.yml
   - locales/zh-cn/helm.yml
   - locales/zh-cn/terraform.yml
+  - locales/zh-cn/about.yml
 
 website:
   title: "DevOps 速查表"
@@ -49,3 +51,5 @@ website:
           - text: "提问"
             icon: "chat-right-text"
             href: "https://github.com/Hackitect7/devops-cheat-sheet/discussions"
+      - text: "关于"
+        href: cn/about.qmd

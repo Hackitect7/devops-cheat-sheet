@@ -11,6 +11,7 @@ project:
     - de/kubernetes.qmd
     - de/helm.qmd
     - de/terraform.qmd
+    - de/about.qmd
 
 lang: de-DE
 
@@ -22,6 +23,7 @@ metadata-files:
   - locales/de-de/kubernetes.yml
   - locales/de-de/helm.yml
   - locales/de-de/terraform.yml
+  - locales/de-de/about.yml
 
 website:
   title: "DevOps Spickzettel"
@@ -49,3 +51,5 @@ website:
           - text: "Frage stellen"
             icon: "chat-right-text"
             href: "https://github.com/Hackitect7/devops-cheat-sheet/discussions"
+      - text: "Über"
+        href: de/about.qmd

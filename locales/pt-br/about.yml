@@ -1,0 +1,54 @@
+about_sec:
+  title: "Sobre"
+  header: "Sobre o Hackitect7"
+
+  philosophy:
+    title: "Minha Filosofia de Engenharia"
+    body1: |
+      **Hackitect7** é meu codinome e mentalidade de engenharia:  
+      **diagnosticar rápido**, **projetar como um arquiteto** e **entregar em produção**
+      *sem complexidade desnecessária*.
+    body2: |
+      Isso não é apenas um apelido — é uma filosofia de abordagem da tecnologia:
+      encontrar equilíbrio entre velocidade e confiabilidade, e sempre buscar resultados práticos.
+
+  purpose:
+    title: "Propósito do Projeto"
+    body: |
+      O **Guia Rápido de DevOps** começou como uma coleção pessoal de anotações e comandos que eu usava no meu dia a dia.  
+      Com o tempo, cresceu para se tornar uma referência estruturada e agora é um site multilíngue completo, projetado para ajudar engenheiros em todo o mundo.
+    goals:
+      title: "**Principais objetivos do projeto:**"
+      goal1: fornecer **acesso rápido** a comandos, configurações e cenários;  
+      goal2: explicar não apenas *como*, mas também *por que* as coisas funcionam;  
+      goal3: manter o **acesso multilíngue** (27 idiomas) para alcance global;  
+      goal4: expandir uma **base de conhecimento aberta**, incentivando contribuições da comunidade.
+
+  story:
+    title: "A História do Hackitect7"
+    parts:
+      title: "O nome **Hackitect7** vem de três partes:"
+      part1: "**Hacker** → sempre em busca de soluções práticas e eficientes;"
+      part2: "**Architect** → projetando sistemas resilientes, escaláveis e elegantes;"
+      part3: "**7** → símbolo de completude e equilíbrio."
+    body: "Juntas, refletem minha abordagem à engenharia: tornar a tecnologia prática, robusta e acessível."
+
+  audience:
+    title: "Quem Vai se Beneficiar"
+    body:
+      title: "O guia é destinado a:"
+      purpose1: "**Iniciantes** — como um ponto de partida rápido no DevOps;"
+      purpose2: "**Engenheiros experientes** — como um lembrete compacto sempre à mão;"
+      purpose3: "**Equipes** — como uma referência compartilhada e base de conhecimento interna."
+
+  future:
+    title: "Olhando para o Futuro"
+    expand: 
+      title: "O projeto continuará a se expandir:"
+      exp1: "adicionando mais tecnologias (plataformas em nuvem, padrões de CI/CD, infraestrutura como código);"
+      exp2: "incluindo **cenários reais de produção** e boas práticas;"
+      exp3: "fortalecendo as contribuições e o feedback da comunidade."
+
+    body: |
+      **Hackitect7** é a minha forma de compartilhar conhecimento, prática e mentalidade com o mundo da engenharia.  
+      Este guia rápido não é apenas documentação — é um recurso em constante crescimento para aqueles que valorizam clareza, velocidade e resultados práticos.

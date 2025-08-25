@@ -1,0 +1,54 @@
+about_sec:
+  title: "Giới thiệu"
+  header: "Giới thiệu về Hackitect7"
+
+  philosophy:
+    title: "Triết lý Kỹ thuật của tôi"
+    body1: |
+      **Hackitect7** là bí danh kỹ thuật và tư duy của tôi:  
+      **chẩn đoán nhanh**, **thiết kế như một kiến trúc sư**, và **triển khai vào production**
+      *mà không có sự phức tạp không cần thiết*.
+    body2: |
+      Đây không chỉ là một biệt danh — mà là triết lý tiếp cận công nghệ:
+      tìm sự cân bằng giữa tốc độ và độ tin cậy, và luôn hướng tới kết quả thực tiễn.
+
+  purpose:
+    title: "Mục đích của Dự án"
+    body: |
+      **DevOps Cheat Sheet** bắt đầu như một bộ sưu tập cá nhân gồm ghi chú và lệnh mà tôi sử dụng trong công việc hàng ngày.
+      Theo thời gian, nó phát triển thành một tài liệu tham khảo có cấu trúc, và bây giờ thành một trang web đa ngôn ngữ đầy đủ được thiết kế để giúp các kỹ sư trên toàn thế giới.
+    goals:
+      title: "**Mục tiêu chính của dự án:**"
+      goal1: cung cấp **truy cập nhanh** tới lệnh, cấu hình và kịch bản;  
+      goal2: giải thích không chỉ *cách* mà còn cả *tại sao* mọi thứ hoạt động;  
+      goal3: duy trì **truy cập đa ngôn ngữ** (27 ngôn ngữ) để tiếp cận toàn cầu;  
+      goal4: phát triển một **cơ sở tri thức mở** chào đón sự đóng góp từ cộng đồng.
+
+  story:
+    title: "Câu chuyện về Hackitect7"
+    parts:
+      title: "Tên **Hackitect7** đến từ ba phần:"
+      part1: "**Hacker** → luôn tìm kiếm giải pháp thực tiễn, hiệu quả;"
+      part2: "**Architect** → thiết kế hệ thống bền vững, có khả năng mở rộng và tinh gọn;"
+      part3: "**7** → biểu tượng của sự hoàn thiện và cân bằng."
+    body: "Kết hợp lại, nó phản ánh cách tôi tiếp cận kỹ thuật: làm cho công nghệ thực tiễn, mạnh mẽ và dễ tiếp cận."
+
+  audience:
+    title: "Ai sẽ được lợi"
+    body:
+      title: "Bảng cheat sheet này dành cho:"
+      purpose1: "**Người mới bắt đầu** — như một khởi đầu nhanh và điểm vào DevOps;"
+      purpose2: "**Kỹ sư giàu kinh nghiệm** — như một ghi nhớ ngắn gọn trong tầm tay;"
+      purpose3: "**Nhóm** — như một tài liệu tham khảo chung và cơ sở tri thức nội bộ."
+
+  future:
+    title: "Nhìn về phía trước"
+    expand: 
+      title: "Dự án sẽ tiếp tục mở rộng:"
+      exp1: "thêm nhiều công nghệ hơn (nền tảng đám mây, mẫu CI/CD, hạ tầng dưới dạng code);"
+      exp2: "bao gồm **kịch bản thực tế trong production** và các thực tiễn tốt nhất;"
+      exp3: "tăng cường đóng góp và phản hồi từ cộng đồng."
+
+    body: |
+      **Hackitect7** là cách tôi chia sẻ kiến thức, kinh nghiệm và tư duy với thế giới kỹ thuật.  
+      Bảng cheat sheet này không chỉ là tài liệu — mà là một nguồn lực đang phát triển dành cho những người coi trọng sự rõ ràng, tốc độ và kết quả thực tiễn.

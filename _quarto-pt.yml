@@ -11,6 +11,7 @@ project:
     - pt/kubernetes.qmd
     - pt/helm.qmd
     - pt/terraform.qmd
+    - pt/about.qmd
 
 lang: pt-PT
 
@@ -22,6 +23,7 @@ metadata-files:
   - locales/pt-pt/kubernetes.yml
   - locales/pt-pt/helm.yml
   - locales/pt-pt/terraform.yml
+  - locales/pt-pt/about.yml
 
 website:
   title: "DevOps Guia Rápido"
@@ -49,3 +51,5 @@ website:
           - text: "Colocar uma Questão"
             icon: "chat-right-text"
             href: "https://github.com/Hackitect7/devops-cheat-sheet/discussions"
+      - text: "Sobre"
+        href: pt/about.qmd

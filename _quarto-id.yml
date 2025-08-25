@@ -11,6 +11,7 @@ project:
     - id/kubernetes.qmd
     - id/helm.qmd
     - id/terraform.qmd
+    - id/about.qmd
 
 lang: id-ID
 
@@ -22,6 +23,7 @@ metadata-files:
   - locales/id-id/kubernetes.yml
   - locales/id-id/helm.yml
   - locales/id-id/terraform.yml
+  - locales/id-id/about.yml
 
 website:
   title: "Lembar Pintasan DevOps"
@@ -49,3 +51,5 @@ website:
           - text: "Ajukan Pertanyaan"
             icon: "chat-right-text"
             href: "https://github.com/Hackitect7/devops-cheat-sheet/discussions"
+      - text: "Tentang"
+        href: id/about.qmd

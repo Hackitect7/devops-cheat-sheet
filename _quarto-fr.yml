@@ -11,6 +11,7 @@ project:
     - fr/kubernetes.qmd
     - fr/helm.qmd
     - fr/terraform.qmd
+    - fr/about.qmd
 
 lang: fr-FR
 
@@ -22,6 +23,7 @@ metadata-files:
   - locales/fr-fr/kubernetes.yml
   - locales/fr-fr/helm.yml
   - locales/fr-fr/terraform.yml
+  - locales/fr-fr/about.yml
 
 website:
   title: "Aide-mémoire DevOps"
@@ -49,3 +51,5 @@ website:
           - text: "Poser une question"
             icon: "chat-right-text"
             href: "https://github.com/Hackitect7/devops-cheat-sheet/discussions"
+      - text: "À propos"
+        href: fr/about.qmd

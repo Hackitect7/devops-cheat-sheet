@@ -11,6 +11,7 @@ project:
     - ru/kubernetes.qmd
     - ru/helm.qmd
     - ru/terraform.qmd
+    - ru/about.qmd
 
 lang: ru-RU
 
@@ -22,6 +23,7 @@ metadata-files:
   - locales/ru-ru/kubernetes.yml
   - locales/ru-ru/helm.yml
   - locales/ru-ru/terraform.yml
+  - locales/ru-ru/about.yml
 
 website:
   title: "DevOps Шпаргалка"
@@ -49,3 +51,5 @@ website:
           - text: "Задать вопрос"
             icon: "chat-right-text"
             href: "https://github.com/Hackitect7/devops-cheat-sheet/discussions"
+      - text: "О проекте"
+        href: ru/about.qmd

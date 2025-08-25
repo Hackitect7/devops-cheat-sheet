@@ -11,6 +11,7 @@ project:
     - bd/kubernetes.qmd
     - bd/helm.qmd
     - bd/terraform.qmd
+    - bd/about.qmd
 
 lang: bn-BD
 
@@ -22,6 +23,7 @@ metadata-files:
   - locales/bn-bd/kubernetes.yml
   - locales/bn-bd/helm.yml
   - locales/bn-bd/terraform.yml
+  - locales/bn-bd/about.yml
 
 website:
   title: "ডেভঅপস চিট শীট"
@@ -49,3 +51,5 @@ website:
           - text: "একটি প্রশ্ন করুন"
             icon: "chat-right-text"
             href: "https://github.com/Hackitect7/devops-cheat-sheet/discussions"
+      - text: "সম্পর্কে"
+        href: bd/about.qmd

@@ -11,6 +11,7 @@ project:
     - ir/kubernetes.qmd
     - ir/helm.qmd
     - ir/terraform.qmd
+    - ir/about.qmd
 
 lang: en-IR
 dir: rtl
@@ -23,6 +24,7 @@ metadata-files:
   - locales/fa-ir/kubernetes.yml
   - locales/fa-ir/helm.yml
   - locales/fa-ir/terraform.yml
+  - locales/fa-ir/about.yml
 
 website:
   title: "برگه تقلب DevOps"
@@ -50,3 +52,5 @@ website:
           - text: "پرسیدن سوال"
             icon: "chat-right-text"
             href: "https://github.com/Hackitect7/devops-cheat-sheet/discussions"
+      - text: "درباره"
+        href: ir/about.qmd

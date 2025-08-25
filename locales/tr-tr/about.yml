@@ -1,0 +1,54 @@
+about_sec:
+  title: "Hakkında"
+  header: "Hackitect7 Hakkında"
+
+  philosophy:
+    title: "Mühendislik Felsefem"
+    body1: |
+      **Hackitect7** benim mühendislik takma adım ve bakış açım:  
+      **hızlı teşhis et**, **bir mimar gibi tasarla**, ve **gereksiz karmaşıklık olmadan**
+      *üretime geçir*.
+    body2: |
+      Bu sadece bir takma ad değil — teknolojiye yaklaşım felsefesidir:  
+      hız ile güvenilirlik arasında denge bulmak ve her zaman pratik sonuçlara odaklanmak.
+
+  purpose:
+    title: "Projenin Amacı"
+    body: |
+      **DevOps Cheat Sheet**, günlük işimde kullandığım notlar ve komutların kişisel bir koleksiyonu olarak başladı.  
+      Zamanla yapılandırılmış bir referansa ve şimdi de dünya çapında mühendislerin yararlanabileceği çok dilli bir web sitesine dönüştü.
+    goals:
+      title: "**Projenin ana hedefleri:**"
+      goal1: komutlara, konfigürasyonlara ve senaryolara **hızlı erişim** sağlamak;  
+      goal2: yalnızca *nasıl* değil, aynı zamanda *neden* çalıştığını açıklamak;  
+      goal3: küresel erişim için **çok dilli desteği** (27 dil) sürdürmek;  
+      goal4: topluluk katkılarına açık bir **bilgi tabanı** geliştirmek.
+
+  story:
+    title: "Hackitect7’in Hikayesi"
+    parts:
+      title: "Ad **Hackitect7** üç parçadan gelir:"
+      part1: "**Hacker** → her zaman verimli, pratik çözümler arayan;"
+      part2: "**Architect** → dayanıklı, ölçeklenebilir ve zarif sistemler tasarlayan;"
+      part3: "**7** → bütünlüğün ve dengenin sembolü."
+    body: "Birlikte, teknolojiyi pratik, sağlam ve erişilebilir hale getiren mühendislik yaklaşımımı yansıtır."
+
+  audience:
+    title: "Kimler Faydalanacak"
+    body:
+      title: "Bu cheat sheet şu kişiler için tasarlanmıştır:"
+      purpose1: "**Yeni başlayanlar** — hızlı bir başlangıç ve DevOps’a giriş noktası olarak;"
+      purpose2: "**Deneyimli mühendisler** — pratik bir hatırlatma kaynağı olarak;"
+      purpose3: "**Takımlar** — ortak bir referans ve dahili bilgi tabanı olarak."
+
+  future:
+    title: "İleriye Bakış"
+    expand: 
+      title: "Proje gelişmeye devam edecek:"
+      exp1: "daha fazla teknoloji ekleyerek (bulut platformları, CI/CD desenleri, kod olarak altyapı);"
+      exp2: "**gerçek üretim senaryoları** ve en iyi uygulamaları dahil ederek;"
+      exp3: "topluluk katkılarını ve geri bildirimlerini güçlendirerek."
+
+    body: |
+      **Hackitect7**, bilgi, deneyim ve bakış açımı mühendislik dünyasıyla paylaşma yolumdur.  
+      Bu cheat sheet sadece bir dokümantasyon değil — netlik, hız ve pratik sonuçlara değer verenler için büyüyen bir kaynaktır.

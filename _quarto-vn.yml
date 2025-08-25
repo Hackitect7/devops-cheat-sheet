@@ -11,6 +11,8 @@ project:
     - vn/kubernetes.qmd
     - vn/helm.qmd
     - vn/terraform.qmd
+    - vn/about.qmd
+
 
 lang: vi-VN
 
@@ -22,6 +24,7 @@ metadata-files:
   - locales/vi-vn/kubernetes.yml
   - locales/vi-vn/helm.yml
   - locales/vi-vn/terraform.yml
+  - locales/vi-vn/about.yml
 
 website:
   title: "Bảng tóm tắt DevOps"
@@ -49,3 +52,5 @@ website:
           - text: "Đặt câu hỏi"
             icon: "chat-right-text"
             href: "https://github.com/Hackitect7/devops-cheat-sheet/discussions"
+      - text: "Giới thiệu"
+        href: vn/about.qmd

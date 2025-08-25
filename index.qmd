@@ -21,6 +21,8 @@ website:
           - text: "Ask a Question"
             icon: "chat-right-text"
             href: "https://github.com/Hackitect7/devops-cheat-sheet/discussions"
+      - text: "About"
+        href: about.qmd
 
 format:
   html:
@@ -47,6 +49,7 @@ A multilingual DevOps cheat sheet — Linux, Docker, Kubernetes, Terraform, and 
 <span class="bullet-dot"></span> Only verified commands and scenarios provided as is.  
 <span class="bullet-dot"></span> Unified templates + localization in 27 languages.  
 <span class="bullet-dot"></span> Fast search, clean examples, minimal fluff.
+
 :::
 
 ::: {.hero-cta}
@@ -139,15 +142,5 @@ A multilingual DevOps cheat sheet — Linux, Docker, Kubernetes, Terraform, and 
 
 <!-- китайский традиционный, Тайвань — zh-TW -->
 [<span class="fi fi-tw"></span> <span class="lang-meta"><span class="lang-name">中文</span><span class="lang-variant">繁體・台灣</span></span>](/tw/){.lang-card}
-:::
-
-## About **Hackitect7** {.section-title}
-
-::: {.about}
-::: {.about-text}
-**Hackitect7** is my engineering alias and a practical mindset: **diagnose fast**, **design like an architect**, and **ship to production** *without unnecessary complexity*.
-
-This cheat sheet is focused on **hands‑on practice**: *commands*, *scenarios*, *ready‑to‑use config snippets*, and concise “**why this works**” explanations.
-:::
 :::
 :::

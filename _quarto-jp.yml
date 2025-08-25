@@ -11,6 +11,7 @@ project:
     - jp/kubernetes.qmd
     - jp/helm.qmd
     - jp/terraform.qmd
+    - jp/about.qmd
 
 lang: ja-JP
 
@@ -22,6 +23,7 @@ metadata-files:
   - locales/ja-jp/kubernetes.yml
   - locales/ja-jp/helm.yml
   - locales/ja-jp/terraform.yml
+  - locales/ja-jp/about.yml
 
 website:
   title: "DevOps チートシート"
@@ -49,3 +51,5 @@ website:
           - text: "質問する"
             icon: "chat-right-text"
             href: "https://github.com/Hackitect7/devops-cheat-sheet/discussions"
+      - text: "概要"
+        href: jp/about.qmd

@@ -11,6 +11,7 @@ project:
     - th/kubernetes.qmd
     - th/helm.qmd
     - th/terraform.qmd
+    - th/about.qmd
 
 lang: th-TH
 
@@ -22,6 +23,7 @@ metadata-files:
   - locales/th-th/kubernetes.yml
   - locales/th-th/helm.yml
   - locales/th-th/terraform.yml
+  - locales/th-th/about.yml
 
 website:
   title: "ชีทโกง DevOps"
@@ -49,3 +51,5 @@ website:
           - text: "ถามคำถาม"
             icon: "chat-right-text"
             href: "https://github.com/Hackitect7/devops-cheat-sheet/discussions"
+      - text: "เกี่ยวกับ"
+        href: th/about.qmd

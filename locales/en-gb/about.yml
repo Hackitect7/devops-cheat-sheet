@@ -1,0 +1,54 @@
+about_sec:
+  title: "About"
+  header: "About Hackitect7"
+
+  philosophy:
+    title: "My Engineering Philosophy"
+    body1: |
+      **Hackitect7** is my engineering alias and mindset:  
+      **diagnose quickly**, **design like an architect**, and **deliver to production**
+      *without unnecessary complexity*.
+    body2: |
+      This is not just a nickname — it is a philosophy of approaching technology:
+      finding balance between speed and reliability, and always aiming for practical results.
+
+  purpose:
+    title: "Purpose of the Project"
+    body: |
+      The **DevOps Cheat Sheet** began as a personal collection of notes and commands that I used in my daily work.
+      Over time, it grew into a structured reference, and now into a full multilingual website designed to support engineers worldwide.
+    goals:
+      title: "**Main goals of the project:**"
+      goal1: provide **fast access** to commands, configurations, and scenarios;  
+      goal2: explain not only *how*, but also *why* things work;  
+      goal3: ensure **multilingual access** (27 languages) for global reach;  
+      goal4: grow an **open knowledge base** welcoming community contributions.
+
+  story:
+    title: "The Story of Hackitect7"
+    parts:
+      title: "The name **Hackitect7** comes from three elements:"
+      part1: "**Hacker** → always seeking efficient, hands-on solutions;"
+      part2: "**Architect** → designing systems that are resilient, scalable, and elegant;"
+      part3: "**7** → a symbol of completeness and balance."
+    body: "Together, it represents my approach to engineering: making technology practical, robust, and accessible."
+
+  audience:
+    title: "Who Will Benefit"
+    body:
+      title: "The cheat sheet is intended for:"
+      purpose1: "**Beginners** — as a quick start and entry point into DevOps;"
+      purpose2: "**Experienced engineers** — as a compact reference at hand;"
+      purpose3: "**Teams** — as a shared resource and internal knowledge base."
+
+  future:
+    title: "Looking Ahead"
+    expand: 
+      title: "The project will continue to grow:"
+      exp1: "adding more technologies (cloud platforms, CI/CD patterns, infrastructure as code);"
+      exp2: "including **real production scenarios** and best practices;"
+      exp3: "strengthening community contributions and feedback."
+
+    body: |
+      **Hackitect7** is my way of sharing knowledge, practice, and mindset with the engineering community.  
+      This cheat sheet is not merely documentation — it is a living resource for those who value clarity, speed, and practical outcomes.

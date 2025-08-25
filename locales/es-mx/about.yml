@@ -1,0 +1,54 @@
+about_sec:
+  title: "Acerca de"
+  header: "Acerca de Hackitect7"
+
+  philosophy:
+    title: "Mi filosofía de ingeniería"
+    body1: |
+      **Hackitect7** es mi alias y mentalidad de ingeniería:  
+      **diagnosticar rápido**, **diseñar como un arquitecto**, y **llevar a producción**
+      *sin complejidad innecesaria*.
+    body2: |
+      No es solo un apodo — es una filosofía de cómo abordar la tecnología:
+      encontrar el equilibrio entre velocidad y confiabilidad, y siempre apuntar a resultados prácticos.
+
+  purpose:
+    title: "Propósito del proyecto"
+    body: |
+      La **Hoja de Trucos de DevOps** comenzó como una colección personal de notas y comandos que usaba en mi trabajo diario.  
+      Con el tiempo, creció hasta convertirse en una referencia estructurada, y ahora en un sitio web multilingüe completo diseñado para ayudar a ingenieros de todo el mundo.
+    goals:
+      title: "**Objetivos principales del proyecto:**"
+      goal1: proporcionar **acceso rápido** a comandos, configuraciones y escenarios;  
+      goal2: explicar no solo *cómo*, sino también *por qué* funcionan las cosas;  
+      goal3: mantener **acceso multilingüe** (27 idiomas) para alcance global;  
+      goal4: crecer una **base de conocimiento abierta** que dé la bienvenida a contribuciones de la comunidad.
+
+  story:
+    title: "La historia de Hackitect7"
+    parts:
+      title: "El nombre **Hackitect7** proviene de tres partes:"
+      part1: "**Hacker** → siempre buscando soluciones prácticas y eficientes;"
+      part2: "**Arquitecto** → diseñando sistemas resilientes, escalables y elegantes;"
+      part3: "**7** → símbolo de completitud y equilibrio."
+    body: "En conjunto, refleja mi enfoque hacia la ingeniería: hacer la tecnología práctica, robusta y accesible."
+
+  audience:
+    title: "Quién se beneficiará"
+    body:
+      title: "La hoja de trucos está pensada para:"
+      purpose1: "**Principiantes** — como un inicio rápido y punto de entrada a DevOps;"
+      purpose2: "**Ingenieros experimentados** — como recordatorio compacto a la mano;"
+      purpose3: "**Equipos** — como referencia compartida y base de conocimiento interna."
+
+  future:
+    title: "Mirando hacia adelante"
+    expand: 
+      title: "El proyecto seguirá expandiéndose:"
+      exp1: "añadiendo más tecnologías (plataformas en la nube, patrones CI/CD, infraestructura como código);"
+      exp2: "incluyendo **escenarios reales de producción** y mejores prácticas;"
+      exp3: "fortaleciendo contribuciones y retroalimentación de la comunidad."
+
+    body: |
+      **Hackitect7** es mi manera de compartir conocimiento, práctica y mentalidad con el mundo de la ingeniería.  
+      Esta hoja de trucos no es solo documentación — es un recurso en crecimiento para quienes valoran la claridad, la velocidad y los resultados prácticos.

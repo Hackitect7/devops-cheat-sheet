@@ -1,0 +1,54 @@
+about_sec:
+  title: "O projekcie"
+  header: "O Hackitect7"
+
+  philosophy:
+    title: "Moja filozofia inżynierska"
+    body1: |
+      **Hackitect7** to mój inżynierski pseudonim i sposób myślenia:  
+      **diagnozuj szybko**, **projektuj jak architekt** i **wdrażaj do produkcji**
+      *bez zbędnej złożoności*.
+    body2: |
+      To nie jest tylko pseudonim — to filozofia podejścia do technologii: 
+      znajdowanie równowagi między szybkością a niezawodnością i zawsze dążenie do praktycznych rezultatów.
+
+  purpose:
+    title: "Cel projektu"
+    body: |
+      **DevOps Cheat Sheet** zaczęła się jako osobista kolekcja notatek i poleceń, których używałem w codziennej pracy.  
+      Z czasem przekształciła się w uporządkowane źródło wiedzy, a obecnie w pełnoprawną wielojęzyczną stronę internetową, zaprojektowaną, aby pomagać inżynierom na całym świecie.
+    goals:
+      title: "**Główne cele projektu:**"
+      goal1: zapewnić **szybki dostęp** do poleceń, konfiguracji i scenariuszy;  
+      goal2: wyjaśniać nie tylko *jak*, ale także *dlaczego* coś działa;  
+      goal3: utrzymywać **wielojęzyczny dostęp** (27 języków), aby dotrzeć globalnie;  
+      goal4: rozwijać **otwartą bazę wiedzy**, zachęcając do wkładu społeczności.
+
+  story:
+    title: "Historia Hackitect7"
+    parts:
+      title: "Nazwa **Hackitect7** pochodzi z trzech elementów:"
+      part1: "**Hacker** → zawsze poszukujący wydajnych, praktycznych rozwiązań;"
+      part2: "**Architect** → projektowanie systemów odpornych, skalowalnych i eleganckich;"
+      part3: "**7** → symbol pełni i równowagi."
+    body: "Razem odzwierciedlają moje podejście do inżynierii: sprawianie, by technologia była praktyczna, solidna i dostępna."
+
+  audience:
+    title: "Dla kogo"
+    body:
+      title: "Ściągawka jest przeznaczona dla:"
+      purpose1: "**Początkujących** — jako szybki start i punkt wejścia do DevOps;"
+      purpose2: "**Doświadczonych inżynierów** — jako podręczna, zwięzła ściągawka;"
+      purpose3: "**Zespołów** — jako wspólne źródło wiedzy i baza referencyjna."
+
+  future:
+    title: "Patrząc w przyszłość"
+    expand: 
+      title: "Projekt będzie nadal się rozwijał:"
+      exp1: "dodając więcej technologii (platformy chmurowe, wzorce CI/CD, infrastructure as code);"
+      exp2: "obejmując **realne scenariusze produkcyjne** i najlepsze praktyki;"
+      exp3: "wzmacniając wkład społeczności i feedback."
+
+    body: |
+      **Hackitect7** to mój sposób dzielenia się wiedzą, praktyką i podejściem z inżynierskim światem.  
+      Ta ściągawka to nie tylko dokumentacja — to rosnące źródło dla tych, którzy cenią przejrzystość, szybkość i praktyczne rezultaty.

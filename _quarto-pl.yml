@@ -11,6 +11,7 @@ project:
     - pl/kubernetes.qmd
     - pl/helm.qmd
     - pl/terraform.qmd
+    - pl/about.qmd
 
 lang: pl-PL
 
@@ -22,6 +23,7 @@ metadata-files:
   - locales/pl-pl/kubernetes.yml
   - locales/pl-pl/helm.yml
   - locales/pl-pl/terraform.yml
+  - locales/pl-pl/about.yml
 
 website:
   title: "DevOps ściągawka"
@@ -49,3 +51,5 @@ website:
           - text: "Zadaj pytanie"
             icon: "chat-right-text"
             href: "https://github.com/Hackitect7/devops-cheat-sheet/discussions"
+      - text: "O projekcie"
+        href: pl/about.qmd

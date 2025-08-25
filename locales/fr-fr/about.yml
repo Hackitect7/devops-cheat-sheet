@@ -1,0 +1,53 @@
+about_sec:
+  title: "À propos"
+  header: "À propos de Hackitect7"
+
+  philosophy:
+    title: "Ma philosophie d’ingénierie"
+    body1: |
+      **Hackitect7** est mon alias et mon état d’esprit d’ingénierie :  
+      **diagnostiquer rapidement**, **concevoir comme un architecte**, et **déployer en production**
+      *sans complexité inutile*.
+    body2: |
+      Ce n’est pas seulement un surnom — c’est une philosophie d’approche technologique :
+      trouver l’équilibre entre rapidité et fiabilité, et viser toujours des résultats pratiques.
+
+  purpose:
+    title: "Objectif du projet"
+    body: |
+      La **DevOps Cheat Sheet** a commencé comme une collection personnelle de notes et de commandes que j’utilisais dans mon travail quotidien.  
+      Avec le temps, elle est devenue une référence structurée, et maintenant un site multilingue complet destiné à aider les ingénieurs du monde entier.
+    goals:
+      title: "**Objectifs principaux du projet :**"
+      goal1: fournir un **accès rapide** aux commandes, configurations et scénarios ;  
+      goal2: expliquer non seulement *comment*, mais aussi *pourquoi* les choses fonctionnent ;  
+      goal3: maintenir un **accès multilingue** (27 langues) pour une portée mondiale ;  
+      goal4: développer une **base de connaissances ouverte** accueillant les contributions de la communauté.
+
+  story:
+    title: "L’histoire de Hackitect7"
+    parts:
+      title: "Le nom **Hackitect7** vient de trois parties :"
+      part1: "**Hacker** → toujours à la recherche de solutions efficaces et pratiques ;"
+      part2: "**Architecte** → concevoir des systèmes résilients, évolutifs et élégants ;"
+      part3: "**7** → symbole de complétude et d’équilibre."
+    body: "Ensemble, cela reflète mon approche de l’ingénierie : rendre la technologie pratique, robuste et accessible."
+
+  audience:
+    title: "À qui cela s’adresse"
+    body:
+      title: "La fiche est destinée à :"
+      purpose1: "**Débutants** — comme point de départ rapide et introduction au DevOps ;"
+      purpose2: "**Ingénieurs expérimentés** — comme aide-mémoire compact ;"
+      purpose3: "**Équipes** — comme référence partagée et base de connaissances interne."
+
+  future:
+    title: "Perspectives"
+    expand: 
+      title: "Le projet continuera de s’élargir :"
+      exp1: "ajout de nouvelles technologies (plates-formes cloud, modèles CI/CD, infrastructure as code) ;"
+      exp2: "inclusion de **scénarios réels de production** et de bonnes pratiques ;"
+      exp3: "renforcement des contributions et retours de la communauté."
+    body: |
+      **Hackitect7** est ma façon de partager connaissances, pratiques et état d’esprit avec le monde de l’ingénierie.  
+      Cette fiche n’est pas seulement une documentation — c’est une ressource évolutive pour ceux qui valorisent la clarté, la rapidité et les résultats pratiques.

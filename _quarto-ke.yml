@@ -11,6 +11,7 @@ project:
     - ke/kubernetes.qmd
     - ke/helm.qmd
     - ke/terraform.qmd
+    - ke/about.qmd
 
 lang: sw-KE
 
@@ -22,6 +23,7 @@ metadata-files:
   - locales/sw-ke/kubernetes.yml
   - locales/sw-ke/helm.yml
   - locales/sw-ke/terraform.yml
+  - locales/sw-ke/about.yml
 
 website:
   title: "Mwongozo wa Haraka wa DevOps"
@@ -49,3 +51,5 @@ website:
           - text: "Uliza Swali"
             icon: "chat-right-text"
             href: "https://github.com/Hackitect7/devops-cheat-sheet/discussions"
+      - text: "Kuhusu"
+        href: ke/about.qmd

@@ -1,4 +1,4 @@
 ```bash
-sudo apt install tldr   # 或者: npm install -g tldr
-tldr tar                # tar 命令的简短示例说明
+sudo apt install tldr   # or: npm install -g tldr
+tldr tar                # example of a short summary for the tar command
 ```

@@ -1,0 +1,54 @@
+about_sec:
+  title: "Tentang"
+  header: "Tentang Hackitect7"
+
+  philosophy:
+    title: "Filosofi Rekayasa Saya"
+    body1: |
+      **Hackitect7** adalah alias dan pola pikir rekayasa saya:  
+      **diagnosis cepat**, **rancang seperti arsitek**, dan **deploy ke produksi**
+      *tanpa kompleksitas yang tidak perlu*.
+    body2: |
+      Ini bukan hanya sekadar julukan — ini adalah filosofi dalam mendekati teknologi:
+      menemukan keseimbangan antara kecepatan dan keandalan, dan selalu berfokus pada hasil yang praktis.
+
+  purpose:
+    title: "Tujuan Proyek"
+    body: |
+      **DevOps Cheat Sheet** dimulai sebagai kumpulan catatan dan perintah pribadi yang saya gunakan dalam pekerjaan sehari-hari.  
+      Seiring waktu, ia berkembang menjadi referensi terstruktur, dan kini menjadi situs web multibahasa penuh yang dirancang untuk membantu para insinyur di seluruh dunia.
+    goals:
+      title: "**Tujuan utama proyek:**"
+      goal1: menyediakan **akses cepat** ke perintah, konfigurasi, dan skenario;  
+      goal2: menjelaskan tidak hanya *bagaimana*, tetapi juga *mengapa* sesuatu bekerja;  
+      goal3: menjaga **akses multibahasa** (27 bahasa) untuk jangkauan global;  
+      goal4: membangun **basis pengetahuan terbuka** yang menyambut kontribusi komunitas.
+
+  story:
+    title: "Kisah Hackitect7"
+    parts:
+      title: "Nama **Hackitect7** berasal dari tiga bagian:"
+      part1: "**Hacker** → selalu mencari solusi yang efisien dan praktis;"
+      part2: "**Architect** → merancang sistem yang tangguh, skalabel, dan elegan;"
+      part3: "**7** → simbol kelengkapan dan keseimbangan."
+    body: "Bersama-sama, ini mencerminkan pendekatan saya terhadap rekayasa: membuat teknologi yang praktis, andal, dan mudah diakses."
+
+  audience:
+    title: "Siapa yang Akan Mendapat Manfaat"
+    body:
+      title: "Cheat sheet ini ditujukan untuk:"
+      purpose1: "**Pemula** — sebagai titik awal cepat dan pintu masuk ke DevOps;"
+      purpose2: "**Insinyur berpengalaman** — sebagai pengingat ringkas di tangan;"
+      purpose3: "**Tim** — sebagai referensi bersama dan basis pengetahuan internal."
+
+  future:
+    title: "Melihat ke Depan"
+    expand: 
+      title: "Proyek ini akan terus berkembang:"
+      exp1: "menambahkan lebih banyak teknologi (platform cloud, pola CI/CD, infrastruktur sebagai kode);"
+      exp2: "termasuk **skenario produksi nyata** dan praktik terbaik;"
+      exp3: "memperkuat kontribusi dan umpan balik komunitas."
+
+    body: |
+      **Hackitect7** adalah cara saya berbagi pengetahuan, praktik, dan pola pikir dengan dunia rekayasa.  
+      Cheat sheet ini bukan sekadar dokumentasi — ini adalah sumber daya yang terus berkembang bagi mereka yang menghargai kejelasan, kecepatan, dan hasil yang praktis.

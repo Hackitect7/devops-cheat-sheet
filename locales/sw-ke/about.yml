@@ -1,0 +1,54 @@
+about_sec:
+  title: "Kuhusu"
+  header: "Kuhusu Hackitect7"
+
+  philosophy:
+    title: "Falsafa Yangu ya Uhandisi"
+    body1: |
+      **Hackitect7** ni jina langu la uhandisi na mtazamo:  
+      **gundua haraka**, **buni kama mbunifu**, na **peleka hadi uzalishaji**
+      *bila ugumu usio wa lazima*.
+    body2: |
+      Hili si jina la utani tu — ni falsafa ya kukaribia teknolojia:
+      kupata usawa kati ya kasi na kutegemewa, na kila mara kulenga matokeo ya vitendo.
+
+  purpose:
+    title: "Lengo la Mradi"
+    body: |
+      **DevOps Cheat Sheet** ilianza kama mkusanyiko wa binafsi wa maelezo na amri nilizotumia katika kazi yangu ya kila siku.
+      Kwa muda, ikakua ikawa marejeo yaliyopangwa, na sasa ni tovuti ya lugha nyingi iliyoundwa kusaidia wahandisi duniani kote.
+    goals:
+      title: "**Malengo makuu ya mradi:**"
+      goal1: kutoa **ufikiaji wa haraka** kwa amri, usanidi, na hali;  
+      goal2: kueleza sio tu *jinsi*, bali pia *kwa nini* mambo hufanya kazi;  
+      goal3: kudumisha **ufikiaji wa lugha nyingi** (lugha 27) kwa upanuzi wa kimataifa;  
+      goal4: kukuza **hazina ya maarifa ya wazi** inayokaribisha michango ya jamii.
+
+  story:
+    title: "Hadithi ya Hackitect7"
+    parts:
+      title: "Jina **Hackitect7** linatokana na sehemu tatu:"
+      part1: "**Hacker** → kila mara kutafuta suluhisho za haraka na za vitendo;"
+      part2: "**Architect** → kubuni mifumo inayoweza kuhimili, kupanuka, na yenye urembo;"
+      part3: "**7** → alama ya ukamilifu na usawa."
+    body: "Pamoja, linaonyesha mtazamo wangu wa uhandisi: kufanya teknolojia iwe ya vitendo, thabiti, na rahisi kufikiwa."
+
+  audience:
+    title: "Nani Atanufaika"
+    body:
+      title: "Mwongozo huu wa haraka unalenga:"
+      purpose1: "**Wanafunzi wapya** — kama mwanzo wa haraka na mlango wa kuingia kwenye DevOps;"
+      purpose2: "**Wahandisi wenye uzoefu** — kama kumbukumbu fupi ya mkononi;"
+      purpose3: "**Timu** — kama rejeleo la pamoja na hazina ya maarifa ya ndani."
+
+  future:
+    title: "Kuangalia Mbele"
+    expand: 
+      title: "Mradi utaendelea kupanuka:"
+      exp1: "kuongeza teknolojia zaidi (majukwaa ya wingu, mifumo ya CI/CD, miundombinu kama msimbo);"
+      exp2: "kujumuisha **hali halisi za uzalishaji** na mbinu bora;"
+      exp3: "kuimarisha michango na mrejesho wa jamii."
+
+    body: |
+      **Hackitect7** ni njia yangu ya kushiriki maarifa, mazoezi, na mtazamo na ulimwengu wa uhandisi.  
+      Mwongozo huu wa haraka si hati tu — ni rasilimali inayokua kwa wale wanaothamini uwazi, kasi, na matokeo ya vitendo.

@@ -11,6 +11,7 @@ project:
     - tr/kubernetes.qmd
     - tr/helm.qmd
     - tr/terraform.qmd
+    - tr/about.qmd
 
 lang: tr-TR
 
@@ -22,6 +23,7 @@ metadata-files:
   - locales/tr-tr/kubernetes.yml
   - locales/tr-tr/helm.yml
   - locales/tr-tr/terraform.yml
+  - locales/tr-tr/about.yml
 
 website:
   title: "DevOps Hızlı Başvuru Kılavuzu"
@@ -49,3 +51,5 @@ website:
           - text: "Soru Sor"
             icon: "chat-right-text"
             href: "https://github.com/Hackitect7/devops-cheat-sheet/discussions"
+      - text: "Hakkında"
+        href: tr/about.qmd

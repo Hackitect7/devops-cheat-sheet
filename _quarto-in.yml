@@ -11,6 +11,7 @@ project:
     - in/kubernetes.qmd
     - in/helm.qmd
     - in/terraform.qmd
+    - in/about.qmd
 
 lang: hi-IN
 
@@ -22,6 +23,7 @@ metadata-files:
   - locales/hi-in/kubernetes.yml
   - locales/hi-in/helm.yml
   - locales/hi-in/terraform.yml
+  - locales/hi-in/about.yml
 
 website:
   title: "DevOps चीट शीट"
@@ -49,3 +51,5 @@ website:
           - text: "प्रश्न पूछें"
             icon: "chat-right-text"
             href: "https://github.com/Hackitect7/devops-cheat-sheet/discussions"
+      - text: "परिचय"
+        href: in/about.qmd

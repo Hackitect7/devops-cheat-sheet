@@ -1,0 +1,71 @@
+# {{< meta about_sec.header >}}
+
+## {{< meta about_sec.philosophy.title >}}
+::: {.about}
+::: {.about-text}
+{{< meta about_sec.philosophy.body1 >}}
+
+{{< meta about_sec.philosophy.body2 >}}
+:::
+:::
+## {{< meta about_sec.purpose.title >}}
+::: {.about}
+::: {.about-text}
+{{< meta about_sec.purpose.body >}}
+
+{{< meta about_sec.purpose.goals.title >}}
+:::
+:::
+::: {.hero-bullets}
+<span class="bullet-dot"></span> {{< meta about_sec.purpose.goals.goal1 >}}  
+<span class="bullet-dot"></span> {{< meta about_sec.purpose.goals.goal2 >}}  
+<span class="bullet-dot"></span> {{< meta about_sec.purpose.goals.goal3 >}}  
+<span class="bullet-dot"></span> {{< meta about_sec.purpose.goals.goal4 >}}
+:::
+
+## {{< meta about_sec.story.title >}}
+::: {.about}
+::: {.about-text}
+{{< meta about_sec.story.parts.title >}}
+:::
+:::
+::: {.hero-bullets}
+<span class="bullet-dot"></span> {{< meta about_sec.story.parts.part1 >}}  
+<span class="bullet-dot"></span> {{< meta about_sec.story.parts.part2 >}}  
+<span class="bullet-dot"></span> {{< meta about_sec.story.parts.part3 >}}  
+:::
+
+::: {.about}
+::: {.about-text}
+{{< meta about_sec.story.body >}}
+:::
+:::
+## {{< meta about_sec.audience.title >}}
+::: {.about}
+::: {.about-text}
+{{< meta about_sec.audience.body.title >}}
+:::
+:::
+::: {.hero-bullets}
+<span class="bullet-dot"></span> {{< meta about_sec.audience.body.purpose1 >}}  
+<span class="bullet-dot"></span> {{< meta about_sec.audience.body.purpose2 >}}  
+<span class="bullet-dot"></span> {{< meta about_sec.audience.body.purpose3 >}}
+:::
+
+## {{< meta about_sec.future.title >}}
+::: {.about}
+::: {.about-text}
+{{< meta about_sec.future.expand.title >}}
+:::
+:::
+::: {.hero-bullets}
+<span class="bullet-dot"></span> {{< meta about_sec.future.expand.exp1 >}}  
+<span class="bullet-dot"></span> {{< meta about_sec.future.expand.exp2 >}}  
+<span class="bullet-dot"></span> {{< meta about_sec.future.expand.exp3 >}}
+:::
+
+::: {.about}
+::: {.about-text}
+{{< meta about_sec.future.body >}}
+:::
+:::

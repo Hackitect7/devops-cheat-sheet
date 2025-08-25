@@ -11,6 +11,7 @@ project:
     - kr/kubernetes.qmd
     - kr/helm.qmd
     - kr/terraform.qmd
+    - kr/about.qmd
 
 lang: ko-KR
 
@@ -22,6 +23,7 @@ metadata-files:
   - locales/ko-kr/kubernetes.yml
   - locales/ko-kr/helm.yml
   - locales/ko-kr/terraform.yml
+  - locales/ko-kr/about.yml
 
 website:
   title: "DevOps 치트 시트"
@@ -49,3 +51,5 @@ website:
           - text: "질문하기"
             icon: "chat-right-text"
             href: "https://github.com/Hackitect7/devops-cheat-sheet/discussions"
+      - text: "소개"
+        href: kr/about.qmd
