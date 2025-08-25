@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="85mm"
+   height="55mm"
+   viewBox="0 0 321.25984 207.87401"
+   version="1.1"
+   id="svg9"
+   sodipodi:docname="vCard_dark.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs9" />
+  <sodipodi:namedview
+     id="namedview9"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="4.1259681"
+     inkscape:cx="154.14564"
+     inkscape:cy="113.79148"
+     inkscape:window-width="2560"
+     inkscape:window-height="1369"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg9"
+     inkscape:document-units="mm" />
+  <!-- Фон: тёмный премиум -->
+  <rect
+     width="100%"
+     height="100%"
+     fill="#0b1220"
+     id="rect1"
+     x="0"
+     y="0"
+     style="stroke-width:0.999995" />
+  <!-- Верхний блок: логотип + бренд -->
+  <g
+     transform="translate(28.192755,14.220473)"
+     id="g2">
+    <!-- Знак -->
+    <g
+       transform="matrix(0.65,0,0,0.65,36.792913,-0.24891802)"
+       id="g1">
+      <polygon
+         points="56,48 32,60 8,48 8,16 32,4 56,16 "
+         fill="none"
+         stroke="#e5f2ff"
+         stroke-width="4"
+         id="polygon1" />
+      <path
+         d="m 10,32 c 8,-10 16,10 24,0 8,-10 16,-10 20,0"
+         fill="none"
+         stroke="#0ea5e9"
+         stroke-width="4"
+         stroke-linecap="round"
+         id="path1" />
+    </g>
+    <!-- Wordmark -->
+    <text
+       x="95.303871"
+       y="20.143064"
+       font-family="'Segoe UI', Inter, Arial, sans-serif"
+       font-size="25.9991px"
+       font-weight="700"
+       fill="#ffffff"
+       id="text1"
+       style="stroke-width:0.999967">Hackitect7</text>
+    <text
+       x="96.10067"
+       y="35.598007"
+       font-family="'Segoe UI', Inter, Arial, sans-serif"
+       font-size="14px"
+       font-weight="400"
+       fill="#94a3b8"
+       id="text2">Музыка систем</text>
+  </g>
+  <!-- Акцентная разделительная линия -->
+  <line
+     x1="18.897638"
+     y1="62"
+     x2="302.36221"
+     y2="62"
+     stroke="#0ea5e9"
+     stroke-width="1.88827"
+     id="line2" />
+  <!-- Имя -->
+  <text
+     x="18.748224"
+     y="84"
+     font-family="'Segoe UI', Inter, Arial, sans-serif"
+     font-size="18px"
+     font-weight="600"
+     fill="#ffffff"
+     id="text3">Алексей Половинкин</text>
+  <!-- Компетенции (лаконично, читаемо для всех) -->
+  <g
+     font-family="'Segoe UI', Inter, Arial, sans-serif"
+     font-size="12px"
+     fill="#cbd5e1"
+     id="g8"
+     transform="matrix(0.96050271,0,0,0.96050271,0.66991115,-1.6139488)">
+    <text
+       x="17.373022"
+       y="108.98544"
+       id="text6"
+       style="font-size:8.90383px;stroke-width:0.741985"><tspan
+         sodipodi:role="line"
+         id="tspan9"
+         x="17.373022"
+         y="108.98544"
+         style="stroke-width:0.741985">🏗️ Инфраструктура и архитектура ИТ</tspan><tspan
+         sodipodi:role="line"
+         x="17.373022"
+         y="120.11523"
+         style="stroke-width:0.741985"
+         id="tspan33" /><tspan
+         sodipodi:role="line"
+         x="17.373022"
+         y="131.24501"
+         id="tspan12"
+         style="stroke-width:0.741985">🔒 Сети и кибербезопасность</tspan><tspan
+         sodipodi:role="line"
+         x="17.373022"
+         y="142.3748"
+         style="stroke-width:0.741985"
+         id="tspan34" /><tspan
+         sodipodi:role="line"
+         x="17.373022"
+         y="153.50459"
+         id="tspan15"
+         style="stroke-width:0.741985">⚙️ Автоматизация и DevOps</tspan><tspan
+         sodipodi:role="line"
+         x="17.373022"
+         y="164.63438"
+         id="tspan24"
+         style="stroke-width:0.741985" /></text>
+    <text
+       x="189.5083"
+       y="97.189934"
+       id="text6-4"
+       style="font-size:8.9049px;stroke-width:0.742074"><tspan
+         sodipodi:role="line"
+         x="189.5083"
+         y="97.189934"
+         id="tspan15-2"
+         style="stroke-width:0.742074" /><tspan
+         sodipodi:role="line"
+         x="189.5083"
+         y="108.32106"
+         id="tspan18-4"
+         style="stroke-width:0.742074">☁️ Облака и серверы</tspan><tspan
+         sodipodi:role="line"
+         x="189.5083"
+         y="119.45218"
+         style="stroke-width:0.742074"
+         id="tspan36" /><tspan
+         sodipodi:role="line"
+         x="189.5083"
+         y="130.58331"
+         id="tspan21-5"
+         style="stroke-width:0.742074">🛠️ Поддержка и оптимизация</tspan><tspan
+         sodipodi:role="line"
+         x="189.5083"
+         y="141.71443"
+         style="stroke-width:0.742074"
+         id="tspan37" /><tspan
+         sodipodi:role="line"
+         x="189.5083"
+         y="152.84555"
+         id="tspan24-5"
+         style="stroke-width:0.742074">🤝 Консалтинг и обучение</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12.4935px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;stroke-width:1.04112"
+       x="36.950638"
+       y="214.89879"
+       id="text29"><tspan
+         sodipodi:role="line"
+         id="tspan29"
+         style="stroke-width:1.04112"
+         x="36.950638"
+         y="214.89879" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12.4935px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;stroke-width:1.04112"
+       x="89.943451"
+       y="119.61878"
+       id="text35"><tspan
+         sodipodi:role="line"
+         id="tspan35"
+         style="stroke-width:1.04112"
+         x="89.943451"
+         y="119.61878" /></text>
+  </g>
+  <!-- Тонкая линия над контактами -->
+  <line
+     x1="18.897638"
+     y1="154"
+     x2="302.36221"
+     y2="154"
+     stroke="#1f2937"
+     stroke-width="0.944139"
+     id="line8" />
+  <!-- Контакты в одну строку (премиально, ненавязчиво) -->
+  <text
+     x="18.689264"
+     y="169.56216"
+     font-family="'Segoe UI', Inter, Arial, sans-serif"
+     font-size="10.4085px"
+     fill="#e2e8f0"
+     id="text9"
+     style="stroke-width:0.946229"><tspan
+       sodipodi:role="line"
+       id="tspan1"
+       x="18.689264"
+       y="169.56216"
+       style="stroke-width:0.946229">☎ +996-501-141-183 (WhatsApp) • ✉ hackitect7@gmail.com</tspan><tspan
+       sodipodi:role="line"
+       id="tspan2"
+       x="18.689264"
+       y="182.57278"
+       style="stroke-width:0.946229">✈️ Telegram: @Manfred251278 • 🐙 GitHub: Hackitect7</tspan><tspan
+       sodipodi:role="line"
+       x="18.689264"
+       y="195.58342"
+       style="stroke-width:0.946229"
+       id="tspan3">🔗 LinkedIn: /in/hackitect7</tspan></text>
+</svg>

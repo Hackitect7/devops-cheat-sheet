@@ -13,6 +13,9 @@ highlight-style: a11y
 
 website:
   favicon: assets/brand/favicon.svg
+  page-navigation: true
+  reader-mode: true
+  bread-crumbs: false
   navbar:
     search: true
     collapse-below: xl
