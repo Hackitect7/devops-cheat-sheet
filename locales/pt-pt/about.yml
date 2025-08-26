@@ -20,10 +20,10 @@ about_sec:
       concebido para ajudar engenheiros em todo o mundo.
     goals:
       title: "**Principais objetivos do projeto:**"
-      goal1: fornecer **acesso rápido** a comandos, configurações e cenários;  
-      goal2: explicar não só *como*, mas também *porque* as coisas funcionam;  
-      goal3: manter **acesso multilingue** (27 idiomas) para alcance global;  
-      goal4: desenvolver uma **base de conhecimento aberta** que acolha contribuições da comunidade.
+      goal1: "fornecer **acesso rápido** a comandos, configurações e cenários;"
+      goal2: "explicar não só *como*, mas também *porque* as coisas funcionam;"
+      goal3: "manter **acesso multilingue** (27 idiomas) para alcance global;"
+      goal4: "desenvolver uma **base de conhecimento aberta** que acolha contribuições da comunidade."
 
   story:
     title: "A História do Hackitect7"

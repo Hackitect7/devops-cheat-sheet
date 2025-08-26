@@ -19,10 +19,10 @@ about_sec:
       Theo thời gian, nó phát triển thành một tài liệu tham khảo có cấu trúc, và bây giờ thành một trang web đa ngôn ngữ đầy đủ được thiết kế để giúp các kỹ sư trên toàn thế giới.
     goals:
       title: "**Mục tiêu chính của dự án:**"
-      goal1: cung cấp **truy cập nhanh** tới lệnh, cấu hình và kịch bản;  
-      goal2: giải thích không chỉ *cách* mà còn cả *tại sao* mọi thứ hoạt động;  
-      goal3: duy trì **truy cập đa ngôn ngữ** (27 ngôn ngữ) để tiếp cận toàn cầu;  
-      goal4: phát triển một **cơ sở tri thức mở** chào đón sự đóng góp từ cộng đồng.
+      goal1: "cung cấp **truy cập nhanh** tới lệnh, cấu hình và kịch bản;"
+      goal2: "giải thích không chỉ *cách* mà còn cả *tại sao* mọi thứ hoạt động;"
+      goal3: "duy trì **truy cập đa ngôn ngữ** (27 ngôn ngữ) để tiếp cận toàn cầu;"
+      goal4: "phát triển một **cơ sở tri thức mở** chào đón sự đóng góp từ cộng đồng."
 
   story:
     title: "Câu chuyện về Hackitect7"

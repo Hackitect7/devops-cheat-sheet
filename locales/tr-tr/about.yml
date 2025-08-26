@@ -19,10 +19,10 @@ about_sec:
       Zamanla yapılandırılmış bir referansa ve şimdi de dünya çapında mühendislerin yararlanabileceği çok dilli bir web sitesine dönüştü.
     goals:
       title: "**Projenin ana hedefleri:**"
-      goal1: komutlara, konfigürasyonlara ve senaryolara **hızlı erişim** sağlamak;  
-      goal2: yalnızca *nasıl* değil, aynı zamanda *neden* çalıştığını açıklamak;  
-      goal3: küresel erişim için **çok dilli desteği** (27 dil) sürdürmek;  
-      goal4: topluluk katkılarına açık bir **bilgi tabanı** geliştirmek.
+      goal1: "komutlara, konfigürasyonlara ve senaryolara **hızlı erişim** sağlamak;"
+      goal2: "yalnızca *nasıl* değil, aynı zamanda *neden* çalıştığını açıklamak;"
+      goal3: "küresel erişim için **çok dilli desteği** (27 dil) sürdürmek;"
+      goal4: "topluluk katkılarına açık bir **bilgi tabanı** geliştirmek."
 
   story:
     title: "Hackitect7’in Hikayesi"

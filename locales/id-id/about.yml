@@ -19,10 +19,10 @@ about_sec:
       Seiring waktu, ia berkembang menjadi referensi terstruktur, dan kini menjadi situs web multibahasa penuh yang dirancang untuk membantu para insinyur di seluruh dunia.
     goals:
       title: "**Tujuan utama proyek:**"
-      goal1: menyediakan **akses cepat** ke perintah, konfigurasi, dan skenario;  
-      goal2: menjelaskan tidak hanya *bagaimana*, tetapi juga *mengapa* sesuatu bekerja;  
-      goal3: menjaga **akses multibahasa** (27 bahasa) untuk jangkauan global;  
-      goal4: membangun **basis pengetahuan terbuka** yang menyambut kontribusi komunitas.
+      goal1: "menyediakan **akses cepat** ke perintah, konfigurasi, dan skenario;"
+      goal2: "menjelaskan tidak hanya *bagaimana*, tetapi juga *mengapa* sesuatu bekerja;"
+      goal3: "menjaga **akses multibahasa** (27 bahasa) untuk jangkauan global;"
+      goal4: "membangun **basis pengetahuan terbuka** yang menyambut kontribusi komunitas."
 
   story:
     title: "Kisah Hackitect7"

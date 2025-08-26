@@ -19,10 +19,10 @@ about_sec:
       Com o tempo, cresceu para se tornar uma referência estruturada e agora é um site multilíngue completo, projetado para ajudar engenheiros em todo o mundo.
     goals:
       title: "**Principais objetivos do projeto:**"
-      goal1: fornecer **acesso rápido** a comandos, configurações e cenários;  
-      goal2: explicar não apenas *como*, mas também *por que* as coisas funcionam;  
-      goal3: manter o **acesso multilíngue** (27 idiomas) para alcance global;  
-      goal4: expandir uma **base de conhecimento aberta**, incentivando contribuições da comunidade.
+      goal1: "fornecer **acesso rápido** a comandos, configurações e cenários;"
+      goal2: "explicar não apenas *como*, mas também *por que* as coisas funcionam;"
+      goal3: "manter o **acesso multilíngue** (27 idiomas) para alcance global;"
+      goal4: "expandir uma **base de conhecimento aberta**, incentivando contribuições da comunidade."
 
   story:
     title: "A História do Hackitect7"

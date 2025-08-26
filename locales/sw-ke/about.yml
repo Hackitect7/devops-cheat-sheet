@@ -19,10 +19,10 @@ about_sec:
       Kwa muda, ikakua ikawa marejeo yaliyopangwa, na sasa ni tovuti ya lugha nyingi iliyoundwa kusaidia wahandisi duniani kote.
     goals:
       title: "**Malengo makuu ya mradi:**"
-      goal1: kutoa **ufikiaji wa haraka** kwa amri, usanidi, na hali;  
-      goal2: kueleza sio tu *jinsi*, bali pia *kwa nini* mambo hufanya kazi;  
-      goal3: kudumisha **ufikiaji wa lugha nyingi** (lugha 27) kwa upanuzi wa kimataifa;  
-      goal4: kukuza **hazina ya maarifa ya wazi** inayokaribisha michango ya jamii.
+      goal1: "kutoa **ufikiaji wa haraka** kwa amri, usanidi, na hali;"
+      goal2: "kueleza sio tu *jinsi*, bali pia *kwa nini* mambo hufanya kazi;"
+      goal3: "kudumisha **ufikiaji wa lugha nyingi** (lugha 27) kwa upanuzi wa kimataifa;"
+      goal4: "kukuza **hazina ya maarifa ya wazi** inayokaribisha michango ya jamii."
 
   story:
     title: "Hadithi ya Hackitect7"
