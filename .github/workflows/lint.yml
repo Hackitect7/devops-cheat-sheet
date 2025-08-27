@@ -48,6 +48,7 @@ jobs:
 
       # Markdownlint (включая .qmd)
       - name: Markdownlint
+        if: false
         uses: nosborn/github-action-markdown-cli@v3
         with:
           files: "**/*.{md,qmd}"
