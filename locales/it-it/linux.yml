@@ -208,9 +208,9 @@ linux:
         ex3: "Conta le occorrenze di ogni riga"
       yes:
         desc: "Ripete una stringa finché interrotto; utile negli script"
-        ex1: "Rispondi sempre \"y\" ai prompt"
+        ex1: 'Rispondi sempre "y" ai prompt'
         ex2: "Conferma automaticamente le eliminazioni interattive"
-        ex3: "Rispondi \"no\" ai prompt"
+        ex3: 'Rispondi "no" ai prompt'
 
   advanced:
     _root:

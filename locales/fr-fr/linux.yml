@@ -208,9 +208,9 @@ linux:
         ex3: "Compter les occurrences de chaque ligne"
       yes:
         desc: "Afficher une chaîne en boucle jusqu’à interruption ; utile en scripts"
-        ex1: "Répondre toujours \"y\" aux invites"
+        ex1: 'Répondre toujours "y" aux invites'
         ex2: "Auto-confirmer les suppressions interactives"
-        ex3: "Répondre \"non\" aux invites"
+        ex3: 'Répondre "non" aux invites'
 
   advanced:
     _root:

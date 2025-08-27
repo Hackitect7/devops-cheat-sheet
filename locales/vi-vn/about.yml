@@ -43,7 +43,7 @@ about_sec:
 
   future:
     title: "Nhìn về phía trước"
-    expand: 
+    expand:
       title: "Dự án sẽ tiếp tục mở rộng:"
       exp1: "thêm nhiều công nghệ hơn (nền tảng đám mây, mẫu CI/CD, hạ tầng dưới dạng code);"
       exp2: "bao gồm **kịch bản thực tế trong production** và các thực tiễn tốt nhất;"

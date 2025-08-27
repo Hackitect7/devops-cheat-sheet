@@ -208,9 +208,9 @@ linux:
         ex3: "Policz wystąpienia każdej linii"
       yes:
         desc: "Wyświetlaj ciąg wielokrotnie aż do przerwania; przydatne w skryptach"
-        ex1: "Zawsze odpowiadaj \"y\" na pytania"
+        ex1: 'Zawsze odpowiadaj "y" na pytania'
         ex2: "Automatycznie potwierdzaj usuwanie"
-        ex3: "Odpowiadaj \"no\" na pytania"
+        ex3: 'Odpowiadaj "no" na pytania'
 
   advanced:
     _root:

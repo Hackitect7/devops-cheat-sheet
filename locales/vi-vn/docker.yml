@@ -95,7 +95,7 @@ docker:
       desc: "Sao chép tệp giữa container và host"
       ex1: "Sao chép tệp từ container sang thư mục hiện tại trên host"
       ex2: "Sao chép tệp từ host sang container"
-      ex3: "Truyền file log từ container và lọc dòng \"ERROR\" mà không lưu vào đĩa"
+      ex3: 'Truyền file log từ container và lọc dòng "ERROR" mà không lưu vào đĩa'
     docker_container_top:
       desc: "Hiển thị tiến trình đang chạy bên trong container"
       ex1: "Hiển thị tiến trình của container tên `container`"

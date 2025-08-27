@@ -165,8 +165,8 @@ git:
     git_bisect:
       desc: "Bir hatayı hangi commit’in getirdiğini bulmak için ikili arama kullan"
       ex1: "İyi ve hatalı olduğu bilinen commitler arasında ikili arama başlat"
-      ex2: "Geçerli commit’i \"hatalı\" olarak işaretle (bug içeriyor)"
-      ex3: "Bug bulunmayan bilinen bir commit’i \"iyi\" olarak işaretle"
+      ex2: 'Geçerli commit’i "hatalı" olarak işaretle (bug içeriyor)'
+      ex3: 'Bug bulunmayan bilinen bir commit’i "iyi" olarak işaretle'
     git_blame:
       desc: "Bir dosyanın her satırını en son kimin değiştirdiğini revizyon ve yazar ile göster"
       ex1: "Dosyadaki her satır için yazar ve commit bilgilerini göster"
@@ -220,11 +220,11 @@ git:
       desc: "Bir GitHub reposundaki issue’ları listele, isteğe bağlı olarak filtre uygula"
       ex1: "Size atanmış issue’ları listele"
       ex2: "Durumlarına bakılmaksızın (açık veya kapalı) tüm issue’ları listele"
-      ex3: "\"error\" eşleşen, atanmamış ve oluşturulma tarihine göre artan sıralı issue’ları listele"
+      ex3: '"error" eşleşen, atanmamış ve oluşturulma tarihine göre artan sıralı issue’ları listele'
     gh_pr_create:
       desc: "CLI üzerinden GitHub’da pull request oluştur"
       ex1: "Belirtilen başlık ile pull request oluştur"
-      ex2: "Pull request’i \"Roadmap\" adlı bir GitHub projesine bağla"
+      ex2: 'Pull request’i "Roadmap" adlı bir GitHub projesine bağla'
       ex3: "`monalisa` fork’undaki `feature` dalından `develop` dalına PR oluştur"
     gh_repo_create:
       desc: "CLI üzerinden yeni bir GitHub reposu oluştur"

@@ -1,6 +1,7 @@
 # {{< meta about_sec.header >}}
 
 ## {{< meta about_sec.philosophy.title >}}
+
 ::: {.about}
 ::: {.about-text}
 {{< meta about_sec.philosophy.body1 >}}
@@ -8,7 +9,9 @@
 {{< meta about_sec.philosophy.body2 >}}
 :::
 :::
+
 ## {{< meta about_sec.purpose.title >}}
+
 ::: {.about}
 ::: {.about-text}
 {{< meta about_sec.purpose.body >}}
@@ -17,22 +20,27 @@
 :::
 :::
 ::: {.hero-bullets}
+
 - {{< meta about_sec.purpose.goals.goal1 >}}
 - {{< meta about_sec.purpose.goals.goal2 >}}
 - {{< meta about_sec.purpose.goals.goal3 >}}
 - {{< meta about_sec.purpose.goals.goal4 >}}
+
 :::
 
 ## {{< meta about_sec.story.title >}}
+
 ::: {.about}
 ::: {.about-text}
 {{< meta about_sec.story.parts.title >}}
 :::
 :::
 ::: {.hero-bullets}
+
 - {{< meta about_sec.story.parts.part1 >}}
 - {{< meta about_sec.story.parts.part2 >}}
 - {{< meta about_sec.story.parts.part3 >}}
+
 :::
 
 ::: {.about}
@@ -40,28 +48,35 @@
 {{< meta about_sec.story.body >}}
 :::
 :::
+
 ## {{< meta about_sec.audience.title >}}
+
 ::: {.about}
 ::: {.about-text}
 {{< meta about_sec.audience.body.title >}}
 :::
 :::
 ::: {.hero-bullets}
+
 - {{< meta about_sec.audience.body.purpose1 >}}
 - {{< meta about_sec.audience.body.purpose2 >}}
 - {{< meta about_sec.audience.body.purpose3 >}}
+
 :::
 
 ## {{< meta about_sec.future.title >}}
+
 ::: {.about}
 ::: {.about-text}
 {{< meta about_sec.future.expand.title >}}
 :::
 :::
 ::: {.hero-bullets}
+
 - {{< meta about_sec.future.expand.exp1 >}}
 - {{< meta about_sec.future.expand.exp2 >}}
 - {{< meta about_sec.future.expand.exp3 >}}
+
 :::
 
 ::: {.about}

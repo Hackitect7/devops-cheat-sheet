@@ -165,8 +165,8 @@ git:
     git_bisect:
       desc: "Użyj wyszukiwania binarnego, aby znaleźć commit, który wprowadził błąd"
       ex1: "Rozpocznij wyszukiwanie binarne między znanym dobrym a złym commitem, aby zlokalizować błąd"
-      ex2: "Oznacz bieżący commit jako \"zły\" (zawiera błąd)"
-      ex3: "Oznacz znany \"dobry\" commit, w którym błąd nie występował"
+      ex2: 'Oznacz bieżący commit jako "zły" (zawiera błąd)'
+      ex3: 'Oznacz znany "dobry" commit, w którym błąd nie występował'
     git_blame:
       desc: "Pokaż, kto ostatnio zmodyfikował każdą linię pliku, wraz z rewizją i autorem"
       ex1: "Pokaż autora i informacje o commicie dla każdej linii pliku"
@@ -220,11 +220,11 @@ git:
       desc: "Wyświetl listę zgłoszeń (issues) w repozytorium GitHub, opcjonalnie filtrowanych według różnych kryteriów"
       ex1: "Wyświetl zgłoszenia przypisane do Ciebie"
       ex2: "Wyświetl zgłoszenia niezależnie od stanu (otwarte lub zamknięte)"
-      ex3: "Wyświetl zgłoszenia pasujące do frazy \"error\", nieprzypisane, posortowane według daty utworzenia rosnąco"
+      ex3: 'Wyświetl zgłoszenia pasujące do frazy "error", nieprzypisane, posortowane według daty utworzenia rosnąco'
     gh_pr_create:
       desc: "Utwórz pull request na GitHub przez CLI"
       ex1: "Utwórz pull request z podanym tytułem"
-      ex2: "Powiąż pull request z projektem GitHub o nazwie \"Roadmap\""
+      ex2: 'Powiąż pull request z projektem GitHub o nazwie "Roadmap"'
       ex3: "Utwórz PR z gałęzi `feature` w forku `monalisa` do gałęzi `develop`"
     gh_repo_create:
       desc: "Utwórz nowe repozytorium GitHub z poziomu CLI"
@@ -236,7 +236,7 @@ git:
     _root:
       title: "💡 Aliasy Git (przydatne skróty)"
       intro: "Skonfiguruj wygodne aliasy, aby przyspieszyć często używane polecenia Git:"
-  
+
   pro:
     _root:
       title: "🚀 Zaawansowane polecenia Git dla profesjonalistów"

@@ -165,8 +165,8 @@ git:
     git_bisect:
       desc: "Binäre Suche verwenden, um den Commit zu finden, der einen Bug eingeführt hat"
       ex1: "Binäre Suche zwischen bekannt gutem und schlechtem Commit starten"
-      ex2: "Aktuellen Commit als \"bad\" markieren (enthält den Bug)"
-      ex3: "Einen bekannten \"good\" Commit markieren, bei dem der Bug nicht existierte"
+      ex2: 'Aktuellen Commit als "bad" markieren (enthält den Bug)'
+      ex3: 'Einen bekannten "good" Commit markieren, bei dem der Bug nicht existierte'
     git_blame:
       desc: "Zeigen, wer welche Zeile zuletzt geändert hat, mit Revision und Autor"
       ex1: "Autor- und Commit-Infos für jede Zeile einer Datei anzeigen"
@@ -220,11 +220,11 @@ git:
       desc: "Issues in einem GitHub-Repository auflisten, optional nach verschiedenen Kriterien gefiltert"
       ex1: "Issues anzeigen, die dir zugewiesen sind"
       ex2: "Issues unabhängig vom Status (offen oder geschlossen) auflisten"
-      ex3: "Issues mit dem Begriff \"error\" finden, nicht zugewiesen, sortiert nach Erstellungsdatum aufsteigend"
+      ex3: 'Issues mit dem Begriff "error" finden, nicht zugewiesen, sortiert nach Erstellungsdatum aufsteigend'
     gh_pr_create:
       desc: "Einen Pull Request auf GitHub über die CLI erstellen"
       ex1: "Einen Pull Request mit dem angegebenen Titel erstellen"
-      ex2: "Den Pull Request mit einem GitHub-Projekt namens \"Roadmap\" verknüpfen"
+      ex2: 'Den Pull Request mit einem GitHub-Projekt namens "Roadmap" verknüpfen'
       ex3: "Einen PR vom Branch `feature` im Fork `monalisa` in den Branch `develop` erstellen"
     gh_repo_create:
       desc: "Ein neues GitHub-Repository über die CLI erstellen"

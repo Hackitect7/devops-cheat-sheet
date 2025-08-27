@@ -208,9 +208,9 @@ linux:
         ex3: "Her satırın kaç kez geçtiğini say"
       yes:
         desc: "Bir metni sürekli yazdır; betiklerde kullanışlıdır"
-        ex1: "Her zaman \"y\" cevabı ver"
+        ex1: 'Her zaman "y" cevabı ver'
         ex2: "Etkileşimli silmeleri otomatik onayla"
-        ex3: "İsteme \"hayır\" cevabı ver"
+        ex3: 'İsteme "hayır" cevabı ver'
 
   advanced:
     _root:

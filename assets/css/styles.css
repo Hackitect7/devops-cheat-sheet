@@ -1,84 +1,68 @@
-/* Компактные таблицы только в области контента страницы */
-#quarto-content table,
-#quarto-content .table {
-  font-size: 0.92rem;        /* был ~1rem → уменьшаем текст */
+:focus-visible {
+  outline: 2px solid var(--quarto-accent-color, #0d6efd);
+  outline-offset: 3px;
 }
 
-#quarto-content table th,
-#quarto-content table td,
-#quarto-content .table th,
-#quarto-content .table td {
-  padding: .22rem .45rem;     /* меньше внутренние отступы */
-  line-height: 1.15;          /* ниже строки */
-  vertical-align: top;        /* текст «кверху» ячейки */
-}
-
-/* 1) База: компактные таблицы только в контенте */
+/* Компактные таблицы только в области контента страницы (modern, без дублей) */
 #quarto-content table {
-  border-collapse: collapse;      /* линии без «щелей» */
-  font-size: 0.92rem;             /* чуть меньше текст */
+  border-collapse: collapse; /* линии без «щелей» */
+  width: 100%;
+  max-width: 100%;
+  table-layout: auto; /* ширина колонок по содержимому */
+  font-size: 0.92rem; /* компактнее текст */
 }
+
+#quarto-content .table {
+  /* bootstrap-таблицы в контенте — такой же текст */
+  font-size: 0.92rem;
+}
+
 #quarto-content table th,
 #quarto-content table td {
-  padding: .22rem .45rem;         /* ниже строки */
+  padding: 0.22rem 0.45rem; /* ниже строки */
   line-height: 1.15;
   vertical-align: top;
 }
 
-/* 2) Убрать лишние внешние отступы абзацев внутри ячеек */
 #quarto-content table td p,
 #quarto-content table th p {
   margin: 0;
 }
-/* если действительно несколько абзацев в одной ячейке — небольшой промежуток */
+
 #quarto-content table td p + p,
 #quarto-content table th p + p {
-  margin-top: .25rem;
+  margin-top: 0.25rem;
 }
 
-/* 3) Первая колонка: команду не ломаем по буквам */
 #quarto-content table td:first-child,
 #quarto-content table th:first-child {
   white-space: nowrap;
 }
 
-/* 4) «Склеиваем» строки-продолжения (там, где первая ячейка пустая)
-   Требует современные браузеры с :has() — в 2025 это ок */
 #quarto-content tbody tr:has(td:first-child:empty) td {
-  padding-top: .12rem;            /* меньше «воздуха» сверху у продолжений */
-  border-top: 0;                  /* убираем верхнюю линию — визуально одна группа */
+  padding-top: 0.12rem; /* меньше «воздуха» у продолжений */
+  border-top: 0; /* визуально одна группа */
 }
 
-/* 5) Чуть мягче жирный, чтобы высота строки не «прыгала» из-за метрик шрифта */
 #quarto-content table td strong,
 #quarto-content table th strong {
   font-weight: 600;
 }
 
-/* Не даём таблицам вылезать за контейнер, а контенту — разъезжаться */
-#quarto-content table {
-  width: 100%;
-  max-width: 100%;
-  table-layout: auto;          /* ширина колонок по содержимому */
-}
-
-/* Переносы текста во 2-й и 3-й колонках (описание/пример) */
 #quarto-content table th:not(:first-child),
 #quarto-content table td:not(:first-child) {
-  overflow-wrap: anywhere;     /* ломать «любые» длинные слова/URL */
-  word-break: break-word;      /* подстраховка */
-  hyphens: auto;               /* мягкие переносы, если есть lang */
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  hyphens: auto;
 }
 
-/* Переносы внутри inline-code во 2-3 колонках */
 #quarto-content table th:not(:first-child) code,
 #quarto-content table td:not(:first-child) code {
-  white-space: pre-wrap;       /* уважает \n и разрешает перенос */
+  white-space: pre-wrap;
   overflow-wrap: anywhere;
   word-break: break-word;
 }
 
-/* Если в ячейке вдруг есть code-block (<pre><code>) — тоже переносим */
 #quarto-content table th pre,
 #quarto-content table td pre {
   white-space: pre-wrap;
@@ -87,18 +71,26 @@
   max-width: 100%;
 }
 
-/* Длинные ссылки и картинки в ячейках */
 #quarto-content table td a,
-#quarto-content table th a { overflow-wrap: anywhere; word-break: break-word; }
-#quarto-content table img { max-width: 100%; height: auto; }
+#quarto-content table th a {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+#quarto-content table img {
+  max-width: 100%;
+  height: auto;
+}
 
 /* .navbar-brand больше не сжимается при нехватке места */
-.navbar .navbar-brand { flex: 0 0 auto; }
+.navbar .navbar-brand {
+  flex: 0 0 auto;
+}
 
 /* Размер логотипа (SVG/PNG) и снятие старых лимитов темы */
 .navbar .navbar-brand img.navbar-logo,
 .navbar .navbar-brand > img {
-  height: 36px;           /* выбери 36–40px на десктопе */
+  height: 36px; /* выбери 36–40px на десктопе */
   max-height: none !important;
   width: auto;
   display: block;
@@ -106,9 +98,9 @@
 
 /* Авто-ширина меню по содержимому */
 .navbar .dropdown-menu {
-  min-width: 0;     /* убрать фиксированный минимум Bootstrap */
-  width: auto;      /* пусть ширина подстраивается */
-  padding-right: .25rem; /* чуть воздуха справа, необязательно */
+  min-width: 0; /* убрать фиксированный минимум Bootstrap */
+  width: auto; /* пусть ширина подстраивается */
+  padding-right: 0.25rem; /* чуть воздуха справа, необязательно */
 }
 
 /* Чтобы элементы не переносились и ширина считалась корректно */
@@ -116,29 +108,14 @@
   white-space: nowrap;
 }
 
-/* Небольшая правка флагов, чтобы текст шел ровно */
-.language-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-  gap: 1rem;
-  margin-top: .5rem;
-}
-.language-grid .lang {
-  display: inline-flex; align-items: center; gap: .5rem;
-  padding: .75rem 1rem;
-  border: 1px solid var(--quarto-border-color);
-  border-radius: .5rem; text-decoration: none;
-}
-.language-grid .fi { vertical-align: -0.15em; }
-
-@media (min-width: 600px) {
-  .language-grid {
+@media (width >= 600px) {
+  .languages-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (min-width: 900px) {
-  .language-grid {
+@media (width >= 900px) {
+  .languages-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
@@ -152,18 +129,20 @@
   text-align: center;
 }
 
-.hero-inner { max-width: 980px; }
+.hero-inner {
+  max-width: 980px;
+}
 
 .hero-logo {
   height: 56px;
   width: auto;
-  margin: 0 auto .5rem;
+  margin: 0 auto 0.5rem;
   display: block;
-  opacity: .95;
+  opacity: 0.95;
 }
 
 .hero-title {
-  margin: 0 0 .25rem 0;
+  margin: 0 0 0.25rem;
   font-size: clamp(1.6rem, 3vw, 2.4rem);
   line-height: 1.15;
 }
@@ -171,85 +150,96 @@
 .hero-subtitle {
   font-size: clamp(1rem, 1.6vw, 1.125rem);
   color: var(--quarto-text-muted);
-  margin: .25rem 0 1rem 0;
+  margin: 0.25rem 0 1rem;
 }
 
 /* ===== Hero bullets (семантика + управляемый отступ) ===== */
 
 /* Контейнер секции */
-.hero-bullets{
-  margin: .75rem auto 1.25rem;
+.hero-bullets {
+  margin: 0.75rem auto 1.25rem;
   max-width: 820px;
   text-align: left;
 }
 
 /* Сам список внутри блока */
-.hero-bullets ul{
+.hero-bullets ul {
   /* настраиваемые параметры */
-  --bullet-size: .55rem;
-  --bullet-gap:  .75rem;
+  --bullet-size: 0.55rem;
+  --bullet-gap: 0.75rem;
   --bullet-color: var(--quarto-accent-color, #0d6efd);
-
   list-style: none;
   margin: 0;
   padding: 0;
-
-  display: grid;     /* вертикальные интервалы между пунктами */
-  row-gap: .35rem;
+  display: grid; /* вертикальные интервалы между пунктами */
+  row-gap: 0.35rem;
 }
 
 /* Строка списка: маркер + текст */
-.hero-bullets li{
+.hero-bullets li {
   display: flex;
   align-items: flex-start;
-  gap: var(--bullet-gap);  /* <<< расстояние между точкой и текстом */
+  gap: var(--bullet-gap); /* <<< расстояние между точкой и текстом */
   min-width: 0;
   margin: 0;
 }
 
 /* Кастомная «точка» */
-.hero-bullets li::before{
+.hero-bullets li::before {
   content: "";
   flex: 0 0 var(--bullet-size);
-  width:  var(--bullet-size);
+  width: var(--bullet-size);
   height: var(--bullet-size);
   border-radius: 9999px;
   background: var(--bullet-color);
-  margin-top: .35em;       /* лёгкая подстройка по базовой линии */
+  margin-top: 0.35em; /* лёгкая подстройка по базовой линии */
 }
 
 /* Если shortcode рендерит <p> внутри <li> — убираем внешние отступы */
-.hero-bullets li p{ margin: 0; }
+.hero-bullets li p {
+  margin: 0;
+}
 
 .hero-cta {
   display: flex;
-  gap: .75rem;
+  gap: 0.75rem;
   justify-content: center;
   flex-wrap: wrap;
 }
+
 .hero-cta p {
   margin-bottom: 0;
 }
+
 .btn {
-  display: inline-flex; align-items: center; gap: .5rem;
-  padding: .6rem 1rem; border-radius: .75rem; text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: 0.75rem;
+  text-decoration: none;
   border: 1px solid var(--quarto-border-color);
 }
+
 .btn-primary {
   background: var(--quarto-accent-color, #0d6efd);
-  color: #fff; border-color: transparent;
+  color: #fff;
+  border-color: transparent;
 }
+
 .btn-ghost {
-  background: transparent; color: inherit;
+  background: transparent;
+  color: inherit;
 }
 
 /* ===== Languages ===== */
 .languages-section {
   padding: 1.5rem 0 2rem;
 }
+
 .section-title {
   text-align: center;
-  margin: 0 0 .5rem 0;
+  margin: 0 0 0.5rem;
   font-size: clamp(1.25rem, 2.4vw, 1.75rem);
 }
 
@@ -257,48 +247,74 @@
   --col-min: 16rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(var(--col-min), 1fr));
-  gap: .9rem;
+  gap: 0.9rem;
   max-width: 1000px;
   margin: 0 auto;
-  padding: .25rem 1rem 0;
+  padding: 0.25rem 1rem 0;
 }
 
 .lang-card {
-  display: flex; align-items: center; gap: .75rem;
-  padding: .9rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.9rem 1rem;
   border: 1px solid var(--quarto-border-color);
-  border-radius: .85rem;
+  border-radius: 0.85rem;
   text-decoration: none;
   background: var(--quarto-body-bg);
-  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    border-color 0.15s ease;
 }
 
 .lang-card:hover {
   transform: translateY(-2px);
   border-color: var(--quarto-accent-color, #0d6efd);
-  box-shadow: 0 8px 18px rgba(0,0,0,.06);
+  box-shadow: 0 8px 18px rgb(0 0 0 / 6%);
 }
 
 /* Флаги в карточках языков — рамка + размер + скругление */
 .lang-card .fi {
   display: inline-block;
-  width: 2rem;                /* размер флага */
-  aspect-ratio: 4 / 3;        /* правильные пропорции */
-  background-size: cover;     /* чтобы SVG не мыло */
-  box-shadow: 0 0 0 1px rgba(0,0,0,.6);  /* «контур» вокруг флага */
+  width: 2rem; /* размер флага */
+  aspect-ratio: 4 / 3; /* правильные пропорции */
+  background-size: cover; /* чтобы SVG не мыло */
+  box-shadow: 0 0 0 1px rgb(0 0 0 / 60%);
   vertical-align: -0.15em;
 }
-.lang-meta { display: grid; line-height: 1.15; }
-.lang-name { font-weight: 600; }
-.lang-variant { font-size: .9rem; color: var(--quarto-text-muted); }
+
+.lang-meta {
+  display: grid;
+  line-height: 1.15;
+}
+
+.lang-name {
+  font-weight: 600;
+}
+
+.lang-variant {
+  font-size: 0.9rem;
+  color: var(--quarto-text-muted);
+}
 
 /* ===== About ===== */
-.about { text-align: left; max-width: 800px; margin: 0 auto; }
-.about-text { font-size: 1rem; color: var(--quarto-text); line-height: 1.6; }
+.about {
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-text {
+  margin: 0.5rem 0;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--quarto-text);
+}
 
 /* Мелочи */
 :root {
-  --quarto-text-muted: rgba(127,127,127,.9);
+  --quarto-text-muted: rgb(127 127 127 / 90%);
 }
 
 .about-brand {
@@ -312,31 +328,45 @@
 }
 
 .brand-copy .section-title {
-  margin: .1rem 0 .5rem 0;
+  margin: 0.1rem 0 0.5rem;
   font-size: clamp(1.25rem, 2.4vw, 1.75rem);
 }
 
-.brand-name { letter-spacing: .2px; }
-
-.about-text {
-  margin: .5rem 0;
-  font-size: 1.05rem;
-  line-height: 1.6;
+.brand-name {
+  letter-spacing: 0.2px;
 }
 
-.about-text em { color: var(--quarto-text-muted, rgba(120,120,120,.95)); }
-.about-text strong { font-weight: 650; }
+.about-text em {
+  color: var(--quarto-text-muted, rgb(120 120 120 / 95%));
+}
+
+.about-text strong {
+  font-weight: 650;
+}
 
 .page-container {
-  max-width: 960px;   /* ширина контента */
-  margin: 0 auto;     /* выравнивание по центру */
-  padding: 0 1rem;    /* чтобы текст не лип к краям */
+  max-width: 960px; /* ширина контента */
+  margin: 0 auto; /* выравнивание по центру */
+  padding: 0 1rem; /* чтобы текст не лип к краям */
 }
 
 .page-container img,
 .page-container .hero,
 .page-container .languages-grid,
 .page-container .about {
-  max-width: 100%;    /* всё внутри не вылазит за пределы */
+  max-width: 100%; /* всё внутри не вылазит за пределы */
   box-sizing: border-box;
+}
+
+/* === Theme-aware hero logos (последним в файле!) === */
+.only-dark {
+  display: none !important;
+}
+
+.quarto-dark .only-light {
+  display: none !important;
+}
+
+.quarto-dark .only-dark {
+  display: block !important;
 }

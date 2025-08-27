@@ -1,0 +1,8 @@
+_site/
+_freeze/
+.quarto/
+node_modules/
+**/*.min.css
+dist/
+coverage/
+package-lock.json

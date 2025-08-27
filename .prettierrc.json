@@ -1,0 +1,15 @@
+{
+  "printWidth": 100,
+  "tabWidth": 2,
+  "semi": true,
+  "singleQuote": false,
+  "trailingComma": "es5",
+  "bracketSpacing": true,
+  "arrowParens": "always",
+  "htmlWhitespaceSensitivity": "css",
+  "proseWrap": "preserve",
+  "overrides": [
+    { "files": ["*.yml", "*.yaml"], "options": { "proseWrap": "preserve" } },
+    { "files": ["*.md", "*.qmd"], "options": { "proseWrap": "preserve" } }
+  ]
+}

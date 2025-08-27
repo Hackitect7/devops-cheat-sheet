@@ -208,9 +208,9 @@ linux:
         ex3: "Hitung kemunculan tiap baris"
       yes:
         desc: "Keluarkan string berulang kali hingga dihentikan; berguna untuk skrip"
-        ex1: "Selalu jawab \"y\" untuk prompt"
+        ex1: 'Selalu jawab "y" untuk prompt'
         ex2: "Konfirmasi otomatis penghapusan interaktif"
-        ex3: "Jawab \"no\" untuk prompt"
+        ex3: 'Jawab "no" untuk prompt'
 
   advanced:
     _root:

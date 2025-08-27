@@ -165,8 +165,8 @@ git:
     git_bisect:
       desc: "Tumia binary search kupata commit iliyoleta hitilafu"
       ex1: "Anza binary search kati ya commit nzuri na mbaya ili kupata bug"
-      ex2: "Weka alama commit ya sasa kama \"mbaya\" (ina bug)"
-      ex3: "Weka alama commit inayojulikana kama \"nzuri\" ambapo bug haikuwepo"
+      ex2: 'Weka alama commit ya sasa kama "mbaya" (ina bug)'
+      ex3: 'Weka alama commit inayojulikana kama "nzuri" ambapo bug haikuwepo'
     git_blame:
       desc: "Onyesha nani alibadilisha kila mstari wa faili, na revision na mwandishi"
       ex1: "Onyesha mwandishi na commit info kwa kila mstari kwenye faili"
@@ -220,11 +220,11 @@ git:
       desc: "Orodhesha masuala (issues) kwenye repository ya GitHub, ukiweza kuchuja kwa vigezo mbalimbali"
       ex1: "Orodhesha masuala yaliyokabidhiwa kwako"
       ex2: "Orodhesha masuala bila kujali hali (wazi au yamefungwa)"
-      ex3: "Orodhesha masuala yanayolingana na \"error\", yasiyokabidhiwa, yaliyopangwa kwa tarehe ya kuundwa kupanda"
+      ex3: 'Orodhesha masuala yanayolingana na "error", yasiyokabidhiwa, yaliyopangwa kwa tarehe ya kuundwa kupanda'
     gh_pr_create:
       desc: "Unda pull request kwenye GitHub kupitia CLI"
       ex1: "Unda pull request yenye kichwa kilichotolewa"
-      ex2: "Unganisha pull request na mradi wa GitHub uitwao \"Roadmap\""
+      ex2: 'Unganisha pull request na mradi wa GitHub uitwao "Roadmap"'
       ex3: "Unda PR kutoka tawi `feature` kwenye fork `monalisa` kwenda tawi `develop`"
     gh_repo_create:
       desc: "Unda repository mpya ya GitHub kutoka CLI"

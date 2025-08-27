@@ -43,7 +43,7 @@ about_sec:
 
   future:
     title: "Mirando hacia adelante"
-    expand: 
+    expand:
       title: "El proyecto seguirá expandiéndose:"
       exp1: "añadiendo más tecnologías (plataformas en la nube, patrones CI/CD, infraestructura como código);"
       exp2: "incluyendo **escenarios reales de producción** y mejores prácticas;"

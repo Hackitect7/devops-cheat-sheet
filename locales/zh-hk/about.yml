@@ -43,7 +43,7 @@ about_sec:
 
   future:
     title: "展望未來"
-    expand: 
+    expand:
       title: "專案將持續擴展："
       exp1: "新增更多技術（雲端平台、CI/CD 模式、基礎設施即程式碼）；"
       exp2: "納入 **真實生產場景** 與最佳實踐；"

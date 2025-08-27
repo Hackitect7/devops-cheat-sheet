@@ -42,7 +42,7 @@ about_sec:
 
   future:
     title: "앞으로의 방향"
-    expand: 
+    expand:
       title: "프로젝트는 계속 확장될 것입니다:"
       exp1: "더 많은 기술 추가 (클라우드 플랫폼, CI/CD 패턴, IaC 등);"
       exp2: "**실제 프로덕션 시나리오**와 모범 사례 포함;"

@@ -1,0 +1,48 @@
+name: "🐞 Bug report"
+description: Report a problem with site, content, or CI
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! Fill in the details below.
+  - type: input
+    id: url
+    attributes:
+      label: Affected page URL
+      placeholder: https://hackitect7.github.io/devops-cheat-sheet/...
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What did you expect to happen?
+      placeholder: Clear steps to reproduce...
+    validations:
+      required: true
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots / logs
+      render: bash
+  - type: dropdown
+    id: browsers
+    attributes:
+      label: Browsers
+      multiple: true
+      options:
+        - Chrome
+        - Firefox
+        - Safari
+        - Edge
+  - type: input
+    id: locale
+    attributes:
+      label: Locale
+      placeholder: en-US / ru-RU / ...
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched existing issues
+          required: true

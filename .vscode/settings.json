@@ -1,8 +1,82 @@
 {
-  "Lua.workspace.ignoreDir": [
-    ".vscode",
-    ".github",
-    "_site",
-    "_freeze"
-  ]
+  // ===== БАЗОВОЕ ПОВЕДЕНИЕ РЕДАКТОРА =====
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.rulers": [100],
+  "editor.renderWhitespace": "selection",
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.eol": "\n",
+  // Покрываем Quarto-файлы возможностями Markdown/инструментов
+  "files.associations": {
+    "*.qmd": "markdown"
+  },
+  // ===== ИСКЛЮЧЕНИЯ ДЛЯ ПОИСКА/ЭКСПЛОРЕРА =====
+  "files.exclude": {
+    "_site/": true,
+    "_freeze/": true,
+    ".quarto/": true,
+    "node_modules/": true
+  },
+  "search.exclude": {
+    "_site/": true,
+    "_freeze/": true,
+    ".quarto/": true,
+    "node_modules/": true
+  },
+  "explorer.excludeGitIgnore": true,
+  // ===== MARKDOWN / QUARTO =====
+  // markdownlint будет запускаться при сохранении
+  "markdownlint.run": "onSave",
+  // ===== YAML (GitHub Actions, Dependabot) =====
+  // Схемы для валидации YAML (расширение redhat.vscode-yaml)
+  "yaml.schemas": {
+    "https://json.schemastore.org/github-workflow.json": ".github/workflows/*.{yml,yaml}",
+    "https://json.schemastore.org/dependabot-2.0.json": ".github/dependabot.yml"
+  },
+  "yaml.validate": true,
+  // ===== STYLELINT (CSS/SCSS + inline CSS в HTML/Markdown/QMD) =====
+  // Требуется расширение stylelint.vscode-stylelint
+  "stylelint.validate": [
+    "css",
+    "scss",
+    "html",
+    "markdown"
+    // "quarto" не нужен: *.qmd уже ассоциированы с markdown
+  ],
+  // Автофикс stylelint на сохранение
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": true
+  },
+  // ===== ФОРМАТТЕРЫ (Prettier в приоритете) =====
+  // Требуется расширение esbenp.prettier-vscode
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[quarto]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // Доп. опции для Markdown-редактирования
+  "editor.wordWrap": "bounded",
+  // ===== ПРОЧЕЕ =====
+  // Орфография: доменные слова, чтобы linter не ругался
+  "cSpell.words": ["Hackitect7", "Quarto", "DevOps", "tabset", "katex"],
+  // ===== LUA (твой блок — оставляем) =====
+  "Lua.workspace.ignoreDir": [".vscode", ".github", "_site", "_freeze"]
 }

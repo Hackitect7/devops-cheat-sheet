@@ -1,0 +1,23 @@
+{
+  "extends": ["stylelint-config-standard", "stylelint-config-standard-scss"],
+  "overrides": [
+    {
+      "files": ["**/*.{html,md,qmd}"],
+      "customSyntax": "postcss-html"
+    },
+    {
+      "files": ["**/*.scss"],
+      "customSyntax": "postcss-scss"
+    }
+  ],
+  "rules": {
+    "no-descending-specificity": null,
+    "color-hex-length": "short",
+    "length-zero-no-unit": true,
+    "declaration-empty-line-before": "never",
+    "property-no-vendor-prefix": [true, { "ignoreProperties": ["appearance"] }],
+    "value-no-vendor-prefix": true,
+    "selector-class-pattern": "^[a-z0-9\\-:]+$",
+    "selector-id-pattern": "^[a-z0-9\\-]+$"
+  }
+}

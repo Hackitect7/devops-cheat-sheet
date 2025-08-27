@@ -95,7 +95,7 @@ docker:
       desc: "Copy files between a container and the host"
       ex1: "Copy a file from container to current host directory"
       ex2: "Copy a file from host to container"
-      ex3: "Stream a log file from container and filter \"ERROR\" lines without saving to disk"
+      ex3: 'Stream a log file from container and filter "ERROR" lines without saving to disk'
     docker_container_top:
       desc: "Display running processes inside a container"
       ex1: "Show processes of the container named `container`"

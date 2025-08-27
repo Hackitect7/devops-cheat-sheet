@@ -1,8 +1,17 @@
+/* stylelint-disable comment-whitespace-inside */
+
 /*-- scss:defaults --*/
-$link-color: #39729E;
+
+/* stylelint-enable comment-whitespace-inside */
+
+$link-color: #39729e;
 $text-muted: #6a737b;
 
+/* stylelint-disable comment-whitespace-inside */
+
 /*-- scss:rules --*/
+
+/* stylelint-enable comment-whitespace-inside */
 
 .layout-example {
   background: $gray-500;
@@ -10,7 +19,7 @@ $text-muted: #6a737b;
   text-align: center;
   margin-bottom: 1em;
   font-family: $font-family-monospace;
-  font-size: .875em;
+  font-size: 0.875em;
   font-weight: 600;
   padding-top: 1em;
   border-radius: 3px;
@@ -36,7 +45,7 @@ $text-muted: #6a737b;
   font-size: 1em;
   font-weight: bold;
   color: $white;
-  background-color: #447099; 
+  background-color: #447099;
 }
 
 #quarto-announcement a {

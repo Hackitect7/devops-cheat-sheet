@@ -165,8 +165,8 @@ git:
     git_bisect:
       desc: "Gunakan binary search untuk menemukan commit yang memperkenalkan bug"
       ex1: "Mulai binary search antara commit baik dan buruk untuk menemukan bug"
-      ex2: "Tandai commit saat ini sebagai \"buruk\" (mengandung bug)"
-      ex3: "Tandai commit \"baik\" yang diketahui di mana bug tidak ada"
+      ex2: 'Tandai commit saat ini sebagai "buruk" (mengandung bug)'
+      ex3: 'Tandai commit "baik" yang diketahui di mana bug tidak ada'
     git_blame:
       desc: "Tampilkan siapa yang terakhir mengubah setiap baris file, dengan revisi dan penulis"
       ex1: "Tampilkan penulis dan info commit untuk setiap baris dalam file"
@@ -220,11 +220,11 @@ git:
       desc: "Daftar issue dalam repositori GitHub, dapat difilter berdasarkan berbagai kriteria"
       ex1: "Daftar issue yang ditugaskan kepada Anda"
       ex2: "Daftar semua issue terlepas dari status (open atau closed)"
-      ex3: "Daftar issue yang cocok dengan \"error\", tanpa assignment, diurutkan berdasarkan tanggal pembuatan naik"
+      ex3: 'Daftar issue yang cocok dengan "error", tanpa assignment, diurutkan berdasarkan tanggal pembuatan naik'
     gh_pr_create:
       desc: "Buat pull request di GitHub melalui CLI"
       ex1: "Buat pull request dengan judul tertentu"
-      ex2: "Hubungkan pull request ke proyek GitHub bernama \"Roadmap\""
+      ex2: 'Hubungkan pull request ke proyek GitHub bernama "Roadmap"'
       ex3: "Buat PR dari branch `feature` di fork `monalisa` ke branch `develop`"
     gh_repo_create:
       desc: "Buat repositori GitHub baru dari CLI"

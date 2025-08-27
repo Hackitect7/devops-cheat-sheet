@@ -1,0 +1,153 @@
+<script>
+  (function () {
+    "use strict";
+
+    // --- utils ---------------------------------------------------------------
+    function onReady(fn) {
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", fn, { once: true });
+      } else {
+        fn();
+      }
+    }
+
+    function isMacPlatform() {
+      const nav = typeof navigator !== "undefined" ? navigator : null;
+      const plat =
+        (nav && nav.userAgentData && nav.userAgentData.platform) || (nav && nav.platform) || "";
+      return /mac|iphone|ipad|ipod/i.test(plat);
+    }
+
+    function isDarkTheme() {
+      // Quarto ставит класс на <body>; matchMedia — страховка
+      return (
+        document.body.classList.contains("quarto-dark") ||
+        (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)
+      );
+    }
+
+    // --- content tweaks ------------------------------------------------------
+    function replaceKbdCmd(container, replacementText) {
+      const kbds = container.querySelectorAll("kbd");
+      kbds.forEach((kbd) => {
+        kbd.childNodes.forEach((node) => {
+          if (node.nodeType === Node.TEXT_NODE && node.nodeValue.includes("⌘")) {
+            node.nodeValue = node.nodeValue.replace(/⌘/g, replacementText);
+          }
+        });
+      });
+    }
+
+    function emphasizeComments(container) {
+      container.querySelectorAll(".pymd span.co").forEach((el) => {
+        const txt = el.innerText.trimStart();
+        if (!txt.startsWith("#|")) el.style.fontWeight = "700";
+      });
+    }
+
+    function applyTweaks(root = document) {
+      const scope = root.querySelector("#quarto-content") || root;
+      if (!isMacPlatform()) replaceKbdCmd(scope, "Ctrl");
+      emphasizeComments(scope);
+    }
+
+    // --- navbar logo swap ----------------------------------------------------
+    function findNavbarLogoImg() {
+      return (
+        document.querySelector(
+          ".navbar .navbar-brand img.navbar-logo, .navbar .navbar-brand > img"
+        ) || null
+      );
+    }
+
+    // Инициализируем data-logo-light / data-logo-dark один раз
+    function ensureLogoDataset(img) {
+      const ds = img.dataset;
+      if (ds.logoLight && ds.logoDark) return; // уже готово
+
+      const cfg = (window && window.H7_LOGOS) || {};
+      const current = img.getAttribute("src") || "";
+
+      let light = "";
+      let dark = "";
+
+      if (/-light(\.|-)/i.test(current)) {
+        light = current;
+        dark = current.replace(/-light/i, "-dark");
+      } else if (/-dark(\.|-)/i.test(current)) {
+        dark = current;
+        light = current.replace(/-dark/i, "-light");
+      } else if (cfg.light && cfg.dark) {
+        light = cfg.light;
+        dark = cfg.dark;
+      }
+
+      // Запоминаем только если нашли ОБЕ версии — иначе не трогаем
+      if (light && dark) {
+        ds.logoLight = light;
+        ds.logoDark = dark;
+      }
+    }
+
+    function resolveLogoSources(img) {
+      // После ensureLogoDataset здесь всегда читаем из dataset,
+      // НЕ из текущего src — чтобы не «залипать» на тёмном
+      const ds = img.dataset;
+      return { light: ds.logoLight || "", dark: ds.logoDark || "" };
+      // (Если оба пустые — просто не будем ничего менять)
+    }
+
+    function swapNavbarLogo() {
+      const img = findNavbarLogoImg();
+      if (!img) return;
+
+      ensureLogoDataset(img);
+      const { light, dark } = resolveLogoSources(img);
+      if (!light || !dark) return; // нечего менять (нет пары)
+
+      const needed = isDarkTheme() ? dark : light;
+      if (img.getAttribute("src") !== needed) {
+        img.setAttribute("src", needed);
+        img.setAttribute("srcset", needed);
+      }
+    }
+
+    // --- boot ---------------------------------------------------------------
+    onReady(() => {
+      applyTweaks();
+      swapNavbarLogo();
+
+      // наблюдаем динамические вставки (табы/фолды/SPA-фрагменты)
+      const domObserver = new MutationObserver((muts) => {
+        for (const m of muts) {
+          if (m.addedNodes && m.addedNodes.length) {
+            m.addedNodes.forEach((n) => {
+              if (n.nodeType !== 1) return; // ELEMENT_NODE
+              applyTweaks(n);
+              if (
+                n.matches?.(".navbar, .navbar *") ||
+                n.querySelector?.(".navbar .navbar-brand img")
+              ) {
+                swapNavbarLogo();
+              }
+            });
+          }
+        }
+      });
+      domObserver.observe(document.body, { childList: true, subtree: true });
+
+      // реагируем на смену темы (Quarto меняет class у <body>)
+      const themeObserver = new MutationObserver((muts) => {
+        for (const m of muts) {
+          if (m.type === "attributes" && m.attributeName === "class") {
+            swapNavbarLogo();
+          }
+        }
+      });
+      themeObserver.observe(document.body, {
+        attributes: true,
+        attributeFilter: ["class"],
+      });
+    });
+  })();
+</script>

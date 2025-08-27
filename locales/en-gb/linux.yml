@@ -208,9 +208,9 @@ linux:
         ex3: "Count occurrences of each line"
       yes:
         desc: "Output a string repeatedly until killed; useful for scripting"
-        ex1: "Always answer \"y\" to prompts"
+        ex1: 'Always answer "y" to prompts'
         ex2: "Auto-confirm interactive deletions"
-        ex3: "Answer \"no\" to prompts"
+        ex3: 'Answer "no" to prompts'
 
   advanced:
     _root:

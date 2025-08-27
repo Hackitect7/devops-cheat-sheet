@@ -95,7 +95,7 @@ docker:
       desc: "Copia file tra un container e l’host"
       ex1: "Copia un file dal container alla directory corrente dell’host"
       ex2: "Copia un file dall’host al container"
-      ex3: "Trasmetti un file di log dal container e filtra le righe con \"ERROR\" senza salvarlo su disco"
+      ex3: 'Trasmetti un file di log dal container e filtra le righe con "ERROR" senza salvarlo su disco'
     docker_container_top:
       desc: "Mostra i processi in esecuzione all’interno di un container"
       ex1: "Mostra i processi del container chiamato `container`"

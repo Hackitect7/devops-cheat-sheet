@@ -165,8 +165,8 @@ git:
     git_bisect:
       desc: "使用二分搜尋找出引入 bug 的提交"
       ex1: "在已知正常與錯誤提交之間開始二分搜尋"
-      ex2: "標記當前提交為 \"bad\"（包含 bug）"
-      ex3: "標記已知 \"good\" 的提交（bug 不存在）"
+      ex2: '標記當前提交為 "bad"（包含 bug）'
+      ex3: '標記已知 "good" 的提交（bug 不存在）'
     git_blame:
       desc: "顯示每行檔案最後修改者及其提交資訊"
       ex1: "顯示檔案每行的作者與提交資訊"
@@ -220,11 +220,11 @@ git:
       desc: "列出 GitHub 倉庫中的 Issue，可依多種條件過濾"
       ex1: "列出指派給你的 Issue"
       ex2: "列出所有 Issue，不論開啟或關閉"
-      ex3: "列出匹配 \"error\" 的 Issue，未分配，並按建立時間升序排序"
+      ex3: '列出匹配 "error" 的 Issue，未分配，並按建立時間升序排序'
     gh_pr_create:
       desc: "透過 CLI 在 GitHub 建立 Pull Request"
       ex1: "建立具有指定標題的 Pull Request"
-      ex2: "將 Pull Request 關聯到名為 \"Roadmap\" 的 GitHub 專案"
+      ex2: '將 Pull Request 關聯到名為 "Roadmap" 的 GitHub 專案'
       ex3: "從 fork `monalisa` 的 `feature` 分支建立 PR，合併到 `develop` 分支"
     gh_repo_create:
       desc: "透過 CLI 建立新的 GitHub 倉庫"

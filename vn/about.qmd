@@ -23,6 +23,7 @@ format:
 ::: {.hero}
 ::: {.hero-inner}
 ![](../assets/brand/vn/hackitect7-logo-light-vn.png){.hero-logo .only-light alt="Hackitect7 logo light (vi-VN)"}
+![](../assets/brand/vn/hackitect7-logo-dark-vn.png){.hero-logo .only-dark alt="Hackitect7 logo dark (vi-VN)"}
 
 {{< include ../templates/about.qmd >}}
 

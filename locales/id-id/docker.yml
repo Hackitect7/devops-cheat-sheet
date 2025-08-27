@@ -95,7 +95,7 @@ docker:
       desc: "Salin file antara container dan host"
       ex1: "Salin file dari container ke direktori host saat ini"
       ex2: "Salin file dari host ke container"
-      ex3: "Streaming file log dari container dan filter baris \"ERROR\" tanpa menyimpan ke disk"
+      ex3: 'Streaming file log dari container dan filter baris "ERROR" tanpa menyimpan ke disk'
     docker_container_top:
       desc: "Tampilkan proses yang berjalan di dalam container"
       ex1: "Tampilkan proses dari container bernama `container`"

@@ -95,7 +95,7 @@ docker:
       desc: "Nakili faili kati ya kontena na host"
       ex1: "Nakili faili kutoka kontena hadi saraka ya host ya sasa"
       ex2: "Nakili faili kutoka host hadi kontena"
-      ex3: "Tiririsha faili la logi kutoka kontena na uchuje mistari yenye \"ERROR\" bila kuhifadhi kwenye diski"
+      ex3: 'Tiririsha faili la logi kutoka kontena na uchuje mistari yenye "ERROR" bila kuhifadhi kwenye diski'
     docker_container_top:
       desc: "Onyesha michakato inayoendeshwa ndani ya kontena"
       ex1: "Onyesha michakato ya kontena `container`"

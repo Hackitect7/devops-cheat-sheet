@@ -165,8 +165,8 @@ git:
     git_bisect:
       desc: "ใช้ binary search เพื่อหาว่า commit ไหนนำ bug เข้ามา"
       ex1: "เริ่ม binary search ระหว่าง commit ดีและ commit แย่"
-      ex2: "ทำเครื่องหมาย commit ปัจจุบันว่า \"bad\""
-      ex3: "ทำเครื่องหมาย commit ที่ \"good\""
+      ex2: 'ทำเครื่องหมาย commit ปัจจุบันว่า "bad"'
+      ex3: 'ทำเครื่องหมาย commit ที่ "good"'
     git_blame:
       desc: "แสดงว่าใครแก้ไขแต่ละบรรทัดของไฟล์ครั้งล่าสุด พร้อม revision และ author"
       ex1: "แสดงผู้แก้ไขและ commit ของทุกบรรทัด"
@@ -220,11 +220,11 @@ git:
       desc: "แสดง issues ใน GitHub repository โดยสามารถกรองด้วยเงื่อนไขต่าง ๆ"
       ex1: "แสดง issues ที่ assign ให้คุณ"
       ex2: "แสดง issues ทั้งหมด (open และ closed)"
-      ex3: "แสดง issues ที่มีคำว่า \"error\" ไม่ได้ assign และเรียงตามวันที่สร้างแบบเก่าไปใหม่"
+      ex3: 'แสดง issues ที่มีคำว่า "error" ไม่ได้ assign และเรียงตามวันที่สร้างแบบเก่าไปใหม่'
     gh_pr_create:
       desc: "สร้าง pull request บน GitHub ผ่าน CLI"
       ex1: "สร้าง pull request พร้อมชื่อเรื่องที่กำหนด"
-      ex2: "ลิงก์ pull request เข้ากับ GitHub project ชื่อ \"Roadmap\""
+      ex2: 'ลิงก์ pull request เข้ากับ GitHub project ชื่อ "Roadmap"'
       ex3: "สร้าง PR จาก branch `feature` ใน fork `monalisa` ไปยัง branch `develop`"
     gh_repo_create:
       desc: "สร้าง GitHub repository ใหม่ผ่าน CLI"

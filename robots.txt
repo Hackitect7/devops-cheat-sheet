@@ -1,0 +1,5 @@
+# filename: robots.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://hackitect7.github.io/devops-cheat-sheet/sitemap.xml

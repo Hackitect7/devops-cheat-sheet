@@ -1,25 +1,32 @@
+/* stylelint-disable comment-whitespace-inside */
+
 /*-- scss:defaults --*/
 
+/* stylelint-enable comment-whitespace-inside */
+
+/* Palette */
 $blue: #447099;
-$red: #D44000;
-$orange: #EE6331;
-$yellow: #E7B10A;
-$green: #72994E;
+$red: #d44000;
+$orange: #ee6331;
+$yellow: #e7b10a;
+$green: #72994e;
 $teal: #419599;
-$cyan: #75A8D9;
+$cyan: #75a8d9;
 $black: #000;
 $white: #fff;
 $gray: #404041;
 $gray-dark: #343a40;
 $gray-100: #f8f8f8;
-$gray-200: #C2C2C4;
+$gray-200: #c2c2c4;
 $gray-300: #949494;
 $gray-400: #707073;
 $gray-500: #495057;
 $gray-600: #404041;
-$gray-700: #333333;
+$gray-700: #333;
 $gray-800: #242426;
 $gray-900: #151515;
+
+/* Theme tokens */
 $default: $gray-900;
 $primary: $cyan;
 $secondary: $gray-400;
@@ -28,69 +35,67 @@ $info: $yellow;
 $warning: $orange;
 $danger: $red;
 
-
-
-// Base document colors
+/* Base document colors */
 $body-bg: $gray-900;
 $body-color: $gray-100;
 $link-color: $cyan;
+$light: rgb(32.4 32.4 34.2);
 
-$light: rgb(32.4,32.4,34.2);
-
-// Navigation element colors
-/*$footer-bg: shade-color($gray-800, 30%);*/
-/*$navbar-bg: shade-color($gray-800, 30%);*/
+/* Navigation */
 $footer-bg: $gray-900;
+
+/* bootstrap util, ок */
 $navbar-bg: shade-color($gray-800, 10%);
- 
 
-// Code blocks
-$code-block-bg-alpha: -.9;
+/* Code blocks */
+$code-block-bg-alpha: -0.9;
 
-// Bootstrap popovers
+/* Bootstrap popovers/inputs */
 $popover-bg: #242424;
-
-// Bootstrap inputs
 $input-bg: #242424;
 $dropdown-bg: $body-bg;
 $dropdown-color: $body-color;
 $dropdown-link-color: $body-color;
 $dropdown-link-hover-bg: $gray-600;
 $dropdown-link-hover-color: #eee;
-$nav-tabs-link-hover-border-color: rgb(80, 80, 80);
+$nav-tabs-link-hover-border-color: rgb(80 80 80);
 
-$border-color: rgba($gray-800, 0.5);
-
-$mono-background-color: rgba(0,0,0,0);
-$code-color: rgb(192, 128, 216);
+/* Alphas/borders (без sass:color) */
+$border-color: rgb(36 36 38 / 50%);
+$mono-background-color: rgb(0 0 0 / 0%);
+$code-color: rgb(192 128 216);
 $nav-tabs-link-active-color: $body-color;
-$toc-inactive-border: rgba($gray-800, 0.5);
+$toc-inactive-border: rgb(36 36 38 / 50%);
 $input-text-background-color: $gray-800;
 $input-group-addon-bg: $gray-800;
 $carousel-dark-caption-color: $body-color;
-$pagination-disabled-bg: rgb(24,24,24);
+$pagination-disabled-bg: rgb(24 24 24);
 
-$text-muted: lighten(#6a737b, 20%);
+/* Muted (lighten(#6a737b, 20%) посчитан заранее) */
+$text-muted: #9fa6ac;
+
+/* stylelint-disable comment-whitespace-inside */
 
 /*-- scss:rules --*/
 
-/*Homepage custom css overrides */
+/* stylelint-enable comment-whitespace-inside */
 
-/* homepage hero link accessibiility hack to make contrast 4.5:1 */
-
+/* Homepage custom overrides */
 .hero-banner a:not(.btn) {
-/*color: tint-color($cyan, 2%);*/
-color: #D1DBE5;
+  /* color: tint-color($cyan, 2%); */
+  color: #d1dbe5;
 }
 
-.hero-banner .btn-action-primary, .get-started .btn-action-primary {
+.hero-banner .btn-action-primary,
+.get-started .btn-action-primary {
   background-color: #f8f8f8;
   border: 1px solid #f8f8f8;
   color: $dark;
 }
 
-.hero-banner .btn-action-primary:hover, .get-started .btn-action-primary:hover {
-  background-color: #D1DBE5;
+.hero-banner .btn-action-primary:hover,
+.get-started .btn-action-primary:hover {
+  background-color: #d1dbe5;
   border: 1px solid #f8f8f8;
   color: $dark;
 }
@@ -105,15 +110,16 @@ color: #D1DBE5;
   background-color: #305775;
 }
 
-.hello-quarto-banner .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+.hello-quarto-banner .nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
   border: none;
-  border-bottom: 2px solid #ffffff !important;
-  color: #ffffff !important;
-  background-color: transparent;  
+  border-bottom: 2px solid #fff !important;
+  color: #fff !important;
+  background-color: transparent;
 }
 
 .hello-quarto-banner .nav-link {
-  color: #ffffff !important;
+  color: #fff !important;
 }
 
 .bg-color {
@@ -124,13 +130,11 @@ color: #D1DBE5;
   border: 1px solid $gray-700;
 }
 
-
 body.quarto-light .alt-background {
-  background-color: #17212B;
+  background-color: #17212b;
   border-top: 1px solid #dee2e6;
   border-bottom: 1px solid #dee2e6;
 }
-
 
 .layout-example {
   background: $gray-700;
@@ -141,9 +145,7 @@ body.quarto-light .alt-background {
   margin-bottom: 0.5rem;
 }
 
-// h2, .h2 {
-//   border-bottom-color: #666;
-// }
+/* h2, .h2 { border-bottom-color: #666; } */
 
 .code-with-filename .code-with-filename-file pre {
   color: #ddd;
@@ -172,16 +174,14 @@ details > summary {
   padding: 1em;
   font-size: 1em;
   font-weight: bold;
-  color: $white;
-  background-color: #ff0039; 
+  color: #fff;
+  background-color: #ff0039;
 }
 
 #quarto-announcement a {
-  color: $white;
+  color: #fff;
 }
 
-/*Footer Posit logo color for dark mode*/
-
 img.footer-logo {
-  color: #ffffff;
+  color: #fff;
 }

@@ -220,11 +220,11 @@ git:
       desc: "GitHub リポジトリの Issue を一覧表示 (さまざまな条件でフィルタ可能)"
       ex1: "自分に割り当てられた Issue を表示"
       ex2: "状態 (open/closed) を問わず Issue を表示"
-      ex3: "\"error\" に一致する、担当者なし、作成日昇順の Issue を表示"
+      ex3: '"error" に一致する、担当者なし、作成日昇順の Issue を表示'
     gh_pr_create:
       desc: "CLI 経由で GitHub にプルリクエストを作成"
       ex1: "指定したタイトルでプルリクエストを作成"
-      ex2: "プルリクエストを \"Roadmap\" という GitHub プロジェクトにリンク"
+      ex2: 'プルリクエストを "Roadmap" という GitHub プロジェクトにリンク'
       ex3: "フォーク `monalisa` の `feature` ブランチから `develop` ブランチへ PR を作成"
     gh_repo_create:
       desc: "CLI から新しい GitHub リポジトリを作成"
@@ -236,7 +236,7 @@ git:
     _root:
       title: "💡 Git エイリアス (便利なショートカット)"
       intro: "よく使う Git コマンドのエイリアスを設定して作業を高速化:"
-  
+
   pro:
     _root:
       title: "🚀 プロ向け高度な Git コマンド"

@@ -208,9 +208,9 @@ linux:
         ex3: "Vorkommen jeder Zeile zählen"
       yes:
         desc: "Eine Zeichenkette endlos wiederholen; nützlich für Skripte"
-        ex1: "Immer \"y\" auf Eingabeaufforderungen antworten"
+        ex1: 'Immer "y" auf Eingabeaufforderungen antworten'
         ex2: "Interaktive Löschungen automatisch bestätigen"
-        ex3: "Mit \"no\" auf Eingabeaufforderungen antworten"
+        ex3: 'Mit "no" auf Eingabeaufforderungen antworten'
 
   advanced:
     _root:

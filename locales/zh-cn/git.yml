@@ -165,8 +165,8 @@ git:
     git_bisect:
       desc: "使用二分查找定位引入错误的提交"
       ex1: "在已知正常提交和有问题提交之间开始二分查找错误"
-      ex2: "将当前提交标记为 \"bad\"（包含错误）"
-      ex3: "将已知正常的提交标记为 \"good\"（无错误）"
+      ex2: '将当前提交标记为 "bad"（包含错误）'
+      ex3: '将已知正常的提交标记为 "good"（无错误）'
     git_blame:
       desc: "显示文件每行最后修改者及其提交信息"
       ex1: "显示文件每行的作者和提交信息"
@@ -220,11 +220,11 @@ git:
       desc: "列出 GitHub 仓库中的问题，可按多种条件筛选"
       ex1: "列出分配给你的问题"
       ex2: "列出所有问题（无论是打开还是关闭）"
-      ex3: "列出匹配 \"error\" 的未分配问题，按创建时间升序排序"
+      ex3: '列出匹配 "error" 的未分配问题，按创建时间升序排序'
     gh_pr_create:
       desc: "通过 CLI 在 GitHub 上创建拉取请求（PR）"
       ex1: "创建一个带指定标题的拉取请求"
-      ex2: "将拉取请求关联到名为 \"Roadmap\" 的 GitHub 项目"
+      ex2: '将拉取请求关联到名为 "Roadmap" 的 GitHub 项目'
       ex3: "从 fork `monalisa` 中的 `feature` 分支创建一个 PR，目标为 `develop` 分支"
     gh_repo_create:
       desc: "通过 CLI 创建一个新的 GitHub 仓库"

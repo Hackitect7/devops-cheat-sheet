@@ -95,7 +95,7 @@ docker:
       desc: "Dateien zwischen einem Container und dem Host kopieren"
       ex1: "Eine Datei vom Container in das aktuelle Host-Verzeichnis kopieren"
       ex2: "Eine Datei vom Host in den Container kopieren"
-      ex3: "Eine Logdatei aus dem Container streamen und Zeilen mit \"ERROR\" filtern, ohne auf Platte zu speichern"
+      ex3: 'Eine Logdatei aus dem Container streamen und Zeilen mit "ERROR" filtern, ohne auf Platte zu speichern'
     docker_container_top:
       desc: "Laufende Prozesse in einem Container anzeigen"
       ex1: "Prozesse des Containers `container` anzeigen"

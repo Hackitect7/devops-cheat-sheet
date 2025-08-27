@@ -219,11 +219,11 @@ git:
       desc: "List issues in a GitHub repository, optionally filtered by various criteria"
       ex1: "List issues assigned to you"
       ex2: "List issues regardless of state (open or closed)"
-      ex3: "List issues matching \"error\", unassigned, sorted by creation date (ascending)"
+      ex3: 'List issues matching "error", unassigned, sorted by creation date (ascending)'
     gh_pr_create:
       desc: "Create a pull request on GitHub via the CLI"
       ex1: "Create a pull request with the given title"
-      ex2: "Link the pull request to a GitHub project named \"Roadmap\""
+      ex2: 'Link the pull request to a GitHub project named "Roadmap"'
       ex3: "Create a PR from branch `feature` in fork `monalisa` into the `develop` branch"
     gh_repo_create:
       desc: "Create a new GitHub repository from the CLI"

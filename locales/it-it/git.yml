@@ -146,7 +146,7 @@ git:
       ex1: "Push di tutti i tag locali sul remoto (utile dopo aver creato più versioni)"
       ex2: "Push di un tag specifico (es. `v1.0`) sul repository remoto"
       ex3: "Elimina il tag remoto `v1.0` (nota la sintassi con i due punti)"
-  
+
   conflicts:
     _root:
       title: "🛠️ Risoluzione dei conflitti"
@@ -165,8 +165,8 @@ git:
     git_bisect:
       desc: "Usa ricerca binaria per trovare il commit che ha introdotto un bug"
       ex1: "Avvia una ricerca binaria tra un commit buono e uno difettoso per localizzare il bug"
-      ex2: "Segna il commit corrente come \"bad\" (contiene il bug)"
-      ex3: "Segna un commit \"good\" noto dove il bug non esisteva"
+      ex2: 'Segna il commit corrente come "bad" (contiene il bug)'
+      ex3: 'Segna un commit "good" noto dove il bug non esisteva'
     git_blame:
       desc: "Mostra chi ha modificato per ultimo ogni riga di un file, con revisione e autore"
       ex1: "Mostra autore e info commit per ogni riga del file"
@@ -220,11 +220,11 @@ git:
       desc: "Elenca le issue in un repository GitHub, opzionalmente filtrate per vari criteri"
       ex1: "Elenca le issue assegnate a te"
       ex2: "Elenca le issue indipendentemente dallo stato (aperte o chiuse)"
-      ex3: "Elenca le issue che corrispondono a \"error\", non assegnate, ordinate per data di creazione crescente"
+      ex3: 'Elenca le issue che corrispondono a "error", non assegnate, ordinate per data di creazione crescente'
     gh_pr_create:
       desc: "Crea una pull request su GitHub tramite CLI"
       ex1: "Crea una pull request con il titolo indicato"
-      ex2: "Collega la pull request a un progetto GitHub chiamato \"Roadmap\""
+      ex2: 'Collega la pull request a un progetto GitHub chiamato "Roadmap"'
       ex3: "Crea una PR dal branch `feature` nel fork `monalisa` verso il branch `develop`"
     gh_repo_create:
       desc: "Crea un nuovo repository GitHub dalla CLI"

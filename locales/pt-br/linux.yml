@@ -208,9 +208,9 @@ linux:
         ex3: "Contar ocorrências de cada linha"
       yes:
         desc: "Exibir uma string repetidamente até ser interrompido; útil para scripts"
-        ex1: "Responder sempre \"y\" a prompts"
+        ex1: 'Responder sempre "y" a prompts'
         ex2: "Auto-confirmar exclusões interativas"
-        ex3: "Responder \"não\" a prompts"
+        ex3: 'Responder "não" a prompts'
 
   advanced:
     _root:

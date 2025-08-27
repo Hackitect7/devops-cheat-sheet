@@ -146,7 +146,7 @@ git:
       ex1: "Push all local tags to the remote (useful after tagging multiple versions)"
       ex2: "Push a specific tag (e.g. `v1.0`) to the remote repository"
       ex3: "Delete the remote tag `v1.0` (note the colon syntax)"
-  
+
   conflicts:
     _root:
       title: "🛠️ Conflict Resolution"
@@ -165,8 +165,8 @@ git:
     git_bisect:
       desc: "Use binary search to find the commit that introduced a bug"
       ex1: "Start a binary search between a known good and a bad commit to locate a bug"
-      ex2: "Mark the current commit as \"bad\" (contains the bug)"
-      ex3: "Mark a known \"good\" commit where the bug did not exist"
+      ex2: 'Mark the current commit as "bad" (contains the bug)'
+      ex3: 'Mark a known "good" commit where the bug did not exist'
     git_blame:
       desc: "Show who last modified each line of a file, with revision and author"
       ex1: "Show the author and commit info for every line in the file"
@@ -220,11 +220,11 @@ git:
       desc: "List issues in a GitHub repository, optionally filtered by various criteria"
       ex1: "List issues assigned to you"
       ex2: "List issues regardless of state (open or closed)"
-      ex3: "List issues matching \"error\", unassigned, sorted by creation date ascending"
+      ex3: 'List issues matching "error", unassigned, sorted by creation date ascending'
     gh_pr_create:
       desc: "Create a pull request on GitHub via CLI"
       ex1: "Create a pull request with the given title"
-      ex2: "Link the pull request to a GitHub project named \"Roadmap\""
+      ex2: 'Link the pull request to a GitHub project named "Roadmap"'
       ex3: "Create a PR from branch `feature` in fork `monalisa` into `develop` branch"
     gh_repo_create:
       desc: "Create a new GitHub repository from CLI"
@@ -236,7 +236,7 @@ git:
     _root:
       title: "💡 Git Aliases (Useful Shortcuts)"
       intro: "Set up convenient aliases to speed up common Git commands:"
-  
+
   pro:
     _root:
       title: "🚀 Advanced Git Commands for Professionals"

@@ -208,9 +208,9 @@ linux:
         ex3: "Hesabu idadi ya kila mstari"
       yes:
         desc: "Toa kamba mara kwa mara hadi iachishwe; muhimu kwa scripting"
-        ex1: "Jibu kila mara \"y\" kwa maombi"
+        ex1: 'Jibu kila mara "y" kwa maombi'
         ex2: "Thibitisha kiotomatiki kufutwa kwa mwingiliano"
-        ex3: "Jibu \"no\" kwa maombi"
+        ex3: 'Jibu "no" kwa maombi'
 
   advanced:
     _root:

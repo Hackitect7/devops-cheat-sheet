@@ -23,6 +23,7 @@ format:
 ::: {.hero}
 ::: {.hero-inner}
 ![](../assets/brand/kr/hackitect7-logo-light-kr.png){.hero-logo .only-light alt="Hackitect7 logo light (ko-KR)"}
+![](../assets/brand/kr/hackitect7-logo-dark-kr.png){.hero-logo .only-dark alt="Hackitect7 logo dark (ko-KR)"}
 
 {{< include ../templates/about.qmd >}}
 

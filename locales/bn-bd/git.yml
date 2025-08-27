@@ -165,8 +165,8 @@ git:
     git_bisect:
       desc: "বাগ আসা কমিট খুঁজতে বাইনারি সার্চ ব্যবহার করা"
       ex1: "ভালো ও খারাপ কমিটের মধ্যে সার্চ শুরু করে বাগ খুঁজে বের করা"
-      ex2: "বর্তমান কমিটকে \"bad\" হিসেবে চিহ্নিত করা"
-      ex3: "একটি \"good\" কমিট চিহ্নিত করা যেখানে বাগ ছিল না"
+      ex2: 'বর্তমান কমিটকে "bad" হিসেবে চিহ্নিত করা'
+      ex3: 'একটি "good" কমিট চিহ্নিত করা যেখানে বাগ ছিল না'
     git_blame:
       desc: "প্রতিটি লাইনের সর্বশেষ পরিবর্তনকারীর নাম, রিভিশন ও লেখক দেখানো"
       ex1: "ফাইলের প্রতিটি লাইনের লেখক ও কমিট তথ্য দেখানো"
@@ -220,11 +220,11 @@ git:
       desc: "একটি GitHub রিপোজিটরির issues তালিকা, প্রয়োজনে বিভিন্ন ক্রাইটেরিয়া দ্বারা ফিল্টার করা"
       ex1: "আপনার জন্য assigned issues তালিকা"
       ex2: "স্টেট নির্বিশেষে (open বা closed) issues তালিকা"
-      ex3: "\"error\" মেলানো issues তালিকা, unassigned, creation date অনুযায়ী ascending"
+      ex3: '"error" মেলানো issues তালিকা, unassigned, creation date অনুযায়ী ascending'
     gh_pr_create:
       desc: "CLI দিয়ে GitHub-এ pull request তৈরি করা"
       ex1: "প্রদত্ত শিরোনাম সহ pull request তৈরি"
-      ex2: "pull request-কে \"Roadmap\" নামে GitHub প্রজেক্টের সাথে লিঙ্ক করা"
+      ex2: 'pull request-কে "Roadmap" নামে GitHub প্রজেক্টের সাথে লিঙ্ক করা'
       ex3: "fork `monalisa` এর `feature` ব্রাঞ্চ থেকে `develop` ব্রাঞ্চে PR তৈরি"
     gh_repo_create:
       desc: "CLI থেকে নতুন GitHub রিপোজিটরি তৈরি করা"

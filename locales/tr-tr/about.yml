@@ -43,7 +43,7 @@ about_sec:
 
   future:
     title: "İleriye Bakış"
-    expand: 
+    expand:
       title: "Proje gelişmeye devam edecek:"
       exp1: "daha fazla teknoloji ekleyerek (bulut platformları, CI/CD desenleri, kod olarak altyapı);"
       exp2: "**gerçek üretim senaryoları** ve en iyi uygulamaları dahil ederek;"

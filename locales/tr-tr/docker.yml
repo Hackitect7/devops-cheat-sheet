@@ -95,7 +95,7 @@ docker:
       desc: "Konteyner ile host arasında dosya kopyala"
       ex1: "Konteynerden host dizinine dosya kopyala"
       ex2: "Hosttan konteynere dosya kopyala"
-      ex3: "Konteynerden log dosyasını akışla al ve \"ERROR\" satırlarını diske kaydetmeden filtrele"
+      ex3: 'Konteynerden log dosyasını akışla al ve "ERROR" satırlarını diske kaydetmeden filtrele'
     docker_container_top:
       desc: "Bir konteyner içindeki çalışan işlemleri görüntüle"
       ex1: "`container` adlı konteynerin işlemlerini göster"

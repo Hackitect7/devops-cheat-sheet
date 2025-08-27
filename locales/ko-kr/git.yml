@@ -165,8 +165,8 @@ git:
     git_bisect:
       desc: "버그가 도입된 커밋 찾기 위해 이진 검색 사용"
       ex1: "버그가 없는 커밋과 있는 커밋 사이에서 이진 검색 시작"
-      ex2: "현재 커밋을 \"bad\"로 표시 (버그 포함)"
-      ex3: "버그가 없던 커밋을 \"good\"으로 표시"
+      ex2: '현재 커밋을 "bad"로 표시 (버그 포함)'
+      ex3: '버그가 없던 커밋을 "good"으로 표시'
     git_blame:
       desc: "파일 각 줄을 마지막으로 수정한 사람 표시 (리비전 및 작성자 포함)"
       ex1: "파일의 각 줄에 대한 작성자와 커밋 정보 표시"
@@ -220,11 +220,11 @@ git:
       desc: "GitHub 저장소의 이슈 나열 (필터링 옵션 포함)"
       ex1: "자신에게 할당된 이슈 나열"
       ex2: "상태와 관계없이 모든 이슈 나열 (open, closed)"
-      ex3: "\"error\"에 일치하고, 미할당이며, 생성 날짜 오름차순으로 정렬된 이슈 나열"
+      ex3: '"error"에 일치하고, 미할당이며, 생성 날짜 오름차순으로 정렬된 이슈 나열'
     gh_pr_create:
       desc: "CLI를 통해 GitHub에 Pull Request 생성"
       ex1: "지정된 제목으로 Pull Request 생성"
-      ex2: "\"Roadmap\"이라는 GitHub 프로젝트에 Pull Request 연결"
+      ex2: '"Roadmap"이라는 GitHub 프로젝트에 Pull Request 연결'
       ex3: "fork `monalisa`의 `feature` 브랜치에서 `develop` 브랜치로 PR 생성"
     gh_repo_create:
       desc: "CLI에서 새 GitHub 저장소 생성"
@@ -236,7 +236,7 @@ git:
     _root:
       title: "💡 Git 별칭 (유용한 단축키)"
       intro: "자주 사용하는 Git 명령어를 빠르게 실행할 수 있도록 편리한 별칭을 설정하세요:"
-  
+
   pro:
     _root:
       title: "🚀 전문가용 고급 Git 명령어"

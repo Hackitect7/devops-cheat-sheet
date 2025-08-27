@@ -146,7 +146,7 @@ git:
       ex1: "推送所有本地標籤到遠端（適合一次標記多個版本後）"
       ex2: "推送特定標籤（如 `v1.0`）到遠端倉庫"
       ex3: "刪除遠端的 `v1.0` 標籤（注意冒號語法）"
-  
+
   conflicts:
     _root:
       title: "🛠️ 衝突解決"
@@ -220,11 +220,11 @@ git:
       desc: "列出 GitHub 儲存庫中的問題 (issues)，可依多種條件過濾"
       ex1: "列出分配給你的問題"
       ex2: "列出所有問題，無論開啟或關閉"
-      ex3: "列出符合 \"error\" 的問題，未分配，並依建立時間升冪排序"
+      ex3: '列出符合 "error" 的問題，未分配，並依建立時間升冪排序'
     gh_pr_create:
       desc: "透過 CLI 在 GitHub 建立 Pull Request"
       ex1: "以指定標題建立 Pull Request"
-      ex2: "將 Pull Request 連結到名為 \"Roadmap\" 的 GitHub 專案"
+      ex2: '將 Pull Request 連結到名為 "Roadmap" 的 GitHub 專案'
       ex3: "從 fork `monalisa` 的 `feature` 分支建立 PR，合併到 `develop` 分支"
     gh_repo_create:
       desc: "透過 CLI 建立新的 GitHub 儲存庫"
@@ -236,7 +236,7 @@ git:
     _root:
       title: "💡 Git 別名（實用捷徑）"
       intro: "設定方便的別名以加快常用 Git 指令："
-  
+
   pro:
     _root:
       title: "🚀 專業進階 Git 指令"

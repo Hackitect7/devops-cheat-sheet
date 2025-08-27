@@ -208,9 +208,9 @@ linux:
         ex3: "Đếm số lần xuất hiện mỗi dòng"
       yes:
         desc: "In lặp một chuỗi đến khi dừng; hữu ích trong script"
-        ex1: "Luôn trả lời \"y\" cho prompt"
+        ex1: 'Luôn trả lời "y" cho prompt'
         ex2: "Tự động xác nhận xóa"
-        ex3: "Trả lời \"no\" cho prompt"
+        ex3: 'Trả lời "no" cho prompt'
 
   advanced:
     _root:

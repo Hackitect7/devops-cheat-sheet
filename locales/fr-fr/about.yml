@@ -43,7 +43,7 @@ about_sec:
 
   future:
     title: "Perspectives"
-    expand: 
+    expand:
       title: "Le projet continuera de s’élargir :"
       exp1: "ajout de nouvelles technologies (plates-formes cloud, modèles CI/CD, infrastructure as code) ;"
       exp2: "inclusion de **scénarios réels de production** et de bonnes pratiques ;"

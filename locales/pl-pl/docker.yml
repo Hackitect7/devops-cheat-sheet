@@ -95,7 +95,7 @@ docker:
       desc: "Kopiuj pliki między kontenerem a hostem"
       ex1: "Skopiuj plik z kontenera do bieżącego katalogu hosta"
       ex2: "Skopiuj plik z hosta do kontenera"
-      ex3: "Strumieniuj plik logu z kontenera i filtruj linie z \"ERROR\" bez zapisywania na dysku"
+      ex3: 'Strumieniuj plik logu z kontenera i filtruj linie z "ERROR" bez zapisywania na dysku'
     docker_container_top:
       desc: "Wyświetl działające procesy w kontenerze"
       ex1: "Pokaż procesy w kontenerze `container`"

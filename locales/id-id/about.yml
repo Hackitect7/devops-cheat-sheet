@@ -43,7 +43,7 @@ about_sec:
 
   future:
     title: "Melihat ke Depan"
-    expand: 
+    expand:
       title: "Proyek ini akan terus berkembang:"
       exp1: "menambahkan lebih banyak teknologi (platform cloud, pola CI/CD, infrastruktur sebagai kode);"
       exp2: "termasuk **skenario produksi nyata** dan praktik terbaik;"

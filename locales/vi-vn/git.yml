@@ -165,8 +165,8 @@ git:
     git_bisect:
       desc: "Dùng tìm kiếm nhị phân để tìm commit gây ra bug"
       ex1: "Bắt đầu tìm kiếm nhị phân giữa commit tốt và commit lỗi để tìm bug"
-      ex2: "Đánh dấu commit hiện tại là \"bad\" (có bug)"
-      ex3: "Đánh dấu commit \"good\" (không có bug)"
+      ex2: 'Đánh dấu commit hiện tại là "bad" (có bug)'
+      ex3: 'Đánh dấu commit "good" (không có bug)'
     git_blame:
       desc: "Hiển thị ai là người chỉnh sửa cuối cùng mỗi dòng của tệp, với revision và tác giả"
       ex1: "Hiển thị tác giả và commit cho từng dòng trong tệp"
@@ -220,11 +220,11 @@ git:
       desc: "Liệt kê issue trong repository GitHub, có thể lọc theo tiêu chí khác nhau"
       ex1: "Liệt kê issue được gán cho bạn"
       ex2: "Liệt kê issue bất kể trạng thái (open hoặc closed)"
-      ex3: "Liệt kê issue khớp với \"error\", chưa được gán, sắp xếp theo ngày tạo tăng dần"
+      ex3: 'Liệt kê issue khớp với "error", chưa được gán, sắp xếp theo ngày tạo tăng dần'
     gh_pr_create:
       desc: "Tạo pull request trên GitHub qua CLI"
       ex1: "Tạo pull request với tiêu đề cho trước"
-      ex2: "Liên kết pull request với một dự án GitHub tên \"Roadmap\""
+      ex2: 'Liên kết pull request với một dự án GitHub tên "Roadmap"'
       ex3: "Tạo PR từ nhánh `feature` trong fork `monalisa` vào nhánh `develop`"
     gh_repo_create:
       desc: "Tạo repository GitHub mới từ CLI"

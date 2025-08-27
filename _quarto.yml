@@ -13,8 +13,16 @@ project:
 date: last-modified
 highlight-style: a11y
 
+metadata:
+  description: "Multilingual DevOps cheat sheet: Linux, Docker, Git, Kubernetes, Helm, Terraform, practical scenarios & templates."
+  image: assets/brand/us/hackitect7-og.png
+  image-alt: "DevOps Cheat Sheet — logo and tagline"
+
 website:
   favicon: assets/brand/favicon.svg
+  site-url: https://hackitect7.github.io/devops-cheat-sheet
+  open-graph: true
+  twitter-card: true
   page-navigation: true
   reader-mode: true
   bread-crumbs: false
@@ -30,6 +38,9 @@ website:
 
 format:
   html:
+    canonical-url: true
+    link-external-newwindow: true
+    link-external-icon: true
     respect-user-color-scheme: true
     toc: true
     smooth-scroll: true
@@ -38,10 +49,11 @@ format:
       dark: [cosmo, theme-dark.scss]
     code-copy: true
     code-overflow: wrap
+    highlight-style: github
     css:
       - assets/css/styles.css
       - https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/7.5.0/css/flag-icons.min.css
     include-after-body:
-      - assets/js/tweaks.js
+      - assets/js/tweaks.html
     anchor-sections: true
     lib-dir: site_libs

@@ -128,15 +128,17 @@ page-layout: article
 
 ```markdown
 # {{< var linux.meta._root.title >}}
+
 > {{< var linux.meta._root.desc >}}
 
 ## {{< var linux.basic._root.title >}}
-| {{< var common.table.columns.command >}} | {{< var common.table.columns.example >}} | {{< var common.table.columns.description >}} |
-|---|---|---|
-| [**`cat`**](https://tldr.inbrowser.app/pages/linux/cat) |  | {{< var linux.basic._root.cat.desc >}} |
-|  | `cat file.txt` | {{< var linux.basic._root.cat.ex1 >}} |
-|  | `cat file1 file2` | {{< var linux.basic._root.cat.ex2 >}} |
-|  | `cat file1 file2 > merged.txt` | {{< var linux.basic._root.cat.ex3 >}} |
+
+| {{< var common.table.columns.command >}}                | {{< var common.table.columns.example >}} | {{< var common.table.columns.description >}} |
+| ------------------------------------------------------- | ---------------------------------------- | -------------------------------------------- |
+| [**`cat`**](https://tldr.inbrowser.app/pages/linux/cat) |                                          | {{< var linux.basic._root.cat.desc >}}       |
+|                                                         | `cat file.txt`                           | {{< var linux.basic._root.cat.ex1 >}}        |
+|                                                         | `cat file1 file2`                        | {{< var linux.basic._root.cat.ex2 >}}        |
+|                                                         | `cat file1 file2 > merged.txt`           | {{< var linux.basic._root.cat.ex3 >}}        |
 ```
 
 > В шаблонах **нет** текстов конкретного языка; только структура и плейсхолдеры.
@@ -227,19 +229,34 @@ quarto render --profile ru
 
 ```css
 /* Универсальная сетка для таблиц шпаргалки */
-table { table-layout: fixed; width: 100%; }
-td, th { vertical-align: top; }
+table {
+  table-layout: fixed;
+  width: 100%;
+}
+td,
+th {
+  vertical-align: top;
+}
 
 /* Перенос длинных токенов внутри code */
-td code, th code {
-  white-space: pre-wrap;      /* уважает \n и позволяет переносы */
-  overflow-wrap: anywhere;    /* перенос любых длинных "слов" */
-  word-break: break-word;     /* подстраховка */
+td code,
+th code {
+  white-space: pre-wrap; /* уважает \n и позволяет переносы */
+  overflow-wrap: anywhere; /* перенос любых длинных "слов" */
+  word-break: break-word; /* подстраховка */
 }
 
 /* Мобильные корректировки */
-@media (max-width: 992px) { table { font-size: 0.95rem; } }
-@media (max-width: 576px) { table { font-size: 0.90rem; } }
+@media (max-width: 992px) {
+  table {
+    font-size: 0.95rem;
+  }
+}
+@media (max-width: 576px) {
+  table {
+    font-size: 0.9rem;
+  }
+}
 ```
 
 ### Рекомендации по содержимому
@@ -258,7 +275,7 @@ td code, th code {
 name: build-and-deploy
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
@@ -427,4 +444,3 @@ else:
 
 - Бренд: **Hackitect7**
 - Автор: Алексей
-

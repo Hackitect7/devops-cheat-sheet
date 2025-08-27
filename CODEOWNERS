@@ -1,0 +1,15 @@
+# Default owner
+*                                   @Hackitect7
+
+# Theming, layout
+assets/**                           @Hackitect7
+theme.scss                          @Hackitect7
+theme-dark.scss                     @Hackitect7
+style.css                           @Hackitect7
+
+# English root
+us/**                               @Hackitect7
+# Russian
+ru/**                               @Hackitect7
+# Add co-owners per locale later, e.g.:
+# ru/**                             @Hackitect7 @co-translator

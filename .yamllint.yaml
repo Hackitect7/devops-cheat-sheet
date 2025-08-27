@@ -1,0 +1,22 @@
+extends: default
+
+rules:
+  line-length:
+    max: 120
+    allow-non-breakable-words: true
+  indentation:
+    spaces: 2
+    indent-sequences: consistent
+  document-start: disable # для единичных YAML-файлов '---' не требуем
+  truthy:
+    check-keys: false # не ругаться на 'on', 'off' как значения
+  comments:
+    require-starting-space: true
+    min-spaces-from-content: 1
+
+ignore: |
+  _site/**
+  node_modules/**
+  .quarto/**
+  **/*.md
+  **/*.qmd
