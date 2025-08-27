@@ -1,21 +1,48 @@
-name: build-and-deploy
+name: Build & Deploy (Quarto multi-profile)
 
 on:
   push:
     branches: [main]
+    # чтобы реже гонять сборку на несущественные изменения — по желанию:
+    paths:
+      - "**/*.qmd"
+      - "**/*.yml"
+      - "**/*.yaml"
+      - "**/*.scss"
+      - "**/*.css"
+      - "assets/**"
+      - "_quarto*.yml"
+      - "locales/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
 
-      - name: Setup Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
+      - uses: quarto-dev/quarto-actions/setup@v2
 
-      # Рендерим профили в точном порядке: первым es (чисто), последним us (--no-clean)
+      - name: Cache Quarto
+        uses: actions/cache@v4
+        with:
+          path: ~/.quarto
+          key: ${{ runner.os }}-quarto-${{ hashFiles('**/*.qmd', '**/*.yml', '**/*.scss', '**/*.css') }}
+
+      # опционально, но рекомендовано для Pages
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
       - name: Render profiles
         shell: bash
         run: |
@@ -56,12 +83,9 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deploy.outputs.page_url }}
     steps:
-      - id: deployment
+      - id: deploy
         uses: actions/deploy-pages@v4

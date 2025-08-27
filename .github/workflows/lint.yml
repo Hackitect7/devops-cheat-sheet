@@ -52,6 +52,7 @@ jobs:
         with:
           files: "**/*.{md,qmd}"
           config_file: ".markdownlint.yaml"
+          ignore_path: ".markdownlintignore"
 
       # Smoke-render для линк-чекера
       - name: Setup Quarto

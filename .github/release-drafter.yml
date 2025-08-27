@@ -1,15 +1,51 @@
-name-template: "v$NEXT_PATCH_VERSION"
-tag-template: "v$NEXT_PATCH_VERSION"
+# .github/release-drafter.yml
+name-template: "v$RESOLVED_VERSION"
+tag-template: "v$RESOLVED_VERSION"
+
 categories:
   - title: "🚀 Features"
-    labels: ["enhancement", "feature"]
-  - title: "🐞 Fixes"
-    labels: ["bug"]
-  - title: "📝 Docs"
-    labels: ["documentation"]
-  - title: "⚙️ CI"
-    labels: ["ci"]
-change-template: "- $TITLE (#$NUMBER) @$AUTHOR"
+    labels: ["feature", "enhancement"]
+  - title: "🐛 Fixes"
+    labels: ["bug", "fix"]
+  - title: "🧰 Maintenance"
+    labels: ["chore", "refactor", "dependencies", "deps", "ci"]
+  - title: "📚 Docs"
+    labels: ["docs"]
+  - title: "🧪 Tests"
+    labels: ["test", "tests"]
+
+exclude-labels:
+  - "skip-changelog"
+  - "release-ignore"
+
+change-template: "- $TITLE (#$NUMBER) by @$AUTHOR"
+change-title-escapes: false
+
+version-resolver:
+  major:
+    labels: ["semver:major", "breaking-change", "major"]
+  minor:
+    labels: ["semver:minor", "feature", "enhancement", "minor"]
+  patch:
+    labels:
+      [
+        "semver:patch",
+        "bug",
+        "fix",
+        "patch",
+        "chore",
+        "docs",
+        "test",
+        "tests",
+        "ci",
+        "dependencies",
+        "deps",
+      ]
+  default: patch
+
 template: |
   ## Changes
   $CHANGES
+
+  ## Contributors
+  $CONTRIBUTORS

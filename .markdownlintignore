@@ -1,0 +1,7 @@
+# .markdownlintignore
+
+node_modules/
+\_site/
+site_libs/
+**/CHANGELOG.md
+**/LICENSE\*

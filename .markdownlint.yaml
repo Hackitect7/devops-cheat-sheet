@@ -1,3 +1,9 @@
+# .markdownlint.yml
 default: true
-MD013: false # line length
-MD033: false # inline HTML allowed (Quarto)
+
+# Полностью отключаем «спорные» правила под наш проект
+MD013: false # line-length
+MD025: false # single-title / один H1
+MD034: false # bare-urls (email/URL без <>)
+MD045: false # images need alt (у нас много техкартинок/логотипов)
+MD051: false # link-fragments (Pandoc-идентификаторы типа {#id})

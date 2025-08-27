@@ -1,8 +1,11 @@
-# Quarto build
+# Quarto build/cache
 _site/
 .quarto/
+_freeze/
+
+# Node
+node_modules/
 
 # OS junk
 .DS_Store
 Thumbs.db
-/.quarto/
