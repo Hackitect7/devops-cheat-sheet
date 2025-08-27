@@ -1,2 +1,278 @@
-# {{< meta git.meta._root.title >}}
-> {{< meta git.meta._root.desc >}}
+## {{< meta git.basic._root.title >}}
+
+| {{< meta common.table.columns.command >}} | {{< meta common.table.columns.example >}} | {{< meta common.table.columns.description >}} |
+|---|---|---|
+| [**`git add`**](https://git-scm.com/docs/git-add) |  | **{{< meta git.basic.git_add.desc >}}** |
+|  | `git add file.txt` | {{< meta git.basic.git_add.ex1 >}} |
+|  | `git add .` | {{< meta git.basic.git_add.ex2 >}} |
+|  | `git add -p` | {{< meta git.basic.git_add.ex3 >}} |
+| [**`git clone`**](https://git-scm.com/docs/git-clone) |  | **{{< meta git.basic.git_clone.desc >}}** |
+|  | `git clone -b branch_name URL` | {{< meta git.basic.git_clone.ex1 >}} |
+|  | `git clone --depth 1 URL` | {{< meta git.basic.git_clone.ex2 >}} |
+| [**`git commit`**](https://git-scm.com/docs/git-commit) |  | **{{< meta git.basic.git_commit.desc >}}** |
+|  | `git commit -m "Initial commit"` | {{< meta git.basic.git_commit.ex1 >}} |
+|  | `git commit -a -m "Fix bugs"` | {{< meta git.basic.git_commit.ex2 >}} |
+|  | `git commit --amend` | {{< meta git.basic.git_commit.ex3 >}} |
+|  | `git commit --fixup abc1234` | {{< meta git.basic.git_commit.ex4 >}} |
+| [**`git config`**](https://git-scm.com/docs/git-config) |  | **{{< meta git.basic.git_config.desc >}}** |
+|  | `git config --global user.name "Name"` | {{< meta git.basic.git_config.ex1 >}} |
+|  | `git config --global user.email "email@example.com"` | {{< meta git.basic.git_config.ex2 >}} |
+|  | `git config --list` | {{< meta git.basic.git_config.ex3 >}} |
+| [**`git diff`**](https://git-scm.com/docs/git-diff) |  | **{{< meta git.basic.git_diff.desc >}}** |
+|  | `git diff HEAD` | {{< meta git.basic.git_diff.ex1 >}} |
+|  | `git diff --staged` | {{< meta git.basic.git_diff.ex2 >}} |
+|  | `git diff --word-diff HEAD~1` | {{< meta git.basic.git_diff.ex3 >}} |
+| [**`git grep`**](https://git-scm.com/docs/git-grep) |  | **{{< meta git.basic.git_grep.desc >}}** |
+|  | `git grep "functionName"` | {{< meta git.basic.git_grep.ex1 >}} |
+|  | `git grep -n "TODO"` | {{< meta git.basic.git_grep.ex2 >}} |
+|  | `git grep -i "login"` | {{< meta git.basic.git_grep.ex3 >}} |
+| [**`git init`**](https://git-scm.com/docs/git-init) |  | **{{< meta git.basic.git_init.desc >}}** |
+|  | `git init my-project` | {{< meta git.basic.git_init.ex1 >}} |
+|  | `git init --bare` | {{< meta git.basic.git_init.ex2 >}} |
+| [**`git log`**](https://git-scm.com/docs/git-log) |  | **{{< meta git.basic.git_log.desc >}}** |
+|  | `git log --oneline` | {{< meta git.basic.git_log.ex1 >}} |
+|  | `git log --graph --all` | {{< meta git.basic.git_log.ex2 >}} |
+|  | `git log -p --stat` | {{< meta git.basic.git_log.ex3 >}} |
+| [**`git reset`**](https://git-scm.com/docs/git-reset) |  | **{{< meta git.basic.git_reset.desc >}}** |
+|  | `git reset HEAD file.txt` | {{< meta git.basic.git_reset.ex1 >}} |
+|  | `git reset --hard HEAD~1` | {{< meta git.basic.git_reset.ex2 >}} |
+|  | `git reset --soft HEAD~1` | {{< meta git.basic.git_reset.ex3 >}} |
+|  | `git reset --mixed HEAD~1` | {{< meta git.basic.git_reset.ex4 >}} |
+| [**`git show`**](https://git-scm.com/docs/git-show) |  | **{{< meta git.basic.git_show.desc >}}** |
+|  | `git show <commit_hash>` | {{< meta git.basic.git_show.ex1 >}} |
+|  | `git show HEAD~1` | {{< meta git.basic.git_show.ex2 >}} |
+|  | `git show --stat` | {{< meta git.basic.git_show.ex3 >}} |
+| [**`git status`**](https://git-scm.com/docs/git-status) |  | **{{< meta git.basic.git_status.desc >}}** |
+|  | `git status -s` | {{< meta git.basic.git_status.ex1 >}} |
+|  | `git status -b` | {{< meta git.basic.git_status.ex2 >}} |
+
+## {{< meta git.branching_merging._root.title >}}
+
+| {{< meta common.table.columns.command >}} | {{< meta common.table.columns.example >}} | {{< meta common.table.columns.description >}} |
+|---|---|---|
+| [**`git branch`**](https://git-scm.com/docs/git-branch) |  | **{{< meta git.branching_merging.git_branch.desc >}}** |
+|  | `git branch new-feature` | {{< meta git.branching_merging.git_branch.ex1 >}} |
+|  | `git branch -d old-feature` | {{< meta git.branching_merging.git_branch.ex2 >}} |
+| [**`git checkout`**](https://git-scm.com/docs/git-checkout) |  | **{{< meta git.branching_merging.git_checkout.desc >}}** |
+|  | `git checkout main` | {{< meta git.branching_merging.git_checkout.ex1 >}} |
+|  | `git checkout -b new-branch` | {{< meta git.branching_merging.git_checkout.ex2 >}} |
+| [**`git switch`**](https://git-scm.com/docs/git-switch) |  | **{{< meta git.branching_merging.git_switch.desc >}}** |
+|  | `git switch main` | {{< meta git.branching_merging.git_switch.ex1 >}} |
+|  | `git switch -c feature-x` | {{< meta git.branching_merging.git_switch.ex2 >}} |
+|  | `git switch new-feature` | {{< meta git.branching_merging.git_switch.ex3 >}} |
+| [**`git merge`**](https://git-scm.com/docs/git-merge) |  | **{{< meta git.branching_merging.git_merge.desc >}}** |
+|  | `git merge new-feature` | {{< meta git.branching_merging.git_merge.ex1 >}} |
+|  | `git merge --no-ff new-feature` | {{< meta git.branching_merging.git_merge.ex2 >}} |
+|  | `git merge --abort` | {{< meta git.branching_merging.git_merge.ex3 >}} |
+| [**`git rebase`**](https://git-scm.com/docs/git-rebase) |  | **{{< meta git.branching_merging.git_rebase.desc >}}** |
+|  | `git rebase main` | {{< meta git.branching_merging.git_rebase.ex1 >}} |
+|  | `git rebase -i HEAD~3` | {{< meta git.branching_merging.git_rebase.ex2 >}} |
+|  | `git rebase --abort` | {{< meta git.branching_merging.git_rebase.ex3 >}} |
+|  | `git rebase -i --autosquash HEAD~5` | {{< meta git.branching_merging.git_rebase.ex4 >}} |
+| [**`git cherry-pick`**](https://git-scm.com/docs/git-cherry-pick) |  | **{{< meta git.branching_merging.git_cherry_pick.desc >}}** |
+|  | `git cherry-pick <hash>` | {{< meta git.branching_merging.git_cherry_pick.ex1 >}} |
+|  | `git cherry-pick --continue` | {{< meta git.branching_merging.git_cherry_pick.ex2 >}} |
+|  | `git cherry-pick A^..B` | {{< meta git.branching_merging.git_cherry_pick.ex3 >}} |
+
+## {{< meta git.remote._root.title >}}
+
+| {{< meta common.table.columns.command >}} | {{< meta common.table.columns.example >}} | {{< meta common.table.columns.description >}} |
+|---|---|---|
+| [**`git remote`**](https://git-scm.com/docs/git-remote) |  | **{{< meta git.remote.git_remote.desc >}}** |
+|  | `git remote -v` | {{< meta git.remote.git_remote.ex1 >}} |
+|  | `git remote add origin URL` | {{< meta git.remote.git_remote.ex2 >}} |
+| [**`git pull`**](https://git-scm.com/docs/git-pull) |  | **{{< meta git.remote.git_pull.desc >}}** |
+|  | `git pull origin main` | {{< meta git.remote.git_pull.ex1 >}} |
+|  | `git pull --rebase origin main` | {{< meta git.remote.git_pull.ex2 >}} |
+| [**`git push`**](https://git-scm.com/docs/git-push) |  | **{{< meta git.remote.git_push.desc >}}** |
+|  | `git push origin main` | {{< meta git.remote.git_push.ex1 >}} |
+| [**`git fetch`**](https://git-scm.com/docs/git-fetch) |  | **{{< meta git.remote.git_fetch.desc >}}** |
+|  | `git fetch origin` | {{< meta git.remote.git_fetch.ex1 >}} |
+|  | `git fetch origin main` | {{< meta git.remote.git_fetch.ex2 >}} |
+|  | `git fetch --all` | {{< meta git.remote.git_fetch.ex3 >}} |
+|  | `git fetch --prune` | {{< meta git.remote.git_fetch.ex4 >}} |
+|  | `git fetch --dry-run` | {{< meta git.remote.git_fetch.ex5 >}} |
+|  | `git fetch origin +main` | {{< meta git.remote.git_fetch.ex6 >}} |
+
+## {{< meta git.stash_cleanup._root.title >}}
+
+| {{< meta common.table.columns.command >}} | {{< meta common.table.columns.example >}} | {{< meta common.table.columns.description >}} |
+|---|---|---|
+| [**`git stash`**](https://git-scm.com/docs/git-stash) |  | **{{< meta git.stash_cleanup.git_stash.desc >}}** |
+|  | `git stash` | {{< meta git.stash_cleanup.git_stash.ex1 >}} |
+|  | `git stash apply` | {{< meta git.stash_cleanup.git_stash.ex2 >}} |
+|  | `git stash pop` | {{< meta git.stash_cleanup.git_stash.ex3 >}} |
+|  | `git stash list` | {{< meta git.stash_cleanup.git_stash.ex4 >}} |
+|  | `git stash branch feature-fix` | {{< meta git.stash_cleanup.git_stash.ex5 >}} |
+| [**`git clean`**](https://git-scm.com/docs/git-clean) |  | **{{< meta git.stash_cleanup.git_clean.desc >}}** |
+|  | `git clean -f` | {{< meta git.stash_cleanup.git_clean.ex1 >}} |
+|  | `git clean -fd` | {{< meta git.stash_cleanup.git_clean.ex2 >}} |
+|  | `git clean -n` | {{< meta git.stash_cleanup.git_clean.ex3 >}} |
+
+## {{< meta git.tags._root.title >}}
+
+| {{< meta common.table.columns.command >}} | {{< meta common.table.columns.example >}} | {{< meta common.table.columns.description >}} |
+|---|---|---|
+| [**`git tag`**](https://git-scm.com/docs/git-tag) |  | **{{< meta git.tags.git_tag.desc >}}** |
+|  | `git tag -a v1.0 -m "Version 1.0"` | {{< meta git.tags.git_tag.ex1 >}} |
+|  | `git tag -d v1.0` | {{< meta git.tags.git_tag.ex2 >}} |
+| [**`git push`**](https://git-scm.com/docs/git-push) |  | **{{< meta git.tags.git_push.desc >}}** |
+|  | `git push origin --tags` | {{< meta git.tags.git_push.ex1 >}} |
+|  | `git push origin v1.0` | {{< meta git.tags.git_push.ex2 >}} |
+|  | `git push origin :refs/tags/v1.0` | {{< meta git.tags.git_push.ex3 >}} |
+
+## {{< meta git.conflicts._root.title >}}
+
+| {{< meta common.table.columns.command >}} | {{< meta common.table.columns.example >}} | {{< meta common.table.columns.description >}} |
+|---|---|---|
+| [**`git mergetool`**](https://git-scm.com/docs/git-mergetool) |  | **{{< meta git.conflicts.git_mergetool.desc >}}** |
+|  | `git mergetool --tool=meld` | {{< meta git.conflicts.git_mergetool.ex1 >}} |
+| [**`git rerere`**](https://git-scm.com/docs/git-rerere) |  | **{{< meta git.conflicts.git_rerere.desc >}}** |
+|  | `git config --global rerere.enabled true` | {{< meta git.conflicts.git_rerere.ex1 >}} |
+|  | `git rerere status` | {{< meta git.conflicts.git_rerere.ex2 >}} |
+|  | `git rerere diff` | {{< meta git.conflicts.git_rerere.ex3 >}} |
+
+## {{< meta git.advanced._root.title >}}
+
+| {{< meta common.table.columns.command >}} | {{< meta common.table.columns.example >}} | {{< meta common.table.columns.description >}} |
+|---|---|---|
+| [**`git bisect`**](https://git-scm.com/docs/git-bisect) |  | **{{< meta git.advanced.git_bisect.desc >}}** |
+|  | `git bisect start` | {{< meta git.advanced.git_bisect.ex1 >}} |
+|  | `git bisect bad` | {{< meta git.advanced.git_bisect.ex2 >}} |
+|  | `git bisect good <commit>` | {{< meta git.advanced.git_bisect.ex3 >}} |
+| [**`git blame`**](https://git-scm.com/docs/git-blame) |  | **{{< meta git.advanced.git_blame.desc >}}** |
+|  | `git blame file.txt` | {{< meta git.advanced.git_blame.ex1 >}} |
+|  | `git blame -L 10,20 file.txt` | {{< meta git.advanced.git_blame.ex2 >}} |
+|  | `git blame --show-email file.txt` | {{< meta git.advanced.git_blame.ex3 >}} |
+| [**`git reflog`**](https://git-scm.com/docs/git-reflog) |  | **{{< meta git.advanced.git_reflog.desc >}}** |
+|  | `git reflog show main@{1.week.ago}` | {{< meta git.advanced.git_reflog.ex1 >}} |
+|  | `git reflog expire --expire=30.days --dry-run` | {{< meta git.advanced.git_reflog.ex2 >}} |
+|  | `git reflog delete HEAD@{2}` | {{< meta git.advanced.git_reflog.ex3 >}} |
+| [**`git submodule`**](https://git-scm.com/docs/git-submodule) |  | **{{< meta git.advanced.git_submodule.desc >}}** |
+|  | `git submodule add URL path` | {{< meta git.advanced.git_submodule.ex1 >}} |
+|  | `git submodule update --init` | {{< meta git.advanced.git_submodule.ex2 >}} |
+|  | `git submodule foreach git pull` | {{< meta git.advanced.git_submodule.ex3 >}} |
+|  | `git submodule sync --recursive` | {{< meta git.advanced.git_submodule.ex4 >}} |
+|  | `git submodule update --remote --merge` | {{< meta git.advanced.git_submodule.ex5 >}} |
+| [**`git archive`**](https://git-scm.com/docs/git-archive) |  | **{{< meta git.advanced.git_archive.desc >}}** |
+|  | `git archive --format=zip HEAD > archive.zip` | {{< meta git.advanced.git_archive.ex1 >}} |
+|  | `git archive -o release.tar.gz HEAD` | {{< meta git.advanced.git_archive.ex2 >}} |
+|  | `git archive --format=tar --prefix=project/ HEAD \| gzip > project.tar.gz` | {{< meta git.advanced.git_archive.ex3 >}} |
+| [**`git gc`**](https://git-scm.com/docs/git-gc) |  | **{{< meta git.advanced.git_gc.desc >}}** |
+|  | `git gc --aggressive` | {{< meta git.advanced.git_gc.ex1 >}} |
+|  | `git gc --prune=now` | {{< meta git.advanced.git_gc.ex2 >}} |
+| [**`git shortlog`**](https://git-scm.com/docs/git-shortlog) |  | **{{< meta git.advanced.git_shortlog.desc >}}** |
+|  | `git shortlog -e` | {{< meta git.advanced.git_shortlog.ex1 >}} |
+|  | `git shortlog -s -n` | {{< meta git.advanced.git_shortlog.ex2 >}} |
+|  | `git shortlog -sne` | {{< meta git.advanced.git_shortlog.ex3 >}} |
+| [**`git revert`**](https://git-scm.com/docs/git-revert) |  | **{{< meta git.advanced.git_revert.desc >}}** |
+|  | `git revert HEAD` | {{< meta git.advanced.git_revert.ex1 >}} |
+|  | `git revert <commit_hash>` | {{< meta git.advanced.git_revert.ex2 >}} |
+
+## {{< meta git.gh._root.title >}}
+
+> {{< meta git.gh._root.note >}}
+
+| {{< meta common.table.columns.command >}} | {{< meta common.table.columns.example >}} | {{< meta common.table.columns.description >}} |
+|---|---|---|
+| [**`gh auth login`**](https://cli.github.com/manual/gh_auth_login) |  | **{{< meta git.gh.gh_auth_login.desc >}}** |
+|  | `gh auth login --with-token < mytoken.txt` | {{< meta git.gh.gh_auth_login.ex1 >}} |
+|  | `gh auth login --hostname enterprise.internal` | {{< meta git.gh.gh_auth_login.ex2 >}} |
+| [**`gh repo clone`**](https://cli.github.com/manual/gh_repo_clone) |  | **{{< meta git.gh.gh_repo_clone.desc >}}** |
+|  | `gh repo clone user/repo` | {{< meta git.gh.gh_repo_clone.ex1 >}} |
+|  | `gh repo clone cli/cli -- --depth=1` | {{< meta git.gh.gh_repo_clone.ex2 >}} |
+|  | `gh repo clone cli/cli workspace/cli` | {{< meta git.gh.gh_repo_clone.ex3 >}} |
+| [**`gh issue list`**](https://cli.github.com/manual/gh_issue_list) |  | **{{< meta git.gh.gh_issue_list.desc >}}** |
+|  | `gh issue list --assignee "@me"` | {{< meta git.gh.gh_issue_list.ex1 >}} |
+|  | `gh issue list --state all` | {{< meta git.gh.gh_issue_list.ex2 >}} |
+|  | `gh issue list --search "error no:assignee sort:created-asc"` | {{< meta git.gh.gh_issue_list.ex3 >}} |
+| [**`gh pr create`**](https://cli.github.com/manual/gh_pr_create) |  | **{{< meta git.gh.gh_pr_create.desc >}}** |
+|  | `gh pr create --title "..."` | {{< meta git.gh.gh_pr_create.ex1 >}} |
+|  | `gh pr create --project "Roadmap"` | {{< meta git.gh.gh_pr_create.ex2 >}} |
+|  | `gh pr create --base develop --head monalisa:feature` | {{< meta git.gh.gh_pr_create.ex3 >}} |
+| [**`gh repo create`**](https://cli.github.com/manual/gh_repo_create) |  | **{{< meta git.gh.gh_repo_create.desc >}}** |
+|  | `gh repo create my-project` | {{< meta git.gh.gh_repo_create.ex1 >}} |
+|  | `gh repo create my-project --public --clone` | {{< meta git.gh.gh_repo_create.ex2 >}} |
+|  | `gh repo create my-project --private --source=. --remote=upstream` | {{< meta git.gh.gh_repo_create.ex3 >}} |
+
+## {{< meta git.aliases._root.title >}}
+
+{{< meta git.aliases._root.intro >}}
+
+{{< include "../assets/snippets/git/git_aliases.sh" >}}
+
+## {{< meta git.pro._root.title >}}
+
+| {{< meta common.table.columns.command >}} | {{< meta common.table.columns.example >}} | {{< meta common.table.columns.description >}} |
+|---|---|---|
+| [**`git filter-repo`**](https://github.com/newren/git-filter-repo) |  | **{{< meta git.pro.git_filter_repo.desc >}}** |
+|  | `git filter-repo --path secret.txt --invert-paths` | {{< meta git.pro.git_filter_repo.ex1 >}} |
+|  | `git filter-repo --replace-text replacements.txt` | {{< meta git.pro.git_filter_repo.ex2 >}} |
+|  | `git filter-repo --subdirectory-filter src` | {{< meta git.pro.git_filter_repo.ex3 >}} |
+| [**`git worktree`**](https://git-scm.com/docs/git-worktree) |  | **{{< meta git.pro.git_worktree.desc >}}** |
+|  | `git worktree add ../feature feature-branch` | {{< meta git.pro.git_worktree.ex1 >}} |
+|  | `git worktree list` | {{< meta git.pro.git_worktree.ex2 >}} |
+|  | `git worktree remove ../feature` | {{< meta git.pro.git_worktree.ex3 >}} |
+| [**`git replace`**](https://git-scm.com/docs/git-replace) |  | **{{< meta git.pro.git_replace.desc >}}** |
+|  | `git replace <old_commit> <new_commit>` | {{< meta git.pro.git_replace.ex1 >}} |
+|  | `git replace --list` | {{< meta git.pro.git_replace.ex2 >}} |
+|  | `git replace -d <replace_ref>` | {{< meta git.pro.git_replace.ex3 >}} |
+| [**`git stash`**](https://git-scm.com/docs/git-stash) |  | **{{< meta git.pro.git_stash_adv.desc >}}** |
+|  | `git stash push -p` | {{< meta git.pro.git_stash_adv.ex1 >}} |
+|  | `git stash push -m "WIP selective stash"` | {{< meta git.pro.git_stash_adv.ex2 >}} |
+|  | `git stash apply stash@{2}` | {{< meta git.pro.git_stash_adv.ex3 >}} |
+| [**`git rebase`**](https://git-scm.com/docs/git-rebase) |  | **{{< meta git.pro.git_rebase_adv.desc >}}** |
+|  | `git rebase --interactive --autosquash` | {{< meta git.pro.git_rebase_adv.ex1 >}} |
+|  | `git rebase -i --autosquash HEAD~10` | {{< meta git.pro.git_rebase_adv.ex2 >}} |
+|  | `git commit --fixup <commit>` | {{< meta git.pro.git_rebase_adv.ex3 >}} |
+|  | `git commit --squash <commit>` | {{< meta git.pro.git_rebase_adv.ex4 >}} |
+| [**`git bisect`**](https://git-scm.com/docs/git-bisect) |  | **{{< meta git.pro.git_bisect_pro.desc >}}** |
+|  | `git bisect run` | {{< meta git.pro.git_bisect_pro.ex1 >}} |
+|  | `git bisect start; git bisect bad; git bisect good v1.0; git bisect run ./test.sh` | {{< meta git.pro.git_bisect_pro.ex2 >}} |
+|  | `git bisect visualize` | {{< meta git.pro.git_bisect_pro.ex3 >}} |
+|  | `git bisect reset` | {{< meta git.pro.git_bisect_pro.ex4 >}} |
+| [**`git commit`**](https://git-scm.com/docs/git-commit) |  | **{{< meta git.pro.git_commit_pro.desc >}}** |
+|  | `git commit --gpg-sign` | {{< meta git.pro.git_commit_pro.ex1 >}} |
+|  | `git commit -S -m "Signed commit"` | {{< meta git.pro.git_commit_pro.ex2 >}} |
+|  | `git config --global user.signingkey <key_id>` | {{< meta git.pro.git_commit_pro.ex3 >}} |
+|  | `git log --show-signature` | {{< meta git.pro.git_commit_pro.ex4 >}} |
+| [**`git reflog`**](https://git-scm.com/docs/git-reflog) |  | **{{< meta git.pro.git_reflog_pro.desc >}}** |
+|  | `git reset --hard HEAD@{3}` | {{< meta git.pro.git_reflog_pro.ex1 >}} |
+|  | `git reflog expire --expire=now --all` | {{< meta git.pro.git_reflog_pro.ex2 >}} |
+
+## {{< meta git.pro_tips._root.title >}}
+
+| {{< meta git.pro_tips.columns.topic >}} | {{< meta git.pro_tips.columns.commands_example >}} | {{< meta git.pro_tips.columns.explanation_tips >}} |
+|---|---|---|
+| {{< meta git.pro_tips.aggressive_cleanup.topic >}} | `git gc --aggressive --prune=now` | {{< meta git.pro_tips.aggressive_cleanup.desc >}} |
+| {{< meta git.pro_tips.parallel_worktrees.topic >}} | `git worktree add ../feature-branch feature` | {{< meta git.pro_tips.parallel_worktrees.desc >}} |
+| {{< meta git.pro_tips.linear_history.topic >}} | `git rebase -i --autosquash` | {{< meta git.pro_tips.linear_history.desc >}} |
+| {{< meta git.pro_tips.secure_commits.topic >}} | `git commit -S` | {{< meta git.pro_tips.secure_commits.desc >}} |
+| {{< meta git.pro_tips.automated_bisect.topic >}} | `git bisect run ./test-script.sh` | {{< meta git.pro_tips.automated_bisect.desc >}} |
+| {{< meta git.pro_tips.conflict_cache.topic >}} | `git config --global rerere.enabled true` | {{< meta git.pro_tips.conflict_cache.desc >}} |
+| {{< meta git.pro_tips.shared_aliases_hooks.topic >}} |  | {{< meta git.pro_tips.shared_aliases_hooks.desc >}} |
+
+## {{< meta git.resources._root.title >}}
+
+### {{< meta git.resources.tip.title >}}
+
+{{< meta git.resources.tip.desc >}}
+
+```bash
+git help <command>
+git status
+```
+
+### {{< meta git.resources.links.title >}}
+
+{{< meta git.resources.links.official_docs >}}  
+[https://git-scm.com/docs](https://git-scm.com/docs)
+
+{{< meta git.resources.links.learn_branching >}}  
+[https://learngitbranching.js.org](https://learngitbranching.js.org)
+
+{{< meta git.resources.links.pro_git_book >}}  
+[https://git-scm.com/book](https://git-scm.com/book)
+
+{{< meta git.resources.links.official_cheatsheet >}}  
+[https://education.github.com/git-cheat-sheet-education.pdf](https://education.github.com/git-cheat-sheet-education.pdf)

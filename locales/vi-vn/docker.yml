@@ -2,7 +2,7 @@ docker:
   meta:
     _root:
       title: "🐳 Docker"
-      desc: "📘 Docker là một nền tảng để chạy ứng dụng trong các container cách ly. Bảng tóm tắt này chứa các lệnh làm việc với image, container, network, volume, cũng như Docker Compose và Swarm."
+      desc: "Docker là một nền tảng để chạy ứng dụng trong các container cách ly. Bảng tóm tắt này chứa các lệnh làm việc với image, container, network, volume, cũng như Docker Compose và Swarm."
 
   basic:
     _root:

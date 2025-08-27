@@ -174,24 +174,52 @@
   margin: .25rem 0 1rem 0;
 }
 
-.hero-bullets {
-  display: grid;
-  gap: .35rem;
+/* ===== Hero bullets (семантика + управляемый отступ) ===== */
+
+/* Контейнер секции */
+.hero-bullets{
   margin: .75rem auto 1.25rem;
   max-width: 820px;
   text-align: left;
 }
-.hero-bullets p {
-  margin-bottom: 0;
+
+/* Сам список внутри блока */
+.hero-bullets ul{
+  /* настраиваемые параметры */
+  --bullet-size: .55rem;
+  --bullet-gap:  .75rem;
+  --bullet-color: var(--quarto-accent-color, #0d6efd);
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: grid;     /* вертикальные интервалы между пунктами */
+  row-gap: .35rem;
 }
 
-.bullet { display: flex; align-items: center; gap: .5rem; }
-.bullet-dot {
-  width: .5rem; height: .5rem; border-radius: 50%;
-  background: var(--quarto-accent-color, #0d6efd);
-  flex: 0 0 .5rem;
-  display: inline-block;
+/* Строка списка: маркер + текст */
+.hero-bullets li{
+  display: flex;
+  align-items: flex-start;
+  gap: var(--bullet-gap);  /* <<< расстояние между точкой и текстом */
+  min-width: 0;
+  margin: 0;
 }
+
+/* Кастомная «точка» */
+.hero-bullets li::before{
+  content: "";
+  flex: 0 0 var(--bullet-size);
+  width:  var(--bullet-size);
+  height: var(--bullet-size);
+  border-radius: 9999px;
+  background: var(--bullet-color);
+  margin-top: .35em;       /* лёгкая подстройка по базовой линии */
+}
+
+/* Если shortcode рендерит <p> внутри <li> — убираем внешние отступы */
+.hero-bullets li p{ margin: 0; }
 
 .hero-cta {
   display: flex;

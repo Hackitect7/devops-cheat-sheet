@@ -1,5 +1,326 @@
 git:
   meta:
     _root:
-      title: "🌿 Git"
-      desc: "Everyday workflows, branching, history, stashing, and collaboration basics."
+      title: "🐙 Git và GitHub CLI"
+      desc: "Lệnh Git cơ bản và nâng cao cho quản lý phiên bản, nhánh, repo từ xa, stash, tag và GitHub CLI."
+
+  basic:
+    _root:
+      title: "🔹 Lệnh cơ bản"
+    git_add:
+      desc: "Thêm tệp vào khu vực staging"
+      ex1: "Đưa một tệp cụ thể vào staging cho commit tiếp theo"
+      ex2: "Đưa tất cả thay đổi trong thư mục hiện tại và bên dưới vào staging"
+      ex3: "Chọn tương tác các phần của tệp để đưa vào staging (hữu ích cho commit một phần)"
+    git_clone:
+      desc: "Nhân bản một repository vào thư mục mới"
+      ex1: "Clone chỉ nhánh được chỉ định (thay vì mặc định)"
+      ex2: "Clone chỉ commit mới nhất (shallow copy) để tiết kiệm thời gian và dung lượng"
+    git_commit:
+      desc: "Ghi lại thay đổi vào repository"
+      ex1: "Commit với thông điệp mà không cần mở editor"
+      ex2: "Stage và commit tất cả tệp đã chỉnh sửa với thông điệp"
+      ex3: "Cập nhật commit cuối (đổi thông điệp hoặc thêm thay đổi)"
+      ex4: "Tạo commit fixup để squash tự động sau này khi rebase tương tác"
+    git_config:
+      desc: "Lấy và đặt tùy chọn repo hoặc toàn cục"
+      ex1: "Đặt username Git toàn cục"
+      ex2: "Đặt email Git toàn cục"
+      ex3: "Liệt kê tất cả cài đặt Git (tên, email, editor, v.v.)"
+    git_diff:
+      desc: "Hiển thị thay đổi giữa commit, commit và working tree, v.v."
+      ex1: "Xem thay đổi kể từ commit cuối (chưa stage)"
+      ex2: "Xem thay đổi sẽ có trong commit tiếp theo"
+      ex3: "Hiển thị thay đổi ở mức từ"
+    git_grep:
+      desc: "Tìm kiếm bên trong tệp repository"
+      ex1: "Tìm tất cả chỗ xuất hiện của `functionName` trong toàn bộ dự án"
+      ex2: "Tìm dòng chứa `TODO` và hiển thị số dòng (hữu ích cho ghi chú code)"
+      ex3: "Tìm từ `login` không phân biệt hoa thường"
+    git_init:
+      desc: "Tạo repo Git trống hoặc khởi tạo lại repo hiện có"
+      ex1: "Khởi tạo repo mới trong thư mục my-project"
+      ex2: "Khởi tạo repo bare"
+    git_log:
+      desc: "Hiển thị commit log"
+      ex1: "Hiển thị lịch sử commit ở dạng ngắn gọn (một dòng)"
+      ex2: "Hiển thị tất cả nhánh trong biểu đồ trực quan"
+      ex3: "Hiển thị patch và thống kê thay đổi file cho commit"
+    git_reset:
+      desc: "Bỏ stage file, giữ thay đổi trong working directory"
+      ex1: "Xóa tệp khỏi staging (giữ chỉnh sửa)"
+      ex2: "Quay lại một commit và xóa tất cả thay đổi (không thể đảo ngược!)"
+      ex3: "Hoàn tác commit cuối nhưng giữ thay đổi để commit lại"
+      ex4: "Hoàn tác commit nhưng giữ thay đổi chưa stage trong working directory"
+    git_show:
+      desc: "Hiển thị nhiều loại đối tượng"
+      ex1: "Hiển thị thay đổi và thông điệp của commit cụ thể"
+      ex2: "Hiển thị commit trước commit hiện tại"
+      ex3: "Hiển thị tóm tắt thay đổi file cho commit mới nhất"
+    git_status:
+      desc: "Hiển thị trạng thái working tree"
+      ex1: "Hiển thị trạng thái ở dạng ngắn gọn"
+      ex2: "Hiển thị nhánh hiện tại và trạng thái file"
+
+  branching_merging:
+    _root:
+      title: "🌿 Nhánh và Hợp nhất"
+    git_branch:
+      desc: "Tạo, liệt kê hoặc xóa nhánh"
+      ex1: "Tạo nhánh mới tên `new-feature`"
+      ex2: "Xóa nhánh local tên `old-feature`"
+    git_checkout:
+      desc: "Chuyển nhánh hoặc khôi phục file từ commit khác"
+      ex1: "Chuyển sang nhánh `main`"
+      ex2: "Tạo và chuyển sang nhánh mới `new-branch`"
+    git_switch:
+      desc: "Chuyển nhánh (thay thế đơn giản cho `checkout`)"
+      ex1: "Chuyển sang nhánh `main`"
+      ex2: "Tạo và chuyển sang nhánh mới `feature-x`"
+      ex3: "Chuyển sang nhánh hiện có `new-feature`"
+    git_merge:
+      desc: "Kết hợp thay đổi từ nhánh khác vào nhánh hiện tại"
+      ex1: "Merge nhánh `new-feature` vào nhánh hiện tại"
+      ex2: "Luôn tạo merge commit (ngay cả khi có thể fast-forward)"
+      ex3: "Hủy merge và hoàn tác thay đổi nếu có xung đột"
+    git_rebase:
+      desc: "Di chuyển hoặc áp dụng lại commit lên commit gốc mới"
+      ex1: "Reapply commit của nhánh bạn lên trên nhánh `main`"
+      ex2: "Chỉnh sửa tương tác 3 commit cuối"
+      ex3: "Dừng và hoàn tác rebase đang chạy"
+      ex4: "Tự động squash commit được đánh dấu fixup hoặc squash trong rebase tương tác"
+    git_cherry_pick:
+      desc: "Áp dụng commit cụ thể từ nhánh khác"
+      ex1: "Áp dụng commit cụ thể (bằng hash) vào nhánh hiện tại"
+      ex2: "Tiếp tục cherry-pick sau khi giải quyết xung đột"
+      ex3: "Áp dụng dải commit từ `A` (không bao gồm) đến `B` (bao gồm)"
+
+  remote:
+    _root:
+      title: "📡 Repository từ xa"
+    git_remote:
+      desc: "Quản lý liên kết tới repository từ xa (như GitHub)"
+      ex1: "Hiển thị tên remote và URL"
+      ex2: "Thêm repository từ xa tên `origin`"
+    git_pull:
+      desc: "Tải và tự động merge thay đổi từ nhánh remote"
+      ex1: "Fetch và merge thay đổi từ remote `main` vào nhánh hiện tại"
+      ex2: "Fetch và rebase nhánh hiện tại trên remote thay vì merge"
+    git_push:
+      desc: "Đẩy thay đổi local lên repository từ xa"
+      ex1: "Push nhánh `main` local lên remote `origin`"
+    git_fetch:
+      desc: "Tải thay đổi từ remote mà không merge"
+      ex1: "Fetch tất cả cập nhật từ remote `origin` nhưng chưa áp dụng"
+      ex2: "Fetch chỉ nhánh `main` từ remote"
+      ex3: "Fetch cập nhật từ tất cả remote"
+      ex4: "Dọn nhánh bị xóa — xóa tham chiếu local đến nhánh đã bị xóa trên remote"
+      ex5: "Xem trước nội dung sẽ fetch mà không tải về"
+      ex6: "Cập nhật mạnh mẽ nhánh tracking local (`origin/main`), ghi đè xung đột"
+
+  stash_cleanup:
+    _root:
+      title: "📦 Stash và Dọn dẹp"
+    git_stash:
+      desc: "Lưu tạm thời thay đổi chưa commit (work in progress)"
+      ex1: "Lưu tệp đã sửa và staged, sau đó revert working directory về commit cuối"
+      ex2: "Áp dụng lại stash mới nhất (stash vẫn được giữ)"
+      ex3: "Áp dụng và xóa stash mới nhất"
+      ex4: "Hiển thị danh sách tất cả stash"
+      ex5: "Tạo nhánh mới và áp dụng stash mới nhất vào đó"
+    git_clean:
+      desc: "Xóa vĩnh viễn tệp chưa được track (không trong Git)"
+      ex1: "Xóa tệp chưa track trong thư mục hiện tại"
+      ex2: "Xóa tệp và thư mục chưa track"
+      ex3: "Xem trước cái sẽ bị xóa (dry run an toàn)"
+
+  tags:
+    _root:
+      title: "🏷️ Tag"
+    git_tag:
+      desc: "Tạo, liệt kê hoặc xóa tag để đánh dấu mốc cụ thể (như phát hành)"
+      ex1: "Tạo annotated tag tên `v1.0` với thông điệp (lưu dưới dạng đối tượng Git đầy đủ, thích hợp cho phát hành)"
+      ex2: "Xóa tag local tên `v1.0` (không ảnh hưởng remote)"
+    git_push:
+      desc: "Đẩy commit, nhánh và tag từ local lên repository từ xa"
+      ex1: "Push tất cả tag local lên remote (hữu ích sau khi gắn nhiều tag)"
+      ex2: "Push một tag cụ thể (vd: `v1.0`) lên remote"
+      ex3: "Xóa tag remote `v1.0` (lưu ý cú pháp dấu hai chấm)"
+
+  conflicts:
+    _root:
+      title: "🛠️ Giải quyết xung đột"
+    git_mergetool:
+      desc: "Mở công cụ trực quan để giúp giải quyết xung đột merge"
+      ex1: "Dùng công cụ merge cụ thể (như Meld) để sửa xung đột"
+    git_rerere:
+      desc: "Để Git ghi nhớ cách bạn đã giải quyết xung đột trước đó"
+      ex1: "Bật tự động sử dụng lại cách giải quyết xung đột cũ"
+      ex2: "Hiển thị file có lưu cách giải quyết xung đột"
+      ex3: "Hiển thị thay đổi Git đã lưu cho lần dùng sau"
+
+  advanced:
+    _root:
+      title: "⚙️ Lệnh nâng cao"
+    git_bisect:
+      desc: "Dùng tìm kiếm nhị phân để tìm commit gây ra bug"
+      ex1: "Bắt đầu tìm kiếm nhị phân giữa commit tốt và commit lỗi để tìm bug"
+      ex2: "Đánh dấu commit hiện tại là \"bad\" (có bug)"
+      ex3: "Đánh dấu commit \"good\" (không có bug)"
+    git_blame:
+      desc: "Hiển thị ai là người chỉnh sửa cuối cùng mỗi dòng của tệp, với revision và tác giả"
+      ex1: "Hiển thị tác giả và commit cho từng dòng trong tệp"
+      ex2: "Hiển thị blame chỉ cho dòng 10 đến 20"
+      ex3: "Hiển thị email tác giả cùng với thay đổi"
+    git_reflog:
+      desc: "Xem và quản lý reflog của di chuyển nhánh và HEAD"
+      ex1: "Xem nhánh `main` trỏ tới đâu một tuần trước"
+      ex2: "Xem trước mục reflog cũ hơn 30 ngày có thể xóa (chưa thay đổi gì)"
+      ex3: "Xóa mục reflog cụ thể (cẩn thận vì có thể ảnh hưởng khôi phục)"
+    git_submodule:
+      desc: "Thêm, khởi tạo, cập nhật hoặc kiểm tra submodule (repo bên trong repo)"
+      ex1: "Thêm repo ngoài làm submodule vào đường dẫn chỉ định"
+      ex2: "Khởi tạo và tải tất cả submodule trong repo"
+      ex3: "Chạy `git pull` trong từng submodule để cập nhật commit mới nhất"
+      ex4: "Đồng bộ URL submodule sau khi thay đổi tệp `.gitmodules`"
+      ex5: "Cập nhật submodule lên commit mới nhất từ nhánh remote"
+    git_archive:
+      desc: "Tạo archive (zip, tar, v.v.) của file từ commit hoặc nhánh cụ thể"
+      ex1: "Tạo archive ZIP của file dự án tại HEAD"
+      ex2: "Tạo archive `.tar.gz` nén từ HEAD"
+      ex3: "Tạo archive `.tar.gz` nén của dự án hiện tại, chứa tất cả file bên trong thư mục `project/`"
+    git_gc:
+      desc: "Xóa file không cần thiết và tối ưu repo để tăng hiệu suất"
+      ex1: "Dọn dẹp và tối ưu toàn diện (có thể chậm nhưng hiệu quả)"
+      ex2: "Xóa ngay tất cả object không thể truy cập (nguy hiểm nếu không chắc chắn)"
+    git_shortlog:
+      desc: "Tóm tắt nhanh tác giả và commit của họ"
+      ex1: "Hiển thị danh sách tác giả với email (để phân tích đóng góp)"
+      ex2: "Hiển thị số commit của mỗi tác giả, sắp xếp theo số commit"
+      ex3: "Như trên nhưng kèm tên và email — hữu ích cho theo dõi chi tiết"
+    git_revert:
+      desc: "Tạo commit mới hoàn tác thay đổi từ commit trước đó mà không viết lại lịch sử"
+      ex1: "Hoàn tác commit cuối bằng cách tạo commit mới đảo ngược thay đổi"
+      ex2: "Hoàn tác commit cụ thể bằng hash, thêm commit mới đảo ngược"
+
+  gh:
+    _root:
+      title: "🐙 GitHub CLI"
+      note: "`gh` cho phép bạn quản lý GitHub từ terminal."
+    gh_auth_login:
+      desc: "Xác thực với máy chủ GitHub để cho phép lệnh CLI tương tác với tài khoản của bạn"
+      ex1: "Xác thực bằng personal access token được lưu trong tệp (`mytoken.txt`)"
+      ex2: "Xác thực vào máy chủ GitHub Enterprise (không phải github.com)"
+    gh_repo_clone:
+      desc: "Clone một repository GitHub về máy local"
+      ex1: "Clone repository repo thuộc sở hữu `user` vào thư mục tên `repo`"
+      ex2: "Clone repository nhưng chỉ tải commit mới nhất để nhanh và nhẹ hơn"
+      ex3: "Clone repository vào thư mục tùy chỉnh `workspace/cli`"
+    gh_issue_list:
+      desc: "Liệt kê issue trong repository GitHub, có thể lọc theo tiêu chí khác nhau"
+      ex1: "Liệt kê issue được gán cho bạn"
+      ex2: "Liệt kê issue bất kể trạng thái (open hoặc closed)"
+      ex3: "Liệt kê issue khớp với \"error\", chưa được gán, sắp xếp theo ngày tạo tăng dần"
+    gh_pr_create:
+      desc: "Tạo pull request trên GitHub qua CLI"
+      ex1: "Tạo pull request với tiêu đề cho trước"
+      ex2: "Liên kết pull request với một dự án GitHub tên \"Roadmap\""
+      ex3: "Tạo PR từ nhánh `feature` trong fork `monalisa` vào nhánh `develop`"
+    gh_repo_create:
+      desc: "Tạo repository GitHub mới từ CLI"
+      ex1: "Tạo repository mới tên `my-project` trên GitHub (sẽ có bước nhắc tương tác)"
+      ex2: "Tạo repository public và clone nó về local"
+      ex3: "Tạo repository private từ thư mục hiện tại và thêm remote tên `upstream`"
+
+  aliases:
+    _root:
+      title: "💡 Git Aliases (Phím tắt hữu ích)"
+      intro: "Thiết lập alias tiện lợi để tăng tốc các lệnh Git thường dùng:"
+
+  pro:
+    _root:
+      title: "🚀 Lệnh Git nâng cao cho chuyên nghiệp"
+    git_filter_repo:
+      desc: "Một công cụ mạnh mẽ và hiệu quả để viết lại lịch sử Git nhằm xóa hoặc chỉnh sửa file, tác giả hoặc đường dẫn; thay thế git filter-branch với tốc độ và độ an toàn cao hơn"
+      ex1: "Viết lại lịch sử repo hiệu quả để xóa file hoặc thư mục nhạy cảm mà không gặp vấn đề hiệu suất như `git filter-branch`. Dùng cẩn thận"
+      ex2: "Thay thế hàng loạt chuỗi hoặc mẫu trong toàn bộ lịch sử (ví dụ: loại bỏ thông tin xác thực)"
+      ex3: "Tách lịch sử thư mục con thành một repository mới, giữ nguyên metadata commit"
+    git_worktree:
+      desc: "Quản lý nhiều working directory liên kết tới một repository, cho phép làm việc song song trên nhiều nhánh mà không cần clone"
+      ex1: "Tạo working tree bổ sung gắn với cùng repository, cho phép checkout nhánh song song mà không clone"
+      ex2: "Liệt kê tất cả worktree đang hoạt động, đường dẫn và nhánh liên kết"
+      ex3: "Xóa worktree khi không cần nữa, dọn dẹp working directory an toàn"
+    git_replace:
+      desc: "Tạo tham chiếu tạm thời thay thế object hiện có, cho phép thao tác lịch sử local không phá hủy để kiểm thử"
+      ex1: "Tạm thời thay commit này bằng commit khác trong repo local, hữu ích cho kiểm thử hoặc vá lỗi mà không viết lại lịch sử"
+      ex2: "Hiển thị tất cả tham chiếu thay thế đang hoạt động"
+      ex3: "Xóa tham chiếu thay thế cụ thể để khôi phục hành vi"
+    git_stash_adv:
+      desc: "Lưu tạm thời thay đổi chưa commit vào stack, cho phép chuyển đổi ngữ cảnh mà không cần commit công việc chưa hoàn thành"
+      ex1: "Chọn tương tác các hunk thay đổi để stash, giúp kiểm soát chi tiết cái được lưu"
+      ex2: "Tạo stash với thông điệp tùy chỉnh để dễ nhận biết"
+      ex3: "Áp dụng stash cụ thể từ danh sách stash mà không xóa nó"
+    git_rebase_adv:
+      desc: "Áp dụng lại commit trên tip gốc khác, giúp giữ lịch sử dự án sạch sẽ, tuyến tính và chỉnh sửa lịch sử tương tác"
+      ex1: "Bắt đầu phiên rebase tương tác tự động sắp xếp và squash commit được đánh dấu fixup hoặc squash"
+      ex2: "Tự động sắp xếp và squash commit fixup/squash, làm sạch lịch sử trước khi push"
+      ex3: "Tạo commit fixup sẽ được autosquash trong rebase tương tác"
+      ex4: "Tạo commit squash để gộp với commit chỉ định khi rebase"
+    git_bisect_pro:
+      desc: "Công cụ tìm kiếm nhị phân để nhanh chóng xác định commit gây ra bug bằng cách kiểm thử commit liên tiếp và thu hẹp phạm vi"
+      ex1: "Tự động hóa quá trình bisect bằng script kiểm thử trên mỗi commit để nhanh chóng tìm commit gây bug mà không cần thủ công"
+      ex2: "Tự động hóa bisect bằng script, tăng tốc phát hiện bug"
+      ex3: "Mở công cụ đồ họa để trực quan hóa quá trình bisect"
+      ex4: "Thoát chế độ bisect và quay lại HEAD ban đầu"
+    git_commit_pro:
+      desc: "Ghi thay đổi vào repo với tùy chọn chi tiết cho amend, sign, fixup và tùy chỉnh message để duy trì lịch sử chất lượng"
+      ex1: "Tạo commit được ký bằng khóa GPG để đảm bảo xác minh tính xác thực và tác giả"
+      ex2: "Ký commit bằng khóa GPG, đảm bảo tính toàn vẹn và xác minh tác giả"
+      ex3: "Cấu hình khóa GPG dùng để ký commit toàn cục"
+      ex4: "Xác minh và hiển thị thông tin chữ ký GPG cho commit"
+    git_reflog_pro:
+      desc: "Giữ log cập nhật HEAD và nhánh, thiết yếu để phục hồi commit bị mất và hiểu rõ di chuyển lịch sử local"
+      ex1: "Reset nhánh hiện tại về trạng thái trước đó từ reflog để khôi phục hoặc hoàn tác thay đổi"
+      ex2: "Hết hạn ngay tất cả mục reflog, dọn lịch sử reflog (dùng cẩn thận)"
+
+  pro_tips:
+    _root:
+      title: "🧰 Mẹo workflow và Tự động hóa nâng cao"
+    columns:
+      topic: "Chủ đề"
+      commands_example: "Lệnh / Ví dụ"
+      explanation_tips: "Giải thích & Mẹo chuyên nghiệp"
+    aggressive_cleanup:
+      topic: "Dọn dẹp Repo triệt để"
+      desc: "Thực hiện garbage collection sâu và prune object không truy cập ngay lập tức để tối ưu repo. Dùng trong thời gian bảo trì"
+    parallel_worktrees:
+      topic: "Worktree nhánh song song"
+      desc: "Giữ nhiều working tree để phát triển tính năng đồng thời, tránh chi phí clone"
+    linear_history:
+      topic: "Lịch sử sạch, tuyến tính"
+      desc: "Trước khi push, rebase tương tác với autosquash để giữ lịch sử sạch và dễ đọc"
+    secure_commits:
+      topic: "Commit an toàn"
+      desc: "Ký commit bằng GPG để tăng độ tin cậy trong repo chia sẻ, bắt buộc trong nhiều môi trường doanh nghiệp"
+    automated_bisect:
+      topic: "Bisect tự động"
+      desc: "Tự động tìm bug bằng script kiểm thử trên mỗi commit trong bisect"
+    conflict_cache:
+      topic: "Bộ nhớ đệm giải quyết xung đột"
+      desc: "Bật tái sử dụng cách giải quyết xung đột để tăng tốc giải quyết xung đột lặp lại trong rebase hoặc merge"
+    shared_aliases_hooks:
+      topic: "Alias và Hook dùng chung"
+      desc: "Lưu alias Git chung và commit hook trong repo chia sẻ hoặc CI pipeline để áp chuẩn nhóm và tăng năng suất"
+
+  resources:
+    _root:
+      title: "Tài nguyên bổ sung"
+    tip:
+      title: "🧠 **Mẹo**"
+      desc: "Đừng cố ghi nhớ tất cả. Hãy dùng `--help`, khám phá và luyện tập thường xuyên:"
+    links:
+      title: "🌐 Liên kết hữu ích"
+      official_docs: "📘 **Tài liệu Git chính thức** — hướng dẫn chi tiết cho tất cả lệnh Git:"
+      learn_branching: "📙 **Learn Git Branching** — hướng dẫn trực quan, tương tác để nắm vững khái niệm nhánh:"
+      pro_git_book: "📕 **Sách Pro Git** (miễn phí, của Scott Chacon & Ben Straub):"
+      official_cheatsheet: "📗 **Git Cheatsheet** (tài liệu tham khảo ngắn gọn chính thức):"

@@ -46,10 +46,9 @@ format:
 A multilingual DevOps cheat sheet — Linux, Docker, Kubernetes, Terraform, and beyond — practical tips and scenarios created by a hands-on engineer for engineers like you.
 
 ::: {.hero-bullets}
-<span class="bullet-dot"></span> Only verified commands and scenarios provided as is.  
-<span class="bullet-dot"></span> Unified templates + localization in 27 languages.  
-<span class="bullet-dot"></span> Fast search, clean examples, minimal fluff.
-
+- Only verified commands and scenarios provided as is.
+- Unified templates + localization in 27 languages.
+- Fast search, clean examples, minimal fluff.
 :::
 
 ::: {.hero-cta}

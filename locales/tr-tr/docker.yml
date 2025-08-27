@@ -2,7 +2,7 @@ docker:
   meta:
     _root:
       title: "🐳 Docker"
-      desc: "📘 Docker, uygulamaları izole edilmiş konteynerlerde çalıştırmak için bir platformdur. Bu hızlı başvuru kılavuzu; imajlar, konteynerler, ağlar, volumeler, ayrıca Docker Compose ve Swarm ile çalışma komutlarını içerir."
+      desc: "Docker, uygulamaları izole edilmiş konteynerlerde çalıştırmak için bir platformdur. Bu hızlı başvuru kılavuzu; imajlar, konteynerler, ağlar, volumeler, ayrıca Docker Compose ve Swarm ile çalışma komutlarını içerir."
 
   basic:
     _root:

@@ -1,5 +1,326 @@
 git:
   meta:
     _root:
-      title: "🌿 Git"
-      desc: "Everyday workflows, branching, history, stashing, and collaboration basics."
+      title: "🐙 Git ve GitHub CLI"
+      desc: "Sürüm kontrolü, dallanma, uzak repolar, stash, etiketler ve GitHub CLI için temel ve ileri düzey Git komutları."
+
+  basic:
+    _root:
+      title: "🔹 Temel Komutlar"
+    git_add:
+      desc: "Bir dosyayı hazırlık alanına (staging area) ekle"
+      ex1: "Bir dosyayı bir sonraki commit için hazırla"
+      ex2: "Geçerli dizindeki tüm değişiklikleri ve alt dizinleri hazırla"
+      ex3: "Dosyaların hangi kısımlarının hazırlanacağını etkileşimli seç (kısmi commitler için faydalı)"
+    git_clone:
+      desc: "Bir repoyu yeni bir dizine klonla"
+      ex1: "Varsayılan yerine yalnızca belirtilen dalı klonla"
+      ex2: "Yalnızca son commit’i klonla, zaman ve alan tasarrufu için shallow kopya oluştur"
+    git_commit:
+      desc: "Değişiklikleri repoya kaydet"
+      ex1: "Editör açmadan mesajla commit yap"
+      ex2: "Tüm izlenen değişiklikleri hazırla ve mesajla commit yap"
+      ex3: "Son commit’i güncelle (mesajı değiştir veya daha fazla değişiklik ekle)"
+      ex4: "Daha sonra etkileşimli rebase sırasında otomatik squash için fixup commit oluştur"
+    git_config:
+      desc: "Repo veya global seçenekleri ayarla ve görüntüle"
+      ex1: "Global Git kullanıcı adını ayarla"
+      ex2: "Global Git e-postasını ayarla"
+      ex3: "Tüm Git ayarlarını listele (ad, e-posta, editör, vb.)"
+    git_diff:
+      desc: "Commitler arasındaki değişiklikleri, commit ile çalışma dizini arasındaki farkları göster"
+      ex1: "Son commit’ten beri yaptığın değişiklikleri göster (hazırlanmamış değişiklikler)"
+      ex2: "Bir sonraki commit’e dahil edilecek değişiklikleri göster"
+      ex3: "Kelime düzeyinde farklılıklarla değişiklikleri göster"
+    git_grep:
+      desc: "Repo dosyaları içinde ara"
+      ex1: "Projede tüm dosyalarda `functionName` geçen yerleri bul"
+      ex2: "`TODO` içeren satırları satır numarasıyla göster (notları bulmak için faydalı)"
+      ex3: "`login` kelimesini büyük/küçük harf duyarsız ara (`Login`, `LOGIN`, `login` eşleşir)"
+    git_init:
+      desc: "Boş bir Git reposu oluştur veya mevcut olanı yeniden başlat"
+      ex1: "`my-project` dizininde yeni repo başlat"
+      ex2: "Bare (çıplak) repo başlat"
+    git_log:
+      desc: "Commit günlüklerini göster"
+      ex1: "Commit geçmişini kısa tek satır formatında göster"
+      ex2: "Tüm dalları commit grafiğinde görsel olarak göster"
+      ex3: "Commitler için patch ve dosya değişim istatistiklerini göster"
+    git_reset:
+      desc: "Dosyaları hazırlıktan çıkar, değişiklikleri çalışma dizininde tut"
+      ex1: "Bir dosyayı hazırlıktan çıkar (düzenlemeler korunur)"
+      ex2: "Bir commit geri git ve tüm değişiklikleri sil (geri dönüşsüz!)"
+      ex3: "Son commit’i geri al ama değişiklikleri yeniden commit için hazır tut"
+      ex4: "Commit’i geri al ama değişiklikleri hazırlıksız olarak çalışma dizininde tut"
+    git_show:
+      desc: "Farklı Git nesnelerini göster"
+      ex1: "Belirli bir commit’in değişikliklerini ve mesajını göster"
+      ex2: "Geçerli commit’ten bir önceki commit’i göster"
+      ex3: "Son commit’in dosya değişiklik özetini göster"
+    git_status:
+      desc: "Çalışma dizininin durumunu göster"
+      ex1: "Durumu kısa formatta göster"
+      ex2: "Geçerli dalı ve dosya durumlarını göster"
+
+  branching_merging:
+    _root:
+      title: "🌿 Dallanma ve Birleştirme"
+    git_branch:
+      desc: "Dallar oluştur, listele veya sil"
+      ex1: "`new-feature` adlı yeni bir dal oluştur"
+      ex2: "`old-feature` adlı yerel dalı sil"
+    git_checkout:
+      desc: "Dallar arasında geçiş yap veya başka bir commit’ten dosyaları geri yükle"
+      ex1: "`main` dalına geç"
+      ex2: "`new-branch` adlı yeni dal oluştur ve geçiş yap"
+    git_switch:
+      desc: "Dallar arasında geçiş yap (`checkout` için basitleştirilmiş alternatif)"
+      ex1: "`main` dalına geç"
+      ex2: "`feature-x` adlı yeni dal oluştur ve geç"
+      ex3: "`new-feature` adlı mevcut dala geç"
+    git_merge:
+      desc: "Başka bir dalın değişikliklerini geçerli dala birleştir"
+      ex1: "`new-feature` dalını geçerli dal ile birleştir"
+      ex2: "Her zaman merge commit oluştur (fast-forward mümkün olsa bile)"
+      ex3: "Çakışma durumunda merge işlemini iptal et ve değişiklikleri geri al"
+    git_rebase:
+      desc: "Commitleri yeni bir taban commit üzerine taşı veya yeniden uygula"
+      ex1: "Dalındaki commitleri `main` dalının üzerine yeniden uygula"
+      ex2: "Son 3 commit’i etkileşimli düzenle"
+      ex3: "Devam eden bir rebase’i durdur ve geri al"
+      ex4: "Etkileşimli rebase sırasında fixup veya squash olarak işaretlenen commitleri otomatik squash yap"
+    git_cherry_pick:
+      desc: "Başka bir daldan belirli commitleri uygula"
+      ex1: "Belirli bir commit’i (hash ile) geçerli dala uygula"
+      ex2: "Çakışmaları çözdükten sonra cherry-pick işlemine devam et"
+      ex3: "`A` (hariç) ile `B` (dahil) arasındaki commit aralığını uygula"
+
+  remote:
+    _root:
+      title: "📡 Uzak Repolar"
+    git_remote:
+      desc: "Uzak repolarla bağlantıları yönet (örn. GitHub)"
+      ex1: "Uzak isimlerini ve URL’lerini göster"
+      ex2: "`origin` adında uzak repo ekle"
+    git_pull:
+      desc: "Uzak bir daldan değişiklikleri indir ve otomatik olarak birleştir"
+      ex1: "Uzak `main` dalından değişiklikleri al ve geçerli dala birleştir"
+      ex2: "Birleştirme yerine geçerli dalı uzak dalın üzerine rebase et"
+    git_push:
+      desc: "Yerel değişiklikleri uzak repoya yükle"
+      ex1: "Yerel `main` dalını `origin` uzak deposuna gönder"
+    git_fetch:
+      desc: "Uzak repodan değişiklikleri indir ama birleştirme yapma"
+      ex1: "`origin`’den tüm güncellemeleri indir ama henüz uygulama"
+      ex2: "Uzak repodan yalnızca `main` dalını indir"
+      ex3: "Tüm uzaklardan güncellemeleri indir"
+      ex4: "Silinmiş dalları temizle — uzakta silinmiş dalların yerel referanslarını kaldır"
+      ex5: "Aslında indirmeden hangi verilerin indirileceğini göster"
+      ex6: "Yerel izleme dalını (`origin/main`) zorla güncelle, çakışmaları üzerine yaz"
+
+  stash_cleanup:
+    _root:
+      title: "📦 Stash ve Temizlik"
+    git_stash:
+      desc: "Commitlenmemiş değişiklikleri geçici olarak kaydet (work in progress)"
+      ex1: "Değiştirilmiş ve hazırlanmış dosyaları kaydet, ardından çalışma dizinini son commit’e döndür"
+      ex2: "Son kaydedilen stash’i uygula (stash kaydedilmeye devam eder)"
+      ex3: "Son stash’i uygula ve sil"
+      ex4: "Tüm stash listesini göster"
+      ex5: "Yeni bir dal oluştur ve son stash’i ona uygula"
+    git_clean:
+      desc: "Git tarafından takip edilmeyen dosyaları kalıcı olarak sil"
+      ex1: "Geçerli dizindeki takip edilmeyen dosyaları sil"
+      ex2: "Takip edilmeyen dosya ve klasörleri sil"
+      ex3: "Nelerin silineceğini önizle (güvenli dry run)"
+
+  tags:
+    _root:
+      title: "🏷️ Etiketler"
+    git_tag:
+      desc: "Belirli noktaları işaretlemek için etiketler oluştur, listele veya sil (örn. sürümler)"
+      ex1: "`v1.0` adlı açıklamalı etiket oluştur (tam Git nesnesi olarak kaydedilir, sürümler için iyi)"
+      ex2: "`v1.0` adlı yerel etiketi sil (uzağı etkilemez)"
+    git_push:
+      desc: "Commitleri, dalları ve etiketleri yerelden uzak repoya gönder"
+      ex1: "Tüm yerel etiketleri uzak repoya gönder (birden fazla sürümü etiketledikten sonra faydalı)"
+      ex2: "Belirli bir etiketi (örn. `v1.0`) uzak repoya gönder"
+      ex3: "Uzak `v1.0` etiketini sil (iki nokta üst üste sözdizimine dikkat edin)"
+
+  conflicts:
+    _root:
+      title: "🛠️ Çakışma Çözümü"
+    git_mergetool:
+      desc: "Merge çakışmalarını çözmek için görsel bir araç aç"
+      ex1: "Çakışmaları çözmek için belirli bir merge aracı (örn. Meld) kullan"
+    git_rerere:
+      desc: "Git’in geçmişte çözdüğün merge çakışmalarını hatırlamasını sağla"
+      ex1: "Geçmiş çakışma çözümlerinin otomatik yeniden kullanımını etkinleştir"
+      ex2: "Çözümü kaydedilmiş dosyaları göster"
+      ex3: "Git’in gelecekte kullanmak için hangi değişiklikleri kaydettiğini göster"
+
+  advanced:
+    _root:
+      title: "⚙️ İleri Düzey Komutlar"
+    git_bisect:
+      desc: "Bir hatayı hangi commit’in getirdiğini bulmak için ikili arama kullan"
+      ex1: "İyi ve hatalı olduğu bilinen commitler arasında ikili arama başlat"
+      ex2: "Geçerli commit’i \"hatalı\" olarak işaretle (bug içeriyor)"
+      ex3: "Bug bulunmayan bilinen bir commit’i \"iyi\" olarak işaretle"
+    git_blame:
+      desc: "Bir dosyanın her satırını en son kimin değiştirdiğini revizyon ve yazar ile göster"
+      ex1: "Dosyadaki her satır için yazar ve commit bilgilerini göster"
+      ex2: "Yalnızca 10 ile 20. satırlar arasındaki blame bilgisini göster"
+      ex3: "Satır değişiklikleriyle birlikte yazarların e-postalarını göster"
+    git_reflog:
+      desc: "Dalların hareketleri ve HEAD için referans günlüklerini (reflog) görüntüle ve yönet"
+      ex1: "`main` dalının bir hafta önce nereye işaret ettiğini gör"
+      ex2: "30 günden eski reflog girdilerinin temizlenebileceğini önizle (değişiklik yapılmaz)"
+      ex3: "Belirli bir reflog girdisini sil (dikkatli kullanılmalı, kurtarma işlemini etkileyebilir)"
+    git_submodule:
+      desc: "Alt modüller ekle, başlat, güncelle veya incele (repo içinde repo)"
+      ex1: "Belirli bir yola harici bir repo alt modülü ekle"
+      ex2: "Repoda listelenen tüm alt modülleri başlat ve indir"
+      ex3: "Her alt modül içinde `git pull` çalıştırarak son commit’lere güncelle"
+      ex4: "`.gitmodules` dosyasında değişiklikten sonra alt modül URL’lerini senkronize et"
+      ex5: "Alt modülleri uzak dallarındaki son commit’lere güncelle"
+    git_archive:
+      desc: "Belirli bir commit veya daldan dosyaların arşivini (zip, tar, vb.) oluştur"
+      ex1: "Geçerli projeyi HEAD’den ZIP arşivi olarak oluştur"
+      ex2: "Geçerli HEAD’den sıkıştırılmış `.tar.gz` arşivi oluştur"
+      ex3: "Projeyi `.tar.gz` arşivi olarak oluştur ve tüm dosyaları arşivde `project/` klasörünün içine koy"
+    git_gc:
+      desc: "Gereksiz dosyaları temizle ve repoyu performans için optimize et"
+      ex1: "Ayrıntılı temizlik ve optimizasyon yap (yavaş olabilir ama etkilidir)"
+      ex2: "Ulaşılamayan tüm nesneleri hemen sil (emin değilsen tehlikeli)"
+    git_shortlog:
+      desc: "Yazarların ve commitlerinin hızlı özeti"
+      ex1: "Yazarların e-posta adresleriyle listesini göster (kim ne kadar katkıda bulunmuş analiz için)"
+      ex2: "Her yazarın kaç commit yaptığını göster, commit sayısına göre sırala"
+      ex3: "Yukarıdakine ek olarak ad ve e-posta adreslerini göster — ayrıntılı aktivite takibi için faydalı"
+    git_revert:
+      desc: "Önceki bir commit’teki değişiklikleri geri almak için yeni bir commit oluştur (tarihi yeniden yazmadan)"
+      ex1: "Son commit’i yeni bir commit ile geri al"
+      ex2: "Belirli bir commit’i hash ile güvenli şekilde geri al (yeni commit ekleyerek)"
+
+  gh:
+    _root:
+      title: "🐙 GitHub CLI"
+      note: "`gh`, GitHub’u terminalden yönetmenizi sağlar."
+    gh_auth_login:
+      desc: "CLI komutlarının hesabınızla etkileşim kurabilmesi için bir GitHub hostuna kimlik doğrulaması yapın"
+      ex1: "Bir dosyada saklanan kişisel erişim tokeni (`mytoken.txt`) ile kimlik doğrulama"
+      ex2: "GitHub Enterprise sunucusuna kimlik doğrulama (github.com değil)"
+    gh_repo_clone:
+      desc: "Bir GitHub reposunu yerel makinenize klonlayın"
+      ex1: "`user` kullanıcısına ait `repo` reposunu `repo` klasörüne klonla"
+      ex2: "Yalnızca son commit’i indirerek daha hızlı ve küçük boyutlu klon oluştur"
+      ex3: "Repoyu özel bir klasöre (`workspace/cli`) klonla"
+    gh_issue_list:
+      desc: "Bir GitHub reposundaki issue’ları listele, isteğe bağlı olarak filtre uygula"
+      ex1: "Size atanmış issue’ları listele"
+      ex2: "Durumlarına bakılmaksızın (açık veya kapalı) tüm issue’ları listele"
+      ex3: "\"error\" eşleşen, atanmamış ve oluşturulma tarihine göre artan sıralı issue’ları listele"
+    gh_pr_create:
+      desc: "CLI üzerinden GitHub’da pull request oluştur"
+      ex1: "Belirtilen başlık ile pull request oluştur"
+      ex2: "Pull request’i \"Roadmap\" adlı bir GitHub projesine bağla"
+      ex3: "`monalisa` fork’undaki `feature` dalından `develop` dalına PR oluştur"
+    gh_repo_create:
+      desc: "CLI üzerinden yeni bir GitHub reposu oluştur"
+      ex1: "GitHub’da `my-project` adlı yeni bir repo oluştur (etkileşimli sorular gelir)"
+      ex2: "Açık (public) bir repo oluştur ve yerel olarak klonla"
+      ex3: "Geçerli klasörden özel (private) uzak repo oluştur ve `upstream` adında remote ekle"
+
+  aliases:
+    _root:
+      title: "💡 Git Aliasları (Kullanışlı Kısayollar)"
+      intro: "Sık kullanılan Git komutlarını hızlandırmak için pratik alias’lar ayarlayın:"
+
+  pro:
+    _root:
+      title: "🚀 Profesyoneller için İleri Düzey Git Komutları"
+    git_filter_repo:
+      desc: "Git geçmişini yeniden yazarak dosyaları, yazarları veya yolları kaldırmak veya değiştirmek için güçlü ve hızlı bir araçtır; `git filter-branch` yerine daha güvenli ve hızlıdır"
+      ex1: "`git filter-branch` performans sorunları olmadan hassas dosya/dizinleri geçmişten kaldır. Dikkatli kullanın"
+      ex2: "Tüm geçmişte dizgileri veya desenleri topluca değiştir (örn. kimlik bilgilerini temizle)"
+      ex3: "Bir alt dizin geçmişini commit metadatasını koruyarak yeni bir repoya çıkar"
+    git_worktree:
+      desc: "Bir repo ile ilişkili birden fazla çalışma dizini yönet; dallarda eşzamanlı çalışmaya imkan tanır, klon yapmaya gerek kalmaz"
+      ex1: "Aynı repoya bağlı ek bir çalışma dizini oluştur, dalları paralel kontrol et"
+      ex2: "Tüm aktif worktree’leri, yolları ve dalları listele"
+      ex3: "Artık ihtiyaç duyulmayan worktree’yi kaldır ve güvenli şekilde temizle"
+    git_replace:
+      desc: "Mevcut nesnelerin yerine geçen geçici referanslar oluştur; yerel geçmiş manipülasyonu ve test için kullanılabilir"
+      ex1: "Yerel repoda bir commit’i başka bir commit ile geçici olarak değiştir; test veya geçmişi yeniden yazmadan düzeltme için faydalıdır"
+      ex2: "Tüm aktif replacement referanslarını göster"
+      ex3: "Belirli bir replacement referansını silerek davranışı geri döndür"
+    git_stash_adv:
+      desc: "Commitlenmemiş değişiklikleri bir stack’e geçici olarak kaydet; tamamlanmamış işleri commit yapmadan bağlam değiştirmeye imkan tanır"
+      ex1: "Hangi değişikliklerin stash’e kaydedileceğini etkileşimli seç"
+      ex2: "Kolay tanım için özel mesajla stash oluştur"
+      ex3: "Stash listesinden belirli bir stash’i uygulayın, ancak silmeyin"
+    git_rebase_adv:
+      desc: "Commitleri başka bir taban commit üzerine yeniden uygula; temiz, doğrusal bir proje geçmişi sağlar ve etkileşimli düzenleme imkanı sunar"
+      ex1: "Fixup veya squash işaretli commitleri otomatik düzenleyip birleştiren etkileşimli rebase başlat"
+      ex2: "Commit geçmişini push etmeden önce fixup/squash commitleri birleştirerek temizle"
+      ex3: "Etkileşimli rebase sırasında otomatik birleştirilmek üzere fixup commit oluştur"
+      ex4: "Bir squash commit oluştur ve rebase sırasında belirtilen commit ile birleştir"
+    git_bisect_pro:
+      desc: "Bir bug’a neden olan commit’i verimli şekilde bulmak için ikili arama aracı; ardışık commitleri test ederek daraltır"
+      ex1: "Her commit üzerinde belirli bir test scripti çalıştırarak hatalı commit’i otomatik bul"
+      ex2: "Test scripti ile bisection sürecini otomatikleştirerek hata bulmayı hızlandır"
+      ex3: "Bisection sürecini görselleştirmek için grafik aracı aç"
+      ex4: "Bisect modundan çık ve orijinal HEAD’e dön"
+    git_commit_pro:
+      desc: "Amend, sign, fixup ve mesaj özelleştirme gibi detaylı seçeneklerle commit kaydet; proje geçmişinin kalitesini korur"
+      ex1: "Commit’inizin kimliğini ve yazarlığını kriptografik olarak doğrulamak için GPG anahtarınızla imzalı commit oluştur"
+      ex2: "Commit’leri GPG anahtarı ile imzala, bütünlük ve yazar doğrulamasını sağla"
+      ex3: "Commit’leri imzalamak için kullanılan GPG anahtarını global olarak yapılandır"
+      ex4: "Commit’lerin GPG imza bilgisini doğrula ve göster"
+    git_reflog_pro:
+      desc: "HEAD ve dallara yapılan güncellemeleri kaydeder; kaybolan commitleri kurtarmak ve yerel geçmiş hareketlerini anlamak için kritik"
+      ex1: "Bir dalı önceki reflog durumuna resetleyerek değişiklikleri kurtar veya geri al"
+      ex2: "Tüm reflog girdilerini hemen sil, geçmişi temizle (dikkatli kullanın)"
+
+  pro_tips:
+    _root:
+      title: "🧰 Profesyonel Çalışma İpuçları ve Otomasyon"
+    columns:
+      topic: "Konu"
+      commands_example: "Komutlar / Örnek"
+      explanation_tips: "Açıklama & Pro İpuçları"
+    aggressive_cleanup:
+      topic: "Agresif Repo Temizliği"
+      desc: "Depoyu optimize etmek için derin çöp toplama yapar ve erişilemeyen nesneleri hemen siler. Bakım zamanlarında kullanın"
+    parallel_worktrees:
+      topic: "Paralel Dal Worktree’leri"
+      desc: "Eşzamanlı özellik geliştirmesi için birden fazla çalışma dizini tut; klon yükünü önler"
+    linear_history:
+      topic: "Temiz, Doğrusal Geçmiş"
+      desc: "Push etmeden önce, geçmişi temiz ve okunabilir tutmak için autosquash ile etkileşimli rebase yapın"
+    secure_commits:
+      topic: "Güvenli Commitler"
+      desc: "Commit’leri GPG ile imzalayın; paylaşılan repolarda güvenilirliği artırır, birçok kurumsal ortamda zorunludur"
+    automated_bisect:
+      topic: "Otomatik Bisection"
+      desc: "Bisect sırasında her commit üzerinde test scripti çalıştırarak hata avını otomatikleştirin"
+    conflict_cache:
+      topic: "Çakışma Çözüm Önbelleği"
+      desc: "Rebase veya merge sırasında tekrar eden çakışmaların daha hızlı çözümü için önceden çözümleri yeniden kullanmayı etkinleştirin"
+    shared_aliases_hooks:
+      topic: "Paylaşılan Alias ve Hook’lar"
+      desc: "Ortak Git alias’larını ve commit hook’larını paylaşılan repo veya CI pipeline’da saklayarak takım standartlarını uygulayın ve verimliliği artırın"
+
+  resources:
+    _root:
+      title: "Ek Kaynaklar"
+    tip:
+      title: "🧠 **İpucu**"
+      desc: "Her şeyi ezberlemeye çalışmayın. `--help` kullanın, keşfedin ve düzenli pratik yapın:"
+    links:
+      title: "🌐 Faydalı Bağlantılar"
+      official_docs: "📘 **Resmi Git Dokümantasyonu** — tüm Git komutları için detaylı kılavuz:"
+      learn_branching: "📙 **Learn Git Branching** — dallanma kavramlarını öğrenmek için etkileşimli görsel eğitim:"
+      pro_git_book: "📕 **Pro Git Kitabı** (ücretsiz, Scott Chacon & Ben Straub):"
+      official_cheatsheet: "📗 **Git Cheatsheet** (resmi kısa başvuru kılavuzu):"

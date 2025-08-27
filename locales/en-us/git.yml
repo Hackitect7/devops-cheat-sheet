@@ -1,5 +1,326 @@
 git:
   meta:
     _root:
-      title: "🌿 Git"
-      desc: "Everyday workflows, branching, history, stashing, and collaboration basics."
+      title: "🐙 Git and GitHub CLI"
+      desc: "Basic and advanced Git commands for version control, branching, remote repos, stash, tags and GitHub CLI."
+
+  basic:
+    _root:
+      title: "🔹 Basic Commands"
+    git_add:
+      desc: "Add a file to the staging area"
+      ex1: "Stage a specific file for the next commit"
+      ex2: "Stage all changes in the current directory and below"
+      ex3: "Interactively choose which parts of files to stage (useful for partial commits)"
+    git_clone:
+      desc: "Clone a repository into a new directory"
+      ex1: "Clone only the specified branch (instead of the default)"
+      ex2: "Clone only the latest commit, making a shallow copy to save time and space"
+    git_commit:
+      desc: "Record changes to the repository"
+      ex1: "Commit with a message without opening the editor"
+      ex2: "Stage and commit all modified tracked files with a message"
+      ex3: "Update the last commit (change message or include more changes)"
+      ex4: "Create a fixup commit to automatically squash later during interactive rebase"
+    git_config:
+      desc: "Get and set repository or global options"
+      ex1: "Set global Git username"
+      ex2: "Set global Git email"
+      ex3: "List all Git settings (name, email, editor, etc.)"
+    git_diff:
+      desc: "Show changes between commits, commit and working tree, etc."
+      ex1: "Show what you changed since the last commit (unstaged changes)"
+      ex2: "Show what will be included in the next commit"
+      ex3: "Show changes with word-level differences"
+    git_grep:
+      desc: "Search inside repository files"
+      ex1: "Find all mentions of `functionName` in all project files"
+      ex2: "Find lines containing `TODO` and show line numbers (useful for finding code notes)"
+      ex3: "Search for the word `login` case-insensitively (matches `Login`, `LOGIN`, `login`, etc.)"
+    git_init:
+      desc: "Create an empty Git repository or reinitialize an existing one"
+      ex1: "Initialize a new repo in directory my-project"
+      ex2: "Initialize a bare repository"
+    git_log:
+      desc: "Show commit logs"
+      ex1: "Show commit history in a compact one-line format"
+      ex2: "Show all branches in a visual graph of commits"
+      ex3: "Show patch and file change stats for commits"
+    git_reset:
+      desc: "Unstage files, keeping changes in the working directory"
+      ex1: "Remove a file from staging (keeps your edits)"
+      ex2: "Go back one commit and delete all changes (irreversible!)"
+      ex3: "Undo last commit but keep the changes ready to commit again"
+      ex4: "Undo a commit but keep changes unstaged in working directory"
+    git_show:
+      desc: "Show various types of objects"
+      ex1: "Show changes and message of a specific commit"
+      ex2: "Show the previous commit before the current one"
+      ex3: "Show a summary of file changes for the latest commit"
+    git_status:
+      desc: "Show the working tree status"
+      ex1: "Show status in short format"
+      ex2: "Show current branch and status of files"
+
+  branching_merging:
+    _root:
+      title: "🌿 Branching and Merging"
+    git_branch:
+      desc: "Create, list or delete branches"
+      ex1: "Create a new branch called `new-feature`"
+      ex2: "Delete a local branch named `old-feature`"
+    git_checkout:
+      desc: "Switch branches or restore files from another commit"
+      ex1: "Switch to the `main` branch"
+      ex2: "Create and switch to a new branch named `new-branch`"
+    git_switch:
+      desc: "Switch branches (simplified alternative to `checkout`)"
+      ex1: "Switch to the `main` branch"
+      ex2: "Create and switch to a new branch named `feature-x`"
+      ex3: "Switch to an existing branch named `new-feature`"
+    git_merge:
+      desc: "Combine changes from another branch into the current one"
+      ex1: "Merge the `new-feature` branch into the current branch"
+      ex2: "Always create a merge commit (even if fast-forward is possible)"
+      ex3: "Cancel the merge and revert changes if conflicts occur"
+    git_rebase:
+      desc: "Move or reapply commits onto a new base commit"
+      ex1: "Reapply your branch commits on top of the `main` branch"
+      ex2: "Interactively edit the last 3 commits"
+      ex3: "Stop and undo an in-progress rebase"
+      ex4: "Automatically squash commits marked as fixup or squash during interactive rebase"
+    git_cherry_pick:
+      desc: "Apply specific commits from another branch"
+      ex1: "Apply a specific commit (by hash) to the current branch"
+      ex2: "Continue cherry-pick after resolving conflicts"
+      ex3: "Apply a range of commits from `A` (excluding) to `B` (including)"
+
+  remote:
+    _root:
+      title: "📡 Remote Repositories"
+    git_remote:
+      desc: "Manage links to remote repositories (like GitHub)"
+      ex1: "Show remote names and their URLs"
+      ex2: "Add a remote repository named `origin`"
+    git_pull:
+      desc: "Download and automatically merge changes from a remote branch"
+      ex1: "Fetch and merge changes from remote `main` branch into your current branch"
+      ex2: "Fetch and rebase your current branch on top of the remote branch instead of merging"
+    git_push:
+      desc: "Upload your local changes to a remote repository"
+      ex1: "Push your local `main` branch to the remote `origin`"
+    git_fetch:
+      desc: "Download changes from remote without merging"
+      ex1: "Fetch all updates from remote `origin`, but don’t apply them yet"
+      ex2: "Fetch only the `main` branch from remote"
+      ex3: "Fetch updates from all remotes"
+      ex4: "Clean up deleted branches — remove local refs to branches that were deleted remotely"
+      ex5: "Show what would be fetched, without actually downloading anything"
+      ex6: "Forcefully update your local tracking branch (`origin/main`), overwriting conflicts"
+
+  stash_cleanup:
+    _root:
+      title: "📦 Stash and Cleanup"
+    git_stash:
+      desc: "Temporarily save uncommitted changes (work in progress)"
+      ex1: "Save modified and staged files, then revert working directory to last commit"
+      ex2: "Reapply the latest stashed changes (stash remains saved)"
+      ex3: "Reapply and remove the latest stash"
+      ex4: "Show list of all stashed changes"
+      ex5: "Create a new branch and apply the latest stash to it"
+    git_clean:
+      desc: "Permanently delete untracked files (not in Git)"
+      ex1: "Delete untracked files in the current directory"
+      ex2: "Delete untracked files and folders"
+      ex3: "Preview what will be deleted (safe dry run)"
+
+  tags:
+    _root:
+      title: "🏷️ Tags"
+    git_tag:
+      desc: "Create, list or delete tags to mark specific points in history (like releases)"
+      ex1: "Create an annotated tag named `v1.0` with a message (saved as a full Git object, good for releases)"
+      ex2: "Delete the local tag named `v1.0` (does not affect remote)"
+    git_push:
+      desc: "Upload commits, branches and tags from local to remote repository"
+      ex1: "Push all local tags to the remote (useful after tagging multiple versions)"
+      ex2: "Push a specific tag (e.g. `v1.0`) to the remote repository"
+      ex3: "Delete the remote tag `v1.0` (note the colon syntax)"
+  
+  conflicts:
+    _root:
+      title: "🛠️ Conflict Resolution"
+    git_mergetool:
+      desc: "Open a visual tool to help resolve merge conflicts"
+      ex1: "Use a specific merge tool (like Meld) to fix conflicts"
+    git_rerere:
+      desc: "Let Git remember how you solved merge conflicts before"
+      ex1: "Enable automatic reuse of past conflict resolutions"
+      ex2: "Show which files have saved conflict resolutions"
+      ex3: "Show what changes Git saved for future reuse"
+
+  advanced:
+    _root:
+      title: "⚙️ Advanced Commands"
+    git_bisect:
+      desc: "Use binary search to find the commit that introduced a bug"
+      ex1: "Start a binary search between a known good and a bad commit to locate a bug"
+      ex2: "Mark the current commit as \"bad\" (contains the bug)"
+      ex3: "Mark a known \"good\" commit where the bug did not exist"
+    git_blame:
+      desc: "Show who last modified each line of a file, with revision and author"
+      ex1: "Show the author and commit info for every line in the file"
+      ex2: "Show blame info only for lines 10 through 20"
+      ex3: "Show authors’ email addresses alongside line changes"
+    git_reflog:
+      desc: "View and manage the reference log (reflog) of branch movements and HEAD"
+      ex1: "See where the `main` branch pointed one week ago"
+      ex2: "Preview which reflog entries older than 30 days can be cleaned up (no changes made)"
+      ex3: "Delete a specific reflog entry (use carefully, as it can affect recovery)"
+    git_submodule:
+      desc: "Add, initialize, update, or inspect submodules (repositories inside repositories)"
+      ex1: "Add an external repository as a submodule in the specified path"
+      ex2: "Initialize and download all submodules listed in the repository"
+      ex3: "Run `git pull` inside each submodule to update them to their latest commit"
+      ex4: "Synchronize submodule URLs after changes in `.gitmodules` file"
+      ex5: "Update submodules to the latest commit from their remote branches"
+    git_archive:
+      desc: "Create an archive (zip, tar, etc.) of files from a specific commit or branch"
+      ex1: "Create a ZIP archive of the current project files at HEAD"
+      ex2: "Create a compressed `.tar.gz` archive from the current HEAD"
+      ex3: "Create a compressed `.tar.gz` archive of the current project, placing all files inside a folder named `project/` inside the archive"
+    git_gc:
+      desc: "Clean up unnecessary files and optimize the repository for performance"
+      ex1: "Perform a thorough cleanup and optimization (can be slow but effective)"
+      ex2: "Remove all unreachable objects immediately (dangerous if unsure)"
+    git_shortlog:
+      desc: "Quick summary of authors and their commits"
+      ex1: "Show a list of authors with their email addresses (e.g., to analyze who contributed and how much)"
+      ex2: "Show how many commits each author made, sorted by number of commits"
+      ex3: "Same as above, but also includes names and email addresses — useful for detailed activity tracking"
+    git_revert:
+      desc: "Create a new commit that undoes changes from a previous commit without rewriting history"
+      ex1: "Undo the last commit by creating a new commit that reverses its changes"
+      ex2: "Undo a specific commit by hash, safely adding a new commit that reverses it"
+
+  gh:
+    _root:
+      title: "🐙 GitHub CLI"
+      note: "`gh` lets you manage GitHub from the terminal."
+    gh_auth_login:
+      desc: "Authenticate with a GitHub host to allow CLI commands to interact with your account"
+      ex1: "Authenticate using a personal access token stored in a file (`mytoken.txt`)"
+      ex2: "Authenticate to a GitHub Enterprise server (not github.com)"
+    gh_repo_clone:
+      desc: "Clone a GitHub repository to your local machine"
+      ex1: "Clone the repository repo owned by `user` into a folder named `repo`"
+      ex2: "Clone the repository but only download the latest commit for a faster, smaller clone"
+      ex3: "Clone the repository into a custom folder `workspace/cli`"
+    gh_issue_list:
+      desc: "List issues in a GitHub repository, optionally filtered by various criteria"
+      ex1: "List issues assigned to you"
+      ex2: "List issues regardless of state (open or closed)"
+      ex3: "List issues matching \"error\", unassigned, sorted by creation date ascending"
+    gh_pr_create:
+      desc: "Create a pull request on GitHub via CLI"
+      ex1: "Create a pull request with the given title"
+      ex2: "Link the pull request to a GitHub project named \"Roadmap\""
+      ex3: "Create a PR from branch `feature` in fork `monalisa` into `develop` branch"
+    gh_repo_create:
+      desc: "Create a new GitHub repository from CLI"
+      ex1: "Create a new repository called `my-project` on GitHub (interactive prompts follow)"
+      ex2: "Create a public repository and clone it locally"
+      ex3: "Create a private remote repo from current folder and add remote named `upstream`"
+
+  aliases:
+    _root:
+      title: "💡 Git Aliases (Useful Shortcuts)"
+      intro: "Set up convenient aliases to speed up common Git commands:"
+  
+  pro:
+    _root:
+      title: "🚀 Advanced Git Commands for Professionals"
+    git_filter_repo:
+      desc: "A powerful and performant tool for rewriting Git history to remove or modify files, authorship, or paths; replaces git filter-branch with improved speed and safety"
+      ex1: "Efficiently rewrite repository history to remove sensitive files or directories without the performance issues of `git filter-branch`. Use with care"
+      ex2: "Bulk replace strings or patterns across entire history (e.g., sanitize credentials)"
+      ex3: "Extract subdirectory history into a new repository, preserving commit metadata"
+    git_worktree:
+      desc: "Manage multiple working directories linked to a single repository, allowing concurrent work on different branches without cloning"
+      ex1: "Create an additional working tree attached to the same repository, enabling parallel branch checkouts without clones"
+      ex2: "List all active worktrees, their paths and associated branches"
+      ex3: "Remove a linked worktree when no longer needed, cleaning up working directories safely"
+    git_replace:
+      desc: "Create temporary references that replace existing objects, enabling non-destructive local history manipulation and testing"
+      ex1: "Temporarily swap one commit for another in your local repo, useful for testing or patching history without rewriting it"
+      ex2: "Show all active replacement refs"
+      ex3: "Delete a specific replacement reference to revert behavior"
+    git_stash_adv:
+      desc: "Temporarily save uncommitted changes to a stack, allowing context switches without committing unfinished work"
+      ex1: "Interactively select hunks of changes to stash, providing granular control over what is saved"
+      ex2: "Create a stash with a custom message for easier identification"
+      ex3: "Apply a specific stash from the stash list, without dropping it"
+    git_rebase_adv:
+      desc: "Reapply commits on top of another base tip, facilitating a cleaner, linear project history and interactive history editing"
+      ex1: "Start an interactive rebase session that automatically reorders and squashes commits marked as fixup or squash, streamlining history cleanup"
+      ex2: "Automatically reorder and squash commits marked as fixup or squash, cleaning commit history before pushing"
+      ex3: "Create a fixup commit that will be autosquashed during interactive rebase"
+      ex4: "Create a squash commit to combine with the specified commit on rebase"
+    git_bisect_pro:
+      desc: "Binary search tool to efficiently identify the commit that introduced a bug by testing successive commits and narrowing down the faulty change"
+      ex1: "Automate the bisect process by running a specified test script on each commit to quickly identify the commit that introduced a bug without manual intervention"
+      ex2: "Automate bisection by running a test script on each commit, significantly speeding up bug identification"
+      ex3: "Open a graphical tool to visualize the bisection process"
+      ex4: "Exit bisect mode and return to the original HEAD"
+    git_commit_pro:
+      desc: "Record changes to the repository with detailed options for amend, sign, fixup, and message customization to maintain high-quality project history"
+      ex1: "Create a commit signed with your GPG key to ensure cryptographic verification of the commit’s authenticity and authorship"
+      ex2: "Cryptographically sign your commits with your GPG key, ensuring integrity and authorship verification"
+      ex3: "Configure the GPG key used to sign commits globally"
+      ex4: "Verify and display GPG signature info for commits."
+    git_reflog_pro:
+      desc: "Keep a log of updates to HEAD and branches, essential for recovering lost commits and understanding local history movements"
+      ex1: "Reset the current branch to a previous state from reflog to recover or undo changes"
+      ex2: "Immediately expire all reflog entries, cleaning up reflog history (use with caution)"
+
+  pro_tips:
+    _root:
+      title: "🧰 Pro Workflow Tips and Automation"
+    columns:
+      topic: "Topic"
+      commands_example: "Commands / Example"
+      explanation_tips: "Explanation & Pro Tips"
+    aggressive_cleanup:
+      topic: "Aggressive Repo Cleanup"
+      desc: "Performs deep garbage collection and prunes unreachable objects immediately for repository optimization. Use during maintenance windows"
+    parallel_worktrees:
+      topic: "Parallel Branch Worktrees"
+      desc: "Keep multiple working trees for simultaneous feature development, avoids clone overhead"
+    linear_history:
+      topic: "Clean, Linear History"
+      desc: "Before pushing, rebase interactively with autosquash to keep history clean and readable"
+    secure_commits:
+      topic: "Secure Commits"
+      desc: "Sign commits with GPG to enhance trustworthiness in shared repositories, mandatory in many enterprise environments"
+    automated_bisect:
+      topic: "Automated Bisecting"
+      desc: "Automate bug hunting by running a test script on each candidate commit during bisect"
+    conflict_cache:
+      topic: "Conflict Resolution Cache"
+      desc: "Enable reuse of conflict resolutions to speed up resolving repeated merge conflicts across rebases or merges"
+    shared_aliases_hooks:
+      topic: "Shared Aliases and Hooks"
+      desc: "Store common Git aliases and commit hooks in a shared repo or CI pipeline to enforce team standards and improve productivity"
+
+  resources:
+    _root:
+      title: "Additional resources"
+    tip:
+      title: "🧠 **Tip**"
+      desc: "Don't try to memorize everything. Use `--help`, explore, and practice regularly:"
+    links:
+      title: "🌐 Useful links"
+      official_docs: "📘 **Official Git documentation** — detailed manual for all Git commands:"
+      learn_branching: "📙 **Learn Git Branching** — interactive visual tutorial to master branching concepts:"
+      pro_git_book: "📕 **Pro Git book** (free, by Scott Chacon & Ben Straub):"
+      official_cheatsheet: "📗 **Git Cheatsheet** (official concise reference):"

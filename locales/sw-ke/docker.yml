@@ -2,7 +2,7 @@ docker:
   meta:
     _root:
       title: "🐳 Docker"
-      desc: "📘 Docker ni jukwaa la kuendesha programu kwenye kontena yaliyotengwa. Mwongozo huu wa haraka unajumuisha amri za kufanya kazi na picha (images), kontena (containers), mitandao, volumes, pamoja na Docker Compose na Swarm."
+      desc: "Docker ni jukwaa la kuendesha programu kwenye kontena yaliyotengwa. Mwongozo huu wa haraka unajumuisha amri za kufanya kazi na picha (images), kontena (containers), mitandao, volumes, pamoja na Docker Compose na Swarm."
 
   basic:
     _root:

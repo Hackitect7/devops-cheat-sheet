@@ -1,0 +1,7 @@
+---
+title: '{{< meta git.meta._root.title >}}'
+---
+
+> {{< meta git.meta._root.desc >}}
+
+{{< include ../templates/git.qmd >}}

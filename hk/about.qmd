@@ -22,7 +22,7 @@ format:
 ::: {.page-container}
 ::: {.hero}
 ::: {.hero-inner}
-![](../assets/brand/us/hackitect7-logo-light-us.png){.hero-logo .only-light alt="Hackitect7 logo light (us)"}
+![](../assets/brand/hk/hackitect7-logo-light-hk.png){.hero-logo .only-light alt="Hackitect7 logo light (zh-HK)"}
 
 {{< include ../templates/about.qmd >}}
 

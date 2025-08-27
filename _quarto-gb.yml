@@ -1,8 +1,6 @@
 # filename: _quarto-gb.yml
 
 project:
-  pre-render:
-    - python scripts/select_snippets.py
   render:
     - gb/index.qmd
     - gb/linux.qmd

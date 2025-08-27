@@ -2,7 +2,7 @@ docker:
   meta:
     _root:
       title: "🐳 Docker"
-      desc: "📘 Docker adalah platform untuk menjalankan aplikasi dalam container terisolasi. Lembar pintasan ini berisi perintah untuk bekerja dengan image, container, jaringan, volume, serta Docker Compose dan Swarm."
+      desc: "Docker adalah platform untuk menjalankan aplikasi dalam container terisolasi. Lembar pintasan ini berisi perintah untuk bekerja dengan image, container, jaringan, volume, serta Docker Compose dan Swarm."
 
   basic:
     _root:

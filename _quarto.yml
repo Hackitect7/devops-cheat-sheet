@@ -3,6 +3,8 @@
 project:
   type: website
   output-dir: _site
+  pre-render:
+    - python scripts/select_snippets.py
   render:
     - index.qmd
   resources:

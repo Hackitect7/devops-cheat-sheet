@@ -1,5 +1,326 @@
 git:
   meta:
     _root:
-      title: "🌿 Git"
-      desc: "Everyday workflows, branching, history, stashing, and collaboration basics."
+      title: "🐙 Git dan GitHub CLI"
+      desc: "Perintah dasar dan lanjutan Git untuk kontrol versi, branching, repositori remote, stash, tag, dan GitHub CLI."
+
+  basic:
+    _root:
+      title: "🔹 Perintah Dasar"
+    git_add:
+      desc: "Tambahkan file ke staging area"
+      ex1: "Stage file tertentu untuk commit berikutnya"
+      ex2: "Stage semua perubahan di direktori saat ini dan di bawahnya"
+      ex3: "Pilih secara interaktif bagian file mana yang akan di-stage (berguna untuk commit parsial)"
+    git_clone:
+      desc: "Kloning repositori ke direktori baru"
+      ex1: "Kloning hanya branch tertentu (bukan default)"
+      ex2: "Kloning hanya commit terbaru, membuat salinan dangkal untuk menghemat waktu dan ruang"
+    git_commit:
+      desc: "Rekam perubahan ke repositori"
+      ex1: "Commit dengan pesan tanpa membuka editor"
+      ex2: "Stage dan commit semua file yang dimodifikasi dengan pesan"
+      ex3: "Perbarui commit terakhir (ubah pesan atau tambahkan perubahan)"
+      ex4: "Buat commit fixup untuk digabung otomatis saat rebase interaktif"
+    git_config:
+      desc: "Dapatkan dan atur opsi repositori atau global"
+      ex1: "Atur username Git global"
+      ex2: "Atur email Git global"
+      ex3: "Daftar semua pengaturan Git (nama, email, editor, dll.)"
+    git_diff:
+      desc: "Tampilkan perubahan antar commit, commit dan working tree, dll."
+      ex1: "Tampilkan perubahan sejak commit terakhir (unstaged changes)"
+      ex2: "Tampilkan apa yang akan termasuk di commit berikutnya"
+      ex3: "Tampilkan perubahan dengan perbedaan per kata"
+    git_grep:
+      desc: "Cari di dalam file repositori"
+      ex1: "Cari semua penyebutan `functionName` di semua file proyek"
+      ex2: "Cari baris yang mengandung `TODO` dan tampilkan nomor baris (berguna untuk menemukan catatan kode)"
+      ex3: "Cari kata `login` tanpa memperhatikan huruf besar kecil (cocok dengan `Login`, `LOGIN`, `login`, dll.)"
+    git_init:
+      desc: "Buat repositori Git kosong atau inisialisasi ulang yang sudah ada"
+      ex1: "Inisialisasi repo baru di direktori my-project"
+      ex2: "Inisialisasi repositori bare"
+    git_log:
+      desc: "Tampilkan log commit"
+      ex1: "Tampilkan riwayat commit dalam format ringkas satu baris"
+      ex2: "Tampilkan semua branch dalam grafik visual commit"
+      ex3: "Tampilkan patch dan statistik perubahan file untuk commit"
+    git_reset:
+      desc: "Batalkan stage file, tetapi simpan perubahan di working directory"
+      ex1: "Hapus file dari staging (perubahan tetap ada)"
+      ex2: "Kembali satu commit dan hapus semua perubahan (tidak bisa dibalik!)"
+      ex3: "Batalkan commit terakhir tetapi simpan perubahan siap di-commit lagi"
+      ex4: "Batalkan commit tetapi simpan perubahan tidak di-stage di working directory"
+    git_show:
+      desc: "Tampilkan berbagai jenis objek"
+      ex1: "Tampilkan perubahan dan pesan dari commit tertentu"
+      ex2: "Tampilkan commit sebelumnya sebelum commit saat ini"
+      ex3: "Tampilkan ringkasan perubahan file untuk commit terbaru"
+    git_status:
+      desc: "Tampilkan status working tree"
+      ex1: "Tampilkan status dalam format singkat"
+      ex2: "Tampilkan branch saat ini dan status file"
+
+  branching_merging:
+    _root:
+      title: "🌿 Branching dan Merging"
+    git_branch:
+      desc: "Buat, daftar, atau hapus branch"
+      ex1: "Buat branch baru bernama `new-feature`"
+      ex2: "Hapus branch lokal bernama `old-feature`"
+    git_checkout:
+      desc: "Beralih branch atau pulihkan file dari commit lain"
+      ex1: "Beralih ke branch `main`"
+      ex2: "Buat dan beralih ke branch baru bernama `new-branch`"
+    git_switch:
+      desc: "Beralih branch (alternatif sederhana untuk `checkout`)"
+      ex1: "Beralih ke branch `main`"
+      ex2: "Buat dan beralih ke branch baru bernama `feature-x`"
+      ex3: "Beralih ke branch yang sudah ada bernama `new-feature`"
+    git_merge:
+      desc: "Gabungkan perubahan dari branch lain ke branch saat ini"
+      ex1: "Gabungkan branch `new-feature` ke branch saat ini"
+      ex2: "Selalu buat commit merge (bahkan jika fast-forward memungkinkan)"
+      ex3: "Batalkan merge dan kembalikan perubahan jika terjadi konflik"
+    git_rebase:
+      desc: "Pindahkan atau terapkan ulang commit ke base commit baru"
+      ex1: "Terapkan ulang commit branch Anda di atas branch `main`"
+      ex2: "Edit interaktif 3 commit terakhir"
+      ex3: "Hentikan dan batalkan rebase yang sedang berlangsung"
+      ex4: "Gabungkan otomatis commit yang ditandai sebagai fixup atau squash selama rebase interaktif"
+    git_cherry_pick:
+      desc: "Terapkan commit tertentu dari branch lain"
+      ex1: "Terapkan commit tertentu (berdasarkan hash) ke branch saat ini"
+      ex2: "Lanjutkan cherry-pick setelah menyelesaikan konflik"
+      ex3: "Terapkan rentang commit dari `A` (tidak termasuk) hingga `B` (termasuk)"
+
+  remote:
+    _root:
+      title: "📡 Repositori Remote"
+    git_remote:
+      desc: "Kelola tautan ke repositori remote (seperti GitHub)"
+      ex1: "Tampilkan nama remote dan URL-nya"
+      ex2: "Tambahkan repositori remote bernama `origin`"
+    git_pull:
+      desc: "Unduh dan gabungkan otomatis perubahan dari branch remote"
+      ex1: "Fetch dan gabungkan perubahan dari branch `main` remote ke branch Anda"
+      ex2: "Fetch dan rebase branch Anda di atas branch remote alih-alih merge"
+    git_push:
+      desc: "Unggah perubahan lokal Anda ke repositori remote"
+      ex1: "Push branch lokal `main` ke remote `origin`"
+    git_fetch:
+      desc: "Unduh perubahan dari remote tanpa menggabungkan"
+      ex1: "Fetch semua pembaruan dari remote `origin`, tetapi jangan terapkan dulu"
+      ex2: "Fetch hanya branch `main` dari remote"
+      ex3: "Fetch pembaruan dari semua remote"
+      ex4: "Bersihkan branch yang dihapus — hapus referensi lokal ke branch yang dihapus di remote"
+      ex5: "Tampilkan apa yang akan di-fetch, tanpa benar-benar mengunduh apapun"
+      ex6: "Paksa perbarui branch tracking lokal (`origin/main`), menimpa konflik"
+
+  stash_cleanup:
+    _root:
+      title: "📦 Stash dan Pembersihan"
+    git_stash:
+      desc: "Simpan sementara perubahan yang belum di-commit (pekerjaan sedang berlangsung)"
+      ex1: "Simpan file yang dimodifikasi dan di-stage, lalu kembalikan working directory ke commit terakhir"
+      ex2: "Terapkan kembali stash terbaru (stash tetap tersimpan)"
+      ex3: "Terapkan dan hapus stash terbaru"
+      ex4: "Tampilkan daftar semua perubahan yang di-stash"
+      ex5: "Buat branch baru dan terapkan stash terbaru ke branch tersebut"
+    git_clean:
+      desc: "Hapus permanen file yang tidak dilacak (tidak ada di Git)"
+      ex1: "Hapus file yang tidak dilacak di direktori saat ini"
+      ex2: "Hapus file dan folder yang tidak dilacak"
+      ex3: "Pratinjau apa yang akan dihapus (dry run aman)"
+
+  tags:
+    _root:
+      title: "🏷️ Tag"
+    git_tag:
+      desc: "Buat, daftar, atau hapus tag untuk menandai titik tertentu dalam riwayat (seperti rilis)"
+      ex1: "Buat tag annotated bernama `v1.0` dengan pesan (disimpan sebagai objek Git penuh, bagus untuk rilis)"
+      ex2: "Hapus tag lokal bernama `v1.0` (tidak memengaruhi remote)"
+    git_push:
+      desc: "Unggah commit, branch, dan tag dari lokal ke repositori remote"
+      ex1: "Push semua tag lokal ke remote (berguna setelah menandai banyak versi)"
+      ex2: "Push tag tertentu (misalnya `v1.0`) ke repositori remote"
+      ex3: "Hapus tag remote `v1.0` (perhatikan sintaks titik dua)"
+
+  conflicts:
+    _root:
+      title: "🛠️ Resolusi Konflik"
+    git_mergetool:
+      desc: "Buka alat visual untuk membantu menyelesaikan konflik merge"
+      ex1: "Gunakan alat merge tertentu (seperti Meld) untuk memperbaiki konflik"
+    git_rerere:
+      desc: "Biarkan Git mengingat bagaimana Anda menyelesaikan konflik merge sebelumnya"
+      ex1: "Aktifkan penggunaan ulang otomatis resolusi konflik sebelumnya"
+      ex2: "Tampilkan file yang memiliki resolusi konflik tersimpan"
+      ex3: "Tampilkan perubahan yang disimpan Git untuk penggunaan ulang di masa depan"
+
+  advanced:
+    _root:
+      title: "⚙️ Perintah Lanjutan"
+    git_bisect:
+      desc: "Gunakan binary search untuk menemukan commit yang memperkenalkan bug"
+      ex1: "Mulai binary search antara commit baik dan buruk untuk menemukan bug"
+      ex2: "Tandai commit saat ini sebagai \"buruk\" (mengandung bug)"
+      ex3: "Tandai commit \"baik\" yang diketahui di mana bug tidak ada"
+    git_blame:
+      desc: "Tampilkan siapa yang terakhir mengubah setiap baris file, dengan revisi dan penulis"
+      ex1: "Tampilkan penulis dan info commit untuk setiap baris dalam file"
+      ex2: "Tampilkan info blame hanya untuk baris 10 hingga 20"
+      ex3: "Tampilkan alamat email penulis bersama perubahan baris"
+    git_reflog:
+      desc: "Lihat dan kelola reference log (reflog) pergerakan branch dan HEAD"
+      ex1: "Lihat ke mana branch `main` menunjuk satu minggu yang lalu"
+      ex2: "Pratinjau reflog yang lebih lama dari 30 hari yang bisa dibersihkan (tidak ada perubahan yang dibuat)"
+      ex3: "Hapus entry reflog tertentu (gunakan hati-hati, dapat memengaruhi pemulihan)"
+    git_submodule:
+      desc: "Tambah, inisialisasi, perbarui, atau inspeksi submodule (repositori di dalam repositori)"
+      ex1: "Tambahkan repositori eksternal sebagai submodule di path tertentu"
+      ex2: "Inisialisasi dan unduh semua submodule yang tercantum dalam repositori"
+      ex3: "Jalankan `git pull` di dalam setiap submodule untuk memperbarui ke commit terbaru"
+      ex4: "Sinkronkan URL submodule setelah perubahan di file `.gitmodules`"
+      ex5: "Perbarui submodule ke commit terbaru dari branch remote mereka"
+    git_archive:
+      desc: "Buat arsip (zip, tar, dll.) dari file commit atau branch tertentu"
+      ex1: "Buat arsip ZIP dari file proyek saat ini di HEAD"
+      ex2: "Buat arsip `.tar.gz` terkompres dari HEAD saat ini"
+      ex3: "Buat arsip `.tar.gz` terkompres dari proyek saat ini, menempatkan semua file di dalam folder bernama `project/` dalam arsip"
+    git_gc:
+      desc: "Bersihkan file yang tidak perlu dan optimalkan repositori untuk performa"
+      ex1: "Lakukan pembersihan dan optimisasi menyeluruh (bisa lambat tapi efektif)"
+      ex2: "Hapus semua objek yang tidak dapat dijangkau segera (berbahaya jika tidak yakin)"
+    git_shortlog:
+      desc: "Ringkasan cepat penulis dan commit mereka"
+      ex1: "Tampilkan daftar penulis dengan alamat email mereka (misalnya, untuk menganalisis siapa yang berkontribusi dan seberapa banyak)"
+      ex2: "Tampilkan berapa banyak commit yang dibuat setiap penulis, diurutkan berdasarkan jumlah commit"
+      ex3: "Sama seperti di atas, tetapi juga menyertakan nama dan email — berguna untuk pelacakan aktivitas detail"
+    git_revert:
+      desc: "Buat commit baru yang membatalkan perubahan dari commit sebelumnya tanpa menulis ulang riwayat"
+      ex1: "Batalkan commit terakhir dengan membuat commit baru yang membalikkan perubahannya"
+      ex2: "Batalkan commit tertentu berdasarkan hash, dengan aman menambahkan commit baru yang membalikkan"
+
+  gh:
+    _root:
+      title: "🐙 GitHub CLI"
+      note: "`gh` memungkinkan Anda mengelola GitHub langsung dari terminal."
+    gh_auth_login:
+      desc: "Autentikasi dengan host GitHub untuk memungkinkan perintah CLI berinteraksi dengan akun Anda"
+      ex1: "Autentikasi menggunakan personal access token yang disimpan dalam file (`mytoken.txt`)"
+      ex2: "Autentikasi ke server GitHub Enterprise (bukan github.com)"
+    gh_repo_clone:
+      desc: "Kloning repositori GitHub ke mesin lokal Anda"
+      ex1: "Kloning repositori milik `user` ke folder bernama `repo`"
+      ex2: "Kloning repositori tetapi hanya unduh commit terbaru untuk kloning lebih cepat dan kecil"
+      ex3: "Kloning repositori ke folder khusus `workspace/cli`"
+    gh_issue_list:
+      desc: "Daftar issue dalam repositori GitHub, dapat difilter berdasarkan berbagai kriteria"
+      ex1: "Daftar issue yang ditugaskan kepada Anda"
+      ex2: "Daftar semua issue terlepas dari status (open atau closed)"
+      ex3: "Daftar issue yang cocok dengan \"error\", tanpa assignment, diurutkan berdasarkan tanggal pembuatan naik"
+    gh_pr_create:
+      desc: "Buat pull request di GitHub melalui CLI"
+      ex1: "Buat pull request dengan judul tertentu"
+      ex2: "Hubungkan pull request ke proyek GitHub bernama \"Roadmap\""
+      ex3: "Buat PR dari branch `feature` di fork `monalisa` ke branch `develop`"
+    gh_repo_create:
+      desc: "Buat repositori GitHub baru dari CLI"
+      ex1: "Buat repositori baru bernama `my-project` di GitHub (dengan prompt interaktif)"
+      ex2: "Buat repositori publik dan kloning secara lokal"
+      ex3: "Buat repositori remote privat dari folder saat ini dan tambahkan remote bernama `upstream`"
+
+  aliases:
+    _root:
+      title: "💡 Alias Git (Jalan Pintas Berguna)"
+      intro: "Atur alias yang nyaman untuk mempercepat perintah Git umum:"
+
+  pro:
+    _root:
+      title: "🚀 Perintah Git Lanjutan untuk Profesional"
+    git_filter_repo:
+      desc: "Alat yang kuat dan cepat untuk menulis ulang riwayat Git guna menghapus atau memodifikasi file, kepenulisan, atau path; menggantikan git filter-branch dengan kecepatan dan keamanan yang lebih baik"
+      ex1: "Tulis ulang riwayat repositori secara efisien untuk menghapus file atau direktori sensitif tanpa masalah performa `git filter-branch`. Gunakan dengan hati-hati"
+      ex2: "Ganti string atau pola secara massal di seluruh riwayat (misalnya, sanitasi kredensial)"
+      ex3: "Ekstrak riwayat subdirektori ke repositori baru, dengan metadata commit tetap terjaga"
+    git_worktree:
+      desc: "Kelola banyak working directory yang terhubung ke satu repositori, memungkinkan pekerjaan paralel di berbagai branch tanpa kloning"
+      ex1: "Buat working tree tambahan yang terhubung ke repositori sama, memungkinkan checkout branch paralel tanpa kloning"
+      ex2: "Daftar semua worktree aktif, path, dan branch terkait"
+      ex3: "Hapus worktree yang tidak lagi diperlukan dengan aman"
+    git_replace:
+      desc: "Buat referensi sementara untuk menggantikan objek yang ada, memungkinkan manipulasi riwayat lokal non-destruktif untuk pengujian"
+      ex1: "Tukar sementara satu commit dengan commit lain di repo lokal, berguna untuk pengujian atau patching riwayat tanpa menulis ulang"
+      ex2: "Tampilkan semua referensi pengganti aktif"
+      ex3: "Hapus referensi pengganti tertentu untuk mengembalikan perilaku"
+    git_stash_adv:
+      desc: "Simpan sementara perubahan yang belum di-commit ke stack, memungkinkan berpindah konteks tanpa commit pekerjaan yang belum selesai"
+      ex1: "Pilih interaktif bagian perubahan untuk disimpan, memberi kontrol lebih detail"
+      ex2: "Buat stash dengan pesan khusus agar mudah diidentifikasi"
+      ex3: "Terapkan stash tertentu dari daftar tanpa menghapusnya"
+    git_rebase_adv:
+      desc: "Terapkan ulang commit di atas base lain, menjaga riwayat proyek tetap bersih dan linear dengan opsi pengeditan interaktif"
+      ex1: "Mulai rebase interaktif yang otomatis mengurutkan ulang dan squash commit bertanda fixup atau squash"
+      ex2: "Otomatis urutkan ulang dan squash commit fixup/squash, membersihkan riwayat sebelum push"
+      ex3: "Buat commit fixup yang akan digabung otomatis saat rebase interaktif"
+      ex4: "Buat commit squash untuk digabung dengan commit tertentu saat rebase"
+    git_bisect_pro:
+      desc: "Alat binary search untuk mengidentifikasi commit yang memperkenalkan bug dengan menguji commit berturut-turut"
+      ex1: "Otomatisasi proses bisect dengan menjalankan skrip uji pada setiap commit untuk menemukan commit yang bermasalah"
+      ex2: "Otomatisasi bisection dengan skrip uji di setiap commit, mempercepat identifikasi bug"
+      ex3: "Buka alat grafis untuk memvisualisasikan proses bisect"
+      ex4: "Keluar dari mode bisect dan kembali ke HEAD asli"
+    git_commit_pro:
+      desc: "Rekam perubahan ke repositori dengan opsi detail seperti amend, sign, fixup, dan kustomisasi pesan untuk menjaga riwayat berkualitas tinggi"
+      ex1: "Buat commit yang ditandatangani dengan kunci GPG Anda untuk verifikasi kriptografis keaslian dan kepenulisan"
+      ex2: "Tandatangani commit dengan kunci GPG Anda untuk memastikan integritas dan verifikasi kepenulisan"
+      ex3: "Konfigurasikan kunci GPG yang digunakan untuk menandatangani commit secara global"
+      ex4: "Verifikasi dan tampilkan info tanda tangan GPG untuk commit"
+    git_reflog_pro:
+      desc: "Catat pembaruan HEAD dan branch, penting untuk memulihkan commit yang hilang dan memahami pergerakan riwayat lokal"
+      ex1: "Reset branch saat ini ke status sebelumnya dari reflog untuk memulihkan perubahan"
+      ex2: "Segera hapus semua entry reflog, membersihkan riwayat reflog (gunakan dengan hati-hati)"
+
+  pro_tips:
+    _root:
+      title: "🧰 Tips Workflow Pro dan Otomatisasi"
+    columns:
+      topic: "Topik"
+      commands_example: "Perintah / Contoh"
+      explanation_tips: "Penjelasan & Tips Pro"
+    aggressive_cleanup:
+      topic: "Pembersihan Repo Agresif"
+      desc: "Melakukan garbage collection mendalam dan memangkas objek yang tidak dapat dijangkau segera untuk optimisasi repositori. Gunakan saat maintenance"
+    parallel_worktrees:
+      topic: "Worktree Branch Paralel"
+      desc: "Simpan banyak working tree untuk pengembangan fitur secara bersamaan, menghindari overhead kloning"
+    linear_history:
+      topic: "Riwayat Bersih dan Linear"
+      desc: "Sebelum push, lakukan rebase interaktif dengan autosquash agar riwayat tetap bersih dan mudah dibaca"
+    secure_commits:
+      topic: "Commit Aman"
+      desc: "Tandatangani commit dengan GPG untuk meningkatkan kepercayaan dalam repositori bersama, wajib di banyak lingkungan enterprise"
+    automated_bisect:
+      topic: "Bisect Otomatis"
+      desc: "Otomatisasi pencarian bug dengan menjalankan skrip uji pada setiap kandidat commit selama bisect"
+    conflict_cache:
+      topic: "Cache Resolusi Konflik"
+      desc: "Aktifkan penggunaan ulang resolusi konflik untuk mempercepat penyelesaian konflik merge berulang saat rebase atau merge"
+    shared_aliases_hooks:
+      topic: "Alias dan Hook Bersama"
+      desc: "Simpan alias Git umum dan commit hook dalam repo bersama atau pipeline CI untuk menegakkan standar tim dan meningkatkan produktivitas"
+
+  resources:
+    _root:
+      title: "Sumber Daya Tambahan"
+    tip:
+      title: "🧠 **Tip**"
+      desc: "Jangan coba hafalkan semuanya. Gunakan `--help`, jelajahi, dan berlatih secara rutin:"
+    links:
+      title: "🌐 Tautan Berguna"
+      official_docs: "📘 **Dokumentasi Git Resmi** — manual detail untuk semua perintah Git:"
+      learn_branching: "📙 **Learn Git Branching** — tutorial visual interaktif untuk menguasai konsep branching:"
+      pro_git_book: "📕 **Buku Pro Git** (gratis, oleh Scott Chacon & Ben Straub):"
+      official_cheatsheet: "📗 **Git Cheatsheet** (referensi ringkas resmi):"

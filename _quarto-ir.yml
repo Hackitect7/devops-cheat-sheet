@@ -1,8 +1,6 @@
 # filename: _quarto-ir.yml
 
 project:
-  pre-render:
-    - python scripts/select_snippets.py
   render:
     - ir/index.qmd
     - ir/linux.qmd

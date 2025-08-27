@@ -1,8 +1,6 @@
 # filename: _quarto-vn.yml
 
 project:
-  pre-render:
-    - python scripts/select_snippets.py
   render:
     - vn/index.qmd
     - vn/linux.qmd

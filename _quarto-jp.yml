@@ -1,8 +1,6 @@
 # filename: _quarto-jp.yml
 
 project:
-  pre-render:
-    - python scripts/select_snippets.py
   render:
     - jp/index.qmd
     - jp/linux.qmd

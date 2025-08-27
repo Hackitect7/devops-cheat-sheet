@@ -2,7 +2,7 @@ docker:
   meta:
     _root:
       title: "🐳 Docker"
-      desc: "📘 Docker 是一個在隔離容器中執行應用程式的平台。這份小抄包含操作映像檔、容器、網路、卷，以及 Docker Compose 和 Swarm 的指令。"
+      desc: "Docker 是一個在隔離容器中執行應用程式的平台。這份小抄包含操作映像檔、容器、網路、卷，以及 Docker Compose 和 Swarm 的指令。"
 
   basic:
     _root:

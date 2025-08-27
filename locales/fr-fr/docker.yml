@@ -2,7 +2,7 @@ docker:
   meta:
     _root:
       title: "🐳 Docker"
-      desc: "📘 Docker est une plateforme permettant d’exécuter des applications dans des conteneurs isolés. Cette fiche contient des commandes pour travailler avec les images, les conteneurs, les réseaux, les volumes, ainsi que Docker Compose et Swarm."
+      desc: "Docker est une plateforme permettant d’exécuter des applications dans des conteneurs isolés. Cette fiche contient des commandes pour travailler avec les images, les conteneurs, les réseaux, les volumes, ainsi que Docker Compose et Swarm."
 
   basic:
     _root:

@@ -1,8 +1,6 @@
 # filename: _quarto-ua.yml
 
 project:
-  pre-render:
-    - python scripts/select_snippets.py
   render:
     - ua/index.qmd
     - ua/linux.qmd

@@ -1,5 +1,5 @@
 ---
-title: "{{< meta about_sec.title >}}"
+title: '{{< meta about_sec.title >}}'
 page-layout: full
 toc: false
 sidebar: false
@@ -22,7 +22,7 @@ format:
 ::: {.page-container}
 ::: {.hero}
 ::: {.hero-inner}
-![](../assets/brand/us/hackitect7-logo-light-us.png){.hero-logo .only-light alt="Hackitect7 logo light (us)"}
+![](../assets/brand/tw/hackitect7-logo-light-tw.png){.hero-logo .only-light alt="Hackitect7 logo light (zh-TW)"}
 
 {{< include ../templates/about.qmd >}}
 

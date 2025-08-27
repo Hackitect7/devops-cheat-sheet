@@ -1,5 +1,326 @@
 git:
   meta:
     _root:
-      title: "🌿 Git"
-      desc: "Everyday workflows, branching, history, stashing, and collaboration basics."
+      title: "🐙 Git na GitHub CLI"
+      desc: "Amri za msingi na za hali ya juu za Git kwa udhibiti wa toleo, matawi, repos za mbali, stash, tagi na GitHub CLI."
+
+  basic:
+    _root:
+      title: "🔹 Amri za Msingi"
+    git_add:
+      desc: "Ongeza faili kwenye eneo la staging"
+      ex1: "Ongeza faili maalum kwa commit inayofuata"
+      ex2: "Ongeza mabadiliko yote kwenye saraka ya sasa na chini yake"
+      ex3: "Chagua sehemu za faili kuongeza kwa njia ya mwingiliano (inasaidia kwa partial commits)"
+    git_clone:
+      desc: "Nakili repository kwenye saraka mpya"
+      ex1: "Nakili tawi maalum pekee (badala ya default)"
+      ex2: "Nakili commit ya hivi karibuni pekee, ikifanya nakala ndogo ili kuokoa muda na nafasi"
+    git_commit:
+      desc: "Hifadhi mabadiliko kwenye repository"
+      ex1: "Fanya commit na ujumbe bila kufungua mhariri"
+      ex2: "Ongeza na commit faili zote zilizobadilishwa zilizofuatiliwa na ujumbe"
+      ex3: "Sasisha commit ya mwisho (badilisha ujumbe au ongeza mabadiliko zaidi)"
+      ex4: "Unda commit ya fixup ili kuunganishwa kiotomatiki baadaye wakati wa interactive rebase"
+    git_config:
+      desc: "Pata na weka chaguo za repository au za kimataifa"
+      ex1: "Weka jina la Git la kimataifa"
+      ex2: "Weka barua pepe ya Git ya kimataifa"
+      ex3: "Orodhesha mipangilio yote ya Git (jina, barua pepe, mhariri, nk.)"
+    git_diff:
+      desc: "Onyesha mabadiliko kati ya commits, commit na working tree, nk."
+      ex1: "Onyesha ulichobadilisha tangu commit ya mwisho (mabadiliko yasiyo staged)"
+      ex2: "Onyesha yatakayojumuishwa kwenye commit inayofuata"
+      ex3: "Onyesha mabadiliko kwa tofauti za kiwango cha maneno"
+    git_grep:
+      desc: "Tafuta ndani ya faili za repository"
+      ex1: "Pata marejeo yote ya `functionName` kwenye faili zote za mradi"
+      ex2: "Pata mistari yenye `TODO` na onyesha nambari za mistari (inasaidia kwa code notes)"
+      ex3: "Tafuta neno `login` bila kujali herufi kubwa au ndogo (litapatana na `Login`, `LOGIN`, `login`, nk.)"
+    git_init:
+      desc: "Unda repository tupu ya Git au anza upya iliyopo"
+      ex1: "Anzisha repo mpya kwenye saraka my-project"
+      ex2: "Anzisha repository ya bare"
+    git_log:
+      desc: "Onyesha commit logs"
+      ex1: "Onyesha historia ya commit kwa muundo wa mstari mmoja"
+      ex2: "Onyesha matawi yote kwenye grafu ya commits"
+      ex3: "Onyesha patch na stats za mabadiliko ya faili kwa commits"
+    git_reset:
+      desc: "Ondoa faili kutoka staging, ukihifadhi mabadiliko kwenye working directory"
+      ex1: "Ondoa faili kutoka staging (inahifadhi uhariri wako)"
+      ex2: "Rudi commit moja nyuma na ufute mabadiliko yote (hatarishi!)"
+      ex3: "Futa commit ya mwisho lakini hifadhi mabadiliko tayari kwa commit tena"
+      ex4: "Futa commit lakini hifadhi mabadiliko yasiyo staged kwenye working directory"
+    git_show:
+      desc: "Onyesha aina mbalimbali za vitu"
+      ex1: "Onyesha mabadiliko na ujumbe wa commit maalum"
+      ex2: "Onyesha commit iliyopita kabla ya ya sasa"
+      ex3: "Onyesha muhtasari wa mabadiliko ya faili kwa commit ya hivi karibuni"
+    git_status:
+      desc: "Onyesha hali ya working tree"
+      ex1: "Onyesha hali kwa muundo mfupi"
+      ex2: "Onyesha tawi la sasa na hali ya faili"
+
+  branching_merging:
+    _root:
+      title: "🌿 Matawi na Kuunganisha"
+    git_branch:
+      desc: "Unda, orodhesha au futa matawi"
+      ex1: "Unda tawi jipya linaloitwa `new-feature`"
+      ex2: "Futa tawi la ndani linaloitwa `old-feature`"
+    git_checkout:
+      desc: "Badilisha matawi au rejesha faili kutoka commit nyingine"
+      ex1: "Badilisha hadi tawi `main`"
+      ex2: "Unda na ubadilishe hadi tawi jipya linaloitwa `new-branch`"
+    git_switch:
+      desc: "Badilisha matawi (mbadala rahisi kwa `checkout`)"
+      ex1: "Badilisha hadi tawi `main`"
+      ex2: "Unda na ubadilishe hadi tawi jipya linaloitwa `feature-x`"
+      ex3: "Badilisha hadi tawi lililopo linaloitwa `new-feature`"
+    git_merge:
+      desc: "Unganisha mabadiliko kutoka tawi jingine hadi lile la sasa"
+      ex1: "Unganisha tawi `new-feature` hadi tawi la sasa"
+      ex2: "Daima unda merge commit (hata kama fast-forward inawezekana)"
+      ex3: "Ghairi merge na rudisha mabadiliko ikiwa migongano itatokea"
+    git_rebase:
+      desc: "Hamisha au rudia commits juu ya commit mpya ya msingi"
+      ex1: "Rudia commits za tawi lako juu ya tawi `main`"
+      ex2: "Hariri commits 3 za mwisho kwa njia ya interactive"
+      ex3: "Simamisha na futa rebase inayoendelea"
+      ex4: "Unganisha commits zilizowekwa alama kama fixup au squash wakati wa interactive rebase"
+    git_cherry_pick:
+      desc: "Tumia commits maalum kutoka tawi jingine"
+      ex1: "Tumia commit maalum (kwa hash) kwenye tawi la sasa"
+      ex2: "Endelea cherry-pick baada ya kutatua migongano"
+      ex3: "Tumia safu ya commits kutoka `A` (haijajumuishwa) hadi `B` (imejumuishwa)"
+
+  remote:
+    _root:
+      title: "📡 Repositories za Mbali"
+    git_remote:
+      desc: "Simamia viungo kwa repositories za mbali (mfano GitHub)"
+      ex1: "Onyesha majina ya remote na URL zao"
+      ex2: "Ongeza repository ya mbali iitwayo `origin`"
+    git_pull:
+      desc: "Pakua na unganisha mabadiliko kiotomatiki kutoka tawi la mbali"
+      ex1: "Pakua na unganisha mabadiliko kutoka tawi `main` la mbali hadi tawi lako la sasa"
+      ex2: "Pakua na rebase tawi lako juu ya tawi la mbali badala ya kuunganisha"
+    git_push:
+      desc: "Pakia mabadiliko yako ya ndani hadi repository ya mbali"
+      ex1: "Push tawi lako `main` la ndani hadi remote `origin`"
+    git_fetch:
+      desc: "Pakua mabadiliko kutoka mbali bila kuunganisha"
+      ex1: "Pakua masasisho yote kutoka remote `origin`, lakini usiyatumie bado"
+      ex2: "Pakua tawi `main` pekee kutoka mbali"
+      ex3: "Pakua masasisho kutoka kwa remotes zote"
+      ex4: "Safisha matawi yaliyofutwa — ondoa marejeo ya ndani kwa matawi yaliyofutwa mbali"
+      ex5: "Onyesha kitakachopakuliwa bila kupakua chochote"
+      ex6: "Sasisha kwa nguvu tawi lako la kufuatilia (`origin/main`), ukifuta migongano"
+
+  stash_cleanup:
+    _root:
+      title: "📦 Stash na Usafishaji"
+    git_stash:
+      desc: "Hifadhi kwa muda mabadiliko yasiyocommitiwa (kazi inayoendelea)"
+      ex1: "Hifadhi faili zilizobadilishwa na staged, kisha rudisha working directory hadi commit ya mwisho"
+      ex2: "Tumia tena stash ya hivi karibuni (stash inabaki imehifadhiwa)"
+      ex3: "Tumia tena na uondoe stash ya hivi karibuni"
+      ex4: "Onyesha orodha ya stash zote"
+      ex5: "Unda tawi jipya na tumia stash ya hivi karibuni ndani yake"
+    git_clean:
+      desc: "Futa faili zisizofuatiliwa kabisa (sio sehemu ya Git)"
+      ex1: "Futa faili zisizofuatiliwa kwenye saraka ya sasa"
+      ex2: "Futa faili na folda zisizofuatiliwa"
+      ex3: "Onyesha itakayofutwa (dry run salama)"
+
+  tags:
+    _root:
+      title: "🏷️ Tagi"
+    git_tag:
+      desc: "Unda, orodhesha au futa tagi ili kuweka alama sehemu maalum za historia (mfano matoleo)"
+      ex1: "Unda tagi yenye maelezo iitwayo `v1.0` na ujumbe (inahifadhiwa kama kitu kamili cha Git, inafaa kwa matoleo)"
+      ex2: "Futa tagi ya ndani iitwayo `v1.0` (haiathiri remote)"
+    git_push:
+      desc: "Pakia commits, matawi na tagi kutoka ndani hadi repository ya mbali"
+      ex1: "Push tagi zote za ndani hadi remote (inasaidia baada ya kuweka matoleo mengi)"
+      ex2: "Push tagi maalum (mf. `v1.0`) hadi repository ya mbali"
+      ex3: "Futa tagi ya mbali `v1.0` (angalia sintaksia ya colon)"
+
+  conflicts:
+    _root:
+      title: "🛠️ Utatuzi wa Migongano"
+    git_mergetool:
+      desc: "Fungua zana ya kuona kusaidia kutatua migongano ya merge"
+      ex1: "Tumia zana maalum ya merge (mfano Meld) kurekebisha migongano"
+    git_rerere:
+      desc: "Acha Git ikumbuke jinsi ulivyotatua migongano hapo awali"
+      ex1: "Wezesha utumiaji wa kiotomatiki wa suluhisho za migongano zilizopita"
+      ex2: "Onyesha ni faili zipi zina suluhisho zilizohifadhiwa"
+      ex3: "Onyesha mabadiliko ambayo Git imehifadhi kwa matumizi ya baadaye"
+
+  advanced:
+    _root:
+      title: "⚙️ Amri za Kina"
+    git_bisect:
+      desc: "Tumia binary search kupata commit iliyoleta hitilafu"
+      ex1: "Anza binary search kati ya commit nzuri na mbaya ili kupata bug"
+      ex2: "Weka alama commit ya sasa kama \"mbaya\" (ina bug)"
+      ex3: "Weka alama commit inayojulikana kama \"nzuri\" ambapo bug haikuwepo"
+    git_blame:
+      desc: "Onyesha nani alibadilisha kila mstari wa faili, na revision na mwandishi"
+      ex1: "Onyesha mwandishi na commit info kwa kila mstari kwenye faili"
+      ex2: "Onyesha blame info kwa mistari 10 hadi 20 pekee"
+      ex3: "Onyesha barua pepe za waandishi kando ya mabadiliko ya mistari"
+    git_reflog:
+      desc: "Tazama na simamia reference log (reflog) ya harakati za matawi na HEAD"
+      ex1: "Angalia pale ambapo tawi `main` lilikuwa limeelekezwa wiki moja iliyopita"
+      ex2: "Onyesha ni reflog entries zipi zilizo zaidi ya siku 30 zinaweza kusafishwa (hakuna mabadiliko yaliyofanywa)"
+      ex3: "Futa reflog entry maalum (tumia kwa uangalifu, inaweza kuathiri recovery)"
+    git_submodule:
+      desc: "Ongeza, anzisha, sasisha, au kagua submodules (repositories ndani ya repositories)"
+      ex1: "Ongeza repository ya nje kama submodule kwenye njia maalum"
+      ex2: "Anzisha na pakua submodules zote zilizoorodheshwa kwenye repository"
+      ex3: "Endesha `git pull` ndani ya kila submodule ili kuisasisha hadi commit ya hivi karibuni"
+      ex4: "Linganishwa URLs za submodule baada ya mabadiliko kwenye faili `.gitmodules`"
+      ex5: "Sasisha submodules hadi commit ya hivi karibuni kutoka matawi yao ya mbali"
+    git_archive:
+      desc: "Unda archive (zip, tar, nk.) ya faili kutoka commit au tawi maalum"
+      ex1: "Unda archive ya ZIP ya faili za mradi kwa HEAD"
+      ex2: "Unda archive ya `.tar.gz` iliyoshinikizwa kutoka HEAD ya sasa"
+      ex3: "Unda archive ya `.tar.gz` iliyoshinikizwa ya mradi, ikiweka faili zote ndani ya folda iitwayo `project/`"
+    git_gc:
+      desc: "Safisha faili zisizohitajika na boresha repository kwa utendaji"
+      ex1: "Fanya usafishaji na uboreshaji wa kina (unaweza kuwa mrefu lakini ni bora)"
+      ex2: "Ondoa vitu visivyofikika mara moja (hatarishi ukikosa uhakika)"
+    git_shortlog:
+      desc: "Muhtasari wa haraka wa waandishi na commits zao"
+      ex1: "Onyesha orodha ya waandishi na barua pepe zao (mf. kuchambua nani alichangia na kiasi gani)"
+      ex2: "Onyesha commits ngapi kila mwandishi alifanya, zikiorodheshwa kwa idadi"
+      ex3: "Sawa na hapo juu, lakini pia ni pamoja na majina na barua pepe — inasaidia kwa ufuatiliaji wa kina wa shughuli"
+    git_revert:
+      desc: "Unda commit mpya inayofuta mabadiliko kutoka commit ya awali bila kuandika upya historia"
+      ex1: "Futa commit ya mwisho kwa kuunda commit mpya inayopindua mabadiliko yake"
+      ex2: "Futa commit maalum kwa hash, ukiongeza commit mpya inayopindua hiyo salama"
+
+  gh:
+    _root:
+      title: "🐙 GitHub CLI"
+      note: "`gh` hukuruhusu kusimamia GitHub kutoka terminal."
+    gh_auth_login:
+      desc: "Thibitisha na mwenyeji wa GitHub kuruhusu amri za CLI kuingiliana na akaunti yako"
+      ex1: "Thibitisha ukitumia personal access token iliyohifadhiwa kwenye faili (`mytoken.txt`)"
+      ex2: "Thibitisha kwa seva ya GitHub Enterprise (sio github.com)"
+    gh_repo_clone:
+      desc: "Nakili repository ya GitHub kwenye mashine yako ya ndani"
+      ex1: "Nakili repository `repo` inayomilikiwa na `user` kwenye folda inayoitwa `repo`"
+      ex2: "Nakili repository lakini pakua commit ya hivi karibuni pekee kwa nakala ndogo na ya haraka"
+      ex3: "Nakili repository kwenye folda maalum `workspace/cli`"
+    gh_issue_list:
+      desc: "Orodhesha masuala (issues) kwenye repository ya GitHub, ukiweza kuchuja kwa vigezo mbalimbali"
+      ex1: "Orodhesha masuala yaliyokabidhiwa kwako"
+      ex2: "Orodhesha masuala bila kujali hali (wazi au yamefungwa)"
+      ex3: "Orodhesha masuala yanayolingana na \"error\", yasiyokabidhiwa, yaliyopangwa kwa tarehe ya kuundwa kupanda"
+    gh_pr_create:
+      desc: "Unda pull request kwenye GitHub kupitia CLI"
+      ex1: "Unda pull request yenye kichwa kilichotolewa"
+      ex2: "Unganisha pull request na mradi wa GitHub uitwao \"Roadmap\""
+      ex3: "Unda PR kutoka tawi `feature` kwenye fork `monalisa` kwenda tawi `develop`"
+    gh_repo_create:
+      desc: "Unda repository mpya ya GitHub kutoka CLI"
+      ex1: "Unda repository mpya iitwayo `my-project` kwenye GitHub (maswali ya mwingiliano yatafuata)"
+      ex2: "Unda repository ya umma na uiweke nakala ndani"
+      ex3: "Unda repo ya mbali ya kibinafsi kutoka folda ya sasa na ongeza remote iitwayo `upstream`"
+
+  aliases:
+    _root:
+      title: "💡 Aliasi za Git (Njia Fupi Muhimu)"
+      intro: "Sanidi aliasi rahisi ili kuharakisha amri za kawaida za Git:"
+
+  pro:
+    _root:
+      title: "🚀 Amri za Kina za Git kwa Wataalamu"
+    git_filter_repo:
+      desc: "Chombo chenye nguvu na kasi kwa kuandika upya historia ya Git ili kuondoa au kurekebisha faili, uandishi, au njia; kinachobadilisha git filter-branch kwa kasi na usalama bora"
+      ex1: "Andika upya historia ya repository ili kuondoa faili au saraka nyeti bila matatizo ya utendaji ya `git filter-branch`. Tumia kwa uangalifu"
+      ex2: "Badilisha kwa wingi mistari au mifumo kote kwenye historia (mfano, kusafisha credentials)"
+      ex3: "Toa historia ya subdirectory ndani ya repository mpya, ukihifadhi metadata ya commit"
+    git_worktree:
+      desc: "Simamia saraka nyingi za kazi zilizounganishwa kwenye repository moja, kuruhusu kufanya kazi sambamba kwenye matawi tofauti bila cloning"
+      ex1: "Unda worktree ya ziada iliyoambatanishwa na repository ile ile, ikiruhusu checkouts za matawi sambamba bila clones"
+      ex2: "Orodhesha worktree zote zinazotumika, njia zao na matawi husika"
+      ex3: "Ondoa worktree iliyounganishwa ikiwa haihitajiki tena, kusafisha saraka za kazi kwa usalama"
+    git_replace:
+      desc: "Unda marejeleo ya muda yanayobadilisha vitu vilivyopo, ukiruhusu urekebishaji wa historia wa ndani bila kuharibu na kwa madhumuni ya majaribio"
+      ex1: "Badilisha commit moja kwa nyingine kwa muda kwenye repo yako ya ndani, inasaidia kwa majaribio bila kuandika upya historia"
+      ex2: "Onyesha replacement refs zote zinazotumika"
+      ex3: "Futa replacement ref maalum kurejesha tabia ya awali"
+    git_stash_adv:
+      desc: "Hifadhi kwa muda mabadiliko yasiyocommitiwa kwenye stack, ukiruhusu kubadilisha muktadha bila kufanya commit ya kazi isiyokamilika"
+      ex1: "Chagua hunks za mabadiliko kwa mwingiliano ili kuweka stash, ukitoa udhibiti wa kina"
+      ex2: "Unda stash yenye ujumbe maalum kwa utambulisho rahisi"
+      ex3: "Tumia stash maalum kutoka orodha ya stash bila kuifuta"
+    git_rebase_adv:
+      desc: "Rudia commits juu ya base mpya, kurahisisha historia safi, linear na kuhariri historia kwa interactive"
+      ex1: "Anza interactive rebase inayopanga upya na kuunganisha commits zilizowekwa alama kama fixup au squash"
+      ex2: "Panga upya na unganisha commits zilizowekwa fixup/squash, kusafisha historia kabla ya push"
+      ex3: "Unda commit ya fixup itakayounganishwa kiotomatiki wakati wa interactive rebase"
+      ex4: "Unda commit ya squash kuunganishwa na commit maalum kwenye rebase"
+    git_bisect_pro:
+      desc: "Chombo cha binary search kutambua commit iliyosababisha bug kwa kujaribu commits kwa mpangilio na kupunguza mabadiliko yenye kosa"
+      ex1: "Otomatisha mchakato wa bisect kwa kuendesha script ya majaribio kwenye kila commit ili kupata bug haraka"
+      ex2: "Otomatisha bisection kwa script, ikiharakisha sana utambuzi wa bug"
+      ex3: "Fungua chombo cha kuona kuonyesha mchakato wa bisection"
+      ex4: "Toka hali ya bisect na urudi kwenye HEAD ya awali"
+    git_commit_pro:
+      desc: "Hifadhi mabadiliko kwenye repository na chaguo za kina kwa amend, sign, fixup, na urekebishaji wa ujumbe kudumisha historia safi ya mradi"
+      ex1: "Unda commit iliyosainiwa kwa GPG yako kuhakikisha uthibitisho wa cryptographic wa uhalisi"
+      ex2: "Saini commits zako kwa GPG yako, kuhakikisha uadilifu na uthibitisho wa uandishi"
+      ex3: "Sanidi ufunguo wa GPG unaotumika kusaini commits kimataifa"
+      ex4: "Thibitisha na onyesha taarifa ya saini za GPG kwa commits"
+    git_reflog_pro:
+      desc: "Hifadhi logi ya masasisho kwa HEAD na matawi, muhimu kwa kurejesha commits zilizopotea na kuelewa historia ya ndani"
+      ex1: "Weka upya tawi la sasa kwa hali ya awali kutoka reflog ili kurejesha au kufuta mabadiliko"
+      ex2: "Futa mara moja entries zote za reflog, kusafisha historia ya reflog (tumia kwa uangalifu)"
+
+  pro_tips:
+    _root:
+      title: "🧰 Vidokezo vya Kitaalamu vya Mtiririko wa Kazi na Otomatisi"
+    columns:
+      topic: "Mada"
+      commands_example: "Amri / Mfano"
+      explanation_tips: "Maelezo & Vidokezo vya Pro"
+    aggressive_cleanup:
+      topic: "Usafishaji Mkali wa Repo"
+      desc: "Hufanya garbage collection ya kina na hukata vitu visivyofikika mara moja kwa uboreshaji wa repo. Tumia wakati wa matengenezo"
+    parallel_worktrees:
+      topic: "Worktrees Sambamba za Matawi"
+      desc: "Hifadhi worktrees nyingi kwa maendeleo ya vipengele sambamba, huepuka mzigo wa clone"
+    linear_history:
+      topic: "Historia Safi, Linear"
+      desc: "Kabla ya kupush, fanya rebase kwa interactive na autosquash kudumisha historia safi na rahisi kusomeka"
+    secure_commits:
+      topic: "Commits Salama"
+      desc: "Saini commits na GPG kuongeza uaminifu kwenye repos zilizoshirikiwa, ni lazima katika mazingira mengi ya biashara"
+    automated_bisect:
+      topic: "Bisect Otomatiki"
+      desc: "Otomatisha utafutaji wa bug kwa kuendesha script ya majaribio kwenye kila commit wakati wa bisect"
+    conflict_cache:
+      topic: "Kumbukumbu ya Migongano"
+      desc: "Wezesha utumiaji tena wa suluhisho za migongano ili kuharakisha utatuzi wa migongano inayojirudia kwenye rebases au merges"
+    shared_aliases_hooks:
+      topic: "Aliasi na Hooks za Pamoja"
+      desc: "Hifadhi aliasi za Git na commit hooks kwenye repo ya pamoja au pipeline ya CI kutekeleza viwango vya timu na kuboresha tija"
+
+  resources:
+    _root:
+      title: "Rasilimali za Ziada"
+    tip:
+      title: "🧠 **Kidokezo**"
+      desc: "Usijaribu kukumbuka kila kitu. Tumia `--help`, chunguza, na fanya mazoezi mara kwa mara:"
+    links:
+      title: "🌐 Viungo Muhimu"
+      official_docs: "📘 **Nyaraka Rasmi za Git** — mwongozo wa kina kwa amri zote za Git:"
+      learn_branching: "📙 **Jifunze Git Branching** — mafunzo ya kuona kwa interactive kudhibiti matawi:"
+      pro_git_book: "📕 **Kitabu cha Pro Git** (bure, na Scott Chacon & Ben Straub):"
+      official_cheatsheet: "📗 **Git Cheatsheet** (muhtasari rasmi wa haraka):"

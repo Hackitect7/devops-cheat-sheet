@@ -1,8 +1,6 @@
 # filename: _quarto-kr.yml
 
 project:
-  pre-render:
-    - python scripts/select_snippets.py
   render:
     - kr/index.qmd
     - kr/linux.qmd

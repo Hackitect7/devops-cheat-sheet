@@ -2,7 +2,7 @@ docker:
   meta:
     _root:
       title: "🐳 Docker"
-      desc: "📘 Docker는 격리된 컨테이너에서 애플리케이션을 실행하기 위한 플랫폼입니다. 이 치트시트에는 이미지, 컨테이너, 네트워크, 볼륨, 그리고 Docker Compose와 Swarm을 다루는 명령어가 포함되어 있습니다."
+      desc: "Docker는 격리된 컨테이너에서 애플리케이션을 실행하기 위한 플랫폼입니다. 이 치트시트에는 이미지, 컨테이너, 네트워크, 볼륨, 그리고 Docker Compose와 Swarm을 다루는 명령어가 포함되어 있습니다."
 
   basic:
     _root:

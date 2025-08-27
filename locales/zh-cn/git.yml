@@ -1,5 +1,326 @@
 git:
   meta:
     _root:
-      title: "🌿 Git"
-      desc: "Everyday workflows, branching, history, stashing, and collaboration basics."
+      title: "🐙 Git 和 GitHub CLI"
+      desc: "基础与高级 Git 命令：版本控制、分支、远程仓库、暂存区、标签，以及 GitHub CLI。"
+
+  basic:
+    _root:
+      title: "🔹 基本命令"
+    git_add:
+      desc: "将文件添加到暂存区"
+      ex1: "暂存指定文件以便下次提交"
+      ex2: "暂存当前目录及其子目录中的所有更改"
+      ex3: "交互式选择文件的部分更改进行暂存（适合部分提交）"
+    git_clone:
+      desc: "克隆一个仓库到新目录"
+      ex1: "只克隆指定分支（而不是默认分支）"
+      ex2: "只克隆最新提交，创建浅拷贝以节省时间和空间"
+    git_commit:
+      desc: "将更改记录到仓库"
+      ex1: "带消息提交，不打开编辑器"
+      ex2: "暂存并提交所有已修改的已跟踪文件，并添加提交信息"
+      ex3: "更新最后一次提交（修改消息或包含更多更改）"
+      ex4: "创建一个 fixup 提交，稍后在交互式 rebase 中自动压缩"
+    git_config:
+      desc: "获取和设置仓库或全局配置"
+      ex1: "设置全局 Git 用户名"
+      ex2: "设置全局 Git 邮箱"
+      ex3: "列出所有 Git 设置（姓名、邮箱、编辑器等）"
+    git_diff:
+      desc: "显示提交之间、提交与工作区之间的更改"
+      ex1: "显示自上次提交以来的修改（未暂存）"
+      ex2: "显示下次提交将包含的更改"
+      ex3: "以单词级别显示差异"
+    git_grep:
+      desc: "在仓库文件中搜索"
+      ex1: "查找所有文件中 `functionName` 的引用"
+      ex2: "查找包含 `TODO` 的行并显示行号（有助于查找代码注释）"
+      ex3: "不区分大小写搜索 `login`（匹配 `Login`、`LOGIN`、`login` 等）"
+    git_init:
+      desc: "创建一个新的空 Git 仓库或重新初始化现有仓库"
+      ex1: "在目录 my-project 中初始化新仓库"
+      ex2: "初始化一个裸仓库"
+    git_log:
+      desc: "显示提交日志"
+      ex1: "以简洁单行格式显示提交历史"
+      ex2: "以图形方式显示所有分支的提交记录"
+      ex3: "显示提交的补丁和文件更改统计"
+    git_reset:
+      desc: "取消暂存文件，但保留工作目录中的更改"
+      ex1: "从暂存区移除文件（保留编辑内容）"
+      ex2: "回退到上一个提交并删除所有更改（不可逆！）"
+      ex3: "撤销上一次提交，但保留更改以便再次提交"
+      ex4: "撤销提交，但将更改保留在工作目录中（未暂存）"
+    git_show:
+      desc: "显示各种类型的对象"
+      ex1: "显示指定提交的更改和消息"
+      ex2: "显示当前提交之前的提交"
+      ex3: "显示最近一次提交的文件更改摘要"
+    git_status:
+      desc: "显示工作区状态"
+      ex1: "以简短格式显示状态"
+      ex2: "显示当前分支及文件状态"
+
+  branching_merging:
+    _root:
+      title: "🌿 分支与合并"
+    git_branch:
+      desc: "创建、列出或删除分支"
+      ex1: "创建一个名为 `new-feature` 的新分支"
+      ex2: "删除本地分支 `old-feature`"
+    git_checkout:
+      desc: "切换分支或从其他提交恢复文件"
+      ex1: "切换到 `main` 分支"
+      ex2: "创建并切换到新分支 `new-branch`"
+    git_switch:
+      desc: "切换分支（`checkout` 的简化替代方案）"
+      ex1: "切换到 `main` 分支"
+      ex2: "创建并切换到新分支 `feature-x`"
+      ex3: "切换到现有分支 `new-feature`"
+    git_merge:
+      desc: "将另一个分支的更改合并到当前分支"
+      ex1: "将 `new-feature` 分支合并到当前分支"
+      ex2: "始终创建合并提交（即使可以快进合并）"
+      ex3: "若出现冲突，取消合并并恢复更改"
+    git_rebase:
+      desc: "将提交移动或重新应用到新的基提交上"
+      ex1: "将你的分支提交重新应用到 `main` 分支之上"
+      ex2: "交互式编辑最近 3 次提交"
+      ex3: "停止并撤销正在进行的 rebase"
+      ex4: "在交互式 rebase 中自动压缩标记为 fixup 或 squash 的提交"
+    git_cherry_pick:
+      desc: "应用另一个分支的特定提交"
+      ex1: "将某个提交（通过哈希）应用到当前分支"
+      ex2: "解决冲突后继续 cherry-pick"
+      ex3: "应用从 `A`（不含）到 `B`（含）的提交范围"
+
+  remote:
+    _root:
+      title: "📡 远程仓库"
+    git_remote:
+      desc: "管理远程仓库链接（如 GitHub）"
+      ex1: "显示远程名称及其 URL"
+      ex2: "添加名为 `origin` 的远程仓库"
+    git_pull:
+      desc: "从远程分支下载并自动合并更改"
+      ex1: "从远程 `main` 分支获取并合并到当前分支"
+      ex2: "获取并 rebase 当前分支到远程分支，而不是合并"
+    git_push:
+      desc: "将本地更改上传到远程仓库"
+      ex1: "将本地 `main` 分支推送到远程 `origin`"
+    git_fetch:
+      desc: "从远程下载更改但不合并"
+      ex1: "获取远程 `origin` 的所有更新，但不应用"
+      ex2: "仅获取远程的 `main` 分支"
+      ex3: "从所有远程获取更新"
+      ex4: "清理已删除的分支 —— 删除本地引用的远程已删除分支"
+      ex5: "显示将要获取的内容，但不实际下载"
+      ex6: "强制更新本地跟踪分支 (`origin/main`)，覆盖冲突"
+
+  stash_cleanup:
+    _root:
+      title: "📦 暂存与清理"
+    git_stash:
+      desc: "临时保存未提交的更改（进行中的工作）"
+      ex1: "保存已修改和已暂存的文件，然后将工作区恢复到上次提交"
+      ex2: "重新应用最近一次暂存的更改（暂存仍保留）"
+      ex3: "重新应用并删除最近一次暂存"
+      ex4: "显示所有暂存的更改列表"
+      ex5: "创建一个新分支并应用最近一次暂存"
+    git_clean:
+      desc: "永久删除未跟踪文件（未被 Git 管理）"
+      ex1: "删除当前目录中的未跟踪文件"
+      ex2: "删除未跟踪的文件和文件夹"
+      ex3: "预览将要删除的内容（安全干跑）"
+
+  tags:
+    _root:
+      title: "🏷️ 标签"
+    git_tag:
+      desc: "创建、列出或删除标签以标记历史中的特定点（如发布）"
+      ex1: "创建带消息的注解标签 `v1.0`（保存为完整 Git 对象，适合发布）"
+      ex2: "删除本地标签 `v1.0`（不影响远程）"
+    git_push:
+      desc: "将提交、分支和标签从本地推送到远程仓库"
+      ex1: "将所有本地标签推送到远程（适合一次标记多个版本后使用）"
+      ex2: "将指定标签（如 `v1.0`）推送到远程仓库"
+      ex3: "删除远程标签 `v1.0`（注意冒号语法）"
+
+  conflicts:
+    _root:
+      title: "🛠️ 冲突解决"
+    git_mergetool:
+      desc: "打开可视化工具以帮助解决合并冲突"
+      ex1: "使用指定的合并工具（如 Meld）解决冲突"
+    git_rerere:
+      desc: "让 Git 记住你之前如何解决合并冲突"
+      ex1: "启用过去冲突解决方案的自动复用"
+      ex2: "显示哪些文件已保存冲突解决方案"
+      ex3: "显示 Git 保存的供将来复用的更改"
+
+  advanced:
+    _root:
+      title: "⚙️ 高级命令"
+    git_bisect:
+      desc: "使用二分查找定位引入错误的提交"
+      ex1: "在已知正常提交和有问题提交之间开始二分查找错误"
+      ex2: "将当前提交标记为 \"bad\"（包含错误）"
+      ex3: "将已知正常的提交标记为 \"good\"（无错误）"
+    git_blame:
+      desc: "显示文件每行最后修改者及其提交信息"
+      ex1: "显示文件每行的作者和提交信息"
+      ex2: "仅显示第 10 到 20 行的责任信息"
+      ex3: "在行更改旁显示作者的电子邮箱"
+    git_reflog:
+      desc: "查看和管理分支移动及 HEAD 的引用日志 (reflog)"
+      ex1: "查看 `main` 分支一周前的指向"
+      ex2: "预览哪些超过 30 天的 reflog 条目可以清理（不做更改）"
+      ex3: "删除特定的 reflog 条目（谨慎使用，可能影响恢复）"
+    git_submodule:
+      desc: "添加、初始化、更新或检查子模块（仓库中的仓库）"
+      ex1: "将外部仓库作为子模块添加到指定路径"
+      ex2: "初始化并下载仓库中列出的所有子模块"
+      ex3: "在每个子模块中运行 `git pull` 以更新到最新提交"
+      ex4: "在 `.gitmodules` 文件更改后同步子模块 URL"
+      ex5: "更新子模块到其远程分支的最新提交"
+    git_archive:
+      desc: "从特定提交或分支创建文件归档（zip、tar 等）"
+      ex1: "创建当前项目 HEAD 的 ZIP 归档"
+      ex2: "从当前 HEAD 创建压缩的 `.tar.gz` 归档"
+      ex3: "创建包含 `project/` 文件夹的压缩 `.tar.gz` 归档"
+    git_gc:
+      desc: "清理不必要的文件并优化仓库性能"
+      ex1: "执行彻底的清理和优化（可能较慢但有效）"
+      ex2: "立即删除所有不可达对象（不确定时危险）"
+    git_shortlog:
+      desc: "作者及其提交的快速汇总"
+      ex1: "显示作者及其电子邮箱列表（如分析谁贡献了多少）"
+      ex2: "显示每个作者的提交次数，按提交数排序"
+      ex3: "同上，但也包含姓名和邮箱 —— 适合详细跟踪活动"
+    git_revert:
+      desc: "创建一个新提交来撤销之前提交的更改，而不改写历史"
+      ex1: "通过新提交撤销上一次提交"
+      ex2: "通过哈希撤销特定提交，安全地添加一个反向提交"
+
+  gh:
+    _root:
+      title: "🐙 GitHub CLI"
+      note: "`gh` 让你可以在终端中管理 GitHub。"
+    gh_auth_login:
+      desc: "与 GitHub 主机进行身份验证，以便 CLI 命令能与您的账户交互"
+      ex1: "使用存储在文件 (`mytoken.txt`) 中的个人访问令牌进行认证"
+      ex2: "认证到 GitHub Enterprise 服务器（而不是 github.com）"
+    gh_repo_clone:
+      desc: "将 GitHub 仓库克隆到本地计算机"
+      ex1: "将 `user` 拥有的仓库 repo 克隆到名为 `repo` 的文件夹"
+      ex2: "只下载最新提交，创建更小更快的浅拷贝"
+      ex3: "将仓库克隆到自定义文件夹 `workspace/cli`"
+    gh_issue_list:
+      desc: "列出 GitHub 仓库中的问题，可按多种条件筛选"
+      ex1: "列出分配给你的问题"
+      ex2: "列出所有问题（无论是打开还是关闭）"
+      ex3: "列出匹配 \"error\" 的未分配问题，按创建时间升序排序"
+    gh_pr_create:
+      desc: "通过 CLI 在 GitHub 上创建拉取请求（PR）"
+      ex1: "创建一个带指定标题的拉取请求"
+      ex2: "将拉取请求关联到名为 \"Roadmap\" 的 GitHub 项目"
+      ex3: "从 fork `monalisa` 中的 `feature` 分支创建一个 PR，目标为 `develop` 分支"
+    gh_repo_create:
+      desc: "通过 CLI 创建一个新的 GitHub 仓库"
+      ex1: "在 GitHub 上创建名为 `my-project` 的新仓库（随后有交互式提示）"
+      ex2: "创建一个公共仓库并在本地克隆"
+      ex3: "从当前文件夹创建一个私有远程仓库，并添加名为 `upstream` 的远程"
+
+  aliases:
+    _root:
+      title: "💡 Git 别名（实用快捷方式）"
+      intro: "设置便捷的别名以加快常用 Git 命令："
+
+  pro:
+    _root:
+      title: "🚀 专业级高级 Git 命令"
+    git_filter_repo:
+      desc: "一个强大高效的工具，用于重写 Git 历史以移除或修改文件、作者或路径；替代 git filter-branch，具有更高速度和安全性"
+      ex1: "高效重写仓库历史以移除敏感文件或目录，而不会遇到 `git filter-branch` 的性能问题。谨慎使用"
+      ex2: "在整个历史中批量替换字符串或模式（如清理凭据）"
+      ex3: "将子目录历史提取为新仓库，保留提交元数据"
+    git_worktree:
+      desc: "管理与单个仓库关联的多个工作目录，允许并行在不同分支上工作而无需再次克隆"
+      ex1: "创建附加到同一仓库的工作树，支持并行分支检出"
+      ex2: "列出所有活动工作树、它们的路径和关联分支"
+      ex3: "删除不再需要的工作树，安全清理目录"
+    git_replace:
+      desc: "创建临时引用以替换现有对象，支持非破坏性的本地历史修改和测试"
+      ex1: "在本地仓库中临时交换一个提交用于测试或修补历史，而无需重写"
+      ex2: "显示所有活动的替换引用"
+      ex3: "删除指定替换引用以恢复原始行为"
+    git_stash_adv:
+      desc: "将未提交的更改临时保存到栈中，允许在未完成的工作间切换上下文"
+      ex1: "交互式选择部分更改保存到 stash，精细控制保存内容"
+      ex2: "创建带自定义消息的 stash 以便识别"
+      ex3: "应用指定的 stash 而不删除它"
+    git_rebase_adv:
+      desc: "将提交重新应用到另一基点上，保持更清晰线性的历史并支持交互式编辑"
+      ex1: "开始交互式 rebase 会话，自动重排并压缩 fixup 或 squash 提交，简化历史"
+      ex2: "在推送前自动重排和压缩 fixup/squash 提交，清理提交历史"
+      ex3: "创建一个 fixup 提交，在交互式 rebase 中会被自动压缩"
+      ex4: "创建一个 squash 提交，与指定提交合并"
+    git_bisect_pro:
+      desc: "二分查找工具，用于高效定位引入错误的提交，通过测试逐步缩小范围"
+      ex1: "运行测试脚本自动化 bisect，快速定位引入错误的提交"
+      ex2: "在每个提交上运行测试脚本，加速错误定位"
+      ex3: "打开图形化工具可视化 bisect 过程"
+      ex4: "退出 bisect 模式并返回原始 HEAD"
+    git_commit_pro:
+      desc: "带详细选项的提交：修改、签名、fixup、消息定制，以维护高质量历史"
+      ex1: "使用 GPG 密钥签署提交，确保加密验证提交的真实性和作者身份"
+      ex2: "用 GPG 密钥加密签名提交，确保完整性和作者验证"
+      ex3: "全局配置用于签名提交的 GPG 密钥"
+      ex4: "验证并显示提交的 GPG 签名信息"
+    git_reflog_pro:
+      desc: "保存 HEAD 和分支更新的日志，对恢复丢失提交和理解本地历史至关重要"
+      ex1: "将当前分支重置到 reflog 中的之前状态，以恢复或撤销更改"
+      ex2: "立即过期所有 reflog 条目，清理日志历史（谨慎使用）"
+
+  pro_tips:
+    _root:
+      title: "🧰 专业工作流技巧与自动化"
+    columns:
+      topic: "主题"
+      commands_example: "命令 / 示例"
+      explanation_tips: "解释 & 专业提示"
+    aggressive_cleanup:
+      topic: "强力仓库清理"
+      desc: "执行深度垃圾回收并立即修剪不可达对象，用于仓库优化。建议在维护窗口执行"
+    parallel_worktrees:
+      topic: "并行工作树"
+      desc: "保持多个工作树以同时进行功能开发，避免重复克隆"
+    linear_history:
+      topic: "干净线性历史"
+      desc: "推送前使用交互式 rebase + autosquash 保持历史清晰可读"
+    secure_commits:
+      topic: "安全提交"
+      desc: "用 GPG 签名提交以增强可信度，在许多企业环境中是必需的"
+    automated_bisect:
+      topic: "自动化 Bisect"
+      desc: "在 bisect 过程中运行测试脚本，自动化错误定位"
+    conflict_cache:
+      topic: "冲突解决缓存"
+      desc: "启用冲突解决方案复用，加快跨 rebase 或合并的重复冲突解决"
+    shared_aliases_hooks:
+      topic: "共享别名与钩子"
+      desc: "在共享仓库或 CI 流水线中存储常用 Git 别名和提交钩子，以强制团队规范并提高效率"
+
+  resources:
+    _root:
+      title: "附加资源"
+    tip:
+      title: "🧠 **提示**"
+      desc: "不要试图死记硬背。使用 `--help`，多探索并经常练习："
+    links:
+      title: "🌐 有用的链接"
+      official_docs: "📘 **Git 官方文档** — 所有 Git 命令的详细手册："
+      learn_branching: "📙 **Learn Git Branching** — 交互式可视化教程，掌握分支概念："
+      pro_git_book: "📕 **Pro Git 书籍**（免费，作者 Scott Chacon & Ben Straub）："
+      official_cheatsheet: "📗 **Git 速查表**（官方简明参考）："

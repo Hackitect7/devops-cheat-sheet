@@ -1,5 +1,326 @@
 git:
   meta:
     _root:
-      title: "🌿 Git"
-      desc: "Everyday workflows, branching, history, stashing, and collaboration basics."
+      title: "🐙 Git e GitHub CLI"
+      desc: "Comandos básicos e avançados do Git para controlo de versões, branches, repositórios remotos, stash, tags e GitHub CLI."
+
+  basic:
+    _root:
+      title: "🔹 Comandos Básicos"
+    git_add:
+      desc: "Adicionar um ficheiro à área de staging"
+      ex1: "Adicionar um ficheiro específico para o próximo commit"
+      ex2: "Adicionar todas as alterações no diretório atual e subdiretórios"
+      ex3: "Escolher interativamente que partes de ficheiros adicionar (útil para commits parciais)"
+    git_clone:
+      desc: "Clonar um repositório para um novo diretório"
+      ex1: "Clonar apenas a branch especificada (em vez da predefinida)"
+      ex2: "Clonar apenas o último commit, criando uma cópia superficial para poupar tempo e espaço"
+    git_commit:
+      desc: "Registar alterações no repositório"
+      ex1: "Commit com mensagem sem abrir o editor"
+      ex2: "Adicionar e fazer commit de todos os ficheiros modificados com uma mensagem"
+      ex3: "Atualizar o último commit (alterar mensagem ou incluir mais alterações)"
+      ex4: "Criar um commit fixup para ser automaticamente squash durante rebase interativo"
+    git_config:
+      desc: "Obter e definir opções do repositório ou globais"
+      ex1: "Definir nome de utilizador global do Git"
+      ex2: "Definir email global do Git"
+      ex3: "Listar todas as definições do Git (nome, email, editor, etc.)"
+    git_diff:
+      desc: "Mostrar alterações entre commits, commit e working tree, etc."
+      ex1: "Mostrar o que mudou desde o último commit (alterações não adicionadas)"
+      ex2: "Mostrar o que será incluído no próximo commit"
+      ex3: "Mostrar alterações com diferenças a nível de palavras"
+    git_grep:
+      desc: "Procurar dentro dos ficheiros do repositório"
+      ex1: "Encontrar todas as menções de `functionName` em todos os ficheiros do projeto"
+      ex2: "Encontrar linhas contendo `TODO` e mostrar números de linha (útil para encontrar notas no código)"
+      ex3: "Procurar a palavra `login` sem diferenciar maiúsculas/minúsculas"
+    git_init:
+      desc: "Criar um repositório Git vazio ou reinicializar um existente"
+      ex1: "Inicializar um novo repositório no diretório my-project"
+      ex2: "Inicializar um repositório bare"
+    git_log:
+      desc: "Mostrar logs de commits"
+      ex1: "Mostrar histórico de commits em formato compacto (uma linha)"
+      ex2: "Mostrar todas as branches em gráfico visual de commits"
+      ex3: "Mostrar patch e estatísticas de alterações por commit"
+    git_reset:
+      desc: "Remover ficheiros da staging area, mantendo alterações no diretório de trabalho"
+      ex1: "Remover um ficheiro da staging (mantendo as edições)"
+      ex2: "Voltar um commit atrás e apagar todas as alterações (irreversível!)"
+      ex3: "Desfazer o último commit mas manter alterações prontas para novo commit"
+      ex4: "Desfazer um commit mas manter alterações não adicionadas no diretório de trabalho"
+    git_show:
+      desc: "Mostrar vários tipos de objetos"
+      ex1: "Mostrar alterações e mensagem de um commit específico"
+      ex2: "Mostrar o commit anterior ao atual"
+      ex3: "Mostrar resumo das alterações de ficheiros no último commit"
+    git_status:
+      desc: "Mostrar o estado da árvore de trabalho"
+      ex1: "Mostrar estado em formato curto"
+      ex2: "Mostrar branch atual e estado dos ficheiros"
+
+  branching_merging:
+    _root:
+      title: "🌿 Branches e Merge"
+    git_branch:
+      desc: "Criar, listar ou apagar branches"
+      ex1: "Criar uma nova branch chamada `new-feature`"
+      ex2: "Apagar uma branch local chamada `old-feature`"
+    git_checkout:
+      desc: "Mudar de branch ou restaurar ficheiros de outro commit"
+      ex1: "Mudar para a branch `main`"
+      ex2: "Criar e mudar para uma nova branch chamada `new-branch`"
+    git_switch:
+      desc: "Mudar de branch (alternativa simplificada ao `checkout`)"
+      ex1: "Mudar para a branch `main`"
+      ex2: "Criar e mudar para uma nova branch chamada `feature-x`"
+      ex3: "Mudar para uma branch existente chamada `new-feature`"
+    git_merge:
+      desc: "Combinar alterações de outra branch na atual"
+      ex1: "Fazer merge da branch `new-feature` na branch atual"
+      ex2: "Forçar a criação de commit de merge (mesmo que fast-forward seja possível)"
+      ex3: "Cancelar merge e reverter alterações em caso de conflitos"
+    git_rebase:
+      desc: "Mover ou reaplicar commits sobre um novo commit base"
+      ex1: "Reaplicar commits da tua branch sobre a branch `main`"
+      ex2: "Editar interativamente os últimos 3 commits"
+      ex3: "Parar e desfazer um rebase em andamento"
+      ex4: "Squash automático de commits marcados como fixup ou squash durante rebase interativo"
+    git_cherry_pick:
+      desc: "Aplicar commits específicos de outra branch"
+      ex1: "Aplicar um commit específico (por hash) na branch atual"
+      ex2: "Continuar cherry-pick após resolver conflitos"
+      ex3: "Aplicar um intervalo de commits de `A` (excluído) até `B` (incluído)"
+
+  remote:
+    _root:
+      title: "📡 Repositórios Remotos"
+    git_remote:
+      desc: "Gerir ligações a repositórios remotos (como GitHub)"
+      ex1: "Mostrar nomes de remotos e os seus URLs"
+      ex2: "Adicionar um repositório remoto chamado `origin`"
+    git_pull:
+      desc: "Descarregar e fazer merge automático de alterações de uma branch remota"
+      ex1: "Buscar e fundir alterações da branch remota `main` na branch atual"
+      ex2: "Buscar e rebasear a branch atual sobre a remota em vez de fazer merge"
+    git_push:
+      desc: "Enviar alterações locais para um repositório remoto"
+      ex1: "Enviar a branch local `main` para o remoto `origin`"
+    git_fetch:
+      desc: "Descarregar alterações do remoto sem fazer merge"
+      ex1: "Buscar todas as atualizações do remoto `origin`, mas não aplicar ainda"
+      ex2: "Buscar apenas a branch `main` do remoto"
+      ex3: "Buscar atualizações de todos os remotos"
+      ex4: "Limpar branches apagadas — remover referências locais a branches eliminadas remotamente"
+      ex5: "Mostrar o que seria descarregado sem realmente baixar nada"
+      ex6: "Forçar atualização da branch local de tracking (`origin/main`), sobrescrevendo conflitos"
+
+  stash_cleanup:
+    _root:
+      title: "📦 Stash e Limpeza"
+    git_stash:
+      desc: "Guardar temporariamente alterações não commitadas (work in progress)"
+      ex1: "Guardar ficheiros modificados/adicionados e reverter diretório de trabalho para último commit"
+      ex2: "Reaplicar as últimas alterações em stash (stash permanece guardado)"
+      ex3: "Reaplicar e remover o último stash"
+      ex4: "Mostrar lista de todas as alterações em stash"
+      ex5: "Criar uma nova branch e aplicar-lhe o último stash"
+    git_clean:
+      desc: "Eliminar permanentemente ficheiros não rastreados (fora do Git)"
+      ex1: "Eliminar ficheiros não rastreados no diretório atual"
+      ex2: "Eliminar ficheiros e pastas não rastreados"
+      ex3: "Pré-visualizar o que será apagado (execução segura)"
+
+  tags:
+    _root:
+      title: "🏷️ Tags"
+    git_tag:
+      desc: "Criar, listar ou apagar tags para marcar pontos específicos na história (como releases)"
+      ex1: "Criar uma tag anotada chamada `v1.0` com mensagem (guardada como objeto completo do Git, bom para releases)"
+      ex2: "Apagar a tag local `v1.0` (não afeta remoto)"
+    git_push:
+      desc: "Enviar commits, branches e tags do repositório local para remoto"
+      ex1: "Enviar todas as tags locais para o remoto (útil após criar várias versões)"
+      ex2: "Enviar uma tag específica (ex: `v1.0`) para o repositório remoto"
+      ex3: "Apagar a tag remota `v1.0` (usar sintaxe com dois pontos)"
+
+  conflicts:
+    _root:
+      title: "🛠️ Resolução de Conflitos"
+    git_mergetool:
+      desc: "Abrir ferramenta visual para ajudar a resolver conflitos de merge"
+      ex1: "Usar ferramenta específica (como Meld) para corrigir conflitos"
+    git_rerere:
+      desc: "Permitir que o Git memorize como resolveste conflitos anteriormente"
+      ex1: "Ativar reutilização automática de resoluções anteriores"
+      ex2: "Mostrar quais ficheiros têm resoluções de conflitos guardadas"
+      ex3: "Mostrar alterações que o Git guardou para reutilização futura"
+
+  advanced:
+    _root:
+      title: "⚙️ Comandos Avançados"
+    git_bisect:
+      desc: "Usar pesquisa binária para encontrar o commit que introduziu um bug"
+      ex1: "Iniciar pesquisa binária entre um commit bom e um mau para localizar bug"
+      ex2: "Marcar commit atual como \"mau\" (contém o bug)"
+      ex3: "Marcar commit conhecido como \"bom\" onde bug não existia"
+    git_blame:
+      desc: "Mostrar quem modificou cada linha de um ficheiro pela última vez, com revisão e autor"
+      ex1: "Mostrar autor e informação de commit para cada linha do ficheiro"
+      ex2: "Mostrar blame apenas para linhas 10 a 20"
+      ex3: "Mostrar emails dos autores junto das alterações"
+    git_reflog:
+      desc: "Ver e gerir o reflog (movimentos de branches e HEAD)"
+      ex1: "Ver onde a branch `main` apontava há uma semana"
+      ex2: "Pré-visualizar entradas de reflog mais antigas que 30 dias que podem ser limpas"
+      ex3: "Apagar entrada específica do reflog (usar com cuidado, pode afetar recuperação)"
+    git_submodule:
+      desc: "Adicionar, inicializar, atualizar ou inspecionar submódulos (repositórios dentro de repositórios)"
+      ex1: "Adicionar um repositório externo como submódulo num caminho específico"
+      ex2: "Inicializar e descarregar todos os submódulos listados no repositório"
+      ex3: "Executar `git pull` dentro de cada submódulo para atualizar para último commit"
+      ex4: "Sincronizar URLs de submódulos após alterações em `.gitmodules`"
+      ex5: "Atualizar submódulos para o último commit das branches remotas"
+    git_archive:
+      desc: "Criar um arquivo (zip, tar, etc.) de ficheiros de um commit ou branch específico"
+      ex1: "Criar arquivo ZIP dos ficheiros atuais no HEAD"
+      ex2: "Criar arquivo comprimido `.tar.gz` do HEAD atual"
+      ex3: "Criar `.tar.gz` com ficheiros do projeto atual, colocando tudo dentro da pasta `project/`"
+    git_gc:
+      desc: "Limpar ficheiros desnecessários e otimizar o repositório para desempenho"
+      ex1: "Executar limpeza e otimização completa (pode ser lenta mas eficaz)"
+      ex2: "Remover imediatamente todos os objetos inacessíveis (perigoso se não tiver certeza)"
+    git_shortlog:
+      desc: "Resumo rápido de autores e seus commits"
+      ex1: "Mostrar lista de autores com emails (ex: para analisar contribuições)"
+      ex2: "Mostrar quantos commits cada autor fez, ordenado por número de commits"
+      ex3: "O mesmo, mas incluindo nomes e emails — útil para rastrear atividade detalhada"
+    git_revert:
+      desc: "Criar um novo commit que desfaz alterações de um commit anterior sem reescrever histórico"
+      ex1: "Desfazer o último commit criando novo commit que reverte alterações"
+      ex2: "Desfazer commit específico por hash, adicionando commit de reversão em segurança"
+
+  gh:
+    _root:
+      title: "🐙 GitHub CLI"
+      note: "`gh` permite gerir o GitHub a partir do terminal."
+    gh_auth_login:
+      desc: "Autenticar-se com um host do GitHub para permitir que os comandos da CLI interajam com a sua conta"
+      ex1: "Autenticar usando um personal access token armazenado num ficheiro (`mytoken.txt`)"
+      ex2: "Autenticar-se num servidor GitHub Enterprise (não github.com)"
+    gh_repo_clone:
+      desc: "Clonar um repositório GitHub para a sua máquina local"
+      ex1: "Clonar o repositório repo do utilizador `user` para uma pasta chamada `repo`"
+      ex2: "Clonar o repositório mas descarregar apenas o último commit para clonagem mais rápida e leve"
+      ex3: "Clonar o repositório para uma pasta personalizada `workspace/cli`"
+    gh_issue_list:
+      desc: "Listar issues num repositório GitHub, opcionalmente filtradas por vários critérios"
+      ex1: "Listar issues atribuídas a si"
+      ex2: "Listar issues independentemente do estado (abertas ou fechadas)"
+      ex3: "Listar issues que contenham \"error\", não atribuídas, ordenadas por data de criação ascendente"
+    gh_pr_create:
+      desc: "Criar um pull request no GitHub via CLI"
+      ex1: "Criar um pull request com o título indicado"
+      ex2: "Associar o pull request a um projeto GitHub chamado \"Roadmap\""
+      ex3: "Criar um PR da branch `feature` do fork `monalisa` para a branch `develop`"
+    gh_repo_create:
+      desc: "Criar um novo repositório GitHub a partir da CLI"
+      ex1: "Criar um novo repositório chamado `my-project` no GitHub (seguem prompts interativos)"
+      ex2: "Criar um repositório público e cloná-lo localmente"
+      ex3: "Criar um repositório remoto privado a partir da pasta atual e adicionar remoto chamado `upstream`"
+
+  aliases:
+    _root:
+      title: "💡 Aliases do Git (Atalhos Úteis)"
+      intro: "Configurar aliases convenientes para acelerar comandos Git comuns:"
+
+  pro:
+    _root:
+      title: "🚀 Comandos Avançados de Git para Profissionais"
+    git_filter_repo:
+      desc: "Ferramenta poderosa e eficiente para reescrever o histórico Git para remover ou modificar ficheiros, autoria ou caminhos; substitui o git filter-branch com mais velocidade e segurança"
+      ex1: "Reescrever eficientemente o histórico do repositório para remover ficheiros ou diretórios sensíveis sem problemas de performance do `git filter-branch`. Usar com cuidado"
+      ex2: "Substituir em massa strings ou padrões em todo o histórico (ex: sanitizar credenciais)"
+      ex3: "Extrair histórico de um subdiretório para um novo repositório, preservando metadados de commits"
+    git_worktree:
+      desc: "Gerir múltiplos diretórios de trabalho ligados a um único repositório, permitindo trabalho paralelo em diferentes branches sem clonar"
+      ex1: "Criar um diretório de trabalho adicional ligado ao mesmo repositório, permitindo checkouts paralelos de branches sem clones"
+      ex2: "Listar todos os worktrees ativos, os seus caminhos e branches associadas"
+      ex3: "Remover um worktree ligado quando já não for necessário, limpando diretórios de trabalho em segurança"
+    git_replace:
+      desc: "Criar referências temporárias que substituem objetos existentes, permitindo manipulação local de histórico sem destruição e para testes"
+      ex1: "Trocar temporariamente um commit por outro no repositório local, útil para testes ou patch de histórico sem reescrevê-lo"
+      ex2: "Mostrar todas as referências de substituição ativas"
+      ex3: "Eliminar uma referência de substituição específica para reverter comportamento"
+    git_stash_adv:
+      desc: "Guardar temporariamente alterações não commitadas numa pilha, permitindo mudar de contexto sem commit de trabalho inacabado"
+      ex1: "Selecionar interativamente blocos de alterações para stash, dando controlo granular sobre o que é guardado"
+      ex2: "Criar um stash com uma mensagem personalizada para identificação mais fácil"
+      ex3: "Aplicar um stash específico da lista sem o remover"
+    git_rebase_adv:
+      desc: "Reaplicar commits sobre outra base, facilitando histórico linear mais limpo e edição interativa de histórico"
+      ex1: "Iniciar sessão de rebase interativo que reordena e faz squash automático de commits marcados como fixup ou squash, limpando histórico"
+      ex2: "Reordenar e fazer squash automático de commits fixup/squash, limpando histórico antes de enviar"
+      ex3: "Criar um commit fixup que será autosquash durante rebase interativo"
+      ex4: "Criar um commit squash para combinar com commit especificado no rebase"
+    git_bisect_pro:
+      desc: "Ferramenta de pesquisa binária para identificar de forma eficiente o commit que introduziu um bug testando commits sucessivos e restringindo a alteração defeituosa"
+      ex1: "Automatizar o processo de bisect executando um script de teste em cada commit para identificar rapidamente o commit que introduziu o bug sem intervenção manual"
+      ex2: "Automatizar bisseção com script de teste em cada commit, acelerando bastante a identificação de bugs"
+      ex3: "Abrir ferramenta gráfica para visualizar o processo de bisseção"
+      ex4: "Sair do modo bisect e voltar ao HEAD original"
+    git_commit_pro:
+      desc: "Registar alterações no repositório com opções detalhadas para amend, sign, fixup e personalização de mensagens para manter histórico de alta qualidade"
+      ex1: "Criar um commit assinado com a sua chave GPG para garantir verificação criptográfica da autenticidade e autoria do commit"
+      ex2: "Assinar criptograficamente commits com a sua chave GPG, garantindo integridade e verificação de autoria"
+      ex3: "Configurar globalmente a chave GPG usada para assinar commits"
+      ex4: "Verificar e mostrar informação da assinatura GPG de commits"
+    git_reflog_pro:
+      desc: "Manter log de atualizações ao HEAD e branches, essencial para recuperar commits perdidos e compreender movimentos locais de histórico"
+      ex1: "Repor a branch atual para estado anterior a partir do reflog para recuperar ou desfazer alterações"
+      ex2: "Expirar imediatamente todas as entradas de reflog, limpando histórico (usar com cautela)"
+
+  pro_tips:
+    _root:
+      title: "🧰 Dicas de Workflow Profissional e Automação"
+    columns:
+      topic: "Tópico"
+      commands_example: "Comandos / Exemplo"
+      explanation_tips: "Explicação & Dicas Pro"
+    aggressive_cleanup:
+      topic: "Limpeza Agressiva do Repositório"
+      desc: "Executa garbage collection profunda e remove objetos inacessíveis imediatamente para otimização. Usar em janelas de manutenção"
+    parallel_worktrees:
+      topic: "Worktrees em Paralelo"
+      desc: "Manter múltiplos diretórios de trabalho para desenvolvimento simultâneo de funcionalidades, evitando overhead de clones"
+    linear_history:
+      topic: "Histórico Linear Limpo"
+      desc: "Antes de enviar, fazer rebase interativo com autosquash para manter histórico limpo e legível"
+    secure_commits:
+      topic: "Commits Seguros"
+      desc: "Assinar commits com GPG para aumentar confiança em repositórios partilhados, obrigatório em muitos ambientes empresariais"
+    automated_bisect:
+      topic: "Bisseção Automatizada"
+      desc: "Automatizar procura de bugs executando script de teste em cada commit candidato durante bisect"
+    conflict_cache:
+      topic: "Cache de Resolução de Conflitos"
+      desc: "Ativar reutilização de resoluções de conflitos para acelerar resolução de conflitos repetidos em rebase ou merges"
+    shared_aliases_hooks:
+      topic: "Aliases e Hooks Partilhados"
+      desc: "Guardar aliases Git comuns e hooks de commit num repositório partilhado ou pipeline CI para impor standards de equipa e aumentar produtividade"
+
+  resources:
+    _root:
+      title: "Recursos Adicionais"
+    tip:
+      title: "🧠 **Dica**"
+      desc: "Não tente memorizar tudo. Use `--help`, explore e pratique regularmente:"
+    links:
+      title: "🌐 Links Úteis"
+      official_docs: "📘 **Documentação Oficial do Git** — manual detalhado para todos os comandos Git:"
+      learn_branching: "📙 **Learn Git Branching** — tutorial visual interativo para dominar conceitos de branching:"
+      pro_git_book: "📕 **Livro Pro Git** (gratuito, de Scott Chacon & Ben Straub):"
+      official_cheatsheet: "📗 **Git Cheatsheet** (referência concisa oficial):"

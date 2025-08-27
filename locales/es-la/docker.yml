@@ -2,7 +2,7 @@ docker:
   meta:
     _root:
       title: "🐳 Docker"
-      desc: "📘 Docker es una plataforma para ejecutar aplicaciones en contenedores aislados. Esta hoja de referencia contiene comandos para trabajar con imágenes, contenedores, redes, volúmenes, así como Docker Compose y Swarm."
+      desc: "Docker es una plataforma para ejecutar aplicaciones en contenedores aislados. Esta hoja de referencia contiene comandos para trabajar con imágenes, contenedores, redes, volúmenes, así como Docker Compose y Swarm."
 
   basic:
     _root:

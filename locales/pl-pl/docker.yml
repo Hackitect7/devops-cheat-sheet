@@ -2,7 +2,7 @@ docker:
   meta:
     _root:
       title: "🐳 Docker"
-      desc: "📘 Docker to platforma do uruchamiania aplikacji w odizolowanych kontenerach. Ta ściągawka zawiera polecenia do pracy z obrazami, kontenerami, sieciami, wolumenami, a także Docker Compose i Swarm."
+      desc: "Docker to platforma do uruchamiania aplikacji w odizolowanych kontenerach. Ta ściągawka zawiera polecenia do pracy z obrazami, kontenerami, sieciami, wolumenami, a także Docker Compose i Swarm."
 
   basic:
     _root:

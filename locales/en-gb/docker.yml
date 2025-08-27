@@ -2,7 +2,7 @@ docker:
   meta:
     _root:
       title: "🐳 Docker"
-      desc: "📘 Docker is a platform for running applications in isolated containers. This cheat sheet contains commands for working with images, containers, networks, volumes, as well as Docker Compose and Swarm."
+      desc: "Docker is a platform for running applications in isolated containers. This cheat sheet contains commands for working with images, containers, networks, volumes, as well as Docker Compose and Swarm."
 
   basic:
     _root:
