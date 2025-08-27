@@ -14,7 +14,8 @@ date: last-modified
 highlight-style: a11y
 
 metadata:
-  description: "Multilingual DevOps cheat sheet: Linux, Docker, Git, Kubernetes, Helm, Terraform, practical scenarios & templates."
+  description: >-
+    "Multilingual DevOps cheat sheet: Linux, Docker, Git, Kubernetes, Helm, Terraform, practical scenarios & templates."
   image: assets/brand/us/hackitect7-og.png
   image-alt: "DevOps Cheat Sheet — logo and tagline"
 

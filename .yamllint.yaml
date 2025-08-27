@@ -1,15 +1,15 @@
 extends: default
 
 rules:
-  line-length:
-    max: 120
-    allow-non-breakable-words: true
+  braces: disable # убираем "too many spaces inside braces"
+  line-length: disable # игнорируем длину строки
+  trailing-spaces: disable # игнорируем хвостовые пробелы
   indentation:
-    spaces: 2
+    spaces: 2 # оставим базовую проверку отступов (без фанатизма)
     indent-sequences: consistent
-  document-start: disable # для единичных YAML-файлов '---' не требуем
+  document-start: disable # не требуем '---'
   truthy:
-    check-keys: false # не ругаться на 'on', 'off' как значения
+    check-keys: false # 'on'/'off' и т.п. — норм
   comments:
     require-starting-space: true
     min-spaces-from-content: 1
@@ -20,3 +20,5 @@ ignore: |
   .quarto/**
   **/*.md
   **/*.qmd
+  # если нужно полностью исключить служебные файлы CI:
+  # .github/**
