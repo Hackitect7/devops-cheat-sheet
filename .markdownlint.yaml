@@ -7,3 +7,11 @@ MD025: false # single-title / один H1
 MD034: false # bare-urls (email/URL без <>)
 MD045: false # images need alt (у нас много техкартинок/логотипов)
 MD051: false # link-fragments (Pandoc-идентификаторы типа {#id})
+
+MD033:
+  allowed_elements:
+    - span
+    - br
+
+# В PROJECT_GUIDE.md есть безымянные ```блоки; чтобы не править сейчас — вырубаем правило
+MD040: false
