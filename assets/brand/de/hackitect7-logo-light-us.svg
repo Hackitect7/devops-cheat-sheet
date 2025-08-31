@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="25 24 426 102">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="25 24 429 102">
   <defs>
     <style>
       .hex { fill: none; stroke: #0b1220; stroke-width: 4; }
@@ -17,5 +17,5 @@
 
   <!-- Wordmark -->
   <text class="brand" x="130" y="76">Hackitect7</text>
-  <text class="tag" x="130" y="116">システムの音楽</text>
+  <text class="tag" x="130" y="116">Die Musik der Systeme</text>
 </svg>

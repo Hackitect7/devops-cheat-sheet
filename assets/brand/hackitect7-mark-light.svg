@@ -5,7 +5,7 @@
       .wave { fill: none; stroke: #0ea5e9; stroke-width: 3; stroke-linecap: round; }
     </style>
   </defs>
-  <!-- Hexagon = "systems", Wave = "music" -->
-  <polygon class="hex" points="32,4 56,16 56,48 32,60 8,48 8,16"/>
+  <!-- Heptagon = "systems", Wave = "music" -->
+  <polygon class="hex" points="32.000,4.000 53.891,14.542 59.298,38.231 44.149,57.227 19.851,57.227 4.702,38.231 10.109,14.542"/>
   <path class="wave" d="M10,32 C18,22 26,42 34,32 S50,22 54,32"/>
 </svg>

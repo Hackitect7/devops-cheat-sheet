@@ -1,10 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="30 24 424 102">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-500 0 620 150">
   <defs>
     <style>
       .hex { fill: none; stroke: #0b1220; stroke-width: 4; }
       .wave { fill: none; stroke: #0ea5e9; stroke-width: 4; stroke-linecap: round; }
       .brand { font: 700 64px 'Segoe UI', 'Inter', Arial, sans-serif; fill: #0b1220; }
-      .tag { font: 400 32px 'Segoe UI', 'Inter', Arial, sans-serif; fill: #334155; }
+      .tag { font: 400 32px 'Vazirmatn', 'Noto Naskh Arabic', 'Noto Sans Arabic', 'Segoe UI', Tahoma, Arial, sans-serif; fill: #334155; }
     </style>
   </defs>
   <!-- Mark -->
@@ -14,6 +14,6 @@
   </g>
 
   <!-- Wordmark -->
-  <text class="brand" x="130" y="76">Hackitect7</text>
-  <text class="tag" x="130" y="116">Die Musik der Systeme</text>
+  <text class="brand" x="18" y="76" direction="rtl">Hackitect7</text>
+  <text class="tag" x="18" y="116" direction="rtl">The Music of Systems</text>
 </svg>
